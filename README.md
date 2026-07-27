@@ -2,6 +2,10 @@
 
 族語學習 AI 應用的公開入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類，每類四張卡片，共 20 項任務。
 
+## 線上網站
+
+正式網站：[https://indigenous-language-ai-lab.vercel.app/](https://indigenous-language-ai-lab.vercel.app/)
+
 ## 本機預覽
 
 本專案是無建置步驟的純 HTML、CSS 與 JavaScript 網站：
