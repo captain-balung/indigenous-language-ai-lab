@@ -7,7 +7,7 @@ const ui = { ethnicity:$("#ethnicity"), dialect:$("#dialect"), start:$("#start")
 let dataset, selectedDialect, question, deck, answeredCount = 0, pending = false, apiCodes = new Set(DIALECTS.map((d) => d.code));
 
 async function init() {
-  const response = await fetch("../../data/body-parts/dataset.json");
+  const response = await fetch("/data/body-parts/dataset.json");
   if (!response.ok) throw new Error("教材載入失敗");
   dataset = await response.json();
   if (dataset.recordCount !== 420 || dataset.dialectCount !== 42) throw new Error("教材完整性檢查失敗");
@@ -49,7 +49,7 @@ function nextQuestion() {
   question = deck.next(); answeredCount += 1; pending = false;
   ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name}`;
   ui.progress.textContent = `本輪 ${answeredCount} / 10`;
-  ui.image.src = `../../data/body-parts/${question.imagePath}`;
+  ui.image.src = `/data/body-parts/${question.imagePath}`;
   ui.image.alt = `請辨認圖片中的身體部位（${selectedDialect.name}題目）`;
   ui.answer.value = ""; ui.answer.disabled = false; ui.submit.disabled = false;
   ui.result.hidden = ui.retry.hidden = ui.reveal.hidden = ui.next.hidden = ui.model.hidden = true;
