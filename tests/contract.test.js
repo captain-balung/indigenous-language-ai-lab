@@ -16,6 +16,7 @@ assert(html.includes('id="applications"'), "Main application landmark is missing
 assert(css.includes("prefers-reduced-motion"), "Reduced-motion support is missing");
 assert(css.includes("@media (max-width: 560px)"), "Mobile breakpoint is missing");
 assert(!/(https?:)?\/\//.test(html.replace(/https:\/\/openapi\.vercel\.sh/g, "")), "Runtime HTML must not load remote resources");
+assert(!/[\u{1F300}-\u{1FAFF}]/u.test(html + script), "Runtime interface must not use emoji pictograms");
 
 const captured = {};
 const documentStub = {
@@ -41,6 +42,7 @@ for (const app of applications) {
     assert(Object.hasOwn(app, field), `${app.id} is missing ${field}`);
   }
   if (app.status !== "available") assert(!app.href, `${app.id} must not have a placeholder link`);
+  assert(app.icon.startsWith("assets/icons/") && app.icon.endsWith(".webp"), `${app.id} must use the unified raster icon system`);
 }
 
 console.log("PASS: 5 categories, 20 data-driven cards, responsive and accessibility contracts");
