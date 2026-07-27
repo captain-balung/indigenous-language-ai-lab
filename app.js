@@ -8,7 +8,7 @@ const categories = [
 
 const applicationSeeds = {
   basics: [
-    ["聲音探險家", "聆聽並辨識族語的聲音與節奏。", "assets/icons/headphones.webp"],
+    ["身體部位練習", "看圖片練習 42 個方言別的身體部位完整句子。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
     ["字母練習室", "認識字母與發音，建立閱讀基礎。", "assets/icons/alphabet-blocks.webp"],
     ["詞彙收藏冊", "用主題卡片累積生活常用詞彙。", "assets/icons/vocabulary-book.webp"],
     ["跟讀小教練", "跟著提示反覆練習，勇敢開口說。", "assets/icons/speaking-microphone.webp"]
@@ -40,14 +40,14 @@ const applicationSeeds = {
 };
 
 const applications = categories.flatMap((category) =>
-  applicationSeeds[category.id].map(([title, description, icon], index) => ({
+  applicationSeeds[category.id].map(([title, description, icon, status = "coming-soon", href = ""], index) => ({
     id: `${category.id}-${index + 1}`,
     categoryId: category.id,
     title,
     description,
     icon,
-    status: "coming-soon",
-    href: "",
+    status,
+    href,
     openInNewTab: false,
     tags: [category.title],
     order: index + 1

@@ -29,7 +29,7 @@ python -m http.server 4173
 ## 設計與技術
 
 - Mobile-first，手機單欄、平板雙欄、桌機四欄。
-- 純本地資源，不需 CDN、第三方套件、登入、Cookie 或 API。
+- 入口頁使用純本地資源，不需 CDN、第三方套件、登入或 Cookie；身體部位練習另使用公開 Formosan AI 翻譯 API，錯誤時保留教材本地比對功能。
 - 支援鍵盤焦點、語意化標題、跳至主要內容與 `prefers-reduced-motion`。
 - 視覺延續《部落好心人》第二版的明亮配色、厚邊框、大圓角、卡片層次與輕量遊戲動效，但不使用其角色、文字、題目或素材。
 - 20 枚任務圖示採統一手繪遊戲美術，不使用平台相依的 emoji；生成與去背紀錄見 `assets/icons/README.md`。
@@ -39,9 +39,13 @@ python -m http.server 4173
 
 根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
 
+## 已上線應用
+
+- [身體部位練習](apps/body-parts-practice/README.md)：42 個方言別、420 筆教材；先做教材整句比對，再以 Formosan AI `translate_to_zh` 及受控中文同義詞輔助判定。
+
 ## 素材與授權
 
-介面插圖皆由 HTML/CSS 幾何圖形及 Unicode emoji 組成，沒有外部圖片、字型或未授權素材。原始碼依 repository 所附授權條款使用。
+介面插圖由 HTML/CSS 幾何圖形與專案內生成美術組成，沒有外部字型或未授權素材。原始碼依 repository 所附授權條款使用；族語 E 樂園教材另依下列授權使用。
 
 ### 族語 E 樂園教材資料
 

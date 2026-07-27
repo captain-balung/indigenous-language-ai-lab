@@ -34,6 +34,7 @@ const { categories, applications } = vm.runInNewContext(
 
 assert(categories.length === 5, `Expected 5 categories, received ${categories.length}`);
 assert(applications.length === 20, `Expected 20 applications, received ${applications.length}`);
+assert(applications[0].title === "身體部位練習" && applications[0].status === "available" && applications[0].href === "apps/body-parts-practice/", "First basics card must link to body parts practice");
 for (const category of categories) {
   assert(applications.filter((app) => app.categoryId === category.id).length === 4, `${category.title} must have 4 applications`);
 }
