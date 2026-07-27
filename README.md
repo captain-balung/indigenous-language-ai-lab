@@ -41,3 +41,15 @@ python -m http.server 4173
 ## 素材與授權
 
 介面插圖皆由 HTML/CSS 幾何圖形及 Unicode emoji 組成，沒有外部圖片、字型或未授權素材。原始碼依 repository 所附授權條款使用。
+
+### 族語 E 樂園教材資料
+
+第一個應用的基礎資料位於 `data/body-parts/`，內容是「族語 E 樂園」句型篇國中版／看圖識字／身體部位：42 個方言別、每語 10 筆，共 420 筆族語與中文文字，以及 10 張共用圖片。
+
+這批教材不是本專案原始碼授權的一部分，須另依 [CC BY-NC-SA 4.0](data/body-parts/LICENSE.md) 使用：必須標示來源、不得商業使用，改作及衍生內容須以相同授權散布。
+
+重新取得及驗證資料：
+
+```powershell
+node scripts/download-body-parts.mjs
+```

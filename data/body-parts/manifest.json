@@ -1,0 +1,409 @@
+{
+  "generatedAt": "2026-07-27T03:05:49.369Z",
+  "recordCount": 420,
+  "expectedRecordCount": 420,
+  "sourceFileCount": 52,
+  "dataset": {
+    "path": "dataset.json",
+    "bytes": 173892,
+    "sha256": "a9e7fb7877d097b286df9f79625faf54911454c266490d7b6b8850023bf472b0"
+  },
+  "files": [
+    {
+      "dialectId": 1,
+      "dialectName": "南勢阿美語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/1/20.xml",
+      "path": "raw/1.xml",
+      "bytes": 4369,
+      "sha256": "3d96ec714793d4f515911a647a9c70581315465246a4a85e032692f40e7c57e0"
+    },
+    {
+      "dialectId": 2,
+      "dialectName": "秀姑巒阿美語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/2/20.xml",
+      "path": "raw/2.xml",
+      "bytes": 4357,
+      "sha256": "1c25342d20b80f545181a3ba5e26be26052a8cbd296fb827fcfcf4f853297ccb"
+    },
+    {
+      "dialectId": 3,
+      "dialectName": "海岸阿美語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/3/20.xml",
+      "path": "raw/3.xml",
+      "bytes": 4334,
+      "sha256": "51c0939f6a14e662d87910cc2465b947513a8f0599b551aeb2ecf88244ea56e5"
+    },
+    {
+      "dialectId": 4,
+      "dialectName": "馬蘭阿美語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/4/20.xml",
+      "path": "raw/4.xml",
+      "bytes": 4370,
+      "sha256": "9a428032e74dd13c048a146ab2e8f3fcfad5815163273229d307951c280dca18"
+    },
+    {
+      "dialectId": 5,
+      "dialectName": "恆春阿美語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/5/20.xml",
+      "path": "raw/5.xml",
+      "bytes": 4331,
+      "sha256": "5a7292d916a5c81947a6917276b80528339eadd95e82ce384e93282401758dd7"
+    },
+    {
+      "dialectId": 6,
+      "dialectName": "賽考利克泰雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/6/20.xml",
+      "path": "raw/6.xml",
+      "bytes": 4350,
+      "sha256": "67ba8a5244199211b95ef4ec2e012cb4e76730c37a058f5cd95c46ef4f34956b"
+    },
+    {
+      "dialectId": 7,
+      "dialectName": "澤敖利泰雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/7/20.xml",
+      "path": "raw/7.xml",
+      "bytes": 4345,
+      "sha256": "e34871713c1a30b516a0b876eae2f30d97ac66d981ef1cbe79417be494d24152"
+    },
+    {
+      "dialectId": 8,
+      "dialectName": "汶水泰雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/8/20.xml",
+      "path": "raw/8.xml",
+      "bytes": 4367,
+      "sha256": "990180565c83276d2b4c55f427be3d48c7350adc996c1f26dd09a7c721356a3c"
+    },
+    {
+      "dialectId": 9,
+      "dialectName": "萬大泰雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/9/20.xml",
+      "path": "raw/9.xml",
+      "bytes": 4319,
+      "sha256": "549492121cb978c33466b50c81778fff10fd805a8647cfda0e9068f8dba0bedf"
+    },
+    {
+      "dialectId": 10,
+      "dialectName": "四季泰雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/10/20.xml",
+      "path": "raw/10.xml",
+      "bytes": 4349,
+      "sha256": "5d094bb231ab4c8ddb3dca1ae7239e7f63ddd0cf82eeb29a0abaa60a044e7042"
+    },
+    {
+      "dialectId": 11,
+      "dialectName": "宜蘭澤敖利泰雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/11/20.xml",
+      "path": "raw/11.xml",
+      "bytes": 4356,
+      "sha256": "edf4d86a46220e19b1cae76b71e107b8c420156f8c67e3a12c667a857028e551"
+    },
+    {
+      "dialectId": 13,
+      "dialectName": "賽夏語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/13/20.xml",
+      "path": "raw/13.xml",
+      "bytes": 4341,
+      "sha256": "ca98d14d584e414e05fa1bacc2d658c6010b9ae5f452c04cd5cf362b53479ffe"
+    },
+    {
+      "dialectId": 14,
+      "dialectName": "邵語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/14/20.xml",
+      "path": "raw/14.xml",
+      "bytes": 4325,
+      "sha256": "8c51d63159a470e6327ffcb85df5db4a7d0239706eb6186ad684fbd515e0bc95"
+    },
+    {
+      "dialectId": 15,
+      "dialectName": "都達賽德克語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/15/20.xml",
+      "path": "raw/15.xml",
+      "bytes": 4330,
+      "sha256": "e0f6ac125e7d8352f8174f4cdde8b43a40a019b2f85803f040c31b12595960eb"
+    },
+    {
+      "dialectId": 16,
+      "dialectName": "德固達雅賽德克語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/16/20.xml",
+      "path": "raw/16.xml",
+      "bytes": 4342,
+      "sha256": "64bd34027abf40e7bea1ad5654ff26275723aaf7276cf01c3077e260b5813337"
+    },
+    {
+      "dialectId": 17,
+      "dialectName": "德鹿谷賽德克語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/17/20.xml",
+      "path": "raw/17.xml",
+      "bytes": 4345,
+      "sha256": "31306c5348150dd1c7469b221c7a63e3f3d347f4116092380754f1f2ad9ff32e"
+    },
+    {
+      "dialectId": 18,
+      "dialectName": "卓群布農語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/18/20.xml",
+      "path": "raw/18.xml",
+      "bytes": 4341,
+      "sha256": "bb88381d7920966797ad2afaf7e3a2b240db8446d9dc9ac7c57729ec99f793c6"
+    },
+    {
+      "dialectId": 19,
+      "dialectName": "卡群布農語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/19/20.xml",
+      "path": "raw/19.xml",
+      "bytes": 4344,
+      "sha256": "3d7b45af5824214a7d5c47140c1fdfdc46d19f9faca10d50f06cbacb414294f8"
+    },
+    {
+      "dialectId": 20,
+      "dialectName": "丹群布農語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/20/20.xml",
+      "path": "raw/20.xml",
+      "bytes": 4320,
+      "sha256": "084e7b00718427d51a26c544d83b78847caa9c9ef73c7b3c47d01c741ebcf1b9"
+    },
+    {
+      "dialectId": 21,
+      "dialectName": "巒群布農語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/21/20.xml",
+      "path": "raw/21.xml",
+      "bytes": 4337,
+      "sha256": "0c13acd82a5815a06e7ef180368a81ef563c7d4bcd7287e7c5f0b5313cc42278"
+    },
+    {
+      "dialectId": 22,
+      "dialectName": "郡群布農語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/22/20.xml",
+      "path": "raw/22.xml",
+      "bytes": 4320,
+      "sha256": "54e1c3abaf658cb5b9d6861b2327e38fad0f2b37c841b3107d70e8d9ab1e6460"
+    },
+    {
+      "dialectId": 23,
+      "dialectName": "東排灣語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/23/20.xml",
+      "path": "raw/23.xml",
+      "bytes": 4304,
+      "sha256": "da00647f404cc56e9bc1ad83fe838885eceae93b4a7850fdf9d4687d2ecf5df1"
+    },
+    {
+      "dialectId": 24,
+      "dialectName": "北排灣語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/24/20.xml",
+      "path": "raw/24.xml",
+      "bytes": 4324,
+      "sha256": "12e2c6ac25eca8c2ea1878714a8a2511f81966b9c1af2d7f529647b74b639d54"
+    },
+    {
+      "dialectId": 25,
+      "dialectName": "中排灣語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/25/20.xml",
+      "path": "raw/25.xml",
+      "bytes": 4324,
+      "sha256": "421a6b7acf7c66d490d111a6269f75640cc3b46e8e06bccb3abbafcbf4727295"
+    },
+    {
+      "dialectId": 26,
+      "dialectName": "南排灣語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/26/20.xml",
+      "path": "raw/26.xml",
+      "bytes": 4338,
+      "sha256": "a8f0bc4737752282b675b13083b579bf94188f4681944006986e2f12bede36a7"
+    },
+    {
+      "dialectId": 27,
+      "dialectName": "東魯凱語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/27/20.xml",
+      "path": "raw/27.xml",
+      "bytes": 4345,
+      "sha256": "28d162f77001c19fce63398b33ed236d2a73b13918dceae7ffea30c43fdb6768"
+    },
+    {
+      "dialectId": 28,
+      "dialectName": "霧台魯凱語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/28/20.xml",
+      "path": "raw/28.xml",
+      "bytes": 4340,
+      "sha256": "46a7e2e67a37b15d5470643f109dbcc02fe509839fa5641140cb4cb19a1e70a8"
+    },
+    {
+      "dialectId": 29,
+      "dialectName": "大武魯凱語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/29/20.xml",
+      "path": "raw/29.xml",
+      "bytes": 4351,
+      "sha256": "a40942da2d446d19d3b5355f4ab1c42206b0faaafbb053d7d7552de2e0e1da58"
+    },
+    {
+      "dialectId": 30,
+      "dialectName": "多納魯凱語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/30/20.xml",
+      "path": "raw/30.xml",
+      "bytes": 4340,
+      "sha256": "8d67871631ef00b4b30e40ab8065a50f0a8710183ba52c62dc6e336e88c682fa"
+    },
+    {
+      "dialectId": 31,
+      "dialectName": "茂林魯凱語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/31/20.xml",
+      "path": "raw/31.xml",
+      "bytes": 4322,
+      "sha256": "d641dfc306a75925a748b51728966d03d7610d760acb18328572f8571ef602ce"
+    },
+    {
+      "dialectId": 32,
+      "dialectName": "萬山魯凱語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/32/20.xml",
+      "path": "raw/32.xml",
+      "bytes": 4341,
+      "sha256": "6dce64be8dcd876a5875cecd2a77e83c38905cab1f53838b33fed4870170836c"
+    },
+    {
+      "dialectId": 33,
+      "dialectName": "太魯閣語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/33/20.xml",
+      "path": "raw/33.xml",
+      "bytes": 4342,
+      "sha256": "c0bc32cfb20d4b7eb9997ff6f78a09241e99f95ce480e85dedb1ffa6a6440d28"
+    },
+    {
+      "dialectId": 34,
+      "dialectName": "噶瑪蘭語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/34/20.xml",
+      "path": "raw/34.xml",
+      "bytes": 4317,
+      "sha256": "a8b29797edac82952f402e06517b3020128ced4e8163772b7b6793390945dae5"
+    },
+    {
+      "dialectId": 35,
+      "dialectName": "鄒語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/35/20.xml",
+      "path": "raw/35.xml",
+      "bytes": 4351,
+      "sha256": "fc93651fb88be307662436a910c088f23350872aca45b8dd67b28d8ebd1ab75f"
+    },
+    {
+      "dialectId": 38,
+      "dialectName": "南王卑南語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/38/20.xml",
+      "path": "raw/38.xml",
+      "bytes": 4390,
+      "sha256": "269a334be9db5eeff94ef4248154263ebb083b970077adedaff48eefa1c83544"
+    },
+    {
+      "dialectId": 39,
+      "dialectName": "知本卑南語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/39/20.xml",
+      "path": "raw/39.xml",
+      "bytes": 4390,
+      "sha256": "c8e2e67f1f747a5fa6fef635f21e5469f3035d305948a72e69b8cc699c9443c0"
+    },
+    {
+      "dialectId": 40,
+      "dialectName": "西群卑南語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/40/20.xml",
+      "path": "raw/40.xml",
+      "bytes": 4378,
+      "sha256": "f3e48dcd9276f341ef7e0c8f6efaf01d8f8b498f7e9c01880a6b4051fb49b981"
+    },
+    {
+      "dialectId": 41,
+      "dialectName": "建和卑南語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/41/20.xml",
+      "path": "raw/41.xml",
+      "bytes": 4376,
+      "sha256": "bf743ed9702e90d94d6a8e38991b92fbb95446d0889f46d728eea8d96c039dcd"
+    },
+    {
+      "dialectId": 42,
+      "dialectName": "雅美語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/42/20.xml",
+      "path": "raw/42.xml",
+      "bytes": 4326,
+      "sha256": "5f431480a2ad9a95b7384156bc903dffcf77ec8d7463174e354f214c9b9c16eb"
+    },
+    {
+      "dialectId": 43,
+      "dialectName": "撒奇萊雅語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/43/20.xml",
+      "path": "raw/43.xml",
+      "bytes": 4359,
+      "sha256": "e0865db66c4ec5b16848d7fb51d2f1e62d5cbf79be1c4ef28311c7ff776b4960"
+    },
+    {
+      "dialectId": 36,
+      "dialectName": "卡那卡那富語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/36/20.xml",
+      "path": "raw/36.xml",
+      "bytes": 4406,
+      "sha256": "8f981a7bdef3feae6f88b873a4e5c7c1851d22b683eec173004f0424ed9bd806"
+    },
+    {
+      "dialectId": 37,
+      "dialectName": "拉阿魯哇語",
+      "url": "https://web.klokah.tw/extension/sp_data/junior/37/20.xml",
+      "path": "raw/37.xml",
+      "bytes": 4392,
+      "sha256": "04fbb52b739684fb953d0cd76bdb8c09b93d34f0d772566af362b0e146e55fdc"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_1.png",
+      "path": "images/1_1.png",
+      "bytes": 22815,
+      "sha256": "d7d479099eb8e58c3eab3ac00b98b90635841ae50fa6b2925c9ed144a649f4d5"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_2.png",
+      "path": "images/1_2.png",
+      "bytes": 20478,
+      "sha256": "3140f9e55db82f860f3b8d12da4f9077f5e8ad4ecfbb075ef6f41c5aadceefd7"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_3.png",
+      "path": "images/1_3.png",
+      "bytes": 17391,
+      "sha256": "4a4c2ea9f1dd2ac71867f7592e610bc3a8c0bf0a4f25a25a5e728e8f13b60ef9"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_4.png",
+      "path": "images/1_4.png",
+      "bytes": 19814,
+      "sha256": "202a85699a1d49bd0be02fb1345580ca106975bb997b439baeaecb97698c0545"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_5.png",
+      "path": "images/1_5.png",
+      "bytes": 30184,
+      "sha256": "8b0d65cd14e4e6ac0988bb17b69d2ea0536e6ac4da34d6778bff3ce83815c115"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_6.png",
+      "path": "images/1_6.png",
+      "bytes": 20292,
+      "sha256": "93d258db4276bd453a7c03ed9cab6f9beda606b3f2db802238ead938fd6beebe"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_7.png",
+      "path": "images/1_7.png",
+      "bytes": 30332,
+      "sha256": "95ed6d48c2bff967d1ed322aecded002348c6087a397b2b87c3def486e0bc9e6"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_8.png",
+      "path": "images/1_8.png",
+      "bytes": 21151,
+      "sha256": "ed5fb3e9b5f14ec7c5f912e35ecca108421acdae6f374bf86c56d774ebcf53f6"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_9.png",
+      "path": "images/1_9.png",
+      "bytes": 21536,
+      "sha256": "2884b97f63b2feec8944bb79deee97d25ffe56f605d6f95f8fe6440a6f320d56"
+    },
+    {
+      "url": "https://klokah.tw/extension/sp_junior/graphics_100x100/recognize/1_10.png",
+      "path": "images/1_10.png",
+      "bytes": 19993,
+      "sha256": "b879dcea6b439f23375e76733b5f307d3319aa9e7e50a26cd7ad5a48559f9319"
+    }
+  ]
+}
