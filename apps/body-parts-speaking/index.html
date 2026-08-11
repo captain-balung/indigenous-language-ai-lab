@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="用說的練習 42 個方言別的身體部位族語句子，由語音辨識與翻譯協助判定。">
+  <title>身體部位口說練習｜族語e樂園 AI 實驗室</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23253154'/%3E%3Cpath d='M16 7a3 3 0 0 1 3 3v6a3 3 0 0 1-6 0v-6a3 3 0 0 1 3-3z' fill='%23ff7957'/%3E%3Cpath d='M10 15a6 6 0 0 0 12 0M16 21v4' stroke='%23fff5d7' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/apps/body-parts-practice/styles.css">
+  <link rel="stylesheet" href="/apps/body-parts-speaking/styles.css">
+</head>
+<body>
+  <a class="skip" href="#practice">跳至練習</a>
+  <header>
+    <a class="back" href="/">← 返回 AI 實驗室</a>
+    <div class="hero-copy"><p>基礎學習 · MISSION 02</p><h1>身體部位口說練習</h1><span>看圖片、用族語念出完整句子，和 AI 小教練一起確認意思。</span></div>
+    <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
+  </header>
+
+  <main id="practice">
+    <section class="setup panel" aria-labelledby="setup-title">
+      <div class="step">STEP 1</div><h2 id="setup-title">選擇你的練習語別</h2>
+      <div class="select-grid">
+        <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
+        <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
+      </div>
+
+      <div class="notice notice--model">
+        <strong>語音辨識目前是「族級」模型</strong>
+        <p>
+          官方語音辨識只提供 <b>16 個族級模型</b>，沒有 42 個方言別模型。你選的方言別用來
+          <b>挑選教材與判定語意</b>，辨識時送出的是該族的通用模型。
+          方言之間的詞彙與音韻差異可能造成辨識偏差，<b>這是模型的限制，不代表你念錯</b>。
+        </p>
+        <p id="model-note" class="model-note" aria-live="polite"></p>
+      </div>
+
+      <div class="notice notice--privacy">
+        <strong>錄音會送到第三方服務</strong>
+        <ul>
+          <li>你的錄音會傳送到 <code>ai3.iformosa.com.tw</code>，交由 Formosan AI 辨識後回傳文字。</li>
+          <li>本站<b>不儲存</b>你的錄音，也<b>不轉送</b>給該服務以外的任何對象；沒有帳號、沒有追蹤、沒有 cookie。</li>
+          <li><b>請不要錄入個人資料或不希望外流的內容。</b></li>
+        </ul>
+      </div>
+
+      <div id="api-status" class="api-status" aria-live="polite">正在確認語音辨識服務…</div>
+      <button id="start" class="primary" disabled>開始練習</button>
+      <p class="alt-route">不方便出聲，或麥克風不能用？<a href="/apps/body-parts-practice/">改用打字版（MISSION 01）</a>——同一批教材、同樣的判定方式。</p>
+    </section>
+
+    <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
+      <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">本輪 1 / 10</span></div>
+      <div class="question-grid">
+        <figure><img id="question-image" src="/data/body-parts/images/1_1.png" alt="身體部位題目圖片"></figure>
+        <div class="answer-area">
+          <p class="prompt">看圖回答</p><h2 id="question-title">這是什麼？</h2>
+          <p id="speak-hint">請按下錄音，用族語念出完整句子。</p>
+
+          <div class="recorder">
+            <button id="record" class="primary record-button" type="button">
+              <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+            </button>
+            <output id="record-time" aria-live="off">00:00</output>
+          </div>
+
+          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+            <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+          </div>
+
+          <audio id="preview" controls hidden></audio>
+          <p class="inline-privacy">送出後這段錄音會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。請勿錄入個資。</p>
+          <div class="submit-row">
+            <button id="submit" class="primary" disabled>送出辨識</button>
+            <button id="rerecord" type="button" hidden>重新錄音</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="heard" class="heard" hidden aria-live="polite"></div>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+      <div class="quiz-actions">
+        <button id="retry" hidden>重試判定</button>
+        <button id="reveal" hidden>查看教材答案</button>
+        <button id="next" hidden>下一題 →</button>
+      </div>
+      <div id="model-answer" class="model-answer" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>教材來源與授權</strong>
+    <p>資料來源－<a href="https://web.klokah.tw/extension/sp_junior/practice.php" target="_blank" rel="noopener">原住民族語E樂園</a>，由財團法人原住民族語言研究發展基金會製作，以 <a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 釋出。本練習不得作商業用途；教材不屬於本專案原始碼授權範圍。</p>
+  </footer>
+  <script type="module" src="/apps/body-parts-speaking/app.mjs"></script>
+</body>
+</html>

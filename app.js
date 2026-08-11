@@ -9,7 +9,7 @@ const categories = [
 const applicationSeeds = {
   basics: [
     ["身體部位練習", "看圖片練習 42 個方言別的身體部位完整句子。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
-    ["字母練習室", "認識字母與發音，建立閱讀基礎。", "assets/icons/alphabet-blocks.webp"],
+    ["身體部位口說練習", "用說的練習 42 個方言別的身體部位句子，語音辨識會顯示系統聽到的內容。", "assets/icons/studio-microphone.webp", "available", "apps/body-parts-speaking/"],
     ["詞彙收藏冊", "用主題卡片累積生活常用詞彙。", "assets/icons/vocabulary-book.webp"],
     ["跟讀小教練", "跟著提示反覆練習，勇敢開口說。", "assets/icons/speaking-microphone.webp"]
   ],

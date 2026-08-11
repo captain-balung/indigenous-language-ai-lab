@@ -2,3 +2,11 @@
 .server.*.log
 .DS_Store
 Thumbs.db
+
+# 錄音與音訊一律不入庫（口說練習的錄音只存在當次頁面狀態）
+*.wav
+*.mp3
+*.ogg
+*.flac
+*.m4a
+*.webm
