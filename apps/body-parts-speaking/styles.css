@@ -1,0 +1,59 @@
+/* 身體部位口說練習：沿用 MISSION 01 的視覺系統，只補口說專屬的元件 */
+
+.notice{margin:1rem 0;padding:.9rem 1.1rem;border:3px solid var(--ink);border-radius:16px;background:#fff}
+.notice strong{display:block;margin-bottom:.35rem;font-size:1.02rem}
+.notice p,.notice ul{margin:.3rem 0}
+.notice ul{padding-left:1.2rem}
+.notice li+li{margin-top:.25rem}
+.notice code{padding:.05rem .35rem;border-radius:6px;background:#eef2f8;font-size:.95em;word-break:break-all}
+.notice--model{border-left-width:9px;background:#eaf3ff}
+.notice--privacy{border-left-width:9px;background:#fff3e2}
+.model-note{font-weight:900}
+.model-note[data-blocked=true]{color:#b03a24}
+
+.alt-route{margin:.9rem 0 0;font-weight:700;color:#4a5474}
+.alt-route a{color:#1a5fbd}
+
+#speak-hint{margin:.3rem 0 .9rem;font-weight:700;color:#4a5474}
+
+.recorder{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+.record-button{display:inline-flex;align-items:center;gap:.6rem;min-width:11rem}
+.record-dot{width:.85rem;height:.85rem;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.record-button.is-recording{background:#b03a24}
+.record-button.is-recording .record-dot{background:#ffd7c9;animation:pulse 1.1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+#record-time{padding:.3rem .7rem;border:2px solid var(--ink);border-radius:99px;background:#fff;font-weight:900;font-variant-numeric:tabular-nums}
+
+/* 狀態一律「圖示＋文字」，不靠顏色或動畫單獨表意 */
+.record-state{display:flex;align-items:center;gap:.55rem;margin:.8rem 0;padding:.55rem .8rem;border:2px solid var(--ink);border-radius:12px;background:#eef2f8;font-weight:900}
+.record-state__icon{font-size:1.05rem}
+.record-state[data-state=recording]{background:#ffe0d6}
+.record-state[data-state=recorded]{background:#ddf5e7}
+.record-state[data-state=converting],.record-state[data-state=transcribing],.record-state[data-state=slow]{background:#fff1c4}
+.record-state[data-state=failed]{background:#f6e3e0}
+
+#preview{width:100%;margin:.4rem 0 .6rem}
+.inline-privacy{margin:.2rem 0 .8rem;padding:.5rem .7rem;border-left:5px solid #e2a33c;border-radius:0 10px 10px 0;background:#fdf6e4;font-size:.9rem;font-weight:700;color:#6b5426}
+.submit-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.submit-row .primary{flex:1 1 12rem;margin-top:0}
+
+.heard{margin-top:1.4rem;padding:1rem;border:3px dashed var(--ink);border-radius:16px;background:#f6f2ff}
+.heard strong{font-size:1.05rem}
+.heard-text{margin:.35rem 0;font-size:1.35rem;font-weight:900;word-break:break-word}
+.heard small{display:block;color:#4a5474;font-weight:700}
+
+@media(max-width:720px){
+  /* 02 的標題比 01 長一行，窄螢幕會把副標推進插圖裡；
+     只在本頁把首屏加高、標題略縮，不動 01 共用的樣式表 */
+  header{min-height:680px}
+  .hero-copy h1{font-size:2.7rem}
+  .hero-copy span{display:block;position:relative;z-index:2}
+  .recorder{gap:.6rem}
+  .record-button{width:100%;justify-content:center}
+  #record-time{width:100%;text-align:center}
+  .submit-row{flex-direction:column}
+  .heard-text{font-size:1.2rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .record-button.is-recording .record-dot{animation:none}
+}
