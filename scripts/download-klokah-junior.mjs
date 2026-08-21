@@ -59,7 +59,8 @@ const FAMILIES = {
   match: { typeId: 6, typeEn: "match", order: "matchOrder", letters: "ABCDE", per: { questionAb: "match{L}AbA", questionCh: "match{L}ChA", answerAb: "match{L}AbB", answerCh: "match{L}ChB" } },
 };
 
-// classId → classNo 與每方言預期題數。數量已在多個方言上抽驗，跨方言一致。
+// classId → classNo 與每方言預期題數。全部 42 × 24 組合都清點過：
+// 除了 word/classId 5 之外，每個類別在 42 個方言別的題數都相同。
 const CLASSES = [
   { family: "recognize", classId: 20, classNo: 1, name: "身體部位", itemsPerDialect: 10 },
   { family: "recognize", classId: 21, classNo: 2, name: "動物", itemsPerDialect: 10 },
@@ -78,7 +79,9 @@ const CLASSES = [
   { family: "choiceTwo", classId: 34, classNo: 4, name: "敘述句[單一動詞]", itemsPerDialect: 5 },
   { family: "choiceTwo", classId: 35, classNo: 5, name: "祈使句", itemsPerDialect: 5 },
   { family: "match", classId: 36, classNo: 1, name: "配合題", itemsPerDialect: 10, lettersPerItem: 5 },
-  { family: "word", classId: 5, classNo: 5, name: "人物", itemsPerDialect: 11 },
+  // 恆春阿美語（5）只有 9 筆，其餘 41 個方言都是 11 筆。這是來源本身的差異，
+  // 保留成明列的例外，而不是把檢查放寬成「至少幾筆」——放寬就再也偵測不到上游變動。
+  { family: "word", classId: 5, classNo: 5, name: "人物", itemsPerDialect: 11, exceptions: { 5: 9 } },
   { family: "word", classId: 7, classNo: 7, name: "身體部位", itemsPerDialect: 10 },
   { family: "word", classId: 8, classNo: 8, name: "動物", itemsPerDialect: 10 },
   { family: "word", classId: 9, classNo: 9, name: "植(食)物/水果", itemsPerDialect: 10 },
@@ -87,13 +90,29 @@ const CLASSES = [
   { family: "dialogue", classId: 217, classNo: 1, name: "簡短對話", itemsPerDialect: 10, lettersPerItem: 5 },
 ];
 
+// 某個方言、某個類別的預期題數。exceptions 是來源本身的差異，逐筆明列。
+function expectedItems(spec, dialectId) {
+  return spec.exceptions?.[dialectId] ?? spec.itemsPerDialect;
+}
+
+// 各家族的正規總數（未套用例外）。
 const FAMILY_TOTALS = CLASSES.reduce((totals, spec) => {
   totals[spec.family] = (totals[spec.family] ?? 0) + spec.itemsPerDialect;
   return totals;
 }, {});
 
+function familyTotalsFor(dialectId) {
+  return CLASSES.reduce((totals, spec) => {
+    totals[spec.family] = (totals[spec.family] ?? 0) + expectedItems(spec, dialectId);
+    return totals;
+  }, {});
+}
+
 const EXPECTED_RAW_COUNT = dialects.length * CLASSES.length;
-const EXPECTED_RECORD_COUNT = dialects.length * Object.values(FAMILY_TOTALS).reduce((a, b) => a + b, 0);
+const EXPECTED_RECORD_COUNT = dialects.reduce(
+  (sum, [id]) => sum + Object.values(familyTotalsFor(id)).reduce((a, b) => a + b, 0),
+  0,
+);
 
 // ── 參數 ────────────────────────────────────────────────
 const argv = process.argv.slice(2);
@@ -243,10 +262,11 @@ function parseClass(xml, spec, dialectId) {
 }
 
 // 硬性檢查：任何一項不符就中止，不寫任何檔案。
-function assertClass(items, spec, dialectName) {
+function assertClass(items, spec, dialectId, dialectName) {
   const where = `${dialectName}／${spec.family}(${spec.classId})`;
-  if (items.length !== spec.itemsPerDialect) {
-    throw new Error(`${where} 預期 ${spec.itemsPerDialect} 題，實得 ${items.length} 題`);
+  const expected = expectedItems(spec, dialectId);
+  if (items.length !== expected) {
+    throw new Error(`${where} 預期 ${expected} 題，實得 ${items.length} 題`);
   }
   const orders = new Set(items.map((item) => item.order));
   if (orders.size !== items.length) throw new Error(`${where} 有重複的 order`);
@@ -295,7 +315,7 @@ const fetched = await mapLimit(jobs, 3, async (job) => {
   const url = `${xmlBase}/${job.dialectId}/${job.spec.classId}.xml`;
   const { bytes, text } = await fetchValidated(url, "xml");
   const items = parseClass(text, job.spec, job.dialectId);
-  assertClass(items, job.spec, job.dialectName);
+  assertClass(items, job.spec, job.dialectId, job.dialectName);
   done += 1;
   if (done % 50 === 0) console.log(`  XML ${done}/${jobs.length}`);
   return { ...job, url, bytes, items };
@@ -312,7 +332,7 @@ for (const entry of fetched) {
   shards.get(entry.dialectId)[entry.spec.family].push(...entry.items);
 }
 for (const [dialectId, shard] of shards) {
-  for (const [family, expected] of Object.entries(FAMILY_TOTALS)) {
+  for (const [family, expected] of Object.entries(familyTotalsFor(dialectId))) {
     if (shard[family].length !== expected) {
       throw new Error(`方言 ${dialectId} 的 ${family} 預期 ${expected} 筆，實得 ${shard[family].length} 筆`);
     }
@@ -461,6 +481,12 @@ const dataset = {
   classes: CLASSES,
   totals: {
     perDialect: FAMILY_TOTALS,
+    perDialectExceptions: Object.fromEntries(
+      dialects
+        .map(([id]) => [id, familyTotalsFor(id)])
+        .filter(([, totals]) => Object.entries(totals).some(([family, count]) => count !== FAMILY_TOTALS[family]))
+        .map(([id, totals]) => [id, totals]),
+    ),
     recordCount: EXPECTED_RECORD_COUNT,
     rawFileCount: EXPECTED_RAW_COUNT,
     imageCount: EXPECTED_IMAGE_COUNT,
@@ -478,7 +504,7 @@ const manifest = {
   expectedRecordCount: EXPECTED_RECORD_COUNT,
   expectedRawCount: EXPECTED_RAW_COUNT,
   expectedImageCount: EXPECTED_IMAGE_COUNT,
-  expectedItemsPerClass: CLASSES.map(({ family, classId, itemsPerDialect }) => ({ family, classId, itemsPerDialect })),
+  expectedItemsPerClass: CLASSES.map(({ family, classId, itemsPerDialect, exceptions }) => ({ family, classId, itemsPerDialect, ...(exceptions ? { exceptions } : {}) })),
   audioPolicy: "hotlinked-at-runtime",
   audioSpotCheck,
   sourceFileCount: files.length,
