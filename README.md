@@ -14,6 +14,12 @@
 python -m http.server 4173
 ```
 
+或使用專案內零依賴的靜態伺服器（需 Node 18 以上）：
+
+```powershell
+node scripts/serve.mjs 4173
+```
+
 開啟 `http://127.0.0.1:4173/`。
 
 ## 修改卡片
@@ -42,6 +48,8 @@ python -m http.server 4173
 ## 已上線應用
 
 - [身體部位練習](apps/body-parts-practice/README.md)：42 個方言別、420 筆教材；先做教材整句比對，再以 Formosan AI `translate_to_zh` 及受控中文同義詞輔助判定。
+- [身體部位口說練習](apps/body-parts-speaking/README.md)：與打字版同一批教材、同樣的判定方式，改用錄音作答，經 Formosan AI `asr_transcribe` 取得族語文字。
+- [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
 
 ## 素材與授權
 
@@ -57,4 +65,19 @@ python -m http.server 4173
 
 ```powershell
 node scripts/download-body-parts.mjs
+```
+
+### 初級認證題型語料
+
+「初級模擬站」的資料位於 `data/klokah-junior/`，內容是「族語 E 樂園」句型篇國中版的六種題型：
+42 個方言別、共 7768 筆語料與 180 張共用圖片，同樣依
+[CC BY-NC-SA 4.0](data/klokah-junior/LICENSE.md) 使用。
+
+**音檔不入庫**：每筆資料只帶 `audioUrl`，執行時由 `klokah.tw` 直接播放。
+這代表使用者播放時該網站會看到其 IP 位址，應用頁面已揭露這件事。
+
+重新取得及驗證資料：
+
+```powershell
+node scripts/download-klokah-junior.mjs
 ```
