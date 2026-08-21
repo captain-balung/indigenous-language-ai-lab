@@ -8,6 +8,7 @@ import {
   pickOne, shuffle, createPaper, flattenPaper,
 } from "../paper.mjs";
 import { OFFICIAL, SPEAKING_COVERAGE_NOTE, judgeWordReading, gradePaper } from "../scoring.mjs";
+import { ASR_MODELS, asrModelFor, auditAsrModels, encodeWav, readAsrText, ASR_TARGET_SAMPLE_RATE } from "../../body-parts-speaking/asr.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const dataRoot = path.join(root, "data/klokah-junior");
@@ -21,6 +22,12 @@ const paperSource = read("apps/beginner-mock-exam/paper.mjs");
 const stripComments = (source) => source.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 const paperCode = stripComments(paperSource);
 const scoringCode = stripComments(scoringSource);
+
+const page = read("apps/beginner-mock-exam/index.html");
+const appSource = read("apps/beginner-mock-exam/app.mjs");
+const appCode = stripComments(appSource);
+const recorderSource = read("apps/beginner-mock-exam/recorder.mjs");
+const recorderCode = stripComments(recorderSource);
 
 /* ══════════ 1. 資料契約 ══════════ */
 
@@ -458,4 +465,163 @@ assert.equal(judgeWordReading("wacu", ""), "undetermined");
   assert.ok(report.official.disclaimer.includes("不預測你是否會通過"));
 }
 
-console.log("PASS: 42 shards / 180 images / no audio in repo, 4+2 sections, 200 seeds × 3 dialects invariants, honest scoring");
+
+/* ══════════ 4. 頁面契約 ══════════ */
+
+// 資源一律根絕對路徑（沿用 de3ab32 建立的規則）。
+assert.ok(page.includes('href="/apps/beginner-mock-exam/styles.css"'));
+assert.ok(page.includes('src="/apps/beginner-mock-exam/app.mjs"'));
+assert.ok(page.includes('href="/apps/body-parts-practice/styles.css"'), "沿用 MISSION 01 的視覺系統");
+assert.ok(page.indexOf('href="/apps/body-parts-practice/styles.css"') < page.indexOf('href="/apps/beginner-mock-exam/styles.css"'),
+  "必須先連 MISSION 01 的樣式表，本頁的樣式才是 delta");
+assert.ok(!page.includes('href="styles.css"'));
+assert.ok(!page.includes('src="app.mjs"'));
+assert.ok(page.includes('href="/"'), "必須有返回 AI 實驗室的連結");
+assert.ok(page.includes("認證模擬 · MISSION 01"), "hero 標籤是分類內的卡片序號");
+
+// klokah 不送 CORS 標頭：加 crossorigin 會讓音檔完全播不出來。
+assert.ok(!/crossorigin/.test(page), "音檔元素不得加 crossorigin");
+assert.ok(page.includes('id="player"') && page.includes('preload="none"'), "30 題最多 5 個音檔，不得預先載入");
+
+// MISSION 01 的 figure{display:grid} 會蓋掉 [hidden]，本頁靠 hidden 切換題型，
+// 必須自己把 [hidden] 補回來，否則上一題的圖片會殘留在下一題。
+const styles = read("apps/beginner-mock-exam/styles.css");
+assert.ok(/\[hidden\]\{display:none ?!important\}/.test(styles),
+  "樣式表必須補上 [hidden]{display:none !important}");
+// 固定在底部的導覽列會蓋住配合題的五張圖片，實測擋掉兩排。
+assert.ok(!/\.quiz-actions\{[^}]*position:sticky/.test(styles), "導覽列不得 sticky，會蓋住選項圖片");
+
+// 三個步驟的初始可見性。
+assert.ok(/<section id="quiz"[^>]*\shidden/.test(page), "作答區初始必須隱藏");
+assert.ok(/<section id="report"[^>]*\shidden/.test(page), "成績單初始必須隱藏");
+
+// 七項揭露都必須在作答區之前。
+const quizAt = page.indexOf('id="quiz"');
+for (const [label, needle] of [
+  ["範圍", "notice--scope"],
+  ["改編說明", "notice--adaptation"],
+  ["音檔外連", "notice--audio"],
+  ["族級模型", "notice--model"],
+  ["錄音隱私", "notice--privacy"],
+  ["無障礙限制", "notice--a11y"],
+]) {
+  const at = page.indexOf(needle);
+  assert.ok(at > -1, `頁面缺少${label}揭露`);
+  assert.ok(at < quizAt, `${label}揭露必須出現在作答區之前`);
+}
+assert.ok(page.includes("klokah.tw"), "必須揭露音檔由 klokah.tw 播放");
+assert.ok(page.includes("IP 位址"), "必須揭露 IP 位址會被對方看到");
+assert.ok(page.includes("ai3.iformosa.com.tw"), "必須揭露錄音送往何處");
+assert.ok(page.includes("請不要錄入個人資料"), "必須提醒不要錄入個資");
+assert.ok(page.includes("CC BY-NC-SA 4.0"), "頁尾必須有教材授權標示");
+assert.ok(page.includes("web.klokah.tw"), "頁尾必須標示原著作網址");
+
+// 頁面不得引用任何 CDN 或第三方指令碼。
+assert.ok(!/<script[^>]+src="https?:/.test(page), "不得載入遠端指令碼");
+for (const source of [appSource, recorderSource, paperSource, scoringSource]) {
+  assert.ok(!/from\s+["']https?:/.test(source), "模組不得從 CDN 匯入");
+}
+
+/* ══════════ 5. 音檔降級 ══════════ */
+
+assert.ok(/player\.addEventListener\("error"/.test(appCode), "必須監聽音檔的 error 事件");
+assert.ok(appCode.includes("AUDIO_STALL_MS"), "必須有 stall 看門狗——請求卡住時不會有任何事件");
+assert.ok(appCode.includes("audioFailed = true"), "音檔失敗必須標記該題");
+assert.ok(page.includes("音檔載入失敗") || appSource.includes("音檔載入失敗"), "必須告訴使用者音檔載入失敗");
+assert.ok(appSource.includes("本題不計分"), "音檔失敗時必須說明該題不計分");
+// klokah 沒有 CORS，用 fetch 取音檔一定失敗。
+assert.ok(!/fetch\([^)]*klokah/.test(appCode), "不得用 fetch 取 klokah 音檔");
+assert.ok(!/fetch\([^)]*klokah/.test(recorderCode));
+
+/* ══════════ 6. 口說紅線（沿用 MISSION 02 的規則） ══════════ */
+
+// 42 個方言別都對得到族級模型；限制是粒度，不是覆蓋率。
+for (const dialect of DIALECTS) {
+  assert.ok(asrModelFor(dialect.ethnicity), `${dialect.name} 對不到 ASR 模型`);
+}
+assert.equal(Object.keys(ASR_MODELS).length, 16);
+// trv 前綴陷阱：賽德克與太魯閣的 NLLB 前綴相同，模型必須不同。
+assert.equal(asrModelFor("賽德克"), "formosan_sdq");
+assert.equal(asrModelFor("太魯閣"), "formosan_trv");
+assert.notEqual(asrModelFor("賽德克"), asrModelFor("太魯閣"));
+for (const source of [appCode, recorderCode]) {
+  assert.ok(!/code\.(slice|startsWith|substring)/.test(source), "不得由 NLLB 代碼前綴推導 ASR 模型");
+  assert.ok(!/replace\(.*formosan/.test(source), "不得由字串拼接推導 ASR 模型");
+}
+assert.ok(recorderCode.includes("asrModelFor(ethnicity)"), "模型一律查表");
+
+// 送出的必須是轉檔後的 wav，絕不是原始錄音。
+assert.ok(/form\.append\("audio", wav/.test(recorderCode), "必須送出轉檔後的 WAV");
+assert.ok(!/form\.append\("audio",\s*(recordedBlob|blob)/.test(recorderCode), "絕不可送出原始錄音");
+assert.ok(!/recordedBlob/.test(recorderCode), "recorder.mjs 不該碰到原始錄音變數");
+// 轉檔失敗必須直接放棄，不得繼續走到 transcribe。
+const convertCatch = appCode.slice(appCode.indexOf("await convertToAsrWav"), appCode.indexOf("setRecordState(\"transcribing\")"));
+assert.ok(convertCatch.includes("轉檔失敗"), "轉檔失敗必須明說");
+assert.ok(/轉檔失敗[\s\S]{0,400}?return;/.test(appCode), "轉檔失敗的分支必須直接 return，不得繼續送出");
+
+// 措辭紅線：不因為機器聽錯就說使用者念錯。
+// 「這不代表你念錯」是我們要求出現的否定句，掃描前先把否定形式拿掉，
+// 剩下的才是真正在斷言發音的措辭。
+const withoutNegations = (text) => text
+  .replaceAll("這不代表你念錯", "")
+  .replaceAll("不代表你念錯", "")
+  .replaceAll("不是你念錯", "");
+for (const forbidden of ["你念錯", "發音錯誤", "發音不正確", "念錯了", "唸錯"]) {
+  assert.ok(!withoutNegations(appSource).includes(forbidden), `不得出現「${forbidden}」這種斷言發音的措辭`);
+  assert.ok(!withoutNegations(page).includes(forbidden), `不得出現「${forbidden}」這種斷言發音的措辭`);
+}
+assert.ok(appSource.includes("這不代表你念錯"), "不相符時必須說明這不代表念錯");
+assert.ok(appSource.includes("系統聽到的"), "必須顯示系統聽到的內容");
+assert.ok(appSource.includes("尚未被判錯"), "辨識失敗時必須說明尚未被判錯");
+assert.ok(page.includes("不代表你念錯"), "揭露區必須說明族級模型的偏差不代表念錯");
+
+// 無帳號、無追蹤、無 cookie。
+for (const source of [appCode, recorderCode]) {
+  assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(source), "本站不得使用任何瀏覽器儲存");
+}
+assert.ok(recorderCode.includes("URL.revokeObjectURL"), "必須釋放錄音的 object URL");
+
+// 聽力半場不依賴 ASR：任何服務狀態都不得停用「開始」。
+assert.ok(!/audit[\s\S]{0,200}start\.disabled = true/.test(appCode), "ASR 稽核結果不得停用開始按鈕");
+assert.ok(appSource.includes("聽力不受影響") || appSource.includes("聽力四部分仍可正常作答"),
+  "服務不可用時必須說明聽力仍可作答");
+
+/* ══════════ 7. WAV 編碼格式 ══════════ */
+
+{
+  const wav = new DataView(encodeWav(new Float32Array([0, 0.5, -0.5, 1, -1]), ASR_TARGET_SAMPLE_RATE));
+  const text = (offset, length) => Array.from({ length }, (_, i) => String.fromCharCode(wav.getUint8(offset + i))).join("");
+  assert.equal(text(0, 4), "RIFF");
+  assert.equal(text(8, 4), "WAVE");
+  assert.equal(text(12, 4), "fmt ");
+  assert.equal(text(36, 4), "data");
+  assert.equal(wav.getUint16(20, true), 1, "必須是 PCM");
+  assert.equal(wav.getUint16(22, true), 1, "必須是單聲道");
+  assert.equal(wav.getUint32(24, true), 16_000, "必須是 16 kHz");
+  assert.equal(wav.getUint16(34, true), 16, "必須是 16-bit");
+}
+
+// readAsrText 的每一種異常都必須丟例外，交由呼叫端顯示「無法判定」。
+assert.throws(() => readAsrText(null, 200));
+assert.throws(() => readAsrText({ ok: true, data: { text: "x" } }, 500));
+assert.throws(() => readAsrText({ ok: false, error: "拒絕" }, 200));
+assert.throws(() => readAsrText({ ok: true, data: {} }, 200));
+assert.equal(readAsrText({ ok: true, data: { text: " wacu " } }, 200), "wacu");
+
+// 稽核的三條分支。
+{
+  assert.equal(auditAsrModels(ASR_MODELS, Object.values(ASR_MODELS)).consistent, true);
+  const missing = auditAsrModels(ASR_MODELS, Object.values(ASR_MODELS).filter((m) => m !== "formosan_ami"));
+  assert.equal(missing.unavailable.length, 1);
+  assert.equal(missing.unavailable[0].ethnicity, "阿美");
+  assert.equal(auditAsrModels(ASR_MODELS, [...Object.values(ASR_MODELS), "formosan_zzz"]).unknownFromApi.length, 1);
+}
+
+/* ══════════ 8. 沒有動到鄰居 ══════════ */
+
+for (const relative of ["apps/body-parts-practice/app.mjs", "apps/body-parts-speaking/app.mjs",
+                        "apps/body-parts-practice/core.mjs", "apps/body-parts-speaking/asr.mjs"]) {
+  assert.ok(!read(relative).includes("beginner-mock-exam"), `${relative} 不得被本次改動`);
+}
+
+console.log("PASS: 42 shards / 180 images / no audio in repo, 4+2 sections, 200 seeds × 3 dialects invariants, honest scoring, page contract, audio degradation, ASR red lines");
