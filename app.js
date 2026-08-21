@@ -102,7 +102,7 @@ function renderCard(application, index, accent) {
     : `aria-disabled="true"`;
 
   return `
-    <${tagName} class="app-card app-card--${accent}${isAvailable ? " app-card--available" : ""}" ${linkAttributes}>
+    <${tagName} class="app-card app-card--${accent}${isAvailable ? " app-card--available" : isMaintenance ? "" : " app-card--coming-soon"}" ${linkAttributes}>
       <div class="app-card__top">
         <span class="app-card__number">${String(index).padStart(2, "0")}</span>
         <span class="status-badge${isMaintenance ? " status-badge--maintenance" : ""}">${statusLabels[application.status]}</span>
