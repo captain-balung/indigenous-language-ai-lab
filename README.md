@@ -1,24 +1,30 @@
 # 族語e樂園 AI 實驗室
 
-族語學習 AI 應用的公開入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類，每類四張卡片，共 20 項任務。
+族語學習 AI 應用的入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類，每類四張卡片，共 20 項任務。進入網站需帳號與密碼（HTTP Basic Auth）。
 
 ## 線上網站
 
 正式網站：[https://indigenous-language-ai-lab.vercel.app/](https://indigenous-language-ai-lab.vercel.app/)
 
+瀏覽器會先跳出帳號與密碼視窗。帳密存在 Vercel 環境變數，不寫進程式碼。Basic Auth 只做 Base64 編碼，正式站必須走 HTTPS（Vercel 預設提供）。
+
 ## 本機預覽
 
-本專案是無建置步驟的純 HTML、CSS 與 JavaScript 網站：
+本專案是無建置步驟的純 HTML、CSS 與 JavaScript 網站。專案內靜態伺服器（需 Node 18 以上）在設定帳密後會啟用與正式站相同的閘門：
+
+```powershell
+$env:SITE_AUTH_USER="your-user"
+$env:SITE_AUTH_PASSWORD="your-password"
+node scripts/serve.mjs 4173
+```
+
+未設定這兩個變數時，`node scripts/serve.mjs` 仍可預覽，但會在終端機印出警告且不擋請求。
 
 ```powershell
 python -m http.server 4173
 ```
 
-或使用專案內零依賴的靜態伺服器（需 Node 18 以上）：
-
-```powershell
-node scripts/serve.mjs 4173
-```
+`python -m http.server` **不會**檢查帳密，只適合本機開發。
 
 開啟 `http://127.0.0.1:4173/`。
 
@@ -35,7 +41,7 @@ node scripts/serve.mjs 4173
 ## 設計與技術
 
 - Mobile-first，手機單欄、平板雙欄、桌機四欄。
-- 入口頁使用純本地資源，不需 CDN、第三方套件、登入或 Cookie；身體部位練習另使用公開 Formosan AI 翻譯 API，錯誤時保留教材本地比對功能。
+- 入口頁使用純本地資源，不需 CDN 或前端套件；整站由伺服器端 HTTP Basic Auth 把關（一組共用帳密，不是多人註冊）。身體部位練習另使用公開 Formosan AI 翻譯 API，錯誤時保留教材本地比對功能。
 - 支援鍵盤焦點、語意化標題、跳至主要內容與 `prefers-reduced-motion`。
 - 視覺延續《部落好心人》第二版的明亮配色、厚邊框、大圓角、卡片層次與輕量遊戲動效，但不使用其角色、文字、題目或素材。
 - 20 枚任務圖示採統一手繪遊戲美術，不使用平台相依的 emoji；生成與去背紀錄見 `assets/icons/README.md`。
@@ -43,7 +49,14 @@ node scripts/serve.mjs 4173
 
 ## 部署
 
-根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
+根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。Routing Middleware 會攔截所有路徑（含應用頁與 JSON）。
+
+合併後請到 Vercel 專案 **Settings → Environment Variables** 設定，範圍勾 Production 與 Preview，然後 Redeploy：
+
+- `SITE_AUTH_USER`
+- `SITE_AUTH_PASSWORD`
+
+正式站若沒設這兩個變數，所有請求都會回 401。可參考根目錄 `.env.example`。帳密請勿提交到 git。
 
 ## 已上線應用
 
