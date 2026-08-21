@@ -112,6 +112,31 @@ main { max-width: 1240px; margin: 0 auto; padding: 4rem clamp(1rem, 5vw, 2rem) 2
 .app-card__action { margin-top: auto; color: color-mix(in srgb, var(--accent) 76%, var(--ink)); font-size: .78rem; font-weight: 1000; }
 .app-card--available { text-decoration: none; cursor: pointer; }
 .app-card--available:focus-visible { outline: 5px solid #246bdd; outline-offset: 5px; }
+.app-card--coming-soon {
+  opacity: .52;
+  cursor: default;
+  filter: grayscale(.28);
+  box-shadow: 0 4px 0 rgba(37, 49, 84, .08);
+}
+.app-card--coming-soon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: repeating-linear-gradient(-45deg, transparent 0 10px, rgba(37, 49, 84, .05) 10px 20px);
+  pointer-events: none;
+}
+.app-card--coming-soon:hover {
+  transform: none;
+  box-shadow: 0 4px 0 rgba(37, 49, 84, .08);
+}
+.app-card--coming-soon .app-card__icon {
+  opacity: .72;
+  filter: grayscale(1);
+}
+.app-card--coming-soon .app-card__action {
+  color: var(--muted);
+}
 
 .category-pill--green, .category-section--green { --accent: var(--green); }
 .category-pill--blue, .category-section--blue { --accent: var(--blue); }
