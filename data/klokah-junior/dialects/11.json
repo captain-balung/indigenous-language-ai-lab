@@ -9,7 +9,8 @@
     "choiceTwo": 25,
     "match": 10,
     "word": 60,
-    "dialogue": 10
+    "dialogue": 10,
+    "pictureTalk": 1
   },
   "recognize": [
     {
@@ -3830,6 +3831,25 @@
           "chineseText": "你喜歡畫畫嗎？",
           "audioUrl": "https://klokah.tw/extension/sp_junior/sound/11/9dialogue/1_10_E.mp3"
         }
+      ]
+    }
+  ],
+  "pictureTalk": [
+    {
+      "id": "11-pictureTalk-1-1",
+      "classId": 218,
+      "classNo": 1,
+      "className": "看圖說話",
+      "order": 1,
+      "tip": "我喜歡的活動",
+      "indigenousText": "ksli cu mosa pwasan biru, matas, mowas biru, mowas, myugi, m’es cu krryax. myasa ci pntasan mu ro ba cu ci mowas biru, ksli caku nya ci mrhow psba biru. maki sali ga, yaba, yaya, suyan likuy, sswe knerin, ksli mung owas mu kwara ro mita myugi mu.",
+      "chineseText": "我喜歡去學校，學畫畫、讀書、唱歌、跳舞。我每天都很高興。我畫的圖很漂亮。我(也)很會讀書，老師很喜歡我。在家裡，爸爸、媽媽、哥哥、妹妹全都喜歡聽我唱歌、看我跳舞。",
+      "audioUrl": "https://klokah.tw/extension/sp_junior/sound/11/10pictureTalk/1_1.mp3",
+      "imageUrls": [
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_1.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_2.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_3.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_4.png"
       ]
     }
   ]

@@ -9,7 +9,8 @@
     "choiceTwo": 25,
     "match": 10,
     "word": 60,
-    "dialogue": 10
+    "dialogue": 10,
+    "pictureTalk": 1
   },
   "recognize": [
     {
@@ -3830,6 +3831,25 @@
           "chineseText": "你喜歡畫畫嗎？",
           "audioUrl": "https://klokah.tw/extension/sp_junior/sound/29/9dialogue/1_10_E.mp3"
         }
+      ]
+    }
+  ],
+  "pictureTalk": [
+    {
+      "id": "29-pictureTalk-1-1",
+      "classId": 218,
+      "classNo": 1,
+      "className": "看圖說話",
+      "order": 1,
+      "tip": "我喜歡的活動",
+      "indigenousText": "ku kadalameli ku akivaevanga taikalraa, ai madadalamenganaku seasenai si ududulri, lu senadha lu kihahagaimadu, wadulru swaela kiumase si pakihagai, lu ikai ku kidremedrememadu, lu senaimadu, pakaliyapai ki kidremedrememadu, kai udulri taingeaa ka ungdu, pakakeecenge ki kinaumasanemadu, lu thingalemadu seasenai si ududulri, aimatidalame ku taikaumasananemadu.",
+      "chineseText": "我喜歡的活動很多，但是我最喜歡的是唱歌和跳舞，快樂的時候唱歌，以影響別人跟著快樂，心情不好的時候唱歌，可以讓自己放鬆，跳舞是運動的一種，可以強健身體，所以如果會唱歌也會跳舞，生活一定是多采多姿的。",
+      "audioUrl": "https://klokah.tw/extension/sp_junior/sound/29/10pictureTalk/1_1.mp3",
+      "imageUrls": [
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_1.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_2.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_3.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_4.png"
       ]
     }
   ]

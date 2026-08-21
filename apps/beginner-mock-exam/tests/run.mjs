@@ -7,7 +7,8 @@ import {
   SECTION_SPECS, sectionSpecById, createRng, seedToPaperId, paperIdToSeed,
   pickOne, shuffle, createPaper, flattenPaper,
 } from "../paper.mjs";
-import { OFFICIAL, SPEAKING_COVERAGE_NOTE, judgeWordReading, gradePaper } from "../scoring.mjs";
+import { OFFICIAL, SPEAKING_COVERAGE_NOTE, POINT_SCHEME, judgeWordReading, judgeShortAnswerTranslation, scorePictureTalkTranslation, gradePaper } from "../scoring.mjs";
+import { activeSemanticJudge, createHeuristicSemanticJudge, createLlmSemanticJudge } from "../semantic-judge.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, encodeWav, readAsrText, ASR_TARGET_SAMPLE_RATE } from "../../body-parts-speaking/asr.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
@@ -39,7 +40,7 @@ assert.equal(dataset.shardPath, "dialects/{dialectId}.json");
 assert.equal(dataset.audioBase, "https://klokah.tw/extension/sp_junior/sound");
 assert.equal(dataset.audioPolicy, "hotlinked-at-runtime");
 assert.equal(dataset.source.license, "CC BY-NC-SA 4.0");
-assert.equal(dataset.classes.length, 24, "四大聽力題型 + 單詞 + 簡短對話共 24 個類別");
+assert.equal(dataset.classes.length, 25, "四大聽力題型 + 單詞 + 簡短對話 + 看圖說話共 25 個類別");
 
 // dataset 的方言別必須與 dialects.mjs 完全一致（同一組 id、同一組族名）。
 assert.deepEqual(dataset.dialects.map((d) => d.id), DIALECTS.map((d) => d.id));
@@ -56,7 +57,7 @@ assert.equal(wordClassFive.itemsPerDialect, 11);
 assert.equal(expectedItems(wordClassFive, 5), 9, "恆春阿美語的 word/5 只有 9 筆，必須明列為例外");
 assert.equal(expectedItems(wordClassFive, 1), 11);
 
-const audioUrlPattern = /^https:\/\/klokah\.tw\/extension\/sp_junior\/sound\/\d+\/(1word|3recognize|4choiceOne|5choiceTwo|6match|9dialogue)\/[\w-]+\.mp3$/;
+const audioUrlPattern = /^https:\/\/klokah\.tw\/extension\/sp_junior\/sound\/\d+\/(1word|3recognize|4choiceOne|5choiceTwo|6match|9dialogue|10pictureTalk)\/[\w-]+\.mp3$/;
 const imageExists = (imagePath) => fs.existsSync(path.join(dataRoot, imagePath));
 
 const shards = new Map();
@@ -69,7 +70,7 @@ for (const dialect of DIALECTS) {
   assert.equal(shard.ethnicity, dialect.ethnicity);
 
   // 逐家族比對 dataset.classes 算出來的預期數。
-  for (const family of ["recognize", "choiceOne", "choiceTwo", "match", "word", "dialogue"]) {
+  for (const family of ["recognize", "choiceOne", "choiceTwo", "match", "word", "dialogue", "pictureTalk"]) {
     const expected = dataset.classes
       .filter((spec) => spec.family === family)
       .reduce((sum, spec) => sum + expectedItems(spec, dialect.id), 0);
@@ -128,6 +129,17 @@ for (const dialect of DIALECTS) {
       assert.match(question.audioUrl, audioUrlPattern);
     }
   }
+  for (const item of shard.pictureTalk) {
+    assert.equal(item.order, 1);
+    assert.ok(item.tip && item.tip.trim(), `${dialect.name} pictureTalk 缺少 tip`);
+    assert.ok(item.chineseText && item.chineseText.trim(), `${dialect.name} pictureTalk 缺少中文參考答案`);
+    assert.equal(item.imageUrls.length, 4);
+    assert.equal(item.imagePaths, undefined, "看圖說話圖片不得入庫成 imagePaths");
+    assert.match(item.audioUrl, audioUrlPattern);
+    for (const imageUrl of item.imageUrls) {
+      assert.match(imageUrl, /^https:\/\/klokah\.tw\/extension\/sp_junior\/graphics_100x100\/pictureTalk\/\d+_\d+\.png$/);
+    }
+  }
 }
 
 // 圖片目錄的張數，以及「音檔一律不入庫」。
@@ -135,6 +147,7 @@ const countPng = (dir) => fs.readdirSync(path.join(dataRoot, "images", dir)).fil
 assert.equal(countPng("recognize"), 55);
 assert.equal(countPng("choiceOne"), 75);
 assert.equal(countPng("match"), 50);
+assert.equal(fs.existsSync(path.join(dataRoot, "images", "pictureTalk")), false, "看圖說話圖片不得入庫");
 
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true })
   .flatMap((entry) => (entry.isDirectory() ? walk(path.join(dir, entry.name)) : [path.join(dir, entry.name)]));
@@ -148,8 +161,8 @@ for (const extension of ["*.mp3", "*.wav", "*.ogg", "*.flac", "*.m4a", "*.webm"]
 
 /* ══════════ 2. 出卷器 ══════════ */
 
-assert.equal(SECTION_SPECS.length, 6);
-assert.deepEqual(SECTION_SPECS.map((s) => s.id), ["trueFalse", "choiceOne", "choiceTwo", "match", "wordReading", "shortAnswer"]);
+assert.equal(SECTION_SPECS.length, 7);
+assert.deepEqual(SECTION_SPECS.map((s) => s.id), ["trueFalse", "choiceOne", "choiceTwo", "match", "wordReading", "shortAnswer", "pictureTalk"]);
 
 // 四段聽力說明必須與 Lokahsu 官方「考試題型」頁面的原文逐字相符。
 assert.equal(sectionSpecById("trueFalse").instruction,
@@ -160,8 +173,10 @@ assert.equal(sectionSpecById("choiceTwo").instruction,
   "請聽電腦播出一個中文句子及三句族語句子後，選出與中文句子語意最接近的族語句子，並在答案卡上作答。每題播出兩遍。");
 assert.equal(sectionSpecById("match").instruction,
   "請聽電腦播出一個族語簡短對話後，在五個圖片中，選出相關的圖片來，並在答案卡上作答。每題播出兩遍。");
+assert.ok(sectionSpecById("pictureTalk").instruction.includes("四個圖片"));
 for (const spec of SECTION_SPECS) assert.ok(spec.adaptationNote.trim(), `${spec.id} 缺少改編說明`);
-assert.equal(sectionSpecById("shortAnswer").scorable, false, "簡答題不計分");
+assert.equal(sectionSpecById("shortAnswer").scorable, true, "簡答題會粗判是否合理");
+assert.equal(sectionSpecById("pictureTalk").scorable, true, "看圖說話會給分");
 
 // 出卷器不得偷用全域亂數或時間。
 assert.ok(!/Math\.random/.test(paperCode), "出卷器不得使用 Math.random");
@@ -218,12 +233,25 @@ for (const dialectId of sampledDialects) {
 
   for (let seed = 1; seed <= 200; seed += 1) {
     const paper = createPaper({ shard, dialect, seed });
-    assert.equal(paper.totalQuestions, 30);
+    assert.equal(paper.totalQuestions, 31);
     assert.equal(paper.listening.length, 4);
-    assert.equal(paper.speaking.length, 2);
-    assert.equal(flattenPaper(paper).length, 30);
+    assert.equal(paper.speaking.length, 3);
+    assert.equal(flattenPaper(paper).length, 31);
+    const flatParts = flattenPaper(paper).map((entry) => entry.section.part);
+    assert.deepEqual(
+      [...new Set(flatParts)],
+      ["speaking", "listening"],
+      "作答順序必須是口說先、聽力後",
+    );
+    assert.equal(flatParts[0], "speaking");
+    assert.equal(flatParts[10], "speaking");
+    assert.equal(flatParts[11], "listening");
+    assert.equal(flatParts[30], "listening");
     assert.equal(paper.dialect.id, dialectId);
-    for (const section of [...paper.listening, ...paper.speaking]) assert.equal(section.questions.length, 5);
+    for (const section of paper.listening) assert.equal(section.questions.length, 5);
+    assert.equal(paper.speaking[0].questions.length, 5);
+    assert.equal(paper.speaking[1].questions.length, 5);
+    assert.equal(paper.speaking[2].questions.length, 1);
 
     // ── 是非題
     const trueFalse = paper.listening[0];
@@ -308,13 +336,33 @@ for (const dialectId of sampledDialects) {
     // ── 簡答題
     const shortAnswer = paper.speaking[1];
     assert.equal(shortAnswer.id, "shortAnswer");
-    assert.equal(shortAnswer.scorable, false);
+    assert.equal(shortAnswer.scorable, true);
     assert.equal(new Set(shortAnswer.questions.map((q) => q.prompt.indigenousText)).size, 5, "簡答題五題的問句必須相異");
     for (const question of shortAnswer.questions) {
-      assert.equal(question.scorable, false);
+      assert.equal(question.scorable, true);
       assert.ok(!("answerKey" in question), "開放式題目不得有標準答案欄位");
       assert.ok(!("expected" in question), "開放式題目不得有標準答案欄位");
       assert.ok(question.prompt.audioUrl, "簡答題要播出族語問句");
+      assert.ok(question.prompt.chineseText.trim(), "簡答題要有中文問句供語意粗判");
+    }
+
+    // ── 看圖說話
+    const pictureTalk = paper.speaking[2];
+    assert.equal(pictureTalk.id, "pictureTalk");
+    assert.equal(pictureTalk.scorable, true);
+    assert.equal(pictureTalk.questions.length, 1);
+    {
+      const question = pictureTalk.questions[0];
+      assert.equal(question.scorable, true);
+      assert.ok(question.prompt.tip.trim());
+      assert.equal(question.prompt.imageUrls.length, 4);
+      for (const imageUrl of question.prompt.imageUrls) {
+        assert.match(imageUrl, /^https:\/\/klokah\.tw\/extension\/sp_junior\/graphics_100x100\/pictureTalk\//);
+      }
+      assert.ok(question.reference.chineseText.trim());
+      assert.ok(question.reference.audioUrl);
+      assert.ok(!("answerKey" in question));
+      assert.ok(!("expected" in question));
     }
   }
 }
@@ -330,14 +378,20 @@ assert.deepEqual([...answerKeysSeen.match].sort(), ["1", "2", "3", "4", "5"]);
 assert.equal(OFFICIAL.listeningThreshold, 45);
 assert.equal(OFFICIAL.speakingThreshold, 15);
 assert.equal(OFFICIAL.quote, "聽力成績須達45分以上，口說成績須達15分以上，始核發該級別之合格證書");
-assert.ok(SPEAKING_COVERAGE_NOTE.includes("看圖說話"), "必須說明看圖說話尚未提供");
+assert.ok(SPEAKING_COVERAGE_NOTE.includes("看圖說話"), "必須說明看圖說話已涵蓋");
+assert.ok(SPEAKING_COVERAGE_NOTE.includes("0–10"), "必須說明看圖說話滿分 10 分");
+assert.ok(SPEAKING_COVERAGE_NOTE.includes("每題 4 分"), "必須說明簡答題每題 4 分");
+assert.equal(POINT_SCHEME.wordReading.max, 10);
+assert.equal(POINT_SCHEME.shortAnswer.max, 20);
+assert.equal(POINT_SCHEME.pictureTalk.max, 10);
+assert.equal(POINT_SCHEME.listening.max, 60);
+assert.equal(POINT_SCHEME.totalMax, 100);
 
 // 「合格」二字只能出現在官方原文引用裡。
 assert.equal((scoringCode.match(/合格/g) ?? []).length, 1, "scoring.mjs 的程式碼只能有一處「合格」，且必須在 OFFICIAL.quote 內");
 assert.ok(scoringCode.indexOf("合格") > scoringCode.indexOf("export const OFFICIAL"));
 assert.ok(scoringCode.indexOf("合格") < scoringCode.indexOf("SPEAKING_COVERAGE_NOTE"));
-// 計分模組不得偷偷宣告通過與否，也不得換算分數。
-// （只檢查識別字：OFFICIAL.disclaimer 本來就會寫「不換算成正式分數」。）
+// 計分模組不得偷偷宣告通過與否；converted 必須維持 null（練習得分放在 practice，不叫正式換算）。
 for (const forbidden of ["passed", "isPass", "estimatedScore", "predictedScore"]) {
   assert.ok(!scoringCode.includes(forbidden), `scoring.mjs 不得出現 ${forbidden}`);
 }
@@ -346,6 +400,7 @@ const samplePaper = createPaper({ shard: shards.get(1), dialect: dialectOf(1), s
 const listeningQuestions = samplePaper.listening.flatMap((section) => section.questions);
 const wordQuestions = samplePaper.speaking[0].questions;
 const shortQuestions = samplePaper.speaking[1].questions;
+const pictureQuestions = samplePaper.speaking[2].questions;
 
 // ① 全對
 {
@@ -358,6 +413,9 @@ const shortQuestions = samplePaper.speaking[1].questions;
   assert.equal(report.listening.accuracy, 1);
   assert.equal(report.listening.bySection.length, 4);
   for (const section of report.listening.bySection) assert.equal(section.correct, 5);
+  assert.equal(report.listening.pointsSum, 60);
+  assert.equal(report.listening.maxPointsSum, 60);
+  assert.equal(report.practice.listening, 60);
 }
 
 // ② 未作答 → unanswered，不是 wrong
@@ -412,8 +470,81 @@ assert.equal(judgeWordReading("", "wacu"), "undetermined");
 assert.equal(judgeWordReading("   ", "wacu"), "undetermined");
 assert.equal(judgeWordReading("wacu", ""), "undetermined");
 
+// ⑤b 簡答題合理與否（合理 4 分）
+{
+  assert.equal(judgeShortAnswerTranslation("你好嗎？", "很好").verdict, "reasonable");
+  assert.equal(judgeShortAnswerTranslation("你好嗎？", "很好").points, 4);
+  assert.equal(judgeShortAnswerTranslation("你是阿美族嗎？", "是").verdict, "reasonable");
+  assert.equal(judgeShortAnswerTranslation("你幾歲了？", "十二歲").verdict, "reasonable");
+  assert.equal(judgeShortAnswerTranslation("你現在在哪裡？", "我在學校").verdict, "reasonable");
+  assert.equal(judgeShortAnswerTranslation("你好嗎？", "你好嗎").verdict, "unreasonable", "複誦問句不算回答");
+  assert.equal(judgeShortAnswerTranslation("你好嗎？", "你好嗎").points, 0);
+  assert.equal(judgeShortAnswerTranslation("你好嗎？", "").verdict, "undetermined");
+  assert.equal(judgeShortAnswerTranslation("你好嗎？", "").points, null);
+}
+
+// ⑤c 看圖說話給分（參考答案取自本卷教材，不寫死例句）
+{
+  const reference = pictureQuestions[0].reference.chineseText;
+  assert.ok(reference.trim(), "試卷必須帶入教材中文參考答案");
+  assert.equal(scorePictureTalkTranslation(reference, reference).points, 10);
+
+  const contentChars = [...reference.replace(/[^\u4e00-\u9fff]/g, "")];
+  const partial = contentChars.slice(0, Math.max(8, Math.floor(contentChars.length / 4))).join("");
+  assert.ok(scorePictureTalkTranslation(partial, reference).points >= 1, "截取參考答案的片段應能拿到分數");
+
+  const distractor = wordQuestions
+    .map((q) => q.prompt.chineseText)
+    .find((zh) => scorePictureTalkTranslation(zh, reference).points === 0);
+  assert.ok(distractor, "同卷單詞題應能找到與看圖說話參考答案無關的中文");
+  assert.equal(scorePictureTalkTranslation(distractor, reference).points, 0);
+
+  assert.equal(scorePictureTalkTranslation("", reference).status, "undetermined");
+  assert.equal(scorePictureTalkTranslation(reference, "").status, "undetermined");
+}
+
+// ⑤d 語意評分介面（預設 heuristic；LLM 可替換）
+{
+  assert.equal(activeSemanticJudge.id, "heuristic");
+  assert.equal(typeof activeSemanticJudge.judgeShortAnswer, "function");
+  assert.equal(typeof activeSemanticJudge.scorePictureTalk, "function");
+  assert.equal(
+    (await activeSemanticJudge.judgeShortAnswer({ questionChinese: "你好嗎？", translation: "很好", transcript: "x" })).points,
+    4,
+  );
+  assert.throws(() => createLlmSemanticJudge({}), /complete/);
+  const llm = createLlmSemanticJudge({
+    model: "mock",
+    complete: async () => '{"verdict":"unreasonable","points":0,"rationale":"mock"}',
+  });
+  assert.equal(llm.id, "llm:mock");
+  assert.equal(
+    (await llm.judgeShortAnswer({ questionChinese: "你好嗎？", translation: "很好", transcript: "x" })).verdict,
+    "unreasonable",
+  );
+  assert.equal(
+    (await llm.judgeShortAnswer({ questionChinese: "你好嗎？", translation: "很好", transcript: "x" })).points,
+    0,
+  );
+  const llmPicture = createLlmSemanticJudge({
+    model: "mock",
+    complete: async () => '{"points":7,"rationale":"mock"}',
+  });
+  const picture = await llmPicture.scorePictureTalk({
+    tip: "提示",
+    referenceChinese: "參考",
+    translation: "譯文",
+    transcript: "x",
+  });
+  assert.equal(picture.status, "scored");
+  assert.equal(picture.points, 7);
+  assert.equal(picture.maxPoints, 10);
+  assert.equal(createHeuristicSemanticJudge().id, "heuristic");
+}
+
 // ⑥ 口說計分
 {
+  const pictureQ = pictureQuestions[0];
   const responses = {
     ...Object.fromEntries(wordQuestions.map((q, index) => [q.id, index === 0
       ? { attempted: true, transcript: q.expected }
@@ -424,11 +555,22 @@ assert.equal(judgeWordReading("wacu", ""), "undetermined");
           : {}]),
     ),
     ...Object.fromEntries(shortQuestions.map((q, index) => [q.id, index < 2
-      ? { attempted: true, transcript: "kapah kaku" }
+      ? {
+        attempted: true,
+        transcript: "kapah kaku",
+        translation: "很好",
+        shortVerdict: "reasonable",
+      }
       : index === 2
-        ? { attempted: true, transcript: null, asrError: "辨識服務 HTTP 500" }
+        ? { attempted: true, transcript: null, asrError: "辨識服務 HTTP 500", shortVerdict: "undetermined" }
         : {}]),
     ),
+    [pictureQ.id]: {
+      attempted: true,
+      transcript: "sample ab",
+      translation: pictureQ.reference.chineseText,
+      pictureScore: scorePictureTalkTranslation(pictureQ.reference.chineseText, pictureQ.reference.chineseText),
+    },
   };
   const report = gradePaper(samplePaper, responses);
   const word = report.speaking.wordReading;
@@ -438,15 +580,29 @@ assert.equal(judgeWordReading("wacu", ""), "undetermined");
   assert.equal(word.undetermined, 1, "辨識失敗歸入無法判定");
   assert.equal(word.skipped, 2);
   assert.equal(word.scored, true);
+  assert.equal(word.pointsSum, 2, "相符 1 題 × 2 分");
+  assert.equal(word.maxPointsSum, 10);
   assert.equal(word.review[2].asrError, "辨識服務逾時");
 
   const short = report.speaking.shortAnswer;
-  assert.equal(short.scored, false, "簡答題不計分");
-  assert.equal(short.transcribed, 2);
+  assert.equal(short.scored, true, "簡答題會粗判是否合理");
+  assert.equal(short.reasonable, 2);
   assert.equal(short.undetermined, 1);
   assert.equal(short.skipped, 2);
-  assert.ok(!("matched" in short) && !("mismatched" in short), "簡答題沒有對錯的概念");
+  assert.equal(short.pointsSum, 8, "合理 2 題 × 4 分");
+  assert.equal(short.maxPointsSum, 20);
+  assert.ok("reasonable" in short && "unreasonable" in short);
+
+  const picture = report.speaking.pictureTalk;
+  assert.equal(picture.scored, true);
+  assert.equal(picture.total, 1);
+  assert.equal(picture.scoredCount, 1);
+  assert.equal(picture.pointsSum, 10);
+  assert.equal(picture.maxPointsSum, 10);
   assert.equal(report.speaking.coverageNote, SPEAKING_COVERAGE_NOTE);
+  assert.equal(report.speaking.pointsSum, 2 + 8 + 10);
+  assert.equal(report.practice.speaking, 20);
+  assert.equal(report.practice.total, 20);
 
   // 口說完全不影響聽力的數字。
   assert.equal(report.listening.correct, 0);
@@ -503,6 +659,17 @@ assert.ok(/\.option--audio \.option-play\{[^}]*position:relative[^}]*z-index:1/.
 // 三個步驟的初始可見性。
 assert.ok(/<section id="quiz"[^>]*\shidden/.test(page), "作答區初始必須隱藏");
 assert.ok(/<section id="report"[^>]*\shidden/.test(page), "成績單初始必須隱藏");
+
+// 練習導向：每題確定後即時回饋，不得再有交卷。
+assert.ok(page.includes('id="confirm"'), "必須有確定按鈕");
+assert.ok(page.includes('id="feedback"'), "必須有即時回饋區");
+assert.ok(page.includes('id="end-practice"'), "必須有結束練習按鈕");
+assert.ok(!page.includes('id="finish"'), "不得再有交卷按鈕");
+assert.ok(!page.includes(">交卷<"), "文案不得出現交卷");
+assert.ok(page.includes("立刻告訴你對錯") || page.includes("立刻顯示對錯"), "必須說明確定後立刻給回饋");
+assert.ok(appSource.includes("activeSemanticJudge"), "簡答／看圖說話必須走語意評分介面");
+assert.ok(appSource.includes("confirmed"), "確定後必須標記 confirmed");
+assert.ok(appSource.includes("showListeningFeedback") || appSource.includes("答對了"), "聽力確定後必須顯示對錯");
 
 // 七項揭露都必須在作答區之前。
 const quizAt = page.indexOf('id="quiz"');
@@ -566,7 +733,7 @@ assert.ok(!/recordedBlob/.test(recorderCode), "recorder.mjs 不該碰到原始�
 // 轉檔失敗必須直接放棄，不得繼續走到 transcribe。
 const convertCatch = appCode.slice(appCode.indexOf("await convertToAsrWav"), appCode.indexOf("setRecordState(\"transcribing\")"));
 assert.ok(convertCatch.includes("轉檔失敗"), "轉檔失敗必須明說");
-assert.ok(/轉檔失敗[\s\S]{0,400}?return;/.test(appCode), "轉檔失敗的分支必須直接 return，不得繼續送出");
+assert.ok(/轉檔失敗[\s\S]{0,700}?return;/.test(appCode), "轉檔失敗的分支必須直接 return，不得繼續送出");
 
 // 措辭紅線：不因為機器聽錯就說使用者念錯。
 // 「這不代表你念錯」是我們要求出現的否定句，掃描前先把否定形式拿掉，
@@ -633,4 +800,4 @@ for (const relative of ["apps/body-parts-practice/app.mjs", "apps/body-parts-spe
   assert.ok(!read(relative).includes("beginner-mock-exam"), `${relative} 不得被本次改動`);
 }
 
-console.log("PASS: 42 shards / 180 images / no audio in repo, 4+2 sections, 200 seeds × 3 dialects invariants, honest scoring, page contract, audio degradation, ASR red lines");
+console.log("PASS: 42 shards / 180 images / no audio in repo, 4+3 sections, 200 seeds × 3 dialects invariants, honest scoring, page contract, audio degradation, ASR red lines");

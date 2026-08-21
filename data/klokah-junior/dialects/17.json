@@ -9,7 +9,8 @@
     "choiceTwo": 25,
     "match": 10,
     "word": 60,
-    "dialogue": 10
+    "dialogue": 10,
+    "pictureTalk": 1
   },
   "recognize": [
     {
@@ -3830,6 +3831,25 @@
           "chineseText": "你喜歡畫畫嗎？",
           "audioUrl": "https://klokah.tw/extension/sp_junior/sound/17/9dialogue/1_10_E.mp3"
         }
+      ]
+    }
+  ],
+  "pictureTalk": [
+    {
+      "id": "17-pictureTalk-1-1",
+      "classId": 218,
+      "classNo": 1,
+      "className": "看圖說話",
+      "order": 1,
+      "tip": "我喜歡的活動",
+      "indigenousText": "Smkuxul ku musa sapah pyasan / ptasan, smluhay rmisuh patas, matas patas, meuyas uyas ni rmgrig. Mqaras ku kdjiyax yasa malu balay qtaan ka rnisuh mu patas. Mkla ku bi matas patas uri. Kiya ni smkuxul bi yaku ka emptgsa. Kana ruwan sapah mu, tama, bubu, qbsuran mu snaw, swayi mu qrijil / kuyuh. Smkuxul balay qmbahang uyas mu ni qmita grig mu ka dhiya.",
+      "chineseText": "我喜歡去學校，學畫畫、寫字 / 讀書、唱歌、跳舞。我每天都很高興。我畫的圖很漂亮。我(也)很會讀書，因此老師很喜歡我。在家裡，爸爸、媽媽、哥哥、妹妹全都喜歡聽我唱歌、看我跳舞。",
+      "audioUrl": "https://klokah.tw/extension/sp_junior/sound/17/10pictureTalk/1_1.mp3",
+      "imageUrls": [
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_1.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_2.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_3.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_4.png"
       ]
     }
   ]

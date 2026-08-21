@@ -9,7 +9,8 @@
     "choiceTwo": 25,
     "match": 10,
     "word": 60,
-    "dialogue": 10
+    "dialogue": 10,
+    "pictureTalk": 1
   },
   "recognize": [
     {
@@ -3830,6 +3831,25 @@
           "chineseText": "你喜歡畫畫嗎？",
           "audioUrl": "https://klokah.tw/extension/sp_junior/sound/10/9dialogue/1_10_E.mp3"
         }
+      ]
+    }
+  ],
+  "pictureTalk": [
+    {
+      "id": "10-pictureTalk-1-1",
+      "classId": 218,
+      "classNo": 1,
+      "className": "看圖說話",
+      "order": 1,
+      "tip": "我喜歡的活動",
+      "indigenousText": "masaq cu mqwas biru, mwah muyax ga, msqun cami seto mu kneril Bakan, musa cisan rgyax, moyay cami cisan lga, mwah cami muyax la, msqun cami maniq, smoya calay ktayux bbiru swahi mu Yukan, swahi mu Yaway uyi ga, baq calay matas cisan uyi.",
+      "chineseText": "我放學回家的時候，我跟我的女同學Bakan一起去爬山，爬山累了以後，我們就回到家裡，一起吃飯，我弟弟Yukan很喜歡閱讀書報，我妹妹Yaway呢，也很喜歡畫畫。",
+      "audioUrl": "https://klokah.tw/extension/sp_junior/sound/10/10pictureTalk/1_1.mp3",
+      "imageUrls": [
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_1.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_2.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_3.png",
+        "https://klokah.tw/extension/sp_junior/graphics_100x100/pictureTalk/1_4.png"
       ]
     }
   ]

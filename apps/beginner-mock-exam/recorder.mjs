@@ -163,3 +163,35 @@ export async function fetchLiveAsrDialects(timeoutMs = 20_000) {
     clearTimeout(abortTimer);
   }
 }
+
+/**
+ * 族語→中文翻譯（看圖說話部分給分用）。
+ * 失敗時拋錯，由呼叫端標成「無法判定」，不得因此判使用者答錯。
+ */
+export async function translateToZh(text, srcLang, timeoutMs = ASR_TIMEOUT_MS) {
+  if (typeof text !== "string" || !text.trim()) throw new Error("沒有可翻譯的文字");
+  if (typeof srcLang !== "string" || !srcLang.trim()) throw new Error("缺少翻譯語言代碼");
+
+  const controller = new AbortController();
+  const abortTimer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "translate_to_zh", text, src_lang: srcLang }),
+      signal: controller.signal,
+    });
+    let body;
+    try { body = await response.json(); } catch { throw new Error("翻譯服務回傳不是有效 JSON"); }
+    if (!response.ok || body?.ok === false) throw new Error(body?.message || `翻譯服務 HTTP ${response.status}`);
+    if (typeof body.data?.translation !== "string" || !body.data.translation.trim()) {
+      throw new Error("翻譯服務缺少譯文");
+    }
+    return body.data.translation.trim();
+  } catch (error) {
+    if (error.name === "AbortError") throw new Error(`翻譯服務在 ${Math.round(timeoutMs / 1000)} 秒內沒有回應`);
+    throw error;
+  } finally {
+    clearTimeout(abortTimer);
+  }
+}

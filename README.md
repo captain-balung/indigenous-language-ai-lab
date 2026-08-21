@@ -49,7 +49,7 @@ node scripts/serve.mjs 4173
 
 - [身體部位練習](apps/body-parts-practice/README.md)：42 個方言別、420 筆教材；先做教材整句比對，再以 Formosan AI `translate_to_zh` 及受控中文同義詞輔助判定。
 - [身體部位口說練習](apps/body-parts-speaking/README.md)：與打字版同一批教材、同樣的判定方式，改用錄音作答，經 Formosan AI `asr_transcribe` 取得族語文字。
-- [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的聽力四題型與口說兩題型，共 30 題一卷；音檔由 klokah.tw 直接播放，不換算成正式分數。
+- [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
 
 ## 素材與授權
 

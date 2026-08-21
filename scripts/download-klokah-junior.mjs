@@ -1,19 +1,15 @@
 // 族語 E 樂園「句型篇國中版」語料下載器。
 //
 // 這批教材與 Lokahsu 初級認證測驗的聽力／口說題型同名同構
-// （3recognize / 4choiceOne / 5choiceTwo / 6match / 1word / 9dialogue），
+// （3recognize / 4choiceOne / 5choiceTwo / 6match / 1word / 9dialogue / 10pictureTalk），
 // 而 klokah 版本以 CC BY-NC-SA 4.0 釋出，因此可用來重建初級模擬試卷。
 //
 // 與 download-body-parts.mjs 的差異：
-// - 六個題型家族用一張 FAMILIES 表驅動欄位對映，不寫六份 parser。
+// - 七個題型家族用一張 FAMILIES 表驅動欄位對映，不寫七份 parser。
 // - 全部驗證通過才一次寫出，失敗時目錄保持原狀。
 // - 音檔一律不入庫，只把 URL 烘進資料。
 //
-// 用法：
-//   node scripts/download-klokah-junior.mjs
-//   node scripts/download-klokah-junior.mjs --dry-run --dialects=1,20
-//   node scripts/download-klokah-junior.mjs --verify-audio        # 抽驗音檔
-//   node scripts/download-klokah-junior.mjs --verify-audio=all    # 完整掃描（很慢）
+// 若只要補抓看圖說話：node scripts/augment-picture-talk.mjs
 
 import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
@@ -57,6 +53,7 @@ const FAMILIES = {
   choiceTwo: { typeId: 5, typeEn: "choiceTwo", order: "choiceTwoOrder", letters: "ABC", per: { indigenousText: "choiceTwo{L}Ab", chineseText: "choiceTwo{L}Ch" } },
   dialogue: { typeId: 9, typeEn: "dialogue", order: "dialogueOrder", letters: "ABCDE", per: { indigenousText: "dialogue{L}Ab", chineseText: "dialogue{L}Ch" } },
   match: { typeId: 6, typeEn: "match", order: "matchOrder", letters: "ABCDE", per: { questionAb: "match{L}AbA", questionCh: "match{L}ChA", answerAb: "match{L}AbB", answerCh: "match{L}ChB" } },
+  pictureTalk: { typeId: 10, typeEn: "pictureTalk", order: "pictureTalkOrder", pictureTalk: true },
 };
 
 // classId → classNo 與每方言預期題數。全部 42 × 24 組合都清點過：
@@ -88,6 +85,8 @@ const CLASSES = [
   { family: "word", classId: 10, classNo: 10, name: "物品", itemsPerDialect: 10 },
   { family: "word", classId: 11, classNo: 11, name: "山川建築/自然景觀", itemsPerDialect: 9 },
   { family: "dialogue", classId: 217, classNo: 1, name: "簡短對話", itemsPerDialect: 10, lettersPerItem: 5 },
+  // 國中版官方練習只露出 order 1；order 2 常缺參考答案，且 100x100 圖不存在。
+  { family: "pictureTalk", classId: 218, classNo: 1, name: "看圖說話", itemsPerDialect: 1 },
 ];
 
 // 某個方言、某個類別的預期題數。exceptions 是來源本身的差異，逐筆明列。
@@ -108,7 +107,8 @@ function familyTotalsFor(dialectId) {
   }, {});
 }
 
-const EXPECTED_RAW_COUNT = dialects.length * CLASSES.length;
+const RAW_CLASSES = CLASSES.filter((spec) => spec.family !== "pictureTalk");
+const EXPECTED_RAW_COUNT = dialects.length * RAW_CLASSES.length;
 const EXPECTED_RECORD_COUNT = dialects.reduce(
   (sum, [id]) => sum + Object.values(familyTotalsFor(id)).reduce((a, b) => a + b, 0),
   0,
@@ -214,6 +214,10 @@ function imagePathFor(spec, order, letter, imageIndex) {
   return undefined;
 }
 
+function pictureTalkImageUrls(order) {
+  return [1, 2, 3, 4].map((n) => `${imageBase}/pictureTalk/${order}_${n}.png`);
+}
+
 function parseClass(xml, spec, dialectId) {
   const family = FAMILIES[spec.family];
   const blocks = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
@@ -221,6 +225,20 @@ function parseClass(xml, spec, dialectId) {
     const order = Number(field(block, family.order));
     if (!Number.isInteger(order) || order < 1) throw new Error(`${spec.family}/${spec.classId} 的 ${family.order} 不是正整數`);
     const base = { id: `${dialectId}-${spec.family}-${spec.classNo}-${order}`, classId: spec.classId, classNo: spec.classNo, className: spec.name, order };
+
+    if (family.pictureTalk) {
+      const tip = clean(field(block, "pictureTalkTip"));
+      const indigenousText = clean(field(block, "pictureTalkAb"));
+      const chineseText = clean(field(block, "pictureTalkCh"));
+      return {
+        ...base,
+        tip: tip || null,
+        indigenousText: indigenousText || null,
+        chineseText: chineseText || null,
+        imageUrls: pictureTalkImageUrls(order),
+        audioUrl: audioUrlFor(spec, dialectId, order),
+      };
+    }
 
     if (family.flat) {
       const record = { ...base };
@@ -258,7 +276,9 @@ function parseClass(xml, spec, dialectId) {
     return { ...base, [spec.family === "dialogue" ? "questions" : "options"]: options };
   });
 
-  return items.sort((a, b) => a.order - b.order);
+  return items
+    .filter((item) => spec.family !== "pictureTalk" || item.order === 1)
+    .sort((a, b) => a.order - b.order);
 }
 
 // 硬性檢查：任何一項不符就中止，不寫任何檔案。
@@ -272,6 +292,14 @@ function assertClass(items, spec, dialectId, dialectName) {
   if (orders.size !== items.length) throw new Error(`${where} 有重複的 order`);
 
   for (const item of items) {
+    if (spec.family === "pictureTalk") {
+      if (!item.tip || !item.chineseText) throw new Error(`${where} order ${item.order} 缺少 tip 或中文參考答案`);
+      if (!Array.isArray(item.imageUrls) || item.imageUrls.length !== 4) {
+        throw new Error(`${where} order ${item.order} 必須有 4 張圖的熱連結`);
+      }
+      continue;
+    }
+
     if (spec.family === "match") {
       if (item.dialogues.length !== 5) throw new Error(`${where} order ${item.order} 不是 5 段對話`);
       const images = new Set(item.dialogues.map((dialogue) => dialogue.imagePath));
@@ -360,6 +388,7 @@ for (const spec of CLASSES) {
       }
     }
   }
+  // pictureTalk 圖片不入庫：執行時熱連結 klokah.tw
 }
 const EXPECTED_IMAGE_COUNT = imageJobs.length;
 
@@ -394,6 +423,7 @@ if (verifyAudio !== "none") {
     for (const item of shard.choiceTwo) for (const option of item.options) collect(option.audioUrl);
     for (const item of shard.dialogue) for (const question of item.questions) collect(question.audioUrl);
     for (const item of shard.match) for (const dialogue of item.dialogues) collect(dialogue.audioUrl);
+    for (const item of shard.pictureTalk ?? []) if (item.audioUrl) collect(item.audioUrl);
   }
   const all = [...urls];
   const sampleRule = verifyAudio === "all" ? "全部音檔" : "每個方言每個類別的首尾 order";
@@ -441,6 +471,8 @@ for (const [dialectId] of dialects) await mkdir(path.join(outputRoot, "raw", Str
 const files = [];
 
 for (const entry of fetched) {
+  // 看圖說話 XML 不入庫（文字進分片、圖／音熱連結）；其餘題型仍保留 raw。
+  if (entry.spec.family === "pictureTalk") continue;
   const relative = `raw/${entry.dialectId}/${entry.spec.classId}.xml`;
   await writeFile(path.join(outputRoot, relative), entry.bytes);
   files.push({ dialectId: entry.dialectId, dialectName: entry.dialectName, classId: entry.spec.classId, url: entry.url, path: relative, bytes: entry.bytes.length, sha256: sha256(entry.bytes) });
@@ -462,7 +494,7 @@ for (const [dialectId, shard] of shards) {
 const dataset = {
   schemaVersion: 1,
   title: "句型篇國中版／初級認證題型語料",
-  description: "族語 E 樂園句型篇國中版 42 個方言別的看圖識字、選擇題（一）（二）、配合題、基本詞彙與簡短對話語料，用於重建初級認證測驗題型。",
+  description: "族語 E 樂園句型篇國中版 42 個方言別的看圖識字、選擇題（一）（二）、配合題、基本詞彙、簡短對話與看圖說話語料，用於重建初級認證測驗題型。",
   source: {
     publisher: "財團法人原住民族語言研究發展基金會",
     website: "原住民族語E樂園",
@@ -477,6 +509,8 @@ const dataset = {
   audioBase,
   audioPolicy: "hotlinked-at-runtime",
   audioNote: "音檔不入庫，執行時直接由 klokah.tw 播放；播放時該網站會看到使用者的 IP 位址。",
+  pictureTalkImagePolicy: "hotlinked-at-runtime",
+  pictureTalkImageNote: "看圖說話圖片不入庫，執行時由 klokah.tw 載入；該網站會看到使用者的 IP。",
   dialectCount: dialects.length,
   classes: CLASSES,
   totals: {
@@ -514,11 +548,11 @@ const manifest = {
 await writeFile(path.join(outputRoot, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 
 const readme = `# 句型篇國中版：初級認證題型語料\n\n` +
-  `本目錄保存「族語 E 樂園」句型篇國中版 42 個方言別的六種題型語料，供「初級模擬站」出卷使用。\n\n` +
+  `本目錄保存「族語 E 樂園」句型篇國中版 42 個方言別的七種題型語料，供「初級模擬站」出卷使用。\n\n` +
   `- \`dataset.json\`：索引、來源、類別表與完整性數字。**不含題目本身。**\n` +
   `- \`dialects/{dialectId}.json\`：42 個方言分片，頁面只載入使用者選的那一個。\n` +
-  `- \`raw/{dialectId}/{classId}.xml\`：官方來源 XML，共 ${EXPECTED_RAW_COUNT} 份。\n` +
-  `- \`images/\`：官方共用圖片，共 ${EXPECTED_IMAGE_COUNT} 張（recognize／choiceOne／match）。\n` +
+  `- \`raw/{dialectId}/{classId}.xml\`：官方來源 XML，共 ${EXPECTED_RAW_COUNT} 份（不含看圖說話）。\n` +
+  `- \`images/\`：官方共用圖片，共 ${EXPECTED_IMAGE_COUNT} 張（recognize／choiceOne／match；看圖說話圖不入庫）。\n` +
   `- \`manifest.json\`：來源 URL、檔案大小及 SHA-256。\n` +
   `- \`LICENSE.md\`：授權、標示與使用限制。\n\n` +
   `## 為什麼分片\n\n` +

@@ -50,7 +50,7 @@
 .options-grid[data-layout=audio]{grid-template-columns:1fr}
 
 .option{position:relative;display:flex;align-items:center;gap:.7rem;padding:.8rem;border:3px solid var(--ink);border-radius:16px;background:#fff;box-shadow:0 4px 0 rgba(37,49,84,.14)}
-.option:focus-within{outline:4px solid #186bd8;outline-offset:3px}
+.option:focus-within{outline:none}
 .option:has(:checked){background:var(--cream);box-shadow:0 4px 0 var(--ink)}
 .option input{width:1.35rem;height:1.35rem;min-height:0;flex:0 0 auto;accent-color:#d94d37}
 .option label{display:flex;align-items:center;gap:.7rem;flex:1 1 auto;cursor:pointer;font-weight:900}
@@ -71,31 +71,48 @@
 /* ── 口說 ─────────────────────────────────────────────── */
 .speak-word{margin:1.2rem 0 .2rem;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:1000;word-break:break-word}
 .speak-gloss{margin:0 0 .6rem;font-size:1.1rem;font-weight:700;color:#4a5474}
-#speak-hint{margin:.3rem 0 .9rem;font-weight:700;color:#4a5474}
-.recorder{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-.record-button{display:inline-flex;align-items:center;gap:.6rem;min-width:11rem}
-.record-dot{width:.85rem;height:.85rem;border-radius:50%;background:#fff;border:2px solid var(--ink)}
-.record-button.is-recording{background:#b03a24}
-.record-button.is-recording .record-dot{background:#ffd7c9;animation:pulse 1.1s infinite}
+.picture-tip{margin:1rem 0 .6rem;padding:.85rem 1rem;border:3px dashed var(--ink);border-radius:14px;background:#fff;font-size:clamp(1.15rem,3vw,1.45rem);font-weight:900}
+.picture-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:0 0 .8rem}
+.picture-grid figure{margin:0;padding:.45rem;border:3px solid var(--ink);border-radius:14px;background:#fff;text-align:center}
+.picture-grid img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.picture-grid figcaption{margin-top:.35rem;font-weight:900;color:#4a5474}
+#speak-hint{margin:.3rem 0 .7rem;font-weight:700;color:#4a5474}
+.recorder-bar{display:flex;align-items:center;gap:.5rem .65rem;flex-wrap:wrap;margin:0 0 .55rem}
+.record-button{display:inline-flex;align-items:center;gap:.5rem;min-width:0;min-height:44px;padding:.55rem 1rem}
+.record-dot{width:.75rem;height:.75rem;border-radius:50%;background:#fff;border:2px solid var(--ink)}
+.record-button.is-recording{background:#ff8a6a}
+.record-button.is-recording .record-dot{background:#fff;animation:pulse 1.1s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-#record-time{padding:.3rem .7rem;border:2px solid var(--ink);border-radius:99px;background:#fff;font-weight:900;font-variant-numeric:tabular-nums}
+#record-time{padding:.25rem .65rem;border:2px solid var(--ink);border-radius:99px;background:#fff;font-weight:900;font-size:.9rem;font-variant-numeric:tabular-nums}
 
-/* 狀態一律「圖示＋文字」，不靠顏色或動畫單獨表意 */
-.record-state{display:flex;align-items:center;gap:.55rem;margin:.8rem 0;padding:.55rem .8rem;border:2px solid var(--ink);border-radius:12px;background:#eef2f8;font-weight:900}
-.record-state__icon{font-size:1.05rem}
-.record-state[data-state=recording]{background:#ffe0d6}
+/* 狀態跟內容走，不撐滿整列；播放器靠右 */
+.record-state{display:inline-flex;align-items:center;gap:.35rem;margin:0;padding:.3rem .65rem;border:2px solid var(--ink);border-radius:99px;background:#eef2f8;font-weight:900;font-size:.85rem;flex:0 1 auto;max-width:100%}
+.record-state__icon{font-size:.9rem}
+.record-state[data-state=recording]{background:#ffe8df}
 .record-state[data-state=recorded]{background:#ddf5e7}
 .record-state[data-state=converting],.record-state[data-state=transcribing],.record-state[data-state=slow]{background:#fff1c4}
 .record-state[data-state=failed]{background:#f6e3e0}
 
-#preview{width:100%;margin:.4rem 0 .6rem}
-.inline-privacy{margin:.2rem 0 .8rem;padding:.5rem .7rem;border-left:5px solid #e2a33c;border-radius:0 10px 10px 0;background:#fdf6e4;font-size:.9rem;font-weight:700;color:#6b5426}
+#preview{width:auto;min-width:8rem;height:2.2rem;margin:0;flex:1 1 8rem}
+.inline-privacy{margin:0 0 .6rem;padding:0;border:0;border-radius:0;background:transparent;font-size:.85rem;font-weight:700;color:#6b5426}
+.inline-privacy code{padding:.05rem .3rem;border-radius:5px;background:#fdf6e4;font-size:.95em;word-break:break-all}
 .submit-row{display:flex;gap:.7rem;flex-wrap:wrap}
 .submit-row .primary{flex:1 1 12rem;margin-top:0}
-.heard{margin-top:1.4rem;padding:1rem;border:3px dashed var(--ink);border-radius:16px;background:#f6f2ff}
+.heard{margin-top:.9rem;padding:.85rem 1rem;border:3px dashed var(--ink);border-radius:14px;background:#f6f2ff}
 .heard strong{font-size:1.05rem}
 .heard-text{margin:.35rem 0;font-size:1.35rem;font-weight:900;word-break:break-word}
 .heard small{display:block;color:#4a5474;font-weight:700}
+
+.feedback{margin-top:1.4rem;padding:1rem 1.2rem;border:3px solid var(--ink);border-left-width:9px;border-radius:0 16px 16px 0;background:#fff}
+.feedback[data-status=correct]{border-left-color:#3f8f68;background:#eefaf3}
+.feedback[data-status=wrong]{border-left-color:#b03a24;background:#fbeeeb}
+.feedback[data-status=notScored],.feedback[data-status=undetermined],.feedback[data-status=recorded]{border-left-color:#e2a33c;background:#fdf6e4}
+.feedback[data-status=matched],.feedback[data-status=scored-high]{border-left-color:#3f8f68;background:#eefaf3}
+.feedback[data-status=mismatched],.feedback[data-status=scored-mid]{border-left-color:#e2a33c;background:#fdf6e4}
+.feedback[data-status=scored-low]{border-left-color:#b03a24;background:#fbeeeb}
+.feedback strong{display:block;font-size:1.15rem;font-weight:1000}
+.feedback p{margin:.35rem 0 0;font-weight:700}
+.feedback .revealed{margin-top:.5rem;font-size:1.2rem;font-weight:900;word-break:break-word}
 
 /* ── 導覽與成績單 ─────────────────────────────────────── */
 .quiz-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}

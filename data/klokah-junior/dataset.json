@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "title": "句型篇國中版／初級認證題型語料",
-  "description": "族語 E 樂園句型篇國中版 42 個方言別的看圖識字、選擇題（一）（二）、配合題、基本詞彙與簡短對話語料，用於重建初級認證測驗題型。",
+  "description": "族語 E 樂園句型篇國中版 42 個方言別的看圖識字、選擇題（一）（二）、配合題、基本詞彙、簡短對話與看圖說話語料，用於重建初級認證測驗題型。",
   "source": {
     "publisher": "財團法人原住民族語言研究發展基金會",
     "website": "原住民族語E樂園",
@@ -190,6 +190,13 @@
       "name": "簡短對話",
       "itemsPerDialect": 10,
       "lettersPerItem": 5
+    },
+    {
+      "family": "pictureTalk",
+      "classId": 218,
+      "classNo": 1,
+      "name": "看圖說話",
+      "itemsPerDialect": 1
     }
   ],
   "totals": {
@@ -199,7 +206,8 @@
       "choiceTwo": 25,
       "match": 10,
       "word": 60,
-      "dialogue": 10
+      "dialogue": 10,
+      "pictureTalk": 1
     },
     "perDialectExceptions": {
       "5": {
@@ -211,7 +219,7 @@
         "dialogue": 10
       }
     },
-    "recordCount": 7768,
+    "recordCount": 7810,
     "rawFileCount": 1008,
     "imageCount": 180
   },
@@ -426,5 +434,7 @@
       "ethnicity": "撒奇萊雅",
       "name": "撒奇萊雅語"
     }
-  ]
+  ],
+  "pictureTalkImagePolicy": "hotlinked-at-runtime",
+  "pictureTalkImageNote": "看圖說話圖片不入庫，執行時由 klokah.tw 載入；該網站會看到使用者的 IP。"
 }

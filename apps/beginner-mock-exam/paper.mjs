@@ -6,6 +6,15 @@
  *
  * 各節的作答說明採用 Lokahsu 官方「考試題型」頁面的原文；本站與正式測驗
  * 不同的地方寫在 adaptationNote，頁面必須一併顯示。
+ *
+ * 題材來源（klokah 句型篇國中版）：
+ *   口說 · 單詞朗讀  → shard.word         （typeId 1 基本詞彙）
+ *   口說 · 簡答題    → shard.dialogue     （typeId 9 簡短對話）
+ *   口說 · 看圖說話  → shard.pictureTalk  （typeId 10；每方言 1 題）
+ *   聽力 · 是非題    → shard.recognize    （typeId 3 看圖識字）
+ *   聽力 · 選擇題(一) → shard.choiceOne    （typeId 4）
+ *   聽力 · 選擇題(二) → shard.choiceTwo    （typeId 5）
+ *   聽力 · 配合題    → shard.match        （typeId 6）
  */
 
 import { createQuestionDeck } from "../body-parts-practice/core.mjs";
@@ -22,7 +31,7 @@ export const SECTION_SPECS = [
     no: 1,
     title: "第一部分：是非題",
     instruction: "試卷上每題都有一個圖片，請聽電腦播出一個族語句子，若與該圖片所描述的內容符合，請選「O」；若不符合，請選「X」，並在答案卡上作答。每題播出兩遍。",
-    adaptationNote: "本站沒有答案卡，直接在畫面上選。你可以重複播放，正式測驗只播兩遍。",
+    adaptationNote: "本站沒有答案卡，直接在畫面上選。按「確定」後立刻告訴你對錯。你可以重複播放，正式測驗只播兩遍。",
     scorable: true,
   },
   {
@@ -31,7 +40,7 @@ export const SECTION_SPECS = [
     no: 2,
     title: "第二部分：選擇題(一)",
     instruction: "試卷上每題有三個圖片，請聽電腦播出一個族語句子後，選一個與所聽到語意最相符的圖片，並在答案卡上作答。每題播出兩遍。",
-    adaptationNote: "本站沒有答案卡，直接在畫面上選。你可以重複播放，正式測驗只播兩遍。",
+    adaptationNote: "本站沒有答案卡，直接在畫面上選。按「確定」後立刻告訴你對錯。你可以重複播放，正式測驗只播兩遍。",
     scorable: true,
   },
   {
@@ -40,7 +49,7 @@ export const SECTION_SPECS = [
     no: 3,
     title: "第三部分：選擇題(二)",
     instruction: "請聽電腦播出一個中文句子及三句族語句子後，選出與中文句子語意最接近的族語句子，並在答案卡上作答。每題播出兩遍。",
-    adaptationNote: "正式測驗會播出中文句子；本站因教材沒有中文錄音，改以文字呈現。三句族語仍然只能用聽的。",
+    adaptationNote: "正式測驗會播出中文句子；本站因教材沒有中文錄音，改以文字呈現。三句族語仍然只能用聽的。按「確定」後立刻告訴你對錯。",
     scorable: true,
   },
   {
@@ -49,7 +58,7 @@ export const SECTION_SPECS = [
     no: 4,
     title: "第四部分：配合題",
     instruction: "請聽電腦播出一個族語簡短對話後，在五個圖片中，選出相關的圖片來，並在答案卡上作答。每題播出兩遍。",
-    adaptationNote: "本站每題的五張圖片來自同一組對話；正式測驗是五題共用一組圖片。",
+    adaptationNote: "本站每題的五張圖片來自同一組對話；正式測驗是五題共用一組圖片。按「確定」後立刻告訴你對錯。",
     scorable: true,
   },
   {
@@ -58,7 +67,7 @@ export const SECTION_SPECS = [
     no: 1,
     title: "口說第一部分：單詞朗讀",
     instruction: "請看著螢幕上的族語詞彙念出來。",
-    adaptationNote: "本站用語音辨識比對你念的內容與教材拼寫。辨識結果只是參考，不代表正式測驗的評分。",
+    adaptationNote: "按「確定」後用語音辨識比對你念的內容與教材拼寫（相符得 2 分）。辨識結果只是參考，不代表正式測驗的評分。",
     scorable: true,
   },
   {
@@ -67,8 +76,17 @@ export const SECTION_SPECS = [
     no: 2,
     title: "口說第二部分：簡答題",
     instruction: "請聽電腦播出一個族語問句，然後用族語回答。",
-    adaptationNote: "本站不評分簡答題——正式測驗由委員評分，機器沒有辦法判斷你的回答是否合適。這裡只把系統聽到的內容顯示給你。",
-    scorable: false,
+    adaptationNote: "按「確定」後：語音辨識→翻成中文→粗判是否合理（合理得 4 分）。這是練習用的機器判斷，不是正式測驗評分。",
+    scorable: true,
+  },
+  {
+    id: "pictureTalk",
+    part: "speaking",
+    no: 3,
+    title: "口說第三部分：看圖說話",
+    instruction: "請根據下面四個圖片及中文提示，選擇一個、兩個、三個或全部的圖片，以族語簡短地說說你的想法。作答時間約2 分鐘。",
+    adaptationNote: "按「確定」後：語音辨識→翻成中文→對照教材參考答案給 0–10 分。這是練習用的機器粗評，不是正式測驗評分。",
+    scorable: true,
   },
 ];
 
@@ -136,6 +154,7 @@ function makeSection(spec, questions) {
 }
 
 // ── 第一部分：是非題 ──────────────────────────────────────
+// 來源：shard.recognize（typeId 3 看圖識字）
 // 播目標句的錄音，但顯示的圖片有時候是同類別的別題——那時候答案就是 X。
 function buildTrueFalse(shard, rng) {
   const spec = sectionSpecById("trueFalse");
@@ -178,6 +197,7 @@ function buildTrueFalse(shard, rng) {
 }
 
 // ── 第二部分：選擇題(一) ──────────────────────────────────
+// 來源：shard.choiceOne（typeId 4）
 // 播其中一個選項的錄音，三張圖片打散後讓使用者挑。
 function buildChoiceOne(shard, rng) {
   const spec = sectionSpecById("choiceOne");
@@ -213,6 +233,7 @@ function buildChoiceOne(shard, rng) {
 }
 
 // ── 第三部分：選擇題(二) ──────────────────────────────────
+// 來源：shard.choiceTwo（typeId 5）
 // 中文以文字呈現（教材沒有中文錄音），三句族語各自有錄音。
 // 這是唯一完全不需要視覺的一節。
 function buildChoiceTwo(shard, rng) {
@@ -245,6 +266,7 @@ function buildChoiceTwo(shard, rng) {
 }
 
 // ── 第四部分：配合題 ──────────────────────────────────────
+// 來源：shard.match（typeId 6）
 // 播同一組五段對話裡的其中一段，五張圖片打散後讓使用者挑。
 function buildMatch(shard, rng) {
   const spec = sectionSpecById("match");
@@ -281,6 +303,7 @@ function buildMatch(shard, rng) {
 }
 
 // ── 口說第一部分：單詞朗讀 ────────────────────────────────
+// 來源：shard.word（typeId 1 基本詞彙）——六節裡唯一下基本詞彙的。
 // 官方單詞朗讀本來就是看著念，所以這裡顯示族語拼寫。
 // 教材錄音只在作答後提供——作答前就播會變成跟讀，不是朗讀。
 function buildWordReading(shard, rng) {
@@ -305,7 +328,8 @@ function buildWordReading(shard, rng) {
 }
 
 // ── 口說第二部分：簡答題 ──────────────────────────────────
-// 開放式回答沒有標準答案，所以題目物件裡連 answerKey／expected 欄位都不存在。
+// 來源：shard.dialogue（typeId 9 簡短對話）
+// 開放式回答沒有標準答案；本站以 ASR→翻譯→問句語意粗判是否合理。
 function buildShortAnswer(shard, rng) {
   const spec = sectionSpecById("shortAnswer");
 
@@ -325,7 +349,7 @@ function buildShortAnswer(shard, rng) {
     id: `${spec.id}-${index + 1}`,
     sectionId: spec.id,
     no: index + 1,
-    scorable: false,
+    scorable: true,
     prompt: {
       audioUrl: question.audioUrl,
       indigenousText: question.indigenousText,
@@ -333,6 +357,35 @@ function buildShortAnswer(shard, rng) {
     },
     source: { family: "dialogue", classId: question.classId, classNo: question.classNo, order: question.order, letter: question.letter },
   }));
+
+  return makeSection(spec, questions);
+}
+
+// ── 口說第三部分：看圖說話 ────────────────────────────────
+// 來源：shard.pictureTalk（typeId 10）；國中版每方言 1 題（order 1）。
+// 開放式口說，正式測驗由委員評分；本站以 ASR→翻譯→參考答案部分給分。
+function buildPictureTalk(shard, rng) {
+  const spec = sectionSpecById("pictureTalk");
+  const pool = (shard.pictureTalk ?? []).filter((item) => item.tip && item.chineseText && item.imageUrls?.length === 4);
+  if (pool.length < 1) throw new Error("這個方言別沒有可用的看圖說話題材");
+  const item = pickOne(pool, rng);
+
+  const questions = [{
+    id: `${spec.id}-1`,
+    sectionId: spec.id,
+    no: 1,
+    scorable: true,
+    prompt: {
+      tip: item.tip,
+      imageUrls: [...item.imageUrls],
+    },
+    reference: {
+      indigenousText: item.indigenousText,
+      chineseText: item.chineseText,
+      audioUrl: item.audioUrl,
+    },
+    source: { family: "pictureTalk", classId: item.classId, classNo: item.classNo, order: item.order },
+  }];
 
   return makeSection(spec, questions);
 }
@@ -353,7 +406,7 @@ export function createPaper({ shard, dialect, seed }) {
 
   const rng = createRng(seed);
   const listening = [buildTrueFalse(shard, rng), buildChoiceOne(shard, rng), buildChoiceTwo(shard, rng), buildMatch(shard, rng)];
-  const speaking = [buildWordReading(shard, rng), buildShortAnswer(shard, rng)];
+  const speaking = [buildWordReading(shard, rng), buildShortAnswer(shard, rng), buildPictureTalk(shard, rng)];
 
   return {
     paperId: seedToPaperId(seed),
@@ -361,13 +414,13 @@ export function createPaper({ shard, dialect, seed }) {
     dialect: { id: dialect.id, name: dialect.name, ethnicity: dialect.ethnicity, code: dialect.code },
     listening,
     speaking,
-    totalQuestions: [...listening, ...speaking].reduce((sum, section) => sum + section.questions.length, 0),
+    totalQuestions: [...speaking, ...listening].reduce((sum, section) => sum + section.questions.length, 0),
   };
 }
 
-/** 依作答順序攤平成一維題目清單，供頁面逐題導覽。 */
+/** 依作答順序攤平成一維題目清單，供頁面逐題導覽（口說先、聽力後）。 */
 export function flattenPaper(paper) {
-  return [...paper.listening, ...paper.speaking].flatMap((section) =>
+  return [...paper.speaking, ...paper.listening].flatMap((section) =>
     section.questions.map((question) => ({ section, question })),
   );
 }
