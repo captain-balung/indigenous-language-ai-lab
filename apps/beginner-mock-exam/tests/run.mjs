@@ -491,6 +491,15 @@ assert.ok(/\[hidden\]\{display:none ?!important\}/.test(styles),
 // 固定在底部的導覽列會蓋住配合題的五張圖片，實測擋掉兩排。
 assert.ok(!/\.quiz-actions\{[^}]*position:sticky/.test(styles), "導覽列不得 sticky，會蓋住選項圖片");
 
+// 整張選項卡片都要可點。卡片有外框、陰影與選取底色，看起來就是一個目標，
+// 但 label 只包住文字或圖片——修正前實測死區佔卡片面積：是非題 53%、選擇題(二) 72%。
+assert.ok(/\.option label::after\{[^}]*position:absolute[^}]*inset:0/.test(styles),
+  "label 必須用 ::after 把命中範圍撐滿整張卡片");
+assert.ok(/\.option\{[^}]*position:relative/.test(styles), "卡片必須是定位祖先，覆蓋層才會對齊卡片");
+// 覆蓋層會吃掉點擊，播放鈕必須浮在它之上，否則點播放會變成選取該選項。
+assert.ok(/\.option--audio \.option-play\{[^}]*position:relative[^}]*z-index:1/.test(styles),
+  "播放鈕必須浮在 label 覆蓋層之上");
+
 // 三個步驟的初始可見性。
 assert.ok(/<section id="quiz"[^>]*\shidden/.test(page), "作答區初始必須隱藏");
 assert.ok(/<section id="report"[^>]*\shidden/.test(page), "成績單初始必須隱藏");

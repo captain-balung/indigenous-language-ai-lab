@@ -54,13 +54,19 @@
 .option:has(:checked){background:var(--cream);box-shadow:0 4px 0 var(--ink)}
 .option input{width:1.35rem;height:1.35rem;min-height:0;flex:0 0 auto;accent-color:#d94d37}
 .option label{display:flex;align-items:center;gap:.7rem;flex:1 1 auto;cursor:pointer;font-weight:900}
+/* 整張卡片就是點擊範圍。卡片有外框、陰影與選取底色，看起來就是一個目標，
+   但 label 只包住文字或圖片——實測死區佔卡片面積：是非題 53%、選擇題(二) 72%。
+   用 ::after 把 label 的命中範圍撐滿卡片，視覺邊界與可點範圍才會一致。 */
+.option{cursor:pointer}
+.option label::after{content:"";position:absolute;inset:0}
 .option--binary label{justify-content:center;font-size:1.6rem}
 .option--image{flex-direction:column;align-items:stretch}
 .option--image label{flex-direction:column;gap:.4rem}
 .option--image img{width:100%;aspect-ratio:1;object-fit:contain;border:2px solid var(--ink);border-radius:12px;background:#fff}
 .option--image .option-key{font-size:.95rem;color:#4a5474}
-/* 播放鈕刻意放在 label 外面：點播放不能順手選中該選項 */
-.option--audio .option-play{flex:0 0 auto;min-height:44px}
+/* 播放鈕刻意放在 label 外面：點播放不能順手選中該選項。
+   z-index 讓它浮在上面那層 label 覆蓋層之上，否則會被覆蓋層吃掉點擊。 */
+.option--audio .option-play{position:relative;z-index:1;flex:0 0 auto;min-height:44px}
 
 /* ── 口說 ─────────────────────────────────────────────── */
 .speak-word{margin:1.2rem 0 .2rem;font-size:clamp(1.8rem,5vw,2.8rem);font-weight:1000;word-break:break-word}
