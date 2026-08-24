@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "title": "句型篇高中版／中級認證題型語料",
+  "description": "族語 E 樂園句型篇高中版 42 個方言別的看圖識字、選擇題（一）（二）（三）、唸唸看、簡短對話與看圖說話語料，用於重建中級認證測驗題型。",
+  "source": {
+    "publisher": "財團法人原住民族語言研究發展基金會",
+    "website": "原住民族語E樂園",
+    "unitUrl": "https://web.klokah.tw/extension/sp_senior/practice.php",
+    "license": "CC BY-NC-SA 4.0",
+    "licenseUrl": "https://web.klokah.tw/creativeCommons/",
+    "attribution": "資料來源－原住民族語E樂園，由財團法人原住民族語言研究發展基金會製作，以創用CC 姓名標示－非商業性－相同方式分享 4.0國際授權條款釋出。",
+    "retrievedAt": "2026-08-24T02:33:09.121Z"
+  },
+  "recordLayout": "sharded",
+  "shardPath": "dialects/{dialectId}.json",
+  "audioBase": "https://klokah.tw/extension/sp_senior/sound",
+  "audioPolicy": "hotlinked-at-runtime",
+  "audioNote": "音檔不入庫，執行時直接由 klokah.tw 播放；播放時該網站會看到使用者的 IP 位址。",
+  "pictureTalkImagePolicy": "hotlinked-at-runtime",
+  "pictureTalkImageNote": "看圖說話圖片不入庫，執行時由 klokah.tw 載入；該網站會看到使用者的 IP。",
+  "choiceThreeImagePolicy": "not-collected",
+  "choiceThreeImageNote": "選擇題(三) 的選項是拼寫文字，顯示教材圖片等於給正式測驗沒有的提示，因此不收錄該題型的圖片。",
+  "dialectCount": 42,
+  "classes": [
+    {
+      "family": "recognize",
+      "classId": 20,
+      "classNo": 1,
+      "name": "擁有句",
+      "itemsPerDialect": 15
+    },
+    {
+      "family": "recognize",
+      "classId": 21,
+      "classNo": 2,
+      "name": "訊息問句[問地方]",
+      "itemsPerDialect": 15
+    },
+    {
+      "family": "recognize",
+      "classId": 22,
+      "classNo": 3,
+      "name": "進行式(男錄音)",
+      "itemsPerDialect": 15,
+      "exceptions": {
+        "14": 14
+      }
+    },
+    {
+      "family": "recognize",
+      "classId": 23,
+      "classNo": 4,
+      "name": "連動結構(女錄音)",
+      "itemsPerDialect": 15,
+      "exceptions": {
+        "14": 14
+      }
+    },
+    {
+      "family": "recognize",
+      "classId": 24,
+      "classNo": 5,
+      "name": "單一動詞[氣象景觀]",
+      "itemsPerDialect": 15
+    },
+    {
+      "family": "choiceOne",
+      "classId": 26,
+      "classNo": 1,
+      "name": "訊息問句(問關係、動植物、物品)",
+      "itemsPerDialect": 15
+    },
+    {
+      "family": "choiceOne",
+      "classId": 27,
+      "classNo": 2,
+      "name": "訊息問句(問數量)",
+      "itemsPerDialect": 16
+    },
+    {
+      "family": "choiceOne",
+      "classId": 28,
+      "classNo": 3,
+      "name": "訊息問句(問地方)",
+      "itemsPerDialect": 16
+    },
+    {
+      "family": "choiceOne",
+      "classId": 29,
+      "classNo": 4,
+      "name": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "itemsPerDialect": 16
+    },
+    {
+      "family": "choiceOne",
+      "classId": 30,
+      "classNo": 5,
+      "name": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "itemsPerDialect": 16
+    },
+    {
+      "family": "choiceTwo",
+      "classId": 31,
+      "classNo": 1,
+      "name": "訊息問句(問姓名、關係、數量、地方)",
+      "itemsPerDialect": 5
+    },
+    {
+      "family": "choiceTwo",
+      "classId": 32,
+      "classNo": 2,
+      "name": "是非問句(肯定/否定；問職業、關係、動物、植物、物品)",
+      "itemsPerDialect": 5
+    },
+    {
+      "family": "choiceTwo",
+      "classId": 33,
+      "classNo": 3,
+      "name": "敘述句(單一動詞；肯定/否定)",
+      "itemsPerDialect": 5
+    },
+    {
+      "family": "choiceTwo",
+      "classId": 34,
+      "classNo": 4,
+      "name": "祈使句(肯定/否定)",
+      "itemsPerDialect": 5
+    },
+    {
+      "family": "choiceTwo",
+      "classId": 35,
+      "classNo": 5,
+      "name": "複雜結構(連動結構、條件結構)",
+      "itemsPerDialect": 5
+    },
+    {
+      "family": "choiceThree",
+      "classId": 37,
+      "classNo": 1,
+      "name": "身體部位",
+      "itemsPerDialect": 10
+    },
+    {
+      "family": "choiceThree",
+      "classId": 38,
+      "classNo": 2,
+      "name": "動物",
+      "itemsPerDialect": 10
+    },
+    {
+      "family": "choiceThree",
+      "classId": 39,
+      "classNo": 3,
+      "name": "植(食)物/水果",
+      "itemsPerDialect": 10
+    },
+    {
+      "family": "choiceThree",
+      "classId": 40,
+      "classNo": 4,
+      "name": "物品",
+      "itemsPerDialect": 10
+    },
+    {
+      "family": "choiceThree",
+      "classId": 41,
+      "classNo": 5,
+      "name": "山川建築/自然景觀",
+      "itemsPerDialect": 10
+    },
+    {
+      "family": "oralReading",
+      "classId": 42,
+      "classNo": 1,
+      "name": "唸唸看",
+      "itemsPerDialect": 10,
+      "lettersPerItem": 5
+    },
+    {
+      "family": "dialogue",
+      "classId": 43,
+      "classNo": 1,
+      "name": "簡短對話",
+      "itemsPerDialect": 10,
+      "lettersPerItem": 5
+    },
+    {
+      "family": "pictureTalk",
+      "classId": 44,
+      "classNo": 1,
+      "name": "看圖說話",
+      "itemsPerDialect": 2
+    }
+  ],
+  "totals": {
+    "perDialect": {
+      "recognize": 75,
+      "choiceOne": 79,
+      "choiceTwo": 25,
+      "choiceThree": 50,
+      "oralReading": 10,
+      "dialogue": 10,
+      "pictureTalk": 2
+    },
+    "perDialectExceptions": {
+      "14": {
+        "recognize": 73,
+        "choiceOne": 79,
+        "choiceTwo": 25,
+        "choiceThree": 50,
+        "oralReading": 10,
+        "dialogue": 10,
+        "pictureTalk": 2
+      }
+    },
+    "recordCount": 10540,
+    "rawFileCount": 924,
+    "imageCount": 154
+  },
+  "dialects": [
+    {
+      "id": 1,
+      "ethnicity": "阿美",
+      "name": "南勢阿美語"
+    },
+    {
+      "id": 2,
+      "ethnicity": "阿美",
+      "name": "秀姑巒阿美語"
+    },
+    {
+      "id": 3,
+      "ethnicity": "阿美",
+      "name": "海岸阿美語"
+    },
+    {
+      "id": 4,
+      "ethnicity": "阿美",
+      "name": "馬蘭阿美語"
+    },
+    {
+      "id": 5,
+      "ethnicity": "阿美",
+      "name": "恆春阿美語"
+    },
+    {
+      "id": 6,
+      "ethnicity": "泰雅",
+      "name": "賽考利克泰雅語"
+    },
+    {
+      "id": 7,
+      "ethnicity": "泰雅",
+      "name": "澤敖利泰雅語"
+    },
+    {
+      "id": 8,
+      "ethnicity": "泰雅",
+      "name": "汶水泰雅語"
+    },
+    {
+      "id": 9,
+      "ethnicity": "泰雅",
+      "name": "萬大泰雅語"
+    },
+    {
+      "id": 10,
+      "ethnicity": "泰雅",
+      "name": "四季泰雅語"
+    },
+    {
+      "id": 11,
+      "ethnicity": "泰雅",
+      "name": "宜蘭澤敖利泰雅語"
+    },
+    {
+      "id": 13,
+      "ethnicity": "賽夏",
+      "name": "賽夏語"
+    },
+    {
+      "id": 14,
+      "ethnicity": "邵",
+      "name": "邵語"
+    },
+    {
+      "id": 15,
+      "ethnicity": "賽德克",
+      "name": "都達賽德克語"
+    },
+    {
+      "id": 16,
+      "ethnicity": "賽德克",
+      "name": "德固達雅賽德克語"
+    },
+    {
+      "id": 17,
+      "ethnicity": "賽德克",
+      "name": "德鹿谷賽德克語"
+    },
+    {
+      "id": 18,
+      "ethnicity": "布農",
+      "name": "卓群布農語"
+    },
+    {
+      "id": 19,
+      "ethnicity": "布農",
+      "name": "卡群布農語"
+    },
+    {
+      "id": 20,
+      "ethnicity": "布農",
+      "name": "丹群布農語"
+    },
+    {
+      "id": 21,
+      "ethnicity": "布農",
+      "name": "巒群布農語"
+    },
+    {
+      "id": 22,
+      "ethnicity": "布農",
+      "name": "郡群布農語"
+    },
+    {
+      "id": 23,
+      "ethnicity": "排灣",
+      "name": "東排灣語"
+    },
+    {
+      "id": 24,
+      "ethnicity": "排灣",
+      "name": "北排灣語"
+    },
+    {
+      "id": 25,
+      "ethnicity": "排灣",
+      "name": "中排灣語"
+    },
+    {
+      "id": 26,
+      "ethnicity": "排灣",
+      "name": "南排灣語"
+    },
+    {
+      "id": 27,
+      "ethnicity": "魯凱",
+      "name": "東魯凱語"
+    },
+    {
+      "id": 28,
+      "ethnicity": "魯凱",
+      "name": "霧台魯凱語"
+    },
+    {
+      "id": 29,
+      "ethnicity": "魯凱",
+      "name": "大武魯凱語"
+    },
+    {
+      "id": 30,
+      "ethnicity": "魯凱",
+      "name": "多納魯凱語"
+    },
+    {
+      "id": 31,
+      "ethnicity": "魯凱",
+      "name": "茂林魯凱語"
+    },
+    {
+      "id": 32,
+      "ethnicity": "魯凱",
+      "name": "萬山魯凱語"
+    },
+    {
+      "id": 33,
+      "ethnicity": "太魯閣",
+      "name": "太魯閣語"
+    },
+    {
+      "id": 34,
+      "ethnicity": "噶瑪蘭",
+      "name": "噶瑪蘭語"
+    },
+    {
+      "id": 35,
+      "ethnicity": "鄒",
+      "name": "鄒語"
+    },
+    {
+      "id": 36,
+      "ethnicity": "卡那卡那富",
+      "name": "卡那卡那富語"
+    },
+    {
+      "id": 37,
+      "ethnicity": "拉阿魯哇",
+      "name": "拉阿魯哇語"
+    },
+    {
+      "id": 38,
+      "ethnicity": "卑南",
+      "name": "南王卑南語"
+    },
+    {
+      "id": 39,
+      "ethnicity": "卑南",
+      "name": "知本卑南語"
+    },
+    {
+      "id": 40,
+      "ethnicity": "卑南",
+      "name": "西群卑南語"
+    },
+    {
+      "id": 41,
+      "ethnicity": "卑南",
+      "name": "建和卑南語"
+    },
+    {
+      "id": 42,
+      "ethnicity": "雅美",
+      "name": "雅美語"
+    },
+    {
+      "id": 43,
+      "ethnicity": "撒奇萊雅",
+      "name": "撒奇萊雅語"
+    }
+  ]
+}

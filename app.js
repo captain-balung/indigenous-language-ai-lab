@@ -21,7 +21,7 @@ const applicationSeeds = {
   ],
   certification: [
     ["初級模擬站", "模擬初級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/bronze-medal.webp", "available", "apps/beginner-mock-exam/"],
-    ["中級模擬站", "挑戰進階聽讀題型與作答節奏。", "assets/icons/silver-medal.webp"],
+    ["中級模擬站", "模擬中級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/silver-medal.webp", "available", "apps/intermediate-mock-exam/"],
     ["口說練習官", "依題目提示組織內容並練習表達。", "assets/icons/studio-microphone.webp"],
     ["考前任務包", "集中演練多種題型，準備上場。", "assets/icons/school-backpack.webp"]
   ],
