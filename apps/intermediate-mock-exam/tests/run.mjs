@@ -767,10 +767,8 @@ const quizAt = page.indexOf('id="quiz"');
 for (const [label, needle] of [
   ["範圍", "notice--scope"],
   ["改編說明", "notice--adaptation"],
-  ["音檔外連", "notice--audio"],
-  ["族級模型", "notice--model"],
-  ["錄音隱私", "notice--privacy"],
-  ["無障礙限制", "notice--a11y"],
+  ["外部服務（音檔外連＋錄音隱私）", "notice--privacy"],
+  ["辨識限制與無障礙", "notice--a11y"],
 ]) {
   const at = page.indexOf(needle);
   assert.ok(at > -1, `頁面缺少${label}揭露`);
@@ -779,12 +777,13 @@ for (const [label, needle] of [
 // 中級特有的兩項揭露。
 for (const [label, needle] of [
   ["選擇題(三) 的族語選項先顯示", "選擇題(三) 的族語拼寫作答前就看得到"],
-  ["口說說明是本站措辭", "口說三段的作答說明是本站措辭"],
+  ["口說說明是本站措辭", "口說三段是本站措辭"],
 ]) {
   const at = page.indexOf(needle);
   assert.ok(at > -1, `頁面缺少「${label}」的揭露`);
   assert.ok(at < quizAt, `「${label}」必須出現在作答區之前`);
 }
+assert.ok(page.match(/class="notice /g).length <= 4, "作答前的揭露最多四塊——太多就會整段被略過");
 assert.ok(page.includes("klokah.tw"), "必須揭露音檔由 klokah.tw 播放");
 assert.ok(page.includes("IP 位址"), "必須揭露 IP 位址會被對方看到");
 assert.ok(page.includes("ai3.iformosa.com.tw"), "必須揭露錄音送往何處");
