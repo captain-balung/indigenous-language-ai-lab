@@ -50,6 +50,7 @@ node scripts/serve.mjs 4173
 - [身體部位練習](apps/body-parts-practice/README.md)：42 個方言別、420 筆教材；先做教材整句比對，再以 Formosan AI `translate_to_zh` 及受控中文同義詞輔助判定。
 - [身體部位口說練習](apps/body-parts-speaking/README.md)：與打字版同一批教材、同樣的判定方式，改用錄音作答，經 Formosan AI `asr_transcribe` 取得族語文字。
 - [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
+- [中級模擬站](apps/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
 
 ## 素材與授權
 
@@ -80,4 +81,21 @@ node scripts/download-body-parts.mjs
 
 ```powershell
 node scripts/download-klokah-junior.mjs
+```
+
+### 中級認證題型語料
+
+「中級模擬站」的資料位於 `data/klokah-senior/`，內容是「族語 E 樂園」句型篇高中版中，
+中級考卷用得到的七種題型：42 個方言別、共 10540 筆語料與 154 張共用圖片，同樣依
+[CC BY-NC-SA 4.0](data/klokah-senior/LICENSE.md) 使用。
+
+高中版另有「基本詞彙」與「生活百句」兩個題型，中級考卷用不到，因此不入庫。
+選擇題(三) 的教材圖片也不收錄——官方該題型的選項是拼寫文字，顯示圖片等於給正式測驗沒有的提示。
+
+**音檔不入庫**：每筆資料只帶 `audioUrl`，執行時由 `klokah.tw` 直接播放；看圖表達的圖片同樣熱連結。
+
+重新取得及驗證資料：
+
+```powershell
+node scripts/download-klokah-senior.mjs
 ```

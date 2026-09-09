@@ -1,0 +1,4492 @@
+{
+  "schemaVersion": 1,
+  "dialectId": 16,
+  "dialectName": "德固達雅賽德克語",
+  "ethnicity": "賽德克",
+  "counts": {
+    "recognize": 75,
+    "choiceOne": 79,
+    "choiceTwo": 25,
+    "choiceThree": 50,
+    "oralReading": 10,
+    "dialogue": 10,
+    "pictureTalk": 2
+  },
+  "recognize": [
+    {
+      "id": "16-recognize-1-1",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 1,
+      "indigenousText": "Niqal ku kingal huling ka yaku.",
+      "chineseText": "我有一隻狗。",
+      "imagePath": "images/recognize/1_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_1.mp3"
+    },
+    {
+      "id": "16-recognize-1-2",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 2,
+      "indigenousText": "Niqal ku kingal ngiyo ka yaku.",
+      "chineseText": "我有一隻貓。",
+      "imagePath": "images/recognize/1_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_2.mp3"
+    },
+    {
+      "id": "16-recognize-1-3",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 3,
+      "indigenousText": "Niqal ku kingal qpatul ka yaku.",
+      "chineseText": "我有一隻青蛙。",
+      "imagePath": "images/recognize/1_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_3.mp3"
+    },
+    {
+      "id": "16-recognize-1-4",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 4,
+      "indigenousText": "Niqal patis ka dheya.",
+      "chineseText": "他們有書。",
+      "imagePath": "images/recognize/1_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_4.mp3"
+    },
+    {
+      "id": "16-recognize-1-5",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 5,
+      "indigenousText": "Niqal serus ka dheya.",
+      "chineseText": "他們有橡皮擦。",
+      "imagePath": "images/recognize/1_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_5.mp3"
+    },
+    {
+      "id": "16-recognize-1-6",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 6,
+      "indigenousText": "Niqal patis hido ka dheya.",
+      "chineseText": "他們有鐘。",
+      "imagePath": "images/recognize/1_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_6.mp3"
+    },
+    {
+      "id": "16-recognize-1-7",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 7,
+      "indigenousText": "Niqal su bunga ka isu?",
+      "chineseText": "你有地瓜嗎？",
+      "imagePath": "images/recognize/1_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_7.mp3"
+    },
+    {
+      "id": "16-recognize-1-8",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 8,
+      "indigenousText": "Niqal su srqemu ka isu?",
+      "chineseText": "你有玉米嗎？",
+      "imagePath": "images/recognize/1_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_8.mp3"
+    },
+    {
+      "id": "16-recognize-1-9",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 9,
+      "indigenousText": "Niqal su sari ka isu?",
+      "chineseText": "你有芋頭嗎？",
+      "imagePath": "images/recognize/1_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_9.mp3"
+    },
+    {
+      "id": "16-recognize-1-10",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 10,
+      "indigenousText": "Niqal miyan lukus ka yami.",
+      "chineseText": "我們有衣服。",
+      "imagePath": "images/recognize/1_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_10.mp3"
+    },
+    {
+      "id": "16-recognize-1-11",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 11,
+      "indigenousText": "Niqal miyan trasi ka yami.",
+      "chineseText": "我們有雨傘。",
+      "imagePath": "images/recognize/1_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_11.mp3"
+    },
+    {
+      "id": "16-recognize-1-12",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 12,
+      "indigenousText": "Niqal miyan bunuh ka yami.",
+      "chineseText": "我們有帽子。",
+      "imagePath": "images/recognize/1_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_12.mp3"
+    },
+    {
+      "id": "16-recognize-1-13",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 13,
+      "indigenousText": "Niqal qbsuran mqedil ka heya.",
+      "chineseText": "她有姊姊。",
+      "imagePath": "images/recognize/1_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_13.mp3"
+    },
+    {
+      "id": "16-recognize-1-14",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 14,
+      "indigenousText": "Niqal dangi ka heya.",
+      "chineseText": "她有朋友。",
+      "imagePath": "images/recognize/1_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_14.mp3"
+    },
+    {
+      "id": "16-recognize-1-15",
+      "classId": 20,
+      "classNo": 1,
+      "className": "擁有句",
+      "order": 15,
+      "indigenousText": "Niqal baki ka heya.",
+      "chineseText": "她有叔叔。",
+      "imagePath": "images/recognize/1_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/1_15.mp3"
+    },
+    {
+      "id": "16-recognize-2-1",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 1,
+      "indigenousText": "Waga / Gaga inu dapa mu ka yaku ?",
+      "chineseText": "我的牛在哪裡？",
+      "imagePath": "images/recognize/2_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_1.mp3"
+    },
+    {
+      "id": "16-recognize-2-2",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 2,
+      "indigenousText": "Waga inu miric mu ka yaku ?",
+      "chineseText": "我的羊在哪裡？",
+      "imagePath": "images/recognize/2_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_2.mp3"
+    },
+    {
+      "id": "16-recognize-2-3",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 3,
+      "indigenousText": "Waga inu tekung mu ka yaku?",
+      "chineseText": "我的貓頭鷹在哪裡？",
+      "imagePath": "images/recognize/2_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_3.mp3"
+    },
+    {
+      "id": "16-recognize-2-4",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 4,
+      "indigenousText": "Waga inu pptasan daha ka dheya ?",
+      "chineseText": "他們的桌子在哪裡？",
+      "imagePath": "images/recognize/2_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_4.mp3"
+    },
+    {
+      "id": "16-recognize-2-5",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 5,
+      "indigenousText": "Waga inu gakac daha ka dheya?",
+      "chineseText": "他們的椅子在哪裡？",
+      "imagePath": "images/recognize/2_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_5.mp3"
+    },
+    {
+      "id": "16-recognize-2-6",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 6,
+      "indigenousText": "Waga inu tennaw daha ka dheya?",
+      "chineseText": "他們的電腦在哪裡？",
+      "imagePath": "images/recognize/2_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_6.mp3"
+    },
+    {
+      "id": "16-recognize-2-7",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 7,
+      "indigenousText": "Waga inu bunga su ka isu ?",
+      "chineseText": "你的地瓜在哪裡？",
+      "imagePath": "images/recognize/2_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_7.mp3"
+    },
+    {
+      "id": "16-recognize-2-8",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 8,
+      "indigenousText": "Waga inu srqemu su ka isu ?",
+      "chineseText": "你的玉米在哪裡？",
+      "imagePath": "images/recognize/2_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_8.mp3"
+    },
+    {
+      "id": "16-recognize-2-9",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 9,
+      "indigenousText": "Waga inu tmurak su ka isu ?",
+      "chineseText": "你的南瓜在哪裡？",
+      "imagePath": "images/recognize/2_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_9.mp3"
+    },
+    {
+      "id": "16-recognize-2-10",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 10,
+      "indigenousText": "Waga inu blebun namu ka yamu?",
+      "chineseText": "你們的香蕉在哪裡？",
+      "imagePath": "images/recognize/2_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_10.mp3"
+    },
+    {
+      "id": "16-recognize-2-11",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 11,
+      "indigenousText": "Waga inu sibus namu ka yamu ?",
+      "chineseText": "你們的甘蔗在哪裡？",
+      "imagePath": "images/recognize/2_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_11.mp3"
+    },
+    {
+      "id": "16-recognize-2-12",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 12,
+      "indigenousText": "Waga inu quti rodux namu ka yamu?",
+      "chineseText": "你們的番石榴在哪裡？",
+      "imagePath": "images/recognize/2_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_12.mp3"
+    },
+    {
+      "id": "16-recognize-2-13",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 13,
+      "indigenousText": "Waga inu sapah na ka heya ?",
+      "chineseText": "她的家在哪裡？",
+      "imagePath": "images/recognize/2_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_13.mp3"
+    },
+    {
+      "id": "16-recognize-2-14",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 14,
+      "indigenousText": "Waga inu sapah pyasan na ka heya ?",
+      "chineseText": "她的學校在哪裡？",
+      "imagePath": "images/recognize/2_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_14.mp3"
+    },
+    {
+      "id": "16-recognize-2-15",
+      "classId": 21,
+      "classNo": 2,
+      "className": "訊息問句[問地方]",
+      "order": 15,
+      "indigenousText": "Waga inu alang na ka heya?",
+      "chineseText": "她的村莊在哪裡？",
+      "imagePath": "images/recognize/2_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/2_15.mp3"
+    },
+    {
+      "id": "16-recognize-3-1",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 1,
+      "indigenousText": "Ni ku muuyas ka yaku.",
+      "chineseText": "我正在讀書。",
+      "imagePath": "images/recognize/3_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_1.mp3"
+    },
+    {
+      "id": "16-recognize-3-2",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 2,
+      "indigenousText": "Ni ku mahu lukus ka yaku.",
+      "chineseText": "我正在洗衣服。",
+      "imagePath": "images/recognize/3_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_2.mp3"
+    },
+    {
+      "id": "16-recognize-3-3",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 3,
+      "indigenousText": "Ni ku dmurun ka yaku.",
+      "chineseText": "我正在禱告。",
+      "imagePath": "images/recognize/3_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_3.mp3"
+    },
+    {
+      "id": "16-recognize-3-4",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 4,
+      "indigenousText": "Waga qmita bubu rudan ka lqlaqi rseno gaga.",
+      "chineseText": "那些男孩子正在拜訪祖母。",
+      "imagePath": "images/recognize/3_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_4.mp3"
+    },
+    {
+      "id": "16-recognize-3-5",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 5,
+      "indigenousText": "Waga qmita terebi ka lqlaqi rseno gaga.",
+      "chineseText": "那些男孩子正在看電視。",
+      "imagePath": "images/recognize/3_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_5.mp3"
+    },
+    {
+      "id": "16-recognize-3-6",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 6,
+      "indigenousText": "Waga kmeeki ka lqlaqi rseno gaga.",
+      "chineseText": "那些男孩子正在跳舞。",
+      "imagePath": "images/recognize/3_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_6.mp3"
+    },
+    {
+      "id": "16-recognize-3-7",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 7,
+      "indigenousText": "Waga su muuyas uyas ka isu ?",
+      "chineseText": "你正在唱歌嗎？",
+      "imagePath": "images/recognize/3_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_7.mp3"
+    },
+    {
+      "id": "16-recognize-3-8",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 8,
+      "indigenousText": "Waga su trima dqeras ka isu ?",
+      "chineseText": "你正在洗臉嗎？",
+      "imagePath": "images/recognize/3_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_8.mp3"
+    },
+    {
+      "id": "16-recognize-3-9",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 9,
+      "indigenousText": "Waga su mahu lukus ka isu?",
+      "chineseText": "你正在洗衣服嗎？",
+      "imagePath": "images/recognize/3_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_9.mp3"
+    },
+    {
+      "id": "16-recognize-3-10",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 10,
+      "indigenousText": "Ni miyan mekan ka yami.",
+      "chineseText": "我們正在吃(東西)。",
+      "imagePath": "images/recognize/3_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_10.mp3"
+    },
+    {
+      "id": "16-recognize-3-11",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 11,
+      "indigenousText": "Ni miyan mtheyaq ka yami.",
+      "chineseText": "我們正在玩耍。",
+      "imagePath": "images/recognize/3_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_11.mp3"
+    },
+    {
+      "id": "16-recognize-3-12",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 12,
+      "indigenousText": "Ni miyan meyah qmita tama rudan ma bubu rudan ka yami.",
+      "chineseText": "我們正在拜訪祖父祖母。",
+      "imagePath": "images/recognize/3_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_12.mp3"
+    },
+    {
+      "id": "16-recognize-3-13",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 13,
+      "indigenousText": "Waga jiyuga ka laqi rseno gaga.",
+      "chineseText": "那個男孩子正在畫圖。",
+      "imagePath": "images/recognize/3_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_13.mp3"
+    },
+    {
+      "id": "16-recognize-3-14",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 14,
+      "indigenousText": "Waga kmeeki ka laqi rseno gaga.",
+      "chineseText": "那個男孩子正在跳舞。",
+      "imagePath": "images/recognize/3_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_14.mp3"
+    },
+    {
+      "id": "16-recognize-3-15",
+      "classId": 22,
+      "classNo": 3,
+      "className": "進行式(男錄音)",
+      "order": 15,
+      "indigenousText": "Waga mtaqi ka laqi rseno gaga.",
+      "chineseText": "那個男孩子正在睡覺。",
+      "imagePath": "images/recognize/3_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/3_15.mp3"
+    },
+    {
+      "id": "16-recognize-4-1",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 1,
+      "indigenousText": "Mkela ku mahu lukus ka yaku.",
+      "chineseText": "我會洗衣服。",
+      "imagePath": "images/recognize/4_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_1.mp3"
+    },
+    {
+      "id": "16-recognize-4-2",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 2,
+      "indigenousText": "Mkela ku muuyas ka yaku.",
+      "chineseText": "我會讀書。",
+      "imagePath": "images/recognize/4_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_2.mp3"
+    },
+    {
+      "id": "16-recognize-4-3",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 3,
+      "indigenousText": "Mkela ku dmurun ka yaku.",
+      "chineseText": "我會禱告。",
+      "imagePath": "images/recognize/4_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_3.mp3"
+    },
+    {
+      "id": "16-recognize-4-4",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 4,
+      "indigenousText": "Smkuxul qmita terebi ka lqlaqi mqedil gaga.",
+      "chineseText": "那些女孩子喜歡看電視。",
+      "imagePath": "images/recognize/4_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_4.mp3"
+    },
+    {
+      "id": "16-recognize-4-5",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 5,
+      "indigenousText": "Smkuxul qmita tama rudan ka lqlaqi mqedil gaga.",
+      "chineseText": "那些女孩子喜歡拜訪祖父。",
+      "imagePath": "images/recognize/4_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_5.mp3"
+    },
+    {
+      "id": "16-recognize-4-6",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 6,
+      "indigenousText": "Smkuxul kmeeki ka lqlaqi mqedil gaga.",
+      "chineseText": "那些女孩子喜歡跳舞。",
+      "imagePath": "images/recognize/4_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_6.mp3"
+    },
+    {
+      "id": "16-recognize-4-7",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 7,
+      "indigenousText": "Mkela su muuyas uyas ka isu?",
+      "chineseText": "你會唱歌嗎？",
+      "imagePath": "images/recognize/4_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_7.mp3"
+    },
+    {
+      "id": "16-recognize-4-8",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 8,
+      "indigenousText": "Mkela su trima dqeras ka isu?",
+      "chineseText": "你會洗臉嗎？",
+      "imagePath": "images/recognize/4_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_8.mp3"
+    },
+    {
+      "id": "16-recognize-4-9",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 9,
+      "indigenousText": "Mkela su mahu lukus ka isu?",
+      "chineseText": "你會洗衣服嗎？",
+      "imagePath": "images/recognize/4_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_9.mp3"
+    },
+    {
+      "id": "16-recognize-4-10",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 10,
+      "indigenousText": "Smkuxul mtheyaq ka lqlaqi gaga.",
+      "chineseText": "那些孩子喜歡玩耍。",
+      "imagePath": "images/recognize/4_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_10.mp3"
+    },
+    {
+      "id": "16-recognize-4-11",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 11,
+      "indigenousText": "Smkuxul mekan ka lqlaqi gaga.",
+      "chineseText": "那些孩子喜歡吃(東西)。",
+      "imagePath": "images/recognize/4_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_11.mp3"
+    },
+    {
+      "id": "16-recognize-4-12",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 12,
+      "indigenousText": "Smkuxul qmita tama rudan ma bubu rudan ka lqlaqi gaga.",
+      "chineseText": "那些孩子喜歡拜訪祖父祖母。",
+      "imagePath": "images/recognize/4_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_12.mp3"
+    },
+    {
+      "id": "16-recognize-4-13",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 13,
+      "indigenousText": "Smkuxul kmeeki ka laqi mqedil gaga.",
+      "chineseText": "那個女孩子喜歡跳舞。",
+      "imagePath": "images/recognize/4_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_13.mp3"
+    },
+    {
+      "id": "16-recognize-4-14",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 14,
+      "indigenousText": "Smkuxul jiyuga ka laqi mqedil gaga.",
+      "chineseText": "那個女孩子喜歡畫圖。",
+      "imagePath": "images/recognize/4_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_14.mp3"
+    },
+    {
+      "id": "16-recognize-4-15",
+      "classId": 23,
+      "classNo": 4,
+      "className": "連動結構(女錄音)",
+      "order": 15,
+      "indigenousText": "Smkuxul mtaqi ka laqi mqedil gaga.",
+      "chineseText": "那個女孩子喜歡睡覺。",
+      "imagePath": "images/recognize/4_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/4_15.mp3"
+    },
+    {
+      "id": "16-recognize-5-1",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 1,
+      "indigenousText": "Tkriyak ka hido di!",
+      "chineseText": "太陽出來了！",
+      "imagePath": "images/recognize/5_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_1.mp3"
+    },
+    {
+      "id": "16-recognize-5-2",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 2,
+      "indigenousText": "Tkriyak ka idas di!",
+      "chineseText": "月亮出來了！",
+      "imagePath": "images/recognize/5_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_2.mp3"
+    },
+    {
+      "id": "16-recognize-5-3",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 3,
+      "indigenousText": "Tkriyak ka hako utux di!",
+      "chineseText": "彩虹出來了！",
+      "imagePath": "images/recognize/5_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_3.mp3"
+    },
+    {
+      "id": "16-recognize-5-4",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 4,
+      "indigenousText": "Mdayang ba pngerah karac!",
+      "chineseText": "星星很美麗！",
+      "imagePath": "images/recognize/5_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_4.mp3"
+    },
+    {
+      "id": "16-recognize-5-5",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 5,
+      "indigenousText": "Mdayang ba ka idas!",
+      "chineseText": "月亮很美麗！",
+      "imagePath": "images/recognize/5_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_5.mp3"
+    },
+    {
+      "id": "16-recognize-5-6",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 6,
+      "indigenousText": "Mdayang ba ka plabu karac.",
+      "chineseText": "雲很美麗！",
+      "imagePath": "images/recognize/5_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_6.mp3"
+    },
+    {
+      "id": "16-recognize-5-7",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 7,
+      "indigenousText": "Tkriyak ka pngerah karac di ?",
+      "chineseText": "星星出來了嗎？",
+      "imagePath": "images/recognize/5_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_7.mp3"
+    },
+    {
+      "id": "16-recognize-5-8",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 8,
+      "indigenousText": "Tkriyak ka hido di ?",
+      "chineseText": "太陽出來了嗎？",
+      "imagePath": "images/recognize/5_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_8.mp3"
+    },
+    {
+      "id": "16-recognize-5-9",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 9,
+      "indigenousText": "Tkriyak ka hako utux di?",
+      "chineseText": "彩虹出來了嗎？",
+      "imagePath": "images/recognize/5_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_9.mp3"
+    },
+    {
+      "id": "16-recognize-5-10",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 10,
+      "indigenousText": "Malu ba qtaan ka hako utux.",
+      "chineseText": "彩虹看起來很美麗！",
+      "imagePath": "images/recognize/5_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_10.mp3"
+    },
+    {
+      "id": "16-recognize-5-11",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 11,
+      "indigenousText": "Malu ba qtaan ka idas !",
+      "chineseText": "月亮看起來很美麗！",
+      "imagePath": "images/recognize/5_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_11.mp3"
+    },
+    {
+      "id": "16-recognize-5-12",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 12,
+      "indigenousText": "Malu ba qtaan ka plabu karac !",
+      "chineseText": "雲看起來很美麗！",
+      "imagePath": "images/recognize/5_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_12.mp3"
+    },
+    {
+      "id": "16-recognize-5-13",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 13,
+      "indigenousText": "Malu ba karac ka ali saya!",
+      "chineseText": "今天是好天氣！",
+      "imagePath": "images/recognize/5_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_13.mp3"
+    },
+    {
+      "id": "16-recognize-5-14",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 14,
+      "indigenousText": "Qmuyux di !",
+      "chineseText": "下雨了！",
+      "imagePath": "images/recognize/5_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_14.mp3"
+    },
+    {
+      "id": "16-recognize-5-15",
+      "classId": 24,
+      "classNo": 5,
+      "className": "單一動詞[氣象景觀]",
+      "order": 15,
+      "indigenousText": "Sbgihur paru di!",
+      "chineseText": "颱風來了！",
+      "imagePath": "images/recognize/5_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/3recognize/5_15.mp3"
+    }
+  ],
+  "choiceOne": [
+    {
+      "id": "16-choiceOne-1-1",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 1,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ka rseno gaga?",
+          "chineseText": "那個男人是誰？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mptgesa mu ka heya.",
+          "chineseText": "他是我的老師。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_1.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-2",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 2,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ka mqedil gaga?",
+          "chineseText": "那個女人是誰？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mptgesa mu ka heya.",
+          "chineseText": "她是我的老師。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_2.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-3",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 3,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ka rseno gaga?",
+          "chineseText": "那個男人是誰？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qbsuran mu rseno ka heya.",
+          "chineseText": "他是我的哥哥。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_3.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-4",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 4,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ka mqedil gaga?",
+          "chineseText": "那個女人是誰？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qbsuran mu mqedil ka heya.",
+          "chineseText": "她是我的姊姊。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_4.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-5",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 5,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka nii?",
+          "chineseText": "這是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qolic ka nii.",
+          "chineseText": "這是老鼠。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_5.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-6",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 6,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka nii?",
+          "chineseText": "這是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Dapa ka nii.",
+          "chineseText": "這是牛。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_6.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-7",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 7,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka nii?",
+          "chineseText": "這是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qpatul ka nii.",
+          "chineseText": "這是青蛙。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_7.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-8",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 8,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka nii ?",
+          "chineseText": "這是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Tekung ka nii.",
+          "chineseText": "這是貓頭鷹。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_8.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-9",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 9,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qhuni ka kiya.",
+          "chineseText": "那是樹。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_9.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-10",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 10,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Phepah ka kiya.",
+          "chineseText": "那是花。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_10.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-11",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 11,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mudu ka kiya.",
+          "chineseText": "那是橘子。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_11.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-12",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 12,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Srqemu ka kiya.",
+          "chineseText": "那是玉米。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_12.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-13",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 13,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga ?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pptasan ka kiya.",
+          "chineseText": "那是桌子。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_13.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-14",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 14,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga ?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pila ka kiya.",
+          "chineseText": "那是錢。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_14.mp3"
+    },
+    {
+      "id": "16-choiceOne-1-15",
+      "classId": 26,
+      "classNo": 1,
+      "className": "訊息問句(問關係、動植物、物品)",
+      "order": 15,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maanu ka gaga?",
+          "chineseText": "那是什麼？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Bunuh ka kiya.",
+          "chineseText": "那是帽子。"
+        }
+      ],
+      "imagePath": "images/choiceOne/1_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/1_15.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-1",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 1,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka hei tnsapah namu?",
+          "chineseText": "你們家有幾個人？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mmteru miyan kana ka hei tnsapah nami yami.",
+          "chineseText": "我們家有六個人。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_1.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-2",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 2,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka hei tnsapah daha?",
+          "chineseText": "他們家有幾個人？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mmteru kana ka hei tnsapah daha.",
+          "chineseText": "他們家有六個人。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_2.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-3",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 3,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka hei tnsapah namu yamu?",
+          "chineseText": "你們家有幾個人？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Rima miyan kana ka hei tnsapah nami yami.",
+          "chineseText": "我們家有五個人。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_3.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-4",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 4,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka hei tnsapah daha?",
+          "chineseText": "他們家有幾個人？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Sepac kana ka hei tnsapah daha.",
+          "chineseText": "他們家有四個人。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_4.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-5",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 5,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka mtswai su rseno ma mqedil ?",
+          "chineseText": "你有幾個兄弟姊妹？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Kingal qbsuran mu mqedil ma, kingal ka swai mu mqedil.",
+          "chineseText": "我有一個姊姊和一個妹妹。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_5.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-6",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 6,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka mtswai su rseno ma mqedil?",
+          "chineseText": "你有幾個兄弟姊妹？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Niqanl ku kingal swai mqedil ka yaku.",
+          "chineseText": "我有一個妹妹。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_6.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-7",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 7,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana ka mtswai su rseno ma mqedil ?",
+          "chineseText": "你有幾個兄弟姊妹？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Kingal qbsuran mu rseno ma, kingal ka swai mu rseno.",
+          "chineseText": "我有一個哥哥和一個弟弟。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_7.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-8",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 8,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya ka huling su isu?",
+          "chineseText": "你有幾隻狗？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Kingal ka huling mu yaku.",
+          "chineseText": "我有一隻狗。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_8.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-9",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 9,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya ka huling su isu?",
+          "chineseText": "你有幾隻狗？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Daha ka huling ma yaku.",
+          "chineseText": "我有兩隻狗。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_9.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-10",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 10,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya huling su ka isu ?",
+          "chineseText": "你有幾隻狗？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Egu ku huling ka yaku.",
+          "chineseText": "我有很多隻狗。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_10.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-11",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 11,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya ka patis na laqi gaga ?",
+          "chineseText": "那個小孩有幾本書？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Kingal patis na ka heya.",
+          "chineseText": "她有一本書。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_11.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-12",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 12,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya patis na ka laqi gaga?",
+          "chineseText": "那個小孩有幾本書？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Daha patis na ka heya.",
+          "chineseText": "她有二本書。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_12.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-13",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 13,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya patis na ka heya ?",
+          "chineseText": "那個小孩有幾本書？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Egu patis na ka heya.",
+          "chineseText": "她有很多本書。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_13.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-14",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 14,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Nanji ka saya?",
+          "chineseText": "現在是幾點鐘？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Sepac patis hido ka saya.",
+          "chineseText": "現在是四點鐘。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_14.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-15",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 15,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Nanji ttuyan su mgrebu ka isu?",
+          "chineseText": "你早上幾點鐘起床？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mmteru patis hido ttuyan mu mgrebu ka yaku.",
+          "chineseText": "我早上六點鐘起床。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_15.mp3"
+    },
+    {
+      "id": "16-choiceOne-2-16",
+      "classId": 27,
+      "classNo": 2,
+      "className": "訊息問句(問數量)",
+      "order": 16,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Nanji ttqiyan su keeman ka isu?",
+          "chineseText": "你晚上幾點鐘睡覺？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Maxal patis hido ttqiyan mu keeman ka yaku.",
+          "chineseText": "我晚上十點鐘睡覺。"
+        }
+      ],
+      "imagePath": "images/choiceOne/2_16.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/2_16.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-1",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 1,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu ka ppatis mu yaku?",
+          "chineseText": "我的筆在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Nii ka ppatis su isu.",
+          "chineseText": "你的筆在這裡。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_1.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-2",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 2,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu ka patis mu yaku ?",
+          "chineseText": "我的書在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Nii ka patis su isu.",
+          "chineseText": "你的書在這裡。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_2.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-3",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 3,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu ka bunuh na heya ?",
+          "chineseText": "他的帽子在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga ka bunuh na heya.",
+          "chineseText": "他的帽子在那裡。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_3.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-4",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 4,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu bruru na ka heya?",
+          "chineseText": "他/她的揹簍在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga ka bruru na heya.",
+          "chineseText": "他/她的揹簍在那裡。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_4.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-5",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 5,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu sapah namu ka yamu?",
+          "chineseText": "你們家在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga lmiqu baro sapah nami ka yami.",
+          "chineseText": "我們家在山上。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_5.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-6",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 6,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu ka tama su?",
+          "chineseText": "你爸爸在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga sapah pyasan ka tama mu.",
+          "chineseText": "我爸爸在學校裡。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_6.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-7",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 7,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu ka bubu su isu?",
+          "chineseText": "你媽媽在哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga sapah ka bubu mu yaku.",
+          "chineseText": "我媽媽在家裡。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_7.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-8",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 8,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maha su inu ka kusun?",
+          "chineseText": "你明天要去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Maha ku lmiqu baro ka kusun.",
+          "chineseText": "我明天要去山上。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_8.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-9",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 9,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maha su inu ka kusun?",
+          "chineseText": "你明天要去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Maha ku sapah pyasan ka kusun.",
+          "chineseText": "我明天要去學校。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_9.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-10",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 10,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Maha su inu ka kusun ?",
+          "chineseText": "你明天要去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Maha ku sapah na bubu mu rudan ka kusun.",
+          "chineseText": "我明天要去祖母家。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_10.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-11",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 11,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mnusa namu inu ka ciga?",
+          "chineseText": "你們昨天去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mnusa nami lmiqu ciga ka yami.",
+          "chineseText": "我們昨天去山上。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_11.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-12",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 12,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mnusa inu ciga ka dheya ?",
+          "chineseText": "他們昨天去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mnusa qmita tama rudan daha ciga ka dheya.",
+          "chineseText": "他們昨天去拜訪祖父。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_12.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-13",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 13,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mnusa inu ciga ka dheya ?",
+          "chineseText": "他們昨天去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mnusa sapah pyasan ciga ka dheya.",
+          "chineseText": "他們昨天去學校。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_13.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-14",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 14,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mmaha su inu ka saya?",
+          "chineseText": "你現在要去哪裡？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ni ku mmaha sapah.",
+          "chineseText": "我正要回家。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_14.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-15",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 15,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Pneeyah su inu saya ka isu?",
+          "chineseText": "你今天從哪裡來的？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pneeyah ku sapah saya ka yaku .",
+          "chineseText": "我今天從家裡來的。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_15.mp3"
+    },
+    {
+      "id": "16-choiceOne-3-16",
+      "classId": 28,
+      "classNo": 3,
+      "className": "訊息問句(問地方)",
+      "order": 16,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Pneeyah su inu saya ka isu?",
+          "chineseText": "你今天從哪裡來的？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pneeyah ku lmiqu baro saya ka yaku.",
+          "chineseText": "我今天從山上來的。"
+        }
+      ],
+      "imagePath": "images/choiceOne/3_16.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/3_16.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-1",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 1,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Laqi su muuyas ka isu?",
+          "chineseText": "你是學生嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, laqi ku muuyas ka yaku.",
+          "chineseText": "是，我是學生。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_1.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-2",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 2,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mptgesa ka heya?",
+          "chineseText": "他是老師嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, ising ka heya.",
+          "chineseText": "不是，他是醫生。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_2.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-3",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 3,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mptgesa su ka heya?",
+          "chineseText": "他是你的老師嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, mptgesa mu ka heya.",
+          "chineseText": "是/對，他是我的老師。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_3.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-4",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 4,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Baki su ka heya?",
+          "chineseText": "他是你的叔叔嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, mptgesa mu ka heya.",
+          "chineseText": "不是，他是我的老師。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_4.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-5",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 5,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Niqal su kingal swai mqedil ka isu?",
+          "chineseText": "你有一個妹妹嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, daha swai mu mqedil ka yaku.",
+          "chineseText": "不，我有二個妹妹。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_5.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-6",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 6,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Daha swai su rseno ka isu ?",
+          "chineseText": "你有兩個弟弟嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, kingal qbsuran mu rseno ma, kingal ka swai mu rseno.",
+          "chineseText": "不，我有一個哥哥一個弟弟。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_6.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-7",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 7,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Daha qbsuran su mqedil ka isu ?",
+          "chineseText": "你有兩個姊姊嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, kingal qbsuran mu mqedil ma, kingal ka qbsuran mu rseno.",
+          "chineseText": "不，我有一個姊姊一個哥哥。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_7.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-8",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 8,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Pila mu ka nii?",
+          "chineseText": "這是我的錢嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, pila su ka nii.",
+          "chineseText": "是的，這是你的錢。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_8.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-9",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 9,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Nisu kana ka phepah gaga?",
+          "chineseText": "那些是你的花嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, uxe naku ka phepah gaga.",
+          "chineseText": "不是，那些不是我的花。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_9.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-10",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 10,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Gaga su hmuwa di?",
+          "chineseText": "你怎麼了？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ni ku mnarux tunux.",
+          "chineseText": "我的頭很痛。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_10.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-11",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 11,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Gaga su hmuwa di?",
+          "chineseText": "你怎麼了？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ni ku mnarux doriq.",
+          "chineseText": "我的眼睛很痛。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_11.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-12",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 12,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Chedil ka pptasan nii?",
+          "chineseText": "這張桌子很重嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, chedil ka pptasan nii.",
+          "chineseText": "是/對，這張桌子很重。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_12.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-13",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 13,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Chedil ka gakac gaga?",
+          "chineseText": "那張椅子很重嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini, Slokah ka gakac kiya.",
+          "chineseText": "不，那張椅子很輕。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_13.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-14",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 14,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mqalux ngiyo su ka isu?",
+          "chineseText": "你的貓是黑色的嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, mqalux ngiyo mu ka yaku.",
+          "chineseText": "是/對，我的貓是黑色的。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_14.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-15",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 15,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Qmita terebi klaali ka dheya?",
+          "chineseText": "他們天天看電視嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, qmita terebi klaali ka dheya.",
+          "chineseText": "是/對，他們天天看電視。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_15.mp3"
+    },
+    {
+      "id": "16-choiceOne-4-16",
+      "classId": 29,
+      "classNo": 4,
+      "className": "是非問句(問職業、關係、數量、物品、健康、外貌、動作、天氣)",
+      "order": 16,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Malu karac ka ali saya?",
+          "chineseText": "今天天氣好嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, malu karac ka ali saya!",
+          "chineseText": "是/對，今天天氣很好。"
+        }
+      ],
+      "imagePath": "images/choiceOne/4_16.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/4_16.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-1",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 1,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga su muuyas ka isu?",
+          "chineseText": "你在讀書嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, ni ku muuya ka yaku.",
+          "chineseText": "是的，我在讀書。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_1.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-2",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 2,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga su muuyas ka isu?",
+          "chineseText": "你在讀書嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, ni ku jiyuga ka yaku.",
+          "chineseText": "不，我在畫畫。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_2.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-3",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 3,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga mtaqi ka swai su mqedil?",
+          "chineseText": "你妹妹在睡覺嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, waga mtaqi ka heya.",
+          "chineseText": "是的，她在睡覺。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_3.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_3.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-4",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 4,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga mtaqi ka swai su mqedil?",
+          "chineseText": "你妹妹在睡覺嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini, ga kmeeki ka heya.",
+          "chineseText": "不是，她在跳舞。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_4.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_4.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-5",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 5,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga mtheyaq ka lqlaqi gaga?",
+          "chineseText": "那些孩子在玩耍嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, waga mtheyaq ka lqlaqi gaga.",
+          "chineseText": "是/對，那些孩子在玩耍。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_5.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_5.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-6",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 6,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga muuyas uyas ka dheya ?",
+          "chineseText": "他們在唱歌嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Uxe, waga muuyas ka dheya.",
+          "chineseText": "不是，他們在讀書。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_6.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_6.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-7",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 7,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Ga qmuyux?",
+          "chineseText": "在下雨嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, ga qmuyux.",
+          "chineseText": "是/對，正在下雨。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_7.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_7.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-8",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 8,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Ga qmuyux?",
+          "chineseText": "在下雨嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini, thido di!",
+          "chineseText": "不，太陽出來了！"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_8.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_8.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-9",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 9,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Musa namu qmita tama rudan klaali ka yamu?",
+          "chineseText": "你們常常去探望祖父嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, musa miyan qmita tama rudan klaali ka yami.",
+          "chineseText": "對，我們常常去探望祖父。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_9.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_9.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-10",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 10,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mkela su mahu lukus ka isu?",
+          "chineseText": "你會洗衣服嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, mkela ku mahu lukus ka yaku.",
+          "chineseText": "會，我會洗衣服。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_10.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_10.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-11",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 11,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Mkela muuyas uyas ka lqlaqi gaga?",
+          "chineseText": "那些孩子會唱歌嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, mkela muuyas uyas ka lqlaqi gaga.",
+          "chineseText": "是，他們很會唱歌。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_11.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_11.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-12",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 12,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Smkuxul su muuyas ka isu?",
+          "chineseText": "你喜歡讀書嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, smkuxul ku muuyas ka yaku?",
+          "chineseText": "是/對，我喜歡讀書。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_12.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_12.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-13",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 13,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Smkuxul jiyuga ka laqi gaga?",
+          "chineseText": "那個孩子喜歡畫圖嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un, smkuxul jiyuga ka laqi gaga.",
+          "chineseText": "是/對，他很喜歡畫圖。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_13.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_13.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-14",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 14,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Smkuxul muuyas uyas ka lqlaqi gaga?",
+          "chineseText": "那些孩子喜歡唱歌嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Un. smkuxul muuyas uyas ka dheya.",
+          "chineseText": "是，他們喜歡唱歌。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_14.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_14.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-15",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 15,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Smkuxul kmeeki ka lqlaqi gaga ?",
+          "chineseText": "那些孩子喜歡跳舞嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini, smkuxul qmita terebi ka dheya.",
+          "chineseText": "不，他們喜歡看電視。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_15.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_15.mp3"
+    },
+    {
+      "id": "16-choiceOne-5-16",
+      "classId": 30,
+      "classNo": 5,
+      "className": "是非問句(問動作進行、能力、喜好--連動結構)",
+      "order": 16,
+      "turns": [
+        {
+          "letter": "A",
+          "indigenousText": "Smkuxul mtheyaq ka lqlaqi gaga?",
+          "chineseText": "那些孩子喜歡玩耍嗎？"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini, smkuxul mekan ka dheya.",
+          "chineseText": "不，他們喜歡吃東西。"
+        }
+      ],
+      "imagePath": "images/choiceOne/5_16.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/4choiceOne/5_16.mp3"
+    }
+  ],
+  "choiceTwo": [
+    {
+      "id": "16-choiceTwo-1-1",
+      "classId": 31,
+      "classNo": 1,
+      "className": "訊息問句(問姓名、關係、數量、地方)",
+      "order": 1,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ngayan qbsuran mqedil na ka heya?",
+          "chineseText": "他姊姊叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ima ngayan bubu rudan na ka heya?",
+          "chineseText": "他祖母叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ima ngayan bubu na ka heya?",
+          "chineseText": "他媽媽叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_1_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-1-2",
+      "classId": 31,
+      "classNo": 1,
+      "className": "訊息問句(問姓名、關係、數量、地方)",
+      "order": 2,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ka rudan gaga?",
+          "chineseText": "那個老人是誰？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ima ka rseno gaga?",
+          "chineseText": "那個男人是誰？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ima ka laqi gaga?",
+          "chineseText": "那個小孩是誰？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_2_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-1-3",
+      "classId": 31,
+      "classNo": 1,
+      "className": "訊息問句(問姓名、關係、數量、地方)",
+      "order": 3,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya kana bunga na ka laqi nii?",
+          "chineseText": "這個小孩有幾個地瓜？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Piya kana mudu na ka laqi nii?",
+          "chineseText": "這個小孩有幾個橘子？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana blebun na ka laqi nii?",
+          "chineseText": "這個小孩有幾根香蕉？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_3_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-1-4",
+      "classId": 31,
+      "classNo": 1,
+      "className": "訊息問句(問姓名、關係、數量、地方)",
+      "order": 4,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Piya knkwas su ka isu?",
+          "chineseText": "你幾歲？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Piya knkawas qbsuran su rseno ka isu?",
+          "chineseText": "你哥哥幾歲？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya knkawas swai su mqedil ka isu?",
+          "chineseText": "你妹妹幾歲？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_4_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-1-5",
+      "classId": 31,
+      "classNo": 1,
+      "className": "訊息問句(問姓名、關係、數量、地方)",
+      "order": 5,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga inu lukus ta ka ita?",
+          "chineseText": "我們的衣服在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga inu pila ta ka ita?",
+          "chineseText": "我們的錢在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Waga inu trasi ta ka ita?",
+          "chineseText": "我們的雨傘在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/1_5_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-2-1",
+      "classId": 32,
+      "classNo": 2,
+      "className": "是非問句(肯定/否定；問職業、關係、動物、植物、物品)",
+      "order": 1,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Mptgesa su ka isu?",
+          "chineseText": "你是老師嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ising su ka isu?",
+          "chineseText": "你是醫生嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Laqi su muuyas ka isu?",
+          "chineseText": "你是學生嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_1_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-2-2",
+      "classId": 32,
+      "classNo": 2,
+      "className": "是非問句(肯定/否定；問職業、關係、動物、植物、物品)",
+      "order": 2,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Swai su rseno ka heya?",
+          "chineseText": "他是你弟弟嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qbsuran su rseno ka heya?",
+          "chineseText": "他是你哥哥嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Dangi su ka heya?",
+          "chineseText": "他是你朋友嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_2_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-2-3",
+      "classId": 32,
+      "classNo": 2,
+      "className": "是非問句(肯定/否定；問職業、關係、動物、植物、物品)",
+      "order": 3,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Qpatul ka nii?",
+          "chineseText": "這是青蛙嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Tekung ka nii?",
+          "chineseText": "這是貓頭鷹嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Qcurux ka nii?",
+          "chineseText": "這是魚嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_3_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-2-4",
+      "classId": 32,
+      "classNo": 2,
+      "className": "是非問句(肯定/否定；問職業、關係、動物、植物、物品)",
+      "order": 4,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Bunuh mu ka gaga?",
+          "chineseText": "那是我的帽子嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pptasan mu ka gaga?",
+          "chineseText": "那是我的桌子嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Phepah mu ka gaga?",
+          "chineseText": "那是我的花嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_4_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-2-5",
+      "classId": 32,
+      "classNo": 2,
+      "className": "是非問句(肯定/否定；問職業、關係、動物、植物、物品)",
+      "order": 5,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Mqalux ka lukus na heya?",
+          "chineseText": "他的衣服是黑色的嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mtanah ka lukus na heya?",
+          "chineseText": "他的衣服是紅色的嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Mbhege ka lukus na heya?",
+          "chineseText": "他的衣服是白色的嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/2_5_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-3-1",
+      "classId": 33,
+      "classNo": 3,
+      "className": "敘述句(單一動詞；肯定/否定)",
+      "order": 1,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Madis ku trasi klaali ka yaku.",
+          "chineseText": "我常常帶雨傘。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mahu ku lukus klaali ka yaku.",
+          "chineseText": "我常常洗衣服。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Mkkesa ku klaali ka yaku.",
+          "chineseText": "我常常走路。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_1_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-3-2",
+      "classId": 33,
+      "classNo": 3,
+      "className": "敘述句(單一動詞；肯定/否定)",
+      "order": 2,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Egu dangi na ka dheyu.",
+          "chineseText": "他們的朋友很多。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Bbaro dangi na ka dheya.",
+          "chineseText": "他們的朋友很高。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Mbtunux dangi na ka dheya.",
+          "chineseText": "他們的朋友很漂亮。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_2_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-3-3",
+      "classId": 33,
+      "classNo": 3,
+      "className": "敘述句(單一動詞；肯定/否定)",
+      "order": 3,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Mblebu ba ka rseno gaga.",
+          "chineseText": "那個男人很矮。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mdrumuc ba ka rseno gaga.",
+          "chineseText": "那個男人很勤勞。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Mbserux ba ka rseno gaga.",
+          "chineseText": "那個男人很懶惰。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_3_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-3-4",
+      "classId": 33,
+      "classNo": 3,
+      "className": "敘述句(單一動詞；肯定/否定)",
+      "order": 4,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Ini pahu lukus ka heya.",
+          "chineseText": "他沒有洗衣服。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini trima dqeras ka heya.",
+          "chineseText": "他沒有洗臉。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ini qtaqi ka heya.",
+          "chineseText": "他沒有睡覺。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_4_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-3-5",
+      "classId": 33,
+      "classNo": 3,
+      "className": "敘述句(單一動詞；肯定/否定)",
+      "order": 5,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Ini ku ekan sari ka yaku.",
+          "chineseText": "我沒有在吃芋頭。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini ku puuyas uyas ka yaku.",
+          "chineseText": "我沒有在唱歌。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ini ku puuyas ka yaku.",
+          "chineseText": "我沒有在讀書。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/3_5_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-4-1",
+      "classId": 34,
+      "classNo": 4,
+      "className": "祈使句(肯定/否定)",
+      "order": 1,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Tutuy!",
+          "chineseText": "起立！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Tloung!",
+          "chineseText": "坐下！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Rengo!",
+          "chineseText": "請說！(說說看！)",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_1_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-4-2",
+      "classId": 34,
+      "classNo": 4,
+      "className": "祈使句(肯定/否定)",
+      "order": 2,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Usa jiyuga!",
+          "chineseText": "去畫圖！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Usa mtaqi!",
+          "chineseText": "去睡覺！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Usa muuyas!",
+          "chineseText": "去讀書！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_2_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-4-3",
+      "classId": 34,
+      "classNo": 4,
+      "className": "祈使句(肯定/否定)",
+      "order": 3,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Usa qmita tama su rudan!",
+          "chineseText": "去探望祖父！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Usa muuyas uyas!",
+          "chineseText": "去唱歌！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Usa mahu lukus!",
+          "chineseText": "去洗衣服！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_3_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-4-4",
+      "classId": 34,
+      "classNo": 4,
+      "className": "祈使句(肯定/否定)",
+      "order": 4,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Iya squwaq!",
+          "chineseText": "別說話！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Iya srahuq!",
+          "chineseText": "別遲到！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Iya seeliq!",
+          "chineseText": "別浪費！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_4_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-4-5",
+      "classId": 34,
+      "classNo": 4,
+      "className": "祈使句(肯定/否定)",
+      "order": 5,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Iya kbnuhi ka bunuh mu yaku.",
+          "chineseText": "別戴我的帽子！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Iya puqi ka mudu mu yaku.",
+          "chineseText": "別吃我的橘子！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Iya ngali ka trasi mu yaku.",
+          "chineseText": "別拿我的雨傘！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/4_5_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-5-1",
+      "classId": 35,
+      "classNo": 5,
+      "className": "複雜結構(連動結構、條件結構)",
+      "order": 1,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Mkela ku mahu lukus ka yaku.",
+          "chineseText": "我會洗衣服。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mkela ku kmeeki ka yaku.",
+          "chineseText": "我會跳舞。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Mkela ku jiyuga ka yaku.",
+          "chineseText": "我會畫圖。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_1_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-5-2",
+      "classId": 35,
+      "classNo": 5,
+      "className": "複雜結構(連動結構、條件結構)",
+      "order": 2,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Smkuxul mtaqi ka heya.",
+          "chineseText": "他喜歡睡覺。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Smkuxul muuyas ka heya.",
+          "chineseText": "他喜歡讀書。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Smkuxul mtheyaq ka heya.",
+          "chineseText": "他喜歡玩耍。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_2_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-5-3",
+      "classId": 35,
+      "classNo": 5,
+      "className": "複雜結構(連動結構、條件結構)",
+      "order": 3,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Cmhungi knbunuh ka heya.",
+          "chineseText": "她忘了戴帽子。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Cmhungi mekan iyu ka heya.",
+          "chineseText": "她忘了吃藥。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Cmhungi madis trasi ka heya.",
+          "chineseText": "她忘了帶雨傘。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_3_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-5-4",
+      "classId": 35,
+      "classNo": 5,
+      "className": "複雜結構(連動結構、條件結構)",
+      "order": 4,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Puqe ku mudu ka yaku ho?",
+          "chineseText": "我可以吃橘子嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Qtae ku terebi ka yaku ho?",
+          "chineseText": "我可以看電視嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Tqiye ku ka yaku ho?",
+          "chineseText": "我可以睡覺嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_4_C.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-choiceTwo-5-5",
+      "classId": 35,
+      "classNo": 5,
+      "className": "複雜結構(連動結構、條件結構)",
+      "order": 5,
+      "options": [
+        {
+          "letter": "A",
+          "indigenousText": "Msuwan de, rwahe ku bais ho?",
+          "chineseText": "如果雨停了，我可以開窗戶嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Msuwan de, hae ku lmiqu baro ho?",
+          "chineseText": "如果雨停了，我可以去山上嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Msuwan de, hae ku sapah pyasan ho?",
+          "chineseText": "如果雨停了，我可以去學校嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/5choiceTwo/5_5_C.mp3"
+        }
+      ]
+    }
+  ],
+  "choiceThree": [
+    {
+      "id": "16-choiceThree-1-1",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 1,
+      "indigenousText": "Doriq ka nii.",
+      "chineseText": "這是眼睛。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_1.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-2",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 2,
+      "indigenousText": "Birac ka nii.",
+      "chineseText": "這是耳朵。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_2.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-3",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 3,
+      "indigenousText": "Muhing ka nii.",
+      "chineseText": "這是鼻子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_3.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-4",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 4,
+      "indigenousText": "Quwaq ka nii.",
+      "chineseText": "這是嘴巴。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_4.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-5",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 5,
+      "indigenousText": "Rupun ka nii.",
+      "chineseText": "這是牙齒。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_5.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-6",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 6,
+      "indigenousText": "Tunux ka nii.",
+      "chineseText": "這是頭。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_6.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-7",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 7,
+      "indigenousText": "Snuunux ka nii.",
+      "chineseText": "這是頭髮。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_7.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-8",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 8,
+      "indigenousText": "Dqeras ka nii.",
+      "chineseText": "這是臉。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_8.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-9",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 9,
+      "indigenousText": "Baga ka nii.",
+      "chineseText": "這是手。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_9.mp3"
+    },
+    {
+      "id": "16-choiceThree-1-10",
+      "classId": 37,
+      "classNo": 1,
+      "className": "身體部位",
+      "order": 10,
+      "indigenousText": "Papak ka nii.",
+      "chineseText": "這是腳。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/1_10.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-1",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 1,
+      "indigenousText": "Huling ka nii.",
+      "chineseText": "這是狗。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_1.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-2",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 2,
+      "indigenousText": "Ngiyo ka nii.",
+      "chineseText": "這是貓。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_2.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-3",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 3,
+      "indigenousText": "Babuy ka nii.",
+      "chineseText": "這是豬。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_3.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-4",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 4,
+      "indigenousText": "Dapa ka nii.",
+      "chineseText": "這是牛。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_4.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-5",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 5,
+      "indigenousText": "Miric ka nii.",
+      "chineseText": "這是羊。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_5.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-6",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 6,
+      "indigenousText": "Runge ka nii.",
+      "chineseText": "這是猴子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_6.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-7",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 7,
+      "indigenousText": "Rodux ka nii.",
+      "chineseText": "這是雞。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_7.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-8",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 8,
+      "indigenousText": "Qolic ka nii.",
+      "chineseText": "這是鼠。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_8.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-9",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 9,
+      "indigenousText": "Qpatul ka nii.",
+      "chineseText": "這是青蛙。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_9.mp3"
+    },
+    {
+      "id": "16-choiceThree-2-10",
+      "classId": 38,
+      "classNo": 2,
+      "className": "動物",
+      "order": 10,
+      "indigenousText": "Tekung ka nii.",
+      "chineseText": "這是貓頭鷹。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/2_10.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-1",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 1,
+      "indigenousText": "Phepah ka gaga.",
+      "chineseText": "那是花。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_1.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-2",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 2,
+      "indigenousText": "Speriq ka gaga.",
+      "chineseText": "那是草。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_2.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-3",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 3,
+      "indigenousText": "Qhuni ka gaga.",
+      "chineseText": "那是樹。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_3.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-4",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 4,
+      "indigenousText": "Waso ka gaga.",
+      "chineseText": "那是葉子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_4.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-5",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 5,
+      "indigenousText": "Bunga ka gaga.",
+      "chineseText": "那是地瓜。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_5.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-6",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 6,
+      "indigenousText": "Pae ka gaga.",
+      "chineseText": "那是稻子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_6.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-7",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 7,
+      "indigenousText": "Srqemu ka gaga.",
+      "chineseText": "那是玉米。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_7.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-8",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 8,
+      "indigenousText": "Blebun ka gaga.",
+      "chineseText": "那是香蕉。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_8.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-9",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 9,
+      "indigenousText": "Mudu ka gaga.",
+      "chineseText": "那是橘子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_9.mp3"
+    },
+    {
+      "id": "16-choiceThree-3-10",
+      "classId": 39,
+      "classNo": 3,
+      "className": "植(食)物/水果",
+      "order": 10,
+      "indigenousText": "Quti rodux ka gaga.",
+      "chineseText": "那是番石榴。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/3_10.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-1",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 1,
+      "indigenousText": "Ppatis ka gaga.",
+      "chineseText": "那是筆。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_1.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-2",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 2,
+      "indigenousText": "Patis ka gaga.",
+      "chineseText": "那是書。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_2.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-3",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 3,
+      "indigenousText": "Serus ka gaga.",
+      "chineseText": "那是橡皮擦。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_3.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-4",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 4,
+      "indigenousText": "Pptasan ka gaga.",
+      "chineseText": "那是桌子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_4.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-5",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 5,
+      "indigenousText": "Gakac ka gaga.",
+      "chineseText": "那是椅子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_5.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-6",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 6,
+      "indigenousText": "Pila ka gaga.",
+      "chineseText": "那是錢。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_6.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-7",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 7,
+      "indigenousText": "Lukus ka gaga.",
+      "chineseText": "那是衣服。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_7.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-8",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 8,
+      "indigenousText": "Trasi ka gaga.",
+      "chineseText": "那是雨傘。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_8.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-9",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 9,
+      "indigenousText": "Bunuh ka gaga.",
+      "chineseText": "那是帽子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_9.mp3"
+    },
+    {
+      "id": "16-choiceThree-4-10",
+      "classId": 40,
+      "classNo": 4,
+      "className": "物品",
+      "order": 10,
+      "indigenousText": "Bruru ka gaga.",
+      "chineseText": "那是揹簍。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/4_10.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-1",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 1,
+      "indigenousText": "Lmiqu ka gaga.",
+      "chineseText": "那是山。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_1.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-2",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 2,
+      "indigenousText": "Sapah ka gaga.",
+      "chineseText": "那是房子。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_2.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-3",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 3,
+      "indigenousText": "Sapah pyasan ka gaga.",
+      "chineseText": "那是學校。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_3.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-4",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 4,
+      "indigenousText": "Hido ka gaga.",
+      "chineseText": "那是太陽。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_4.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-5",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 5,
+      "indigenousText": "Idas ka gaga.",
+      "chineseText": "那是月亮。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_5.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-6",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 6,
+      "indigenousText": "Pngerah karac ka gaga.",
+      "chineseText": "那是星星。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_6.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-7",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 7,
+      "indigenousText": "Ruru ka gaga.",
+      "chineseText": "那是溪。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_7.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-8",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 8,
+      "indigenousText": "Qsiya ka gaga.",
+      "chineseText": "那是水。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_8.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-9",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 9,
+      "indigenousText": "Neluk ka gaga.",
+      "chineseText": "那是門。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_9.mp3"
+    },
+    {
+      "id": "16-choiceThree-5-10",
+      "classId": 41,
+      "classNo": 5,
+      "className": "山川建築/自然景觀",
+      "order": 10,
+      "indigenousText": "Bais ka gaga.",
+      "chineseText": "那是窗。",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/7choiceThree/5_10.mp3"
+    }
+  ],
+  "oralReading": [
+    {
+      "id": "16-oralReading-1-1",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 1,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Mnkuung di!",
+          "chineseText": "天黑了！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Geqi ka hido di!",
+          "chineseText": "太陽下山了！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ni sbgihur paru di!",
+          "chineseText": "颱風來了！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_1_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Qmuyux di!",
+          "chineseText": "下雨了！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_1_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Msuwan di!",
+          "chineseText": "雨停了！",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_1_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-2",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 2,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Ali gdregan ka saya.",
+          "chineseText": "今天是星期天。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mttilux riyung ka ali saya.",
+          "chineseText": "今天很熱。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ini ksekuy ka ali saya.",
+          "chineseText": "今天不冷。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_2_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Paru quyux ka ali saya.",
+          "chineseText": "今天的雨很大。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_2_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Paru bgihur ka ali saya duri.",
+          "chineseText": "今天的風也很大。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_2_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-3",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 3,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Rbagan ka saya.",
+          "chineseText": "現在是夏天。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Rbagan de, egu bgihur paru.",
+          "chineseText": "夏天時，颱風很多。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Paru qsiya ruru duri.",
+          "chineseText": "溪水也很深(/多/大)。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_3_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Mpmisan de, mhada mudu di!",
+          "chineseText": "秋天時，橘子成熟了。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_3_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Misan de, meelih ka qsiya ruru.",
+          "chineseText": "冬天時，溪水很淺(/小)。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_3_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-4",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 4,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Bbaro ka rseno nii.",
+          "chineseText": "這個男人很高。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mbtunux ka mqedil nii.",
+          "chineseText": "這個女人很美麗。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Mbserux ka laqi nii.",
+          "chineseText": "這個小孩很懶惰。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_4_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Mqaras ka mptgesa nii.",
+          "chineseText": "這個老師很快樂。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_4_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Mdrumuc ka laqi muuyas nii.",
+          "chineseText": "這個學生很勤勞。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_4_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-5",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 5,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Chedil ka pptasan gaga.",
+          "chineseText": "那張桌子很重。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Slokah ka gakac gaga.",
+          "chineseText": "那把椅子很輕。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Paru ka sapah gaga.",
+          "chineseText": "那個房子很大。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_5_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Biciq ka sapah pyasan gaga.",
+          "chineseText": "那個學校很小。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_5_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Qnedis ka ppatis gaga.",
+          "chineseText": "那支筆很長。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_5_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-6",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 6,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Mkkesa klaali ka tama mu rudan.",
+          "chineseText": "我祖父天天走路。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_6_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Mahu lukus klaali ka bubu mu rudan.",
+          "chineseText": "我祖母天天洗衣服。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_6_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Qmita terebi klaali ka tama mu.",
+          "chineseText": "我爸爸天天看電視。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_6_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Madis trasi klaali ka bubu mu.",
+          "chineseText": "我媽媽天天帶雨傘。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_6_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Jiyuga klaali ka baki mu.",
+          "chineseText": "我叔叔天天畫畫。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_6_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-7",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 7,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga mtaqi ka qbsuran na rseno.",
+          "chineseText": "他哥哥在睡覺。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_7_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga knbunuh ka qbsuran na mqedil.",
+          "chineseText": "他姊姊戴著帽子。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_7_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Waga mekan sari ka swai na rseno.",
+          "chineseText": "他弟弟在吃芋頭。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_7_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Waga muuyas uyas ka swai na mqedil.",
+          "chineseText": "他妹妹在唱歌。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_7_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Waga muuyas ka dangi na heya.",
+          "chineseText": "他朋友在讀書。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_7_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-8",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 8,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Waga su mtaqi?",
+          "chineseText": "你在睡覺嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_8_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga su knbunuh?",
+          "chineseText": "你戴著帽子嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_8_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Waga su mekan sari?",
+          "chineseText": "你在吃芋頭嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_8_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Waga su muuyas uyas?",
+          "chineseText": "你在唱歌嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_8_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Waga su muuyas?",
+          "chineseText": "你在讀書嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_8_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-9",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 9,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Ini ku qtaqi ka yaku.",
+          "chineseText": "我沒有在睡覺。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_9_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Ini ku kbunuh ka yaku.",
+          "chineseText": "我沒有戴著帽子。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_9_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Ini ku ekan sari ka yaku.",
+          "chineseText": "我沒有在吃芋頭。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_9_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Ini ku puuyas uyas ka yaku.",
+          "chineseText": "我沒有在唱歌。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_9_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Ini ku puuyas ka yaku.",
+          "chineseText": "我沒有在讀書。",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_9_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-oralReading-1-10",
+      "classId": 42,
+      "classNo": 1,
+      "className": "唸唸看",
+      "order": 10,
+      "sentences": [
+        {
+          "letter": "A",
+          "indigenousText": "Lmngelung su bubu rudan?",
+          "chineseText": "你很想念祖母嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_10_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Egu dangi na ka heya?",
+          "chineseText": "他的朋友很多嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_10_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Stenge bruru daha di?",
+          "chineseText": "他們的簍子裝滿了嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_10_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Waga hini ka sapah namu pyasan?",
+          "chineseText": "你們的學校在這裡嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_10_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Qnedis snuunux na bubu ta rudan?",
+          "chineseText": "我們祖母的頭髮很長嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/8oralReading/1_10_E.mp3"
+        }
+      ]
+    }
+  ],
+  "dialogue": [
+    {
+      "id": "16-dialogue-1-1",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 1,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Sndamac su bale!",
+          "chineseText": "你好嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_1_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pneeyah su inu ka saya?",
+          "chineseText": "你今天從哪裡來？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_1_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana ka hei tnsapah su isu?",
+          "chineseText": "你們家有多少人？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_1_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Mkela su rmengo kari Seediq?",
+          "chineseText": "你會說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_1_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Rmengo su kari Seediq klaali ka isu?",
+          "chineseText": "你常常說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_1_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-2",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 2,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Ye su malu ka ali saya?",
+          "chineseText": "你今天好嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_2_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga su inu ka saya?",
+          "chineseText": "你現在在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_2_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana mtswai su rseno ma mqedil?",
+          "chineseText": "你有幾個兄弟姊妹？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_2_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Smkuxul su muuyas ka isu?",
+          "chineseText": "你喜歡讀書嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_2_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Ye su mptgesa kari Seediq bobo na ka isu?",
+          "chineseText": "你將來要教族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_2_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-3",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 3,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ngayan su ka isu?",
+          "chineseText": "你叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_3_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga inu sapah namu ka yamu?",
+          "chineseText": "你們家在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_3_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya knkawas su ka isu ?",
+          "chineseText": "你幾歲了？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_3_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Smkuxul su smluhe kari Seediq ka isu?",
+          "chineseText": "你喜歡學族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_3_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Rmengo su kari Seediq klaali ka isu?",
+          "chineseText": "你常常說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_3_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-4",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 4,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Sndamac su bale?",
+          "chineseText": "你好嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_4_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga inu sapah su pyasan ka isu?",
+          "chineseText": "你的學校在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_4_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana ka dangi su?",
+          "chineseText": "你有幾個朋友？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_4_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Ye namu mtheyaq muuyas klaali ka yamu?",
+          "chineseText": "你們天天一起讀書嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_4_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Rmengo namu kari Seediq klaali ka yamu?",
+          "chineseText": "你們常常說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_4_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-5",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 5,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ngayan su ka isu?",
+          "chineseText": "你叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_5_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Maha su inu ka kiya hari?",
+          "chineseText": "你等一下要去哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_5_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana ka terebi sapah su?",
+          "chineseText": "你家有幾台電視？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_5_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Smkxul su qmita terebi ka isu?",
+          "chineseText": "你喜歡看電視嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_5_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Nanji ttqiyan su keeman ka isu?",
+          "chineseText": "你每天幾點睡覺？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_5_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-6",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 6,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Sndamac su bale!",
+          "chineseText": "你好嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_6_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Pneeyah su inu ka saya?",
+          "chineseText": "你今天從哪裡來？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_6_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana ka hei tnsapah su isu?",
+          "chineseText": "你們家有多少人？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_6_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Ye mkela ba rmengo kari Seediq ka tama su?",
+          "chineseText": "你爸爸很會說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_6_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Mkela tmgesa kari Seediq ka tama su isu?",
+          "chineseText": "你爸爸會教族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_6_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-7",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 7,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Ye su malu ka ali saya?",
+          "chineseText": "你今天好嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_7_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga su inu ka ali saya?",
+          "chineseText": "你現在在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_7_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana mtswai su rseno ma mqedil?",
+          "chineseText": "你有幾個兄弟姊妹？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_7_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Smkuxul namu muuyas uyas kana namu?",
+          "chineseText": "你們都喜歡唱歌嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_7_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Smkuxul namu kmeeki ka yamu duri?",
+          "chineseText": "你們也喜歡跳舞嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_7_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-8",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 8,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ngayan su ka isu?",
+          "chineseText": "你叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_8_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga inu bubu su saya?",
+          "chineseText": "你媽媽現在在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_8_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya knkawas su ka isu?",
+          "chineseText": "她幾歲了？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_8_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Rmengo kari seediq klaali ka bubu su?",
+          "chineseText": "你媽媽常說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_8_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Rmengo kari Seediq kana ka hei tnsapah namu yamu?",
+          "chineseText": "你們全家人都說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_8_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-9",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 9,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Sndamac su bale?",
+          "chineseText": "你好嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_9_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga meniq inu ka tama su rudan ma bubu su rudan?",
+          "chineseText": "你祖父祖母現在在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_9_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Musa namu qmita tama rudan ma bubu rudan klaali ka yamu?",
+          "chineseText": "你常去探望祖父祖母嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_9_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Mkela ba rmengo kari Seediq ka tama su rudan ma bubu su rudan?",
+          "chineseText": "你的祖父祖母很會說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_9_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Rmengo kari Seediq kana ka hei tnsapah namu yamu?",
+          "chineseText": "你們全家人都說族語嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_9_E.mp3"
+        }
+      ]
+    },
+    {
+      "id": "16-dialogue-1-10",
+      "classId": 43,
+      "classNo": 1,
+      "className": "簡短對話",
+      "order": 10,
+      "questions": [
+        {
+          "letter": "A",
+          "indigenousText": "Ima ngayan su ka isu?",
+          "chineseText": "你叫甚麼名字？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_10_A.mp3"
+        },
+        {
+          "letter": "B",
+          "indigenousText": "Waga inu sapah su pyasan ka isu?",
+          "chineseText": "你的學校在哪裡？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_10_B.mp3"
+        },
+        {
+          "letter": "C",
+          "indigenousText": "Piya kana dangi su ka isu?",
+          "chineseText": "你有幾個朋友？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_10_C.mp3"
+        },
+        {
+          "letter": "D",
+          "indigenousText": "Smkuxul su jiyuga ka isu?",
+          "chineseText": "你喜歡畫畫嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_10_D.mp3"
+        },
+        {
+          "letter": "E",
+          "indigenousText": "Jiyuga su klaali ka isu?",
+          "chineseText": "你常常畫畫嗎？",
+          "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/9dialogue/1_10_E.mp3"
+        }
+      ]
+    }
+  ],
+  "pictureTalk": [
+    {
+      "id": "16-pictureTalk-1-1",
+      "classId": 44,
+      "classNo": 1,
+      "className": "看圖說話",
+      "order": 1,
+      "tip": "我們這一班",
+      "indigenousText": "Egu dangi mu ka yaku. Meniq rseno ma, meniq mqedil duri. Suupu miyan muuyas klaali ma, suupu nami mtheyaq duri. Malu ba ka mptgesa miyan, klaali mprengo nami kari Seediq ma, muuyas nami uyas Seediq duri.",
+      "chineseText": "我有很多朋友，有男生，也有女生。我們天天一起讀書，也一起玩耍。我們的老師很好，她常常和我們一起說族語，也一起唱歌。",
+      "imageUrl": "https://klokah.tw/extension/sp_senior/graphics_100x100/pictureTalk/1.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/10pictureTalk/1_1.mp3"
+    },
+    {
+      "id": "16-pictureTalk-1-2",
+      "classId": 44,
+      "classNo": 1,
+      "className": "看圖說話",
+      "order": 2,
+      "tip": "我的學校",
+      "indigenousText": "Laqi ku muuyas ka yaku. Waga ssiyo sapah pyasan ka sapah mu duri. Mkkesa ku klaali musa sapah pyasan ma, meyah ku sapah. Paru sapah miyan pyasan kiya, hbaro ba ka laqi muuyas ma, hbaro ka mptgesa nami duri. Mleho riyung kana ka mptgesa nami. Kuxul mu ba ka sapah mu pyasan.",
+      "chineseText": "我是學生。我的家在我的學校附近。我天天走路去學校，也走路回家。我們的學校很大，有很多學生，也有很多老師。我們的老師都很好。他們天天和我們一起讀書，也一起唱歌。我們常常說族語。我非常喜歡我的學校。",
+      "imageUrl": "https://klokah.tw/extension/sp_senior/graphics_100x100/pictureTalk/2.png",
+      "audioUrl": "https://klokah.tw/extension/sp_senior/sound/16/10pictureTalk/1_2.mp3"
+    }
+  ]
+}
