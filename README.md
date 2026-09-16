@@ -1,6 +1,6 @@
 # 族語e樂園 AI 實驗室
 
-族語學習 AI 應用的公開入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類，每類四張卡片，共 20 項任務。
+族語學習 AI 應用的公開入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類。基礎學習五張（桌機一次露出四張，可左右滑看第五張），其餘各四張，共 21 項任務。
 
 ## 線上網站
 
@@ -27,7 +27,7 @@ node scripts/serve.mjs 4173
 卡片唯一資料來源位於 `app.js`：
 
 - `categories`：五大分類的名稱、說明、圖示與色彩。
-- `applicationSeeds`：20 張卡片的名稱、說明與圖示。
+- `applicationSeeds`：21 張卡片的名稱、說明與圖示。
 - `applications`：完整資料模型，包含 `id`、`categoryId`、`status`、`href`、`openInNewTab`、`tags` 與 `order`。
 
 要將卡片上線，將該筆 `status` 改為 `available` 並填入有效 `href`；要暫停服務則改為 `maintenance`。未上線卡片保持 `coming-soon`，頁面不會產生空連結。
@@ -50,6 +50,8 @@ node scripts/serve.mjs 4173
 - [看圖練習](apps/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思。
 - [口說練習](apps/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；可先聽教材再念，也可以直接說。語音辨識會顯示系統聽到的內容。
 - [聽音練習](apps/listen-practice/README.md)：與看圖練習同一批主題，聽族語音檔後選出對應圖片或中文意思；音檔由 klokah.tw／web.klokah.tw 直接播放。
+- [問答練習](apps/qa-practice/README.md)：聽國中版對話問句，用打字或錄音自由回答；系統顯示它聽到、懂成的意思，不做考試配分。
+- [看圖描述](apps/describe-practice/README.md)：用認證初級看圖說話、中級看圖表達的圖片自由描述；系統顯示它懂成的中文意思。
 - [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
 - [中級模擬站](apps/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
 

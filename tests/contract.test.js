@@ -12,6 +12,7 @@ function assert(condition, message) {
 }
 
 assert(html.includes('lang="zh-Hant"'), "HTML language must be zh-Hant");
+assert(html.includes("21 項") && html.includes("二十一項"), "Homepage copy must say 21 applications");
 assert(html.includes('id="applications"'), "Main application landmark is missing");
 assert(css.includes("prefers-reduced-motion"), "Reduced-motion support is missing");
 assert(css.includes("@media (max-width: 560px)"), "Mobile breakpoint is missing");
@@ -33,17 +34,21 @@ const { categories, applications } = vm.runInNewContext(
 );
 
 assert(categories.length === 5, `Expected 5 categories, received ${categories.length}`);
-assert(applications.length === 20, `Expected 20 applications, received ${applications.length}`);
+assert(applications.length === 21, `Expected 21 applications, received ${applications.length}`);
 assert(applications[0].title === "看圖練習" && applications[0].status === "available" && applications[0].href === "apps/body-parts-practice/", "First basics card must link to picture practice");
 assert(applications[1].title === "口說練習" && applications[1].status === "available" && applications[1].href === "apps/body-parts-speaking/", "Second basics card must link to speaking practice");
 assert(applications[2].title === "聽音練習" && applications[2].status === "available" && applications[2].href === "apps/listen-practice/", "Third basics card must link to listen practice");
-assert(applications[3].title === "跟讀小教練" && applications[3].status === "coming-soon" && !applications[3].href, "Fourth basics card stays coming soon");
-assert(applications[8].title === "初級模擬站" && applications[8].status === "available" && applications[8].href === "apps/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
-assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
+assert(applications[3].title === "問答練習" && applications[3].status === "available" && applications[3].href === "apps/qa-practice/", "Fourth basics card must link to Q&A practice");
+assert(applications[4].title === "看圖描述" && applications[4].status === "available" && applications[4].href === "apps/describe-practice/", "Fifth basics card must link to picture-describe practice");
+assert(applications[9].title === "初級模擬站" && applications[9].status === "available" && applications[9].href === "apps/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
+assert(applications[10].title === "中級模擬站" && applications[10].status === "available" && applications[10].href === "apps/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
 assert(applications.filter((app) => app.status === "available").every((app) => fs.existsSync(path.join(root, app.href, "index.html"))), "Every available card must point at a real page");
-for (const category of categories) {
+assert(applications.filter((app) => app.categoryId === "basics").length === 5, "基礎學習 must have 5 applications");
+for (const category of categories.filter((item) => item.id !== "basics")) {
   assert(applications.filter((app) => app.categoryId === category.id).length === 4, `${category.title} must have 4 applications`);
 }
+assert(captured["#category-sections"].innerHTML.includes("上一張") && captured["#category-sections"].innerHTML.includes("下一張"), "Basics carousel must expose previous/next controls");
+assert(/\.card-grid\s*\{[^}]*grid-template-columns:\s*repeat\(4,\s*1fr\)/.test(css), "Desktop card grid must stay four columns");
 for (const app of applications) {
   for (const field of ["id", "categoryId", "title", "description", "icon", "status", "href", "openInNewTab", "tags", "order"]) {
     assert(Object.hasOwn(app, field), `${app.id} is missing ${field}`);
@@ -52,4 +57,4 @@ for (const app of applications) {
   assert(app.icon.startsWith("assets/icons/") && app.icon.endsWith(".webp"), `${app.id} must use the unified raster icon system`);
 }
 
-console.log("PASS: 5 categories, 20 data-driven cards, responsive and accessibility contracts");
+console.log("PASS: 5 categories, 21 data-driven cards, responsive and accessibility contracts");

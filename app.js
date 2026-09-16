@@ -11,7 +11,8 @@ const applicationSeeds = {
     ["看圖練習", "看圖片寫出族語完整句子。可依身體部位、動物、地點、職業等主題練習。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
     ["口說練習", "看圖片用族語念出完整句子。可先聽教材再念，也可以直接說。主題與看圖練習相同。", "assets/icons/studio-microphone.webp", "available", "apps/body-parts-speaking/"],
     ["聽音練習", "聽族語音檔，選出對應的圖片或中文意思。主題與看圖練習相同。", "assets/icons/listening-ear.webp", "available", "apps/listen-practice/"],
-    ["跟讀小教練", "跟著提示反覆練習，勇敢開口說。", "assets/icons/speaking-microphone.webp"]
+    ["問答練習", "聽族語問句，用打字或錄音自由回答。系統會顯示它聽到、懂成的意思。", "assets/icons/speaking-microphone.webp", "available", "apps/qa-practice/"],
+    ["看圖描述", "看認證看圖說話／看圖表達的圖片，用自己的話描述。系統會顯示它懂成的中文意思。", "assets/icons/open-storybook.webp", "available", "apps/describe-practice/"]
   ],
   classroom: [
     ["聽力快問快答", "聽見關鍵詞，選出最合適的答案。", "assets/icons/listening-ear.webp"],
@@ -71,11 +72,18 @@ categoryNav.innerHTML = categories.map((category) => `
 `).join("");
 
 sectionsRoot.innerHTML = categories.map((category, categoryIndex) => {
-  const cards = applications
+  const items = applications
     .filter((application) => application.categoryId === category.id)
-    .sort((a, b) => a.order - b.order)
-    .map((application, index) => renderCard(application, index + 1, category.accent))
-    .join("");
+    .sort((a, b) => a.order - b.order);
+  const cards = items.map((application, index) => renderCard(application, index + 1, category.accent)).join("");
+  const grid = `<div class="card-grid">${cards}</div>`;
+  const track = items.length > 4
+    ? `<div class="card-carousel" tabindex="0" aria-label="${category.title}任務卡片">
+        <button type="button" data-carousel-prev aria-label="上一張">←</button>
+        <div class="card-carousel__viewport">${grid}</div>
+        <button type="button" data-carousel-next aria-label="下一張">→</button>
+      </div>`
+    : grid;
 
   return `
     <section class="category-section category-section--${category.accent}" id="${category.id}" aria-labelledby="${category.id}-title">
@@ -86,12 +94,56 @@ sectionsRoot.innerHTML = categories.map((category, categoryIndex) => {
           <h2 id="${category.id}-title">${category.title}</h2>
           <span>${category.description}</span>
         </div>
-        <strong class="category-heading__count">4 個任務</strong>
+        <strong class="category-heading__count">${items.length} 個任務</strong>
       </div>
-      <div class="card-grid">${cards}</div>
+      ${track}
     </section>
   `;
 }).join("");
+
+function pageSize() {
+  if (window.matchMedia("(max-width: 560px)").matches) return 1;
+  if (window.matchMedia("(max-width: 900px)").matches) return 2;
+  return 4;
+}
+
+function bindCarousel(root) {
+  const viewport = root.querySelector(".card-carousel__viewport");
+  const grid = root.querySelector(".card-grid");
+  const prev = root.querySelector("[data-carousel-prev]");
+  const next = root.querySelector("[data-carousel-next]");
+  const count = grid.children.length;
+  let slide = 0;
+
+  function layout() {
+    const size = pageSize();
+    const gap = 16;
+    const width = viewport.clientWidth;
+    const cardWidth = Math.max(0, (width - (size - 1) * gap) / size);
+    for (const card of grid.children) {
+      card.style.flex = `0 0 ${cardWidth}px`;
+      card.style.maxWidth = `${cardWidth}px`;
+    }
+    slide = Math.max(0, Math.min(slide, Math.max(0, count - size)));
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    grid.style.gap = `${gap}px`;
+    grid.style.transition = reduced ? "none" : "transform .22s ease";
+    grid.style.transform = `translateX(${-slide * (cardWidth + gap)}px)`;
+    const overflow = count > size;
+    prev.hidden = next.hidden = !overflow;
+    prev.disabled = slide <= 0;
+    next.disabled = slide >= count - size;
+  }
+
+  prev.addEventListener("click", () => { slide -= 1; layout(); });
+  next.addEventListener("click", () => { slide += 1; layout(); });
+  root.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") { event.preventDefault(); slide -= 1; layout(); }
+    if (event.key === "ArrowRight") { event.preventDefault(); slide += 1; layout(); }
+  });
+  window.addEventListener("resize", layout);
+  layout();
+}
 
 function renderCard(application, index, accent) {
   const isAvailable = application.status === "available" && application.href;
@@ -114,6 +166,8 @@ function renderCard(application, index, accent) {
     </${tagName}>
   `;
 }
+
+document.querySelectorAll(".card-carousel").forEach(bindCarousel);
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
