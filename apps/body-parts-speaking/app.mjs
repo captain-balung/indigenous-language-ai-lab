@@ -1,5 +1,6 @@
 import { createQuestionDeck, createSingleFlight, judgeAnswer } from "../body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../body-parts-practice/dialects.mjs";
+import { THEMES, loadThemeShards, recordsForTheme, themeById } from "../body-parts-practice/themes.mjs";
 import {
   ASR_MODELS, asrModelFor, auditAsrModels, encodeWav, readAsrText,
   ASR_TARGET_SAMPLE_RATE, ASR_TIMEOUT_MS, REQUEST_TIMEOUT_MS, SLOW_HINT_AFTER_MS
@@ -9,14 +10,15 @@ const API = "https://ai3.iformosa.com.tw/formosan_ai/api.php";
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
-  modelNote: $("#model-note"), quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
+  modelNote: $("#model-note"), themes: $("#themes"), themeGrid: $("#theme-grid"),
+  quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   image: $("#question-image"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"), preview: $("#preview"),
   submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
 
-let dataset, selectedDialect, question, deck, answeredCount = 0, pending = false;
+let selectedDialect, selectedTheme, shards, records = [], question, deck, roundSize = 0, answeredCount = 0, pending = false;
 let translationCodes = new Set(DIALECTS.map((d) => d.code));
 let asrAudit = null;
 let recorder = null, mediaStream = null, chunks = [], startedAt = 0, timer = null;
@@ -44,14 +46,10 @@ function setState(key, override) {
 /* ---------- 初始化 ---------- */
 
 async function init() {
-  const response = await fetch("/data/body-parts/dataset.json");
-  if (!response.ok) throw new Error("教材載入失敗");
-  dataset = await response.json();
-  if (dataset.recordCount !== 420 || dataset.dialectCount !== 42) throw new Error("教材完整性檢查失敗");
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));
 
   if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
-    ui.api.textContent = "△ 這個瀏覽器不支援錄音。請改用打字版（MISSION 01），或換用支援錄音的瀏覽器。";
+    ui.api.textContent = "△ 這個瀏覽器不支援錄音。請改用看圖練習（MISSION 01），或換用支援錄音的瀏覽器。";
     ui.api.dataset.state = "error";
     ui.start.disabled = true;
     return;
@@ -109,8 +107,40 @@ ui.dialect.addEventListener("change", () => {
   resetQuiz();
   selectedDialect = dialectById(ui.dialect.value);
   updateModelNote();
+  loadThemes();
   updateStart();
 });
+
+ui.themeGrid.addEventListener("click", (event) => {
+  const button = event.target.closest("button[data-theme]");
+  if (!button || button.disabled) return;
+  selectedTheme = themeById(button.dataset.theme);
+  records = recordsForTheme(selectedTheme, shards?.junior, shards?.jobs);
+  for (const item of ui.themeGrid.querySelectorAll("button[data-theme]")) {
+    item.setAttribute("aria-pressed", String(item === button));
+  }
+  updateStart();
+});
+
+async function loadThemes() {
+  const dialect = selectedDialect;
+  if (!dialect) return;
+  ui.themes.hidden = false;
+  ui.themeGrid.innerHTML = "<p>載入主題中…</p>";
+  try {
+    shards = await loadThemeShards(dialect.id);
+    if (selectedDialect !== dialect) return;
+    ui.themeGrid.innerHTML = THEMES.map((theme) => {
+      const count = recordsForTheme(theme, shards.junior, shards.jobs).length;
+      return `<button type="button" data-theme="${theme.id}" ${count ? "" : "disabled"} aria-pressed="false">${escapeHtml(theme.name)}<small>${count} 題</small></button>`;
+    }).join("");
+  } catch (error) {
+    if (selectedDialect !== dialect) return;
+    shards = null;
+    ui.themeGrid.innerHTML = `<p>主題教材無法載入：${escapeHtml(error.message)}</p>`;
+  }
+  updateStart();
+}
 
 function asrStateFor(ethnicity) {
   const model = asrModelFor(ethnicity);
@@ -126,21 +156,21 @@ function updateModelNote() {
   const dialectName = selectedDialect?.name || "所選方言";
   ui.modelNote.textContent = usable
     ? `${dialectName}將使用「${ethnicity}」族級模型 ${model} 進行辨識。`
-    : `${ethnicity}目前無法使用語音辨識：${reason}。可改用打字版練習。`;
+    : `${ethnicity}目前無法使用語音辨識：${reason}。可改用看圖練習。`;
   ui.modelNote.dataset.blocked = usable ? "false" : "true";
 }
 
 function updateStart() {
   const usable = ui.ethnicity.value ? asrStateFor(ui.ethnicity.value).usable : false;
-  ui.start.disabled = !selectedDialect || !dataset || !usable;
+  ui.start.disabled = !selectedDialect || !selectedTheme || !records.length || !usable;
 }
 
 /* ---------- 出題 ---------- */
 
 ui.start.addEventListener("click", () => {
-  const records = dataset.records.filter((item) => item.dialectId === selectedDialect.id);
-  if (records.length !== 10) { showResult("unavailable", "此方言教材不完整，暫停出題。"); return; }
+  if (!records.length) { showResult("unavailable", "此主題目前沒有完整圖卡，暫停出題。"); return; }
   deck = createQuestionDeck(records);
+  roundSize = records.length;
   answeredCount = 0;
   ui.quiz.hidden = false;
   nextQuestion();
@@ -151,10 +181,10 @@ function nextQuestion() {
   question = deck.next();
   answeredCount += 1;
   pending = false;
-  ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name}`;
-  ui.progress.textContent = `本輪 ${answeredCount} / 10`;
-  ui.image.src = `/data/body-parts/${question.imagePath}`;
-  ui.image.alt = `請辨認圖片中的身體部位（${selectedDialect.name}題目）`;
+  ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name} · ${selectedTheme.name}`;
+  ui.progress.textContent = `本輪 ${answeredCount} / ${roundSize}`;
+  ui.image.src = question.imageSrc;
+  ui.image.alt = `請辨認圖片（${selectedTheme.name}，${selectedDialect.name}）`;
   clearRecording();
   ui.heard.hidden = true;
   ui.result.hidden = ui.retry.hidden = ui.reveal.hidden = ui.next.hidden = ui.model.hidden = true;
@@ -185,8 +215,8 @@ ui.record.addEventListener("click", async () => {
     const denied = error?.name === "NotAllowedError";
     setState("failed", denied ? "沒有麥克風權限" : "找不到可用的麥克風");
     showResult("unavailable", denied
-      ? "瀏覽器沒有給這個頁面麥克風權限，所以無法錄音。你可以在網址列的權限設定允許麥克風後重試，或改用打字版練習。"
-      : "找不到可用的麥克風。請確認裝置後重試，或改用打字版練習。");
+      ? "瀏覽器沒有給這個頁面麥克風權限，所以無法錄音。你可以在網址列的權限設定允許麥克風後重試，或改用看圖練習。"
+      : "找不到可用的麥克風。請確認裝置後重試，或改用看圖練習。");
     return;
   }
   chunks = [];
@@ -279,7 +309,7 @@ const runFlow = createSingleFlight(async () => {
     // 轉檔失敗絕不靜默送出原始錄音——那正是辨識不準的來源
     setState("failed", "轉檔失敗，沒有送出");
     showResult("unavailable",
-      `無法把這段錄音轉成辨識需要的格式（${error.message}），因此沒有送出任何資料。請重新錄音，或改用打字版練習。`);
+      `無法把這段錄音轉成辨識需要的格式（${error.message}），因此沒有送出任何資料。請重新錄音，或改用看圖練習。`);
     finishFlow();
     return;
   }
@@ -377,7 +407,7 @@ function renderResult(result, heard) {
     exact: ["完全正確！", "與教材答案完全相符，不需要再呼叫翻譯服務。"],
     semantic: ["意思正確，通過！", "系統聽到的內容意思接近；可以參考教材的標準句型。"],
     // 不斷言使用者念錯：只陳述系統聽到什麼、與教材不同
-    retry: ["再試一次", "系統聽到的內容與本題的身體部位不相符。可能是念法不同，也可能是辨識偏差；重新錄音再試一次即可。"],
+    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差；重新錄音再試一次即可。"],
     unavailable: ["目前無法完成判定", "你的答案尚未被判錯，錄音仍保留。"]
   };
   const [title, detail] = messages[result.type];
@@ -399,15 +429,18 @@ ui.reveal.addEventListener("click", () => {
   ui.model.innerHTML = `<strong>教材答案</strong><p>${escapeHtml(question.indigenousText)}</p><small>${escapeHtml(question.chineseText)}</small>`;
 });
 
-ui.next.addEventListener("click", () => { if (answeredCount >= 10) answeredCount = 0; nextQuestion(); });
+ui.next.addEventListener("click", () => { if (answeredCount >= roundSize) answeredCount = 0; nextQuestion(); });
 
 function resetQuiz() {
   selectedDialect = undefined; deck = undefined; question = undefined;
   ui.quiz.hidden = true;
   clearRecording();
+  selectedTheme = undefined; shards = undefined; records = [];
   ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.model.hidden = true;
+  ui.themes.hidden = true;
+  ui.themeGrid.replaceChildren();
 }
 
 function showResult(state, text) {

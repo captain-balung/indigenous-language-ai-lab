@@ -1,0 +1,642 @@
+{
+  "generatedAt": "2026-09-16T07:22:51.535Z",
+  "recordCount": 252,
+  "imageCount": 7,
+  "files": [
+    {
+      "dialectId": 1,
+      "url": "https://web.klokah.tw/mode/json/01/elementary/feature.json",
+      "path": "raw/1.json",
+      "bytes": 9820,
+      "sha256": "5c006566822d5673168a87258ee1dcd54250249a4ff1704671c0772b50199ce5",
+      "sanitized": false
+    },
+    {
+      "dialectId": 2,
+      "url": "https://web.klokah.tw/mode/json/02/elementary/feature.json",
+      "path": "raw/2.json",
+      "bytes": 9878,
+      "sha256": "df28cc7d0432794e96398eb64bc531cd8e01a3f6acafe7b6365d919c57465e8a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 3,
+      "url": "https://web.klokah.tw/mode/json/03/elementary/feature.json",
+      "path": "raw/3.json",
+      "bytes": 9917,
+      "sha256": "82b46651020a9a92aa4a7635b943b24523cf2f685d69619c6f7d89a27a9bb0d6",
+      "sanitized": false
+    },
+    {
+      "dialectId": 4,
+      "url": "https://web.klokah.tw/mode/json/04/elementary/feature.json",
+      "path": "raw/4.json",
+      "bytes": 9837,
+      "sha256": "54f7ab57d1d13cb25da1fa4544c37fdcea5d0a8a70f4952f26e6aa37079ba026",
+      "sanitized": false
+    },
+    {
+      "dialectId": 5,
+      "url": "https://web.klokah.tw/mode/json/05/elementary/feature.json",
+      "path": "raw/5.json",
+      "bytes": 9814,
+      "sha256": "d9d2499d4e48ec603bae929696549b83095f3d116d35307fdf71d2247e73ae8f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 6,
+      "url": "https://web.klokah.tw/mode/json/06/elementary/feature.json",
+      "path": "raw/6.json",
+      "bytes": 9750,
+      "sha256": "70679920508bcfce865fa894a9a2d1a1c59d86f7f3576fdcacb6ffce1a884647",
+      "sanitized": false
+    },
+    {
+      "dialectId": 7,
+      "url": "https://web.klokah.tw/mode/json/07/elementary/feature.json",
+      "path": "raw/7.json",
+      "bytes": 9828,
+      "sha256": "f6f50e59945e493fc5ee0dd7a7effd757da207c4aba832aae8bfe4d37ae93961",
+      "sanitized": false
+    },
+    {
+      "dialectId": 8,
+      "url": "https://web.klokah.tw/mode/json/08/elementary/feature.json",
+      "path": "raw/8.json",
+      "bytes": 10049,
+      "sha256": "04876123d02be360ca74987426eaacd2be03233dae39b3fb0c9e35ea81324a4e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 9,
+      "url": "https://web.klokah.tw/mode/json/09/elementary/feature.json",
+      "path": "raw/9.json",
+      "bytes": 9806,
+      "sha256": "3ac8c8727ec4359bbe5db6e0eed6ef7913f35d4951b0b6cf8869d5e39678da1c",
+      "sanitized": false
+    },
+    {
+      "dialectId": 10,
+      "url": "https://web.klokah.tw/mode/json/10/elementary/feature.json",
+      "path": "raw/10.json",
+      "bytes": 9711,
+      "sha256": "b7bdf4b099bd0c3ff6a869fb77647df7ace3db206da1ba3d19b95da26d26bed3",
+      "sanitized": false
+    },
+    {
+      "dialectId": 11,
+      "url": "https://web.klokah.tw/mode/json/11/elementary/feature.json",
+      "path": "raw/11.json",
+      "bytes": 9815,
+      "sha256": "c045634eea083e81d9d29352b508c0db694bfd5c2c12e2a0b59f3e9f5afe8189",
+      "sanitized": false
+    },
+    {
+      "dialectId": 13,
+      "url": "https://web.klokah.tw/mode/json/13/elementary/feature.json",
+      "path": "raw/13.json",
+      "bytes": 9917,
+      "sha256": "ca4dc132fb7f6eca4ea3a126df7487af49df003bc7a1b3129a2affe9075e6733",
+      "sanitized": false
+    },
+    {
+      "dialectId": 14,
+      "url": "https://web.klokah.tw/mode/json/14/elementary/feature.json",
+      "path": "raw/14.json",
+      "bytes": 9766,
+      "sha256": "aad19f88aebbf9f1427bb1aae4a67f51c8c69e21221609987e28a7739a830cc1",
+      "sanitized": false
+    },
+    {
+      "dialectId": 15,
+      "url": "https://web.klokah.tw/mode/json/15/elementary/feature.json",
+      "path": "raw/15.json",
+      "bytes": 9712,
+      "sha256": "66b6caa75ccd651826c0bf2533ddbd12103204e25c45e622331dbb08d422a375",
+      "sanitized": false
+    },
+    {
+      "dialectId": 16,
+      "url": "https://web.klokah.tw/mode/json/16/elementary/feature.json",
+      "path": "raw/16.json",
+      "bytes": 9743,
+      "sha256": "2e30fd21a582f6014d1cfc8e43d9b27e44fecda82620508a78a9658c2b65b5ac",
+      "sanitized": false
+    },
+    {
+      "dialectId": 17,
+      "url": "https://web.klokah.tw/mode/json/17/elementary/feature.json",
+      "path": "raw/17.json",
+      "bytes": 9670,
+      "sha256": "03c694898fdaa10dc196935845862801ed28cb581cbe117cf16679c22779ebc6",
+      "sanitized": false
+    },
+    {
+      "dialectId": 18,
+      "url": "https://web.klokah.tw/mode/json/18/elementary/feature.json",
+      "path": "raw/18.json",
+      "bytes": 9861,
+      "sha256": "d2fc660f14dbd4acbb17e5f2c693068fe3101b2bb60c393f10ef5a44e9f9d3f4",
+      "sanitized": false
+    },
+    {
+      "dialectId": 19,
+      "url": "https://web.klokah.tw/mode/json/19/elementary/feature.json",
+      "path": "raw/19.json",
+      "bytes": 9889,
+      "sha256": "76dd4a70bd7f2005363e6406ef7671382fbf0c059516e463c02c1e1916364f2c",
+      "sanitized": false
+    },
+    {
+      "dialectId": 20,
+      "url": "https://web.klokah.tw/mode/json/20/elementary/feature.json",
+      "path": "raw/20.json",
+      "bytes": 9953,
+      "sha256": "8255688666681680f4de17986564216042ee534b9021f2e76adabded33276a71",
+      "sanitized": true
+    },
+    {
+      "dialectId": 21,
+      "url": "https://web.klokah.tw/mode/json/21/elementary/feature.json",
+      "path": "raw/21.json",
+      "bytes": 9794,
+      "sha256": "ec8a08d52006f61364f2531153844176e64c8988cb3b0615458999c395363189",
+      "sanitized": false
+    },
+    {
+      "dialectId": 22,
+      "url": "https://web.klokah.tw/mode/json/22/elementary/feature.json",
+      "path": "raw/22.json",
+      "bytes": 9836,
+      "sha256": "9f781edcba4ec5ff5928ec1fb2f08fbd5162d2a258d92dc5ccb91a69f54d0eff",
+      "sanitized": false
+    },
+    {
+      "dialectId": 23,
+      "url": "https://web.klokah.tw/mode/json/23/elementary/feature.json",
+      "path": "raw/23.json",
+      "bytes": 9841,
+      "sha256": "5d5b577268c07c527a4f5eafd3c253413fce87281667c73329eee3e2109b846e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 24,
+      "url": "https://web.klokah.tw/mode/json/24/elementary/feature.json",
+      "path": "raw/24.json",
+      "bytes": 9981,
+      "sha256": "b7f0ecf0dcaf3a60d0aca0941f8382ddf62931aa56f0cb2aca41fdf767491c1e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 25,
+      "url": "https://web.klokah.tw/mode/json/25/elementary/feature.json",
+      "path": "raw/25.json",
+      "bytes": 9797,
+      "sha256": "462aed6a99f09829092d6b3c54885d3fc5d902147580b4c3a795c48588465540",
+      "sanitized": false
+    },
+    {
+      "dialectId": 26,
+      "url": "https://web.klokah.tw/mode/json/26/elementary/feature.json",
+      "path": "raw/26.json",
+      "bytes": 9816,
+      "sha256": "cbc650176d58aeb0ffb16a6699180772987f49b9a2fba52bb50b6b338adeb5e4",
+      "sanitized": false
+    },
+    {
+      "dialectId": 27,
+      "url": "https://web.klokah.tw/mode/json/27/elementary/feature.json",
+      "path": "raw/27.json",
+      "bytes": 9949,
+      "sha256": "e82c690978f85554b4c7fe842b643410ec1d5fcd9f797cdc80587b4d4b358075",
+      "sanitized": false
+    },
+    {
+      "dialectId": 28,
+      "url": "https://web.klokah.tw/mode/json/28/elementary/feature.json",
+      "path": "raw/28.json",
+      "bytes": 9810,
+      "sha256": "719082980d0baf5d9402c2c7c84d57337522256a839713d1b8f9706f9234a70e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 29,
+      "url": "https://web.klokah.tw/mode/json/29/elementary/feature.json",
+      "path": "raw/29.json",
+      "bytes": 9863,
+      "sha256": "09981011547cd2c25a52e1fd32c638cb275af9773cd09b6586f4949889bdcbbb",
+      "sanitized": false
+    },
+    {
+      "dialectId": 30,
+      "url": "https://web.klokah.tw/mode/json/30/elementary/feature.json",
+      "path": "raw/30.json",
+      "bytes": 9823,
+      "sha256": "801ce2546c6a5880dbe3625d26b3c2344ff226c8464bc5293c6985bd9f99ea5f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 31,
+      "url": "https://web.klokah.tw/mode/json/31/elementary/feature.json",
+      "path": "raw/31.json",
+      "bytes": 9704,
+      "sha256": "6f815799860d80fea589eba77d348cc3c240440706db14133368daacbce33016",
+      "sanitized": false
+    },
+    {
+      "dialectId": 32,
+      "url": "https://web.klokah.tw/mode/json/32/elementary/feature.json",
+      "path": "raw/32.json",
+      "bytes": 9874,
+      "sha256": "9f9bcaa3ee8eae5d812a1c09a02f378b2d036dc502b845c1b62763d925cb660a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 33,
+      "url": "https://web.klokah.tw/mode/json/33/elementary/feature.json",
+      "path": "raw/33.json",
+      "bytes": 9762,
+      "sha256": "52fa5f20d97a763aa3552bf642a3a3b06d59cfd3bc2ad368ab5ec826d6afaac0",
+      "sanitized": false
+    },
+    {
+      "dialectId": 34,
+      "url": "https://web.klokah.tw/mode/json/34/elementary/feature.json",
+      "path": "raw/34.json",
+      "bytes": 9550,
+      "sha256": "463a5ec3f45d535664739a4c8d3396682afd0fae646f7cc927e04124f52f7f40",
+      "sanitized": false
+    },
+    {
+      "dialectId": 35,
+      "url": "https://web.klokah.tw/mode/json/35/elementary/feature.json",
+      "path": "raw/35.json",
+      "bytes": 9903,
+      "sha256": "d43daee3aa210be891d3cfac510fe7a5c19f34e7b287f3bbb7f8a90f5f8d5fbb",
+      "sanitized": false
+    },
+    {
+      "dialectId": 36,
+      "url": "https://web.klokah.tw/mode/json/36/elementary/feature.json",
+      "path": "raw/36.json",
+      "bytes": 9793,
+      "sha256": "479bbda5877e283bc35faa66b29295cf11eef83c27be0b6b4c0117d9214eca0f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 37,
+      "url": "https://web.klokah.tw/mode/json/37/elementary/feature.json",
+      "path": "raw/37.json",
+      "bytes": 9928,
+      "sha256": "5cd744e335f076a0fc4d079b0476228259d33d34af89c0c3818048a077a7f017",
+      "sanitized": false
+    },
+    {
+      "dialectId": 38,
+      "url": "https://web.klokah.tw/mode/json/38/elementary/feature.json",
+      "path": "raw/38.json",
+      "bytes": 9560,
+      "sha256": "1dcfb8ee921ddeb9bcb55f107485cfd6233f49fc36e75149f37397440cd9ae2b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 39,
+      "url": "https://web.klokah.tw/mode/json/39/elementary/feature.json",
+      "path": "raw/39.json",
+      "bytes": 9949,
+      "sha256": "03329d25ff4df70f73be7cdf4ba5053889fd5699fac198c58480fd4b2ab1ede2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 40,
+      "url": "https://web.klokah.tw/mode/json/40/elementary/feature.json",
+      "path": "raw/40.json",
+      "bytes": 9782,
+      "sha256": "1b5d94ca8e87733fc4eeb9ad31fb721d5805bce70cf11a351d54927b33ff0781",
+      "sanitized": false
+    },
+    {
+      "dialectId": 41,
+      "url": "https://web.klokah.tw/mode/json/41/elementary/feature.json",
+      "path": "raw/41.json",
+      "bytes": 9816,
+      "sha256": "6a0591cb0b5ff33aa8ee4eea58c06b56335e59cce30fbbd8201a3ebedc4c8500",
+      "sanitized": false
+    },
+    {
+      "dialectId": 42,
+      "url": "https://web.klokah.tw/mode/json/42/elementary/feature.json",
+      "path": "raw/42.json",
+      "bytes": 9784,
+      "sha256": "b6a95a174cacefd667220016165082f24557c4c5a50bc8972d6b9b486dcfa9ae",
+      "sanitized": false
+    },
+    {
+      "dialectId": 43,
+      "url": "https://web.klokah.tw/mode/json/43/elementary/feature.json",
+      "path": "raw/43.json",
+      "bytes": 9782,
+      "sha256": "94528fd0d6ef2d4ab5c72c5d813f211e8ef98623f7b04b36801f02f490cfbd04",
+      "sanitized": false
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature02.jpg",
+      "path": "images/feature02.jpg",
+      "bytes": 39002,
+      "sha256": "49a7ed195cd2dce9e211faabe254416f5eb69496302accf519478301014f57a3"
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature01.jpg",
+      "path": "images/feature01.jpg",
+      "bytes": 54017,
+      "sha256": "b331470b4f919d96a701239974a18b314571a935ff2bee7c3b4842cb3e34a741"
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature05.jpg",
+      "path": "images/feature05.jpg",
+      "bytes": 38642,
+      "sha256": "3e9407e62e6f05bf1fd7e3ec832ab118149c36d591cf89468c0aedc73266a9fd"
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature03.jpg",
+      "path": "images/feature03.jpg",
+      "bytes": 58728,
+      "sha256": "d1d85201d148e0e0e86a4269bb083c890c6f648556012f1e3564d69450a5ddbe"
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature04.jpg",
+      "path": "images/feature04.jpg",
+      "bytes": 38018,
+      "sha256": "0a41a7b560c5b6ef0bfe30aaea891e913abd7015e7f6157ddc3ed577c157ece9"
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature06.jpg",
+      "path": "images/feature06.jpg",
+      "bytes": 40685,
+      "sha256": "04393c0c10a0fe3628a2859f9db04cc1590a39b93d92c175a3550544844ad8a7"
+    },
+    {
+      "url": "https://web.klokah.tw/mode/img/feature07.jpg",
+      "path": "images/feature07.jpg",
+      "bytes": 36488,
+      "sha256": "eca7a5348441e71352b7d3e1768d9c70dd096e931f32062390aff7cad635ba25"
+    },
+    {
+      "dialectId": 1,
+      "path": "dialects/1.json",
+      "bytes": 1602,
+      "sha256": "fc5936fc44b045c42d0b261e0925bde4f2aa6b4c73a9345ac5efcae238978081"
+    },
+    {
+      "dialectId": 2,
+      "path": "dialects/2.json",
+      "bytes": 1597,
+      "sha256": "bb4bdb606dbb39afcced0c34330f20a8185f77e5100945ebf529d758c54a34d3"
+    },
+    {
+      "dialectId": 3,
+      "path": "dialects/3.json",
+      "bytes": 1608,
+      "sha256": "f8f70be73e3d6d1108151e49bbafb4ac19a73e3803913c0c3bf97468ebf2bdd9"
+    },
+    {
+      "dialectId": 4,
+      "path": "dialects/4.json",
+      "bytes": 1613,
+      "sha256": "e28745664da82ca0ec0e33c1d23f0dec2dd900f126d2300b51e9b2511ebfbbbd"
+    },
+    {
+      "dialectId": 5,
+      "path": "dialects/5.json",
+      "bytes": 1607,
+      "sha256": "3ced8823ae2e9971a91c9e604dc855a8fc047a3b4d370136759996e7f68a58c7"
+    },
+    {
+      "dialectId": 6,
+      "path": "dialects/6.json",
+      "bytes": 1625,
+      "sha256": "d94b239305bf52a7bc8480dd70a39a8d7135417d11b764aebcfdd854358bd8f3"
+    },
+    {
+      "dialectId": 7,
+      "path": "dialects/7.json",
+      "bytes": 1614,
+      "sha256": "b5a247b62b7c4aa98ff5432e2c3c0972d376b0e9c2bf75eaf85fa9b589ad52d9"
+    },
+    {
+      "dialectId": 8,
+      "path": "dialects/8.json",
+      "bytes": 1627,
+      "sha256": "6a27e2f686b5cf91860c0c87deabde6da8b7516204fbde206e97ac8599f8e0e2"
+    },
+    {
+      "dialectId": 9,
+      "path": "dialects/9.json",
+      "bytes": 1605,
+      "sha256": "52832ba8837718dd261031818820caf2b4a222367dfe922d63b3cd6acfc917f8"
+    },
+    {
+      "dialectId": 10,
+      "path": "dialects/10.json",
+      "bytes": 1599,
+      "sha256": "c6e03bb4ff5d0471ce2bfa4006e8bd07b059425642feb088a3db3a9b64daa0e7"
+    },
+    {
+      "dialectId": 11,
+      "path": "dialects/11.json",
+      "bytes": 1643,
+      "sha256": "70f5bf4e9f8618bfef071cc09368a66e6f7defa02e4f0d489145ed9b0052cafe"
+    },
+    {
+      "dialectId": 13,
+      "path": "dialects/13.json",
+      "bytes": 1607,
+      "sha256": "25c4abe58ccb8a47db57964f220012e106ae06142a70d1d3714e9369196d926a"
+    },
+    {
+      "dialectId": 14,
+      "path": "dialects/14.json",
+      "bytes": 1660,
+      "sha256": "23bcd0484c23b4feb3a7f452cd6dc5d94e9e8cd73c530813006be113fc978b15"
+    },
+    {
+      "dialectId": 15,
+      "path": "dialects/15.json",
+      "bytes": 1621,
+      "sha256": "adffd468e03c8ad9375495b333a2be806d98f8d6107f8457afe46b2b88f5b1e8"
+    },
+    {
+      "dialectId": 16,
+      "path": "dialects/16.json",
+      "bytes": 1621,
+      "sha256": "2609c423b83f3f0d03fd8f60e64d7ffb2156b13ac321b78be87992e79733c675"
+    },
+    {
+      "dialectId": 17,
+      "path": "dialects/17.json",
+      "bytes": 1638,
+      "sha256": "056e3773ca7380e328ad0bfeaae11d6046a47df9032019b3a3f9b315a5fcda80"
+    },
+    {
+      "dialectId": 18,
+      "path": "dialects/18.json",
+      "bytes": 1625,
+      "sha256": "c1eaead0ebab1ba4442c0a020f296eda278f140cb531cbc7a7230b69be5fe368"
+    },
+    {
+      "dialectId": 19,
+      "path": "dialects/19.json",
+      "bytes": 1600,
+      "sha256": "868f0f15179079f0cff9c37912c99013335a5a7cbf5f11fca4f9c60520d7ff64"
+    },
+    {
+      "dialectId": 20,
+      "path": "dialects/20.json",
+      "bytes": 1589,
+      "sha256": "fcce80d10b7ae510e4ae5fafb7913cf1e1dace4e63eb6f0b029a86b387158609"
+    },
+    {
+      "dialectId": 21,
+      "path": "dialects/21.json",
+      "bytes": 1595,
+      "sha256": "a7cccba245ffa5b473d235979d43e022871df0e3a983fdd038acf128a295c5fb"
+    },
+    {
+      "dialectId": 22,
+      "path": "dialects/22.json",
+      "bytes": 1607,
+      "sha256": "6d7e80a1c56f8f194ada3dc694d5e4b7a3a55ba2e13e3026cc038d102c2223b7"
+    },
+    {
+      "dialectId": 23,
+      "path": "dialects/23.json",
+      "bytes": 1597,
+      "sha256": "adc3c11ca4b75761bfede8319b71364e9b3fa8bc847b396885043476e480c31e"
+    },
+    {
+      "dialectId": 24,
+      "path": "dialects/24.json",
+      "bytes": 1596,
+      "sha256": "7dbfaacd1a9af56876741307aa1279105a8844c47d1720366183279b6018e638"
+    },
+    {
+      "dialectId": 25,
+      "path": "dialects/25.json",
+      "bytes": 1597,
+      "sha256": "3a7531e6adc3f5899fb83e80014329b0917cbb63dcb9cf936d8f7702df9e19eb"
+    },
+    {
+      "dialectId": 26,
+      "path": "dialects/26.json",
+      "bytes": 1598,
+      "sha256": "b8e1a753e961137f0e59b9eee9acb7ea388623b58b1554a57944b6d682b17fff"
+    },
+    {
+      "dialectId": 27,
+      "path": "dialects/27.json",
+      "bytes": 1708,
+      "sha256": "22b58125a6e8505f28266995a6067445a2df03c90566026d0b3ab33140f743d9"
+    },
+    {
+      "dialectId": 28,
+      "path": "dialects/28.json",
+      "bytes": 1619,
+      "sha256": "4846eaac20e6200a857e7e0565d6767718f53611c8b7b90138b4ccc4e5e837ae"
+    },
+    {
+      "dialectId": 29,
+      "path": "dialects/29.json",
+      "bytes": 1645,
+      "sha256": "5433aa21d4d2aacb73e2623dbabb16e81e3d7482ec4b899325991b0ec8e9fae7"
+    },
+    {
+      "dialectId": 30,
+      "path": "dialects/30.json",
+      "bytes": 1593,
+      "sha256": "260c353907a13f12980734fff551065bdf0c1d73d28e82edc8a8054707881232"
+    },
+    {
+      "dialectId": 31,
+      "path": "dialects/31.json",
+      "bytes": 1610,
+      "sha256": "05e3f8edab7505d90152f966bcf996b8b3f2763db7a6474df7e2484844ff54e8"
+    },
+    {
+      "dialectId": 32,
+      "path": "dialects/32.json",
+      "bytes": 1584,
+      "sha256": "b86d2862cf0aa6b421925a059a43226837a3c538c095e0b490d4b143f37b2b79"
+    },
+    {
+      "dialectId": 33,
+      "path": "dialects/33.json",
+      "bytes": 1614,
+      "sha256": "c25fe247268537f148bdf0dc5d796e7274100bd090da97ef78a3e6d063231868"
+    },
+    {
+      "dialectId": 34,
+      "path": "dialects/34.json",
+      "bytes": 1610,
+      "sha256": "dd31c68de5ef77a23416ef91d1f4e9f5cede918afdd9d551795b0940a9ae9bd7"
+    },
+    {
+      "dialectId": 35,
+      "path": "dialects/35.json",
+      "bytes": 1650,
+      "sha256": "bcfdda315db502323cd7dc2ead7cb28f29734ecb857166428fb6d4793d04dcf5"
+    },
+    {
+      "dialectId": 36,
+      "path": "dialects/36.json",
+      "bytes": 1641,
+      "sha256": "ecd2172d641fd99c1d3c7f73cc6a2658416c77aff45fdf7eb584225cbf07c179"
+    },
+    {
+      "dialectId": 37,
+      "path": "dialects/37.json",
+      "bytes": 1698,
+      "sha256": "5b51ae18ccc666a1698744dfeed7e3934c97ec20f4341bed84ad52cdd4480fd2"
+    },
+    {
+      "dialectId": 38,
+      "path": "dialects/38.json",
+      "bytes": 1613,
+      "sha256": "306d6dd3d4f4c51428964137e7241b9ed59e3eee4f5f2dcb26ea2a69cf1c1782"
+    },
+    {
+      "dialectId": 39,
+      "path": "dialects/39.json",
+      "bytes": 1656,
+      "sha256": "2f0347202c4ba01290ddb18a364633f81054d6aa6a007e68f9117c4ad4a4f6ff"
+    },
+    {
+      "dialectId": 40,
+      "path": "dialects/40.json",
+      "bytes": 1616,
+      "sha256": "edd619929389109c6b21f437ce819a2c8ea03b6ace8249144b5e09ffb74579a4"
+    },
+    {
+      "dialectId": 41,
+      "path": "dialects/41.json",
+      "bytes": 1607,
+      "sha256": "352ca3c62c6af0231d805ca965b86903b6c95846ce1b9e1f85da1ff37dc7444c"
+    },
+    {
+      "dialectId": 42,
+      "path": "dialects/42.json",
+      "bytes": 1578,
+      "sha256": "160107315be17b241d87153d1975ae65f07dd3d6770a4968971ded274214f9d4"
+    },
+    {
+      "dialectId": 43,
+      "path": "dialects/43.json",
+      "bytes": 1621,
+      "sha256": "f78b4389ed6487189024e9fe0f4bff439db745882967ef6f7f5b82d711e0bb28"
+    },
+    {
+      "path": "dataset.json",
+      "bytes": 5180,
+      "sha256": "2dbe6696c221bff81c6398eab1a73494d72029002eabb191f6d717bdba4b259e"
+    }
+  ]
+}

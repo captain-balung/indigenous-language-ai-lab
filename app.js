@@ -8,9 +8,9 @@ const categories = [
 
 const applicationSeeds = {
   basics: [
-    ["身體部位練習", "看圖片練習 42 個方言別的身體部位完整句子。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
-    ["身體部位口說練習", "用說的練習 42 個方言別的身體部位句子，語音辨識會顯示系統聽到的內容。", "assets/icons/studio-microphone.webp", "available", "apps/body-parts-speaking/"],
-    ["詞彙收藏冊", "用主題卡片累積生活常用詞彙。", "assets/icons/vocabulary-book.webp"],
+    ["看圖練習", "看圖片寫出族語完整句子。可依身體部位、動物、地點、職業等主題練習。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
+    ["口說練習", "看圖片用族語念出完整句子。主題與看圖練習相同，語音辨識會顯示系統聽到的內容。", "assets/icons/studio-microphone.webp", "available", "apps/body-parts-speaking/"],
+    ["詞彙收藏冊", "主題已併入看圖練習與口說練習。", "assets/icons/vocabulary-book.webp"],
     ["跟讀小教練", "跟著提示反覆練習，勇敢開口說。", "assets/icons/speaking-microphone.webp"]
   ],
   classroom: [

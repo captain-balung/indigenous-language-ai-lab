@@ -34,8 +34,9 @@ const { categories, applications } = vm.runInNewContext(
 
 assert(categories.length === 5, `Expected 5 categories, received ${categories.length}`);
 assert(applications.length === 20, `Expected 20 applications, received ${applications.length}`);
-assert(applications[0].title === "身體部位練習" && applications[0].status === "available" && applications[0].href === "apps/body-parts-practice/", "First basics card must link to body parts practice");
-assert(applications[1].title === "身體部位口說練習" && applications[1].status === "available" && applications[1].href === "apps/body-parts-speaking/", "Second basics card must link to body parts speaking");
+assert(applications[0].title === "看圖練習" && applications[0].status === "available" && applications[0].href === "apps/body-parts-practice/", "First basics card must link to picture practice");
+assert(applications[1].title === "口說練習" && applications[1].status === "available" && applications[1].href === "apps/body-parts-speaking/", "Second basics card must link to speaking practice");
+assert(applications[2].title === "詞彙收藏冊" && applications[2].status === "coming-soon" && !applications[2].href, "Vocabulary album stays unpublished after merging into the first two cards");
 assert(applications[8].title === "初級模擬站" && applications[8].status === "available" && applications[8].href === "apps/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
 assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
 assert(applications.filter((app) => app.status === "available").every((app) => fs.existsSync(path.join(root, app.href, "index.html"))), "Every available card must point at a real page");
