@@ -37,6 +37,7 @@ export function recordsForTheme(theme, juniorShard, jobsShard) {
       id: item.id,
       indigenousText: item.indigenousText,
       chineseText: item.chineseText,
+      audioUrl: item.audioUrl ?? "",
       imageSrc: `/data/elementary-jobs/${item.imagePath}`,
     }));
   }
@@ -46,6 +47,7 @@ export function recordsForTheme(theme, juniorShard, jobsShard) {
       id: item.id,
       indigenousText: item.indigenousText,
       chineseText: item.chineseText,
+      audioUrl: item.audioUrl ?? "",
       imageSrc: `/data/klokah-junior/${item.imagePath}`,
     }));
 }

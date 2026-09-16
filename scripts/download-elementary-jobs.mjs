@@ -197,7 +197,7 @@ for (const entry of fetched) {
 const dataset = {
   schemaVersion: 1,
   title: "教學模組初級／職業",
-  description: "族語 E 樂園教學模組初級直接教學法的職業主題，供看圖練習與口說練習使用。每方言 6 筆，圖入庫、音檔熱連結。",
+  description: "族語 E 樂園教學模組初級直接教學法的職業主題，供看圖練習、口說練習與聽音練習使用。每方言 6 筆，圖入庫、音檔熱連結。",
   source: {
     publisher: "財團法人原住民族語言研究發展基金會",
     website: "原住民族語E樂園",
@@ -254,7 +254,7 @@ await writeFile(path.join(outputRoot, "LICENSE.md"), license, "utf8");
 
 const readme = `# 教學模組初級：職業
 
-本目錄保存「族語 E 樂園」[教學模組／初級／職業](${sourcePage}) 42 個方言別資料，供看圖練習與口說練習使用。
+本目錄保存「族語 E 樂園」[教學模組／初級／職業](${sourcePage}) 42 個方言別資料，供看圖練習、口說練習與聽音練習使用。
 
 - \`dataset.json\`：索引、來源與完整性數字。**不含題目本身。**
 - \`dialects/{dialectId}.json\`：每方言 6 筆族語答句、中文職業名、圖片路徑與音檔 URL。
