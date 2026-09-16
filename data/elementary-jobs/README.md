@@ -1,6 +1,6 @@
 # 教學模組初級：職業
 
-本目錄保存「族語 E 樂園」[教學模組／初級／職業](https://web.klokah.tw/mode/elementary/index.php) 42 個方言別資料，供看圖練習與口說練習使用。
+本目錄保存「族語 E 樂園」[教學模組／初級／職業](https://web.klokah.tw/mode/elementary/index.php) 42 個方言別資料，供看圖練習、口說練習與聽音練習使用。
 
 - `dataset.json`：索引、來源與完整性數字。**不含題目本身。**
 - `dialects/{dialectId}.json`：每方言 6 筆族語答句、中文職業名、圖片路徑與音檔 URL。
