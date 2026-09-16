@@ -20,6 +20,8 @@ assert.ok(page.includes("/apps/body-parts-practice/"), "需提供看圖練習的
 assert.ok(page.includes("口說練習"));
 assert.ok(page.includes('id="theme-grid"'));
 assert.ok(page.includes("選擇練習主題"));
+assert.ok(page.includes("播放音檔"));
+assert.ok(page.includes("可以先聽教材再念，也可以直接錄音。"));
 
 /* ---------- §4 族 → ASR 族級模型：16 對 16，寫死不推導 ---------- */
 const models = Object.entries(ASR_MODELS);
@@ -133,7 +135,10 @@ assert.ok(/noiseSuppression:\s*false/.test(app));
 assert.ok(/autoGainControl:\s*false/.test(app));
 assert.ok(/channelCount:\s*1/.test(app));
 assert.ok(/catch[\s\S]{0,400}?getUserMedia\(\{\s*audio:\s*true\s*\}\)/.test(app), "約束不支援時要優雅退回");
-assert.ok(/NotAllowedError/.test(app) && /NotFoundError/.test(app), "拒絕權限與無裝置要分別處理");
+assert.ok(app.includes('ui.replay.addEventListener("click"'), "教材音檔必須由使用者按播放");
+assert.ok(!/function nextQuestion\(\)[\s\S]{0,400}\.play\(/.test(app), "出題不得自動播放教材");
+assert.ok(!/crossorigin/.test(app), "音檔不得加 crossorigin");
+assert.ok(/ui\.record\.addEventListener\([\s\S]{0,250}ui\.player\.pause/.test(app), "錄音時要停教材音檔");
 
 /* ---------- §6.2 紅線：不得斷言使用者念錯 ---------- */
 assert.ok(page.includes("系統聽到的是") || app.includes("系統聽到的是"), "必須顯示系統聽到的內容");

@@ -48,6 +48,7 @@ node scripts/serve.mjs 4173
 ## 已上線應用
 
 - [看圖練習](apps/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思。
+- [口說練習](apps/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；可先聽教材再念，也可以直接說。語音辨識會顯示系統聽到的內容。
 - [聽音練習](apps/listen-practice/README.md)：與看圖練習同一批主題，聽族語音檔後選出對應圖片或中文意思；音檔由 klokah.tw／web.klokah.tw 直接播放。
 - [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
 - [中級模擬站](apps/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。

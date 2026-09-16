@@ -15,6 +15,13 @@
 .alt-route a{color:#1a5fbd}
 
 #speak-hint{margin:.3rem 0 .9rem;font-weight:700;color:#4a5474}
+.player-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:0 0 1rem}
+.player-row .primary{margin:0;width:auto}
+.audio-state{padding:.4rem .8rem;border:2px solid var(--ink);border-radius:99px;background:#eef2f8;font-weight:900;font-size:.9rem}
+.audio-state[data-state="playing"]{background:#ddf5e7}
+.audio-state[data-state="ended"]{background:#eaf3ff}
+.audio-state[data-state="failed"]{background:#f6e3e0}
+#player{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 
 .recorder{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
 .record-button{display:inline-flex;align-items:center;gap:.6rem;min-width:11rem}

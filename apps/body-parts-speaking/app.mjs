@@ -12,7 +12,8 @@ const ui = {
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
   modelNote: $("#model-note"), themes: $("#themes"), themeGrid: $("#theme-grid"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
-  image: $("#question-image"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
+  image: $("#question-image"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
+  record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"), preview: $("#preview"),
   submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
@@ -189,8 +190,40 @@ function nextQuestion() {
   ui.heard.hidden = true;
   ui.result.hidden = ui.retry.hidden = ui.reveal.hidden = ui.next.hidden = ui.model.hidden = true;
   ui.record.disabled = false;
+  resetModelAudio();
   ui.record.focus();
 }
+
+function resetModelAudio() {
+  stopAudio();
+  const hasAudio = Boolean(question?.audioUrl);
+  ui.replay.disabled = !hasAudio;
+  setAudioState(hasAudio ? "idle" : "failed", hasAudio ? "想聽再按播放" : "本題沒有音檔");
+}
+
+ui.replay.addEventListener("click", () => {
+  if (!question?.audioUrl) return;
+  ui.player.src = question.audioUrl;
+  setAudioState("playing", "播放中…");
+  const play = ui.player.play();
+  if (play && typeof play.catch === "function") {
+    play.catch(() => setAudioState("failed", "無法播放，請再試一次"));
+  }
+});
+
+function stopAudio() {
+  ui.player.pause();
+  ui.player.removeAttribute("src");
+  ui.player.load();
+}
+
+function setAudioState(state, text) {
+  ui.audioState.dataset.state = state;
+  ui.audioState.textContent = text;
+}
+
+ui.player.addEventListener("ended", () => setAudioState("ended", "播放結束"));
+ui.player.addEventListener("error", () => setAudioState("failed", "音檔載入失敗"));
 
 /* ---------- 錄音 ---------- */
 
@@ -209,6 +242,8 @@ async function requestMicrophone() {
 
 ui.record.addEventListener("click", async () => {
   if (recorder?.state === "recording") { recorder.stop(); return; }
+  ui.player.pause();
+  if (ui.audioState.dataset.state === "playing") setAudioState("ended", "已停止播放");
   try {
     mediaStream = await requestMicrophone();
   } catch (error) {
@@ -432,6 +467,7 @@ ui.reveal.addEventListener("click", () => {
 ui.next.addEventListener("click", () => { if (answeredCount >= roundSize) answeredCount = 0; nextQuestion(); });
 
 function resetQuiz() {
+  stopAudio();
   selectedDialect = undefined; deck = undefined; question = undefined;
   ui.quiz.hidden = true;
   clearRecording();
@@ -452,7 +488,10 @@ function showResult(state, text) {
 function reduced() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 function escapeHtml(value) { const div = document.createElement("div"); div.textContent = value; return div.innerHTML; }
 
-window.addEventListener("pagehide", () => { if (previewUrl) URL.revokeObjectURL(previewUrl); });
+window.addEventListener("pagehide", () => {
+  stopAudio();
+  if (previewUrl) URL.revokeObjectURL(previewUrl);
+});
 
 init().catch((error) => {
   ui.api.textContent = `教材無法載入：${error.message}`;
