@@ -16,7 +16,10 @@ assert.ok(page.includes('src="/apps/body-parts-speaking/app.mjs"'));
 assert.ok(page.includes('href="/apps/body-parts-practice/styles.css"'), "沿用 01 的視覺系統");
 assert.ok(!page.includes('href="styles.css"'));
 assert.ok(page.includes('href="/"'), "必須有返回 AI 實驗室的連結");
-assert.ok(page.includes("/apps/body-parts-practice/"), "需提供打字版的替代路徑");
+assert.ok(page.includes("/apps/body-parts-practice/"), "需提供看圖練習的替代路徑");
+assert.ok(page.includes("口說練習"));
+assert.ok(page.includes('id="theme-grid"'));
+assert.ok(page.includes("選擇練習主題"));
 
 /* ---------- §4 族 → ASR 族級模型：16 對 16，寫死不推導 ---------- */
 const models = Object.entries(ASR_MODELS);
@@ -170,6 +173,8 @@ assert.equal((await judgeAnswer({ answer: "tangila", question: q, translate: asy
 assert.equal((await judgeAnswer({ answer: "ngangus", question: q, translate: async () => "這是鼻子。" })).type, "retry");
 assert.equal((await judgeAnswer({ answer: "x", question: q, translate: async () => { throw new Error("502"); } })).type, "unavailable");
 assert.ok(semanticMatch("這是頭髮。", "這是頭髮。") && !semanticMatch("這是頭。", "這是頭髮。"), "較長詞優先");
+assert.ok(semanticMatch("這是雞。", "這是雞。") && !semanticMatch("這是鳥。", "這是雞。"), "非身體主題用詞義比對");
+assert.ok(semanticMatch("她是醫生。", "醫生"));
 
 /* ---------- ASR 回應解讀：任何異常都不得當成念錯 ---------- */
 assert.equal(readAsrText({ ok: true, data: { text: " Talacowa kiso. " } }, 200), "Talacowa kiso.");

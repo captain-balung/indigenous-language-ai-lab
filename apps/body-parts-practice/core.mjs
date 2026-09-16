@@ -18,18 +18,31 @@ export function exactMatch(answer, expected) {
   return normalizeAnswer(answer) === normalizeAnswer(expected);
 }
 
+export function glossKey(value) {
+  return String(value ?? "")
+    .normalize("NFC")
+    .replace(/[（(][^）)]*[）)]/g, "")
+    .replace(/這是|那是|他是|她是|一隻|一個|一位|一名/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+
 export function conceptFromChinese(chineseText) {
   const value = String(chineseText ?? "").replace(/[\s，。！？、,.!?]/g, "");
   const candidates = Object.entries(BODY_SYNONYMS)
     .flatMap(([concept, terms]) => terms.map((term) => ({ concept, term })))
     .sort((a, b) => b.term.length - a.term.length);
-  return candidates.find(({ term }) => value.includes(term))?.concept ?? null;
+  const hit = candidates.find(({ term }) => value.includes(term));
+  if (!hit) return null;
+  const leftover = value.replace(hit.term, "").replace(/這是|那是|他是|她是/g, "");
+  return leftover ? null : hit.concept;
 }
 
 export function semanticMatch(translation, chineseText) {
-  const concept = conceptFromChinese(chineseText);
-  if (!concept) return false;
-  return conceptFromChinese(translation) === concept;
+  const expectedBody = conceptFromChinese(chineseText);
+  if (expectedBody) return conceptFromChinese(translation) === expectedBody;
+  const expected = glossKey(chineseText);
+  const got = glossKey(translation);
+  return Boolean(expected) && expected === got;
 }
 
 export function createQuestionDeck(records, random = Math.random) {

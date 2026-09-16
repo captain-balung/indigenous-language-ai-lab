@@ -35,7 +35,7 @@ node scripts/serve.mjs 4173
 ## 設計與技術
 
 - Mobile-first，手機單欄、平板雙欄、桌機四欄。
-- 入口頁使用純本地資源，不需 CDN、第三方套件、登入或 Cookie；身體部位練習另使用公開 Formosan AI 翻譯 API，錯誤時保留教材本地比對功能。
+- 入口頁使用純本地資源，不需 CDN、第三方套件、登入或 Cookie；看圖練習與口說練習另使用公開 Formosan AI API，錯誤時保留教材本地比對功能。
 - 支援鍵盤焦點、語意化標題、跳至主要內容與 `prefers-reduced-motion`。
 - 視覺延續《部落好心人》第二版的明亮配色、厚邊框、大圓角、卡片層次與輕量遊戲動效，但不使用其角色、文字、題目或素材。
 - 20 枚任務圖示採統一手繪遊戲美術，不使用平台相依的 emoji；生成與去背紀錄見 `assets/icons/README.md`。
@@ -47,8 +47,8 @@ node scripts/serve.mjs 4173
 
 ## 已上線應用
 
-- [身體部位練習](apps/body-parts-practice/README.md)：42 個方言別、420 筆教材；先做教材整句比對，再以 Formosan AI `translate_to_zh` 及受控中文同義詞輔助判定。
-- [身體部位口說練習](apps/body-parts-speaking/README.md)：與打字版同一批教材、同樣的判定方式，改用錄音作答，經 Formosan AI `asr_transcribe` 取得族語文字。
+- [看圖練習](apps/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思。
+- [口說練習](apps/body-parts-speaking/README.md)：與看圖練習同一批主題與判定方式，改用錄音作答，經 Formosan AI `asr_transcribe` 取得族語文字。
 - [初級模擬站](apps/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
 - [中級模擬站](apps/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
 
@@ -98,4 +98,18 @@ node scripts/download-klokah-junior.mjs
 
 ```powershell
 node scripts/download-klokah-senior.mjs
+```
+
+### 教學模組初級／職業
+
+「看圖練習」與「口說練習」的職業主題位於 `data/elementary-jobs/`，內容是「族語 E 樂園」教學模組初級的職業主題：
+42 個方言別、每語 6 筆，共 252 筆文字與 7 張共用圖片，同樣依
+[CC BY-NC-SA 4.0](data/elementary-jobs/LICENSE.md) 使用。
+
+**音檔不入庫**：每筆資料只帶 `audioUrl`，執行時由 `web.klokah.tw` 直接播放。
+
+重新取得及驗證資料：
+
+```powershell
+node scripts/download-elementary-jobs.mjs
 ```
