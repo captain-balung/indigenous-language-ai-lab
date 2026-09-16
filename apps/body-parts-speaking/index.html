@@ -12,7 +12,7 @@
   <a class="skip" href="#practice">跳至練習</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p>基礎學習 · MISSION 02</p><h1>口說練習</h1><span>看圖片、用族語念出完整句子，和 AI 小教練一起確認意思。</span></div>
+    <div class="hero-copy"><p>基礎學習 · MISSION 02</p><h1>口說練習</h1><span>看圖片、用族語念出完整句子；想聽教材再跟讀也可以。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
@@ -58,7 +58,12 @@
         <figure><img id="question-image" src="/data/klokah-junior/images/recognize/1_1.png" alt="口說練習題目圖片"></figure>
         <div class="answer-area">
           <p class="prompt">看圖回答</p><h2 id="question-title">這是什麼？</h2>
-          <p id="speak-hint">請按下錄音，用族語念出完整句子。</p>
+          <p id="speak-hint">可以先聽教材再念，也可以直接錄音。</p>
+          <div class="player-row">
+            <button id="replay" class="primary" type="button">播放音檔</button>
+            <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
+          </div>
+          <audio id="player"></audio>
 
           <div class="recorder">
             <button id="record" class="primary record-button" type="button">
