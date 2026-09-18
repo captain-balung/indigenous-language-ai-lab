@@ -1,0 +1,10 @@
+textarea{width:100%;min-height:7rem;padding:.65rem .8rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:13px;font:inherit;resize:vertical}
+.hint-toggle{display:flex;align-items:center;gap:.45rem;margin:.4rem 0 .8rem;font-weight:900}
+.hint-toggle input{width:auto;min-height:0;accent-color:var(--ink)}
+#zh-hint{margin:0 0 1rem;padding:.7rem .9rem;border:3px dashed var(--ink);border-radius:14px;background:#fff8e6;font-weight:800}
+#zh-hint[hidden]{display:none}
+.answer-area .primary{width:auto}
+@media(max-width:720px){
+  header{min-height:640px}
+  .hero-copy h1{font-size:2.7rem}
+}

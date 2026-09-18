@@ -1,0 +1,13 @@
+textarea{width:100%;min-height:7rem;padding:.65rem .8rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:13px;font:inherit;resize:vertical}
+.answer-area .primary{width:auto}
+#picture-tip{margin:.2rem 0 .9rem;font-weight:800}
+.picture-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:0 0 1rem}
+.picture-grid[data-count="1"]{grid-template-columns:minmax(0,280px)}
+.picture-grid figure{margin:0;padding:.45rem;border:3px solid var(--ink);border-radius:14px;background:#fff;text-align:center}
+.picture-grid img{width:100%;aspect-ratio:1;object-fit:contain;display:block}
+.picture-grid figcaption{margin-top:.35rem;font-weight:900;color:#4a5474}
+@media(max-width:720px){
+  header{min-height:640px}
+  .hero-copy h1{font-size:2.7rem}
+  .picture-grid,.picture-grid[data-count="1"]{grid-template-columns:1fr}
+}
