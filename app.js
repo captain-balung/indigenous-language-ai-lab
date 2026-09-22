@@ -10,7 +10,6 @@ const applicationSeeds = {
   basics: [
     ["看圖練習", "看圖片寫出族語完整句子。可依身體部位、動物、地點、職業等主題練習。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
     ["口說練習", "看圖片用族語念出完整句子。可先聽教材再念，也可以直接說。主題與看圖練習相同。", "assets/icons/studio-microphone.webp", "available", "apps/body-parts-speaking/"],
-    ["聽音練習", "聽族語音檔，選出對應的圖片或中文意思。主題與看圖練習相同。", "assets/icons/listening-ear.webp", "available", "apps/listen-practice/"],
     ["問答練習", "聽族語問句，用打字或錄音自由回答。系統會顯示它聽到、懂成的意思。", "assets/icons/speaking-microphone.webp", "available", "apps/qa-practice/"],
     ["看圖描述", "看認證看圖說話／看圖表達的圖片，用自己的話描述。系統會顯示它懂成的中文意思。", "assets/icons/open-storybook.webp", "available", "apps/describe-practice/"]
   ],
