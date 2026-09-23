@@ -14,10 +14,10 @@ const applicationSeeds = {
     ["看圖描述", "看認證看圖說話／看圖表達的圖片，用自己的話描述。系統會顯示它懂成的中文意思。", "assets/icons/open-storybook.webp", "available", "apps/describe-practice/"]
   ],
   classroom: [
-    ["聽力快問快答", "聽見關鍵詞，選出最合適的答案。", "assets/icons/listening-ear.webp"],
-    ["詞語配對賽", "將族語詞彙與圖片正確配對。", "assets/icons/matching-puzzle.webp"],
-    ["句子排列所", "重新排列詞語，拼出完整句子。", "assets/icons/sentence-blocks.webp"],
-    ["課堂挑戰榜", "完成一組綜合題目，確認學習進度。", "assets/icons/progress-chart.webp"]
+    ["意思造句", "只看中文意思，自己寫族語。每題都顯示系統懂成的中文。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/?mode=compose"],
+    ["看圖口說小考", "看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/?mode=oral"],
+    ["聽後轉述", "只聽短句，用族語再講一次。系統顯示它聽到的話，以及懂成的中文。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/?mode=retell"],
+    ["接話小考", "聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/?mode=reply"]
   ],
   certification: [
     ["初級模擬站", "模擬初級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/bronze-medal.webp", "available", "apps/beginner-mock-exam/"],
