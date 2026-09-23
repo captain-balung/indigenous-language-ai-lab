@@ -40,10 +40,17 @@ assert(applications[0].title === "看圖練習" && applications[0].status === "a
 assert(applications[1].title === "口說練習" && applications[1].status === "available" && applications[1].href === "apps/body-parts-speaking/", "Second basics card must link to speaking practice");
 assert(applications[2].title === "問答練習" && applications[2].status === "available" && applications[2].href === "apps/qa-practice/", "Third basics card must link to Q&A practice");
 assert(applications[3].title === "看圖描述" && applications[3].status === "available" && applications[3].href === "apps/describe-practice/", "Fourth basics card must link to picture-describe practice");
+assert(applications[4].title === "意思造句" && applications[4].href === "apps/classroom-quiz/?mode=compose", "Classroom compose card");
+assert(applications[5].title === "看圖口說小考" && applications[5].href === "apps/classroom-quiz/?mode=oral", "Classroom oral card");
+assert(applications[6].title === "聽後轉述" && applications[6].href === "apps/classroom-quiz/?mode=retell", "Classroom retell card");
+assert(applications[7].title === "接話小考" && applications[7].href === "apps/classroom-quiz/?mode=reply", "Classroom reply card");
 assert(!applications.some((app) => app.title === "聽音練習" || app.href === "apps/listen-practice/"), "Listen practice must stay off the homepage");
 assert(applications[8].title === "初級模擬站" && applications[8].status === "available" && applications[8].href === "apps/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
 assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
-assert(applications.filter((app) => app.status === "available").every((app) => fs.existsSync(path.join(root, app.href, "index.html"))), "Every available card must point at a real page");
+assert(applications.filter((app) => app.status === "available").every((app) => {
+  const clean = app.href.split("?")[0].replace(/\/$/, "");
+  return fs.existsSync(path.join(root, clean, "index.html"));
+}), "Every available card must point at a real page");
 for (const category of categories) {
   assert(applications.filter((app) => app.categoryId === category.id).length === 4, `${category.title} must have 4 applications`);
 }
