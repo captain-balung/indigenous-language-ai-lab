@@ -36,17 +36,17 @@ const { categories, applications } = vm.runInNewContext(
 
 assert(categories.length === 5, `Expected 5 categories, received ${categories.length}`);
 assert(applications.length === 20, `Expected 20 applications, received ${applications.length}`);
-assert(applications[0].title === "看圖練習" && applications[0].status === "available" && applications[0].href === "apps/body-parts-practice/", "First basics card must link to picture practice");
-assert(applications[1].title === "口說練習" && applications[1].status === "available" && applications[1].href === "apps/body-parts-speaking/", "Second basics card must link to speaking practice");
-assert(applications[2].title === "問答練習" && applications[2].status === "available" && applications[2].href === "apps/qa-practice/", "Third basics card must link to Q&A practice");
-assert(applications[3].title === "看圖描述" && applications[3].status === "available" && applications[3].href === "apps/describe-practice/", "Fourth basics card must link to picture-describe practice");
-assert(applications[4].title === "意思造句" && applications[4].href === "apps/classroom-quiz/?mode=compose", "Classroom compose card");
-assert(applications[5].title === "看圖口說小考" && applications[5].href === "apps/classroom-quiz/?mode=oral", "Classroom oral card");
-assert(applications[6].title === "聽後轉述" && applications[6].href === "apps/classroom-quiz/?mode=retell", "Classroom retell card");
-assert(applications[7].title === "接話小考" && applications[7].href === "apps/classroom-quiz/?mode=reply", "Classroom reply card");
-assert(!applications.some((app) => app.title === "聽音練習" || app.href === "apps/listen-practice/"), "Listen practice must stay off the homepage");
-assert(applications[8].title === "初級模擬站" && applications[8].status === "available" && applications[8].href === "apps/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
-assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
+assert(applications[0].title === "看圖練習" && applications[0].status === "available" && applications[0].href === "apps/basic-learning/body-parts-practice/", "First basics card must link to picture practice");
+assert(applications[1].title === "口說練習" && applications[1].status === "available" && applications[1].href === "apps/basic-learning/body-parts-speaking/", "Second basics card must link to speaking practice");
+assert(applications[2].title === "問答練習" && applications[2].status === "available" && applications[2].href === "apps/basic-learning/qa-practice/", "Third basics card must link to Q&A practice");
+assert(applications[3].title === "看圖描述" && applications[3].status === "available" && applications[3].href === "apps/basic-learning/describe-practice/", "Fourth basics card must link to picture-describe practice");
+assert(applications[4].title === "意思造句" && applications[4].href === "apps/classroom-quiz/meaning-sentence/", "Classroom compose card");
+assert(applications[5].title === "看圖口說小考" && applications[5].href === "apps/classroom-quiz/picture-speaking-quiz/", "Classroom oral card");
+assert(applications[6].title === "聽後轉述" && applications[6].href === "apps/classroom-quiz/listen-retell/", "Classroom retell card");
+assert(applications[7].title === "接話小考" && applications[7].href === "apps/classroom-quiz/question-reply/", "Classroom reply card");
+assert(!applications.some((app) => app.title === "聽音練習" || app.href === "apps/basic-learning/listen-practice/"), "Listen practice must stay off the homepage");
+assert(applications[8].title === "初級模擬站" && applications[8].status === "available" && applications[8].href === "apps/certification-mock/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
+assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/certification-mock/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
 assert(applications.filter((app) => app.status === "available").every((app) => {
   const clean = app.href.split("?")[0].replace(/\/$/, "");
   return fs.existsSync(path.join(root, clean, "index.html"));

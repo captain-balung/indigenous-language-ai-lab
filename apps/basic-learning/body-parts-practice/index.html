@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="看圖片練習 42 個方言別的生活詞彙完整句子，可依身體部位、動物、地點、職業等主題作答。">
+  <title>看圖練習｜族語e樂園 AI 實驗室</title>
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
+</head>
+<body>
+  <a class="skip" href="#practice">跳至練習</a>
+  <header>
+    <a class="back" href="/">← 返回 AI 實驗室</a>
+    <div class="hero-copy"><p>基礎學習 · MISSION 01</p><h1>看圖練習</h1><span>看圖片、寫完整族語句子，和 AI 小教練一起確認意思。</span></div>
+    <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
+  </header>
+
+  <main id="practice">
+    <section class="setup panel" aria-labelledby="setup-title">
+      <div class="step">STEP 1</div><h2 id="setup-title">選擇語別與主題</h2>
+      <div class="select-grid">
+        <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
+        <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
+      </div>
+      <div id="themes" class="themes" hidden>
+        <p id="theme-label">選擇練習主題</p>
+        <div id="theme-grid" class="theme-grid" role="group" aria-labelledby="theme-label"></div>
+      </div>
+      <div id="api-status" class="api-status" aria-live="polite">正在確認翻譯服務…</div>
+      <button id="start" class="primary" disabled>開始練習</button>
+    </section>
+
+    <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
+      <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">本輪 1 / 10</span></div>
+      <div class="question-grid">
+        <figure><img id="question-image" src="/data/klokah-junior/images/recognize/1_1.png" alt="看圖練習題目圖片"></figure>
+        <div class="answer-area">
+          <p class="prompt">看圖回答</p><h2 id="question-title">這是什麼？</h2>
+          <label for="answer">請用族語文字回答完整句子</label>
+          <input id="answer" autocomplete="off" spellcheck="false">
+          <button id="submit" class="primary">送出答案</button>
+        </div>
+      </div>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+      <div class="quiz-actions"><button id="retry" hidden>重試判定</button><button id="reveal" hidden>查看教材答案</button><button id="next" hidden>下一題 →</button></div>
+      <div id="model-answer" class="model-answer" hidden></div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>教材來源與授權</strong>
+    <p>看圖主題來自「族語 E 樂園」<a href="https://web.klokah.tw/extension/sp_junior/practice.php" target="_blank" rel="noopener">句型篇國中版看圖識字</a>；職業來自<a href="https://web.klokah.tw/mode/elementary/index.php" target="_blank" rel="noopener">教學模組初級</a>。由財團法人原住民族語言研究發展基金會製作，以 <a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 釋出。本練習不得作商業用途。</p>
+  </footer>
+  <script type="module" src="/apps/basic-learning/body-parts-practice/app.mjs"></script>
+</body>
+</html>

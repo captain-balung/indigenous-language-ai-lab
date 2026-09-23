@@ -8,20 +8,20 @@ const categories = [
 
 const applicationSeeds = {
   basics: [
-    ["看圖練習", "看圖片寫出族語完整句子。可依身體部位、動物、地點、職業等主題練習。", "assets/icons/friendly-robot.webp", "available", "apps/body-parts-practice/"],
-    ["口說練習", "看圖片用族語念出完整句子。可先聽教材再念，也可以直接說。主題與看圖練習相同。", "assets/icons/studio-microphone.webp", "available", "apps/body-parts-speaking/"],
-    ["問答練習", "聽族語問句，用打字或錄音自由回答。系統會顯示它聽到、懂成的意思。", "assets/icons/speaking-microphone.webp", "available", "apps/qa-practice/"],
-    ["看圖描述", "看認證看圖說話／看圖表達的圖片，用自己的話描述。系統會顯示它懂成的中文意思。", "assets/icons/open-storybook.webp", "available", "apps/describe-practice/"]
+    ["看圖練習", "看圖片寫出族語完整句子。可依身體部位、動物、地點、職業等主題練習。", "assets/icons/friendly-robot.webp", "available", "apps/basic-learning/body-parts-practice/"],
+    ["口說練習", "看圖片用族語念出完整句子。可先聽教材再念，也可以直接說。主題與看圖練習相同。", "assets/icons/studio-microphone.webp", "available", "apps/basic-learning/body-parts-speaking/"],
+    ["問答練習", "聽族語問句，用打字或錄音自由回答。系統會顯示它聽到、懂成的意思。", "assets/icons/speaking-microphone.webp", "available", "apps/basic-learning/qa-practice/"],
+    ["看圖描述", "看認證看圖說話／看圖表達的圖片，用自己的話描述。系統會顯示它懂成的中文意思。", "assets/icons/open-storybook.webp", "available", "apps/basic-learning/describe-practice/"]
   ],
   classroom: [
-    ["意思造句", "只看中文意思，自己寫族語。每題都顯示系統懂成的中文。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/?mode=compose"],
-    ["看圖口說小考", "看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/?mode=oral"],
-    ["聽後轉述", "只聽短句，用族語再講一次。系統顯示它聽到的話，以及懂成的中文。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/?mode=retell"],
-    ["接話小考", "聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/?mode=reply"]
+    ["意思造句", "只看中文意思，自己寫族語。每題都顯示系統懂成的中文。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
+    ["看圖口說小考", "看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
+    ["聽後轉述", "只聽短句，用族語再講一次。系統顯示它聽到的話，以及懂成的中文。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/listen-retell/"],
+    ["接話小考", "聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"]
   ],
   certification: [
-    ["初級模擬站", "模擬初級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/bronze-medal.webp", "available", "apps/beginner-mock-exam/"],
-    ["中級模擬站", "模擬中級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/silver-medal.webp", "available", "apps/intermediate-mock-exam/"],
+    ["初級模擬站", "模擬初級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/bronze-medal.webp", "available", "apps/certification-mock/beginner-mock-exam/"],
+    ["中級模擬站", "模擬中級認證的口說三題型與聽力四題型，聽教材錄音作答。", "assets/icons/silver-medal.webp", "available", "apps/certification-mock/intermediate-mock-exam/"],
     ["口說練習官", "依題目提示組織內容並練習表達。", "assets/icons/studio-microphone.webp"],
     ["考前任務包", "集中演練多種題型，準備上場。", "assets/icons/school-backpack.webp"]
   ],

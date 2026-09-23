@@ -28,7 +28,7 @@ const sourcePage = "https://web.klokah.tw/extension/sp_senior/practice.php";
 const licensePage = "https://web.klokah.tw/creativeCommons/";
 const userAgent = "Iris-01-web educational dataset downloader";
 
-// 方言別與 apps/body-parts-practice/dialects.mjs 一致（1–11、13–43，沒有 12）。
+// 方言別與 apps/basic-learning/body-parts-practice/dialects.mjs 一致（1–11、13–43，沒有 12）。
 // 高中版的方言別覆蓋率與國中版相同，已逐一驗證。
 const dialects = [
   [1, "阿美", "南勢阿美語"], [2, "阿美", "秀姑巒阿美語"], [3, "阿美", "海岸阿美語"],
