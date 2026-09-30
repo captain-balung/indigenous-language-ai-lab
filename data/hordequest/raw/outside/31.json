@@ -1,0 +1,214 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Bakɨ, niciobi na kusianga, iké kuwa yasu?",
+                "textCh": "Bakɨ，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65814/919649",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "nunguresɨ ma knamɨ Aruy na kusianga mua drɨkerle tibila okɨme butulu, musu ka?",
+                "textCh": "我明天要和Aruy去溪邊烤肉，你呢？",
+                "sound": "text/sound/65814/919650",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "biciringi madɨ ka amina margi tamililivanɨ! nuduru ma kɨkɨ nguresɨ mua?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65814/919651",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "thiurala kububuru ninana!",
+                "textCh": "你先問媽媽！（註︰魯凱族稱謂長輩的規範︰都是大家的爺爺、奶奶、爸爸、媽媽稱呼著；因此部落的長輩多或少了，所以部落的長輩都是很重要的人物。）",
+                "sound": "text/sound/65814/919652",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "navé, nuduruma kɨkɨ nguresɨ kakana sovlé mua drɨkerle tibila?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65814/919653",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "nakuni, makasi mungukocuvana!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65814/919654",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "iyo, nusauringo ma knamɨ!",
+                "textCh": "沒問題，我們一定會注意的！",
+                "sound": "text/sound/65814/919655",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "nuslapasu",
+                    "textAb": "nuslapasu?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65815/919659",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "nunvétharamdɨ gia mua rɨna",
+                    "textAb": "nunvétharamdɨ gia mua rɨna?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65816/919672",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "duru ma musu ksédme kwa saldru la",
+                    "textAb": "duru ma musu ksédme kwa saldru la?",
+                    "textCh": "你可以借我刀子嗎？",
+                    "sound": "text/sound/65817/919680",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "acidri?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65813/919646"
+                },
+                "1": {
+                    "text": "nua ma kɨkɨ silpe rngele si akamanɨ butulu.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65815/919660"
+                },
+                "2": {
+                    "text": "kdroo, iké dria tradronga na alapi.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65816/919673"
+                },
+                "3": {
+                    "text": "nakuni, mra sarké.",
+                    "textCh": "好啊，拿去使用！",
+                    "sound": "text/sound/65817/919681"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ilrigu kwa masobkanɨsu?",
+                    "textCh": "我聽不懂你說的話嗎？",
+                    "sound": "text/sound/65813/919647"
+                },
+                "1": {
+                    "text": "nua ma kɨkɨ silpe lpané si burathi.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65815/919661"
+                },
+                "2": {
+                    "text": "ilrigu kwa tékadra rɨna.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65816/919674"
+                },
+                "3": {
+                    "text": "tédra kwaa!",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65817/919682"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ilrigu kwa!",
+                    "textCh": "我不知道！",
+                    "sound": "text/sound/65813/919648"
+                },
+                "2": {
+                    "text": "kani, silikila kɨkɨ dria siviri.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65816/919675"
+                },
+                "3": {
+                    "text": "éni, mavsarɨnga saldru li.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65817/919683"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "ikadra",
+                        "nakudra",
+                        "ksédmɨ",
+                        "nuslapasu"
+                    ],
+                    "auto": "nuslapasu",
+                    "buylist": [
+                        "nulngaranɨ madɨ na makainunga ku asulatanɨ",
+                        "rngele",
+                        "sakamnɨ butulu",
+                        "lpané",
+                        "burathi",
+                        "butulu",
+                        "burucu"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "rɨgɨrgɨ",
+                        "acidri",
+                        "éni",
+                        "adra",
+                        "i",
+                        "tibila",
+                        "tbaru",
+                        "nunvétharamdɨ",
+                        "gia",
+                        "mua",
+                        "rɨna"
+                    ],
+                    "auto": "nunvétharamdɨ gia mua rɨna"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "éni",
+                        "acidri",
+                        "kcépé",
+                        "tukupili",
+                        "duru",
+                        "ma",
+                        "musu",
+                        "ksédme",
+                        "kwa",
+                        "saldru",
+                        "la"
+                    ],
+                    "auto": "duru ma musu ksédme kwa saldru la",
+                    "complete": {
+                        "text": "takdrɨngésu ka pasopra",
+                        "sound": "text/sound/65817/919684"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

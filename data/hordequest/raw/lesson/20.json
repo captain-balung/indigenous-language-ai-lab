@@ -1,0 +1,403 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "tuqauq suu ngan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62554/867879",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Tulbus naak ngan.",
+                "textCh": "我叫Tulbus。",
+                "sound": "text/sound/62554/867880",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "isaq suu lumaq?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62554/867881",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "mainahaan aak Bahuan asang minsuma.",
+                "textCh": "我從馬遠部落來。",
+                "sound": "text/sound/62554/867882",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "minaunin aas paitutingmut?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62554/867883",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "nii’ang!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62554/867884",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "namabaliv aak paitutingmut, malavi aas?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62554/867885",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "nii aak madas sui. Maqtu aas pasimul zaku sui?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62554/867886",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "azuq, pasimulak aas.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62554/867887",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Malavi'",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Savungaz",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Ququaz",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Tulbus",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Sinapalan",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Ibu",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "simaq suu ngan",
+                    "textAb": "simaq suu ngan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62555/867888",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "isaq suu lumaq",
+                    "textAb": "isaq suu lumaq?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62556/867897",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Tulbus pasimul i aak inpicu",
+                    "textAb": "Tulbus pasimul i aak inpicu?",
+                    "textCh": "Tulbus借我筆好嗎？",
+                    "sound": "text/sound/62557/867913",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Ibu pasimuling aak inpicu",
+                    "textAb": "Ibu pasimuling aak inpicu?",
+                    "textCh": "Ibu借我筆好嗎？",
+                    "sound": "text/sound/62557/867915",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tulbus pasimul i aak isqaqaisqais azuq",
+                    "textAb": "Tulbus pasimul i aak isqaqaisqais azuq?",
+                    "textCh": "Tulbus借我橡皮擦好嗎？",
+                    "sound": "text/sound/62558/867925",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Ibu pasimul i aak isqaqaisqais azuq",
+                    "textAb": "Ibu pasimul i aak isqaqaisqais azuq?",
+                    "textCh": "Ibu借我橡皮擦好嗎？",
+                    "sound": "text/sound/62558/867927",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tulbus indangazi aak siza asik",
+                    "textAb": "Tulbus, indangazi aak siza asik.",
+                    "textCh": "Tulbus，請幫我拿掃把。",
+                    "sound": "text/sound/62559/867933",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Ibu indangzi aak siza asik",
+                    "textAb": "Ibu, indangzi aak siza asik.",
+                    "textCh": "Ibu，請幫我拿掃把。",
+                    "sound": "text/sound/62559/867935",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "nii niap",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62553/867878"
+                },
+                "1": {
+                    "text": "tupaun naak ngan tu Tulbus.",
+                    "textCh": "我的名字叫Tulbus。",
+                    "sound": "text/sound/62555/867889"
+                },
+                "2": {
+                    "text": "inaak lumaq ihaan Bahuan",
+                    "textCh": "我的家在馬遠",
+                    "sound": "text/sound/62556/867898"
+                },
+                "3": {
+                    "text": "azuq, pasimulak aas.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62557/867914"
+                },
+                "4": {
+                    "text": "uka naak amin.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62558/867926"
+                },
+                "5": {
+                    "text": "azuq, isaiv zaku suu a asik un.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62559/867934"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ma’aq",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62553/867876"
+                },
+                "1": {
+                    "text": "tupaun naak ngan tu Ibu",
+                    "textCh": "我的名字叫Ibu。",
+                    "sound": "text/sound/62555/867890"
+                },
+                "2": {
+                    "text": "inaak lumaq ihaan tamazuan",
+                    "textCh": "我的家在達瑪巒村",
+                    "sound": "text/sound/62556/867899"
+                },
+                "3": {
+                    "text": "musqa naak tas’a.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62557/867916"
+                },
+                "4": {
+                    "text": "azuq, hii.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62558/867928"
+                },
+                "5": {
+                    "text": "nii aak niap tu isaq.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62559/867936"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "aipa",
+                        "inaita",
+                        "isaq",
+                        "lumaq",
+                        "simaq",
+                        "suu",
+                        "ngan"
+                    ],
+                    "auto": "simaq suu ngan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tulbus",
+                            "Tamazuan",
+                            "Savi",
+                            "Ibu",
+                            "Bahuan"
+                        ],
+                        "target-1": "Tulbus",
+                        "target-2": "Ibu"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "idaza",
+                        "simaq",
+                        "dingalan",
+                        "vingkiu",
+                        "amuu",
+                        "aingka",
+                        "ba’av",
+                        "isaq",
+                        "suu",
+                        "lumaq"
+                    ],
+                    "auto": "isaq suu lumaq",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Bahuan",
+                            "hansum",
+                            "diqanin",
+                            "Tamazuan",
+                            "vanglaz"
+                        ],
+                        "target-1": "Bahuan",
+                        "target-2": "Tamazuan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "isiata",
+                        "zingva",
+                        "haqil",
+                        "aam",
+                        "isaq",
+                        "Tulbus",
+                        "Ibu",
+                        "pasimuling",
+						"i",
+                        "aak",
+                        "inpicu"
+                    ],
+                    "auto": {
+                        "target-1": "Tulbus pasimul i aak inpicu",
+                        "target-2": "Ibu pasimuling aak inpicu"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "ispapatas",
+                        "haqil",
+                        "isuu",
+                        "isaq",
+                        "Tulbus",
+                        "Ibu",
+                        "pasimul",
+                        "i",
+                        "aak",
+                        "isqaqaisqais",
+                        "azuq"
+                    ],
+                    "auto": {
+                        "target-1": "Tulbus pasimul i aak isqaqaisqais azuq",
+                        "target-2": "Ibu pasimul i aak isqaqaisqais azuq"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "zuking",
+                        "makuaq",
+                        "uka",
+                        "ma’asik",
+                        "aipa",
+                        "amuu",
+                        "Tulbus",
+                        "Ibu",
+                        "indangzi",
+                        "aak",
+                        "siza",
+                        "asik"
+                    ],
+                    "auto": {
+                        "target-1": "Tulbus indangazi aak siza asik",
+                        "target-2": "Ibu indangzi aak siza asik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

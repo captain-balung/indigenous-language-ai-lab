@@ -1,0 +1,411 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "tiana nangan su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62862/875971",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ti angaw nangan ku.",
+                "textCh": "我叫angaw。",
+                "sound": "text/sound/62862/875972",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "yau tanian leppaw su?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62862/875973",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "maqezi iku ta pateRungan mawtu.",
+                "textCh": "我從新社部落來。",
+                "sound": "text/sound/62862/875974",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "qeman ti isu tu sataRbabi ni?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62862/875975",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "mai pama.",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62862/875976",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Rasa pa iku tu sataRbabian, qasulun pa isu ni?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62862/875977",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "mai iku mazas tu kelisiw, qanengi isu paliway tu kelisiw timaikuan ni?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62862/875978",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kuaya, paliway aka isu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62862/875979",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "tasamsiw",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "pipis",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Kaliyawan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "utay",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "pateRungan",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "abas",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "tiana nangan su",
+                    "textAb": "tiana nangan su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62863/875980",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "yau tanian leppaw su",
+                    "textAb": "yau tanian leppaw su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62864/875989",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "angaw qanengi iku meliway tu bilu su ni",
+                    "textAb": "angaw qanengi iku meliway tu bilu su ni?",
+                    "textCh": "angaw借我筆好嗎？",
+                    "sound": "text/sound/62865/876005",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "api qanengi iku meliway tu bilu su ni",
+                    "textAb": "api qanengi iku meliway tu bilu su ni?",
+                    "textCh": "api借我筆好嗎？",
+                    "sound": "text/sound/62865/876007",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "angaw qanengi iku meliway tu sasupasan su ni",
+                    "textAb": "angaw qanengi iku meliway tu sasupasan su ni?",
+                    "textCh": "angaw借我橡皮擦好嗎？",
+                    "sound": "text/sound/62866/876017",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "api qanengi iku meliway tu sasupasan su ni",
+                    "textAb": "api qanengi iku meliway tu sasupasan su ni?",
+                    "textCh": "api借我橡皮擦好嗎？",
+                    "sound": "text/sound/62866/876019",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "angaw panmu iku mala tu sinap",
+                    "textAb": "angaw, panmu iku mala tu sinap.",
+                    "textCh": "angaw，請幫我拿掃把。",
+                    "sound": "text/sound/62867/876025",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "api panmu iku mala tu sinap",
+                    "textAb": "api, panmu iku mala tu sinap.",
+                    "textCh": "api，請幫我拿掃把。",
+                    "sound": "text/sound/62867/876027",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Raynguan ku.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62861/875970"
+                },
+                "1": {
+                    "text": "ti angaw nangan ku.",
+                    "textCh": "我的名字叫angaw。",
+                    "sound": "text/sound/62863/875981"
+                },
+                "2": {
+                    "text": "yau ta pateRungan leppaw ku.",
+                    "textCh": "我的家在新社",
+                    "sound": "text/sound/62864/875990"
+                },
+                "3": {
+                    "text": "kuaya, paliway aka isu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62865/876006"
+                },
+                "4": {
+                    "text": "mai zaku ay qaya.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62866/876018"
+                },
+                "5": {
+                    "text": "kua, bula ka isu tu sinap zau.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62867/876026"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "niana?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62861/875968"
+                },
+                "1": {
+                    "text": "ti api nangan ku.",
+                    "textCh": "我的名字叫api。",
+                    "sound": "text/sound/62863/875982"
+                },
+                "2": {
+                    "text": "yau ta kudisan leppaw ku.",
+                    "textCh": "我的家在立德",
+                    "sound": "text/sound/62864/875991"
+                },
+                "3": {
+                    "text": "ussiq ma zaku ay.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62865/876008"
+                },
+                "4": {
+                    "text": "kua. ala ika.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62866/876020"
+                },
+                "5": {
+                    "text": "Raynguan ku yau tanian.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62867/876028"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "aizipna",
+                        "qaniau",
+						"ay",
+                        "tanian",
+                        "leppaw",
+                        "tiana",
+                        "nangan",
+                        "su"
+                    ],
+                    "auto": "tiana nangan su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "angaw",
+                            "kudis",
+                            "abas",
+                            "api",
+                            "pateRungan"
+                        ],
+                        "target-1": "angaw",
+                        "target-2": "api"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "babaw",
+                        "tiana",
+                        "kinil",
+                        "temaqsi",
+                        "aimu",
+                        "qaniau",
+                        "naung",
+                        "yau",
+                        "tanian",
+                        "leppaw",
+                        "su"
+                    ],
+                    "auto": "yau tanian leppaw su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "pateRungan",
+                            "bangsis",
+                            "deddan",
+                            "kudis",
+                            "iRuR"
+                        ],
+                        "target-1": "pateRungan",
+                        "target-2": "kudis"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "na",
+                        "simaipilan",
+                        "sudad",
+                        "aita",
+                        "tanian",
+                        "angaw",
+                        "api",
+                        "qanengi",
+                        "iku",
+                        "meliway",
+                        "tu",
+                        "bilu",
+                        "su",
+                        "ni"
+                    ],
+                    "auto": {
+                        "target-1": "angaw qanengi iku meliway tu bilu su ni",
+                        "target-2": "api qanengi iku meliway tu bilu su ni"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "bilu",
+                        "sudad",
+                        "zasu",
+                        "tanian",
+                        "angaw",
+                        "api",
+                        "qanengi",
+                        "iku",
+                        "meliway",
+                        "tu",
+                        "sasupasan",
+                        "su",
+                        "ni"
+                    ],
+                    "auto": {
+                        "target-1": "angaw qanengi iku meliway tu sasupasan su ni",
+                        "target-2": "api qanengi iku meliway tu sasupasan su ni"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "tupu",
+                        "manna",
+                        "mai",
+                        "seminap",
+                        "aizipna",
+                        "aimu",
+                        "angaw",
+                        "api",
+                        "panmu",
+                        "iku",
+                        "mala",
+                        "tu",
+                        "sinap"
+                    ],
+                    "auto": {
+                        "target-1": "angaw panmu iku mala tu sinap",
+                        "target-2": "api panmu iku mala tu sinap"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

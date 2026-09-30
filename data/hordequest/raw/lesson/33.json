@@ -1,0 +1,408 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Ima hangan su",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62840/875393",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Hangan mu o Tadaw",
+                "textCh": "我叫Kacaw。",
+                "sound": "text/sound/62840/875394",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Gaga inu ka sapah su",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62840/875395",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Pnaah ku alang Ihunang.",
+                "textCh": "我從紅葉部落來。",
+                "sound": "text/sound/62840/875396",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Mnkan su uqan mgrbu dhug?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62840/875397",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ini na",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62840/875398",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Mowsa ku marig uqan mgrbu,tqnay su mowsa hug?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62840/875399",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ini ku adas pila,tduwa su psiyuk pila knan hug?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62840/875400",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Aq, Ksukay misu",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62840/875401",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Ciyakang",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Biyang",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Thgahan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Lowking",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Pratan",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Ipay",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "ima hangan su",
+                    "textAb": "Ima hangan su",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62841/875402",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "gaga inu ka sapah su hug",
+                    "textAb": "Gaga inu ka sapah su hug?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62842/875411",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Tadaw ksuyka ku ppatas su hug",
+                    "textAb": "Tadaw,ksuyka ku ppatas su hug?",
+                    "textCh": "Kacaw借我筆好嗎？",
+                    "sound": "text/sound/62843/875427",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Rabay ksuykay ku ppatas su hug",
+                    "textAb": "Rabay, ksuykay   ku ppatas su hug?",
+                    "textCh": "panay借我筆好嗎？",
+                    "sound": "text/sound/62843/875429",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tadaw ksuykay ku srus su hug",
+                    "textAb": "Tadaw,ksuykay ku srus su hug?",
+                    "textCh": "Kacaw借我橡皮擦好嗎？",
+                    "sound": "text/sound/62844/875439",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Rabay ksukay ku srus su hug",
+                    "textAb": "Rabay,ksukay ku srus su hug?",
+                    "textCh": "Panay借我橡皮擦好嗎？",
+                    "sound": "text/sound/62844/875441",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tadaw jagi ku mangal sksik",
+                    "textAb": "Tadaw,jagi  ku mangal sksik",
+                    "textCh": "Tadaw，請幫我拿掃把。",
+                    "sound": "text/sound/62845/875447",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Rabay jagi ku mangal sksik",
+                    "textAb": "Rabay, jagi ku mangal sksik.",
+                    "textCh": "Panay，請幫我拿掃把。",
+                    "sound": "text/sound/62845/875449",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Ini klayi",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62839/875392"
+                },
+                "1": {
+                    "text": "Hangan mu o Tadaw",
+                    "textCh": "我的名字叫Kacaw。",
+                    "sound": "text/sound/62841/875403"
+                },
+                "2": {
+                    "text": "Gaga Ihunang ka sapah mu.",
+                    "textCh": "我的家在紅葉村",
+                    "sound": "text/sound/62842/875412"
+                },
+                "3": {
+                    "text": "Aq, ksukun misu",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62843/875428"
+                },
+                "4": {
+                    "text": "Ungat ka naku uri.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62844/875440"
+                },
+                "5": {
+                    "text": "Aq,angal ka sksik nii",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62845/875448"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "manu",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62839/875390"
+                },
+                "1": {
+                    "text": "Hangan mu o Rabay",
+                    "textCh": "我的名字叫panay。",
+                    "sound": "text/sound/62841/875404"
+                },
+                "2": {
+                    "text": "Gaga Ihunang ka sapah mu.",
+                    "textCh": "我的家在紅葉村",
+                    "sound": "text/sound/62842/875413"
+                },
+                "3": {
+                    "text": "Kingal bi ka naku",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62843/875430"
+                },
+                "4": {
+                    "text": "Aq, ngari haya",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62844/875442"
+                },
+                "5": {
+                    "text": "Ini ku kla gaga inu?",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62845/875450"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "hiya",
+                        "ndhiya",
+                        "inu",
+                        "sapah",
+                        "ima",
+                        "hangan",
+                        "su"
+                    ],
+                    "auto": "ima hangan su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tadaw",
+                            "Ihunang",
+                            "Rabay",
+							"siyaw"
+                        ],
+                        "target-1": "Tadaw",
+                        "target-2": "Rabay"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "baraw",
+                        "ima",
+                        "siyaw",
+                        "yamu",
+                        "dhiya",
+                        "dgiyaq",
+                        "gaga",
+                        "inu",
+                        "ka",
+                        "sapah",
+                        "su",
+                        "hug"
+                    ],
+                    "auto": "gaga inu ka sapah su hug",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Ihunang",
+                            "suyang",
+                            "knux",
+                            "karat",
+                            "yayung",
+							"Ihunang"
+                        ],
+                        "target-1": "Ihunang",
+                        "target-2": "Ihunang"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nhiya",
+                        "rngagan",
+						"qnawar",
+                        "patas",
+                        "ita",
+                        "inu",
+                        "Tadaw",
+                        "Rabay",
+						"ksuyka",
+                        "ksuykay",
+                        "ku",
+                        "ppatas",
+                        "su",
+                        "hug"
+                    ],
+                    "auto": {
+                        "target-1": "Tadaw ksuyka ku ppatas su hug",
+                        "target-2": "Rabay ksuykay ku ppatas su hug"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "ppatas",
+                        "patas",
+                        "nnisu",
+                        "inu",
+                        "Tadaw",
+                        "Rabay",
+						"ksukay",
+                        "ku",
+                        "srus",
+                        "su",
+                        "hug"
+                    ],
+                    "auto": {
+                        "target-1": "Tadaw ksuykay ku srus su hug",
+                        "target-2": "Rabay ksukay ku srus su hug"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "gariq",
+                        "hmuya",
+                        "Ungat",
+                        "smsik",
+                        "hiya",
+                        "Yamu",
+                        "Tadaw",
+                        "Rabay",
+                        "jagi",
+                        "ku",
+                        "mangal",
+                        "sksik"
+                    ],
+                    "auto": {
+                        "target-1": "Tadaw jagi ku mangal sksik",
+                        "target-2": "Rabay jagi ku mangal sksik "
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

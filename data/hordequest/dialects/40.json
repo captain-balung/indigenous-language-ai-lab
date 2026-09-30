@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 2,
+  "dialectId": 40,
+  "dialectName": "西群卑南語",
+  "ethnicity": "卑南",
+  "sanitized": [
+    false,
+    false,
+    false
+  ],
+  "themes": [
+    {
+      "key": "lesson",
+      "name": "上課用語",
+      "intro": "今天是開學第一天！主角在校門口遇到同學，他們在說什麼呢？",
+      "characters": [
+        {
+          "id": "classmate",
+          "name": "同學",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png"
+        },
+        {
+          "id": "protagonist",
+          "name": "主角",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png"
+        }
+      ],
+      "turns": [
+        {
+          "id": "40-hordequest-lesson-1",
+          "order": 1,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "i eman nu ngadan?",
+          "chineseText": "你叫甚麼名字？",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879439.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
+          "background": "1-1.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-2",
+          "order": 2,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "i Malingan ku ngadan.",
+          "chineseText": "我叫Malingan。",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879440.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
+          "background": "1-2.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-3",
+          "order": 3,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "kaazu u i iyan?",
+          "chineseText": "你的家在哪裡？",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879441.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
+          "background": "1-1.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-4",
+          "order": 4,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "kemay ku i Mulivelivek kana zekalr.",
+          "chineseText": "我從初鹿部落來。",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879442.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
+          "background": "1-2.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-5",
+          "order": 5,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "kenama u lra?",
+          "chineseText": "你吃早餐了嗎？",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879443.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
+          "background": "1-1.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-6",
+          "order": 6,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "’azi ziya",
+          "chineseText": "還沒耶！",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879444.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
+          "background": "1-2.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-7",
+          "order": 7,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "makuwa ku tremima’a za kenanamayan, salrangan u mukuwa?",
+          "chineseText": "我要去買早餐，要一起去嗎？",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879445.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
+          "background": "1-1.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-8",
+          "order": 8,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "’azi ku murung za paisu, karuwa ku kivulas za paisu kaninu?",
+          "chineseText": "我沒有帶錢。你可以借我錢嗎？",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879446.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
+          "background": "1-2.jpg"
+        },
+        {
+          "id": "40-hordequest-lesson-9",
+          "order": 9,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "ai,ku pavulrasay u。",
+          "chineseText": "好，我借你。",
+          "audioUrl": "https://web.klokah.tw/text/sound/62994/879447.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
+          "background": "1-1.jpg"
+        }
+      ]
+    },
+    {
+      "key": "find",
+      "name": "尋找物品",
+      "intro": "今天家裡要辦婚禮，很多親戚都來了。看到大家忙得不可開交，主角決定要幫大家一起準備。",
+      "characters": [
+        {
+          "id": "classmate",
+          "name": "同學",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png"
+        },
+        {
+          "id": "mother",
+          "name": "媽媽",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png"
+        }
+      ],
+      "turns": [
+        {
+          "id": "40-hordequest-find-1",
+          "order": 1,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "ina,kazuwan a niruma’enan zuwa i kanta harem kana wari awa!",
+          "chineseText": "媽媽今天家裡來了好多親戚哦！",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924978.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-find-2",
+          "order": 2,
+          "speaker": "mother",
+          "speakerName": "媽媽",
+          "indigenousText": "’alra na paveray/pakaetim i iva na ma’inayan zi semeneng kazuwan a trau.",
+          "chineseText": "今天是哥哥的婚禮，所以有很多人來。",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924979.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
+          "background": "1-2.png"
+        },
+        {
+          "id": "40-hordequest-find-3",
+          "order": 3,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "kasemanagalan,sawariyan ta lra ’azi mena’u nazu",
+          "chineseText": "好開心喔！很久沒有看到他們了！",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924980.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-find-4",
+          "order": 4,
+          "speaker": "mother",
+          "speakerName": "媽媽",
+          "indigenousText": "ai,kavangavangan ta mapiya harem kana wari,uwa puwalrangi nazu i inu.",
+          "chineseText": "對啊！今天大家都會很忙，你要幫忙大家。",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924981.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
+          "background": "1-2.png"
+        },
+        {
+          "id": "40-hordequest-find-5",
+          "order": 5,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "ai,’azi’a’azi ku puwalrang.",
+          "chineseText": "好的，我一定會！",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924982.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-find-6",
+          "order": 6,
+          "speaker": "mother",
+          "speakerName": "媽媽",
+          "indigenousText": "auwa ku ziya padang za emaeman.",
+          "chineseText": "我要去準備等一下要用的東西了。",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924983.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
+          "background": "1-2.png"
+        },
+        {
+          "id": "40-hordequest-find-7",
+          "order": 7,
+          "speaker": "classmate",
+          "speakerName": "同學",
+          "indigenousText": "zuwa ku puwalranga!",
+          "chineseText": "我來幫忙！",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924984.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-find-8",
+          "order": 8,
+          "speaker": "mother",
+          "speakerName": "媽媽",
+          "indigenousText": "aimu, kurelrang kaningku.",
+          "chineseText": "好，你跟我來！",
+          "audioUrl": "https://web.klokah.tw/text/sound/66317/924985.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
+          "background": "1-2.png"
+        }
+      ]
+    },
+    {
+      "key": "outside",
+      "name": "戶外活動",
+      "intro": "今天是星期六。主角正在和哥哥聊天，討論明天的行程。來看看他們要去哪裡玩吧！",
+      "characters": [
+        {
+          "id": "protagonist",
+          "name": "主角",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png"
+        },
+        {
+          "id": "sibling",
+          "name": "哥哥",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-2.png"
+        },
+        {
+          "id": "mother",
+          "name": "媽媽",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/mom.png"
+        }
+      ],
+      "turns": [
+        {
+          "id": "40-hordequest-outside-1",
+          "order": 1,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "Sulikang,nu ’emana mu kasede’an zi mianger u za auwa i iyan?",
+          "chineseText": "Sulikang，明天是星期天，你打算去哪裡？",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919199.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-outside-2",
+          "order": 2,
+          "speaker": "sibling",
+          "speakerName": "哥哥",
+          "indigenousText": "nu ’emanan salrangan ku kani Muya auwa mi i velelruwan kemeranga za ’alum, inu mu?",
+          "chineseText": "我明天要和Muya去溪邊烤肉，你呢？",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919200.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-2.png",
+          "background": "1-2.png"
+        },
+        {
+          "id": "40-hordequest-outside-3",
+          "order": 3,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "kasahasahar na malinayan nu kinger ta! kazuwa ku kurelrang?",
+          "chineseText": "聽起來很好玩！我也可以一起去嗎？",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919201.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-outside-4",
+          "order": 4,
+          "speaker": "sibling",
+          "speakerName": "哥哥",
+          "indigenousText": "kiyumalri ziya i taina.",
+          "chineseText": "你先問媽媽！",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919202.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-2.png",
+          "background": "1-2.png"
+        },
+        {
+          "id": "40-hordequest-outside-5",
+          "order": 5,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "ina,karuwa ku kurelrang ni iva na ma’inayan mukuwa i velelruwan?",
+          "chineseText": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919203.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
+          "background": "1-1.png"
+        },
+        {
+          "id": "40-hordequest-outside-6",
+          "order": 6,
+          "speaker": "mother",
+          "speakerName": "媽媽",
+          "indigenousText": "karuwa, maw mu taranapaw i inmu!",
+          "chineseText": "可以，但你們要小心喔！",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919204.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/mom.png",
+          "background": "1-3.png"
+        },
+        {
+          "id": "40-hordequest-outside-7",
+          "order": 7,
+          "speaker": "protagonist",
+          "speakerName": "主角",
+          "indigenousText": "ai, ’azi’a’azi mi temaranapaw.",
+          "chineseText": "沒問題，我們一定會的！",
+          "audioUrl": "https://web.klokah.tw/text/sound/65759/919205.mp3",
+          "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
+          "background": "1-1.png"
+        }
+      ]
+    }
+  ]
+}

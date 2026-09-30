@@ -1,0 +1,253 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "Madia’ sala ca kitlumaq it tina ha’an lumaq haip diqanin.",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66185/923964",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Pasiza’ ca tuqasnanaz haip tu diqanin, daqat madia’ sala ca bunun maipa ti’.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66185/923965",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Mantan manahip sala ca is’ang, talbuntun nii’ tu pasaduu nai.",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66185/923966",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Uu qana ! mu’amin ca bunun uka’ is inul’uan haip, asakas tu mindangaz is duma’.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66185/923967",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Uu na, pasimaupakak tuza’!",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66185/923968",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Na palasanucak is cukau’un a mama’az it unin.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66185/923969",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Kadangaz azak!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66185/923970",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Malavia zakun maipa dii!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66185/923971",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "makua ca baqlu ka tungqadanum",
+                    "textAb": "Makua ca baqlu ka tungqadanum?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66186/923974",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ica ca dangi’as sizu’",
+                    "textAb": "Ica ca dangi’as sizu’?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66187/923982",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "saduukas is saviki’ a’",
+                    "textAb": "Saduukas is saviki’ a’?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66188/923990",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "ica kat tuqasnanaz",
+                    "textAb": "Ica kat tuqasnanaz?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66189/923998",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ma’az",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66184/923961"
+                },
+                "1": {
+                    "text": "Kuci’aun zaku qaihav mabutiqu.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66186/923975"
+                },
+                "2": {
+                    "text": "Nii’ak amin malulu.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66187/923983"
+                },
+                "3": {
+                    "text": "Uka’ ha’an zaku’an dii.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66188/923991"
+                },
+                "4": {
+                    "text": "Nii’ak saduu, makaica kac kana’?",
+                    "textCh": "我沒看到，他去哪了？",
+                    "sound": "text/sound/66189/923999"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Niit sama’azun tan’a?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66184/923962"
+                },
+                "1": {
+                    "text": "Kuci’aun tina madangqac a qaihav mabutiqu.",
+                    "textCh": "媽媽有用紅包起來。",
+                    "sound": "text/sound/66186/923976"
+                },
+                "2": {
+                    "text": "Iha’an ludun ca na maiza.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66187/923984"
+                },
+                "3": {
+                    "text": "Maiza, iha’an daza’ is pangka’lungquan a’.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66188/923992"
+                },
+                "4": {
+                    "text": "Uka’ang a cia?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66189/924000"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "niapang!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66184/923963"
+                },
+                "1": {
+                    "text": "Nii’ak malamantuk.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66186/923977"
+                },
+                "2": {
+                    "text": "Madia’ang naak tukuc, na iscaiv su’un!",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66187/923985"
+                },
+                "3": {
+                    "text": "Maiza ha’an kalala’ aiza ka’.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66188/923993"
+                },
+                "4": {
+                    "text": "Nii’in saduu’ani qa ? haiva kilimi ka cia!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66189/924001"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "kalala’",
+                        "cima",
+                        "lakda’",
+                        "ma’az",
+                        "makua",
+                        "ca",
+                        "baqlu",
+                        "ka",
+                        "tungqadanum"
+                    ],
+                    "auto": "makua ca baqlu ka tungqadanum"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "saviki’",
+                        "mazang",
+                        "muut",
+                        "puaq",
+                        "ica",
+                        "ca",
+                        "dangi’as",
+                        "sizu’"
+                    ],
+                    "auto": "ica ca dangi’as sizu’"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "bunbun",
+                        "cima",
+                        "lumaq",
+                        "siza’",
+                        "saduukas",
+                        "is",
+                        "saviki’",
+                        "a’"
+                    ],
+                    "auto": "saduukas is saviki’ a’"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "cima",
+                        "ma’az",
+                        "kaviaz",
+                        "tataqu",
+                        "ica",
+                        "kat",
+                        "tuqasnanaz"
+                    ],
+                    "auto": "ica kat tuqasnanaz",
+                    "complete": {
+                        "text": "Iha’an dii azak, muscuavin azak mapisingpising tukuc...",
+                        "sound": "text/sound/66189/924002"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

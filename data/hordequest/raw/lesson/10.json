@@ -1,0 +1,408 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "ima lalu su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62356/862677",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "lalu mu ga Kacu",
+                "textCh": "我叫Kacu。",
+                "sound": "text/sound/62356/862678",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "cyan maki inu muyax su?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62356/862679",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "knahul cu qalang Skikun",
+                "textCh": "我從四季部落來。",
+                "sound": "text/sound/62356/862680",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mnaniq su knama la?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62356/862681",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini cu qaniq knama na",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62356/862682",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "musa cu mes knama, squn su musa mes uyi ga?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62356/862683",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini cu aray pila, ana su ksyugan pila kingan ga?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62356/862684",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "uya ga, ksyugay misu",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62356/862685",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Pyahaw",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Pisuy",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Pyanan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Piho",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Pa'nakuwali",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Amuy",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "ima lalu su",
+                    "textAb": "ima lalu su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62357/862686",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "cyan maki inu muyax su",
+                    "textAb": "cyan maki inu muyax su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62358/862695",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacu ksyuxi cu cikay enpit ga",
+                    "textAb": "Kacu ksyuxi cu cikay enpit ga",
+                    "textCh": "Kacu借我筆好嗎？",
+                    "sound": "text/sound/62359/862711",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Pisuy ksyuxi cu cikay enpit ga",
+                    "textAb": "Pisuy ksyuxi cu cikay enpit ga?",
+                    "textCh": "pisuy借我筆好嗎？",
+                    "sound": "text/sound/62359/862713",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacu ksyuxi cu cikay ccom su ga",
+                    "textAb": "Kacu ksyuxi cu cikay ccom su ga?",
+                    "textCh": "Kacu借我橡皮擦好嗎？",
+                    "sound": "text/sound/62360/862723",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Pisuy ksyuxi cu cikay ccom su ga",
+                    "textAb": "Pisuy ksyuxi cu cikay ccom su ga?",
+                    "textCh": "Pisuy借我橡皮擦好嗎？",
+                    "sound": "text/sound/62360/862725",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacu praxi cu magan cikay capuh",
+                    "textAb": "Kacu, praxi cu magan cikay capuh",
+                    "textCh": "Kacu，請幫我拿掃把。",
+                    "sound": "text/sound/62361/862731",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Pisuy praxi cu magan capuh",
+                    "textAb": "Pisuy, praxi cu magan capuh",
+                    "textCh": "Pisuy，請幫我拿掃把。",
+                    "sound": "text/sound/62361/862733",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ini kbaqi",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62355/862676"
+                },
+                "1": {
+                    "text": "Kacu lalu mu",
+                    "textCh": "我的名字叫Kacu。",
+                    "sound": "text/sound/62357/862687"
+                },
+                "2": {
+                    "text": "cyan maki qalang Lmwan muyax mu",
+                    "textCh": "我的家在Lmwan",
+                    "sound": "text/sound/62358/862696"
+                },
+                "3": {
+                    "text": "uya, ksyugay misu",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62359/862712"
+                },
+                "4": {
+                    "text": "uka kingan uyi ay",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62360/862724"
+                },
+                "5": {
+                    "text": "uya, agan capuh qani",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62361/862732"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "nanu",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62355/862674"
+                },
+                "1": {
+                    "text": "Pisuy lalu mu",
+                    "textCh": "我的名字叫pisuy。",
+                    "sound": "text/sound/62357/862688"
+                },
+                "2": {
+                    "text": "cyan maki qalang Pyanan muyax mu",
+                    "textCh": "我的家在南山",
+                    "sound": "text/sound/62358/862697"
+                },
+                "3": {
+                    "text": "qutux nanak enpit mu",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62359/862714"
+                },
+                "4": {
+                    "text": "uya, agan ga",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62360/862726"
+                },
+                "5": {
+                    "text": "ini mu qbaqi cyan maki inu?",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62361/862734"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "hiya",
+                        "naha",
+                        "inu",
+                        "muyax",
+                        "ima",
+                        "lalu",
+                        "su"
+                    ],
+                    "auto": "ima lalu su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kacu",
+                            "Pyanan",
+                            "Rimuy",
+                            "Pisuy",
+                            "Lmwan"
+                        ],
+                        "target-1": "Kacu",
+                        "target-2": "Pisuy"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "babaw",
+                        "ima",
+                        "byeh",
+                        "mqwas",
+                        "cimu",
+                        "naha",
+                        "rgyax",
+                        "cyan",
+                        "maki",
+                        "inu",
+                        "muyax",
+                        "su"
+                    ],
+                    "auto": "cyan maki inu muyax su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Lmwan",
+                            "sokan",
+                            "kayal",
+                            "Pyanan",
+                            "llyung"
+                        ],
+                        "target-1": "Lmwan",
+                        "target-2": "Pyanan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "ara",
+                        "renwa",
+                        "biru",
+                        "cami",
+                        "inu",
+                        "Kacu",
+                        "Pisuy",
+                        "ksyuxi",
+                        "cu",
+                        "cikay",
+                        "enpit",
+                        "ga"
+                    ],
+                    "auto": {
+                        "target-1": "Kacu ksyuxi cu cikay enpit ga",
+                        "target-2": "Pisuy ksyuxi cu cikay enpit ga"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "enpit",
+                        "biru",
+                        "ara",
+                        "inu",
+                        "Kacu",
+                        "Pisuy",
+                        "ksyuxi",
+                        "cu",
+                        "cikay",
+                        "ccom",
+                        "su",
+                        "ga"
+                    ],
+                    "auto": {
+                        "target-1": "Kacu ksyuxi cu cikay ccom su ga",
+                        "target-2": "Pisuy ksyuxi cu cikay ccom su ga"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "zyoking",
+                        "hmacwa",
+                        "uka",
+                        "cmpuh",
+                        "hiya",
+                        "cimu",
+                        "Kacu",
+                        "Pisuy",
+                        "praxi",
+                        "cu",
+                        "magan",
+                        "capuh",
+						"cikay"
+                    ],
+                    "auto": {
+                        "target-1": "Kacu praxi cu magan cikay capuh",
+                        "target-2": "Pisuy praxi cu magan capuh"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

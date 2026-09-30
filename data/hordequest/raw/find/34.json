@@ -1,0 +1,257 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "tangi deddan mazemun qenasuani mawtu ta leppawan na tina ku yu!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66281/924701",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "sinapawan qaqa ku setangi, Raqana mazemun lazat mawtu tazian.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66281/924702",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "tenes ti iku mai temayta ta qaniyauan, melizaq iku.",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66281/924703",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "maken ti, muwaza qakelawkawayan ta setangi, panmu ka qaya aisu.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66281/924704",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "kua ya. qawman panmu iku.",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66281/924705",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "qatiw pa iku pasaya tu Ribang na sadaiyungan antangi.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66281/924706",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "panmu aka isu.",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66281/924707",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kua, qasulun iku.",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66281/924708",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "tasu ay bakuuy tikuan naquni taytan semani",
+                    "textAb": "tasu ay bakuuy tikuan naquni taytan semani?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66282/924711",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "yau tanian naned",
+                    "textAb": "yau tanian naned?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66283/924719",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "matayta isu tu dadas ni",
+                    "textAb": "matayta isu tu dadas ni?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66284/924727",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "yau tanian Runanay ay qaqa",
+                    "textAb": "yau tanian Runanay ay qaqa?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66285/924736",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "niana?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66280/924698"
+                },
+                "1": {
+                    "text": "tabuan ku tu lawa.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66282/924712"
+                },
+                "2": {
+                    "text": "Raynguan ku.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66283/924720"
+                },
+                "3": {
+                    "text": "mai tazian.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66284/924728"
+                },
+                "4": {
+                    "text": "mai meqayta iku, matiw tanian aizipna?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66285/924737"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Rayngu iku mipil?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66280/924699"
+                },
+                "1": {
+                    "text": "tabuan na tina ku tu tebaRi ay lawa.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66282/924713"
+                },
+                "2": {
+                    "text": "ta naungan qawka yau.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66283/924721"
+                },
+                "3": {
+                    "text": "yau ta babaw na qaddan.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66284/924729"
+                },
+                "4": {
+                    "text": "mai pama mezukat aizipna ni?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66285/924738"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "Raynguan ku.",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66280/924700"
+                },
+                "1": {
+                    "text": "kalingunan ku ti.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66282/924714"
+                },
+                "2": {
+                    "text": "yau muwaza zaku ay, bula aka isu.",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66283/924722"
+                },
+                "3": {
+                    "text": "yau ta qanasan ’nay.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66284/924730"
+                },
+                "4": {
+                    "text": "mai ni? qalazuk ka kemilim timaizipana!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66285/924739"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "belulu",
+                        "tiana",
+                        "bettu",
+                        "niana",
+                        "tasu",
+                        "ay",
+                        "bakuuy",
+                        "tikuan",
+                        "naquni",
+                        "taytan",
+                        "semani"
+                    ],
+                    "auto": "tasu ay bakuuy tikuan naquni taytan semani"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "dadas",
+                        "manna",
+                        "suway",
+                        "simau",
+                        "yau",
+                        "tanian",
+                        "naned"
+                    ],
+                    "auto": "yau tanian naned"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "benina",
+                        "tiana",
+                        "leppaw",
+                        "mala",
+                        "matayta",
+                        "isu",
+                        "tu",
+                        "dadas",
+                        "ni"
+                    ],
+                    "auto": "matayta isu tu dadas ni"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "tiana",
+                        "niana",
+                        "kaput",
+                        "patudan",
+                        "yau",
+                        "tanian",
+                        "Runanay",
+                        "ay",
+                        "qaqa"
+                    ],
+                    "auto": "yau tanian Runanay ay qaqa",
+                    "complete": {
+                        "text": "yau iku tazian, laqebuqebu anem ku.",
+                        "sound": "text/sound/66285/924740"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

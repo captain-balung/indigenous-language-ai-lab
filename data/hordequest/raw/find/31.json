@@ -1,0 +1,253 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "navé, madro papréta mukani data sesa yo!",
+                "textCh": "媽媽，今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66263/924563",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "saplangɨne kakasovlé sesa, sukéni mukné madro na ico.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66263/924564",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "mabebere madɨ! médavli ku icɨnglanɨme nianga!",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66263/924565",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "iyo vi! makasi, kirikucu ma miti samia sesa, nupusopra ma musu.",
+                "textCh": "對啊！但是，今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66263/924566",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "iyo, nupusopra mianga kɨkɨ.",
+                "textCh": "好的，我一定會幫忙！",
+                "sound": "text/sound/66263/924567",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kwala ptarme kuyenɨnga nusarkata na makainunga!",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66263/924568",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "kukné pusopra!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66263/924569",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "iyo, nanga tkapra kwa!",
+                "textCh": "好，來跟隨我！",
+                "sound": "text/sound/66263/924570",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "tumanɨdra bovanɨ na cɨbakɨ mkedrɨsa",
+                    "textAb": "tumanɨdra bovanɨ na cɨbakɨ mkedrɨsa?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66264/924573",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ikadra ku slé",
+                    "textAb": "ikadra ku slé?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66265/924581",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "ucɨngɨlɨ musu ku thvéké",
+                    "textAb": "ucɨngɨlɨ musu ku thvéké?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66266/924589",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "ikadra kakasovlé",
+                    "textAb": "ikadra kakasovlé?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66267/924597",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "acidri?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66262/924560"
+                },
+                "1": {
+                    "text": "asarké kɨkɨ mamɨne spaciebɨ ripucu.",
+                    "textCh": "我有使用布包起來。",
+                    "sound": "text/sound/66264/924574"
+                },
+                "2": {
+                    "text": "guta ilrigu kwaa!",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66265/924582"
+                },
+                "3": {
+                    "text": "tédra kwa kné.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66266/924590"
+                },
+                "4": {
+                    "text": "icɨngɨlɨ kɨkɨ, uwani?",
+                    "textCh": "我沒看到，他去哪了？",
+                    "sound": "text/sound/66267/924598"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ilrigu kwa masobkanɨsu?",
+                    "textCh": "我聽不懂你說的嗎？",
+                    "sound": "text/sound/66262/924561"
+                },
+                "1": {
+                    "text": "asarké nina dɨlɨlengɨ mamɨne spaciebɨ ripucu.",
+                    "textCh": "媽媽有使用紅布包起來。",
+                    "sound": "text/sound/66264/924575"
+                },
+                "2": {
+                    "text": "tkathe ni rɨgɨrgɨ ka iké.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66265/924583"
+                },
+                "3": {
+                    "text": "iké, iké anuru garɨ.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66266/924591"
+                },
+                "4": {
+                    "text": "ibaltela?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66267/924599"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ilrigu kwa!",
+                    "textCh": "我不知道！",
+                    "sound": "text/sound/66262/924562"
+                },
+                "1": {
+                    "text": "ingulringo nga kwa!",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66264/924576"
+                },
+                "2": {
+                    "text": "iké kwa madro na atdra, kobé swa!",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66265/924584"
+                },
+                "3": {
+                    "text": "kdroo tngépa adringi iké.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66266/924592"
+                },
+                "4": {
+                    "text": "malimisi nga? mua ibungu silɨpedria!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66267/924600"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "kuloduru",
+                        "sboro",
+                        "acini",
+                        "alapi",
+                        "acidri",
+                        "tumanɨdra",
+                        "bovanɨ",
+                        "na",
+                        "cɨbakɨ",
+                        "mkedrɨsa"
+                    ],
+                    "auto": "tumanɨdra bovanɨ na cɨbakɨ mkedrɨsa"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "thvéké",
+                        "nakudra",
+                        "suro",
+                        "vngɨré",
+                        "ikadra",
+                        "ku",
+                        "slé"
+                    ],
+                    "auto": "ikadra ku slé"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "blɨblɨ",
+                        "acini",
+                        "danɨ",
+                        "mra",
+                        "ucɨngɨlɨ",
+                        "musu",
+                        "ku",
+                        "thvéké"
+                    ],
+                    "auto": "ucɨngɨlɨ musu ku thvéké"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "acini",
+                        "acidra",
+                        "lɨsé",
+                        "alie",
+                        "singsi",
+                        "ikadra",
+                        "kakasovlé"
+                    ],
+                    "auto": "ikadra kakasovlé",
+                    "complete": {
+                        "text": "iké kɨné, markɨmɨ kwa sakura......",
+                        "sound": "text/sound/66267/924601"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

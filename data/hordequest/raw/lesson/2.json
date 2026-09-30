@@ -1,0 +1,408 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Cima ko ngangan iso?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/71667/998332",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ci Kacaw ko ngangan ako.",
+                "textCh": "我叫Kacaw。",
+                "sound": "text/sound/62180/858054",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Icowa ko loma’ iso?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/71667/998333",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Nai Angcohay niyaro’ kako.",
+                "textCh": "我從安通部落來。",
+                "sound": "text/sound/62180/858056",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Na maranamay to kiso saw?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/71667/998334",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Caho ari!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62180/858058",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Tamita mahakelong? Mi’aca kako to sakaranam.",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/71667/998335",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Awa ko nihawikidan ako a payci, manga’ay kiso pacaliw to payci takonan.",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62180/858060",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Nga’ay to, pacaliwen ako kiso.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/71667/998336",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Makerahay",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Dongi",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Lidaw",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Lahok",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Lidaw",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Ropi",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "cima ko ngangan iso",
+                    "textAb": "Cima ko ngangan iso?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/71667/998337",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "icowa ko loma’ iso",
+                    "textAb": "Icowa ko loma’ iso?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/71667/998339",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacaw pacaliw to inpic haw",
+                    "textAb": "Kacaw pacaliw to inpic haw?",
+                    "textCh": "Kacaw借我筆好嗎？",
+                    "sound": "text/sound/71667/998341",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Panay pacaliwen kako to inpic iso haw",
+                    "textAb": "Panay pacaliwen kako to inpic iso haw?",
+                    "textCh": "panay借我筆好嗎？",
+                    "sound": "text/sound/71667/998342",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacaw pacaliwen kako to sapisisit haw",
+                    "textAb": "Kacaw pacaliwen kako to sapisisit haw?",
+                    "textCh": "Kacaw借我橡皮擦好嗎？",
+                    "sound": "text/sound/71667/998344",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Panay pacaliwen kako to sapisisit haw",
+                    "textAb": "Panay pacaliwen kako to sapisisit haw?",
+                    "textCh": "Panay借我橡皮擦好嗎？",
+                    "sound": "text/sound/71667/998345",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacaw padangen kako miala to saasik",
+                    "textAb": "Kacaw, padangen kako miala to saasik.",
+                    "textCh": "Kacaw，請幫我拿掃把。",
+                    "sound": "text/sound/71667/998347",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Panay padangen kako miala to saasik",
+                    "textAb": "Panay, padangen kako miala to saasik.",
+                    "textCh": "Panay，請幫我拿掃把。",
+                    "sound": "text/sound/71667/998348",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Hakeno.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62179/858052"
+                },
+                "1": {
+                    "text": "Ci Kacaw ko ngangan ako.",
+                    "textCh": "我的名字叫Kacaw。",
+                    "sound": "text/sound/62181/858063"
+                },
+                "2": {
+                    "text": "I Fata’an ko loma’ ako.",
+                    "textCh": "我的家在馬太鞍",
+                    "sound": "text/sound/62182/858072"
+                },
+                "3": {
+                    "text": "Hayda/Mamaan, pacaliwen ako kiso.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62183/858088"
+                },
+                "4": {
+                    "text": "Awaay ko mako.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62184/858100"
+                },
+                "5": {
+                    "text": "Hai, na koni saasik.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62185/858108"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "O maan?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62179/858050"
+                },
+                "1": {
+                    "text": "Ci Panay ko ngangan ako.",
+                    "textCh": "我的名字叫panay。",
+                    "sound": "text/sound/71667/998338"
+                },
+                "2": {
+                    "text": "I Angcoh ko loma’ ako.",
+                    "textCh": "我的家在安通",
+                    "sound": "text/sound/71667/998340"
+                },
+                "3": {
+                    "text": "Cecay aca ko mako.",
+                    "textCh": "我只有一枝。",
+                    "sound": "text/sound/71667/998343"
+                },
+                "4": {
+                    "text": "Hayda/mamaan, alaen.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/71667/998346"
+                },
+                "5": {
+                    "text": "Mafokil kako icowaay?",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/71667/998349"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "cingra",
+                        "nangraay",
+                        "icowa",
+                        "loma’",
+                        "cima",
+                        "ko",
+                        "ngangan",
+                        "iso"
+                    ],
+                    "auto": "cima ko ngangan iso",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kacaw",
+                            "Angcoh",
+                            "Ado",
+                            "Panay",
+                            "Fata’an"
+                        ],
+                        "target-1": "Kacaw",
+                        "target-2": "Panay"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "fafaed",
+                        "cima",
+                        "fati’i’an",
+                        "mitilid",
+                        "kamo",
+                        "cangra",
+                        "lotok",
+                        "Icowa",
+                        "ko",
+                        "loma’",
+                        "iso"
+                    ],
+                    "auto": "icowa ko loma’ iso",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Fata’an",
+                            "fangsis",
+                            "kakarayan",
+                            "Angcoh",
+                            "’alo tarawadaw",
+                            "’alo",
+                            "tarawadaw"
+                        ],
+                        "target-1": "Fata’an",
+                        "target-2": "Angcoh"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "haw",
+                        "dingwa",
+                        "codad",
+                        "kami",
+                        "Kacaw",
+                        "Panay",
+                        "pacaliwen",
+                        "kako",
+                        "to",
+                        "inpic",
+                        "iso",
+                        "haw"
+                    ],
+                    "auto": {
+                        "target-1": "Kacaw pacaliw to inpic haw",
+                        "target-2": "Panay pacaliwen kako to inpic iso haw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "sapicodad",
+                        "codad",
+                        "icowa",
+                        "Kacaw",
+                        "Panay",
+                        "pacaliwen",
+                        "kako",
+                        "to",
+                        "sapisisit",
+                        "haw"
+                    ],
+                    "auto": {
+                        "target-1": "Kacaw pacaliwen kako to sapisisit haw",
+                        "target-2": "Panay pacaliwen kako to sapisisit haw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "sasifin",
+                        "sao",
+                        "awaay",
+                        "miasik",
+                        "cingra",
+                        "kamo",
+                        "Kacaw",
+                        "Panay",
+                        "padangen",
+                        "kako",
+                        "miala",
+                        "to",
+                        "saasik"
+                    ],
+                    "auto": {
+                        "target-1": "Kacaw padangen kako miala to saasik",
+                        "target-2": "Panay padangen kako miala to saasik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,418 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "zou cumas’a na ongkosu?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62884/876549",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "zou Voyu ’o ongko’u.",
+                "textCh": "我叫Voyu。",
+                "sound": "text/sound/62884/876550",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mios’a yonenu na emoosu?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62884/876551",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "mi’o i’mi ne Tfuya.",
+                "textCh": "我從特富野部落來。",
+                "sound": "text/sound/62884/876552",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mikocu otaseoni?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62884/876553",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "o’a mocu!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62884/876554",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "te’o mhia no te ana no taseona, teko fiho?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62884/876555",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "mi’o o’te mahafo to peisu . te’o meelʉ yuevaho no peisusu?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62884/876556",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "zou, te’o yuevahneni suu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62884/876557",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Saviki",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Tanivu",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Tapangʉ",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Mo'o",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Pnguu",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Apu'u",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "zou cumas’a na ongkosu",
+                    "textAb": "zou cumas’a na ongkosu?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62885/876558",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "mio yonenu na emoosu",
+                    "textAb": "mio yonenu na emoosu?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62886/876567",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Voyu teko pela yuevahneni ta ’oyomza tmopsʉ suu a’o",
+                    "textAb": "Voyu, teko pela yuevahneni ta ’oyomza tmopsʉ suu a’o?",
+                    "textCh": "Voyu借我筆好嗎？",
+                    "sound": "text/sound/62887/876583",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sayungu teko pela yuevahneni ta ’oyomza tmopsʉ suu a’o",
+                    "textAb": "Sayungu, teko pela yuevahneni ta ’oyomza tmopsʉ suu a’o?",
+                    "textCh": "Sayungu借我筆好嗎？",
+                    "sound": "text/sound/62887/876585",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Voyu te’o melʉ yuevaho no smaofsusu su",
+                    "textAb": "Voyu, te’o melʉ yuevaho no smaofsusu su?",
+                    "textCh": "Voyu借我橡皮擦好嗎？",
+                    "sound": "text/sound/62888/876595",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sayungu te’o melʉ yuevaho no smaofsusu su",
+                    "textAb": "Sayungu, te’o melʉ yuevaho no smaofsusu su?",
+                    "textCh": "Sayungu借我橡皮擦好嗎？",
+                    "sound": "text/sound/62888/876597",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Voyu tekon’a yaa si si’ingi ho faeni a’o",
+                    "textAb": "Voyu, tekon’a yaa si si’ingi ho faeni a’o.",
+                    "textCh": "Voyu，請幫我拿掃把。",
+                    "sound": "text/sound/62889/876603",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sayungu tekon’a yaa si si’ingi ho faeni a’o",
+                    "textAb": "Sayungu, tekon’a yaa si si’ingi ho faeni a’o.",
+                    "textCh": "Sayungu，請幫我拿掃把。",
+                    "sound": "text/sound/62889/876605",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "mabochio",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62883/876548"
+                },
+                "1": {
+                    "text": "zou Voyu ’o ongko’u.",
+                    "textCh": "我的名字叫Voyu。",
+                    "sound": "text/sound/62885/876559"
+                },
+                "2": {
+                    "text": "mo yone Niae’ucna ’o emoo’u.",
+                    "textCh": "我的家在里佳",
+                    "sound": "text/sound/62886/876568"
+                },
+                "3": {
+                    "text": "zou, te’o yuevahneni suu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62887/876584"
+                },
+                "4": {
+                    "text": "maezo uk’a’u.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62888/876596"
+                },
+                "5": {
+                    "text": "zou, ’e si’ngi eni te’o faeni suu.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62889/876604"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "zou cuma?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62883/876546"
+                },
+                "1": {
+                    "text": "zou Sayungu ’o ongko’u.",
+                    "textCh": "我的名字叫Sayungu。",
+                    "sound": "text/sound/62885/876560"
+                },
+                "2": {
+                    "text": "mo yone Tfuya ’o emoo’u.",
+                    "textCh": "我的家在特富野",
+                    "sound": "text/sound/62886/876569"
+                },
+                "3": {
+                    "text": "mio c’o coni ’e nuu’u.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62887/876586"
+                },
+                "4": {
+                    "text": "zou, naho yaa.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62888/876598"
+                },
+                "5": {
+                    "text": "i’o a’ta cohivi mio yonenu na isi yoni.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62889/876606"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "taini",
+                        "nuuhin’i",
+                        "no",
+						"nenu",
+                        "emoo",
+                        "zou",
+                        "cumas’a",
+                        "na",
+                        "ongkosu"
+                    ],
+                    "auto": "zou cumas’a na ongkosu",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Voyu",
+                            "Tfuya",
+                            "ku’atʉ",
+                            "Sayungu",
+                            "Niae’ucna"
+                        ],
+                        "target-1": "Voyu",
+                        "target-2": "Sayungu"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "skoskopna",
+                        "siya",
+                        "ciengona",
+                        "mo’engho",
+						"to",
+						"tposʉ",
+                        "mimu",
+                        "mihin’i",
+                        "fuengu",
+                        "mio",
+                        "yonenu",
+                        "na",
+                        "emoosu"
+                    ],
+                    "auto": "mio yonenu na emoosu",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Niae’ucna",
+                            "namusngau",
+                            "engʉca",
+                            "Tfuya",
+                            "c’oeha"
+                        ],
+                        "target-1": "Niae’ucna",
+                        "target-2": "Tfuya"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nuutaini",
+                        "tenva",
+                        "tposʉ",
+                        "a’mi",
+                        "a’mia",
+                        "nenu",
+                        "Voyu",
+                        "Sayungu",
+                        "teko",
+                        "pela",
+                        "yuevahneni",
+                        "ta",
+                        "’oyomza",
+                        "tmopsʉ",
+                        "suu",
+                        "a’o"
+                    ],
+                    "auto": {
+                        "target-1": "Voyu teko pela yuevahneni ta ’oyomza tmopsʉ suu a’o",
+                        "target-2": "Sayungu teko pela yuevahneni ta ’oyomza tmopsʉ suu a’o"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "’oyomza",
+						"tmopsʉ",
+                        "tposʉ",
+                        "nuusu",
+                        "nenu",
+                        "Voyu",
+                        "Sayungu",
+                        "te’o",
+                        "melʉ",
+                        "yuevaho",
+                        "no",
+                        "smaofsusu",
+                        "su"
+                    ],
+                    "auto": {
+                        "target-1": "Voyu te’o melʉ yuevaho no smaofsusu su",
+                        "target-2": "Sayungu te’o melʉ yuevaho no smaofsusu su"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "pahisneni",
+                        "mainenu",
+                        "uk’a",
+                        "tusi’ngi",
+                        "taini",
+                        "mimu",
+                        "Voyu",
+                        "Sayungu",
+                        "tekon’a",
+                        "yaa",
+                        "si",
+                        "si’ingi",
+                        "ho",
+                        "faeni",
+                        "a’o"
+                    ],
+                    "auto": {
+                        "target-1": "Voyu tekon’a yaa si si’ingi ho faeni a’o",
+                        "target-2": "Sayungu tekon’a yaa si si’ingi ho faeni a’o"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

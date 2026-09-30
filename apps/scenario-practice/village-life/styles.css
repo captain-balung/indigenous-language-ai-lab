@@ -1,0 +1,109 @@
+fieldset.roles,fieldset.themes{margin:1.2rem 0 0;padding:.9rem 1rem 1rem;border:3px solid var(--ink);border-radius:20px;background:#f3f8ff}
+fieldset.roles legend,fieldset.themes legend{padding:0 .4rem;font-weight:900}
+/* 場景區塊跟上面的語言別要有明顯間隔，不然會看起來像同一組欄位。 */
+fieldset.themes{margin:1.7rem 0 1.4rem;background:#fff8e6}
+.theme-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.theme{display:grid;gap:.2rem;min-height:0;padding:.7rem .8rem;text-align:left;background:#fff}
+.theme strong{font-size:1.05rem}
+.theme small{font-weight:700;opacity:.85;line-height:1.4}
+.theme.is-selected{background:var(--coral);color:#fff}
+.theme-empty{margin:0;font-weight:800}
+.role-picker{margin:1rem 0 0;padding-top:.9rem;border-top:2px dashed var(--ink)}
+.role-picker__label{margin:0 0 .55rem;font-weight:900}
+.role-picker__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.7rem}
+.role{display:grid;justify-items:center;gap:.25rem;min-height:0;padding:.8rem;text-align:center;background:#fff}
+.role img{width:74px;height:74px;object-fit:contain}
+.role strong{font-size:1.15rem}
+.role small{font-weight:700;opacity:.85;line-height:1.4}
+.role.is-selected{background:var(--mint);box-shadow:0 4px 0 var(--ink)}
+.role-picker__label{margin:0 0 .55rem;font-weight:900}
+
+/* 場景面板比全站內容區更寬一點，不然 1040px 的上限會把場景壓得很小。
+   用「左移 50% 再往回拉一半」置中，寬度不超過視窗。 */
+.scene{width:min(1900px,96vw);margin-left:50%;transform:translateX(-50%)}
+.scene-nav{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:.8rem 0 0}
+.scene-nav button{min-height:44px;flex:0 0 auto}
+.scene-nav p{flex:1 1 260px;margin:0;font-weight:800;opacity:.85}
+
+/* 遊戲化舞台：官方互動模組是全幅場景圖，對話卡半透明地壓在場景上。
+   寬螢幕時只有右邊的輸入區獨立成欄，900px 以下才全部上下疊。 */
+.scene-body{display:grid;gap:1.2rem;align-items:start;margin-top:1.2rem}
+.scene-side{display:grid;gap:1rem;min-width:0}
+.stage{position:relative;border:3px solid var(--ink);border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#dff3ef,#fff)}
+/* 圖片載入前先給一個接近的比例當版位；載入後一律用圖自己的固有比例（見寬螢幕那段）。 */
+.stage__bg{display:block;width:100%;aspect-ratio:1000/700;object-fit:contain}
+
+.dialogue{position:absolute;left:1rem;right:1rem;bottom:1rem;display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;align-items:start;padding:.8rem 1rem;border:3px solid var(--ink);border-radius:18px;background:rgba(255,253,245,.93);box-shadow:0 10px 22px rgba(37,49,84,.28)}
+/* 立像當說話者指示，放在台詞左邊 */
+.dialogue__avatar{grid-row:1 / span 2;width:66px;height:66px;object-fit:contain}
+.dialogue__say .prompt{display:inline-block}
+.dialogue__zh{margin:.3rem 0 .2rem;font-size:1.7rem;font-weight:900;line-height:1.25}
+.dialogue__ab{margin:0;font-weight:800;opacity:.85}
+/* 播放狀態與「下一句」同一列 */
+.dialogue__controls{grid-column:1 / -1;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:.7rem}
+.dialogue__controls .arrow{margin-left:auto;min-width:0;padding:.55rem .9rem;white-space:nowrap;border-radius:26px;background:var(--coral);color:#fff;box-shadow:0 4px 0 var(--ink)}
+.dialogue__controls .primary{width:auto}
+
+.my-turn{padding:1.1rem 1.2rem 1.2rem;border:3px solid var(--ink);border-radius:22px;background:#fff}
+/* 標題是使用者給的一句話（「這句是你的名字或來處」），長度不定，
+   所以字級跟著視窗縮放、並允許在任何地方斷行，縮窄時不會超出輸入區。 */
+.my-turn h2{margin:0 0 .8rem;font-size:clamp(1.3rem,1.05rem + 1.1vw,2rem);line-height:1.3;overflow-wrap:anywhere;word-break:break-word}
+textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:13px;font:inherit;resize:vertical}
+.my-turn .submit-row .primary{width:auto}
+.record-note{margin:.5rem 0 0;padding:.55rem .75rem;border:2px solid var(--ink);border-radius:12px;background:#fff0c6;font-weight:800}
+.record-note:empty{display:none}
+.scene-score{font-size:1.5rem;font-weight:900}
+.report-list{display:grid;gap:.6rem;margin:0 0 1.2rem;padding:0;list-style:none}
+.report-list li{padding:.7rem .9rem;border:2px solid var(--ink);border-radius:14px;background:#fff}
+.report-list strong{display:block}
+.report-list p{margin:.2rem 0 0;font-weight:700}
+
+/* 1201px 以上：左邊場景、右邊輸入區。兩欄都在正常流程裡（不用絕對定位）——
+   用絕對定位時輸入區不會撐高容器，會直接從 STEP 2 面板底部溢出。
+   欄寬固定，所以從對方說話到換你說，場景的大小與位置都不會變。 */
+@media(min-width:1201px){
+  .scene-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,380px);gap:1.2rem;align-items:start}
+  .stage{width:100%;max-width:1000px}
+  .scene-side{justify-self:end;width:100%;max-width:380px}
+  .stage__bg{width:100%;height:auto;aspect-ratio:1000/700;object-fit:contain}
+  .dialogue__zh{font-size:2rem}
+  .my-turn{padding:.9rem 1rem 1rem}
+  .my-turn textarea{min-height:4.5rem}
+  .my-turn .inline-privacy{font-size:.85rem}
+}
+/* 夠寬（1700px 以上）才讓場景置中：左右各留 (輸入區 + 間距) 一樣寬的空白，
+   場景才會是整個面板的正中央。1700px 這個門檻是算出來的——在這個寬度，
+   置中的場景跟「填滿剩餘空間」的場景一樣大（都是 1000px 上限），
+   所以從較窄切過來時場景不會突然縮小。 */
+@media(min-width:1700px){
+  .scene-body{grid-template-columns:minmax(280px,1fr) minmax(0,1000px) minmax(280px,1fr)}
+  .stage{grid-column:2;justify-self:center}
+  .scene-side{grid-column:3}
+}
+/* 1200px 以下（含平板與手機）：全部上下疊，場景用滿版寬 */
+@media(max-width:1200px){
+  .scene-body{grid-template-columns:1fr}
+  /* 窄螢幕舞台只有兩百多像素高，對話卡疊上去會被裁掉，改成依序往下排。
+     舞台在這時只是容器，框線留給場景圖跟對話卡本身，避免變成框中框。 */
+  .stage{border:0;background:none;overflow:visible}
+  .stage__bg{border:3px solid var(--ink);border-radius:24px}
+  .dialogue{position:static;margin-top:.9rem}
+}
+
+@media(max-width:720px){
+  header{min-height:640px}
+  .hero-copy h1{font-size:2.7rem}
+  .role-picker__grid{grid-template-columns:1fr}
+  .theme-picker{grid-template-columns:1fr}
+  .dialogue{grid-template-columns:auto 1fr;gap:.2rem .7rem;padding:.7rem .8rem;left:.6rem;right:.6rem;bottom:.6rem}
+  .dialogue__avatar{width:52px;height:52px}
+  .dialogue__zh{font-size:1.3rem}
+  .dialogue__controls .audio-state{font-size:.85rem}
+  .submit-row{flex-direction:column;align-items:stretch}
+  .submit-row button{width:100%}
+}
+/* 螢幕很矮時場景圖還是照比例，只是畫面小一點 */
+@media(max-height:640px){
+  .stage__bg{max-height:240px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important}}

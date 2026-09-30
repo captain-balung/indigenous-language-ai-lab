@@ -1,0 +1,217 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Kadafa, o pa’aliwacan anocila, wa tatalacowaaw kiso?",
+                "textCh": "Kadafa，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65611/918032",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Wa tatala’alo kako aci Pongay mi’id’id to titi anocila, kiso i?",
+                "textCh": "我明天要和Pongay去溪邊烤肉，你呢？",
+                "sound": "text/sound/65611/918033",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Hato nga’ayay a halama a tengilen! Manga’ay kako malacafay tayla haw?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65611/918034",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Licayen ho iso ci wina.",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65611/918035",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Ina, manga’ay kako mihakalong ci kakaan malacafay tayra i ’alo han?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65611/918036",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Nga’ayay to, nikaorira pina’on kamo yo!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65611/918037",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "Hay, mafana’ to a mina’on kami.",
+                "textCh": "沒問題，我們一定會的！Hay， mafana' to kami.",
+                "sound": "text/sound/65611/918038",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "o manan ko mikiliman iso",
+                    "textAb": "O manan ko mikiliman iso?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65612/918042",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "pasicowa ko rakat a tayra i ’alo",
+                    "textAb": "Pasicowa ko rakat a tayra i ’alo?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65614/918064",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "manga’ay pacaliwen kako to po’ot haw",
+                    "textAb": "Manga’ay pacaliwen kako to po’ot haw?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65615/918072",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "manan",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65609/918021"
+                },
+                "1": {
+                    "text": "Mikilim kako to ’atang ato satapay.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65612/918043"
+                },
+                "2": {
+                    "text": "iraw, ira koya ta’angayay a fakelohan.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65614/918065"
+                },
+                "3": {
+                    "text": "Hayda alaen!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65615/918073"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "mafokil",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65609/918022"
+                },
+                "1": {
+                    "text": "Mikilim kako to ’ariray ato konga.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65612/918044"
+                },
+                "2": {
+                    "text": "Cowa kafana’ kako to icowaay ko ’alo.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65614/918066"
+                },
+                "3": {
+                    "text": "Awaay ko no mako.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65615/918074"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "hakeno",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65609/918023"
+                },
+                "2": {
+                    "text": "Ini, isawniay ho kako nai ’alo a minokay.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65614/918067"
+                },
+                "3": {
+                    "text": "Naay, mangawa’ay ko po’ot ako.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65615/918075"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "icowa",
+                        "hano",
+                        "caliw",
+                        "o",
+                        "manan",
+                        "ko",
+                        "mikiliman",
+                        "iso"
+                    ],
+                    "auto": "o manan ko mikiliman iso",
+                    "buylist": [
+                        "nitilidan to ’a’acaen",
+                        "’atang",
+                        "sapatay",
+                        "’ariray",
+                        "konga",
+                        "titi",
+                        "fita’ol"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "lotok",
+                        "manan",
+                        "naay",
+                        "riyal",
+                        "pasicowa",
+                        "ko",
+                        "rakat",
+                        "a",
+                        "tayra",
+                        "i",
+                        "’alo"
+                    ],
+                    "auto": "pasicowa ko rakat a tayra i ’alo"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "naay",
+                        "manan",
+                        "’alapit",
+                        "kaysing",
+                        "manga’ay",
+                        "pacaliwen",
+                        "kako",
+                        "to",
+                        "po’ot",
+                        "haw"
+                    ],
+                    "auto": "manga’ay pacaliwen kako to po’ot haw",
+                    "complete": {
+                        "text": "ko’iday ko pipacafay iso",
+                        "sound": "text/sound/65615/918076"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,212 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Sula, niciyubi ludhaa, nauuwainu amiyasu?",
+                "textCh": "Sula，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65755/919164",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ludhaa aikahedelaku ki Tuku mudrakehale wakame ku beate, kusu?",
+                "textCh": "我明天要和Tuku去溪邊烤肉，你呢？",
+                "sound": "text/sound/65755/919165",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "lukilalra animatidalame! aimaka tupalraku?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65755/919166",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kitubulruwana ki tinaita!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65755/919167",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "naine, aimaka tupalraku ki kake mudrakehale?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65755/919168",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "eene, ai wacaceelemadu!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65755/919169",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "asikidremedreme, wathingalenai!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65755/919170",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "aisilapesu ku manema",
+                    "textAb": "aisilapesu ku manema?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65758/919186",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "papiya inu lu mudrakehala",
+                    "textAb": "papiya inu lu mudrakehala?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65760/919209",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "aipakisalrusu nakuwa ku bakale",
+                    "textAb": "aipakisalrusu nakuwa ku bakale?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65762/919230",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "manema",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65752/919140"
+                },
+                "1": {
+                    "text": "aisilapaku ku alrenge si sakakama.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65758/919187"
+                },
+                "2": {
+                    "text": "kauwai, kwani taikaiya ki lrenege amani.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65760/919210"
+                },
+                "3": {
+                    "text": "eene, malraa!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65762/919231"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "kadruwa ka pwalringau..",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65752/919141"
+                },
+                "1": {
+                    "text": "aisilapaku ku lapanai si buhasi.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65758/919188"
+                },
+                "2": {
+                    "text": "kadruwa ka wathingale luikainu ku drakehale.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65760/919211"
+                },
+                "3": {
+                    "text": "miyalri kadruwa ku yali.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65762/919232"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "kadruwa ka wathingale!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65752/919142"
+                },
+                "2": {
+                    "text": "kaivai, twalaladhaku drakehale kainganai.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65760/919212"
+                },
+                "3": {
+                    "text": "ini, malisinga kay bakaleli.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65762/919233"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "yainu",
+                        "asii",
+                        "kisalru",
+                        "aisilapesu",
+                        "ku",
+                        "manema"
+                    ],
+                    "auto": "aisilapesu ku manema",
+                    "buylist": [
+                        "alangadha",
+                        "alrenge",
+                        "sakakama",
+                        "lapanai",
+                        "buhasi",
+                        "beate",
+                        "batuku"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "lregelrege",
+                        "manema",
+                        "ini",
+                        "babiyabila",
+                        "ki",
+                        "timu",
+                        "papiya",
+                        "inu",
+                        "lu",
+                        "mudrakehala"
+                    ],
+                    "auto": "papiya inu lu mudrakehala"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "ini",
+                        "manema",
+                        "kacipi",
+                        "kisi",
+                        "aipakisalrusu",
+                        "nakuwa",
+                        "ku",
+                        "bakale"
+                    ],
+                    "auto": "aipakisalrusu nakuwa ku bakale",
+                    "complete": {
+                        "text": "maelanenga ikai tapalribulanesu",
+                        "sound": "text/sound/65762/919234"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

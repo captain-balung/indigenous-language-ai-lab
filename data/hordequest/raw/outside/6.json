@@ -1,0 +1,217 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Basaw, suxan ga ryax hngawan, aki su musa inu?",
+                "textCh": "Basaw，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65617/918084",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "musa saku smuling syam te syaw na gong ki Yaway, isu ga?",
+                "textCh": "我明天要和Yaway去溪邊烤肉，你呢？",
+                "sound": "text/sound/65617/918085",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "pongan ga blaq balay salan ! ana saku mgluw musa uzi ga?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65617/918086",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "lmay mqus yaya su ha!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65617/918087",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "aya, hala saku mgluw qbsuyan mlikuy musa syaw na gong hku?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65617/918088",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "aw ga, ana ga ktay hazi ay!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65617/918089",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "aw, blequn myan mita!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65617/918090",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "nanu nyux su hkngyun",
+                    "textAb": "nanu nyux su hkngyun?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65618/918094",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "spwah inu mhkangi qu syaw na gong",
+                    "textAb": "spwah inu mhkangi qu syaw na gong?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65620/918108",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "pksyugi saku cikah buli hku",
+                    "textAb": "pksyugi saku cikah buli hku?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65621/918116",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "nanu",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65616/918081"
+                },
+                "1": {
+                    "text": "hala saku hmkangi qhutul ru ptkan ssuling.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65618/918095"
+                },
+                "2": {
+                    "text": "thasa, syaw na kyan qutux cyaba btunux qasa.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65620/918109"
+                },
+                "3": {
+                    "text": "aw ga, gali ha!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65621/918117"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ini baqi mung?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65616/918082"
+                },
+                "1": {
+                    "text": "hala saku hmkangi qitun ru ngahi.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65618/918096"
+                },
+                "2": {
+                    "text": "ini maku baqi cyux inu qu syaw na gong.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65620/918110"
+                },
+                "3": {
+                    "text": "uka knan uzi.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65621/918118"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ini baqi!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65616/918083"
+                },
+                "2": {
+                    "text": "sqani, nisan saku kahul syaw na gong mwah.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65620/918111"
+                },
+                "3": {
+                    "text": "baqaw balay la, nyux yaqih buli mu la.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65621/918119"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "inu",
+                        "mswa",
+                        "ksyuw",
+                        "nanu",
+                        "nyux",
+                        "su",
+                        "hkngyun"
+                    ],
+                    "auto": "nanu nyux su hkngyun",
+                    "buylist": [
+                        "bbgirun",
+                        "qhutul",
+                        "ptkan ssuling",
+                        "qitun",
+                        "ngahi",
+                        "syam",
+                        "bazing"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "rgyax",
+                        "nanu",
+                        "laxi",
+                        "syaw",
+                        "na",
+                        "bsilung",
+                        "spwah",
+                        "inu",
+                        "mhkangi",
+                        "qu",
+                        "syaw",
+                        "na",
+                        "gong"
+                    ],
+                    "auto": "spwah inu mhkangi qu syaw na gong"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "laxi",
+                        "nanu",
+                        "qqway",
+                        "pyatu",
+                        "pksyugi",
+                        "saku",
+                        "cikah",
+                        "buli",
+                        "hku"
+                    ],
+                    "auto": "pksyugi saku cikah buli hku",
+                    "complete": {
+                        "text": "mhway balay pinraw su",
+                        "sound": "text/sound/65621/918120"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

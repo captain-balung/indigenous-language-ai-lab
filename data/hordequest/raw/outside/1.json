@@ -1,0 +1,220 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Payuaw! U pilipayan anucila, a talacuwa saw kisu?",
+                "textCh": "Payu，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65578/917790",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Anucila a tala lilis nu sauwac a mi’id’id tu titi kaku aci Lisin, kisu i?",
+                "textCh": "我明天要和Lisin去溪邊烤肉，你呢？",
+                "sound": "text/sound/65578/917791",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Ngaay namu! anu mihakulung kaku kapah tu hakiya?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65578/917792",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Pipalitai hen ci inaan isu!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65578/917793",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Inaaw, kapah tu haw kaku a mihakulung ci kakaan a tala i sauwac?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65578/917794",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Kapah tu! piarawi tu kamu!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65578/917795",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "Hayi, mavana’ tu kami.",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65578/917796",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "u maan saw ku kiliman nu misu",
+                    "textAb": "U maan saw ku kiliman nu misu?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65581/917802",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "a pasacuwa saw ku sakatayra i sa’uwac",
+                    "textAb": "A pasacuwa saw ku sakatayra i sa’uwac?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65583/917816",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "pacaliwi kaku tu puut kapah tu haw",
+                    "textAb": "Pacaliwi kaku tu puut, kapah tu haw?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65584/917824",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Maan",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65572/917782"
+                },
+                "1": {
+                    "text": "Mikilim kaku tu avel atu sapi’id’id tu titi a tatadaan.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65581/917803"
+                },
+                "2": {
+                    "text": "Itila i tepar niya tataakay a vekeluh.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65583/917817"
+                },
+                "3": {
+                    "text": "kapah tu! ala i!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65584/917825"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Mavukil haw a mitengil?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65572/917783"
+                },
+                "1": {
+                    "text": "Mikilim kaku tu taviras atu vunga.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65581/917804"
+                },
+                "2": {
+                    "text": "Caay kavana’ kaku icuwaan a lilis nu sa’uwac.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65583/917818"
+                },
+                "3": {
+                    "text": "Awaay ku nu maku.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65584/917826"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "Enu",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65572/917784"
+                },
+                "2": {
+                    "text": "Itini, Namakayra kaku i lilis nu sa’uwac i nasani.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65583/917819"
+                },
+                "3": {
+                    "text": "Aka, mapeci’ ku puut nu maku.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65584/917827"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "icuwa",
+                        "kiya",
+                        "caliw",
+                        "u",
+                        "maan",
+                        "saw",
+                        "ku",
+                        "kiliman",
+                        "nu",
+                        "misu"
+                    ],
+                    "auto": "u maan saw ku kiliman nu misu",
+                    "buylist": [
+                        "Silsil tu nisuritan a cacakayan",
+                        "avel",
+                        "sapi’id’id tu titi a tatadaan",
+                        "taviras",
+                        "vunga",
+                        "titi",
+                        "litaul"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "lutuk",
+                        "maan",
+                        "naay",
+                        "liyal",
+                        "a",
+                        "pasacuwa",
+                        "saw",
+                        "ku",
+                        "sakatayra",
+                        "i",
+                        "sa’uwac"
+                    ],
+                    "auto": "a pasacuwa saw ku sakatayra i sa’uwac"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "aka",
+                        "maan",
+                        "alapit",
+                        "kaysing",
+                        "pacaliwi",
+                        "kaku",
+                        "tu",
+                        "puut,",
+                        "kapah",
+                        "tu",
+                        "haw"
+                    ],
+                    "auto": "pacaliwi kaku tu puut kapah tu haw",
+                    "complete": {
+                        "text": "aray han nu maku tu nipipadang nu misu",
+                        "sound": "text/sound/65584/917828"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

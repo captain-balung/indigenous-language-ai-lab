@@ -1,0 +1,403 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "i eman nanu ngadan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/63016/880017",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "i Amsing nangku ngadan.",
+                "textCh": "我叫Amsing。",
+                "sound": "text/sound/63016/880018",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ulra i iyan nanu ruma’?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/63016/880019",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kemay Kasavakan ku.",
+                "textCh": "我從建和部落來。",
+                "sound": "text/sound/63016/880020",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "piya u lra kenama?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/63016/880021",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "adi diya.",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/63016/880022",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "yawa ku cimima’a da kenamain, rarelrang u?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/63016/880023",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "adi ku miinada da paisu, karuwa u pavelas kaningku?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/63016/880024",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ai, kunu pavelasay.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/63016/880025",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Danadanaw",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Imay",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Puyuma",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Malingan",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Katratripulr",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Muymuy",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "i eman nanu ngadan",
+                    "textAb": "i eman nanu ngadan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/63017/880026",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ulra i iyan nanu ruma’",
+                    "textAb": "ulra i iyan nanu ruma’?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/63018/880035",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Amsing paverasay ku impic ay",
+                    "textAb": "Amsing paverasay ku impic ay?",
+                    "textCh": "Amsing借我筆好嗎？",
+                    "sound": "text/sound/63019/880051",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Muymuy paverasay ku impic ay",
+                    "textAb": "Muymuy paverasay ku impic ay?",
+                    "textCh": "Muymuy借我筆好嗎？",
+                    "sound": "text/sound/63019/880053",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Amsing pavelasay ku aicur ay",
+                    "textAb": "Amsing pavelasay ku aicur ay?",
+                    "textCh": "Amsing借我橡皮擦好嗎？",
+                    "sound": "text/sound/63020/880063",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Muymuy pavelasay ku aicur ay",
+                    "textAb": "Muymuy pavelasay ku aicur ay?",
+                    "textCh": "Muymuy借我橡皮擦好嗎？",
+                    "sound": "text/sound/63020/880065",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Amsing alakanay ku diya da idap",
+                    "textAb": "Amsing, alakanay ku diya da idap.",
+                    "textCh": "Amsing，請幫我拿掃把。",
+                    "sound": "text/sound/63021/880071",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Muymuy alakanay ku diya da idap",
+                    "textAb": "Muymuy, alakanay ku diya da idap.",
+                    "textCh": "Panay，請幫我拿掃把。",
+                    "sound": "text/sound/63021/880073",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "taa",
+                    "textCh": "不知道",
+                    "sound": "text/sound/63015/880016"
+                },
+                "1": {
+                    "text": "i Amsing nangku ngadan.",
+                    "textCh": "我的名字叫Amsing。",
+                    "sound": "text/sound/63017/880027"
+                },
+                "2": {
+                    "text": "kaadu ku i Kasavakan.",
+                    "textCh": "我居住在建和部落",
+                    "sound": "text/sound/63018/880036"
+                },
+                "3": {
+                    "text": "ai, ku pavurasay u.",
+                    "textCh": "好的，我借你。",
+                    "sound": "text/sound/63019/880052"
+                },
+                "4": {
+                    "text": "uniyan ku impic.",
+                    "textCh": "我也沒有筆！",
+                    "sound": "text/sound/63020/880064"
+                },
+                "5": {
+                    "text": "ai, alaku ini na idap.",
+                    "textCh": "好，這支掃把拿去吧！",
+                    "sound": "text/sound/63021/880072"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "man",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/63015/880014"
+                },
+                "1": {
+                    "text": "i Muymuy nangku ngadan.",
+                    "textCh": "我的名字叫panay。",
+                    "sound": "text/sound/63017/880028"
+                },
+                "2": {
+                    "text": "ulra i Kasavakan nangku ruma’.",
+                    "textCh": "我的家在建和部落。",
+                    "sound": "text/sound/63018/880037"
+                },
+                "3": {
+                    "text": "mawmau saya ku impic.",
+                    "textCh": "我只有一隻筆。",
+                    "sound": "text/sound/63019/880054"
+                },
+                "4": {
+                    "text": "ai, alaku.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/63020/880066"
+                },
+                "5": {
+                    "text": "adi ku madalram ulra i iyan?",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/63021/880074"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "intaw",
+                        "nantaw",
+                        "iyan",
+                        "ruma’",
+                        "i",
+                        "eman",
+                        "nanu",
+                        "ngadan"
+                    ],
+                    "auto": "i eman nanu ngadan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Amsing",
+                            "Kasavakan",
+                            "Muymuy",
+							"ngidiran"
+                        ],
+                        "target-1": "Amsing",
+                        "target-2": "Muymuy"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "icas",
+                        "ieman",
+                        "takesi",
+                        "inmu",
+                        "nadu",
+                        "henan",
+                        "ulra",
+                        "i",
+                        "iyan",
+                        "nanu",
+                        "ruma’"
+                    ],
+                    "auto": "ulra i iyan nanu ruma’",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kasavakan",
+                            "ngulringulr",
+							"Kasavakan",
+                            "rukup",
+                            "dinanuman"
+                        ],
+                        "target-1": "Kasavakan",
+                        "target-2": "Kasavakan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nantu",
+                        "dingwa",
+                        "valray",
+                        "inta",
+                        "iyan",
+                        "Amsing",
+                        "Muymuy",
+                        "paverasay",
+                        "ku",
+                        "impic",
+                        "ay"
+                    ],
+                    "auto": {
+                        "target-1": "Amsing paverasay ku impic ay",
+                        "target-2": "Muymuy paverasay ku impic ay"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "impic",
+                        "valray",
+                        "iyan",
+                        "Amsing",
+                        "Muymuy",
+                        "pavelasay",
+                        "ku",
+                        "aicur",
+                        "ay"
+                    ],
+                    "auto": {
+                        "target-1": "Amsing pavelasay ku aicur ay",
+                        "target-2": "Muymuy pavelasay ku aicur ay"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "tuppu",
+                        "kemuda",
+                        "uniyan",
+                        "midap",
+                        "intaw",
+                        "inmu",
+                        "Amsing",
+                        "Muymuy",
+                        "alakanay",
+                        "ku",
+                        "diya",
+                        "da",
+                        "idap"
+                    ],
+                    "auto": {
+                        "target-1": "Amsing alakanay ku diya da idap",
+                        "target-2": "Muymuy alakanay ku diya da idap"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

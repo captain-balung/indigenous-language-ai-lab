@@ -1,0 +1,1397 @@
+{
+  "generatedAt": "2026-09-30T08:07:22.801Z",
+  "recordCount": 1008,
+  "files": [
+    {
+      "dialectId": 1,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/01/lesson.json",
+      "path": "raw/lesson/1.json",
+      "bytes": 16049,
+      "sha256": "a29f90c8cbfcbd7e78246f12091382f0134f81d1d6800c53e6382d7993ccec96",
+      "sanitized": false
+    },
+    {
+      "dialectId": 1,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/01/find.json",
+      "path": "raw/find/1.json",
+      "bytes": 10707,
+      "sha256": "856cf43555588cc50db7ac9a347e0a50f5687ad29e9a5bea03f0759ceec2a65a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 1,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/01/outside.json",
+      "path": "raw/outside/1.json",
+      "bytes": 9024,
+      "sha256": "76cbbd6b88c8a51bfe3b038f2807f374399532e52dfc4b2ba8fbf02e06ec03c2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 2,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/02/lesson.json",
+      "path": "raw/lesson/2.json",
+      "bytes": 15760,
+      "sha256": "c0e9ee7a3ecde62eff41ae761f5744711485eb729f220f440f9bb015558fc158",
+      "sanitized": false
+    },
+    {
+      "dialectId": 2,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/02/find.json",
+      "path": "raw/find/2.json",
+      "bytes": 10370,
+      "sha256": "88f272a0d08ba3094a51172633d3319a274ff4b0863e65a732bdf79354c6aa5a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 2,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/02/outside.json",
+      "path": "raw/outside/2.json",
+      "bytes": 8887,
+      "sha256": "fe375c5c13389edc6273e2d4560eaca1c231c4e241260aa1584b825680b96674",
+      "sanitized": false
+    },
+    {
+      "dialectId": 3,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/03/lesson.json",
+      "path": "raw/lesson/3.json",
+      "bytes": 15823,
+      "sha256": "b74571f076a4e099279da944d2d7f329be9e434adbf978907454bb8c980883c7",
+      "sanitized": false
+    },
+    {
+      "dialectId": 3,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/03/find.json",
+      "path": "raw/find/3.json",
+      "bytes": 10279,
+      "sha256": "7a6d0fecc0400342e8dbb71340164ce70ad837336a46dc6cb1d3c40237c88a0e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 3,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/03/outside.json",
+      "path": "raw/outside/3.json",
+      "bytes": 8658,
+      "sha256": "a555da3ad31d4d4371b74de0045383cba22c9ecb5dfed6249381c0e6a2427e08",
+      "sanitized": false
+    },
+    {
+      "dialectId": 4,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/04/lesson.json",
+      "path": "raw/lesson/4.json",
+      "bytes": 16317,
+      "sha256": "209b4b2c1a241728303097e29e27ce6abb3d5e7e0d82b288ad5583178a819754",
+      "sanitized": false
+    },
+    {
+      "dialectId": 4,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/04/find.json",
+      "path": "raw/find/4.json",
+      "bytes": 10276,
+      "sha256": "f597c83d9149cefd3e51d640731d11595136dc327352541343f5a75770884f4d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 4,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/04/outside.json",
+      "path": "raw/outside/4.json",
+      "bytes": 8963,
+      "sha256": "963ec4c5b8a78ddc9c8b59070207b7a2f688b4abe5f0cc119df2991514f3ac07",
+      "sanitized": false
+    },
+    {
+      "dialectId": 5,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/05/lesson.json",
+      "path": "raw/lesson/5.json",
+      "bytes": 16096,
+      "sha256": "b5b4cafbc4fb2ce2d3c26793f085fc3579ff8b002090430379b4f134486b5755",
+      "sanitized": false
+    },
+    {
+      "dialectId": 5,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/05/find.json",
+      "path": "raw/find/5.json",
+      "bytes": 10353,
+      "sha256": "773d20ea6dd05739b95428f47f19d9f65da58ad313d6874eefba878791ef6b1c",
+      "sanitized": false
+    },
+    {
+      "dialectId": 5,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/05/outside.json",
+      "path": "raw/outside/5.json",
+      "bytes": 8924,
+      "sha256": "a0e9b433d9c020f93f9656ea58403440ad8fd6e22b549307936b093169b1a1c5",
+      "sanitized": false
+    },
+    {
+      "dialectId": 6,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/06/lesson.json",
+      "path": "raw/lesson/6.json",
+      "bytes": 15429,
+      "sha256": "13763ca8912bc96db6551f8e010eaadf77a5b4f7335945dc78982b5c65a8570e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 6,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/06/find.json",
+      "path": "raw/find/6.json",
+      "bytes": 10195,
+      "sha256": "fc455d2031d9e95c5b6413a70ba51d21f7bc60f5f412d8a1f755977b0df61987",
+      "sanitized": false
+    },
+    {
+      "dialectId": 6,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/06/outside.json",
+      "path": "raw/outside/6.json",
+      "bytes": 8733,
+      "sha256": "db200c15d616a21240989ec553577e81a17ea387877b8c85ed8c83b7c95a91ce",
+      "sanitized": false
+    },
+    {
+      "dialectId": 7,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/07/lesson.json",
+      "path": "raw/lesson/7.json",
+      "bytes": 15708,
+      "sha256": "05cb3d9772aaeb3ac6c6c6333d3fc0ba313d5ee08e80c89a333c492445790a08",
+      "sanitized": false
+    },
+    {
+      "dialectId": 7,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/07/find.json",
+      "path": "raw/find/7.json",
+      "bytes": 10472,
+      "sha256": "9797b4e353a826a92fc9be2d41ade785854194b6412c5ce34ef1b05462a04e26",
+      "sanitized": false
+    },
+    {
+      "dialectId": 7,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/07/outside.json",
+      "path": "raw/outside/7.json",
+      "bytes": 8657,
+      "sha256": "7f5f1a56361f42c8e2d63cf89d00444d399e6ab8ee62322890d5b33f8c68e10d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 8,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/08/lesson.json",
+      "path": "raw/lesson/8.json",
+      "bytes": 16686,
+      "sha256": "e7671f102b46b3f05ce0a31bbd4e5229d84c172aedbffee269ecf60c2a3a5123",
+      "sanitized": false
+    },
+    {
+      "dialectId": 8,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/08/find.json",
+      "path": "raw/find/8.json",
+      "bytes": 10675,
+      "sha256": "b172d7589278e3e2f251e525416f2ff94b4f65fca87181eccd87790910287bbf",
+      "sanitized": false
+    },
+    {
+      "dialectId": 8,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/08/outside.json",
+      "path": "raw/outside/8.json",
+      "bytes": 9233,
+      "sha256": "f697160c3312b0b0c349123e368994286587db7511a80d5e801f913e2069f2f1",
+      "sanitized": false
+    },
+    {
+      "dialectId": 9,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/09/lesson.json",
+      "path": "raw/lesson/9.json",
+      "bytes": 15813,
+      "sha256": "bd8ae8e2c940da867e99e733da2ba85cc9ec0a895d801a7541078774cee4525c",
+      "sanitized": false
+    },
+    {
+      "dialectId": 9,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/09/find.json",
+      "path": "raw/find/9.json",
+      "bytes": 10608,
+      "sha256": "998d8c553deec7babfab74d7345219d88699acfc42929d6257a884ae1e15b02d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 9,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/09/outside.json",
+      "path": "raw/outside/9.json",
+      "bytes": 9068,
+      "sha256": "5d186dde099aef66dbd1f8cedd32908971150903f80a9bf0ab024ec22733273f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 10,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/10/lesson.json",
+      "path": "raw/lesson/10.json",
+      "bytes": 15447,
+      "sha256": "732dbeb0eedb5a27667561f522a5e3f8f3f498bd8b9d2ecc0d95228df4f8351f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 10,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/10/find.json",
+      "path": "raw/find/10.json",
+      "bytes": 10401,
+      "sha256": "e5ce0f509292e60f6bebaceecf89f32007b4faa928982a22c9a91bbbdf512f48",
+      "sanitized": false
+    },
+    {
+      "dialectId": 10,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/10/outside.json",
+      "path": "raw/outside/10.json",
+      "bytes": 8722,
+      "sha256": "a833f990e796778b45f1e5d6d8724e7b666426a751e14102e30d03511ccf821e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 11,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/11/lesson.json",
+      "path": "raw/lesson/11.json",
+      "bytes": 15455,
+      "sha256": "e16d428c44693ee24330594e292ac5b2e9be3739a1edc01ea1b06134d10503b9",
+      "sanitized": false
+    },
+    {
+      "dialectId": 11,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/11/find.json",
+      "path": "raw/find/11.json",
+      "bytes": 10493,
+      "sha256": "7d887368c7fb4e5ef98e6f4940b801d160e9c7623a263a25c14513547fa80388",
+      "sanitized": false
+    },
+    {
+      "dialectId": 11,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/11/outside.json",
+      "path": "raw/outside/11.json",
+      "bytes": 8843,
+      "sha256": "0f582b3dd00b08c540aa8a0dcc120b5e8553094db243cd0b1bfa4aefa16f6889",
+      "sanitized": false
+    },
+    {
+      "dialectId": 13,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/13/lesson.json",
+      "path": "raw/lesson/13.json",
+      "bytes": 16447,
+      "sha256": "24c5cb9d3f46e6f1c1780b02f6704635a06389f21ccb1402d7d74471021ff4f3",
+      "sanitized": false
+    },
+    {
+      "dialectId": 13,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/13/find.json",
+      "path": "raw/find/13.json",
+      "bytes": 10855,
+      "sha256": "5d34d49fa4377ce1dcdd7631a1a317ab3f5d5936a8dabfa0718d789886e6d90b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 13,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/13/outside.json",
+      "path": "raw/outside/13.json",
+      "bytes": 9021,
+      "sha256": "54caa4f05bf35aa173e016bc5bf1a867449e3dd3d5680129fa7109b7bf1c5698",
+      "sanitized": false
+    },
+    {
+      "dialectId": 14,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/14/lesson.json",
+      "path": "raw/lesson/14.json",
+      "bytes": 15529,
+      "sha256": "76135418396fa062ed59dec56fc2251f439af74c645a6b04288a03db2827bfab",
+      "sanitized": false
+    },
+    {
+      "dialectId": 14,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/14/find.json",
+      "path": "raw/find/14.json",
+      "bytes": 10314,
+      "sha256": "b3ee8329c0444d2c921d8d64021dc41860c656e51cbbddda1c1ca53c930540a2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 14,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/14/outside.json",
+      "path": "raw/outside/14.json",
+      "bytes": 8567,
+      "sha256": "100ef128a9102104889bcb4f68ae823750a27e44a1f3e7f3c8266e3b60bbd21f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 15,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/15/lesson.json",
+      "path": "raw/lesson/15.json",
+      "bytes": 15323,
+      "sha256": "f86478e621a2850696792e00b07cad5e0d38c136246ddc64f2a6b534c69f62e0",
+      "sanitized": false
+    },
+    {
+      "dialectId": 15,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/15/find.json",
+      "path": "raw/find/15.json",
+      "bytes": 10250,
+      "sha256": "f01f63c2ca4091f379d8c4bd63796f4fc737ed5bb28073f1be842b780ae10e97",
+      "sanitized": false
+    },
+    {
+      "dialectId": 15,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/15/outside.json",
+      "path": "raw/outside/15.json",
+      "bytes": 8811,
+      "sha256": "2ad9c76afd57c6c3a678cd9a084053e1f3c1c4bdf2028045e62ec7d2aa5c823c",
+      "sanitized": false
+    },
+    {
+      "dialectId": 16,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/16/lesson.json",
+      "path": "raw/lesson/16.json",
+      "bytes": 15804,
+      "sha256": "31bbc0627eea70e60d0f7abe45e962fd982c125c1c91e60bf029da531fcad56a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 16,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/16/find.json",
+      "path": "raw/find/16.json",
+      "bytes": 10338,
+      "sha256": "7a713c6761364bf8f69ad81d0000bb2f9cb49b224d8eb2c58d4177ce279c32ea",
+      "sanitized": false
+    },
+    {
+      "dialectId": 16,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/16/outside.json",
+      "path": "raw/outside/16.json",
+      "bytes": 8800,
+      "sha256": "45602a960e8000273d8e88bdfb69326b3c6cf7f8a443b36ba6723a5a0b01b68d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 17,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/17/lesson.json",
+      "path": "raw/lesson/17.json",
+      "bytes": 15268,
+      "sha256": "c6501d020eec209af0a237d49152d46eed873a775d1bffea2146ad67a6a56c95",
+      "sanitized": false
+    },
+    {
+      "dialectId": 17,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/17/find.json",
+      "path": "raw/find/17.json",
+      "bytes": 10133,
+      "sha256": "0c46df95d2875d9c678e1f7e5c6d3ec52219f01fff9508aed450a8c348f0707d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 17,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/17/outside.json",
+      "path": "raw/outside/17.json",
+      "bytes": 8680,
+      "sha256": "f64acf4ccbb65fa7a296bee8519b62dd14c3e6b24f35b477e6f7972aa9820717",
+      "sanitized": false
+    },
+    {
+      "dialectId": 18,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/18/lesson.json",
+      "path": "raw/lesson/18.json",
+      "bytes": 15815,
+      "sha256": "5bf91ea94393f38f9599e0f65bc0b9e3c177ccf3f3842bfdc54d3af3a0240455",
+      "sanitized": false
+    },
+    {
+      "dialectId": 18,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/18/find.json",
+      "path": "raw/find/18.json",
+      "bytes": 10436,
+      "sha256": "bcc9aa89b381dee2997c9a57a4a3fbb8b77c810ae7524a9098ac673da3b76d1e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 18,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/18/outside.json",
+      "path": "raw/outside/18.json",
+      "bytes": 9130,
+      "sha256": "bb14a4d71ad9cf68ca5818dc61886497a97ada4914e46a8a96ee9f2adc32276f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 19,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/19/lesson.json",
+      "path": "raw/lesson/19.json",
+      "bytes": 15355,
+      "sha256": "57edd2edd2e17c1aff0ea0ca617aca7861bd778d0a9898facbd3b602b442f59e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 19,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/19/find.json",
+      "path": "raw/find/19.json",
+      "bytes": 10164,
+      "sha256": "e3d5a6721f7094c61709ce6466dfd658a5b6c5bd63aa3008b9452ce8cc0ed020",
+      "sanitized": false
+    },
+    {
+      "dialectId": 19,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/19/outside.json",
+      "path": "raw/outside/19.json",
+      "bytes": 8671,
+      "sha256": "9505a04cb739125f4ea9837516c0efd91484ac2aa6a2fd5fd1fb8426cdb2bab4",
+      "sanitized": false
+    },
+    {
+      "dialectId": 20,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/20/lesson.json",
+      "path": "raw/lesson/20.json",
+      "bytes": 15366,
+      "sha256": "2c5cc96a16c9edac0e91f5f77c09c40e5055b46bcd81752f3f2d96431e4de7f3",
+      "sanitized": false
+    },
+    {
+      "dialectId": 20,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/20/find.json",
+      "path": "raw/find/20.json",
+      "bytes": 10154,
+      "sha256": "fa14a103c1b56efb11b63152835b20df47794d392451e04921d9af3389ccec0c",
+      "sanitized": false
+    },
+    {
+      "dialectId": 20,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/20/outside.json",
+      "path": "raw/outside/20.json",
+      "bytes": 8647,
+      "sha256": "dca56091d7e2b1b8ff62798b055e394616ef7595939e7d1ef0c845c7190c8f15",
+      "sanitized": false
+    },
+    {
+      "dialectId": 21,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/21/lesson.json",
+      "path": "raw/lesson/21.json",
+      "bytes": 15801,
+      "sha256": "af3976a462d46d9cb892ac00c9a903142792e2b06ba2b6da02b54992f02f3a9a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 21,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/21/find.json",
+      "path": "raw/find/21.json",
+      "bytes": 10195,
+      "sha256": "87ce439f09894d3048099a6404dc064d051f22cb253866110c7c3a66763478c8",
+      "sanitized": false
+    },
+    {
+      "dialectId": 21,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/21/outside.json",
+      "path": "raw/outside/21.json",
+      "bytes": 8805,
+      "sha256": "75c7a3460a21026e2a3e5dcf6effe569d86695c97d7547a6c2f094931bae066b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 22,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/22/lesson.json",
+      "path": "raw/lesson/22.json",
+      "bytes": 15986,
+      "sha256": "63b2782fed90e23e445f513e0d32917d39e6c43d9138de1fbe064d92ea45dba7",
+      "sanitized": false
+    },
+    {
+      "dialectId": 22,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/22/find.json",
+      "path": "raw/find/22.json",
+      "bytes": 10242,
+      "sha256": "651eac97f1539c4542b559f30a127bccd211fe767ade02139c5001053157b91a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 22,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/22/outside.json",
+      "path": "raw/outside/22.json",
+      "bytes": 8750,
+      "sha256": "7def0d0acee3ab0864d58a617dbef48034207b198941f7d0260d1c2b94337249",
+      "sanitized": false
+    },
+    {
+      "dialectId": 23,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/23/lesson.json",
+      "path": "raw/lesson/23.json",
+      "bytes": 15591,
+      "sha256": "eeb40a81a92906261dcd4f138d6e79e869f8a19415d4f1345e143085514c6c6d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 23,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/23/find.json",
+      "path": "raw/find/23.json",
+      "bytes": 10436,
+      "sha256": "ebf8e38555b5e0dc72e083fce2baede6a7b5357b37a4e02120391d15bd779a3b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 23,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/23/outside.json",
+      "path": "raw/outside/23.json",
+      "bytes": 8701,
+      "sha256": "46fa84f319964f269c96662e573c94873018ebf06ab45f7f272d543ea8d33695",
+      "sanitized": false
+    },
+    {
+      "dialectId": 24,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/24/lesson.json",
+      "path": "raw/lesson/24.json",
+      "bytes": 15428,
+      "sha256": "92078e4c524c15a1c2e64d9613fd6432cffdd78f15ac60ee45b6273638915aeb",
+      "sanitized": false
+    },
+    {
+      "dialectId": 24,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/24/find.json",
+      "path": "raw/find/24.json",
+      "bytes": 10325,
+      "sha256": "ac1df23696ca93fee4dd8a602766f0ffed5a0778ed35dc9a9f1fd35c024164f2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 24,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/24/outside.json",
+      "path": "raw/outside/24.json",
+      "bytes": 8611,
+      "sha256": "4c6802002ac863e311434e83fd7ad3ba4598c13b2316bea0b4f9bbc9542c6fcc",
+      "sanitized": false
+    },
+    {
+      "dialectId": 25,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/25/lesson.json",
+      "path": "raw/lesson/25.json",
+      "bytes": 15648,
+      "sha256": "978d6e61a79ba7474aa3ba1139ef8c84b57dc4897df74f52565390499bd03745",
+      "sanitized": false
+    },
+    {
+      "dialectId": 25,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/25/find.json",
+      "path": "raw/find/25.json",
+      "bytes": 10689,
+      "sha256": "6e4bce6fc26c66849bb2b7faae5af5221e4a1f0e3c1defe2bb8bf7cc94f25191",
+      "sanitized": false
+    },
+    {
+      "dialectId": 25,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/25/outside.json",
+      "path": "raw/outside/25.json",
+      "bytes": 8761,
+      "sha256": "19cfa51f89aff9dbcc302e5dc67f10054b2587d6065b966037788fce31f60df4",
+      "sanitized": false
+    },
+    {
+      "dialectId": 26,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/26/lesson.json",
+      "path": "raw/lesson/26.json",
+      "bytes": 15872,
+      "sha256": "37adb3a348a6409763109e2d92999e91b96b852fde280990af46b92f5748daaa",
+      "sanitized": false
+    },
+    {
+      "dialectId": 26,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/26/find.json",
+      "path": "raw/find/26.json",
+      "bytes": 10410,
+      "sha256": "8989ca99d0546435b7eae8ca649aee81d4360039b780e8c262885431c02539b3",
+      "sanitized": false
+    },
+    {
+      "dialectId": 26,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/26/outside.json",
+      "path": "raw/outside/26.json",
+      "bytes": 8775,
+      "sha256": "77dcf180118fd8805f8651a238c4173674d25b77343764ea99b64ff183348e00",
+      "sanitized": false
+    },
+    {
+      "dialectId": 27,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/27/lesson.json",
+      "path": "raw/lesson/27.json",
+      "bytes": 15853,
+      "sha256": "56fe61630fafa21ec6569e26da654de9e0a258a6ffbd5141ce8175542265492b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 27,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/27/find.json",
+      "path": "raw/find/27.json",
+      "bytes": 10572,
+      "sha256": "870798360e3f4f8c879082337fc2af81f83a29d2388927c9bedd59191ac5b138",
+      "sanitized": false
+    },
+    {
+      "dialectId": 27,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/27/outside.json",
+      "path": "raw/outside/27.json",
+      "bytes": 8880,
+      "sha256": "c84d76f570ebf5c92c53f7fd7a749ca34c88e72d77051763ba8bb383203dda65",
+      "sanitized": false
+    },
+    {
+      "dialectId": 28,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/28/lesson.json",
+      "path": "raw/lesson/28.json",
+      "bytes": 15970,
+      "sha256": "7b254376608edae5218537a45465e613b515cace7b877f9ad4646a280e36a521",
+      "sanitized": false
+    },
+    {
+      "dialectId": 28,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/28/find.json",
+      "path": "raw/find/28.json",
+      "bytes": 10340,
+      "sha256": "9726fbe1919b48ec84042308d98850f12eb98b7442b02194b87544c8b8216a0b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 28,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/28/outside.json",
+      "path": "raw/outside/28.json",
+      "bytes": 8745,
+      "sha256": "7c3cc965bf4626c6b235ab138e6f1eca7b56fa8f4197b158aa3c071833d8ff0d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 29,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/29/lesson.json",
+      "path": "raw/lesson/29.json",
+      "bytes": 15731,
+      "sha256": "4cd9bd137f519bebd8dc0faf9c8d63a2bbd6dd1037cd3a4430557f715171ec07",
+      "sanitized": false
+    },
+    {
+      "dialectId": 29,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/29/find.json",
+      "path": "raw/find/29.json",
+      "bytes": 10388,
+      "sha256": "00a385c0c9e09bcb13d4ec728d6a524d50eed1e9fa9ed504e0994bdc60975590",
+      "sanitized": false
+    },
+    {
+      "dialectId": 29,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/29/outside.json",
+      "path": "raw/outside/29.json",
+      "bytes": 8594,
+      "sha256": "ed918cef1a83e52a52fbaff49770830e23a13bc66d4abc35430806f53e3f5fce",
+      "sanitized": false
+    },
+    {
+      "dialectId": 30,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/30/lesson.json",
+      "path": "raw/lesson/30.json",
+      "bytes": 15861,
+      "sha256": "30d4e9a3535cf962550feb7f91883064d9a6e2cd1b4a2f50b401daf7ed16caec",
+      "sanitized": false
+    },
+    {
+      "dialectId": 30,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/30/find.json",
+      "path": "raw/find/30.json",
+      "bytes": 10527,
+      "sha256": "35dbefbdf296b6e055b6de283222ce257354f99399b2e3c0bd37b1b94dba87ce",
+      "sanitized": false
+    },
+    {
+      "dialectId": 30,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/30/outside.json",
+      "path": "raw/outside/30.json",
+      "bytes": 8721,
+      "sha256": "3cb4a07486e7a69ec986b9057956cfd6e6846aab3a1757fc67cc60ce05a53b7f",
+      "sanitized": false
+    },
+    {
+      "dialectId": 31,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/31/lesson.json",
+      "path": "raw/lesson/31.json",
+      "bytes": 16213,
+      "sha256": "6a728bc33aba045bca3db24d54bdb8da1263dbcc2c4bf4df45023255c3a58ee6",
+      "sanitized": true
+    },
+    {
+      "dialectId": 31,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/31/find.json",
+      "path": "raw/find/31.json",
+      "bytes": 10325,
+      "sha256": "2b648aea0f2136d547baa1d3ff2cfee1ef57ab567b9181481d9d2695ab867dd7",
+      "sanitized": false
+    },
+    {
+      "dialectId": 31,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/31/outside.json",
+      "path": "raw/outside/31.json",
+      "bytes": 8967,
+      "sha256": "823e74b59c4e313c8555dc96af34acc973a404202fba608a5c9b0aacd0deb54e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 32,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/32/lesson.json",
+      "path": "raw/lesson/32.json",
+      "bytes": 15647,
+      "sha256": "e747c98d264e39ca708b0a6eaafaa2233636457a570a4f71a85cfef678ed6477",
+      "sanitized": false
+    },
+    {
+      "dialectId": 32,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/32/find.json",
+      "path": "raw/find/32.json",
+      "bytes": 10268,
+      "sha256": "d3b610f4999884383dfc2fe68142421a8cda84b8ea00f8a1648f19bbaef07828",
+      "sanitized": false
+    },
+    {
+      "dialectId": 32,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/32/outside.json",
+      "path": "raw/outside/32.json",
+      "bytes": 8677,
+      "sha256": "c8264abb78f20f56148050ce23ed378bc94b0510a353f3f21ee7432345359211",
+      "sanitized": false
+    },
+    {
+      "dialectId": 33,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/33/lesson.json",
+      "path": "raw/lesson/33.json",
+      "bytes": 15361,
+      "sha256": "1ee90beb6520f92d197106b3a2beb9f02491195dc911959dff90c16595e90b31",
+      "sanitized": false
+    },
+    {
+      "dialectId": 33,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/33/find.json",
+      "path": "raw/find/33.json",
+      "bytes": 10424,
+      "sha256": "f41d84e5ae0bf97b328dc42bc8fc4d7360700c45853430ed1d13289031f0606b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 33,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/33/outside.json",
+      "path": "raw/outside/33.json",
+      "bytes": 8516,
+      "sha256": "d0dee42f5f0e5929c852e19b255cbf65289e057ed5c5439f7203036a36f75a8e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 34,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/34/lesson.json",
+      "path": "raw/lesson/34.json",
+      "bytes": 15774,
+      "sha256": "7676862a7f2064a37b37777b0176ca925aed84545b6f18eddb6f4384c82906c2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 34,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/34/find.json",
+      "path": "raw/find/34.json",
+      "bytes": 10382,
+      "sha256": "c75aaf226391ce64b8cada78353501525a21b2dfd55cbfd7fc730dd9fe4363ec",
+      "sanitized": false
+    },
+    {
+      "dialectId": 34,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/34/outside.json",
+      "path": "raw/outside/34.json",
+      "bytes": 8570,
+      "sha256": "900fad7b9b73650090a27c2ea4f71a67f7edd7301abd04f643247aa0c31ad698",
+      "sanitized": false
+    },
+    {
+      "dialectId": 35,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/35/lesson.json",
+      "path": "raw/lesson/35.json",
+      "bytes": 16383,
+      "sha256": "9d2ff7b4bd130739d6a55ba624130fde8b3294dedb0c760e0fe66a46bbca6346",
+      "sanitized": false
+    },
+    {
+      "dialectId": 35,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/35/find.json",
+      "path": "raw/find/35.json",
+      "bytes": 10748,
+      "sha256": "f468490ab758433d1fd3110b4dc72b0ca8db52d77e2cdb6071e8208f67697cf3",
+      "sanitized": false
+    },
+    {
+      "dialectId": 35,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/35/outside.json",
+      "path": "raw/outside/35.json",
+      "bytes": 8752,
+      "sha256": "0b8ec2ef781396a3a8790413c14a08a06480c71e89c1614740c6a8f903e9626d",
+      "sanitized": false
+    },
+    {
+      "dialectId": 36,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/36/lesson.json",
+      "path": "raw/lesson/36.json",
+      "bytes": 16034,
+      "sha256": "2de684302919ce369d98f28bf9f9d24528dfef611dd0f5563789d29bb4a7d3fa",
+      "sanitized": false
+    },
+    {
+      "dialectId": 36,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/36/find.json",
+      "path": "raw/find/36.json",
+      "bytes": 10396,
+      "sha256": "1aed37f239bc322bfb2b1ae519db3e4dd2b042c96af3e0d75c52d1b0a0265080",
+      "sanitized": false
+    },
+    {
+      "dialectId": 36,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/36/outside.json",
+      "path": "raw/outside/36.json",
+      "bytes": 8664,
+      "sha256": "0cad02026d85d5788408341c04d24f23455e6ce2302d3ff93bd1603b78db8f92",
+      "sanitized": false
+    },
+    {
+      "dialectId": 37,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/37/lesson.json",
+      "path": "raw/lesson/37.json",
+      "bytes": 9869,
+      "sha256": "e4d96466c7b36b797f821103628dba9f371e3ef2ba293f9665134a49c17435d2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 37,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/37/find.json",
+      "path": "raw/find/37.json",
+      "bytes": 8963,
+      "sha256": "27b6dfb13714d59ce6698485dc7bae1068390064a91050930673ab20e5dd1e62",
+      "sanitized": false
+    },
+    {
+      "dialectId": 37,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/37/outside.json",
+      "path": "raw/outside/37.json",
+      "bytes": 7691,
+      "sha256": "6a295dec73448989bb756ab3399ef1be14f6a9589b1d50fe5307f93edca7ad63",
+      "sanitized": false
+    },
+    {
+      "dialectId": 38,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/38/lesson.json",
+      "path": "raw/lesson/38.json",
+      "bytes": 15659,
+      "sha256": "44374160106fb233c4fa95e42e38f81fb47e28094f7d549bc95f9ad5a99fe1b6",
+      "sanitized": false
+    },
+    {
+      "dialectId": 38,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/38/find.json",
+      "path": "raw/find/38.json",
+      "bytes": 10546,
+      "sha256": "6ea5bd175f70495c0676dde21a8aad082aacb823a04fed5187c73ac6b21c4b2b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 38,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/38/outside.json",
+      "path": "raw/outside/38.json",
+      "bytes": 8897,
+      "sha256": "24d0d2bc099b2de98600e3f0cd731b0b7801201eab3ca9d1975c2f072f704fc2",
+      "sanitized": false
+    },
+    {
+      "dialectId": 39,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/39/lesson.json",
+      "path": "raw/lesson/39.json",
+      "bytes": 15698,
+      "sha256": "b79422a75fd1dc297560d025a05b66e0d33a14b1e3fdd077ce0f6c2c394120db",
+      "sanitized": false
+    },
+    {
+      "dialectId": 39,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/39/find.json",
+      "path": "raw/find/39.json",
+      "bytes": 10847,
+      "sha256": "4254e5e515d3cd87c0f8f59cb00cf7882d7e1d1ab0ee18e35272cf6b716658e7",
+      "sanitized": false
+    },
+    {
+      "dialectId": 39,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/39/outside.json",
+      "path": "raw/outside/39.json",
+      "bytes": 8908,
+      "sha256": "6722fa20887cb1f581821137f9e621e64b5d52d1c217af5486a618a9b469a38a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 40,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/40/lesson.json",
+      "path": "raw/lesson/40.json",
+      "bytes": 15823,
+      "sha256": "ff9427419e79542e29f1414e6d45b5ee4245849eef12883fda8821113a8b8f2a",
+      "sanitized": false
+    },
+    {
+      "dialectId": 40,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/40/find.json",
+      "path": "raw/find/40.json",
+      "bytes": 10696,
+      "sha256": "e788f178559923887d0bb9f21cbbc0a0d18b5c89c1c2bbee5cac2116954b3180",
+      "sanitized": false
+    },
+    {
+      "dialectId": 40,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/40/outside.json",
+      "path": "raw/outside/40.json",
+      "bytes": 8997,
+      "sha256": "3bfb1c949b683aac4c6d0bba36175242283dbb21fe18f005f14cf3572f4545cb",
+      "sanitized": false
+    },
+    {
+      "dialectId": 41,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/41/lesson.json",
+      "path": "raw/lesson/41.json",
+      "bytes": 15400,
+      "sha256": "4b3b1a2b8628c6fb31fbaa7637d873e45801b7c85781807195516b0ba70fc433",
+      "sanitized": false
+    },
+    {
+      "dialectId": 41,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/41/find.json",
+      "path": "raw/find/41.json",
+      "bytes": 10655,
+      "sha256": "e4432454c07d36225ae2419307659a66f8d90d4b311047b6d9942e276a6b7654",
+      "sanitized": false
+    },
+    {
+      "dialectId": 41,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/41/outside.json",
+      "path": "raw/outside/41.json",
+      "bytes": 8935,
+      "sha256": "d6b6af08e352c180ac42a8839820c1d5d038c3e998fe9e771dc47e9a5532d132",
+      "sanitized": false
+    },
+    {
+      "dialectId": 42,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/42/lesson.json",
+      "path": "raw/lesson/42.json",
+      "bytes": 16311,
+      "sha256": "a3274903bc6e643e43dcf5c4f88ce0b7f7e7ab89667816e9ec73b3d5935a2a8b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 42,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/42/find.json",
+      "path": "raw/find/42.json",
+      "bytes": 10615,
+      "sha256": "5f2f3642a1437f152d57fb199eb6ef14c017d77031f51ecc924158186ccf9243",
+      "sanitized": false
+    },
+    {
+      "dialectId": 42,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/42/outside.json",
+      "path": "raw/outside/42.json",
+      "bytes": 8755,
+      "sha256": "941f1ef9fc3b6142b2aa4d4d1de7adad95e47406629defaf189820dfb6dcc4d8",
+      "sanitized": false
+    },
+    {
+      "dialectId": 43,
+      "theme": "lesson",
+      "url": "https://web.klokah.tw/interact/hordequest/json/43/lesson.json",
+      "path": "raw/lesson/43.json",
+      "bytes": 15659,
+      "sha256": "e6e5e6df92ed5bb88520fcfc88e4991fd278416f77c53db8dd75f64c7d17b49e",
+      "sanitized": false
+    },
+    {
+      "dialectId": 43,
+      "theme": "find",
+      "url": "https://web.klokah.tw/interact/hordequest/json/43/find.json",
+      "path": "raw/find/43.json",
+      "bytes": 10340,
+      "sha256": "9465f479bd66a61cb615a2710d4d8bdb4a2c6f4c63b826ba19dc53df93d5e49b",
+      "sanitized": false
+    },
+    {
+      "dialectId": 43,
+      "theme": "outside",
+      "url": "https://web.klokah.tw/interact/hordequest/json/43/outside.json",
+      "path": "raw/outside/43.json",
+      "bytes": 8544,
+      "sha256": "a812a16dd1186e1d489f70bffe1defe8788252e7fc0c6d95d99f8e36e24d7da6",
+      "sanitized": false
+    },
+    {
+      "dialectId": 1,
+      "path": "dialects/1.json",
+      "bytes": 13623,
+      "sha256": "df531e707f54df627ef417c5de8f0751890a20741266082dd4596ee4f4bd9de9"
+    },
+    {
+      "dialectId": 2,
+      "path": "dialects/2.json",
+      "bytes": 13646,
+      "sha256": "fa9e12b2221ce82575a8761c14f00549690edf4b753b1115013c248ef7633edf"
+    },
+    {
+      "dialectId": 3,
+      "path": "dialects/3.json",
+      "bytes": 13609,
+      "sha256": "ed3c38964ffa655721bcaf355c7bed416126958783918ab736534c4ef840bdb6"
+    },
+    {
+      "dialectId": 4,
+      "path": "dialects/4.json",
+      "bytes": 13670,
+      "sha256": "58ebf1a77c22f0915c30ff0e3cc262b3b4d95796d734a43cae29c6bb6ab5fbcb"
+    },
+    {
+      "dialectId": 5,
+      "path": "dialects/5.json",
+      "bytes": 13691,
+      "sha256": "93f3b783e934e50799a0db14869507033c4360a82da4d207ae24d161e4eb212d"
+    },
+    {
+      "dialectId": 6,
+      "path": "dialects/6.json",
+      "bytes": 13494,
+      "sha256": "8d3205ae5b15cf45e268d8c5f7e62e0681fbe6bc9ece568025eb3b263c2daa4b"
+    },
+    {
+      "dialectId": 7,
+      "path": "dialects/7.json",
+      "bytes": 13510,
+      "sha256": "1559a18d995f007c500f16572d3fa1996a12f78e8a7d26cf2dee58eed9c76e35"
+    },
+    {
+      "dialectId": 8,
+      "path": "dialects/8.json",
+      "bytes": 13769,
+      "sha256": "54128c7b231dd09931bb0946ff2fc00352c56096189663fcef4cd4f58a01153e"
+    },
+    {
+      "dialectId": 9,
+      "path": "dialects/9.json",
+      "bytes": 13602,
+      "sha256": "305caee89be8b4cb048c600cad1e9c7a92f80af33af332dea62da229ead02478"
+    },
+    {
+      "dialectId": 10,
+      "path": "dialects/10.json",
+      "bytes": 13511,
+      "sha256": "67097f844d5d6a3cb59889a41e4680810c5659264de8e728ef5131d5714b75a2"
+    },
+    {
+      "dialectId": 11,
+      "path": "dialects/11.json",
+      "bytes": 13524,
+      "sha256": "ec6595fa18528afc341daebc8b8eef3867ca5bef10a2c3493ce76578a8b0cb02"
+    },
+    {
+      "dialectId": 13,
+      "path": "dialects/13.json",
+      "bytes": 13939,
+      "sha256": "59d9caf3b62b6fcd9e686608ccfa5a153faec6e4fd8daf6035b14a5f2ad0240d"
+    },
+    {
+      "dialectId": 14,
+      "path": "dialects/14.json",
+      "bytes": 13676,
+      "sha256": "5d2e7e8f02890f1e08140a0e1905c3652a214c7d2fa9661af339b77c22b6224f"
+    },
+    {
+      "dialectId": 15,
+      "path": "dialects/15.json",
+      "bytes": 13657,
+      "sha256": "98780e11d9e07098c0fafc6b8396f12e18c64fc4cc1eaeab2e4749e6636dd2ea"
+    },
+    {
+      "dialectId": 16,
+      "path": "dialects/16.json",
+      "bytes": 13544,
+      "sha256": "8196f30a694ebf3d166528a117465d4608fef5b93136bda389e8160fdc5f32f5"
+    },
+    {
+      "dialectId": 17,
+      "path": "dialects/17.json",
+      "bytes": 13558,
+      "sha256": "6abb6b1036e1bc25a3711f2b9450a1375d5114547ee07b44fbca359de7ebf682"
+    },
+    {
+      "dialectId": 18,
+      "path": "dialects/18.json",
+      "bytes": 13789,
+      "sha256": "7eee64561e4df94b087257d08caa54a40e08994c4a0717b3f3d38f86d7c7282e"
+    },
+    {
+      "dialectId": 19,
+      "path": "dialects/19.json",
+      "bytes": 13446,
+      "sha256": "5ce10369be39c9602527efb1074aa90f25719a9821da5ff0dd162df4b599a16c"
+    },
+    {
+      "dialectId": 20,
+      "path": "dialects/20.json",
+      "bytes": 13603,
+      "sha256": "fb1569ea541b17b2c3eb512163932c516053416d3ef7f332edecfd0129bbddcc"
+    },
+    {
+      "dialectId": 21,
+      "path": "dialects/21.json",
+      "bytes": 13634,
+      "sha256": "70aaa613c2a192155976ef3838c41a57caafc02bb7ee5315b97c7139ccdc82f6"
+    },
+    {
+      "dialectId": 22,
+      "path": "dialects/22.json",
+      "bytes": 13616,
+      "sha256": "e2599e665d2531e50709261815c9e867b2f41fa53b49b748c2184c58b2e0f9c9"
+    },
+    {
+      "dialectId": 23,
+      "path": "dialects/23.json",
+      "bytes": 13561,
+      "sha256": "cc80801d14b77b42064de957a4d848dddee17552dd96b4dfe03b886c7f7428ff"
+    },
+    {
+      "dialectId": 24,
+      "path": "dialects/24.json",
+      "bytes": 13548,
+      "sha256": "71e90a4bcef22030569c8c1ff948541235d56ca2cdf677d726446279f990dc5e"
+    },
+    {
+      "dialectId": 25,
+      "path": "dialects/25.json",
+      "bytes": 13695,
+      "sha256": "1f44862cc3ee5659d7a80a9ba98b8132bb15e0359fb2de6999206e1f14546b86"
+    },
+    {
+      "dialectId": 26,
+      "path": "dialects/26.json",
+      "bytes": 13657,
+      "sha256": "3a49edf24522720c831f94c5f497f83c4a618878d5c5e9d8cb5b0fecda39251c"
+    },
+    {
+      "dialectId": 27,
+      "path": "dialects/27.json",
+      "bytes": 13675,
+      "sha256": "648c01eaf1acad75af99d6f1dff3d4105cd4c8176aaf11eb31dc18cad1b7c856"
+    },
+    {
+      "dialectId": 28,
+      "path": "dialects/28.json",
+      "bytes": 13560,
+      "sha256": "6210b190d8f1948b8fc2dace5af176853d4a8c120812c6449276e8cb5cd646c7"
+    },
+    {
+      "dialectId": 29,
+      "path": "dialects/29.json",
+      "bytes": 13526,
+      "sha256": "c34cc78cd23953dadb2376ecf7090ac035c01079a029727db3b1075ffc6389ee"
+    },
+    {
+      "dialectId": 30,
+      "path": "dialects/30.json",
+      "bytes": 13623,
+      "sha256": "5b29cce6aee3a52440f6b679fff6eb8d6486e5c2924035c476a91c86c287172a"
+    },
+    {
+      "dialectId": 31,
+      "path": "dialects/31.json",
+      "bytes": 13845,
+      "sha256": "258e5974a4fc8608406da40a20d68cc0a075eadcc758c18397fb75ffe846ba40"
+    },
+    {
+      "dialectId": 32,
+      "path": "dialects/32.json",
+      "bytes": 13667,
+      "sha256": "a61ecfab602a0422c7d4af18ba903d315319934c9dec4f97e98dfb5ad977813b"
+    },
+    {
+      "dialectId": 33,
+      "path": "dialects/33.json",
+      "bytes": 13527,
+      "sha256": "03d84930c657c27e497bad6b90dccee2b42eb23ec196c4c7277a2baf8925b757"
+    },
+    {
+      "dialectId": 34,
+      "path": "dialects/34.json",
+      "bytes": 13600,
+      "sha256": "1a528582b868216b0a5dec67e671fda79a4add94c391040477aca6c2b0c8b944"
+    },
+    {
+      "dialectId": 35,
+      "path": "dialects/35.json",
+      "bytes": 13674,
+      "sha256": "d5f009c943007a49264f86845b8e828acc85c4277f3cf51442f0130fbd12da8a"
+    },
+    {
+      "dialectId": 36,
+      "path": "dialects/36.json",
+      "bytes": 13657,
+      "sha256": "9048eababe87e10ff954576bd74685d019f62fd6f15527935163e20e89f5cbd5"
+    },
+    {
+      "dialectId": 37,
+      "path": "dialects/37.json",
+      "bytes": 13656,
+      "sha256": "e8ff982ecce205335f22087c3a708732bfc4a41c3a21b9b57a1a5ec8ad95971c"
+    },
+    {
+      "dialectId": 38,
+      "path": "dialects/38.json",
+      "bytes": 13665,
+      "sha256": "9bbea3209cd06410fdc6b45a8054db1596d6dbad5013b9a89a33188b681151d7"
+    },
+    {
+      "dialectId": 39,
+      "path": "dialects/39.json",
+      "bytes": 13689,
+      "sha256": "dba9c9116290cf5f96af8eb729218e6d102489b46ba12802aeb3517ecc38ed48"
+    },
+    {
+      "dialectId": 40,
+      "path": "dialects/40.json",
+      "bytes": 13669,
+      "sha256": "fc9ab5044cccf1745089bde7474944197ea3c73e9d2d591fe1d5fb254be1c4dd"
+    },
+    {
+      "dialectId": 41,
+      "path": "dialects/41.json",
+      "bytes": 13618,
+      "sha256": "4df35765a781f3fdeeb5b80797a7160254cf69557f30774bd977d0f68723d40d"
+    },
+    {
+      "dialectId": 42,
+      "path": "dialects/42.json",
+      "bytes": 13638,
+      "sha256": "e89522ac2fb82b1db24e7e8804530e359bde69a4f127e716d0bea6bf5f44e2d9"
+    },
+    {
+      "dialectId": 43,
+      "path": "dialects/43.json",
+      "bytes": 13507,
+      "sha256": "10fa892203f641a151d934113e9b262351771419e4e247485294dccbd49f7614"
+    },
+    {
+      "path": "dataset.json",
+      "bytes": 6552,
+      "sha256": "ca37e8ce80d712b9b902dac05139c568e56e0a400aa0c2271d82581d75859da7"
+    }
+  ]
+}

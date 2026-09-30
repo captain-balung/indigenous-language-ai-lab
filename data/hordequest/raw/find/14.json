@@ -1,0 +1,255 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "ina, manasha thuini piathauthaun munai naam a taun!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66161/923780",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "maqa tantuqash ayuzi a minlhafut mara apiq sa thuini, numa itia manasha thau munai.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66161/923781",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "mathuaw maqaran! mindaaq antu mriqariqaz thaithuy!",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66161/923782",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ua! mathuaw thuini mashtay uka shawashawan, indahipuan ihu thaithuy.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66161/923783",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ua, naur iaku amindahip thaithuy.",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66161/923784",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "amutusiwak piaruruun amakalawa wa aniamin ya ikahi.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66161/923785",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "aindahipak kmalawa!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66161/923786",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ua, untalakin uhu!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66161/923787",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "miakuza faqlhu a talapa",
+                    "textAb": "miakuza faqlhu a talapa?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66162/923790",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "intua ianan razu",
+                    "textAb": "intua ianan razu?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66163/923798",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "minriqaz ihu shawiki",
+                    "textAb": "minriqaz ihu shawiki.",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66164/923806",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "intua tantuqash ayuzi a minlhafut",
+                    "textAb": "intua tantuqash ayuzi a minlhafut?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66165/923814",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "numa qa?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66160/923777"
+                },
+                "1": {
+                    "text": "pasain iaku maqusum butiqu.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66162/923791"
+                },
+                "2": {
+                    "text": "maura iaku mani.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66163/923799"
+                },
+                "3": {
+                    "text": "uka naak inai.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66164/923807"
+                },
+                "4": {
+                    "text": "tihauta antu riqazan, muntua thithu?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66165/923815"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ani tu tunmaza?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66160/923778"
+                },
+                "1": {
+                    "text": "ina pasain thithu maqulhaqulha wa maqusum butiqu.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66162/923792"
+                },
+                "2": {
+                    "text": "itia isai hudun.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66163/923800"
+                },
+                "3": {
+                    "text": "ua, itia shawiki isai pangka.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66164/923808"
+                },
+                "4": {
+                    "text": "niwan thithu mu’apaw qa?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66165/923816"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "maura",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66160/923779"
+                },
+                "1": {
+                    "text": "min’aura iaku.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66162/923793"
+                },
+                "2": {
+                    "text": "manasha naak, alhai iaku ihun!",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66163/923801"
+                },
+                "3": {
+                    "text": "itia huya qafay.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66164/923809"
+                },
+                "4": {
+                    "text": "uka shaqtun? iahiaw kilhimin uhu thithu!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66165/923817"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "palanan",
+                        "tima",
+                        "fatu",
+                        "numa",
+                        "miakuza",
+                        "faqlhu",
+                        "a",
+                        "talapa"
+                    ],
+                    "auto": "miakuza faqlhu a talapa"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "shawiki",
+                        "minu",
+                        "lhmir",
+                        "bukay",
+                        "intua",
+                        "ianan",
+                        "razu"
+                    ],
+                    "auto": "intua ianan razu"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "fizfiz",
+                        "tima",
+                        "taun",
+                        "mara",
+                        "minriqaz",
+                        "ihu",
+                        "shawiki"
+                    ],
+                    "auto": "minriqaz ihu shawiki"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "tima",
+                        "numa",
+                        "huruy",
+                        "fuifuilh",
+                        "patashan",
+                        "a",
+                        "shinshii",
+                        "intua",
+                        "tantuqash",
+                        "ayuzi",
+                        "a",
+                        "minlhafut"
+                    ],
+                    "auto": "intua tantuqash ayuzi a minlhafut",
+                    "complete": {
+                        "text": "inai iaku, maqa iaku mayaw......",
+                        "sound": "text/sound/66165/923818"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,213 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Lowking,jiyax sngayang ka saman,mmowsa su inu hug King?",
+                "textCh": "Lowking，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65802/919546",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Mmowsa nami muduh siyang ayu hiya ka yaku ni Rabay, isu ga?",
+                "textCh": "我明天要和Rabay去溪邊烤肉，你呢？",
+                "sound": "text/sound/65802/919547",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Qbhangan,saw bi malu bi rwauun!Tduwa ku tqnay mowsa hug?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65802/919548",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Sliging ka bubu su han",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65802/919549",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Bubu,tduwa ku tqnay qbsuran mu snaw musa ayung hug",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65802/919550",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Tduwa,kiya ni asi namu ka qmlahang!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65802/919551",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "Ini huya,ida nami musa qmlahang baly.",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65802/919552",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "pgiing su manu",
+                    "textAb": "Pgiing su manu",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65805/919573",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "muda inu ka mowsa ayung",
+                    "textAb": "Muda inu ka mowsa ayung",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65806/919586",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "ksuykay ku yayu su hug",
+                    "textAb": "Ksuykay ku yayu su hug",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65807/919594",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "manu",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65800/919530"
+                },
+                "1": {
+                    "text": "Mowsa ku miing bangah ni kaji dduhun.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65805/919574"
+                },
+                "2": {
+                    "text": "Hiya,ga niqan paru btunux hiya",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65806/919587"
+                },
+                "3": {
+                    "text": "Tduwa,angal!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65807/919595"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Ini klai qmbahang",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65800/919531"
+                },
+                "1": {
+                    "text": "Mowsa ku miing sqmu ni bunga",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65805/919575"
+                },
+                "2": {
+                    "text": "Ini ku kla gaga inu ka ayung",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65806/919588"
+                },
+                "3": {
+                    "text": "Ungat ka naku uri.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65807/919596"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "Ini klai",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65800/919532"
+                },
+                "2": {
+                    "text": "Hini,hana ku pnaah auyng hiya.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65806/919589"
+                },
+                "3": {
+                    "text": "Ini tduwa,wada naqi ka yayu mu da.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65807/919597"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "inu",
+                        "mhuya",
+                        "kmsiyuk",
+                        "pgiing",
+                        "su",
+                        "manu"
+                    ],
+                    "auto": "pgiing su manu",
+                    "buylist": [
+                        "patas bbrigun",
+                        "bangah",
+                        "kaji duhun",
+                        "sqmu",
+                        "binga",
+                        "siyang",
+                        "balung"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "dgiyaq",
+                        "manu",
+                        "aji",
+                        "gsirung",
+                        "muda",
+                        "inu",
+                        "ka",
+                        "mowsa",
+                        "ayung"
+                    ],
+                    "auto": "muda inu ka mowsa ayung"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "ini",
+                        "tduwa",
+                        "manu",
+                        "quway",
+                        "pratu",
+                        "ksuykay",
+                        "ku",
+                        "yayu",
+                        "su",
+                        "hug"
+                    ],
+                    "auto": "ksuykay ku yayu su hug",
+                    "complete": {
+                        "text": "mhuway su balay",
+                        "sound": "text/sound/65807/919598"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,403 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "kuzan mihu a lhanaz?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62422/864411",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "zain naak a lhanaz Hudun.",
+                "textCh": "我叫Hudun。",
+                "sound": "text/sound/62422/864412",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "intua s mihu a taun?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62422/864413",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "minakanatusi iaku Baraubaw a kataunan.",
+                "textCh": "我從伊達邵部落來。",
+                "sound": "text/sound/62422/864414",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kinunshashanuiza ihu qa?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62422/864415",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "niwan iaku tu kinunshashanu.",
+                "textCh": "我還沒吃早餐耶！",
+                "sound": "text/sound/62422/864416",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "amutusiwak fariw sa kunshashanu, apalhintaz ita?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62422/864417",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ani iaku tu minathu tuali, anaiwan mihu a tuali shimulik?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62422/864418",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ua, kminathu iaku tuali, shimuluan uhu.",
+                "textCh": "好，我有帶，借你。",
+                "sound": "text/sound/62422/864419",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Tapinaa",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Lina",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Qariawan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Huqu",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Tapinaa",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Shuni",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "kuzan mihu a lhanaz",
+                    "textAb": "kuzan mihu a lhanaz?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62423/864420",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "intua s mihu a taun",
+                    "textAb": "intua s mihu a taun?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62424/864429",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Hudun shimulikuan mihu a patatash",
+                    "textAb": "Hudun shimulikuan mihu a patatash?",
+                    "textCh": "Hudun借我筆好嗎？",
+                    "sound": "text/sound/62425/864445",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Puni shimulikuan mihu a patatash",
+                    "textAb": "Puni shimulikuan mihu a patatash?",
+                    "textCh": "Puni借我筆好嗎？",
+                    "sound": "text/sound/62425/864447",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Hudun shimulikuan mihu a tatitish",
+                    "textAb": "Hudun shimulikuan mihu a tatitish?",
+                    "textCh": "Hudun借我橡皮擦好嗎？",
+                    "sound": "text/sound/62426/864457",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Puni shimulikuan mihu a tatitish",
+                    "textAb": "Puni shimulikuan mihu a tatitish?",
+                    "textCh": "Puni借我橡皮擦好嗎？",
+                    "sound": "text/sound/62426/864459",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Hudun anaiwan uhu thathapu",
+                    "textAb": "Hudun, anaiwan uhu thathapu.",
+                    "textCh": "Hudun，請幫我拿掃把。",
+                    "sound": "text/sound/62427/864465",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Puni anaiwan uhu thathapu",
+                    "textAb": "Puni, anaiwan uhu thathapu.",
+                    "textCh": "Puni，請幫我拿掃把。",
+                    "sound": "text/sound/62427/864467",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "maura",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62421/864410"
+                },
+                "1": {
+                    "text": "zain naak a lhanaz Hudun.",
+                    "textCh": "我的名字叫Hudun。",
+                    "sound": "text/sound/62423/864421"
+                },
+                "2": {
+                    "text": "isa Baraubaw naak a taun.",
+                    "textCh": "我的家在伊達邵",
+                    "sound": "text/sound/62424/864430"
+                },
+                "3": {
+                    "text": "ua, shimuluan uhu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62425/864446"
+                },
+                "4": {
+                    "text": "uka iaku mani.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62426/864458"
+                },
+                "5": {
+                    "text": "ua, araiza ihu haya thathapu.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62427/864466"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "numa qa?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62421/864408"
+                },
+                "1": {
+                    "text": "zain naak a lhanaz Puni.",
+                    "textCh": "我的名字叫Puni。",
+                    "sound": "text/sound/62423/864422"
+                },
+                "2": {
+                    "text": "isa Qariawan naak a taun.",
+                    "textCh": "我的家在埔里",
+                    "sound": "text/sound/62424/864431"
+                },
+                "3": {
+                    "text": "muqay iaku latata.",
+                    "textCh": "我只有一枝。",
+                    "sound": "text/sound/62425/864448"
+                },
+                "4": {
+                    "text": "ua, araiza ihu.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62426/864460"
+                },
+                "5": {
+                    "text": "maura iaku intua.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62427/864468"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "thithu",
+                        "thaithuy",
+                        "intua",
+                        "taun",
+                        "kuzan",
+                        "mihu",
+                        "a",
+                        "lhanaz"
+                    ],
+                    "auto": "kuzan mihu a lhanaz",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Hudun",
+                            "Qariawan",
+                            "Puni",
+                            "Baraubaw"
+                        ],
+                        "target-1": "Hudun",
+                        "target-2": "Puni"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "fafaw",
+                        "tima",
+                        "shirshir",
+                        "lhmupishuan",
+                        "maniun",
+                        "thaithuy",
+                        "Hudun",
+                        "intua",
+                        "s",
+                        "mihu",
+                        "a",
+                        "taun"
+                    ],
+                    "auto": "intua s mihu a taun",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Baraubaw",
+                            "makanshuz",
+                            "qali",
+                            "Qariawan",
+                            "falhaza"
+                        ],
+                        "target-1": "Baraubaw",
+                        "target-2": "Qariawan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "thithu",
+                        "ling-waa",
+                        "patashan",
+                        "iamin",
+                        "intua",
+                        "Hudun",
+                        "Puni",
+                        "shimulikuan",
+                        "mihu",
+                        "a",
+                        "patatash"
+                    ],
+                    "auto": {
+                        "target-1": "Hudun shimulikuan mihu a patatash",
+                        "target-2": "Puni shimulikuan mihu a patatash"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "patatash",
+                        "patashan",
+                        "mihu",
+                        "intua",
+                        "Hudun",
+                        "Puni",
+                        "shimulikuan",
+                        "mihu",
+                        "a",
+                        "tatitish"
+                    ],
+                    "auto": {
+                        "target-1": "Hudun shimulikuan mihu a tatitish",
+                        "target-2": "Puni shimulikuan mihu a tatitish"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "kulambit",
+                        "miakuza",
+                        "uka",
+                        "thathapu",
+                        "thithu",
+                        "maniun",
+                        "Hudun",
+                        "Puni",
+                        "anaiwan",
+                        "uhu",
+                        "thathapu"
+                    ],
+                    "auto": {
+                        "target-1": "Hudun anaiwan uhu thathapu",
+                        "target-2": "Puni anaiwan uhu thathapu"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

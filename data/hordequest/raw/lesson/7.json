@@ -1,0 +1,414 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "ima lalu su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62290/860943",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "lalu muw ga Tuyaw Syat",
+                "textCh": "我叫Tuyaw Syat。",
+                "sound": "text/sound/62290/860944",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ki inu ku sali su",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62290/860945",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kahun kung alang Nguhuw Ruma.",
+                "textCh": "努呼路瑪路瑪部落來。",
+                "sound": "text/sound/62290/860946",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "minknama su la?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62290/860947",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini na!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62290/860948",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "musa kung mbaziy knama ha, musa su uzi?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62290/860949",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini kung aras pila. ksyukay ta pila su aw?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62290/860950",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "aw, ksyukay misu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62290/860951",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Pyanan",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Libix",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Pyahaw",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Basaw",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Lmwan",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Yuma",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "ima lalu su",
+                    "textAb": "ima lalu su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62291/860952",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ki inu ku sali su",
+                    "textAb": "ki inu ku sali su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62292/860961",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Tuyaw ksyukay ta tikay ku inpit aw",
+                    "textAb": "Tuyaw, ksyukay ta tikay ku inpit aw?",
+                    "textCh": "Tuyaw借我筆好嗎？",
+                    "sound": "text/sound/62293/860977",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Ali ksyukay ta tikay inpit aw",
+                    "textAb": "Ali, ksyukay ta tikay inpit aw?",
+                    "textCh": "Ali借我筆好嗎？",
+                    "sound": "text/sound/62293/860979",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tuyaw ksyukay ta tikay ku i’ing aw",
+                    "textAb": "Tuyaw, ksyukay ta tikay ku i’ing aw?",
+                    "textCh": "Tuyaw借我橡皮擦好嗎？",
+                    "sound": "text/sound/62294/860989",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Ali ksyukay ta tikay ku i’ing aw",
+                    "textAb": "Ali, ksyukay ta tikay ku i’ing aw?",
+                    "textCh": "Ali借我橡皮擦好嗎？",
+                    "sound": "text/sound/62294/860991",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tuyaw ragiy kung magan kagaw",
+                    "textAb": "Tuyaw, ragiy kung magan kagaw.",
+                    "textCh": "Tuyaw，請幫我拿掃把。",
+                    "sound": "text/sound/62295/860997",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Ali ragiy kung magan kagaw hani",
+                    "textAb": "Ali, ragiy kung magan kagaw hani.",
+                    "textCh": "Ali，請幫我拿掃把。",
+                    "sound": "text/sound/62295/860999",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ini ba’iy",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62289/860942"
+                },
+                "1": {
+                    "text": "lalu muw ga Tuyaw Syat.",
+                    "textCh": "我的名字叫Tuyaw Syat。",
+                    "sound": "text/sound/62291/860953"
+                },
+                "2": {
+                    "text": "ki maki sku Nguhuw Ruma sali muw.",
+                    "textCh": "我的家在努呼路瑪",
+                    "sound": "text/sound/62292/860962"
+                },
+                "3": {
+                    "text": "aw, ksyukay misu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62293/860978"
+                },
+                "4": {
+                    "text": "ungat inpit muw uzi.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62294/860990"
+                },
+                "5": {
+                    "text": "aw, b’anay misu ku kagaw hani.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62295/860998"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "nanu",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62289/860940"
+                },
+                "1": {
+                    "text": "lalu muw ga Ali Syat",
+                    "textCh": "我的名字叫Ali Syat。",
+                    "sound": "text/sound/62291/860954"
+                },
+                "2": {
+                    "text": "ki maki sku Maypuwan sali muw.",
+                    "textCh": "我的家在象鼻",
+                    "sound": "text/sound/62292/860963"
+                },
+                "3": {
+                    "text": "utux nanak inpit muw.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62293/860980"
+                },
+                "4": {
+                    "text": "aw, niy",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62294/860992"
+                },
+                "5": {
+                    "text": "ini muw ba’iy sa ki inu?",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62295/861000"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "hiya",
+                        "naha",
+                        "inu",
+                        "sali",
+                        "ima",
+                        "lalu",
+                        "su"
+                    ],
+                    "auto": "ima lalu su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tuyaw",
+                            "Maypuwan",
+                            "Pagung",
+                            "Ali",
+                            "Nguhuw Ruma",
+                            "Nguhuw",
+                            "Ruma"
+                        ],
+                        "target-1": "Tuyaw",
+                        "target-2": "Ali"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "yatux",
+                        "ima",
+                        "bih",
+                        "miru",
+                        "simuw",
+                        "laha",
+                        "rgyax",
+                        "ki",
+                        "inu",
+                        "ku",
+                        "sali",
+                        "su"
+                    ],
+                    "auto": "ki inu ku sali su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Nguhuw Ruma",
+                            "blay",
+                            "sawkan",
+                            "babaw",
+                            "kayan",
+                            "Maypuwan",
+                            "llyung"
+                        ],
+                        "target-1": "Nguhuw Ruma",
+                        "target-2": "Maypuwan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nya",
+                        "ling_wa",
+                        "biru",
+                        "sami",
+                        "inu",
+                        "Tuyaw",
+                        "Ali",
+                        "ksyukay",
+                        "ta",
+                        "tikay",
+						"ku",
+                        "inpit",
+                        "aw"
+                    ],
+                    "auto": {
+                        "target-1": "Tuyaw ksyukay ta tikay ku inpit aw",
+                        "target-2": "Ali ksyukay ta tikay inpit aw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "inpit",
+                        "biru",
+                        "inu",
+                        "Tuyaw",
+                        "Ali",
+                        "ksyukay",
+                        "ta",
+                        "tikay",
+                        "ku",
+                        "i’ing",
+                        "aw"
+                    ],
+                    "auto": {
+                        "target-1": "Tuyaw ksyukay ta tikay ku i’ing aw",
+                        "target-2": "Ali ksyukay ta tikay ku i’ing aw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "i’ing",
+						"gali",
+                        "maha",
+						"nanu",
+                        "ungat",
+                        "kmagaw",
+                        "hiya",
+                        "simuw",
+                        "Tuyaw",
+                        "Ali",
+                        "ragiy",
+                        "kung",
+                        "magan",
+                        "kagaw",
+                        "hani"
+                    ],
+                    "auto": {
+                        "target-1": "Tuyaw ragiy kung magan kagaw",
+                        "target-2": "Ali ragiy kung magan kagaw hani"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

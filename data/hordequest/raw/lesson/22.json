@@ -1,0 +1,411 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "kasimaan a kasu i?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62598/869035",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Biung a saikin",
+                "textCh": "我叫Biung。",
+                "sound": "text/sound/62598/869036",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "isa a isuu lumah i?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62598/869037",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "maisnasian Nansalu a saikin minsuma",
+                "textCh": "我從南沙魯部落來。",
+                "sound": "text/sound/62598/869038",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "adu minaunin a kasu mas pinitcingmut i?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62598/869039",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "nii’ang",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62598/869040",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "nakaudiip a saikin mabaliv mas pinitcingmut",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62598/869041",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "nii a saikin mai’adas mas sui, adu mahtu a kasu mapasimulku mas sui i?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62598/869042",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mahtu, pasimulanku a kasu",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62598/869043",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Bahuan",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Savi",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Tama'zu'an",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Tulbus",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Tavila",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Humhum",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "kasimaan a kasu i",
+                    "textAb": "kasimaan a kasu i?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62599/869044",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "isa a isuu lumah i",
+                    "textAb": "isa a isuu lumah i?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62600/869053",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Biung adu mahtuas mapasimulku mas ispapatas i",
+                    "textAb": "Biung, adu mahtuas mapasimulku mas ispapatas i?",
+                    "textCh": "Biung借我筆好嗎？",
+                    "sound": "text/sound/62601/869069",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Abus adu mahtuas mapasimulku mas ispapatas i",
+                    "textAb": "Abus, adu mahtuas mapasimulku mas ispapatas i?",
+                    "textCh": "Abus借我筆好嗎？",
+                    "sound": "text/sound/62601/869071",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Biung adu mahtuas mapasimulku mas ishahaishais i",
+                    "textAb": "Biung adu mahtuas mapasimulku mas ishahaishais i?",
+                    "textCh": "Biung借我橡皮擦好嗎？",
+                    "sound": "text/sound/62602/869081",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Abus adu mahtuas mapasimulku mas ishahaishais i",
+                    "textAb": "Abus adu mahtuas mapasimulku mas ishahaishais i?",
+                    "textCh": "Abus借我橡皮擦好嗎？",
+                    "sound": "text/sound/62602/869083",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Biung indangazav a saikin siza mas asik",
+                    "textAb": "Biung, indangazav a saikin siza mas asik",
+                    "textCh": "Biung，請幫我拿掃把。",
+                    "sound": "text/sound/62603/869089",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Abus indangazav a saikin siza mas asik",
+                    "textAb": "Abus indangazav a saikin siza mas asik",
+                    "textCh": "Abus，請幫我拿掃把。",
+                    "sound": "text/sound/62603/869091",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "nii tu haiap",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62597/869034"
+                },
+                "1": {
+                    "text": "tupaun a inaak ngaan tu Biung",
+                    "textCh": "我的名字叫Biung。",
+                    "sound": "text/sound/62599/869045"
+                },
+                "2": {
+                    "text": "isian Nansalu a inaak lumah",
+                    "textCh": "我的家在南沙魯",
+                    "sound": "text/sound/62600/869054"
+                },
+                "3": {
+                    "text": "mahtu, pasimulanku a kasu",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62601/869070"
+                },
+                "4": {
+                    "text": "ukaanik amin",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62602/869082"
+                },
+                "5": {
+                    "text": "uung, paisuav a andiip asikan",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62603/869090"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "maaz i?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62597/869032"
+                },
+                "1": {
+                    "text": "tupaun a inaak ngaan tu Abus",
+                    "textCh": "我的名字叫Abus。",
+                    "sound": "text/sound/62599/869046"
+                },
+                "2": {
+                    "text": "isian Mangacun a inaak lumah",
+                    "textCh": "我的家在瑪雅圳",
+                    "sound": "text/sound/62600/869055"
+                },
+                "3": {
+                    "text": "kaaz tasa a inaak",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62601/869072"
+                },
+                "4": {
+                    "text": "uung, sizaav",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62602/869084"
+                },
+                "5": {
+                    "text": "nii’ik haiap tu isa",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62603/869092"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "saicia",
+                        "inaicia",
+                        "isa",
+                        "lumah",
+                        "kasimaan",
+                        "a",
+                        "kasu",
+                        "i"
+                    ],
+                    "auto": "kasimaan a kasu i",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Biung",
+                            "Mangacun",
+                            "Maia",
+                            "Abus",
+                            "Nansalu"
+                        ],
+                        "target-1": "Biung",
+                        "target-2": "Abus"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "tamaav",
+                        "sima",
+                        "sisila",
+                        "ahil",
+                        "muu",
+                        "nai",
+                        "ludun",
+                        "isa",
+                        "a",
+                        "isuu",
+                        "lumah",
+                        "i"
+                    ],
+                    "auto": "isa a isuu lumah i",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Nansalu",
+                            "ma’ansum",
+                            "dihanin",
+                            "Mangacun",
+                            "vahlas"
+                        ],
+                        "target-1": "Nansalu",
+                        "target-2": "Mangacun"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "isaicia",
+                        "ding’ua",
+                        "ahil",
+                        "mita",
+                        "isa",
+                        "Biung",
+                        "Abus",
+                        "adu",
+                        "mahtuas",
+                        "mapasimulku",
+                        "mas",
+                        "ispapatas",
+                        "i"
+                    ],
+                    "auto": {
+                        "target-1": "Biung adu mahtuas mapasimulku mas ispapatas i",
+                        "target-2": "Abus adu mahtuas mapasimulku mas ispapatas i"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "ispapatas",
+                        "ahil",
+                        "isuu",
+                        "isa",
+                        "Biung",
+                        "Abus",
+                        "adu",
+                        "mahtuas",
+                        "mapasimulku",
+                        "mas",
+                        "ishahaishais",
+                        "i"
+                    ],
+                    "auto": {
+                        "target-1": "Biung adu mahtuas mapasimulku mas ishahaishais i",
+                        "target-2": "Abus adu mahtuas mapasimulku mas ishahaishais i"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "is’i’ima",
+                        "mavia",
+                        "uka",
+                        "ma’asik",
+                        "saicia",
+                        "kamu",
+                        "Biung",
+                        "Abus",
+                        "indangazav",
+                        "a",
+                        "saikin",
+                        "siza",
+                        "mas",
+                        "asik"
+                    ],
+                    "auto": {
+                        "target-1": "Biung indangazav a saikin siza mas asik",
+                        "target-2": "Abus indangazav a saikin siza mas asik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

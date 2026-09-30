@@ -1,0 +1,214 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "sulja ripaitin nu tjiyau aru mainu sun",
+                "textCh": "sulja，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65670/918488",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "aru vaik aken ka tji selep a mapana a kivangevang",
+                "textCh": "我明天要和selep去溪邊烤肉，你呢？",
+                "sound": "text/sound/65670/918489",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ku nanguaq nu tja kenemenemin makaya ken a kiyan tjanumun",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65670/918490",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kiva’daqu anan tji kina",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65670/918491",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "kina makaya aken a kiyan tjai kaka a mapana a kivangevang",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65670/918492",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "makaya ljakua kipa paulingauvu",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65670/918493",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "maljimalji tjara kipa paulingau amen",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65670/918494",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "anema su kikimin",
+                    "textAb": "anema su kikimin",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65673/918521",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "pakainu nu ma pana",
+                    "textAb": "pakainu nu ma pana",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65676/918551",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "makasun na pasedjam ta su vakalj",
+                    "textAb": "makasun na pasedjam ta su vakalj",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65678/918562",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "anema",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65667/918469"
+                },
+                "1": {
+                    "text": "kimikim aken ta ruku sicapacapa",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65673/918522"
+                },
+                "2": {
+                    "text": "paka zua， izua tjagulj mavan",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65676/918552"
+                },
+                "3": {
+                    "text": "makaya uza",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65678/918563"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "anemanema ya sun",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65667/918470"
+                },
+                "1": {
+                    "text": "vaik aken na malap ta ljapanai ka tua vurasi",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65673/918523"
+                },
+                "2": {
+                    "text": "ini’ ka kuna kemeljan izainuan a za pana",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65676/918553"
+                },
+                "3": {
+                    "text": "neka’ nuku vakalj angauta",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65678/918564"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "adjau",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65667/918471"
+                },
+                "2": {
+                    "text": "imaza  na keamsizua ken a pantjez ka saunini",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65676/918554"
+                },
+                "3": {
+                    "text": "ini’ ka makaya malekuyanga a ku vakalj",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65678/918565"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "izainu",
+                        "makuda",
+                        "kisedjam",
+                        "anema",
+                        "su",
+                        "kikimin"
+                    ],
+                    "auto": "anema su kikimin",
+                    "buylist": [
+                        "aru velin",
+                        "idun",
+                        "sicapacapa",
+                        "ljapany",
+                        "vurasi",
+                        "vutjulj",
+                        "icilu/ecilu"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "vavua",
+                        "anema",
+                        "va’ar",
+                        "vievi’",
+                        "pakainu",
+                        "nu",
+                        "ma",
+                        "pana"
+                    ],
+                    "auto": "pakainu nu ma pana"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "ini’",
+                        "ka",
+                        "makaya",
+                        "anema",
+                        "ecap",
+                        "kisi",
+                        "makasun",
+                        "na",
+                        "pasedjam",
+                        "ta",
+                        "su",
+                        "vakalj"
+                    ],
+                    "auto": "makasun na pasedjam ta su vakalj",
+                    "complete": {
+                        "text": "maljimalji",
+                        "sound": "text/sound/65678/918566"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,213 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "legeageay, nosi’a ka nicyobi, kowa miso?",
+                "textCh": "legeageay，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65772/919303",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "nosi’a ka kake si ’ongaolo ka nowa mikiname tanane wakame, koso ka?",
+                "textCh": "我明天要和’ongaolo去溪邊烤肉，你呢？",
+                "sound": "text/sound/65772/919304",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "nobicingi made ka magi’i no’aangimade! nodoo myali ’angiese mwa?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65772/919305",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "mwa pasyo kibobo titinane!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65772/919306",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "niyaw, nodoo myali ’angiese kakane mwa drakeale?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65772/919307",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "e’e, makasi mocengela!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65772/919308",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "ipoingaw, doo mikiname!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65772/919309",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "mani silapiso",
+                    "textAb": "mani silapiso?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65801/919533",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "mwa made drakeale ka payamimade",
+                    "textAb": "mwa made drakeale ka payamimade?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65803/919556",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "doo myaso pakisedame nakowa na bakale",
+                    "textAb": "doo myaso pakisedame nakowa na bakale?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65804/919564",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "manini?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65768/919282"
+                },
+                "1": {
+                    "text": "wami kake silape na omosao si saakame.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65801/919534"
+                },
+                "2": {
+                    "text": "adroi, ’iyakay na tawmomonga na ’alapi nadroi.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65803/919557"
+                },
+                "3": {
+                    "text": "e’e, malra!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65804/919565"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "iigo’o kake?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65768/919283"
+                },
+                "1": {
+                    "text": "kowa silape na ngodrangodro si bowathi.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65801/919535"
+                },
+                "2": {
+                    "text": "iigo’o kake drakeale ta’ikanidra.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65803/919558"
+                },
+                "3": {
+                    "text": "kadrowa nakowa.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65804/919566"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "iigo’o!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65768/919284"
+                },
+                "2": {
+                    "text": "akai, ta’osilikaila kake drakeaele ’awkay.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65803/919559"
+                },
+                "3": {
+                    "text": "’ayni, bakalili ka mavisae.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65804/919567"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "nadroway",
+                        "akwani",
+                        "kyasedame",
+                        "mani",
+                        "silapiso"
+                    ],
+                    "auto": "mani silapiso",
+                    "buylist": [
+                        "ko alangane ma’akakokwanga",
+                        "omosaw",
+                        "sakame",
+                        "ngodrangodro",
+                        "bwathi",
+                        "bee",
+                        "bawthotho"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "egeege",
+                        "manini",
+                        "’ayni",
+                        "baobaowane",
+                        "cigi’ane",
+                        "mwa",
+                        "made",
+                        "drakeale",
+                        "ka",
+                        "payamimade"
+                    ],
+                    "auto": "mwa made drakeale ka payamimade"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "doiya",
+                        "manini",
+                        "kacipi",
+                        "takopili",
+                        "doo",
+                        "myaso",
+                        "pakisedame",
+                        "nakowa",
+                        "na",
+                        "bakale"
+                    ],
+                    "auto": "doo myaso pakisedame nakowa na bakale",
+                    "complete": {
+                        "text": "mabeabe kake pasopaiso nakowa",
+                        "sound": "text/sound/65804/919568"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,260 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "ina, kadruwan a nirumaenan druwa i ruma garem i!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66305/924886",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "puwaruma i bau na mainayan an uninan. driyama, kadruwan a trau druwa.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66305/924887",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "iuwa ta dra semangal i! paetreng ta lla adri menau kanadru.",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66305/924888",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "aiwa! kabangabang ta an uninan. pullang lla kikarun maw!",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66305/924889",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "emdaamaw! malladram ku lla.",
+                "textCh": "好的，我一定會！(當然！我知道了。)",
+                "sound": "text/sound/66305/924890",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "auka ku penadanga kana pamamanayan na manay driya an garemay.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66305/924891",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "kayku pullanga!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66305/924892",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "aiwa, kurenang kanku!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66305/924893",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "kemudakuda na bekalan na gulligulliyan",
+                    "textAb": "kemudakuda na bekalan na gulligulliyan?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66306/924896",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ullaya isuwa a rengas",
+                    "textAb": "ullaya isuwa a rengas?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66307/924904",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "menau yu kana puran",
+                    "textAb": "menau yu kana puran?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66308/924912",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "ullaya isuwa i bau na mainayan",
+                    "textAb": "ullaya isuwa i bau na mainayan?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66309/924920",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "a manay?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66304/924883"
+                },
+                "1": {
+                    "text": "ku liputraw dra binekeran.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66306/924897"
+                },
+                "2": {
+                    "text": "maulid ku.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66307/924905"
+                },
+                "3": {
+                    "text": "uniyan kanku kadri.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66308/924913"
+                },
+                "4": {
+                    "text": "adri ku menau. muka isuwa lla?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66309/924921"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "maulid ku killengaw.",
+                    "textCh": "我聽不懂。",
+                    "sound": "text/sound/66304/924884"
+                },
+                "1": {
+                    "text": "tu liputraw lla dra sauiw kan ina.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66306/924898"
+                },
+                "2": {
+                    "text": "ullaya i drenan.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66307/924906"
+                },
+                "3": {
+                    "text": "menau ku. ullaya kana katengadrawan.",
+                    "textCh": "有(我有看到)，在椅子上。",
+                    "sound": "text/sound/66308/924914"
+                },
+                "4": {
+                    "text": "adri driya mupatraran?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66309/924922"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "maulid ku.",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66304/924885"
+                },
+                "1": {
+                    "text": "abalu ku lla.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66306/924899"
+                },
+                "2": {
+                    "text": "sadru ku rengas. ti berayay yu!",
+                    "textCh": "我有多的月桃，給你！",
+                    "sound": "text/sound/66307/924907"
+                },
+                "3": {
+                    "text": "ullaya kandriyu na padrekan.",
+                    "textCh": "那個揹籃裡有。",
+                    "sound": "text/sound/66308/924915"
+                },
+                "4": {
+                    "text": "uniyan? kamelamu uwa ayau!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66309/924923"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "punun",
+                        "i",
+                        "manay",
+                        "barasa",
+                        "a",
+                        "manay",
+                        "kemudakuda",
+                        "na",
+                        "bekalan",
+                        "na",
+                        "gulligulliyan"
+                    ],
+                    "auto": "kemudakuda na bekalan na gulligulliyan"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "puran",
+                        "daw",
+                        "tralun",
+                        "aputr",
+                        "ullaya",
+                        "isuwa",
+                        "a",
+                        "rengas"
+                    ],
+                    "auto": "ullaya isuwa a rengas"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "bellbell",
+                        "i",
+                        "manay",
+                        "ruma",
+                        "alak",
+                        "menau",
+                        "yu",
+                        "kana",
+                        "puran"
+                    ],
+                    "auto": "menau yu kana puran"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "a",
+                        "manay",
+                        "alialian",
+                        "anaanayan",
+                        "sinsi",
+                        "ullaya",
+                        "isuwa",
+                        "i",
+                        "bau",
+                        "na",
+                        "mainayan"
+                    ],
+                    "auto": "ullaya isuwa i bau na mainayan",
+                    "complete": {
+                        "text": "ullaya ku kadri. tralebetreban ku anger......",
+                        "sound": "text/sound/66309/924924"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

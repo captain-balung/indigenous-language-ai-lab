@@ -1,0 +1,408 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Siaaneane ku nagane su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62730/872503",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Sia Kalrimadraw ku naganeli.",
+                "textCh": "我叫Kalrimadraw。",
+                "sound": "text/sound/62730/872504",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Yainu ku daane su?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62730/872505",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Tualaduaku cekele Kucapungane.",
+                "textCh": "我從好茶部落來。",
+                "sound": "text/sound/62730/872506",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Tuakualrenga su?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62730/872507",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Iniana!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62730/872508",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Lrilangadhaku ku kualre, lritupalra su?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62730/872509",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Kainaku siapaisu. Lripakisaulru su nakuane?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62730/872510",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Uunu, nau pakisaalru musuane.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62730/872511",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Duhau",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Aruy",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "teldrɨka",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Pacake",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Taliudrane",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Laipane",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "Siaaneane ku nagane su",
+                    "textAb": "Siaaneane ku nagane su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62731/872512",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "Yakay inu ku daane su",
+                    "textAb": "Yakay inu ku daane su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62732/872521",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kalrimadraw pakisaalruaili ku sapacapacasane",
+                    "textAb": "Kalrimadraw pakisaalruaili ku sapacapacasane.",
+                    "textCh": "Kalrimadraw借我筆好嗎？",
+                    "sound": "text/sound/62733/872537",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Paelrese lripakaisaalru su nakuane ku sapacapacasane",
+                    "textAb": "Paelrese lripakaisaalru su nakuane ku sapacapacasane?",
+                    "textCh": "Paelrese借我筆好嗎？",
+                    "sound": "text/sound/62733/872539",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kalrimadraw su nakuane ku sasupisupilrane",
+                    "textAb": "Kalrimadraw su nakuane ku sasupisupilrane?",
+                    "textCh": "Kalrimadraw借我橡皮擦好嗎？",
+                    "sound": "text/sound/62734/872549",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Paelrese ala pakisaalruaili ku sasupisupilrane",
+                    "textAb": "Paelrese ala pakisaalruaili ku sasupisupilrane?",
+                    "textCh": "Paelrese借我橡皮擦好嗎？",
+                    "sound": "text/sound/62734/872551",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kalrimadraw paralubaili malra ku suape",
+                    "textAb": "Kalrimadraw, paralubaili malra ku suape.",
+                    "textCh": "Kalrimadraw，請幫我拿掃把。",
+                    "sound": "text/sound/62735/872557",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Paelrese paralubaili malra ku suape",
+                    "textAb": "Paelrese, paralubaili malra ku suape.",
+                    "textCh": "Paelrese，請幫我拿掃把。",
+                    "sound": "text/sound/62735/872559",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "kaiwathingale",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62729/872502"
+                },
+                "1": {
+                    "text": "Ku naganeli sia Kalrimadraw.",
+                    "textCh": "我的名字叫Kalrimadraw。",
+                    "sound": "text/sound/62731/872513"
+                },
+                "2": {
+                    "text": "Ku daaneli yakay Rinari.",
+                    "textCh": "我的家在禮納里",
+                    "sound": "text/sound/62732/872522"
+                },
+                "3": {
+                    "text": "Uunu, nau pakiasaalru musuane.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62733/872538"
+                },
+                "4": {
+                    "text": "Mialri kakadrua ku nakuane.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62734/872550"
+                },
+                "5": {
+                    "text": "Uunu, ni kikay.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62735/872558"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "manemane",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62729/872500"
+                },
+                "1": {
+                    "text": "Ku naganeli sia Paelrese.",
+                    "textCh": "我的名字叫Paelrese。",
+                    "sound": "text/sound/62731/872514"
+                },
+                "2": {
+                    "text": "Ku daaneli yakay Rinari.",
+                    "textCh": "我的家在禮納里",
+                    "sound": "text/sound/62732/872523"
+                },
+                "3": {
+                    "text": "Savaevaku.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62733/872540"
+                },
+                "4": {
+                    "text": "Uunu, malra ni.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62734/872552"
+                },
+                "5": {
+                    "text": "Kainaku wathingale ku taikaiyane.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62735/872560"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "lasu",
+                        "liniane",
+                        "kavay",
+                        "tavanane",
+                        "siaaneane",
+                        "ku",
+                        "nagane",
+                        "su"
+                    ],
+                    "auto": "siaaneane ku nagane su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kalrimadraw",
+                            "Bali",
+                            "Paelrese",
+                            "Rinari"
+                        ],
+                        "target-1": "Kalrimadraw",
+                        "target-2": "Paelrese"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "belenge",
+                        "aneane",
+                        "thiili",
+                        "silrigu",
+                        "kunumi",
+                        "lini",
+                        "lregelrege",
+                        "yakay",
+                        "inu",
+                        "ku",
+                        "daane",
+                        "su"
+                    ],
+                    "auto": "yakay inu ku daane su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Rinari",
+                            "sangualreeme",
+							"Rinari",
+                            "subelebelenge",
+                            "drakerale"
+                        ],
+                        "target-1": "Rinari",
+                        "target-2": "Rinari"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "lasuane",
+                        "lingase",
+                        "hungu",
+                        "kunay",
+                        "kavay",
+                        "Kalrimadraw",
+                        "Paelrese",
+                        "lripakaisaalru",
+                        "su",
+                        "nakuane",
+						"pakisaalruaili",
+                        "ku",
+                        "sapacapacasane"
+                    ],
+                    "auto": {
+                        "target-1": "Kalrimadraw pakisaalruaili ku sapacapacasane",
+                        "target-2": "Paelrese lripakaisaalru su nakuane ku sapacapacasane"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "sapacapacasane",
+                        "hungu",
+                        "musuane",
+                        "kavay",
+                        "Kalrimadraw",
+                        "Paelrese",
+						"su",
+						"nakuane",
+                        "ala",
+                        "pakisaalruaili",
+                        "ku",
+                        "sasupisupilrane"
+                    ],
+                    "auto": {
+                        "target-1": "Kalrimadraw su nakuane ku sasupisupilrane",
+                        "target-2": "Paelrese ala pakisaalruaili ku sasupisupilrane"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "saselreselredrane",
+                        "matumane",
+                        "kadrua",
+                        "suape(lripethele",
+                        "lasu(iniane",
+                        "kunumi",
+                        "Kalrimadraw",
+                        "Paelrese",
+                        "paralubaili",
+                        "malra",
+                        "ku",
+                        "suape"
+                    ],
+                    "auto": {
+                        "target-1": "Kalrimadraw paralubaili malra ku suape",
+                        "target-2": "Paelrese paralubaili malra ku suape"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

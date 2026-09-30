@@ -1,0 +1,212 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Tanibu, pangqa wa qali ya simaq, amuntua ihu?",
+                "textCh": "Tanibu，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65679/918571",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ya simaq iaku mat ti Puni amutusi waqrath pasansan sa bunlhaz, ya ihu?",
+                "textCh": "我明天要和Puni去溪邊烤肉，你呢？",
+                "sound": "text/sound/65679/918572",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "tunmaza iaku mathuaw maqitan inrarabazaan! shduu iaku ya amuntal?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65679/918573",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ihala pakikalhi ihu ina!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65679/918574",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ina, shduu iaku amuntal tanatuqash mutusi waqrath?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65679/918575",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "shduu, ata tu iaramaz maniun!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65679/918576",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "ua, mafazaq miaramaz iamin!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65679/918577",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "numa s kilhimin uhu",
+                    "textAb": "numa s kilhimin uhu?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65682/918583",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "amunkuza musui waqrath",
+                    "textAb": "amunkuza musui waqrath?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65684/918599",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "shimulikuan mihu a funush",
+                    "textAb": "shimulikuan mihu a funush?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65686/918627",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "numa qa?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65677/918559"
+                },
+                "1": {
+                    "text": "amakilhim iaku rabu masa pasansan a dawaz.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65682/918584"
+                },
+                "2": {
+                    "text": "isui, huya ianan mara’in a fatu iutu.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65684/918600"
+                },
+                "3": {
+                    "text": "ua, araiza ihu!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65686/918628"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ani tu tunmaza?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65677/918560"
+                },
+                "1": {
+                    "text": "amakilhim iaku tipur masa buna.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65682/918585"
+                },
+                "2": {
+                    "text": "maura iaku munkuza waqrath.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65684/918601"
+                },
+                "3": {
+                    "text": "uka mani iaku.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65686/918629"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "maura!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65677/918561"
+                },
+                "2": {
+                    "text": "inai, thuini iaku minakatantu waqrath mutaun.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65684/918602"
+                },
+                "3": {
+                    "text": "ata, murubuziza naak a funush.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65686/918630"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "intua",
+                        "minu",
+                        "shmimul",
+                        "numa",
+                        "s",
+                        "kilhimin",
+                        "uhu"
+                    ],
+                    "auto": "numa s kilhimin uhu",
+                    "buylist": [
+                        "afariw a aniamin",
+                        "rabu",
+                        "pasansan a dawaz",
+                        "tipur",
+                        "buna",
+                        "bunlhaz",
+                        "qarithuy"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "hudun",
+                        "numa",
+                        "ata",
+                        "wazaqan",
+                        "a",
+                        "shirshir",
+                        "amunkuza",
+                        "musui",
+                        "waqrath"
+                    ],
+                    "auto": "amunkuza musui waqrath"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "ata",
+                        "numa",
+                        "kakthi",
+                        "baruku",
+                        "shimulikuan",
+                        "mihu",
+                        "a",
+                        "funush"
+                    ],
+                    "auto": "shimulikuan mihu a funush",
+                    "complete": {
+                        "text": "anuniza ihu mindahip iakin",
+                        "sound": "text/sound/65686/918631"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

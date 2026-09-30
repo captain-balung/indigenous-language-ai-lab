@@ -1,0 +1,406 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Ima ka hangan su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62444/864989",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ukan ka hangan mu.",
+                "textCh": "我叫Ukan。",
+                "sound": "text/sound/62444/864990",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Wa inu ka sapah su?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62444/864991",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Kndadax ku alang Toda ka yaku.",
+                "textCh": "我從都達部落來。",
+                "sound": "text/sound/62444/864992",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Mnekan su uqun mrbu da?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62444/864993",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ini na wah!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62444/864994",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Musa ku mari equn mrbu, supu ta musa haw?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62444/864995",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ini ku adas pila. Malu su pkbarux pila yaku hu?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62444/864996",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Iyaq, kbrxun misu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62444/864997",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Tongan",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Kumu",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Pulan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Basaw",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Gluban",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Ayuc",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "ima ka hangan su",
+                    "textAb": "Ima ka hangan su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62445/864998",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "wa inu ka sapah su",
+                    "textAb": "Wa inu ka sapah su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62446/865007",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Ukan kbrxi ku impicu su haw",
+                    "textAb": "Ukan, kbrxi ku impicu su haw?",
+                    "textCh": "Ukan借我筆好嗎？",
+                    "sound": "text/sound/62447/865023",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Lubi kbrxi ku impicu su haw",
+                    "textAb": "Lubi, kbrxi ku impicu su haw?",
+                    "textCh": "Lubi借我筆好嗎？",
+                    "sound": "text/sound/62447/865025",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Ukan kbrxi ku ssurus su haw",
+                    "textAb": "Ukan, kbrxi ku ssurus su haw?",
+                    "textCh": "Ukan借我橡皮擦好嗎？",
+                    "sound": "text/sound/62448/865035",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Lubi kbrxi ku ssurus su haw",
+                    "textAb": "Lubi, kbrxi ku ssurus su haw?",
+                    "textCh": "Lubi借我橡皮擦好嗎？",
+                    "sound": "text/sound/62448/865037",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Ukan dyawi ku mangal sksik",
+                    "textAb": "Ukan, dyawi ku mangal sksik.",
+                    "textCh": "Ukan，請幫我拿掃把。",
+                    "sound": "text/sound/62449/865043",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Lubi dyawi ku mangal sksik",
+                    "textAb": "Lubi, dyawi ku mangal sksik.",
+                    "textCh": "Lubi，請幫我拿掃把。",
+                    "sound": "text/sound/62449/865045",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Ini kla.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62443/864988"
+                },
+                "1": {
+                    "text": "Ukan ka hangan mu.",
+                    "textCh": "我的名字叫Ukan。",
+                    "sound": "text/sound/62445/864999"
+                },
+                "2": {
+                    "text": "Wa Toda ka sapah mu.",
+                    "textCh": "我的家在都達",
+                    "sound": "text/sound/62446/865008"
+                },
+                "3": {
+                    "text": "Iyaq, kbrxun misu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62447/865024"
+                },
+                "4": {
+                    "text": "Uka ka naku uri.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62448/865036"
+                },
+                "5": {
+                    "text": "Iyaq, ngali ka sksik ni.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62449/865044"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Manu?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62443/864986"
+                },
+                "1": {
+                    "text": "Lubi ka hangan mu.",
+                    "textCh": "我的名字叫Lubi。",
+                    "sound": "text/sound/62445/865000"
+                },
+                "2": {
+                    "text": "Wa Ruku Daya ka alang mu.",
+                    "textCh": "我的家在鹿谷達雅",
+                    "sound": "text/sound/62446/865009"
+                },
+                "3": {
+                    "text": "Kingal bay ka naku.",
+                    "textCh": "我只有一支。",
+                    "sound": "text/sound/62447/865026"
+                },
+                "4": {
+                    "text": "Iyaq, ngali.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62448/865038"
+                },
+                "5": {
+                    "text": "Ini mu klayi wa inu.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62449/865046"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "hiya",
+                        "ndhiya",
+                        "inu",
+                        "sapah",
+                        "Ima",
+                        "ka",
+                        "hangan",
+                        "su"
+                    ],
+                    "auto": "ima ka hangan su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Ukan",
+                            "Ruku",
+                            "Daya",
+                            "Lubi",
+                            "Toda"
+                        ],
+                        "target-1": "Ukan",
+                        "target-2": "Lubi"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "braw",
+                        "siyaw",
+                        "qmita",
+						"patas",
+                        "yamu",
+                        "dwiyaq",
+                        "wa",
+                        "inu",
+                        "ka",
+                        "sapah",
+                        "su"
+                    ],
+                    "auto": "wa inu ka sapah su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Toda",
+                            "sknxal",
+                            "karac",
+                            "Ruku Daya",
+                            "yayung"
+                        ],
+                        "target-1": "Toda",
+                        "target-2": "Ruku Daya"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nhiya",
+                        "qnawal",
+                        "patas",
+                        "yami",
+                        "inu",
+                        "Ukan",
+                        "Lubi",
+                        "kbrxi",
+                        "ku",
+                        "impicu",
+                        "su",
+                        "haw"
+                    ],
+                    "auto": {
+                        "target-1": "Ukan kbrxi ku impicu su haw",
+                        "target-2": "Lubi kbrxi ku impicu su haw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "impicu",
+                        "patas",
+                        "nisu",
+                        "inu",
+                        "Ukan",
+                        "Lubi",
+                        "kbrxi",
+                        "ku",
+                        "ssurus",
+                        "su",
+                        "haw"
+                    ],
+                    "auto": {
+                        "target-1": "Ukan kbrxi ku ssurus su haw",
+                        "target-2": "Lubi kbrxi ku ssurus su haw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "jyoking",
+                        "hmuya",
+                        "uka",
+                        "smksik",
+                        "hiya",
+                        "yamu",
+                        "Ukan",
+                        "Lubi",
+                        "dyawi",
+                        "ku",
+                        "mangal",
+                        "sksik"
+                    ],
+                    "auto": {
+                        "target-1": "Ukan dyawi ku mangal sksik",
+                        "target-2": "Lubi dyawi ku mangal sksik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

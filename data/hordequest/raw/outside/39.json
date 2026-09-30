@@ -1,0 +1,217 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "kalimazaw, kasede’an nu ’emanan zi, awa u i iyan?",
+                "textCh": "kalimazaw，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65766/919259",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "nu ’emanan salralrangan ku kani Valrayvay awa mi i valilruwan kemeranga za ’alum, inu mu?",
+                "textCh": "我明天要和Valrayvay去溪邊烤肉，你呢？",
+                "sound": "text/sound/65766/919260",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "nu kinger ta mu ’inava kivangangavangan! karuwa ku salrangan mukuwa?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65766/919261",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kiumalri ziya i ina!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65766/919262",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ina, karuwa ku salrangan kani valri mukuwa i valilruwan?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65766/919263",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "uwa kurelrang, maw mu kilrivak mu!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65766/919264",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "mazalram mi, kiyalrivak mi!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65766/919265",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "aaya’ u za eman",
+                    "textAb": "aaya’ u za eman?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65767/919269",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "i valilruwan mu makalrang ta i iyan mukuwa",
+                    "textAb": "i valilruwan mu makalrang ta i iyan mukuwa?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65769/919285",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "karuwa pavulas za tazaw kaninku",
+                    "textAb": "karuwa pavulas za tazaw kaninku?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65771/919294",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "eman",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65765/919256"
+                },
+                "1": {
+                    "text": "kay ku melaka za ’aped zi kakerangan.",
+                    "textCh": "我去拿木炭和烤肉網。",
+                    "sound": "text/sound/65767/919270"
+                },
+                "2": {
+                    "text": "kaziyua, ulra ma’izang a varasa’ i kazu.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65769/919286"
+                },
+                "3": {
+                    "text": "halra, alaku.",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65771/919295"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ma’ulid kinger",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65765/919257"
+                },
+                "1": {
+                    "text": "kay ku kikudumuwa zi kivurasiya.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65767/919271"
+                },
+                "2": {
+                    "text": "’azi ku mazalram za ulra i iyan na valilruwan.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65769/919287"
+                },
+                "3": {
+                    "text": "iniyan ku za kemazu.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65771/919296"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "’azi mazalram!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65765/919258"
+                },
+                "2": {
+                    "text": "i kania, maw ku ziya kemay valilruwan muruma’.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65769/919288"
+                },
+                "3": {
+                    "text": "’azi, muranak lra ku tazaw.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65771/919297"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "i",
+                        "iyan",
+                        "kemazu",
+                        "kivulas",
+                        "aaya’",
+                        "u",
+                        "za",
+                        "eman"
+                    ],
+                    "auto": "aaya’ u za eman",
+                    "buylist": [
+                        "na tratrima’en na eman ziya",
+                        "’aped",
+                        "kakerangan",
+                        "kudumu",
+                        "vurasi",
+                        "’alum",
+                        "vetrinun"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "zenan",
+                        "eman",
+                        "amanan",
+                        "lrevelrevek",
+                        "i",
+                        "valilruwan",
+                        "mu",
+                        "makalrang",
+                        "ta",
+                        "i",
+                        "iyan",
+                        "mukuwa"
+                    ],
+                    "auto": "i valilruwan mu makalrang ta i iyan mukuwa"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "’azi",
+                        "eman",
+                        "’aratrip",
+                        "kisi",
+                        "karuwa",
+                        "pavulas",
+                        "za",
+                        "tazaw",
+                        "kaninku"
+                    ],
+                    "auto": "karuwa pavulas za tazaw kaninku",
+                    "complete": {
+                        "text": "lrayuwan za nu ipulralrang",
+                        "sound": "text/sound/65771/919298"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

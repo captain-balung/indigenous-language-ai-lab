@@ -1,0 +1,413 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Cima saw ku ngangan nu misu?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62158/857475",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ci Kacaw ku ngangan nu maku.",
+                "textCh": "我叫Kacaw。",
+                "sound": "text/sound/62158/857476",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Icuwa saw ku luma’ nu misu?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62158/857477",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Namaka Angcuh a niyaru’ kaku.",
+                "textCh": "我從安通部落來。",
+                "sound": "text/sound/62158/857478",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Namaranam tu haw kisu?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62158/857479",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Caay hen!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62158/857480",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "A micakay kaku tu sakaranam, a mihakulung haw kisu?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62158/857481",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Awaay ku nikeridan nu maku tu pida, dengay haw kisu a pacaliw i takuwan?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62158/857482",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Hayi pacaliway nu maku kisu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62158/857483",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Pailasan",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Imuy",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Makerahay",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Kulas",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Kiwit",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Aris",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "cima saw ku ngangan nu misu",
+                    "textAb": "Cima saw ku ngangan nu misu?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62159/857484",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "icuwa saw ku luma’ nu misu",
+                    "textAb": "Icuwa saw ku luma’ nu misu?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62160/857493",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacaw pacaliw haw kaku tu sapisurit",
+                    "textAb": "Kacaw! Pacaliw haw kaku tu sapisurit?",
+                    "textCh": "Kacaw借我筆好嗎？",
+                    "sound": "text/sound/62161/857509",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Panay pacaliw haw kaku tu sapisurit",
+                    "textAb": "Panay, pacaliw haw kaku tu sapisurit?",
+                    "textCh": "Panay借我筆好嗎？",
+                    "sound": "text/sound/62161/857511",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacaw pacaliwi kaku tu savuric kapah tu haw",
+                    "textAb": "Kacaw! pacaliwi kaku tu savuric kapah tu haw?",
+                    "textCh": "Kacaw借我橡皮擦好嗎？",
+                    "sound": "text/sound/62162/857521",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Panay pacaliwi kaku tu savuric kapah tu haw",
+                    "textAb": "Panay! pacaliwi kaku tu savuric kapah tu haw?",
+                    "textCh": "Panay借我橡皮擦好嗎？",
+                    "sound": "text/sound/62162/857523",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kacaw padangi kaku a miala tu saasik",
+                    "textAb": "Kacaw! Padangi kaku a miala tu saasik.",
+                    "textCh": "Kacaw，請幫我拿掃把。",
+                    "sound": "text/sound/62163/857529",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Panay padangi kaku a miala tu saasik",
+                    "textAb": "Panay, padangi kaku a miala tu saasik",
+                    "textCh": "Panay，請幫我拿掃把。",
+                    "sound": "text/sound/62163/857531",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Caay kavana’.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62157/857474"
+                },
+                "1": {
+                    "text": "Ci Kacaw ku ngangan nu maku.",
+                    "textCh": "我的名字叫Kacaw。",
+                    "sound": "text/sound/62159/857485"
+                },
+                "2": {
+                    "text": "I Kenuy ku luma’ nu maku.",
+                    "textCh": "我的家在根努夷",
+                    "sound": "text/sound/62160/857494"
+                },
+                "3": {
+                    "text": "Hay, pacaliway nu maku kisu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62161/857510"
+                },
+                "4": {
+                    "text": "Caay ka sisavuric kaku.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62162/857522"
+                },
+                "5": {
+                    "text": "Ya, nu misu kinian a saasik.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62163/857530"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "maan",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62157/857472"
+                },
+                "1": {
+                    "text": "Ci Panay ku ngangan nu maku.",
+                    "textCh": "我的名字叫panay。",
+                    "sound": "text/sound/62159/857486"
+                },
+                "2": {
+                    "text": "I Natauran ku luma’ nu maku.",
+                    "textCh": "我的家那荳蘭",
+                    "sound": "text/sound/62160/857495"
+                },
+                "3": {
+                    "text": "Cacay ku nu maku.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62161/857512"
+                },
+                "4": {
+                    "text": "Hayi, alai",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62162/857524"
+                },
+                "5": {
+                    "text": "Caay kavana’ kaku i cuwa ku saasik.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62163/857532"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "cira",
+                        "heni",
+                        "cuwa",
+                        "luma’",
+                        "cima",
+                        "saw",
+                        "ku",
+                        "ngangan",
+                        "nu",
+                        "misu"
+                    ],
+                    "auto": "cima saw ku ngangan nu misu",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kacaw",
+                            "Natauran",
+                            "Lisin",
+                            "Panay",
+                            "Kenuy"
+                        ],
+                        "target-1": "Kacaw",
+                        "target-2": "Panay"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "kudul",
+                        "cima",
+                        "tepar",
+                        "micudad",
+                        "kamu",
+                        "ku heni",
+                        "kudul",
+                        "icuwa",
+                        "saw",
+                        "ku",
+                        "luma’",
+                        "nu",
+                        "misu"
+                    ],
+                    "auto": "icuwa saw ku luma’ nu misu",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kenuy",
+                            "vangsis",
+                            "kakarayan",
+                            "Natauran",
+                            "tarawadaw"
+                        ],
+                        "target-1": "Kenuy",
+                        "target-2": "Natauran"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nira",
+                        "telay",
+                        "cudad",
+                        "kita",
+                        "cuwa",
+                        "Kacaw",
+                        "Panay",
+                        "pacaliw",
+                        "haw",
+                        "kaku",
+                        "tu",
+                        "sapisurit"
+                    ],
+                    "auto": {
+                        "target-1": "Kacaw pacaliw haw kaku tu sapisurit",
+                        "target-2": "Panay pacaliw haw kaku tu sapisurit"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "sapisurit",
+                        "cudad",
+                        "cuwa",
+                        "Kacaw",
+                        "Panay",
+                        "pacaliwi",
+                        "kaku",
+                        "tu",
+                        "savuric",
+                        "kapah",
+                        "tu",
+                        "haw"
+                    ],
+                    "auto": {
+                        "target-1": "Kacaw pacaliwi kaku tu savuric kapah tu haw",
+                        "target-2": "Panay pacaliwi kaku tu savuric kapah tu haw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "sasipu",
+                        "mamaan",
+                        "awaay",
+                        "milesimet",
+                        "cira",
+                        "kamu",
+                        "Kacaw",
+                        "Panay",
+                        "padangi",
+                        "kaku",
+                        "a",
+                        "miala",
+                        "tu",
+                        "saasik"
+                    ],
+                    "auto": {
+                        "target-1": "Kacaw padangi kaku a miala tu saasik",
+                        "target-2": "Panay padangi kaku a miala tu saasik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
