@@ -58,6 +58,91 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .report-list strong{display:block}
 .report-list p{margin:.2rem 0 0;font-weight:700}
 
+/* ── 任務關卡（官方 phase2）────────────────────────────────────
+   官方是三層 1000×700 的整幅圖疊在一起：課桌背景（2.jpg）、主角、兩位同學。
+   人物圖是透明背景的整幅圖，必須直接疊在舞台上（不是按鈕裡面，否則會被按鈕的
+   盒子再縮放一次、位置也會偏）。可點的位置是另外疊的透明按鈕，框住那位同學：
+   官方 CSS 的框（left 50px、寬 250px、top 330px）比圖上人物偏右上、也切到桌面，
+   這裡改用官方 PNG 的不透明範圍量過一次：
+     target-1 left 2.5%、top 49.1%、寬 28.6%、高 50.7%
+     target-2 left 66.8%、top 49.3%、寬 28.6%、高 50.3%
+   全部用百分比，版面才不會隨視窗寬度跑掉。 */
+/*   圖層與可點框要相對「圖」定位，不是相對整個 .stage：窄螢幕時對話卡排在圖的下面
+   （見 1200px 以下那段），.stage 會比圖高，圖層用 inset:0 就會被一起撐高，
+   人物被畫偏、還蓋到下面的卡片上。所以場景圖與圖層、可點框一起放進 .quest-scene，
+   這個盒子由圖本身撐高，比例與座標才不會跑掉。 */
+.quest-scene{position:relative;overflow:hidden}
+.quest-layers{position:absolute;inset:0}
+.quest-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+/* 可點區的座標全部來自教材（已換算成百分比），所以疊在場景上就好 */
+.quest-target,.quest-option,.quest-click{position:absolute;padding:0;border:0;border-radius:14px;background:transparent;cursor:pointer}
+.quest-target::after,.quest-option::after,.quest-click::after{content:"";position:absolute;inset:0;border:4px solid transparent;border-radius:14px;transition:border-color .15s}
+.quest-target:hover::after,.quest-option:hover::after,.quest-click:hover::after{border-color:rgba(255,255,255,.75)}
+.quest-target.is-selected::after,.quest-option.is-selected::after{border-color:var(--coral)}
+.quest-target:focus-visible,.quest-option:focus-visible,.quest-click:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
+.quest-target.is-asked{cursor:default}
+.quest-target__tag{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:.15rem .5rem;border:3px solid var(--ink);border-radius:10px;background:#fff;font-weight:900;white-space:nowrap}
+/* take 的選項放在場景裡；被鎖住的那個要讓人看得出來不能點 */
+.quest-option.is-locked{cursor:not-allowed;opacity:.45}
+.quest-option.is-locked::after{border-color:rgba(37,49,84,.5);border-style:dashed}
+.quest-option.is-taken::after{border-color:var(--mint)}
+/* 目標面板：選項清單、購物籃、結語都在右欄，輸入區的下上方 */
+.quest-goal{margin-bottom:1rem;padding:.9rem 1rem;border:3px solid var(--ink);border-radius:22px;background:#fff}
+.quest-goal h3{margin:0 0 .5rem;font-size:1.2rem}
+.quest-goal p{margin:.3rem 0 0;font-weight:800}
+.quest-options{display:flex;flex-wrap:wrap;gap:.5rem}
+.quest-option-btn{display:grid;justify-items:center;gap:.2rem;padding:.35rem;border:2px solid var(--ink);border-radius:14px;background:#fff;font:inherit;font-weight:800;cursor:pointer}
+.quest-option-btn img{width:74px;height:74px;object-fit:contain}
+.quest-option-btn.is-picked{background:var(--mint);box-shadow:0 3px 0 var(--ink)}
+.quest-option-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* 場景裡不好點的東西（窄螢幕），在右欄多給一列按鈕；寬螢幕藏起來。 */
+.quest-options--compact{margin-top:.7rem;padding-top:.6rem;border-top:2px dashed var(--ink);display:none}
+.quest-options--compact .quest-option-btn img{width:40px;height:40px}
+@media(max-width:720px){.quest-options--compact{display:flex}}
+.quest-basket{display:flex;flex-wrap:wrap;gap:.5rem;min-height:74px;margin-bottom:.6rem;padding:.4rem;border:2px dashed var(--ink);border-radius:14px;background:#fffdf5}
+.quest-basket img{width:56px;height:56px;object-fit:contain}
+/* 籃子裡的東西可以點出來（放錯了自己拿回去換），右上角的 × 提示這件事 */
+.quest-basket__item{position:relative;padding:0;border:2px solid transparent;border-radius:12px;background:transparent;cursor:pointer}
+.quest-basket__item span{position:absolute;top:-9px;right:-9px;display:grid;place-items:center;width:22px;height:22px;border:2px solid var(--ink);border-radius:50%;background:#fff;font-weight:900;line-height:1}
+.quest-basket__item:hover{border-color:var(--ink)}
+.quest-basket__item:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.quest-basket-empty{align-self:center;margin:0;font-weight:700;opacity:.75}
+ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-height:1.5}
+.quest-end{font-size:1.3rem;line-height:1.5}
+/* 選中的同學要看得見選取圈，鍵盤 focus 也要有框線 */
+.quest-target::after{content:"";position:absolute;inset:0;border:4px solid transparent;border-radius:18px;transition:border-color .15s}
+.quest-target:hover::after{border-color:rgba(255,255,255,.7)}
+.quest-target.is-selected::after{border-color:var(--coral)}
+.quest-target:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
+.quest-target.is-asked{cursor:default}
+.quest-target__tag{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:.15rem .5rem;border:3px solid var(--ink);border-radius:10px;background:#fff;font-weight:900;white-space:nowrap}
+/* 任務卡改放在場景上方：官方把詞卡區放在場景「下面」，所以桌面是空的，
+   過關時那支筆／橡皮擦／掃把才看得到。我們的卡片是壓在場景上的，
+   壓在下面會把桌面蓋掉，所以移到上面，桌面留給過關的物件。 */
+.quest-board{top:1rem;bottom:auto}
+.quest-reward{position:absolute;z-index:2;object-fit:contain}
+.quest-reply__line{display:block;font-weight:800}
+.quest-reply__line b{color:var(--coral)}
+/* 任務說明比對話長一點，字級略收 */
+.quest-board .dialogue__zh{font-size:1.5rem}
+.quest-tags{margin-top:.7rem;padding-top:.6rem;border-top:2px dashed var(--ink)}
+.quest-tags p{margin:0 0 .5rem;font-weight:800;font-size:.95rem}
+.quest-tag-dock{display:flex;flex-wrap:wrap;gap:.5rem}
+.quest-tag{padding:.35rem .7rem;border:3px solid var(--ink);border-radius:12px;background:#fff;font:inherit;font-weight:900;cursor:pointer}
+.quest-tag.is-selected{background:var(--coral);color:#fff}
+.quest-tag.is-used{opacity:.35;cursor:default}
+.hint-box{margin-top:1rem;padding:.8rem 1rem;border:3px dashed var(--ink);border-radius:18px;background:#fffdf5}
+.hint-box p{margin:0 0 .5rem;font-weight:800}
+.hint-box ul{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.hint-box li{padding:.2rem .55rem;border:2px solid var(--ink);border-radius:10px;background:#fff;font-weight:800}
+.quest-offer{margin:0 0 .6rem;font-weight:800}
+/* 關卡選擇：想重玩第幾關就直接點，不必從第 1 關玩回去 */
+.level-picker{display:flex;flex-wrap:wrap;gap:.35rem;margin:0}
+.level-picker button{min-height:40px;min-width:44px;padding:.2rem .6rem;border:2px solid var(--ink);border-radius:999px;background:#fff;font:inherit;font-weight:900}
+.level-picker button.is-current{background:var(--coral);color:#fff;box-shadow:0 3px 0 var(--ink)}
+.level-picker button.is-done::after{content:" ✓"}
+.level-picker button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+
 /* 1201px 以上：左邊場景、右邊輸入區。兩欄都在正常流程裡（不用絕對定位）——
    用絕對定位時輸入區不會撐高容器，會直接從 STEP 2 面板底部溢出。
    欄寬固定，所以從對方說話到換你說，場景的大小與位置都不會變。 */
@@ -98,12 +183,36 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
   .dialogue{grid-template-columns:auto 1fr;gap:.2rem .7rem;padding:.7rem .8rem;left:.6rem;right:.6rem;bottom:.6rem}
   .dialogue__avatar{width:52px;height:52px}
   .dialogue__zh{font-size:1.3rem}
+  .quest-board .dialogue__zh{font-size:1.15rem}
+  /* 名牌在小小的螢幕上不好點，給大一點的觸控範圍 */
+  .quest-target__tag{border-width:2px;font-size:.85rem}
+  .hint-box{font-size:.9rem}
   .dialogue__controls .audio-state{font-size:.85rem}
   .submit-row{flex-direction:column;align-items:stretch}
   .submit-row button{width:100%}
 }
-/* 螢幕很矮時場景圖還是照比例，只是畫面小一點 */
+/* 螢幕很矮時場景圖還是照比例，只是畫面小一點。
+   這裡要讓「高度」決定大小、寬度跟著等比縮（width:auto），框才會剛好等於圖；
+   若維持 width:100% 只壓 max-height，框會比圖寬、左右留大片空白。 */
 @media(max-height:640px){
-  .stage__bg{max-height:240px}
+  .stage__bg{width:auto;max-width:100%;height:240px;max-height:none;margin-inline:auto}
+  .quest-scene{width:auto;max-width:100%;height:240px;margin-inline:auto}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* 鍵盤操作的焦點圈：這個頁的按鈕都有 3px 粗邊框，瀏覽器預設的 focus 圈
+   常常被蓋掉或看不清楚。用 focus-visible 才不會在滑鼠點擊時也畫出來。 */
+a:focus-visible,button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:3px solid var(--coral);
+  outline-offset:3px;
+  border-radius:12px;
+}
+/* 選中的項目（角色卡、關卡鈕）本身已經有底色，焦點圈要夠粗才看得出來 */
+.theme:focus-visible,.role:focus-visible,.level-picker button:focus-visible{
+  outline:4px solid var(--coral);
+  outline-offset:3px;
+}
+/* 深色底上的按鈕（送出／再聽一次）焦點圈用亮色才看得出來 */
+.primary:focus-visible,.quest-dialogue button:focus-visible{
+  outline-color:var(--ink);
+}

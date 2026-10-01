@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-09-30T08:07:22.801Z",
+  "generatedAt": "2026-10-01T05:00:53.208Z",
   "recordCount": 1008,
   "files": [
+    {
+      "url": "https://web.klokah.tw/interact/hordequest/json/setup/lesson.json",
+      "path": "raw/setup/lesson.json",
+      "bytes": 1037,
+      "sha256": "0d9fc315e9bd5195b7e3f61e1282c296c87a8b7c30114c9cafab1cadd756e4c5"
+    },
+    {
+      "url": "https://web.klokah.tw/interact/hordequest/json/setup/find.json",
+      "path": "raw/setup/find.json",
+      "bytes": 2511,
+      "sha256": "178cc8e4e2441e9543ead14c7d3179da5fe462a6733b5195ae1800f15ce5c22b"
+    },
+    {
+      "url": "https://web.klokah.tw/interact/hordequest/json/setup/outside.json",
+      "path": "raw/setup/outside.json",
+      "bytes": 2377,
+      "sha256": "231e84e17843c3a8b2cf63d09639fa39e656ea3df9aab6627cd786b9808d4b00"
+    },
     {
       "dialectId": 1,
       "theme": "lesson",
@@ -1139,259 +1157,259 @@
     {
       "dialectId": 1,
       "path": "dialects/1.json",
-      "bytes": 13623,
-      "sha256": "df531e707f54df627ef417c5de8f0751890a20741266082dd4596ee4f4bd9de9"
+      "bytes": 74364,
+      "sha256": "976653d384528e15e3ea7daba5dc1e14a6f7d0af2c2fb050d9a1a5570018c8b1"
     },
     {
       "dialectId": 2,
       "path": "dialects/2.json",
-      "bytes": 13646,
-      "sha256": "fa9e12b2221ce82575a8761c14f00549690edf4b753b1115013c248ef7633edf"
+      "bytes": 73627,
+      "sha256": "ab43c42910389ff1cf69cfa609e7114eb50f8ed82ea074dd149d560df376435f"
     },
     {
       "dialectId": 3,
       "path": "dialects/3.json",
-      "bytes": 13609,
-      "sha256": "ed3c38964ffa655721bcaf355c7bed416126958783918ab736534c4ef840bdb6"
+      "bytes": 73397,
+      "sha256": "2ffadbb8475a424cabdd3dd595ea944ca82ef5f0d6dad2c6217003789366ea1b"
     },
     {
       "dialectId": 4,
       "path": "dialects/4.json",
-      "bytes": 13670,
-      "sha256": "58ebf1a77c22f0915c30ff0e3cc262b3b4d95796d734a43cae29c6bb6ab5fbcb"
+      "bytes": 74081,
+      "sha256": "f8b07e450956a83bb6474cd7350a39793acd9a08ff5753a0304c4b8303ebb465"
     },
     {
       "dialectId": 5,
       "path": "dialects/5.json",
-      "bytes": 13691,
-      "sha256": "93f3b783e934e50799a0db14869507033c4360a82da4d207ae24d161e4eb212d"
+      "bytes": 73969,
+      "sha256": "b67cfb6d0a53088f7e6cad2b85f666f55ceb697f6d52839e66e6bdd53e0677ac"
     },
     {
       "dialectId": 6,
       "path": "dialects/6.json",
-      "bytes": 13494,
-      "sha256": "8d3205ae5b15cf45e268d8c5f7e62e0681fbe6bc9ece568025eb3b263c2daa4b"
+      "bytes": 73052,
+      "sha256": "5450f56ef2a848f196e1ab8d1f9ca165e1d6c3fa2ebf39f966433676ca6961d6"
     },
     {
       "dialectId": 7,
       "path": "dialects/7.json",
-      "bytes": 13510,
-      "sha256": "1559a18d995f007c500f16572d3fa1996a12f78e8a7d26cf2dee58eed9c76e35"
+      "bytes": 73372,
+      "sha256": "247f522c6294616b67a8135d6de889deb9d7f6962821be53f56ed6cdb6dbe112"
     },
     {
       "dialectId": 8,
       "path": "dialects/8.json",
-      "bytes": 13769,
-      "sha256": "54128c7b231dd09931bb0946ff2fc00352c56096189663fcef4cd4f58a01153e"
+      "bytes": 74985,
+      "sha256": "9beb0e666186a48da5c61a0ced6c922ef8035509d217ed97b345969fbb78bc91"
     },
     {
       "dialectId": 9,
       "path": "dialects/9.json",
-      "bytes": 13602,
-      "sha256": "305caee89be8b4cb048c600cad1e9c7a92f80af33af332dea62da229ead02478"
+      "bytes": 74088,
+      "sha256": "83afe698d33451ec6d0481e73cf8a22c790b550c451d2f2961cc4f0ac837fa87"
     },
     {
       "dialectId": 10,
       "path": "dialects/10.json",
-      "bytes": 13511,
-      "sha256": "67097f844d5d6a3cb59889a41e4680810c5659264de8e728ef5131d5714b75a2"
+      "bytes": 73259,
+      "sha256": "1fa515c951366ae804e4a9ece11185384e01ad0aab0e51571f7e58c3e75c4031"
     },
     {
       "dialectId": 11,
       "path": "dialects/11.json",
-      "bytes": 13524,
-      "sha256": "ec6595fa18528afc341daebc8b8eef3867ca5bef10a2c3493ce76578a8b0cb02"
+      "bytes": 73337,
+      "sha256": "80b515b6d77d4229c6067b6214b461c33085649dc155dd1a67b480f21f2d3e6c"
     },
     {
       "dialectId": 13,
       "path": "dialects/13.json",
-      "bytes": 13939,
-      "sha256": "59d9caf3b62b6fcd9e686608ccfa5a153faec6e4fd8daf6035b14a5f2ad0240d"
+      "bytes": 75101,
+      "sha256": "63ffc36729fa1ffa7abae96d7ff68e4334ac30b2c1f0d717372d57e0b6cca397"
     },
     {
       "dialectId": 14,
       "path": "dialects/14.json",
-      "bytes": 13676,
-      "sha256": "5d2e7e8f02890f1e08140a0e1905c3652a214c7d2fa9661af339b77c22b6224f"
+      "bytes": 73181,
+      "sha256": "6eb64b107c03cc072053b0d17300402a06057211546076e7c7ce1be940149416"
     },
     {
       "dialectId": 15,
       "path": "dialects/15.json",
-      "bytes": 13657,
-      "sha256": "98780e11d9e07098c0fafc6b8396f12e18c64fc4cc1eaeab2e4749e6636dd2ea"
+      "bytes": 73128,
+      "sha256": "1c038a2cc9de19578a1b76218df8e73ea9f2b6e8cf880fd47ca8b545fc05513b"
     },
     {
       "dialectId": 16,
       "path": "dialects/16.json",
-      "bytes": 13544,
-      "sha256": "8196f30a694ebf3d166528a117465d4608fef5b93136bda389e8160fdc5f32f5"
+      "bytes": 73527,
+      "sha256": "6e6e8f9df8a786f2204e193686e5b11a0c6bed25c3447adb4381e32bae18cde9"
     },
     {
       "dialectId": 17,
       "path": "dialects/17.json",
-      "bytes": 13558,
-      "sha256": "6abb6b1036e1bc25a3711f2b9450a1375d5114547ee07b44fbca359de7ebf682"
+      "bytes": 72860,
+      "sha256": "e558ec8df06e3917d77d451fdcb27681c1f72a285bbdc67228d43d0fc8fee2d2"
     },
     {
       "dialectId": 18,
       "path": "dialects/18.json",
-      "bytes": 13789,
-      "sha256": "7eee64561e4df94b087257d08caa54a40e08994c4a0717b3f3d38f86d7c7282e"
+      "bytes": 74155,
+      "sha256": "e3a4837398436cca9bc01b72b9339d81cf9716587ace8a4b117f09d6891cc02d"
     },
     {
       "dialectId": 19,
       "path": "dialects/19.json",
-      "bytes": 13446,
-      "sha256": "5ce10369be39c9602527efb1074aa90f25719a9821da5ff0dd162df4b599a16c"
+      "bytes": 72912,
+      "sha256": "ffb27291adc0ecdbcf3efed4ff9748098e3fe77b31d10583762bc29240be84f5"
     },
     {
       "dialectId": 20,
       "path": "dialects/20.json",
-      "bytes": 13603,
-      "sha256": "fb1569ea541b17b2c3eb512163932c516053416d3ef7f332edecfd0129bbddcc"
+      "bytes": 72987,
+      "sha256": "5e07c561603d57a7a092a400959e150a2a2c2c40a2179a15fa0d65fbd0c7d493"
     },
     {
       "dialectId": 21,
       "path": "dialects/21.json",
-      "bytes": 13634,
-      "sha256": "70aaa613c2a192155976ef3838c41a57caafc02bb7ee5315b97c7139ccdc82f6"
+      "bytes": 73560,
+      "sha256": "702dda6023ddda97580a8264e9d04acd1468483b3e897e5dac52f4ec2bb5e1b3"
     },
     {
       "dialectId": 22,
       "path": "dialects/22.json",
-      "bytes": 13616,
-      "sha256": "e2599e665d2531e50709261815c9e867b2f41fa53b49b748c2184c58b2e0f9c9"
+      "bytes": 73551,
+      "sha256": "771b5c3780f4193dabdf599cc7900804eb50f4e90bf1007bd03f284a1946d63f"
     },
     {
       "dialectId": 23,
       "path": "dialects/23.json",
-      "bytes": 13561,
-      "sha256": "cc80801d14b77b42064de957a4d848dddee17552dd96b4dfe03b886c7f7428ff"
+      "bytes": 73427,
+      "sha256": "22612308721d0d5d9753cab8118445448fdbc0bd8f356ae6c28829ea9a830e08"
     },
     {
       "dialectId": 24,
       "path": "dialects/24.json",
-      "bytes": 13548,
-      "sha256": "71e90a4bcef22030569c8c1ff948541235d56ca2cdf677d726446279f990dc5e"
+      "bytes": 73016,
+      "sha256": "a6d90ba9e6e53f6b91bdd9aca43edff556cc4fccf79156fcfea2cec692676552"
     },
     {
       "dialectId": 25,
       "path": "dialects/25.json",
-      "bytes": 13695,
-      "sha256": "1f44862cc3ee5659d7a80a9ba98b8132bb15e0359fb2de6999206e1f14546b86"
+      "bytes": 73788,
+      "sha256": "49c5018a9c4312b7351c30167d31d85e8b4dae2d3fcdafffbff9bb94bf3fc6ab"
     },
     {
       "dialectId": 26,
       "path": "dialects/26.json",
-      "bytes": 13657,
-      "sha256": "3a49edf24522720c831f94c5f497f83c4a618878d5c5e9d8cb5b0fecda39251c"
+      "bytes": 73633,
+      "sha256": "87ad47d6fee4eca729f255549dd00fe5878fe2926f300d1506e5abf40049ff38"
     },
     {
       "dialectId": 27,
       "path": "dialects/27.json",
-      "bytes": 13675,
-      "sha256": "648c01eaf1acad75af99d6f1dff3d4105cd4c8176aaf11eb31dc18cad1b7c856"
+      "bytes": 74028,
+      "sha256": "3400dde675d0aa7406ba745330cc614fef4b8f18dfe2b5808f88b5fc2a914946"
     },
     {
       "dialectId": 28,
       "path": "dialects/28.json",
-      "bytes": 13560,
-      "sha256": "6210b190d8f1948b8fc2dace5af176853d4a8c120812c6449276e8cb5cd646c7"
+      "bytes": 73823,
+      "sha256": "830f5966dc83bf9b7e142c8d989b406f53a852cb6b855acd161b56fa4ecc6732"
     },
     {
       "dialectId": 29,
       "path": "dialects/29.json",
-      "bytes": 13526,
-      "sha256": "c34cc78cd23953dadb2376ecf7090ac035c01079a029727db3b1075ffc6389ee"
+      "bytes": 73474,
+      "sha256": "4653dac22dfee0f97ef4fa74abeb6ab16825e8d541f4a6f8a5fa788465fc04d1"
     },
     {
       "dialectId": 30,
       "path": "dialects/30.json",
-      "bytes": 13623,
-      "sha256": "5b29cce6aee3a52440f6b679fff6eb8d6486e5c2924035c476a91c86c287172a"
+      "bytes": 73923,
+      "sha256": "4207225568c71070c733084110299208b3a8af98627f412520154edcedf091d7"
     },
     {
       "dialectId": 31,
       "path": "dialects/31.json",
-      "bytes": 13845,
-      "sha256": "258e5974a4fc8608406da40a20d68cc0a075eadcc758c18397fb75ffe846ba40"
+      "bytes": 74012,
+      "sha256": "5282fd26b4338376ff5ac58526768914faf4b0c4d6aa07ccd642756b06e477d8"
     },
     {
       "dialectId": 32,
       "path": "dialects/32.json",
-      "bytes": 13667,
-      "sha256": "a61ecfab602a0422c7d4af18ba903d315319934c9dec4f97e98dfb5ad977813b"
+      "bytes": 73559,
+      "sha256": "d0e3f66e669bb6895ec5e3ae79e4d5433250c7b000dd79586add9264b6a28b10"
     },
     {
       "dialectId": 33,
       "path": "dialects/33.json",
-      "bytes": 13527,
-      "sha256": "03d84930c657c27e497bad6b90dccee2b42eb23ec196c4c7277a2baf8925b757"
+      "bytes": 73025,
+      "sha256": "30270ae1b1c1c37c996c1de47b18dfd86fe25c58ad9c76fc4007be4e2b90c895"
     },
     {
       "dialectId": 34,
       "path": "dialects/34.json",
-      "bytes": 13600,
-      "sha256": "1a528582b868216b0a5dec67e671fda79a4add94c391040477aca6c2b0c8b944"
+      "bytes": 73392,
+      "sha256": "d6593a2b011cc15789984fa456d02a0d25714b7737a4418d8065cd1ff0153813"
     },
     {
       "dialectId": 35,
       "path": "dialects/35.json",
-      "bytes": 13674,
-      "sha256": "d5f009c943007a49264f86845b8e828acc85c4277f3cf51442f0130fbd12da8a"
+      "bytes": 74465,
+      "sha256": "0ab5c823e20bc132d4eb4f3143787eb8c1e096eae5e03a7519d1af5bae7bfd7e"
     },
     {
       "dialectId": 36,
       "path": "dialects/36.json",
-      "bytes": 13657,
-      "sha256": "9048eababe87e10ff954576bd74685d019f62fd6f15527935163e20e89f5cbd5"
+      "bytes": 73883,
+      "sha256": "4ffd23e2eedb470328a990e57ec2a16af6b2c4583138f41904b6814c0b7b70db"
     },
     {
       "dialectId": 37,
       "path": "dialects/37.json",
-      "bytes": 13656,
-      "sha256": "e8ff982ecce205335f22087c3a708732bfc4a41c3a21b9b57a1a5ec8ad95971c"
+      "bytes": 73591,
+      "sha256": "59c04e1b3a5932b2b654aff57bdf368e908879f0848f9abb74ed385506da41a7"
     },
     {
       "dialectId": 38,
       "path": "dialects/38.json",
-      "bytes": 13665,
-      "sha256": "9bbea3209cd06410fdc6b45a8054db1596d6dbad5013b9a89a33188b681151d7"
+      "bytes": 73747,
+      "sha256": "42f9b4d148773d36f1524d8d3157d985b4ae2d70e934baf1f965f82c8d775eb3"
     },
     {
       "dialectId": 39,
       "path": "dialects/39.json",
-      "bytes": 13689,
-      "sha256": "dba9c9116290cf5f96af8eb729218e6d102489b46ba12802aeb3517ecc38ed48"
+      "bytes": 74129,
+      "sha256": "0b510494e4dc2ca4a1f4e941332a8c28e0166ca90b8a212e7c5d2d8078a54a85"
     },
     {
       "dialectId": 40,
       "path": "dialects/40.json",
-      "bytes": 13669,
-      "sha256": "fc9ab5044cccf1745089bde7474944197ea3c73e9d2d591fe1d5fb254be1c4dd"
+      "bytes": 74082,
+      "sha256": "8ebc567f162a42f7953078f7939314e2d8c0c42da09d1b9088b4dcc9bf4fb309"
     },
     {
       "dialectId": 41,
       "path": "dialects/41.json",
-      "bytes": 13618,
-      "sha256": "4df35765a781f3fdeeb5b80797a7160254cf69557f30774bd977d0f68723d40d"
+      "bytes": 73738,
+      "sha256": "086a168051199f70cc6292aa209a97f015d7c1544a68ec910b53ae0c25f5758e"
     },
     {
       "dialectId": 42,
       "path": "dialects/42.json",
-      "bytes": 13638,
-      "sha256": "e89522ac2fb82b1db24e7e8804530e359bde69a4f127e716d0bea6bf5f44e2d9"
+      "bytes": 74177,
+      "sha256": "af410a0e9e9eac6607bdfdfba9d93fb3e414e3ce84de8433cf69f27df541b8ef"
     },
     {
       "dialectId": 43,
       "path": "dialects/43.json",
-      "bytes": 13507,
-      "sha256": "10fa892203f641a151d934113e9b262351771419e4e247485294dccbd49f7614"
+      "bytes": 73213,
+      "sha256": "c5fb82b09a0f84f3ac9786b28ea2b224e61ab71dd64f1ffc6281eb18b7f33cdb"
     },
     {
       "path": "dataset.json",
-      "bytes": 6552,
-      "sha256": "ca37e8ce80d712b9b902dac05139c568e56e0a400aa0c2271d82581d75859da7"
+      "bytes": 13010,
+      "sha256": "c70d80dc0675aa2da2b03aaaf30acd93cc07fe1b88e0b7dace563f7d5670cf6c"
     }
   ]
 }

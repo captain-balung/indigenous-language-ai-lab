@@ -35,7 +35,7 @@
           "chineseText": "你叫甚麼名字？",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879439.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
-          "background": "1-1.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-1.jpg"
         },
         {
           "id": "40-hordequest-lesson-2",
@@ -46,7 +46,7 @@
           "chineseText": "我叫Malingan。",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879440.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
-          "background": "1-2.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-2.jpg"
         },
         {
           "id": "40-hordequest-lesson-3",
@@ -57,7 +57,7 @@
           "chineseText": "你的家在哪裡？",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879441.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
-          "background": "1-1.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-1.jpg"
         },
         {
           "id": "40-hordequest-lesson-4",
@@ -68,7 +68,7 @@
           "chineseText": "我從初鹿部落來。",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879442.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
-          "background": "1-2.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-2.jpg"
         },
         {
           "id": "40-hordequest-lesson-5",
@@ -79,7 +79,7 @@
           "chineseText": "你吃早餐了嗎？",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879443.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
-          "background": "1-1.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-1.jpg"
         },
         {
           "id": "40-hordequest-lesson-6",
@@ -90,7 +90,7 @@
           "chineseText": "還沒耶！",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879444.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
-          "background": "1-2.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-2.jpg"
         },
         {
           "id": "40-hordequest-lesson-7",
@@ -101,7 +101,7 @@
           "chineseText": "我要去買早餐，要一起去嗎？",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879445.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
-          "background": "1-1.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-1.jpg"
         },
         {
           "id": "40-hordequest-lesson-8",
@@ -112,7 +112,7 @@
           "chineseText": "我沒有帶錢。你可以借我錢嗎？",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879446.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/boy.png",
-          "background": "1-2.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-2.jpg"
         },
         {
           "id": "40-hordequest-lesson-9",
@@ -123,7 +123,434 @@
           "chineseText": "好，我借你。",
           "audioUrl": "https://web.klokah.tw/text/sound/62994/879447.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/girl.png",
-          "background": "1-1.jpg"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/1-1.jpg"
+        }
+      ],
+      "questSceneUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/2.jpg",
+      "questPlayerImageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/player-1.png",
+      "quests": [
+        {
+          "id": "40-hordequest-lesson-quest-1",
+          "order": 1,
+          "quest": "你今天第一天上學，趕快認識你旁邊的兩位同學吧！",
+          "tips": "問他們：「你叫甚麼名字？」，將名牌放到同學的桌上吧！",
+          "goal": {
+            "kind": "nameTags",
+            "choices": [
+              "Malingan",
+              "Danadanaw",
+              "Muya",
+              "Sunay",
+              "Mulivelivek"
+            ],
+            "answers": {
+              "target-1": "Malingan",
+              "target-2": "Sunay"
+            }
+          },
+          "hintWords": [
+            "intaw",
+            "nintaw",
+            "iyan",
+            "ruma’",
+            "i",
+            "eman",
+            "nu",
+            "ngandan"
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-1-1.png",
+              "box": {
+                "top": 49.1,
+                "left": 2.5,
+                "width": 28.6,
+                "height": 50.7
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-2-1.png",
+              "box": {
+                "top": 49.3,
+                "left": 66.8,
+                "width": 28.6,
+                "height": 50.3
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "i eman nu ngandan",
+              "displayText": "i eman nu ngandan?",
+              "chineseText": "你叫甚麼名字？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62995/879448.mp3",
+              "reply": {
+                "indigenousText": "i Malingan ku nagdan.",
+                "chineseText": "我的名字叫Malingan。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62995/879449.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "i eman nu ngandan",
+              "displayText": "i eman nu ngandan?",
+              "chineseText": "你叫甚麼名字？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62995/879448.mp3",
+              "reply": {
+                "indigenousText": "i Sunay ku ngadan.",
+                "chineseText": null,
+                "audioUrl": "https://web.klokah.tw/text/sound/62995/879450.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-lesson-quest-2",
+          "order": 2,
+          "quest": "很好，現在你認識了同學的名字，",
+          "tips": "再問問他們：「你家住哪裡？」吧！",
+          "goal": {
+            "kind": "nameTags",
+            "choices": [
+              "Mulivelivek",
+              "ulringulr",
+              "lingatr",
+              "Danadanaw",
+              "zinanuman"
+            ],
+            "answers": {
+              "target-1": "Mulivelivek",
+              "target-2": "Danadanaw"
+            }
+          },
+          "hintWords": [
+            "itras",
+            "eman",
+            "ngidiran",
+            "takesi",
+            "inmu",
+            "nazu",
+            "zenan",
+            "kaazu",
+            "u",
+            "i",
+            "iyan"
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-1-1.png",
+              "box": {
+                "top": 49.1,
+                "left": 2.5,
+                "width": 28.6,
+                "height": 50.7
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-2-1.png",
+              "box": {
+                "top": 49.3,
+                "left": 66.8,
+                "width": 28.6,
+                "height": 50.3
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "kaazu u i iyan",
+              "displayText": "kaazu u i iyan?",
+              "chineseText": "你家住哪裡？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62996/879457.mp3",
+              "reply": {
+                "indigenousText": "kaazu ku i Mulivelivek.",
+                "chineseText": "我的家在初鹿",
+                "audioUrl": "https://web.klokah.tw/text/sound/62996/879458.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "kaazu u i iyan",
+              "displayText": "kaazu u i iyan?",
+              "chineseText": "你家住哪裡？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62996/879457.mp3",
+              "reply": {
+                "indigenousText": "kaazu ku i Danadanaw.",
+                "chineseText": "我的家在龍過脈",
+                "audioUrl": "https://web.klokah.tw/text/sound/62996/879459.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-lesson-quest-3",
+          "order": 3,
+          "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，同學好像有多的筆。",
+          "tips": "快想想辦法，問「（同學名字），借我筆好嗎？」，請同學借你吧！",
+          "goal": {
+            "kind": "askRightPerson",
+            "targetId": "target-1",
+            "code": "3",
+            "reward": {
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/pen.png",
+              "width": "6.3%",
+              "height": "7.429%",
+              "top": "82.857%",
+              "left": "36%",
+              "rotate": "40deg"
+            }
+          },
+          "hintWords": [
+            "nintaw",
+            "dinwa",
+            "valray",
+            "iniyam",
+            "iyan",
+            "Malingan",
+            "Sunay",
+            "pavulasay",
+            "ku",
+            "ziya",
+            "za",
+            "impis",
+            "maw"
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-1-1.png",
+              "box": {
+                "top": 49.1,
+                "left": 2.5,
+                "width": 28.6,
+                "height": 50.7
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-2-1.png",
+              "box": {
+                "top": 49.3,
+                "left": 66.8,
+                "width": 28.6,
+                "height": 50.3
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "3",
+              "onlyTargetId": "target-1",
+              "indigenousText": "Malingan pavulasay ku ziya za impis maw",
+              "displayText": "Malingan,pavulasay ku ziya za impis maw?",
+              "chineseText": "Malingan借我筆好嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62997/879473.mp3",
+              "reply": {
+                "indigenousText": "ai, kunu pavulasay.",
+                "chineseText": "好，我借你。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62997/879474.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "3",
+              "onlyTargetId": "target-2",
+              "indigenousText": "Sunay pavulasay ku ziya za impis maw",
+              "displayText": "Sunay, pavulasay ku ziya za impis maw?",
+              "chineseText": "Sunay借我筆好嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62997/879475.mp3",
+              "reply": {
+                "indigenousText": "mawmaw saya ku impis.",
+                "chineseText": "我只有一隻。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62997/879476.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-lesson-quest-4",
+          "order": 4,
+          "quest": "你不小心寫錯字了，需要橡皮擦，但發現忘了帶。",
+          "tips": "快想想辦法，問「（同學名字），借我橡皮擦好嗎？」，請同學借你吧！",
+          "goal": {
+            "kind": "askRightPerson",
+            "targetId": "target-2",
+            "code": "4",
+            "reward": {
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/eraser.png",
+              "width": "4.6%",
+              "height": "7.857%",
+              "top": "80%",
+              "right": "39%"
+            }
+          },
+          "hintWords": [
+            "impis",
+            "valray",
+            "nannu",
+            "iyan",
+            "Malingan",
+            "Sunay",
+            "pavulasay",
+            "ku",
+            "ziya",
+            "za",
+            "aitrul",
+            "maw"
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-1-1.png",
+              "box": {
+                "top": 49.1,
+                "left": 2.5,
+                "width": 28.6,
+                "height": 50.7
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-2-1.png",
+              "box": {
+                "top": 49.3,
+                "left": 66.8,
+                "width": 28.6,
+                "height": 50.3
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "4",
+              "onlyTargetId": "target-1",
+              "indigenousText": "Malingan pavulasay ku ziya za aitrul maw",
+              "displayText": "Malingan,pavulasay ku ziya za aitrul maw?",
+              "chineseText": "Malingan借我橡皮擦好嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62998/879485.mp3",
+              "reply": {
+                "indigenousText": "uniyan ku za aitrul.",
+                "chineseText": "我也沒有。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62998/879486.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "4",
+              "onlyTargetId": "target-2",
+              "indigenousText": "Sunay pavulasay ku ziya za aitulr maw",
+              "displayText": "Sunay,pavulasay ku ziya za aitulr maw?",
+              "chineseText": "Sunay借我橡皮擦好嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62998/879487.mp3",
+              "reply": {
+                "indigenousText": "ai,elaku.",
+                "chineseText": "好，拿去。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62998/879488.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-lesson-quest-5",
+          "order": 5,
+          "quest": "老師分配你掃地工作，掃把在你同學旁邊．",
+          "tips": "跟同學說「（同學名字），請幫我拿掃把。」，請同學拿給你吧！",
+          "goal": {
+            "kind": "askRightPerson",
+            "targetId": "target-1",
+            "code": "5",
+            "reward": {
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/broom.png",
+              "width": "15.1%",
+              "height": "44.714%",
+              "top": "54.286%",
+              "left": "25%"
+            }
+          },
+          "hintWords": [
+            "tupu",
+            "kemudakuda",
+            "uniyan",
+            "’emelresap",
+            "intaw",
+            "inmu",
+            "Malingan",
+            "Sunay",
+            "’alra",
+            "zi",
+            "elakanay",
+            "ku",
+            "za",
+            "aidap"
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-1-1.png",
+              "box": {
+                "top": 49.1,
+                "left": 2.5,
+                "width": 28.6,
+                "height": 50.7
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/lesson/target-2-1.png",
+              "box": {
+                "top": 49.3,
+                "left": 66.8,
+                "width": 28.6,
+                "height": 50.3
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "5",
+              "onlyTargetId": "target-1",
+              "indigenousText": "Malingan ’alra zi elakanay ku za aidap",
+              "displayText": "Malingan,’alra zi elakanay ku za aidap.",
+              "chineseText": "Malingan，請幫我拿掃把。",
+              "audioUrl": "https://web.klokah.tw/text/sound/62999/879493.mp3",
+              "reply": {
+                "indigenousText": "ai,niya ini na aidap.",
+                "chineseText": "好，這支掃把給你。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62999/879494.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "5",
+              "onlyTargetId": "target-2",
+              "indigenousText": "Sunay ’alra zi elakanay ku za aidap",
+              "displayText": "Sunay ’alra zi elakanay ku za aidap.",
+              "chineseText": "Sunay，請幫我拿掃把。",
+              "audioUrl": "https://web.klokah.tw/text/sound/62999/879495.mp3",
+              "reply": {
+                "indigenousText": "’azi ku malrazam ulra i iyan.",
+                "chineseText": "我不知道在哪裡。",
+                "audioUrl": "https://web.klokah.tw/text/sound/62999/879496.mp3"
+              }
+            }
+          ]
         }
       ]
     },
@@ -153,7 +580,7 @@
           "chineseText": "媽媽今天家裡來了好多親戚哦！",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924978.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-1.png"
         },
         {
           "id": "40-hordequest-find-2",
@@ -164,7 +591,7 @@
           "chineseText": "今天是哥哥的婚禮，所以有很多人來。",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924979.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
-          "background": "1-2.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-2.png"
         },
         {
           "id": "40-hordequest-find-3",
@@ -175,7 +602,7 @@
           "chineseText": "好開心喔！很久沒有看到他們了！",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924980.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-1.png"
         },
         {
           "id": "40-hordequest-find-4",
@@ -186,7 +613,7 @@
           "chineseText": "對啊！今天大家都會很忙，你要幫忙大家。",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924981.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
-          "background": "1-2.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-2.png"
         },
         {
           "id": "40-hordequest-find-5",
@@ -197,7 +624,7 @@
           "chineseText": "好的，我一定會！",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924982.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-1.png"
         },
         {
           "id": "40-hordequest-find-6",
@@ -208,7 +635,7 @@
           "chineseText": "我要去準備等一下要用的東西了。",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924983.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
-          "background": "1-2.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-2.png"
         },
         {
           "id": "40-hordequest-find-7",
@@ -219,7 +646,7 @@
           "chineseText": "我來幫忙！",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924984.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/girl.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-1.png"
         },
         {
           "id": "40-hordequest-find-8",
@@ -230,7 +657,690 @@
           "chineseText": "好，你跟我來！",
           "audioUrl": "https://web.klokah.tw/text/sound/66317/924985.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/mom.png",
-          "background": "1-2.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/1-2.png"
+        }
+      ],
+      "quests": [
+        {
+          "id": "40-hordequest-find-quest-1",
+          "order": 1,
+          "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+          "tips": "去問問看「新的陶壺長怎樣？」，找出陶壺吧！",
+          "goal": {
+            "kind": "select",
+            "prompt": null,
+            "options": [
+              {
+                "id": "pot-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-pot-1.png",
+                "box": null
+              },
+              {
+                "id": "pot-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-pot-2.png",
+                "box": null
+              },
+              {
+                "id": "pot-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-pot-3.png",
+                "box": null
+              },
+              {
+                "id": "pot-4",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-pot-4.png",
+                "box": null
+              }
+            ],
+            "answers": [
+              "pot-1"
+            ],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null
+          },
+          "closing": null,
+          "buylist": null,
+          "hintWords": [
+            "karisis",
+            "i",
+            "eman",
+            "varasa’",
+            "eman",
+            "kemuda",
+            "na",
+            "vekalr",
+            "na",
+            "pangasilran"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/find/2.png",
+          "props": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-target-1.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-target-2.png"
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-target-3.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-target-1.png",
+              "box": {
+                "top": 39.604,
+                "left": 2.5,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-target-2.png",
+              "box": {
+                "top": 42.433,
+                "left": 57,
+                "width": 20,
+                "height": 57.567
+              }
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/2-target-3.png",
+              "box": {
+                "top": 45.262,
+                "left": 73.5,
+                "width": 20,
+                "height": 54.738
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "kemuda na vekalr na pangasilran",
+              "displayText": "kemuda na vekalr na pangasilran?",
+              "chineseText": "新的陶壺長怎樣？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66318/924988.mp3",
+              "reply": {
+                "indigenousText": "ku liputranay kana tinenun.",
+                "chineseText": "我有用布包起來。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66318/924989.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "kemuda na vekalr na pangasilran",
+              "displayText": "kemuda na vekalr na pangasilran?",
+              "chineseText": "新的陶壺長怎樣？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66318/924988.mp3",
+              "reply": {
+                "indigenousText": "tu liputranay kana zemiyar na tinenun i ina.",
+                "chineseText": "媽媽有用紅布包起來。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66318/924990.mp3"
+              }
+            },
+            {
+              "targetId": "target-3",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "kemuda na vekalr na pangasilran",
+              "displayText": "kemuda na vekalr na pangasilran?",
+              "chineseText": "新的陶壺長怎樣？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66318/924988.mp3",
+              "reply": {
+                "indigenousText": "’azi ku malrazam.",
+                "chineseText": "我不記得。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66318/924991.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-find-quest-2",
+          "order": 2,
+          "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+          "tips": "趕快去問問看「哪裡有月桃？」，採一些放到籃子裡吧！",
+          "goal": {
+            "kind": "take",
+            "prompt": null,
+            "options": [
+              {
+                "id": "plant-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-1.png",
+                "box": {
+                  "top": 45.262,
+                  "left": 61,
+                  "width": 14,
+                  "height": 29.703
+                }
+              },
+              {
+                "id": "plant-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-2.png",
+                "box": {
+                  "top": 8.487,
+                  "left": 23,
+                  "width": 20,
+                  "height": 42.433
+                }
+              },
+              {
+                "id": "plant-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-3.png",
+                "box": {
+                  "top": 74.965,
+                  "left": 25,
+                  "width": 32,
+                  "height": 24.045
+                }
+              },
+              {
+                "id": "plant-4",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-4.png",
+                "box": {
+                  "top": 8.487,
+                  "left": 81,
+                  "width": 14,
+                  "height": 39.604
+                }
+              }
+            ],
+            "answers": [
+              "plant-1"
+            ],
+            "lock": "plant-1",
+            "unlock": {
+              "targetId": "target-3",
+              "code": "2"
+            },
+            "box": null,
+            "backgroundUrl": null
+          },
+          "closing": null,
+          "buylist": null,
+          "hintWords": [
+            "puran",
+            "kemuda",
+            "tralun",
+            "’aputr",
+            "ulra",
+            "i",
+            "iyan",
+            "a",
+            "rengas"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/find/3.png",
+          "props": [
+            {
+              "id": "plant-2b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-2b.png"
+            },
+            {
+              "id": "plant-4b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-4b.png"
+            },
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-target-1.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-target-2.png"
+            },
+            {
+              "id": "plant-1b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-1b.png"
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-target-3.png"
+            },
+            {
+              "id": "plant-3b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-plant-3b.png"
+            },
+            {
+              "id": "strap",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-strap.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-target-1.png",
+              "box": {
+                "left": 9,
+                "top": 40,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-target-2.png",
+              "box": {
+                "left": 72,
+                "top": 40,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/3-target-3.png",
+              "box": {
+                "left": 50,
+                "top": 32.928,
+                "width": 20,
+                "height": 60
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "ulra i iyan a rengas",
+              "displayText": "ulra i iyan a rengas?",
+              "chineseText": "哪裡有月桃？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66319/924996.mp3",
+              "reply": {
+                "indigenousText": "’azi ku malrazam.",
+                "chineseText": "我也不知道。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66319/924997.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "ulra i iyan a rengas",
+              "displayText": "ulra i iyan a rengas?",
+              "chineseText": "哪裡有月桃？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66319/924996.mp3",
+              "reply": {
+                "indigenousText": "ulra i zenan.",
+                "chineseText": "山上才有。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66319/924998.mp3"
+              }
+            },
+            {
+              "targetId": "target-3",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "ulra i iyan a rengas",
+              "displayText": "ulra i iyan a rengas?",
+              "chineseText": "哪裡有月桃？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66319/924996.mp3",
+              "reply": {
+                "indigenousText": "ulra ku misama’ za sazu zi niya,kunu verayay!",
+                "chineseText": "我有多的，給你！",
+                "audioUrl": "https://web.klokah.tw/text/sound/66319/924999.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-find-quest-3",
+          "order": 3,
+          "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+          "tips": "趕快問問看其他人「你有看到檳榔嗎？」，找出檳榔，把它們放在一起吧！",
+          "goal": {
+            "kind": "take",
+            "prompt": null,
+            "options": [
+              {
+                "id": "pinang-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-1.png",
+                "box": {
+                  "top": 35.361,
+                  "left": 31,
+                  "width": 8,
+                  "height": 12.73
+                }
+              },
+              {
+                "id": "pinang-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-2.png",
+                "box": {
+                  "top": 80.622,
+                  "left": 40,
+                  "width": 15,
+                  "height": 16.973
+                }
+              },
+              {
+                "id": "pinang-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-3.png",
+                "box": {
+                  "top": 74.965,
+                  "left": 73,
+                  "width": 11,
+                  "height": 18.388
+                }
+              },
+              {
+                "id": "pinang-4",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-4.png",
+                "box": {
+                  "top": 55.163,
+                  "left": 85,
+                  "width": 7,
+                  "height": 14.144
+                }
+              }
+            ],
+            "answers": [
+              "pinang-1",
+              "pinang-4"
+            ],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null
+          },
+          "closing": null,
+          "buylist": null,
+          "hintWords": [
+            "velrvelr",
+            "i",
+            "eman",
+            "ruma’",
+            "elak",
+            "ulra",
+            "nu",
+            "nina’uwan",
+            "za",
+            "puran"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/find/4.png",
+          "props": [
+            {
+              "id": "pinang-1b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-1b.png"
+            },
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-target-1.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-target-2.png"
+            },
+            {
+              "id": "block",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-block.png"
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-target-3.png"
+            },
+            {
+              "id": "pinang-2b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-2b.png"
+            },
+            {
+              "id": "pinang-3b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-3b.png"
+            },
+            {
+              "id": "pinang-4b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-pinang-4b.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-target-1.png",
+              "box": {
+                "top": 26.874,
+                "left": 3,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-target-2.png",
+              "box": {
+                "top": 22.631,
+                "left": 17,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/4-target-3.png",
+              "box": {
+                "left": 49,
+                "top": 25.856,
+                "width": 20,
+                "height": 60
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "3",
+              "onlyTargetId": null,
+              "indigenousText": "ulra nu nina’uwan za puran",
+              "displayText": "ulra nu nina’uwan za puran?",
+              "chineseText": "你有看到檳榔嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66320/925004.mp3",
+              "reply": {
+                "indigenousText": "uniyan i kani kaninku.",
+                "chineseText": "我這邊沒有。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66320/925005.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "3",
+              "onlyTargetId": null,
+              "indigenousText": "ulra nu nina’uwan za puran",
+              "displayText": "ulra nu nina’uwan za puran?",
+              "chineseText": "你有看到檳榔嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66320/925004.mp3",
+              "reply": {
+                "indigenousText": "ulra, i itras kana lipad.",
+                "chineseText": "有，在椅子上。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66320/925006.mp3"
+              }
+            },
+            {
+              "targetId": "target-3",
+              "code": "3",
+              "onlyTargetId": null,
+              "indigenousText": "ulra nu nina’uwan za puran",
+              "displayText": "ulra nu nina’uwan za puran?",
+              "chineseText": "你有看到檳榔嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66320/925004.mp3",
+              "reply": {
+                "indigenousText": "ulra i kaziyu kana ’ara/punun.",
+                "chineseText": "那個籃子裡有。",
+                "audioUrl": "https://web.klokah.tw/text/sound/66320/925007.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-find-quest-4",
+          "order": 4,
+          "quest": "婚禮快要開始了，親友們都在門外準備。",
+          "tips": "咦，哥哥怎麼不見了？快點問問看「哥哥在哪裡？」，把哥哥找出來吧！",
+          "goal": {
+            "kind": "click",
+            "prompt": null,
+            "options": [],
+            "answers": [
+              "door"
+            ],
+            "lock": null,
+            "unlock": null,
+            "box": {
+              "top": 14.144,
+              "left": 44,
+              "width": 11,
+              "height": 21.216
+            },
+            "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-1.png"
+          },
+          "closing": {
+            "text": "kazu ku kani a, salaw ku mazakezak....",
+            "audioUrl": "https://web.klokah.tw/text/sound/66321/925016.mp3"
+          },
+          "buylist": null,
+          "hintWords": [
+            "i",
+            "eman",
+            "eman",
+            "’ali’an",
+            "anay",
+            "sisi",
+            "ulra",
+            "i",
+            "iyan",
+            "i",
+            "iva",
+            "na",
+            "ma’inayan"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/find/5.png",
+          "props": [
+            {
+              "id": "door",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-door.png"
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-target-3.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-target-2.png"
+            },
+            {
+              "id": "block",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-block.png"
+            },
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-target-1.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-target-1.png",
+              "box": {
+                "left": 61,
+                "top": 40,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-target-2.png",
+              "box": {
+                "top": 21.216,
+                "left": 21,
+                "width": 20,
+                "height": 60
+              }
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/find/5-target-3.png",
+              "box": {
+                "top": 24.045,
+                "left": 1,
+                "width": 20,
+                "height": 60
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "4",
+              "onlyTargetId": null,
+              "indigenousText": "ulra i iyan i iva na ma’inayan",
+              "displayText": "ulra i iyan i iva na ma’inayan?",
+              "chineseText": "哥哥在哪裡？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66321/925012.mp3",
+              "reply": {
+                "indigenousText": "’azi ku mena’u,mukuwa i iyan i intaw?",
+                "chineseText": "沒看到，他去哪了？",
+                "audioUrl": "https://web.klokah.tw/text/sound/66321/925013.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "4",
+              "onlyTargetId": null,
+              "indigenousText": "ulra i iyan i iva na ma’inayan",
+              "displayText": "ulra i iyan i iva na ma’inayan?",
+              "chineseText": "哥哥在哪裡？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66321/925012.mp3",
+              "reply": {
+                "indigenousText": "’azi ziya mupatraran i intaw ziya maw?",
+                "chineseText": "他還沒出來嗎？",
+                "audioUrl": "https://web.klokah.tw/text/sound/66321/925014.mp3"
+              }
+            },
+            {
+              "targetId": "target-3",
+              "code": "4",
+              "onlyTargetId": null,
+              "indigenousText": "ulra i iyan i iva na ma’inayan",
+              "displayText": "ulra i iyan i iva na ma’inayan?",
+              "chineseText": "哥哥在哪裡？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66321/925012.mp3",
+              "reply": {
+                "indigenousText": "mulremes lra ziya maw? kadika uwa iya’u/aya’u.",
+                "chineseText": "不見了嗎？快去找他！",
+                "audioUrl": "https://web.klokah.tw/text/sound/66321/925015.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-find-quest-5",
+          "order": 5,
+          "quest": "忙了一輪，終於一切就緒。婚禮要開始了，快點出發吧！",
+          "tips": "",
+          "goal": {
+            "kind": "end",
+            "prompt": null,
+            "options": [],
+            "answers": [],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null,
+            "endText": "忙了一輪，終於一切就緒。婚禮要開始了，快點出發吧！"
+          },
+          "closing": null,
+          "buylist": null,
+          "hintWords": [],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/find/6.png",
+          "props": [],
+          "targets": [],
+          "lines": []
         }
       ]
     },
@@ -265,7 +1375,7 @@
           "chineseText": "Sulikang，明天是星期天，你打算去哪裡？",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919199.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-1.png"
         },
         {
           "id": "40-hordequest-outside-2",
@@ -276,7 +1386,7 @@
           "chineseText": "我明天要和Muya去溪邊烤肉，你呢？",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919200.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-2.png",
-          "background": "1-2.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-2.png"
         },
         {
           "id": "40-hordequest-outside-3",
@@ -287,7 +1397,7 @@
           "chineseText": "聽起來很好玩！我也可以一起去嗎？",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919201.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-1.png"
         },
         {
           "id": "40-hordequest-outside-4",
@@ -298,7 +1408,7 @@
           "chineseText": "你先問媽媽！",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919202.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-2.png",
-          "background": "1-2.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-2.png"
         },
         {
           "id": "40-hordequest-outside-5",
@@ -309,7 +1419,7 @@
           "chineseText": "媽媽，我可以跟哥哥一起去溪邊嗎？",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919203.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-1.png"
         },
         {
           "id": "40-hordequest-outside-6",
@@ -320,7 +1430,7 @@
           "chineseText": "可以，但你們要小心喔！",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919204.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/mom.png",
-          "background": "1-3.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-3.png"
         },
         {
           "id": "40-hordequest-outside-7",
@@ -331,7 +1441,573 @@
           "chineseText": "沒問題，我們一定會的！",
           "audioUrl": "https://web.klokah.tw/text/sound/65759/919205.mp3",
           "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/boy-1.png",
-          "background": "1-1.png"
+          "backgroundUrl": "https://web.klokah.tw/interact/hordequest/img/outside/1-1.png"
+        }
+      ],
+      "quests": [
+        {
+          "id": "40-hordequest-outside-quest-1",
+          "order": 1,
+          "quest": "公車快要來了，但你們還沒買食材和工具。",
+          "tips": "問問看其他人「你要找什麼？」，檢視購物清單，找出還沒買到的東西，點選物品把它們放進購物籃吧！",
+          "goal": {
+            "kind": "take",
+            "prompt": null,
+            "options": [
+              {
+                "id": "food-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-1.png",
+                "box": {
+                  "top": 45.262,
+                  "left": 84,
+                  "width": 11,
+                  "height": 19.802
+                }
+              },
+              {
+                "id": "food-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-2.png",
+                "box": {
+                  "top": 48.091,
+                  "left": 51,
+                  "width": 24,
+                  "height": 8.487
+                }
+              },
+              {
+                "id": "food-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-3.png",
+                "box": {
+                  "top": 33.946,
+                  "left": 51,
+                  "width": 24,
+                  "height": 8.487
+                }
+              },
+              {
+                "id": "food-4",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-4.png",
+                "box": {
+                  "top": 63.649,
+                  "left": 25,
+                  "width": 16,
+                  "height": 7.072
+                }
+              },
+              {
+                "id": "food-5",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-5.png",
+                "box": {
+                  "top": 62.235,
+                  "left": 51,
+                  "width": 24,
+                  "height": 7.072
+                }
+              },
+              {
+                "id": "food-6",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-6.png",
+                "box": {
+                  "top": 73.55,
+                  "left": 54,
+                  "width": 21,
+                  "height": 9.901
+                }
+              },
+              {
+                "id": "item-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-item-1.png",
+                "box": {
+                  "top": 73.55,
+                  "left": 14,
+                  "width": 27,
+                  "height": 16.973
+                }
+              },
+              {
+                "id": "item-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-item-2.png",
+                "box": {
+                  "top": 42.433,
+                  "left": 13,
+                  "width": 23,
+                  "height": 12.73
+                }
+              },
+              {
+                "id": "drink-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-drink-1.png",
+                "box": {
+                  "top": 36.775,
+                  "left": 85,
+                  "width": 10,
+                  "height": 7.072
+                }
+              },
+              {
+                "id": "drink-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-drink-2.png",
+                "box": {
+                  "top": 67.893,
+                  "left": 83,
+                  "width": 13,
+                  "height": 8.487
+                }
+              },
+              {
+                "id": "drink-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-drink-3.png",
+                "box": {
+                  "top": 28.289,
+                  "left": 13,
+                  "width": 29,
+                  "height": 11.315
+                }
+              }
+            ],
+            "answers": [
+              "food-1",
+              "food-4"
+            ],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null
+          },
+          "closing": null,
+          "buylist": [
+            "valay za tratrima’an za emaeman",
+            "langilr",
+            "savang kana kemerang ’alum",
+            "kudumu/kadumu",
+            "vurasi",
+            "’alum",
+            "trinun"
+          ],
+          "hintWords": [
+            "i",
+            "iyan",
+            "kemuda",
+            "kivulas",
+            "maiya’",
+            "u",
+            "za",
+            "eman"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2.png",
+          "props": [
+            {
+              "id": "food-1b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-1b.png"
+            },
+            {
+              "id": "food-2b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-2b.png"
+            },
+            {
+              "id": "food-3b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-3b.png"
+            },
+            {
+              "id": "food-4b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-4b.png"
+            },
+            {
+              "id": "food-5b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-5b.png"
+            },
+            {
+              "id": "food-6b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-food-6b.png"
+            },
+            {
+              "id": "item-1b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-item-1b.png"
+            },
+            {
+              "id": "item-2b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-item-2b.png"
+            },
+            {
+              "id": "drink-1b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-drink-1b.png"
+            },
+            {
+              "id": "drink-2b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-drink-2b.png"
+            },
+            {
+              "id": "drink-3b",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-drink-3b.png"
+            },
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-target-1.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-target-2.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-target-1.png",
+              "box": {
+                "top": 43.847,
+                "height": 46.676,
+                "left": 67,
+                "width": 20
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/2-target-2.png",
+              "box": {
+                "top": 45.262,
+                "left": 38,
+                "width": 13,
+                "height": 46.676
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "maiya’ u za eman",
+              "displayText": "maiya’ u za eman?",
+              "chineseText": "你要找什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65761/919217.mp3",
+              "reply": {
+                "indigenousText": "maiya’ ku za langilr zi za savang kana kemerang ’alum.",
+                "chineseText": "我去找木炭和烤肉網。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65761/919218.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "1",
+              "onlyTargetId": null,
+              "indigenousText": "maiya’ u za eman",
+              "displayText": "maiya’ u za eman?",
+              "chineseText": "你要找什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65761/919217.mp3",
+              "reply": {
+                "indigenousText": "kay ku ziya miya’a za kudumu zi za vurasi.",
+                "chineseText": "我去找玉米和地瓜。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65761/919219.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-outside-quest-2",
+          "order": 2,
+          "quest": "你們提早了一站下車，不知道該往哪走。",
+          "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。趕快找出往溪邊的路吧！",
+          "goal": {
+            "kind": "select",
+            "prompt": null,
+            "options": [
+              {
+                "id": "road-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-road-1.png",
+                "box": null
+              },
+              {
+                "id": "road-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-road-2.png",
+                "box": null
+              },
+              {
+                "id": "road-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-road-3.png",
+                "box": null
+              }
+            ],
+            "answers": [
+              "road-3"
+            ],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null
+          },
+          "closing": null,
+          "buylist": null,
+          "hintWords": [
+            "zenan",
+            "eman",
+            "amanan",
+            "lrevek",
+            "piyaiyan",
+            "ta",
+            "kemakawa",
+            "mukuwa",
+            "i",
+            "velelruwan"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3.png",
+          "props": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-target-1.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-target-2.png"
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-target-3.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-target-1.png",
+              "box": {
+                "top": 11.315,
+                "left": 24,
+                "width": 14,
+                "height": 45.262
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-target-2.png",
+              "box": {
+                "top": 11.315,
+                "left": 10,
+                "width": 14,
+                "height": 45.262
+              }
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/3-target-3.png",
+              "box": {
+                "width": 23,
+                "height": 57.992,
+                "left": 56,
+                "top": 33.521
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "piyaiyan ta kemakawa mukuwa i velelruwan",
+              "displayText": "piyaiyan ta kemakawa mukuwa i velelruwan?",
+              "chineseText": "溪邊要往哪裡走？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65763/919239.mp3",
+              "reply": {
+                "indigenousText": "i kaziyu,ulra kana ma’izang na varasa’ i kazu.",
+                "chineseText": "那邊，有顆大石頭那邊。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65763/919240.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "piyaiyan ta kemakawa mukuwa i velelruwan",
+              "displayText": "piyaiyan ta kemakawa mukuwa i velelruwan?",
+              "chineseText": "溪邊要往哪裡走？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65763/919239.mp3",
+              "reply": {
+                "indigenousText": "’azi ku malrazam i iyan na velelruwa.",
+                "chineseText": "我不知道溪邊在哪裡。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65763/919241.mp3"
+              }
+            },
+            {
+              "targetId": "target-3",
+              "code": "2",
+              "onlyTargetId": null,
+              "indigenousText": "piyaiyan ta kemakawa mukuwa i velelruwan",
+              "displayText": "piyaiyan ta kemakawa mukuwa i velelruwan?",
+              "chineseText": "溪邊要往哪裡走？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65763/919239.mp3",
+              "reply": {
+                "indigenousText": "i kani a,muruma’ ku kemay i velelruwan a haremay.",
+                "chineseText": "這邊，我剛從溪邊回來。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65763/919242.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-outside-quest-3",
+          "order": 3,
+          "quest": "你正準備切菜，卻發現沒有刀子。",
+          "tips": "去問看看其他人「可以借我刀子嗎？」，別忘了和對方說「謝謝你的幫忙！」喔！",
+          "goal": {
+            "kind": "selectAndSpeak",
+            "prompt": "lrayuwan kemaku nanu puwalrangan",
+            "promptAudioUrl": "https://web.klokah.tw/text/sound/65764/919251.mp3",
+            "options": [
+              {
+                "id": "people-1",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-people-1.png",
+                "box": null
+              },
+              {
+                "id": "people-2",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-people-2.png",
+                "box": null
+              },
+              {
+                "id": "people-3",
+                "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-people-3.png",
+                "box": null
+              }
+            ],
+            "answers": [
+              "people-1"
+            ],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null
+          },
+          "closing": {
+            "text": "lrayuwan kemaku nanu puwalrangan",
+            "audioUrl": "https://web.klokah.tw/text/sound/65764/919251.mp3"
+          },
+          "buylist": null,
+          "hintWords": [
+            "’azi",
+            "karuwa",
+            "eman",
+            "’aratrip",
+            "kaysing",
+            "karuwa",
+            "u",
+            "pavulas",
+            "kaninku",
+            "za",
+            "kamutr"
+          ],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4.png",
+          "props": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-target-1.png"
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-target-2.png"
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-target-3.png"
+            }
+          ],
+          "targets": [
+            {
+              "id": "target-1",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-target-1.png",
+              "box": {
+                "top": 19.802,
+                "left": 48,
+                "width": 11,
+                "height": 24.045
+              }
+            },
+            {
+              "id": "target-2",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-target-2.png",
+              "box": {
+                "top": 39.604,
+                "left": 4,
+                "width": 38,
+                "height": 56.577
+              }
+            },
+            {
+              "id": "target-3",
+              "imageUrl": "https://web.klokah.tw/interact/hordequest/img/outside/4-target-3.png",
+              "box": {
+                "top": 33.946,
+                "width": 35,
+                "height": 28.289,
+                "left": 65
+              }
+            }
+          ],
+          "lines": [
+            {
+              "targetId": "target-1",
+              "code": "3",
+              "onlyTargetId": null,
+              "indigenousText": "karuwa u pavulas kaninku za kamutr",
+              "displayText": "karuwa u pavulas kaninku za kamutr?",
+              "chineseText": "可以借我刀子嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65764/919247.mp3",
+              "reply": {
+                "indigenousText": "ai,elaku!",
+                "chineseText": "好啊，拿去！",
+                "audioUrl": "https://web.klokah.tw/text/sound/65764/919248.mp3"
+              }
+            },
+            {
+              "targetId": "target-2",
+              "code": "3",
+              "onlyTargetId": null,
+              "indigenousText": "karuwa u pavulas kaninku za kamutr",
+              "displayText": "karuwa u pavulas kaninku za kamutr?",
+              "chineseText": "可以借我刀子嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65764/919247.mp3",
+              "reply": {
+                "indigenousText": "uniyan i inku.",
+                "chineseText": "我也沒有。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65764/919249.mp3"
+              }
+            },
+            {
+              "targetId": "target-3",
+              "code": "3",
+              "onlyTargetId": null,
+              "indigenousText": "karuwa u pavulas kaninku za kamutr",
+              "displayText": "karuwa u pavulas kaninku za kamutr?",
+              "chineseText": "可以借我刀子嗎？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65764/919247.mp3",
+              "reply": {
+                "indigenousText": "’azi karuwa, kuwatreng lra ku kamutr.",
+                "chineseText": "不行，我的刀子壞掉了。",
+                "audioUrl": "https://web.klokah.tw/text/sound/65764/919250.mp3"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40-hordequest-outside-quest-4",
+          "order": 4,
+          "quest": "太陽下山了！你們今天都玩得很開心，還約好下次要再一起去溪邊玩。趕快回家吧！",
+          "tips": "",
+          "goal": {
+            "kind": "end",
+            "prompt": null,
+            "options": [],
+            "answers": [],
+            "lock": null,
+            "unlock": null,
+            "box": null,
+            "backgroundUrl": null,
+            "endText": "太陽下山了！你們今天都玩得很開心，還約好下次要再一起去溪邊玩。趕快回家吧！"
+          },
+          "closing": null,
+          "buylist": null,
+          "hintWords": [],
+          "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/outside/5.png",
+          "props": [],
+          "targets": [],
+          "lines": []
         }
       ]
     }

@@ -66,6 +66,7 @@
       <div class="scene-nav">
         <button id="back-setup" type="button">← 回到設定</button>
         <p id="scene-intro"></p>
+        <button id="to-quest" type="button" hidden>任務關卡 →</button>
       </div>
       <div id="scene-body" class="scene-body scene-body--solo">
           <div class="stage">
@@ -122,10 +123,60 @@
       <h2 id="report-title">這段對話練完了</h2>
       <p id="score-line" class="scene-score"></p>
       <ul id="score-list" class="report-list"></ul>
+      <p class="quest-offer" id="quest-offer" hidden></p>
       <p class="alt-route">再練一次別的角色，或換一個方言別。</p>
       <div class="submit-row">
+        <button id="start-quest" class="primary" hidden>接著玩任務</button>
+        <button id="to-dialogue" class="primary" hidden>回到對話</button>
         <button id="again" class="primary">再練一次</button>
         <button id="back-setup-report" type="button">換語言別或角色</button>
+      </div>
+    </section>
+
+    <section id="quest" class="scene panel" hidden aria-labelledby="quest-text">
+      <div class="quiz-top">
+        <div><div class="step">STEP 4</div><p id="quest-label"></p></div>
+        <span id="quest-count">第 1 / 1 關</span>
+      </div>
+      <div class="scene-nav">
+        <button id="quest-back" type="button">← 回到對話</button>
+        <div id="quest-levels" class="level-picker" role="group" aria-label="選擇要玩的關卡"></div>
+        <p id="quest-progress"></p>
+        <button id="quest-hint" type="button">看提示</button>
+      </div>
+      <div id="quest-hint-box" class="hint-box" hidden>
+        <p>這關可能用到的詞（沒有順序）：</p>
+        <ul id="quest-hint-words"></ul>
+      </div>
+      <div id="quest-body" class="scene-body">
+        <div class="stage quest-stage">
+          <div class="quest-scene" id="quest-scene-box">
+          <img id="quest-scene" class="stage__bg" alt="任務場景" >
+          <img id="quest-player" class="quest-layer" alt="" aria-hidden="true">
+          <div id="quest-layers" class="quest-layers"></div>
+          <img id="quest-reward" class="quest-reward" alt="" hidden>
+          </div>
+          <div class="dialogue quest-board">
+            <div class="dialogue__say">
+              <span class="prompt" id="quest-speaker">任務</span>
+              <p id="quest-text" class="dialogue__zh">任務說明</p>
+              <p id="quest-reply" class="dialogue__ab"></p>
+              <div id="quest-tags" class="quest-tags" hidden>
+                <p>把名牌放到對的同學桌上：先點名牌，再點同學。</p>
+                <div id="quest-tag-dock"></div>
+              </div>
+            </div>
+            <div class="dialogue__controls">
+              <button id="quest-replay" class="primary" type="button">再聽一次</button>
+              <span id="quest-audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
+              <button id="quest-next" class="arrow" type="button" hidden>下一關 →</button>
+            </div>
+            <audio id="quest-audio"></audio>
+          </div>
+        </div>
+        <div id="quest-side" class="quest-side">
+          <div id="quest-goal" class="quest-goal" hidden></div>
+        </div>
       </div>
     </section>
   </main>
