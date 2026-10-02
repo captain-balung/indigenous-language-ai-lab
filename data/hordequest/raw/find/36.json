@@ -1,0 +1,253 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "cina, kacaua kincaucaua soni iavatu tanasa.",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/71668/998389",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "muru’ucangʉ kana’ua sarunai soni, imua kacaua cau iavatu.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/71668/998390",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "cucuru macangcangarʉ! miaranau cu koo cumacʉ’ʉra nguani.",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/71668/998391",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ʉʉ’ʉ iaa! ’isiungasi kita soni, tia kasu muranʉ kitana.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/71668/998392",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ʉʉ’ʉ, tia ku muranʉ.",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/71668/998393",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "tia ku mati’arangʉ tia siarupaca nonoman nusoni.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/71668/998394",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "iavatu ku muranʉ.",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/71668/998395",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ʉʉ’ʉ, kipapaa ’ikua!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/71668/998396",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "makananu capai vo’orua iakaang",
+                    "textAb": "makananu capai vo’orua iakaang?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/71668/998397",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "’esi nanu ’una tapa",
+                    "textAb": "’esi nanu ’una tapa?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/71668/998399",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "cinimʉ’ʉra kara kasu ’aviki",
+                    "textAb": "cinimʉ’ʉra kara kasu ’aviki?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/71668/998401",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "’esi nanu kana’ua sarunai",
+                    "textAb": "’esi nanu kana’ua sarunai?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/71668/998404",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "neni",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66292/924791"
+                },
+                "1": {
+                    "text": "niarupaca maku panavi mupucu.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/71668/998398"
+                },
+                "2": {
+                    "text": "ka’anʉ ku kangvang tavarʉ’ʉ",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/71668/998400"
+                },
+                "3": {
+                    "text": "’akia na ’ikua sian.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66296/924821"
+                },
+                "4": {
+                    "text": "’akia cʉ’ʉrʉʉn, ’acu nanu?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/71668/998405"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ka’anʉ akanangʉ",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66292/924792"
+                },
+                "1": {
+                    "text": "niarupaca cina masinang panavi mupucu.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66294/924806"
+                },
+                "2": {
+                    "text": "’inmamia cimʉrʉ ’una.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66295/924814"
+                },
+                "3": {
+                    "text": "’una, ’esi na ta’ʉnʉ.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/71668/998402"
+                },
+                "4": {
+                    "text": "koo pa kara nguain arapiningi?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/71668/998406"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "tokia’e",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66292/924793"
+                },
+                "1": {
+                    "text": "ka’anʉ ku atʉnʉngʉ.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66294/924807"
+                },
+                "2": {
+                    "text": "’una ku namasʉ, vuʉn kasua.",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66295/924815"
+                },
+                "3": {
+                    "text": "’una ’esi na karara isa.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/71668/998403"
+                },
+                "4": {
+                    "text": "niara’akia kara? pakavura tikirimi ’inia!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66297/924831"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "karara",
+                        "neni",
+                        "vatu",
+                        "neni",
+                        "makananu",
+                        "capai",
+                        "vo’orua",
+                        "iakaang"
+                    ],
+                    "auto": "makananu capai vo’orua iakaang"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "’aviki",
+                        "miseni",
+                        "cʉnʉ",
+                        "vungavung",
+                        "’esi",
+                        "nanu",
+                        "’una",
+                        "tapa"
+                    ],
+                    "auto": "’esi nanu ’una tapa"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "nivanga",
+                        "neni",
+                        "tanasa",
+                        "mara",
+                        "cinimʉ’ʉra",
+                        "kara",
+                        "kasu",
+                        "’aviki"
+                    ],
+                    "auto": "cinimʉ’ʉra kara kasu ’aviki"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "neni",
+                        "neni",
+                        "tangria",
+                        "takituturua",
+                        "’esi",
+                        "nanu",
+                        "kana’ua",
+                        "sarunai"
+                    ],
+                    "auto": "’esi nanu kana’ua sarunai",
+                    "complete": {
+                        "text": "’esi ku nesi, mapinipini curu!",
+                        "sound": "text/sound/66297/924832"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

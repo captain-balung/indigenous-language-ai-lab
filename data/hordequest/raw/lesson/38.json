@@ -1,0 +1,408 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "i manay nu ngalad?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62950/878283",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "i Kayaw ku ngalad.",
+                "textCh": "我叫Kayaw。",
+                "sound": "text/sound/62950/878284",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ullaya isuwa nu ruma?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62950/878285",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kemay i Puyuma ku.",
+                "textCh": "我從普悠瑪(南王)部落來。",
+                "sound": "text/sound/62950/878286",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kenama yu lla?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62950/878287",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "adri driya!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62950/878288",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "auka ku tremimaa dra kakenamaan. kuarenang yu muka?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62950/878289",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "adri ku kemasu dra paisu. karuwa yu pabulas dra paisu kanku?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62950/878290",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "aiwa, ti pabulasay yu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62950/878291",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Kasavakan",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Senayan",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Mulivelivek",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Tanuvak",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Papulu",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Kelan",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "i manay nu ngalad",
+                    "textAb": "i manay nu ngalad?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62951/878292",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ullaya isuwa nu ruma",
+                    "textAb": "ullaya isuwa nu ruma?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62952/878301",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kayaw pabulasi ku dra tratruri maw",
+                    "textAb": "Kayaw, pabulasi ku dra tratruri maw?",
+                    "textCh": "Kayaw借我筆好嗎？",
+                    "sound": "text/sound/62953/878317",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sanay pabulasi ku dra tratruri maw",
+                    "textAb": "Sanay, pabulasi ku dra tratruri maw?",
+                    "textCh": "Sanay借我筆好嗎？",
+                    "sound": "text/sound/62953/878319",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kayaw pabulasi ku dra iyasaus maw",
+                    "textAb": "Kayaw, pabulasi ku dra iyasaus maw?",
+                    "textCh": "Kayaw借我橡皮擦好嗎？",
+                    "sound": "text/sound/62954/878329",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sanay pabulasi ku dra iyasaus maw",
+                    "textAb": "Sanay, pabulasi ku dra iyasaus maw?",
+                    "textCh": "Sanay借我橡皮擦好嗎？",
+                    "sound": "text/sound/62954/878331",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kayaw alakan ku driya dra sasellap",
+                    "textAb": "Kayaw, alakan ku driya dra sasellap!",
+                    "textCh": "Kayaw，請幫我拿掃把！",
+                    "sound": "text/sound/62955/878337",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sanay alakan ku driya dra sasellap",
+                    "textAb": "Sanay, alakan ku driya dra sasellap!",
+                    "textCh": "Sanay，請幫我拿掃把！",
+                    "sound": "text/sound/62955/878339",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "maulid",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62949/878282"
+                },
+                "1": {
+                    "text": "i Kayaw ku ngalad.",
+                    "textCh": "我的名字叫Kayaw。",
+                    "sound": "text/sound/62951/878293"
+                },
+                "2": {
+                    "text": "ullaya i Puyuma ku ruma.",
+                    "textCh": "我的家在普悠瑪",
+                    "sound": "text/sound/62952/878302"
+                },
+                "3": {
+                    "text": "aiwa, ti pabulasay yu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62953/878318"
+                },
+                "4": {
+                    "text": "uniyan nanku.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62954/878330"
+                },
+                "5": {
+                    "text": "aiwa, niya idri na sasellap!",
+                    "textCh": "好，這支掃把給你！",
+                    "sound": "text/sound/62955/878338"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "a manay?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62949/878280"
+                },
+                "1": {
+                    "text": "i Sanay ku ngalad.",
+                    "textCh": "我的名字叫Sanay。",
+                    "sound": "text/sound/62951/878294"
+                },
+                "2": {
+                    "text": "ullaya i Pinaseki ku ruma.",
+                    "textCh": "我的家在下賓朗",
+                    "sound": "text/sound/62952/878303"
+                },
+                "3": {
+                    "text": "saya ku tratruri.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62953/878320"
+                },
+                "4": {
+                    "text": "aiwa, alaku!",
+                    "textCh": "好，拿去！",
+                    "sound": "text/sound/62954/878332"
+                },
+                "5": {
+                    "text": "maulid ku dra ullaya isuwa.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62955/878340"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "taytaw",
+                        "nantaw",
+						"kanadru",
+                        "isuwa",
+                        "ruma",
+                        "i",
+                        "manay",
+                        "nu",
+                        "ngalad"
+                    ],
+                    "auto": "i manay nu ngalad",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kayaw",
+                            "Pinaseki",
+                            "Undru",
+                            "Sanay",
+                            "Puyuma"
+                        ],
+                        "target-1": "Kayaw",
+                        "target-2": "Sanay"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "makasatr",
+                        "manay",
+                        "saninin",
+                        "temakesi",
+                        "mu",
+                        "nadru",
+                        "drenan",
+                        "ullaya",
+                        "isuwa",
+                        "nu",
+                        "ruma"
+                    ],
+                    "auto": "ullaya isuwa nu ruma",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Puyuma",
+                            "ullingull",
+                            "langitr",
+                            "Pinaseki",
+                            "kabalawasan"
+                        ],
+                        "target-1": "Puyuma",
+                        "target-2": "Pinaseki"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nantaw",
+                        "dingwa",
+                        "tilin",
+                        "mi",
+                        "isuwa",
+                        "Kayaw",
+                        "Sanay",
+                        "pabulasi",
+                        "ku",
+                        "dra",
+                        "tratruri",
+                        "maw"
+                    ],
+                    "auto": {
+                        "target-1": "Kayaw pabulasi ku dra tratruri maw",
+                        "target-2": "Sanay pabulasi ku dra tratruri maw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "tratruri",
+                        "tilin",
+                        "nanu",
+                        "isuwa",
+                        "Kayaw",
+                        "Sanay",
+                        "pabulasi",
+                        "ku",
+                        "dra",
+                        "iyasaus",
+                        "maw"
+                    ],
+                    "auto": {
+                        "target-1": "Kayaw pabulasi ku dra iyasaus maw",
+                        "target-2": "Sanay pabulasi ku dra iyasaus maw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "trapull",
+                        "makuda",
+                        "uniyan",
+                        "semellap",
+                        "taytaw",
+                        "mu",
+                        "Kayaw",
+                        "Sanay",
+                        "alakan",
+                        "ku",
+                        "driya",
+                        "dra",
+                        "sasellap"
+                    ],
+                    "auto": {
+                        "target-1": "Kayaw alakan ku driya dra sasellap",
+                        "target-2": "Sanay alakan ku driya dra sasellap"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

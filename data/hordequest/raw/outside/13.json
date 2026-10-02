@@ -1,0 +1,214 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "lahi’, rim’an kaSangayan hahila:, So’o ’am ’ila’ino’?",
+                "textCh": "lahi’，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65671/918498",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "yako rim’aen ’am ki lalo’ rima’ ray lolongan somoloeh ka bori:, So’o li?",
+                "textCh": "我明天要和lalo’去溪邊烤肉，你呢？",
+                "sound": "text/sound/65671/918499",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "bazae’en kin kayzaeh kakSiyae’en, yako ma’ kayzaeh ay ma’onhael rima’?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65671/918500",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "So’o ’inSala’ singozaw hi ’oya’.",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65671/918501",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "’oya’, yako kayzaeh ay ki minatini’ kamamanra:an ma’onhael rima’ lolongan?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65671/918502",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kayzaeh, ’oka’ o moyo ma’ ’iya’azem o!",
+                "textCh": "可以，但你們也要小心喔！",
+                "sound": "text/sound/65671/918503",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "’a:ay, yami ra:am!",
+                "textCh": "好的，我們會的！",
+                "sound": "text/sound/65671/918504",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "so’o ’am komi:im ka kano’",
+                    "textAb": "So’o ’am komi:im ka kano’?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65672/918508",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "lolongan ’am may’ino’ rima’",
+                    "textAb": "lolongan ’am may’ino’ rima’?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65674/918534",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "kayzaeh ay Sibae:aeh ’iyakin ka malat",
+                    "textAb": "kayzaeh ay Sibae:aeh ’iyakin ka malat?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65675/918542",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "kano’",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65669/918485"
+                },
+                "1": {
+                    "text": "yako rima’ komi:im ka bae:aeh ki kasoloehan ’ami’.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65672/918509"
+                },
+                "2": {
+                    "text": "hiza, hiza ’ay ’ima hayza’ ka ’ima sobae:oeh bato’.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65674/918535"
+                },
+                "3": {
+                    "text": "’a:ay, mari’ ila.",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65675/918543"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "haSa’ bazae’",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65669/918486"
+                },
+                "1": {
+                    "text": "yako rima’ komi:im ka baesaeh ki ’aewpir.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65672/918510"
+                },
+                "2": {
+                    "text": "yako haSa’ lolongan hayno’?",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65674/918536"
+                },
+                "3": {
+                    "text": "yako ma’ ’oka’.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65675/918544"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "haSa’",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65669/918487"
+                },
+                "2": {
+                    "text": "hini, yako baba:aw ’inay lolongan lobih.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65674/918537"
+                },
+                "3": {
+                    "text": "kayni’, ma’an malat ’aewhay ila.",
+                    "textCh": "不要，我的刀子壞掉了。",
+                    "sound": "text/sound/65675/918545"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "hayno’",
+                        "’ampowa’",
+                        "sibae:aeh",
+                        "so’o",
+                        "’am",
+                        "komi:im",
+                        "ka",
+                        "kano’"
+                    ],
+                    "auto": "so’o ’am komi:im ka kano’",
+                    "buylist": [
+                        "kabae:iwen ka kakrangi’an.",
+                        "bae:aeh",
+                        "kasoloehan ’ami’",
+                        "baesaeh",
+                        "’aewpir",
+                        "bori:",
+                        "’oesizo:"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "’oes’oeso’an",
+                        "kano’",
+                        "kayni’",
+                        "wasal",
+                        "lolongan",
+                        "’am",
+                        "may’ino’",
+                        "rima’"
+                    ],
+                    "auto": "lolongan ’am may’ino’ rima’"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "kayni’",
+                        "kano’",
+                        "hahowar",
+                        "powawan",
+                        "kayzaeh",
+                        "ay",
+                        "Sibae:aeh",
+                        "’iyakin",
+                        "ka",
+                        "malat"
+                    ],
+                    "auto": "kayzaeh ay Sibae:aeh ’iyakin ka malat",
+                    "complete": {
+                        "text": "ma’alo’ niSo’ tilhael",
+                        "sound": "text/sound/65675/918546"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

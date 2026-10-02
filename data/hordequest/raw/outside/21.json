@@ -1,0 +1,215 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Umas! Islunghqu’an laqbingin, namun’isaq asu?",
+                "textCh": "Umas，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65632/918197",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Nataskun saak Sani laqbingin munhaan vanglaz mapaklang titi. Namun’isaq asu?",
+                "textCh": "我明天要和Sani去溪邊烤肉，你呢？",
+                "sound": "text/sound/65632/918198",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Maaki tan’aun a namalinahip! Maqtu amin saak taskun mun’ita?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65632/918199",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Tangusa asu masingav tina!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65632/918200",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Tina! Maqtu saak makilansan tuqasnanaz munhaan vanglaz?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65632/918201",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Maqtu! Asa tu mananulu qai!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65632/918202",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "Namaqtu, Namananulu saam!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65632/918203",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "ma’aq isuu kilimun tu",
+                    "textAb": "Ma’aq isuu kilimun tu?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65637/918237",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "maka’isaq munhaan vanglaz tu daan",
+                    "textAb": "Maka’isaq munhaan vanglaz tu daan?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65643/918273",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "maqtu saak pasimulan via",
+                    "textAb": "Maqtu saak pasimulan via?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65645/918284",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Ma’aq?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65627/918174"
+                },
+                "1": {
+                    "text": "Kilim saak qunhung siin paklangan titi tu ami.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65637/918238"
+                },
+                "2": {
+                    "text": "Antandaiza, haiza batu daing tu daana.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65643/918274"
+                },
+                "3": {
+                    "text": "Maqtu! Siza’i!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65645/918285"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Nii tu itqaalun?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65627/918175"
+                },
+                "1": {
+                    "text": "Kilim saak pu’i siin hutan.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65637/918239"
+                },
+                "2": {
+                    "text": "Nii saak niap tu maka’isaq a munhaan vanglaz tu daan.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65643/918275"
+                },
+                "3": {
+                    "text": "Uka amin inaak.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65645/918286"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "Nii tu maqansiap!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65627/918176"
+                },
+                "2": {
+                    "text": "Iti, laupang saak misnahaan vanglaz musuqais.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65643/918276"
+                },
+                "3": {
+                    "text": "Nii tu maqtu, mindikla’in inaak tu via.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65645/918287"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "isaq",
+                        "mavia",
+                        "simul",
+                        "ma’aq",
+                        "isuu",
+                        "kilimun",
+                        "tu"
+                    ],
+                    "auto": "ma’aq isuu kilimun tu",
+                    "buylist": [
+                        "Balivun tu kakaunun",
+                        "Qunhung",
+                        "Paklangan titi tu ami",
+                        "Pu’i",
+                        "Hutan",
+                        "Titi",
+                        "Nibu"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "ba’av",
+                        "ma’aq",
+                        "kakaa",
+                        "sila",
+                        "ning’av",
+                        "maka’isaq",
+                        "munhaan",
+                        "vanglaz",
+                        "tu",
+                        "daan"
+                    ],
+                    "auto": "maka’isaq munhaan vanglaz tu daan"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "nii",
+                        "tu",
+                        "maqtu.",
+                        "ma’aq",
+                        "qaltis",
+                        "baluku",
+                        "maqtu",
+                        "saak",
+                        "pasimulan",
+                        "via"
+                    ],
+                    "auto": "maqtu saak pasimulan via",
+                    "complete": {
+                        "text": "uninang isuu tu sin’indangaz",
+                        "sound": "text/sound/65645/918288"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,403 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "tuko’un su ngan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62532/867301",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Tiang cak.",
+                "textCh": "我叫Tiang。",
+                "sound": "text/sound/62532/867302",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ica su a lumaq?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62532/867303",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "minihan cak Malavi’.",
+                "textCh": "我從潭南部落來。",
+                "sound": "text/sound/62532/867304",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mina’unin asu tingmut?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62532/867305",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ni’ang!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62532/867306",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "namabaliv cak konun tingmut, malavi asu?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62532/867307",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "uka’ nak inadas cui, maqtu asu pasimul zaku?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62532/867308",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "u napasimulan zaku asu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62532/867309",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Nansalu",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Ibu",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Buqaiz",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Tiang",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Tama'zu'an",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Aping",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "tuko’un su ngan",
+                    "textAb": "tuko’un su ngan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62533/867310",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ica su a lumaq",
+                    "textAb": "ica su a lumaq?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62534/867319",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Tiang pasimuling cak inpicu’",
+                    "textAb": "Tiang pasimuling cak inpicu’?",
+                    "textCh": "Atul借我筆好嗎？",
+                    "sound": "text/sound/62535/867335",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Abu pasimuling cak inpicu’",
+                    "textAb": "Abu pasimuling cak inpicu’?",
+                    "textCh": "panay借我筆好嗎？",
+                    "sound": "text/sound/62535/867337",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tiang pasimuling cak isqeqesqes",
+                    "textAb": "Tiang pasimuling cak isqeqesqes.",
+                    "textCh": "Tiang借我橡皮擦好嗎？",
+                    "sound": "text/sound/62536/867347",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Abu pasimuling cak isqeqesqes",
+                    "textAb": "Abu pasimuling cak isqeqesqes?",
+                    "textCh": "Abu借我橡皮擦好嗎？",
+                    "sound": "text/sound/62536/867349",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tiang kangazing cak siza’ asi",
+                    "textAb": "Tiang kangazing cak siza’ asi!",
+                    "textCh": "Tiang，請幫我拿掃把。",
+                    "sound": "text/sound/62537/867355",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Abu kangazing cak siza’ asi",
+                    "textAb": "Abu, kangazing cak siza’ asi!",
+                    "textCh": "Abu，請幫我拿掃把。",
+                    "sound": "text/sound/62537/867357",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ni tu maqanciap!",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62531/867300"
+                },
+                "1": {
+                    "text": "Tiang cak.",
+                    "textCh": "我的名字叫Tiang。",
+                    "sound": "text/sound/62533/867311"
+                },
+                "2": {
+                    "text": "takihan cak Tama’zu’an.",
+                    "textCh": "我的家在地利",
+                    "sound": "text/sound/62534/867320"
+                },
+                "3": {
+                    "text": "u, simuli su.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62535/867336"
+                },
+                "4": {
+                    "text": "uka’ amin nak.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62536/867348"
+                },
+                "5": {
+                    "text": "u, dia asiki.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62537/867356"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ma’aq",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62531/867298"
+                },
+                "1": {
+                    "text": "Abu cak.",
+                    "textCh": "我的名字叫Abu。",
+                    "sound": "text/sound/62533/867312"
+                },
+                "2": {
+                    "text": "takihan cak Malavi’.",
+                    "textCh": "我的家在潭南",
+                    "sound": "text/sound/62534/867321"
+                },
+                "3": {
+                    "text": "muaz nak tas’a  ka inpicu’.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62535/867338"
+                },
+                "4": {
+                    "text": "u, siza’i su.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62536/867350"
+                },
+                "5": {
+                    "text": "ni cak qanciap tu iac.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62537/867358"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "macki’",
+                        "inaita’",
+                        "ica",
+                        "lumaq",
+                        "tuko’un",
+                        "su",
+                        "ngan"
+                    ],
+                    "auto": "tuko’un su ngan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tiang",
+                            "Malavi’",
+                            "Aping",
+                            "Abu",
+                            "Tamazu’an"
+                        ],
+                        "target-1": "Tiang",
+                        "target-2": "Abu"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "daza’",
+                        "cimaq",
+                        "sila",
+                        "masipul",
+						"hung",
+                        "mu’u",
+                        "mangka’",
+                        "ludun",
+                        "ica",
+                        "su",
+                        "a",
+                        "lumaq"
+                    ],
+                    "auto": "ica su a lumaq",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tamazu’an",
+                            "mahancum",
+                            "diqanin",
+                            "Malavi’",
+                            "vanglaz"
+                        ],
+                        "target-1": "Tamazu’an",
+                        "target-2": "Malavi’"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "iciata’",
+                        "lingva’",
+                        "hung",
+                        "zami",
+                        "ita",
+                        "ica",
+                        "Tiang",
+                        "Abu",
+                        "pasimuling",
+                        "cak",
+                        "inpicu’"
+                    ],
+                    "auto": {
+                        "target-1": "Tiang pasimuling cak inpicu’",
+                        "target-2": "Abu pasimuling cak inpicu’ "
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "inpicu’",
+                        "hung",
+                        "isu’",
+                        "ica",
+                        "Tiang",
+                        "Abu",
+                        "pasimuling",
+                        "cak",
+                        "isqeqesqes"
+                    ],
+                    "auto": {
+                        "target-1": "Tiang pasimuling cak isqeqesqes",
+                        "target-2": "Abu pasimuling cak isqeqesqes"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "zuking’",
+                        "makua",
+                        "uka’",
+                        "ma’asik",
+                        "macki’",
+                        "mu’u",
+                        "Tiang",
+                        "Abu",
+                        "kangazing",
+                        "cak",
+                        "siza’",
+                        "asi"
+                    ],
+                    "auto": {
+                        "target-1": "Tiang kangazing cak siza’ asi",
+                        "target-2": "Abu kangazing cak siza’ asi"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

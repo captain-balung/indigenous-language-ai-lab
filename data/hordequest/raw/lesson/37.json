@@ -1,0 +1,405 @@
+{
+	"theme": "上課用語",
+	"data": {
+		"phase1": [
+			{
+				"text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+			},
+			{
+				"text": "ngasa ngahla u?",
+				"textCh": "你叫甚麼名字？",
+				"sound": "text/sound/62928/877705",
+				"image": "girl.png",
+				"background": "1-1.jpg"
+			},
+			{
+				"text": "ihlaku ia Caʉpʉ.",
+				"textCh": "我叫Caʉpʉ。",
+				"sound": "text/sound/62928/877706",
+				"image": "boy.png",
+				"background": "1-2.jpg"
+			},
+			{
+				"text": "ma ninau a salia u?",
+				"textCh": "你的家在哪裡？",
+				"sound": "text/sound/62928/877707",
+				"image": "girl.png",
+				"background": "1-1.jpg"
+			},
+			{
+				"text": "hliangahli aku Rʉhlʉcʉ miararuma mʉcʉkʉhlʉ.",
+				"textCh": "我從浮萍部落來。",
+				"sound": "text/sound/62928/877708",
+				"image": "boy.png",
+				"background": "1-2.jpg"
+			},
+			{
+				"text": "hliumuu cu u i kuamaivʉvʉrʉnga?",
+				"textCh": "你吃早餐了嗎？",
+				"sound": "text/sound/62928/877709",
+				"image": "girl.png",
+				"background": "1-1.jpg"
+			},
+			{
+				"text": "uka’amana.",
+				"textCh": "還沒耶！",
+				"sound": "text/sound/62928/877710",
+				"image": "boy.png",
+				"background": "1-2.jpg"
+			},
+			{
+				"text": "muasa ku pu’a kuamaivʉvʉrʉnga, mualiviu i?",
+				"textCh": "我要去買早餐，要一起去嗎？",
+				"sound": "text/sound/62928/877711",
+				"image": "girl.png",
+				"background": "1-1.jpg"
+			},
+			{
+				"text": "kuaku ahlava vahlituku. tuahliu i umuhli ihlaku vahlituku?",
+				"textCh": "我沒有帶錢。你可以借我錢嗎？",
+				"sound": "text/sound/62928/877712",
+				"image": "boy.png",
+				"background": "1-2.jpg"
+			},
+			{
+				"text": "aa’ʉ, umuhli aku ihlau.",
+				"textCh": "好，我借你。",
+				"sound": "text/sound/62928/877713",
+				"image": "girl.png",
+				"background": "1-1.jpg"
+			}
+		],
+		"phase2": {
+			"setup": {
+				"text": [
+					[
+						"Tanguhla",
+						"40",
+						"25.5"
+					],
+					[
+						"Hlatingai",
+						"40",
+						"34"
+					],
+					[
+						"Ngani",
+						"40",
+						"60.8"
+					],
+					[
+						"Mu'u",
+						"40",
+						"69"
+					],
+					[
+						"Su'aci",
+						"61",
+						"49"
+					],
+					[
+						"Una",
+						"61",
+						"56"
+					]
+				]
+			},
+			"player": [
+				{
+					"text": "ngasa ngahla u",
+					"textAb": "ngasa ngahla u?",
+					"textCh": "你叫甚麼名字？",
+					"sound": "text/sound/62929/877714",
+					"code": "1",
+					"score": 100
+				},
+				{
+					"text": "ini paruaru salia u",
+					"textAb": "ini paruaru salia u?",
+					"textCh": "你家住哪裡？",
+					"sound": "text/sound/62930/877723",
+					"code": "2",
+					"score": 100
+				},
+				{
+					"text": "Caʉpʉ pauhli ihlaku siasuhlatʉ aa’ʉ i",
+					"textAb": "Caʉpʉ pauhli ihlaku siasuhlatʉ aa’ʉ i",
+					"textCh": "Caʉpʉ借我筆好嗎？",
+					"sound": "text/sound/62931/877739",
+					"code": "3",
+					"only": "target-1",
+					"score": 100
+				},
+				{
+					"text": "Vanau pauhli ihlaku siasuhlatʉ aa’ʉ i",
+					"textAb": "Vanau pauhli ihlaku siasuhlatʉ aa’ʉ i",
+					"textCh": "Vanau借我筆好嗎？",
+					"sound": "text/sound/62931/877741",
+					"code": "3",
+					"only": "target-2",
+					"score": 100
+				},
+				{
+					"text": "Caʉpʉ pauhli ihlaku siasamusu aa’ʉ i",
+					"textAb": "Caʉpʉ pauhli ihlaku siasamusu aa’ʉ i",
+					"textCh": "Caʉpʉ借我橡皮擦好嗎？",
+					"sound": "text/sound/62932/877751",
+					"code": "4",
+					"only": "target-1",
+					"score": 100
+				},
+				{
+					"text": "Vanau pauhli ihlaku siasamusu aa’ʉ i",
+					"textAb": "Vanau pauhli ihlaku siasamusu aa’ʉ i",
+					"textCh": "Vanau借我橡皮擦好嗎？",
+					"sound": "text/sound/62932/877753",
+					"code": "4",
+					"only": "target-2",
+					"score": 100
+				},
+				{
+					"text": "Caʉpʉ tumalʉlʉvʉaku umala vʉtʉraʉ",
+					"textAb": "Caʉpʉ tumalʉlʉvʉaku umala vʉtʉraʉ",
+					"textCh": "Caʉpʉ，請幫我拿掃把。",
+					"sound": "text/sound/62933/877759",
+					"code": "5",
+					"only": "target-1",
+					"score": 100
+				},
+				{
+					"text": "Vanau tumalʉlʉvʉaku umala vʉtʉraʉ",
+					"textAb": "Vanau tumalʉlʉvʉaku umala vʉtʉraʉ",
+					"textCh": "Vanau，請幫我拿掃把。",
+					"sound": "text/sound/62933/877761",
+					"code": "5",
+					"only": "target-2",
+					"score": 100
+				}
+			],
+			"target-1": {
+				"0": {
+					"text": "kuacahlia",
+					"textCh": "不知道",
+					"sound": "text/sound/62927/877704"
+				},
+				"1": {
+					"text": "ngahla ku ia Caʉpʉ",
+					"textCh": "我的名字叫Caʉpʉ。",
+					"sound": "text/sound/62929/877715"
+				},
+				"2": {
+					"text": "ma Rʉhlʉcʉ salia ku",
+					"textCh": "我的家在浮萍",
+					"sound": "text/sound/62930/877724"
+				},
+				"3": {
+					"text": "aa’ʉ umuhliaku ihlau",
+					"textCh": "好，我借你。",
+					"sound": "text/sound/62931/877740"
+				},
+				"4": {
+					"text": "uka’aku mʉmʉa",
+					"textCh": "我也沒有。",
+					"sound": "text/sound/62932/877752"
+				},
+				"5": {
+					"text": "aa’ʉ uvura ihlau kani’i vʉtʉraʉ",
+					"textCh": "好，這支掃把給你。",
+					"sound": "text/sound/62933/877760"
+				}
+			},
+			"target-2": {
+				"0": {
+					"text": "misaini?",
+					"textCh": "什麼？",
+					"sound": "text/sound/62927/877702"
+				},
+				"1": {
+					"text": "ngahla ku ia Vanau",
+					"textCh": "我的名字叫Vanau。",
+					"sound": "text/sound/62929/877716"
+				},
+				"2": {
+					"text": "ma Kalʉvʉnga salia ku",
+					"textCh": "我的家在桃源",
+					"sound": "text/sound/62930/877725"
+				},
+				"3": {
+					"text": "ucaaniaku ucani",
+					"textCh": "我只有一隻。",
+					"sound": "text/sound/62931/877742"
+				},
+				"4": {
+					"text": "aa’ʉ, alu",
+					"textCh": "好，拿去。",
+					"sound": "text/sound/62932/877754"
+				},
+				"5": {
+					"text": "kuaku acahlia ma ninau",
+					"textCh": "我不知道在哪裡。",
+					"sound": "text/sound/62933/877762"
+				}
+			},
+			"stage": [
+				{
+					"quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+					"tips": "將名牌放到同學的桌上吧!",
+					"words": [
+						"kana’ana",
+						"isa",
+						"hlakana’ana",
+						"ninau",
+						"salia",
+						"ngasa",
+						"ngahla",
+						"u"
+					],
+					"auto": "ngasa ngahla u",
+					"complete": {
+						"type": "drag",
+						"drag": [
+							"Caʉpʉ",
+							"Kalʉvʉnga",
+							"Vanau",
+							"Rʉhlʉcʉ"
+						],
+						"target-1": "Caʉpʉ",
+						"target-2": "Vanau"
+					}
+				},
+				{
+					"quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+					"tips": "",
+					"words": [
+						"ivavu",
+						"ngahlaisa",
+						"patʉkʉ",
+						"umiiapʉ",
+						"ihlamu",
+						"hlakana’ana",
+						"vuvulunga",
+						"ini",
+						"paruaru",
+						"salia",
+						"u"
+					],
+					"auto": "ini paruaru salia u",
+					"complete": {
+						"type": "drag",
+						"drag": [
+							"Rʉhlʉcʉ",
+							"samahlʉmahlʉngʉ",
+							"langica",
+							"Kalʉvʉnga",
+							"sakʉrahlʉ"
+						],
+						"target-1": "Rʉhlʉcʉ",
+						"target-2": "Kalʉvʉnga"
+					}
+				},
+				{
+					"quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+					"tips": "",
+					"words": [
+						"isa",
+						"kana’ana",
+						"’arivungua",
+						"suhlatʉ",
+						"ihlahlamu",
+						"ninau",
+						"Caʉpʉ",
+						"Vanau",
+						"pauhli",
+						"ihlaku",
+						"siasuhlatʉ",
+						"aa’ʉ",
+						"i"
+					],
+					"auto": {
+						"target-1": "Caʉpʉ pauhli ihlaku siasuhlatʉ aa’ʉ i",
+						"target-2": "Vanau pauhli ihlaku siasuhlatʉ aa’ʉ i"
+					},
+					"complete": {
+						"type": "ask",
+						"target": "target-1",
+						"code": "3",
+						"item": {
+							"id": "item-1-img",
+							"css": {
+								"top": "580px",
+								"left": "360px",
+								"rotate": "40deg"
+							}
+						}
+					}
+				},
+				{
+					"quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+					"tips": "",
+					"words": [
+						"siasuhlatʉ",
+						"suhlatʉ",
+						"u",
+						"ninau",
+						"Caʉpʉ",
+						"Vanau",
+						"pauhli",
+						"ihlaku",
+						"siasamusu",
+						"aa’ʉ",
+						"i"
+					],
+					"auto": {
+						"target-1": "Caʉpʉ pauhli ihlaku siasamusu aa’ʉ i",
+						"target-2": "Vanau pauhli ihlaku siasamusu aa’ʉ i"
+					},
+					"complete": {
+						"type": "ask",
+						"target": "target-2",
+						"code": "4",
+						"item": {
+							"id": "item-2-img",
+							"css": {
+								"top": "560px",
+								"right": "390px"
+							}
+						}
+					}
+				},
+				{
+					"quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+					"tips": "",
+					"words": [
+						"sipasʉrʉpa",
+						"aunini",
+						"uka’a",
+						"maivʉtʉraʉ",
+						"kana’ana",
+						"ihlamu",
+						"Caʉpʉ",
+						"Vanau",
+						"tumalʉlʉvʉaku",
+						"umala",
+						"vʉtʉraʉ"
+					],
+					"auto": {
+						"target-1": "Caʉpʉ tumalʉlʉvʉaku umala vʉtʉraʉ",
+						"target-2": "Vanau tumalʉlʉvʉaku umala vʉtʉraʉ"
+					},
+					"complete": {
+						"type": "ask",
+						"target": "target-1",
+						"code": "5",
+						"item": {
+							"id": "item-3-img",
+							"css": {
+								"top": "380px",
+								"left": "250px"
+							}
+						}
+					}
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,252 @@
+{
+   "theme":"尋找物品",
+   "data": {
+       "phase1": [
+            {
+               "text":"今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+               "text":"kainu mʉcʉkʉhlicu a salia tumahlaʉ muricucu arinani",
+               "textCh":"媽媽今天家裡來了好多親戚哦！",
+               "sound":"text/sound/68830/956375",
+               "image":"girl.png",
+               "background":"1-1.png"
+            },
+            {
+               "text":"alukala ahlalua hlahlusa arinani, kuhlaisai tumahlaʉ a cucu’u mʉcʉkʉhlʉ.",
+               "textCh":"今天是哥哥的婚禮，所以有很多人來。",
+               "sound":"text/sound/68830/956376",
+               "image":"mom.png",
+               "background":"1-2.png"
+            },
+            {
+               "text":"tam masasangarʉ! rahluuacu kuakita hlakana’ana.",
+               "textCh":"好開心喔！很久沒有看到他們了！",
+               "sound":"text/sound/68830/956377",
+               "image":"girl.png",
+               "background":"1-1.png"
+            },
+            {
+               "text":"kuhlaisai! kupipasamia cucumʉmʉa arinani, tumalʉlʉviau cucumʉmʉa.",
+               "textCh":"對啊！今天大家都會很忙，你要幫忙大家。",
+               "sound":"text/sound/68830/956378",
+               "image":"mom.png",
+               "background":"1-2.png"
+            },
+            {
+               "text":"aa’ʉ, macahliaku",
+               "textCh":"好的，我一定會！",
+               "sound":"text/sound/68830/956379",
+               "image":"girl.png",
+               "background":"1-1.png"
+            },
+            {
+               "text":"tumuaku maialalangʉ uruamiaisa cacalaisa cucuvanana.",
+               "textCh":"我要去準備等一下要用的東西了。",
+               "sound":"text/sound/68830/956380",
+               "image":"mom.png",
+               "background":"1-2.png"
+            },
+            {
+               "text":"tumalʉlʉviaku!",
+               "textCh":"我來幫忙！",
+               "sound":"text/sound/68830/956381",
+               "image":"girl.png",
+               "background":"1-1.png"
+            },
+            {
+               "text":"aa’ʉ, muaramau!",
+               "textCh":"好，你跟我來！",
+               "sound":"text/sound/68830/956382",
+               "image":"mom.png",
+               "background":"1-2.png"
+            }
+        ],
+       "phase2": {
+           "player": [
+                {
+                   "text":"aunini a sapisa tanga varu’una",
+                   "textAb":"aunini a sapisa tanga varu’una.",
+                   "textCh":"新的陶壺長怎樣？",
+                   "sound":"text/sound/68831/956385",
+                   "code":"1",
+                   "score": 100
+                },
+                {
+                   "text":"paninau a tapaʉ",
+                   "textAb":"paninau a tapaʉ.",
+                   "textCh":"哪裡有月桃？",
+                   "sound":"text/sound/68832/956393",
+                   "code":"2",
+                   "score": 100
+                },
+                {
+                   "text":"hlikumitau i saviki",
+                   "textAb":"hlikumitau i saviki?",
+                   "textCh":"你有看到檳榔嗎？",
+                   "sound":"text/sound/68833/956401",
+                   "code":"3",
+                   "score": 100
+                },
+                {
+                   "text":"inipaninau a ahlalua hlahlusa",
+                   "textAb":"inipaninau a ahlalua hlahlusa?",
+                   "textCh":"哥哥在哪裡？",
+                   "sound":"text/sound/68834/956409",
+                   "code":"4",
+                   "score": 100
+                }
+            ],
+           "target-1": {
+               "0": {
+                   "text":"misaini",
+                   "textCh":"什麼？",
+                   "sound":"text/sound/68829/956372"
+                },
+               "1": {
+                   "text":"hliacavuku hlarangirangi.",
+                   "textCh":"我有用布包起來。",
+                   "sound":"text/sound/68831/956386"
+                },
+               "2": {
+                   "text":"kuaku macahlia mʉmʉa.",
+                   "textCh":"我也不知道。",
+                   "sound":"text/sound/68832/956394"
+                },
+               "3": {
+                   "text":"uka’aku naani.",
+                   "textCh":"我這邊沒有。",
+                   "sound":"text/sound/68833/956402"
+                },
+               "4": {
+                   "text":"kuaku akita, ahlukuacu ninau a kana’ana?",
+                   "textCh":"沒看到，他去哪了？",
+                   "sound":"text/sound/68834/956410"
+                }
+            },
+           "target-2": {
+               "0": {
+                   "text":"kuatakahlangʉ",
+                   "textCh":"聽不懂？",
+                   "sound":"text/sound/68829/956373"
+                },
+               "1": {
+                   "text":"hliacavu kainu hlarangirangi matavuhliu.",
+                   "textCh":"媽媽有用紅布包起來。",
+                   "sound":"text/sound/68831/956387"
+                },
+               "2": {
+                   "text":"vuvulunga iniciki maru.",
+                   "textCh":"山上才有。",
+                   "sound":"text/sound/68832/956395"
+                },
+               "3": {
+                   "text":"maru, ma ahlahlapa ta’ʉhlana.",
+                   "textCh":"有，在椅子上。",
+                   "sound":"text/sound/68833/956403"
+                },
+               "4": {
+                   "text":"kuna i kana’ana kipuhlu.",
+                   "textCh":"他還沒出來嗎？",
+                   "sound":"text/sound/68834/956411"
+                }
+            },
+           "target-3": {
+               "0": {
+                   "text":"kumacahlia",
+                   "textCh":"不知道！",
+                   "sound":"text/sound/68829/956374"
+                },
+               "1": {
+                   "text":"kuaku atʉhlʉngʉ.",
+                   "textCh":"我不記得。",
+                   "sound":"text/sound/68831/956388"
+                },
+               "2": {
+                   "text":"matumuhluaku, nai!",
+                   "textCh":"我有多的，給你！",
+                   "sound":"text/sound/68832/956396"
+                },
+               "3": {
+                   "text":"maru kalasʉkasʉ kana’ana.",
+                   "textCh":"那個籃子裡有。",
+                   "sound":"text/sound/68833/956404"
+                },
+               "4": {
+                   "text":"marukacu i ? pasakulai ukikirimi kana’ana!",
+                   "textCh":"不見了嗎？快去找他！",
+                   "sound":"text/sound/68834/956412"
+                }
+            },
+           "stage": [
+				{
+					"quest":"媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+					"tips":"去問問看陶壺的特徵，找出新的陶壺吧！",
+					"words": [
+						"kalasʉkasʉ",
+						"ngasa",
+						"vatu’u",
+						"misaini",
+						"aunini",
+						"a",
+						"sapisa",
+						"tanga",
+						"varu’una"
+					],
+					"auto":"aunini a sapisa tanga varu’una"
+				},
+				{
+					"quest":"阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+					"tips":"趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+					"words": [
+						"saviki",
+						"tiaraisa",
+						"sʉsʉngʉ",
+						"tavahlihla",
+						"paninau",
+						"a",
+						"tapaʉ"
+					],
+					"auto":"paninau a tapaʉ"
+				},
+				{
+					"quest":"爸爸在點聘禮的數量，發現檳榔數量不對。",
+					"tips":"趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+					"words": [
+						"tavʉhlʉvʉhlʉ",
+						"ngasa",
+						"salia",
+						"umala",
+						"hlikumitau",
+						"i",
+						"saviki"
+					],
+					"auto":"hlikumitau i saviki"
+				},
+				{
+					"quest":"婚禮快要開始了，親友們都在門外準備。",
+					"tips":"咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+					"words": [
+						"ngasa",
+						"misaini",
+						"tukucu",
+						"pakiaturua",
+						"inipaninau",
+						"a",
+						"ahlalua",
+						"hlahlusa"
+					],
+					"auto":"inipaninau a ahlalua hlahlusa",
+					"complete": {
+						"text":	"maku naani, tam akʉrʉkʉrʉaku.......",
+						"sound": "text/sound/68834/956413"
+					}
+				},
+				{
+					"quest":"",
+					"tips":""
+				}
+            ]
+        }
+    }
+}

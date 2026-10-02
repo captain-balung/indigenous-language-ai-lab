@@ -1,0 +1,258 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "kina! tjuruvu angata na mangetjez a tja kasusus!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66215/924195",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "pucekelj ti su kaka kasauny avansika izua tjuruvu na mangetjez a caucau.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66215/924196",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "maleva angata ! sicuayananga inia ku pinacunan tjayamadju!",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66215/924197",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ui lja! uri isugasi tjen nusauny, pusaladju ta mapuljat.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66215/924198",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ui! tjara pusaladj aken!",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66215/924199",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "vaik aken a lemava ta uri sicekaw a nanemanga.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66215/924200",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "pay! ku pusaladjay!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66215/924201",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ui, kiciulu tjanuaen numaya!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66215/924202",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "makuda alang na vaquan a djilung",
+                    "textAb": "makuda alang na vaquan a djilung.",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66216/924205",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "inuan a izua ngat",
+                    "textAb": "inuan a izua ngat?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66217/924213",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "na pacun sun ta saviki",
+                    "textAb": "na pacun sun ta saviki?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66218/924221",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "inuan ti kaka tjavulung a uqaljay",
+                    "textAb": "inuan ti kaka tjavulung a uqaljay?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66219/924229",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "anema?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66214/924192"
+                },
+                "1": {
+                    "text": "ku cinavu ta kaliljaw",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66216/924206"
+                },
+                "2": {
+                    "text": "inika ken a kemeljan uta.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66217/924214"
+                },
+                "3": {
+                    "text": "neka imaza tjanuaen",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66218/924222"
+                },
+                "4": {
+                    "text": "inia ku pinacunan, na semainu timadju?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66219/924230"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ika sepualan?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66214/924193"
+                },
+                "1": {
+                    "text": "cinavu ta qudjidjilj a kaliljaw ni kina.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66216/924207"
+                },
+                "2": {
+                    "text": "amin na i gadu izua.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66217/924215"
+                },
+                "3": {
+                    "text": "izua, i vavaw tua qiladjan.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66218/924223"
+                },
+                "4": {
+                    "text": "inianan a tjevuta timadju?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66219/924231"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ika kemeljan!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66214/924194"
+                },
+                "1": {
+                    "text": "inika ken na paqenetj.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66216/924208"
+                },
+                "2": {
+                    "text": "izua ku tjeza, pavai sun.",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66217/924216"
+                },
+                "3": {
+                    "text": "azua cepen i taladj izua.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66218/924224"
+                },
+                "4": {
+                    "text": "inika mapacun anga? kilimu a kemin tjaimadju!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66219/924232"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "cepen",
+                        "tima",
+                        "qaciljay",
+                        "anema",
+                        "makuda",
+                        "alang",
+                        "na",
+                        "vaquan",
+                        "a",
+                        "djilung"
+                    ],
+                    "auto": "makuda alang na vaquan a djilung"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "saviki",
+                        "akumaya",
+                        "cemel",
+                        "vuljangaw",
+                        "inuan",
+                        "a",
+                        "izua",
+                        "ngat"
+                    ],
+                    "auto": "inuan a izua ngat"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "veljevelj",
+                        "tima",
+                        "umaq",
+                        "malap",
+                        "na",
+                        "pacun",
+                        "sun",
+                        "ta",
+                        "saviki"
+                    ],
+                    "auto": "na pacun sun ta saviki"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "tima",
+                        "anema",
+                        "qali",
+                        "sinsi",
+                        "inuan",
+                        "ti",
+                        "kaka",
+                        "tjavulung",
+                        "a",
+                        "uqaljay"
+                    ],
+                    "auto": "inuan ti kaka tjavulung a uqaljay",
+                    "complete": {
+                        "text": "imaza ken. malatjak aravac aken.",
+                        "sound": "text/sound/66219/924233"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,254 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "Ina, aloman ko tayniay loma’ a salawinawina haw!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66107/923366",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "O pipakayifan no fa’inayan a kaka anini, mansa aloman ko tayniay a tamdaw.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66107/923367",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Kahemekan to ! Halafinay to caka araw sa mira.",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66107/923368",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Hayi ! Matayal maemin kita anini, pacafay ko miso to alomanay.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66107/923369",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Hay ! Pacafay to kako!",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66107/923370",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Milikakawa ho kako to sakadademak anosawni",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66107/923371",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Mipacafay kako!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66107/923372",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Hay, tool han to iso kako!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66107/923373",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "samaanay a nengnengen ko atomo",
+                    "textAb": "Samaanay a nengnengen ko atomo?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66108/923376",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "iraay icowa ko lengac",
+                    "textAb": "Iraay icowa ko lengac?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66109/923384",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "manengnengay iso ko ’icep haw",
+                    "textAb": "Manengnengay iso ko ’icep haw?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66110/923392",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "icowaay si kaka",
+                    "textAb": "Icowaay si kaka?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66111/923400",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "maan",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66106/923363"
+                },
+                "1": {
+                    "text": "Mitanokiradoman ako a mitafo.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66108/923377"
+                },
+                "2": {
+                    "text": "Ca kafana’ kako.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66109/923385"
+                },
+                "3": {
+                    "text": "Awaay itini i kakoanan.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66110/923393"
+                },
+                "4": {
+                    "text": "Awaay a maaraw, talacowaay ko mira?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66111/923401"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "mafokil",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66106/923364"
+                },
+                "1": {
+                    "text": "Mitanokahengangay a kiradom a tafoen ni ina.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66108/923378"
+                },
+                "2": {
+                    "text": "I tokotokosan nga iraay.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66109/923386"
+                },
+                "3": {
+                    "text": "Iraay, i kafekangay no hakenang.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66110/923394"
+                },
+                "4": {
+                    "text": "Cowa ho kasadak ko mira haw?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66111/923402"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "haiken",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66106/923365"
+                },
+                "1": {
+                    "text": "Cowa to kaharateng ako.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66108/923379"
+                },
+                "2": {
+                    "text": "Ira ko osaw ako, na hamiso.",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66109/923387"
+                },
+                "3": {
+                    "text": "Iraay tora tisaki.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66110/923395"
+                },
+                "4": {
+                    "text": "Awaay a maaraw han ? Kalikien a mikilim cingra!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66111/923403"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "kadango",
+                        "cima",
+                        "fakeloh",
+                        "maan",
+                        "samaanay",
+                        "a",
+                        "nengnengen",
+                        "ko",
+                        "atomo"
+                    ],
+                    "auto": "samaanay a nengnengen ko atomo"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "’icep",
+                        "mana",
+                        "rengos",
+                        "falo",
+                        "iraay",
+                        "icowa",
+                        "ko",
+                        "lengac"
+                    ],
+                    "auto": "iraay icowa ko lengac"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "pawli",
+                        "cima",
+                        "loma’",
+                        "ala",
+                        "manengnengay",
+                        "iso",
+                        "ko",
+                        "’icep",
+                        "haw"
+                    ],
+                    "auto": "manengnengay iso ko ’icep haw"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "cima",
+                        "maan",
+                        "idang",
+                        "singsi",
+                        "icowaay",
+                        "si",
+                        "kaka"
+                    ],
+                    "auto": "icowaay si kaka",
+                    "complete": {
+                        "text": "Ini kako marawraway tato kako...",
+                        "sound": "text/sound/66111/923404"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,413 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Ima ngayan su ka isu?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62466/865567",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Walis ngayan mu ka yaku",
+                "textCh": "我叫Walis。",
+                "sound": "text/sound/62466/865568",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Gaga inu sapah su ka isu?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62466/865569",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Kndalax ku alang Tongan ka yaku.",
+                "textCh": "我從眉溪部落來。",
+                "sound": "text/sound/62466/865570",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Mnekan su ido mgrebu di?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62466/865571",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ini na wa!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62466/865572",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Maha ku maruy ido mgrebu, ye su maha msuupu?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62466/865573",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Ini ku adis pila. Ye su kbrexun pila ka yaku?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62466/865574",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Un, kbrexun misu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62466/865575",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Toda",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Lubi",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Pulan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Ukan",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Pulan",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Kumu",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "ima ngayan su ka isu",
+                    "textAb": "Ima ngayan su ka isu?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62467/865576",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "gaga inu sapah su ka isu",
+                    "textAb": "Gaga inu sapah su ka isu?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62468/865585",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Walis malu kbrexun su ppatis ka yaku",
+                    "textAb": "Walis malu kbrexun su ppatis ka yaku?",
+                    "textCh": "Walis借我筆好嗎？",
+                    "sound": "text/sound/62469/865601",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Bakan malu kbrexun su ppatis ka yaku",
+                    "textAb": "Bakan malu kbrexun su ppatis ka yaku?",
+                    "textCh": "Bakan借我筆好嗎？",
+                    "sound": "text/sound/62469/865603",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Walis malu kbrexun su serus ka yaku",
+                    "textAb": "Walis malu kbrexun su serus ka yaku?",
+                    "textCh": "Walia借我橡皮擦好嗎？",
+                    "sound": "text/sound/62470/865613",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Bakan malu kbrexun su serus ka yaku",
+                    "textAb": "Bakan malu kbrexun su serus ka yaku?",
+                    "textCh": "Bakan借我橡皮擦好嗎？",
+                    "sound": "text/sound/62470/865615",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Walis dyagi ku mangal ka skesik",
+                    "textAb": "Walis dyagi ku mangal ka skesik.",
+                    "textCh": "Walis，請幫我拿掃把。",
+                    "sound": "text/sound/62471/865621",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Bakan dyagi ku mangal ka skesik",
+                    "textAb": "Bakan, dyagi ku mangal ka skesik.",
+                    "textCh": "Bakan，請幫我拿掃把。",
+                    "sound": "text/sound/62471/865623",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Ini klai.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62465/865566"
+                },
+                "1": {
+                    "text": "Walis ngayan mu ka yaku.",
+                    "textCh": "我的名字叫Walis。",
+                    "sound": "text/sound/62467/865577"
+                },
+                "2": {
+                    "text": "Gaga Gluban sapah mu ka yaku.",
+                    "textCh": "我的家在清流",
+                    "sound": "text/sound/62468/865586"
+                },
+                "3": {
+                    "text": "Un, kbrexun su mu ka isu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62469/865602"
+                },
+                "4": {
+                    "text": "Uka ku duri.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62470/865614"
+                },
+                "5": {
+                    "text": "Un, biqun su mu isu ka skesik nii.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62471/865622"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Maanu?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62465/865564"
+                },
+                "1": {
+                    "text": "Bakan ngayan mu ka yaku.",
+                    "textCh": "我的名字叫Bakan。",
+                    "sound": "text/sound/62467/865578"
+                },
+                "2": {
+                    "text": "Gaga Tongan sapah mu ka yaku.",
+                    "textCh": "我的家在眉溪",
+                    "sound": "text/sound/62468/865587"
+                },
+                "3": {
+                    "text": "Wano kingal ka naku,",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62469/865604"
+                },
+                "4": {
+                    "text": "Un, ngali.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62470/865616"
+                },
+                "5": {
+                    "text": "Ini mu klai gaga inu?",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62471/865624"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "heya",
+                        "ndheya",
+                        "inu",
+                        "sapah",
+                        "ima",
+                        "ngayan",
+                        "su",
+                        "ka",
+                        "isu"
+                    ],
+                    "auto": "ima ngayan su ka isu",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Walis",
+                            "Tongan",
+                            "Awe",
+                            "Bakan",
+                            "Gluban"
+                        ],
+                        "target-1": "Walis",
+                        "target-2": "Bakan"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "baro",
+                        "ima",
+                        "siyo",
+                        "muuyas",
+                        "yamu",
+                        "dheya",
+                        "lmiqu",
+                        "gaga",
+                        "inu",
+                        "sapah",
+                        "su",
+                        "ka",
+                        "isu"
+                    ],
+                    "auto": "gaga inu sapah su ka isu",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Gluban",
+                            "malu",
+                            "sknexan",
+                            "karac",
+                            "baro",
+                            "Tongan",
+                            "yayung"
+                        ],
+                        "target-1": "Gluban",
+                        "target-2": "Tongan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nheya",
+                        "qnawan",
+                        "patis",
+                        "nami",
+                        "inu",
+                        "Walis",
+                        "Bakan",
+                        "malu",
+                        "kbrexun",
+                        "su",
+                        "ppatis",
+                        "ka",
+                        "yaku"
+                    ],
+                    "auto": {
+                        "target-1": "Walis malu kbrexun su ppatis ka yaku",
+                        "target-2": "Bakan malu kbrexun su ppatis ka yaku"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "patis",
+                        "nisu",
+                        "inu",
+                        "Walis",
+                        "Bakan",
+                        "malu",
+                        "kbrexun",
+                        "su",
+                        "serus",
+                        "ka",
+                        "yaku"
+                    ],
+                    "auto": {
+                        "target-1": "Walis malu kbrexun su serus ka yaku",
+                        "target-2": "Bakan malu kbrexun su serus ka yaku"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "galiq",
+                        "hmuwa",
+                        "uka",
+                        "smkesik",
+                        "heya",
+                        "namu",
+                        "Walis",
+                        "Bakan",
+                        "dyagi",
+                        "ku",
+                        "mangal",
+                        "ka",
+                        "skesik"
+                    ],
+                    "auto": {
+                        "target-1": "Walis dyagi ku mangal ka skesik",
+                        "target-2": "Bakan dyagi ku mangal ka skesik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

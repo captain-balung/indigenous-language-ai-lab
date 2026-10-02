@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 2,
+  "title": "互動模組中級：溝通式教學法情境對話",
+  "description": "族語 E 樂園互動模組中級的三個生活情境（上課用語、尋找物品、戶外活動）：42 個方言別，每個主題 1 段開場白加固定輪數的交替發話，供情境應用的角色扮演使用。圖與音檔熱連結。",
+  "source": {
+    "publisher": "財團法人原住民族語言研究發展基金會",
+    "website": "原住民族語E樂園",
+    "unitUrl": "https://web.klokah.tw/interact/hordequest/",
+    "license": "CC BY-NC-SA 4.0",
+    "licenseUrl": "https://web.klokah.tw/creativeCommons/",
+    "attribution": "資料來源－原住民族語E樂園，由財團法人原住民族語言研究發展基金會製作，以創用CC 姓名標示－非商業性－相同方式分享 4.0國際授權條款釋出。",
+    "retrievedAt": "2026-10-01T05:00:53.208Z"
+  },
+  "recordLayout": "sharded",
+  "shardPath": "dialects/{dialectId}.json",
+  "audioBase": "https://web.klokah.tw/text/sound",
+  "audioPolicy": "hotlinked-at-runtime",
+  "audioNote": "音檔不入庫，執行時直接由 web.klokah.tw 播放；播放時該網站會看到使用者的 IP 位址。",
+  "imagePolicy": "hotlinked-at-runtime",
+  "imageNote": "說話者與場景圖不入庫，執行時直接由 web.klokah.tw 熱連結。",
+  "dialectCount": 42,
+  "themes": [
+    {
+      "key": "lesson",
+      "name": "上課用語",
+      "turnsPerDialect": 9,
+      "recordCount": 378,
+      "questsPerDialect": 5,
+      "questCount": 210
+    },
+    {
+      "key": "find",
+      "name": "尋找物品",
+      "turnsPerDialect": 8,
+      "recordCount": 336,
+      "questsPerDialect": 5,
+      "questCount": 210
+    },
+    {
+      "key": "outside",
+      "name": "戶外活動",
+      "turnsPerDialect": 7,
+      "recordCount": 294,
+      "questsPerDialect": 4,
+      "questCount": 168
+    }
+  ],
+  "recordCount": 1008,
+  "questCount": 588,
+  "dialects": [
+    {
+      "id": 1,
+      "ethnicity": "阿美",
+      "name": "南勢阿美語"
+    },
+    {
+      "id": 2,
+      "ethnicity": "阿美",
+      "name": "秀姑巒阿美語"
+    },
+    {
+      "id": 3,
+      "ethnicity": "阿美",
+      "name": "海岸阿美語"
+    },
+    {
+      "id": 4,
+      "ethnicity": "阿美",
+      "name": "馬蘭阿美語"
+    },
+    {
+      "id": 5,
+      "ethnicity": "阿美",
+      "name": "恆春阿美語"
+    },
+    {
+      "id": 6,
+      "ethnicity": "泰雅",
+      "name": "賽考利克泰雅語"
+    },
+    {
+      "id": 7,
+      "ethnicity": "泰雅",
+      "name": "澤敖利泰雅語"
+    },
+    {
+      "id": 8,
+      "ethnicity": "泰雅",
+      "name": "汶水泰雅語"
+    },
+    {
+      "id": 9,
+      "ethnicity": "泰雅",
+      "name": "萬大泰雅語"
+    },
+    {
+      "id": 10,
+      "ethnicity": "泰雅",
+      "name": "四季泰雅語"
+    },
+    {
+      "id": 11,
+      "ethnicity": "泰雅",
+      "name": "宜蘭澤敖利泰雅語"
+    },
+    {
+      "id": 13,
+      "ethnicity": "賽夏",
+      "name": "賽夏語"
+    },
+    {
+      "id": 14,
+      "ethnicity": "邵",
+      "name": "邵語"
+    },
+    {
+      "id": 15,
+      "ethnicity": "賽德克",
+      "name": "都達賽德克語"
+    },
+    {
+      "id": 16,
+      "ethnicity": "賽德克",
+      "name": "德固達雅賽德克語"
+    },
+    {
+      "id": 17,
+      "ethnicity": "賽德克",
+      "name": "德鹿谷賽德克語"
+    },
+    {
+      "id": 18,
+      "ethnicity": "布農",
+      "name": "卓群布農語"
+    },
+    {
+      "id": 19,
+      "ethnicity": "布農",
+      "name": "卡群布農語"
+    },
+    {
+      "id": 20,
+      "ethnicity": "布農",
+      "name": "丹群布農語"
+    },
+    {
+      "id": 21,
+      "ethnicity": "布農",
+      "name": "巒群布農語"
+    },
+    {
+      "id": 22,
+      "ethnicity": "布農",
+      "name": "郡群布農語"
+    },
+    {
+      "id": 23,
+      "ethnicity": "排灣",
+      "name": "東排灣語"
+    },
+    {
+      "id": 24,
+      "ethnicity": "排灣",
+      "name": "北排灣語"
+    },
+    {
+      "id": 25,
+      "ethnicity": "排灣",
+      "name": "中排灣語"
+    },
+    {
+      "id": 26,
+      "ethnicity": "排灣",
+      "name": "南排灣語"
+    },
+    {
+      "id": 27,
+      "ethnicity": "魯凱",
+      "name": "東魯凱語"
+    },
+    {
+      "id": 28,
+      "ethnicity": "魯凱",
+      "name": "霧台魯凱語"
+    },
+    {
+      "id": 29,
+      "ethnicity": "魯凱",
+      "name": "大武魯凱語"
+    },
+    {
+      "id": 30,
+      "ethnicity": "魯凱",
+      "name": "多納魯凱語"
+    },
+    {
+      "id": 31,
+      "ethnicity": "魯凱",
+      "name": "茂林魯凱語"
+    },
+    {
+      "id": 32,
+      "ethnicity": "魯凱",
+      "name": "萬山魯凱語"
+    },
+    {
+      "id": 33,
+      "ethnicity": "太魯閣",
+      "name": "太魯閣語"
+    },
+    {
+      "id": 34,
+      "ethnicity": "噶瑪蘭",
+      "name": "噶瑪蘭語"
+    },
+    {
+      "id": 35,
+      "ethnicity": "鄒",
+      "name": "鄒語"
+    },
+    {
+      "id": 36,
+      "ethnicity": "卡那卡那富",
+      "name": "卡那卡那富語"
+    },
+    {
+      "id": 37,
+      "ethnicity": "拉阿魯哇",
+      "name": "拉阿魯哇語"
+    },
+    {
+      "id": 38,
+      "ethnicity": "卑南",
+      "name": "南王卑南語"
+    },
+    {
+      "id": 39,
+      "ethnicity": "卑南",
+      "name": "知本卑南語"
+    },
+    {
+      "id": 40,
+      "ethnicity": "卑南",
+      "name": "西群卑南語"
+    },
+    {
+      "id": 41,
+      "ethnicity": "卑南",
+      "name": "建和卑南語"
+    },
+    {
+      "id": 42,
+      "ethnicity": "雅美",
+      "name": "雅美語"
+    },
+    {
+      "id": 43,
+      "ethnicity": "撒奇萊雅",
+      "name": "撒奇萊雅語"
+    }
+  ],
+  "notes": {
+    "speakers": "角色由官方說話者圖檔辨識：boy.png 與 boy-1.png 都是主角，boy-2.png 是哥哥，girl.png 是同學，mom.png 是媽媽。上課用語與尋找物品是兩人對話，戶外活動是三人。",
+    "themeNameKey": "上課用語與尋找物品的主題名在 theme 欄位，戶外活動在 name 欄位，這是上游的不一致。",
+    "duplicatedChinese": "恆春阿美語（5）戶外活動第 7 輪，官方把族語整句貼在中文欄位後面；下載時把重複的族語扣掉，只留中文參考答案。",
+    "malformedJson": "茂林魯凱語（31）上課用語的官方 JSON 在 phase2 少一個逗號，下載時補上；分片的 sanitized 陣列對應到主題順序，只有 lesson 為 true。phase1 對話未改動。",
+    "phase2": "官方 phase2 是「拖詞卡拼句子 → 選對象 → 提問」的任務關卡，三個主題都有。本單元三個主題都收了（quests，共 588 關）：上課用語是放名牌與問對的人，尋找物品與戶外活動是「問人拿線索 → 挑出正確的東西」，過關條件有 select／take／click／selectAndSpeak／end。詞卡只留作提示詞彙、句子改由錄音或打字產生。",
+    "questSceneNaming": "官方取圖寫的是 img/{theme}/{關卡序號 + 1}[-{物件}].png，關卡序號從 1 開始，所以第 1 關取 2-*.png。照關卡序號組網址會全部 404——本單元一開始就是這樣，差點誤判成官方沒有素材。",
+    "questTargetBox": "尋找物品與戶外活動的 setup.target 只給人物的上角（top+left 或 top+right），沒有寬高，官方 quest-find.css／quest-outside.css 的 .target 也沒有尺寸，所以那兩個主題的對象在官方是 0×0、點不到，連「問對人才解鎖」都走不到。本單元用官方人物 PNG 的不透明範圍量過的典型值（寬 20%、高 60%）補上，並把 right／bottom 換算成 left／top，再夾住不讓框超出場景。",
+    "questDroppedTargets": "戶外活動第一關的第三個人，官方把可點範圍設成 width 0、height 0，而且那個人剛好沒有這一句的回應（上游漏了一筆，42 個方言都一樣），所以這一關不提供他。",
+    "questTextSource": "任務說明有兩份：共用的 json/setup/{theme}.json（官方頁面顯示用）與方言別 phase2.stage[i].quest／tips（官方未拿來顯示）。本單元的 quest／tips 取自共用檔，句子與過關條件取自方言別 JSON。",
+    "questItemLayers": "過關時出現在桌上的物件（pen／eraser／broom）不在 JSON 裡，對應關係來自官方 quest-lesson.css 的層名 item-1-img／item-2-img／item-3-img；官方 px 座標已換算成百分比。",
+    "questPlayerLines": "上課用語的 player 句型帶 only 欄位，表示這句只能對某一個人說（例如「Kacaw 借我筆」只能問 Kacaw），對其他人說官方會判錯。已存成 lines[].onlyTargetId。",
+    "questSoundPaths": "phase2 的 player 與 target 錄音是另一組 sound 路徑，與 phase1 不同；回應索引是 code，0（什麼？／聽不懂？）是答錯時的 rebounds，本單元不收。",
+    "questNameMismatch": "上課用語第 1 關有 7 處自我介紹的中文沿用了別的名字，已把該句中文收成 null（只留族語與錄音），正確名字以名牌答案為準：中排灣語（25）target-1 的名字是 Puljaljuan，官方中文卻寫「我的名字叫Puljaljuyan。」；東魯凱語（27）target-2 的名字是 Lezem，官方中文卻寫「我的名字叫Lrezem。」；茂林魯凱語（31）target-1 的名字是 Kukui，官方中文卻寫「我的名字叫Kacaw。」；太魯閣語（33）target-1 的名字是 Tadaw，官方中文卻寫「我的名字叫Kacaw。」；太魯閣語（33）target-2 的名字是 Rabay，官方中文卻寫「我的名字叫panay。」；西群卑南語（40）target-2 的名字是 Sunay，官方中文卻寫「我的名字叫panay。」；建和卑南語（41）target-2 的名字是 Muymuy，官方中文卻寫「我的名字叫panay。」。",
+    "questSentenceRepair": "上課用語有 17 處 auto 句在 player 清單裡找不到（上游錯字，官方玩到會得到錯誤回應），已改用同關同對象、帶錄音的那一句：東魯凱語（27）第 1 關對 target-1 的 auto 句「kwani baowa ka dilrong la miyakakwa ka」不在 player 清單裡，改用「kwani baowa ka dilrong la miyakakwa kai tamiyaini」；東魯凱語（27）第 1 關對 target-2 的 auto 句「kwani baowa ka dilrong la miyakakwa ka」不在 player 清單裡，改用「kwani baowa ka dilrong la miyakakwa kai tamiyaini」；東魯凱語（27）第 1 關對 target-3 的 auto 句「kwani baowa ka dilrong la miyakakwa ka」不在 player 清單裡，改用「kwani baowa ka dilrong la miyakakwa kai tamiyaini」；東魯凱語（27）第 2 關對 target-1 的 auto 句「yakai ino ka sali」不在 player 清單裡，改用「yakai ino kwani sali」；東魯凱語（27）第 2 關對 target-2 的 auto 句「yakai ino ka sali」不在 player 清單裡，改用「yakai ino kwani sali」；東魯凱語（27）第 2 關對 target-3 的 auto 句「yakai ino ka sali」不在 player 清單裡，改用「yakai ino kwani sali」；東魯凱語（27）第 3 關對 target-1 的 auto 句「waceeleso ina sabiki」不在 player 清單裡，改用「waceeleso idra sabiki」；東魯凱語（27）第 3 關對 target-2 的 auto 句「waceeleso ina sabiki」不在 player 清單裡，改用「waceeleso idra sabiki」；東魯凱語（27）第 3 關對 target-3 的 auto 句「waceeleso ina sabiki」不在 player 清單裡，改用「waceeleso idra sabiki」；東魯凱語（27）第 4 關對 target-1 的 auto 句「yakai ino ko taka ka sawalay」不在 player 清單裡，改用「yakaino ko taka ka sawalay」；東魯凱語（27）第 4 關對 target-2 的 auto 句「yakai ino ko taka ka sawalay」不在 player 清單裡，改用「yakaino ko taka ka sawalay」；東魯凱語（27）第 4 關對 target-3 的 auto 句「yakai ino ko taka ka sawalay」不在 player 清單裡，改用「yakaino ko taka ka sawalay」；卡那卡那富語（36）第 3 關對 target-1 的 auto 句「Pani ’apasuruvaia ’ikua siarisinatʉ, manʉng kara」不在 player 清單裡，改用「Pani ’apasuruvaia ’ikua siarisinatʉ manʉng kara」；卡那卡那富語（36）第 3 關對 target-2 的 auto 句「Na’u ’apasuruvaia ’ikua siarisinatʉ, manʉng kara」不在 player 清單裡，改用「Na’u ’apasuruvaia ’ikua siarisinatʉ manʉng kara」；卡那卡那富語（36）第 4 關對 target-1 的 auto 句「Pani ’apasuruvaia ’ikua sia’ucu’ucu, manʉng kara」不在 player 清單裡，改用「Pani ’apasuruvaia ’ikua sia’ucu’ucu manʉng kara」；卡那卡那富語（36）第 4 關對 target-2 的 auto 句「Na’u ’apasuruvaia ’ikua sia’ucu’ucu, manʉng kara」不在 player 清單裡，改用「Na’u ’apasuruvaia ’ikua sia’ucu’ucu manʉng kara」；西群卑南語（40）第 4 關對 target-2 的 auto 句「Sunay pavulasay ku ziya za aitrul maw」不在 player 清單裡，改用「Sunay pavulasay ku ziya za aitulr maw」。句子比對忽略大小寫與多餘空白。"
+  }
+}

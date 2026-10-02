@@ -1,0 +1,411 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "amol ka ralu su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62334/862099",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Watan ka ralu mu.",
+                "textCh": "我叫Watan。",
+                "sound": "text/sound/62334/862100",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "cel inu’ ka moṟow su?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62334/862101",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "minoh cu alang Plngawan.",
+                "textCh": "我從萬大部落來。",
+                "sound": "text/sound/62334/862102",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "minne su sasan la aw?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62334/862103",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini cu kani’ na.",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62334/862104",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "maha’ cu mini’ ci naniun na sasan, maha’ su magalu’ kinang aw?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62334/862105",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini cu aras ci pila’, sici’ aku’ tikiy aw?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62334/862106",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ho! kaci’ misu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62334/862107",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Maypuwan",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Habaw",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Mstbon",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Kacu",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Pyanan",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Ciwas",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "amol ka ralu su",
+                    "textAb": "amol ka ralu su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62335/862108",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "cel inu’ moṟow su",
+                    "textAb": "cel inu’ moṟow su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62336/862117",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Watan sipakaci’ kinang ka papatas su aw",
+                    "textAb": "Watan sipakaci’ kinang ka papatas su aw?",
+                    "textCh": "Watan借我筆好嗎？",
+                    "sound": "text/sound/62337/862133",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Yabun sipakaci’ kinang ka papatas su aw",
+                    "textAb": "Yabun sipakaci’ kinang ka papatas su aw?",
+                    "textCh": "Yabun借我筆好嗎？",
+                    "sound": "text/sound/62337/862135",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Watan sipakaci’ kinang ka papurut su aw",
+                    "textAb": "Watan sipakaci’ kinang ka papurut su aw?",
+                    "textCh": "Watan借我橡皮擦好嗎？",
+                    "sound": "text/sound/62338/862145",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Yabun sipakaci’ kinang ka papurut su aw",
+                    "textAb": "Yabun sipakaci’ kinang ka papurut su aw?",
+                    "textCh": "Yabun借我橡皮擦好嗎？",
+                    "sound": "text/sound/62338/862147",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Watan poh kinang ka sopah",
+                    "textAb": "Watan! poh kinang ka sopah.",
+                    "textCh": "Watan，請幫我拿掃把。",
+                    "sound": "text/sound/62339/862153",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Yabun sipoh tikiy ka sopah aw",
+                    "textAb": "Yabun sipoh tikiy ka sopah aw?",
+                    "textCh": "Yabun，請幫我拿掃把。",
+                    "sound": "text/sound/62339/862155",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ini mu ba’iy.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62333/862098"
+                },
+                "1": {
+                    "text": "Watan ka ralu mu.",
+                    "textCh": "我的名字叫Watan。",
+                    "sound": "text/sound/62335/862109"
+                },
+                "2": {
+                    "text": "cel Sasi’ ka moṟow mu.",
+                    "textCh": "我的家在Sasi'",
+                    "sound": "text/sound/62336/862118"
+                },
+                "3": {
+                    "text": "ho! paci’ cu sinang!",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62337/862134"
+                },
+                "4": {
+                    "text": "ungat kinang uri.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62338/862146"
+                },
+                "5": {
+                    "text": "ho! be’en misu ka sopah nel sani hang.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62339/862154"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "amol?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62333/862096"
+                },
+                "1": {
+                    "text": "Yabun ka ralu mu.",
+                    "textCh": "我的名字叫Yabun。",
+                    "sound": "text/sound/62335/862110"
+                },
+                "2": {
+                    "text": "cel Maṟosan ka moṟow mu.",
+                    "textCh": "我的家在Maṟosan",
+                    "sound": "text/sound/62336/862119"
+                },
+                "3": {
+                    "text": "nanak utux ka papatas mu.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62337/862136"
+                },
+                "4": {
+                    "text": "ho! agal hang.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62338/862148"
+                },
+                "5": {
+                    "text": "ini mu ba’iy cel inu’.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62339/862156"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "hiya",
+                        "lahan",
+                        "inu’",
+                        "moṟow",
+                        "amol",
+                        "ka",
+                        "ralu",
+                        "su"
+                    ],
+                    "auto": "amol ka ralu su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Watan",
+                            "Maṟosan",
+                            "Yabi’",
+                            "Yabun",
+                            "Sasi’"
+                        ],
+                        "target-1": "Watan",
+                        "target-2": "Yabun"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "bawi’",
+                        "ima’",
+                        "syaw",
+                        "lunpuw",
+                        "cimu",
+                        "laha",
+                        "nanahi’",
+                        "cel",
+                        "inu’",
+                        "moṟow",
+                        "su"
+                    ],
+                    "auto": "cel inu’ moṟow su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Sasi’",
+                            "sinkanaxan",
+                            "karal",
+                            "Maṟosan",
+                            "luling"
+                        ],
+                        "target-1": "Sasi’",
+                        "target-2": "Maṟosan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "hiyan",
+                        "nawilung",
+                        "patas",
+                        "ita",
+                        "inu’",
+                        "Watan",
+                        "Yabun",
+                        "sipakaci’",
+                        "kinang",
+                        "ka",
+                        "papatas",
+                        "su",
+                        "aw"
+                    ],
+                    "auto": {
+                        "target-1": "Watan sipakaci’ kinang ka papatas su aw",
+                        "target-2": "Yabun sipakaci’ kinang ka papatas su aw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "papatas",
+                        "patas",
+                        "sinang",
+                        "inu’",
+                        "Watan",
+                        "Yabun",
+                        "sipakaci’",
+                        "kinang",
+                        "ka",
+                        "papurut",
+                        "su",
+                        "aw"
+                    ],
+                    "auto": {
+                        "target-1": "Watan sipakaci’ kinang ka papurut su aw",
+                        "target-2": "Yabun sipakaci’ kinang ka papurut su aw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "pa’awit",
+                        "hunco",
+                        "ungat",
+                        "sumopah",
+                        "hiya",
+                        "cimu",
+                        "Watan",
+						"poh",
+						"kinang",
+                        "Yabun",
+                        "sipoh",
+                        "tikiy",
+                        "ka",
+                        "sopah",
+                        "aw"
+                    ],
+                    "auto": {
+                        "target-1": "Watan poh kinang ka sopah",
+                        "target-2": "Yabun sipoh tikiy ka sopah aw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

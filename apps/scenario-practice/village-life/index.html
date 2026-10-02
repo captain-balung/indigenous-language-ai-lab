@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="三個生活場景的族語對話：開學第一天、家裡辦婚禮、週末想出門。選一個角色，換你說的時候就開口。">
+  <title>部落大小事｜族語e樂園 AI 實驗室</title>
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
+  <link rel="stylesheet" href="/apps/scenario-practice/village-life/styles.css">
+</head>
+<body>
+  <a class="skip" href="#practice">跳至練習</a>
+  <header>
+    <a class="back" href="/">← 返回 AI 實驗室</a>
+    <div class="hero-copy"><p>情境應用 · MISSION 01</p><h1>部落大小事</h1><span>開學第一天、家裡辦婚禮、週末想出門——用族語把三個生活場景聊完。</span></div>
+    <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
+  </header>
+
+  <main id="practice">
+    <section id="setup" class="setup panel" aria-labelledby="setup-title">
+      <div class="step">STEP 1</div><h2 id="setup-title">選語言別，再選場景</h2>
+      <div class="select-grid">
+        <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
+        <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
+      </div>
+
+      <fieldset class="themes">
+        <legend>想練哪一個場景？</legend>
+        <div id="theme-grid" class="theme-picker"></div>
+        <div id="role-picker" class="role-picker" hidden>
+          <p class="role-picker__label">你要回應誰？</p>
+          <div id="role-grid" class="role-picker__grid"></div>
+        </div>
+      </fieldset>
+
+      <div class="notice notice--model">
+        <strong>語音辨識目前是「族級」模型</strong>
+        <p>
+          官方語音辨識只提供 <b>16 個族級模型</b>，沒有 42 個方言別模型。你選的方言別用來
+          <b>挑選教材與翻譯判定</b>，辨識時送出的是該族的通用模型。
+          方言之間的詞彙與音韻差異可能造成辨識偏差，<b>這是模型的限制，不代表你念錯</b>。
+        </p>
+        <p id="model-note" class="model-note" aria-live="polite"></p>
+      </div>
+
+      <div class="notice notice--privacy">
+        <strong>錄音會送到第三方服務</strong>
+        <ul>
+          <li>你的錄音會傳送到 <code>ai3.iformosa.com.tw</code>，交由 Formosan AI 辨識後回傳文字。</li>
+          <li>教材音檔與場景圖由 <code>web.klokah.tw</code> 直接播放與載入，播放時該網站會看到你的 IP 位址。</li>
+          <li>本站<b>不儲存</b>你的錄音，也<b>不轉送</b>給上述服務以外的任何對象；沒有帳號、沒有追蹤、沒有 cookie。</li>
+          <li><b>請不要錄入個人資料或不希望外流的內容。</b></li>
+        </ul>
+      </div>
+
+      <div id="api-status" class="api-status" aria-live="polite">正在確認翻譯與語音辨識服務…</div>
+      <button id="start" class="primary" disabled>開始情境</button>
+      <p class="alt-route">想先練單句？<a href="/apps/basic-learning/qa-practice/">問答練習</a>；想看圖說話？<a href="/apps/basic-learning/describe-practice/">看圖描述</a>。</p>
+    </section>
+
+    <section id="scene" class="scene panel" hidden aria-labelledby="scene-title">
+      <div class="quiz-top">
+        <div><div class="step">STEP 2</div><p id="dialect-label"></p></div>
+        <span id="progress">第 1 / 1 句</span>
+      </div>
+      <div class="scene-nav">
+        <button id="back-setup" type="button">← 回到設定</button>
+        <p id="scene-intro"></p>
+        <button id="to-quest" type="button" hidden>任務關卡 →</button>
+      </div>
+      <div id="scene-body" class="scene-body scene-body--solo">
+          <div class="stage">
+            <img id="scene-background" class="stage__bg" alt="" aria-hidden="true">
+            <div class="dialogue">
+              <img id="scene-avatar" class="dialogue__avatar" alt="" aria-hidden="true">
+              <div class="dialogue__say">
+                <span class="prompt" id="turn-speaker">對方說話</span>
+                <p id="scene-title" class="dialogue__zh">對方說的話</p>
+                <p id="partner-text" class="dialogue__ab"></p>
+              </div>
+              <div class="dialogue__controls">
+                <button id="replay" class="primary" type="button">再聽一次</button>
+                <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
+                <button id="next" class="arrow" type="button" hidden aria-label="下一句">下一句 ▶</button>
+              </div>
+              <audio id="player"></audio>
+            </div>
+          </div>
+
+          <div class="scene-side">
+            <div id="my-turn" class="my-turn" hidden>
+            <h2 id="turn-title">換你說</h2>
+            <label for="answer">族語回應（打字）</label>
+            <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
+
+            <div class="recorder">
+              <button id="record" class="primary record-button" type="button">
+                <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+              </button>
+              <output id="record-time" aria-live="off">00:00</output>
+            </div>
+            <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+              <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音，打字也可以送出</span>
+            </div>
+            <p id="record-note" class="record-note" role="status"></p>
+            <audio id="preview" controls hidden></audio>
+            <p class="inline-privacy">若送出錄音，會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。請勿錄入個資。</p>
+            <div class="submit-row">
+              <button id="submit" class="primary" disabled>送出這句</button>
+              <button id="rerecord" type="button" hidden>重新錄音</button>
+              <button id="retry" type="button" hidden>重試判定</button>
+            </div>
+        </div>
+
+        <div id="heard" class="heard" hidden aria-live="polite"></div>
+        <div id="result" class="result" aria-live="polite" hidden></div>
+          </div>
+        </div>
+    </section>
+
+    <section id="report" class="panel" hidden aria-labelledby="report-title">
+      <div class="step">STEP 3</div>
+      <h2 id="report-title">這段對話練完了</h2>
+      <p id="score-line" class="scene-score"></p>
+      <ul id="score-list" class="report-list"></ul>
+      <p class="quest-offer" id="quest-offer" hidden></p>
+      <p class="alt-route">再練一次別的角色，或換一個方言別。</p>
+      <div class="submit-row">
+        <button id="start-quest" class="primary" hidden>接著玩任務</button>
+        <button id="to-dialogue" class="primary" hidden>回到對話</button>
+        <button id="again" class="primary">再練一次</button>
+        <button id="back-setup-report" type="button">換語言別或角色</button>
+      </div>
+    </section>
+
+    <section id="quest" class="scene panel" hidden aria-labelledby="quest-text">
+      <div class="quiz-top">
+        <div><div class="step">STEP 4</div><p id="quest-label"></p></div>
+        <span id="quest-count">第 1 / 1 關</span>
+      </div>
+      <div class="scene-nav">
+        <button id="quest-back" type="button">← 回到對話</button>
+        <div id="quest-levels" class="level-picker" role="group" aria-label="選擇要玩的關卡"></div>
+        <p id="quest-progress"></p>
+        <button id="quest-hint" type="button">看提示</button>
+      </div>
+      <div id="quest-hint-box" class="hint-box" hidden>
+        <p>這關可能用到的詞（沒有順序）：</p>
+        <ul id="quest-hint-words"></ul>
+      </div>
+      <div id="quest-body" class="scene-body">
+        <div class="stage quest-stage">
+          <div class="quest-scene" id="quest-scene-box">
+          <img id="quest-scene" class="stage__bg" alt="任務場景" >
+          <img id="quest-player" class="quest-layer" alt="" aria-hidden="true">
+          <div id="quest-layers" class="quest-layers"></div>
+          <img id="quest-reward" class="quest-reward" alt="" hidden>
+          </div>
+          <div class="dialogue quest-board">
+            <div class="dialogue__say">
+              <span class="prompt" id="quest-speaker">任務</span>
+              <p id="quest-text" class="dialogue__zh">任務說明</p>
+              <p id="quest-reply" class="dialogue__ab"></p>
+              <div id="quest-tags" class="quest-tags" hidden>
+                <p>把名牌放到對的同學桌上：先點名牌，再點同學。</p>
+                <div id="quest-tag-dock"></div>
+              </div>
+            </div>
+            <div class="dialogue__controls">
+              <button id="quest-replay" class="primary" type="button">再聽一次</button>
+              <span id="quest-audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
+              <button id="quest-next" class="arrow" type="button" hidden>下一關 →</button>
+            </div>
+            <audio id="quest-audio"></audio>
+          </div>
+        </div>
+        <div id="quest-side" class="quest-side">
+          <div id="quest-goal" class="quest-goal" hidden></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>教材來源與授權</strong>
+    <p>情境對話來自「族語 E 樂園」<a href="https://web.klokah.tw/interact/hordequest/" target="_blank" rel="noopener">互動模組／中級：溝通式教學法</a>的上課用語、尋找物品與戶外活動三個主題。由財團法人原住民族語言研究發展基金會製作，以 <a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 釋出。本情境不得作商業用途；教材不屬於本專案原始碼授權範圍。</p>
+  </footer>
+  <script type="module" src="/apps/scenario-practice/village-life/app.mjs"></script>
+</body>
+</html>

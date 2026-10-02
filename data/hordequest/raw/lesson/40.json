@@ -1,0 +1,410 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "i eman nu ngadan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62994/879439",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "i Malingan ku ngadan.",
+                "textCh": "我叫Malingan。",
+                "sound": "text/sound/62994/879440",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kaazu u i iyan?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62994/879441",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kemay ku i Mulivelivek kana zekalr.",
+                "textCh": "我從初鹿部落來。",
+                "sound": "text/sound/62994/879442",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kenama u lra?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62994/879443",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "’azi ziya",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62994/879444",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "makuwa ku tremima’a za kenanamayan, salrangan u mukuwa?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62994/879445",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "’azi ku murung za paisu, karuwa ku kivulas za paisu  kaninu?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62994/879446",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ai,ku pavulrasay u。",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62994/879447",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Papulu",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Kelan",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Danadanaw",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Amsing",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Pinaseki",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Senayan",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "i eman nu ngandan",
+                    "textAb": "i eman nu ngandan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62995/879448",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "kaazu u i iyan",
+                    "textAb": "kaazu u i iyan?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62996/879457",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Malingan pavulasay ku ziya za impis maw",
+                    "textAb": "Malingan,pavulasay ku ziya za impis maw?",
+                    "textCh": "Malingan借我筆好嗎？",
+                    "sound": "text/sound/62997/879473",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sunay pavulasay ku ziya za impis maw",
+                    "textAb": "Sunay, pavulasay ku ziya za impis maw?",
+                    "textCh": "Sunay借我筆好嗎？",
+                    "sound": "text/sound/62997/879475",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Malingan pavulasay ku ziya za aitrul maw",
+                    "textAb": "Malingan,pavulasay ku ziya za aitrul maw?",
+                    "textCh": "Malingan借我橡皮擦好嗎？",
+                    "sound": "text/sound/62998/879485",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sunay pavulasay ku ziya za aitulr maw",
+                    "textAb": "Sunay,pavulasay ku ziya za aitulr maw?",
+                    "textCh": "Sunay借我橡皮擦好嗎？",
+                    "sound": "text/sound/62998/879487",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Malingan ’alra zi elakanay ku za aidap",
+                    "textAb": "Malingan,’alra zi elakanay ku za aidap.",
+                    "textCh": "Malingan，請幫我拿掃把。",
+                    "sound": "text/sound/62999/879493",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sunay ’alra zi elakanay ku za aidap",
+                    "textAb": "Sunay ’alra zi elakanay ku za aidap.",
+                    "textCh": "Sunay，請幫我拿掃把。",
+                    "sound": "text/sound/62999/879495",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "’azi malrazam",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62993/879438"
+                },
+                "1": {
+                    "text": "i Malingan  ku nagdan.",
+                    "textCh": "我的名字叫Malingan。",
+                    "sound": "text/sound/62995/879449"
+                },
+                "2": {
+                    "text": "kaazu ku i Mulivelivek.",
+                    "textCh": "我的家在初鹿",
+                    "sound": "text/sound/62996/879458"
+                },
+                "3": {
+                    "text": "ai, kunu pavulasay.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62997/879474"
+                },
+                "4": {
+                    "text": "uniyan ku za aitrul.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62998/879486"
+                },
+                "5": {
+                    "text": "ai,niya ini na aidap.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62999/879494"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "eman",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62993/879436"
+                },
+                "1": {
+                    "text": "i Sunay ku ngadan.",
+                    "textCh": "我的名字叫panay。",
+                    "sound": "text/sound/62995/879450"
+                },
+                "2": {
+                    "text": "kaazu ku i Danadanaw.",
+                    "textCh": "我的家在龍過脈",
+                    "sound": "text/sound/62996/879459"
+                },
+                "3": {
+                    "text": "mawmaw saya  ku impis.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62997/879476"
+                },
+                "4": {
+                    "text": "ai,elaku.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62998/879488"
+                },
+                "5": {
+                    "text": "’azi ku malrazam ulra i iyan.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62999/879496"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "intaw",
+                        "nintaw",
+                        "iyan",
+                        "ruma’",
+                        "i",
+                        "eman",
+                        "nu",
+                        "ngandan"
+                    ],
+                    "auto": "i eman nu ngandan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Malingan",
+                            "Danadanaw",
+                            "Muya",
+                            "Sunay",
+                            "Mulivelivek"
+                        ],
+                        "target-1": "Malingan",
+                        "target-2": "Sunay"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "itras",
+                        "eman",
+                        "ngidiran",
+                        "takesi",
+                        "inmu",
+                        "nazu",
+                        "zenan",
+                        "kaazu",
+                        "u",
+                        "i",
+                        "iyan"
+                    ],
+                    "auto": "kaazu u i iyan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Mulivelivek",
+                            "ulringulr",
+                            "lingatr",
+                            "Danadanaw",
+                            "zinanuman"
+                        ],
+                        "target-1": "Mulivelivek",
+                        "target-2": "Danadanaw"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nintaw",
+                        "dinwa",
+                        "valray",
+                        "iniyam",
+                        "iyan",
+                        "Malingan",
+                        "Sunay",
+                        "pavulasay",
+                        "ku",
+                        "ziya",
+                        "za",
+                        "impis",
+                        "maw"
+                    ],
+                    "auto": {
+                        "target-1": "Malingan pavulasay ku ziya za impis maw",
+                        "target-2": "Sunay pavulasay ku ziya za impis maw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "impis",
+                        "valray",
+                        "nannu",
+                        "iyan",
+                        "Malingan",
+                        "Sunay",
+						"pavulasay",
+                        "ku",
+                        "ziya",
+                        "za",
+                        "aitrul",
+                        "maw"
+                    ],
+                    "auto": {
+                        "target-1": "Malingan pavulasay ku ziya za aitrul maw",
+                        "target-2": "Sunay pavulasay ku ziya za aitrul maw"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "tupu",
+                        "kemudakuda",
+                        "uniyan",
+                        "’emelresap",
+                        "intaw",
+                        "inmu",
+                        "Malingan",
+                        "Sunay",
+                        "’alra",
+                        "zi",
+                        "elakanay",
+                        "ku",
+                        "za",
+                        "aidap"
+                    ],
+                    "auto": {
+                        "target-1": "Malingan ’alra zi elakanay ku za aidap",
+                        "target-2": "Sunay ’alra zi elakanay ku za aidap"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

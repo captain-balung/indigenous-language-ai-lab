@@ -1,0 +1,254 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "Ka ina ikay tavavnane kaykameane takalra ka wakela ka lritudrane!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66245/924425",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Kaykameane takarudrangane ki kaka ka sawvalay, lakamani ku takalra ku wakela.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66245/924426",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Kiaragay madu turamuru! maulaynga kaidredreele liniane.",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66245/924427",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Uunu! lritara kakalra ku aunganeta, lri paralubu su mitaane.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66245/924428",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Uunu, lritara paralubaku!",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66245/924429",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Lripadulruaku ku saarakaiyane luasane.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66245/924430",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "Wakelaku paralubu!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66245/924431",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "Uunu, tupapalraili!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66245/924432",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "lakangituatumane ku baavane ka dilrungu",
+                    "textAb": "Lakangituatumane ku baavane ka dilrungu?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66246/924435",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "yainu ku tasaliane",
+                    "textAb": "Yainu ku tasaliane?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66247/924443",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "wadreele su ku sabiki",
+                    "textAb": "Wadreele su ku sabiki?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66248/924451",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "yainu ku kaka ka sawvalay",
+                    "textAb": "Yainu ku kaka ka sawvalay?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66249/924459",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "Manemane?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66244/924422"
+                },
+                "1": {
+                    "text": "Arakaiyaku ku makalrilaw pangicabu.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66246/924436"
+                },
+                "2": {
+                    "text": "Mialriaku",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66247/924444"
+                },
+                "3": {
+                    "text": "Kadruali kay.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66248/924452"
+                },
+                "4": {
+                    "text": "Kaiadreelaneana, muainu ini?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66249/924460"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Kaipualrialringaw?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66244/924423"
+                },
+                "1": {
+                    "text": "Ka tiatina arakay ku duduli ku makalrilaw pangicabu.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66246/924437"
+                },
+                "2": {
+                    "text": "Yakay talilregelrege.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66247/924445"
+                },
+                "3": {
+                    "text": "Yakay, yabelenge ki taetale.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66248/924453"
+                },
+                "4": {
+                    "text": "Kaiana mua taluvaivai?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66249/924461"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "Kaiwathingale!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66244/924424"
+                },
+                "1": {
+                    "text": "Kainaku pualringaw.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66246/924438"
+                },
+                "2": {
+                    "text": "Yakay kay tedratedraneli, ni!",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66247/924446"
+                },
+                "3": {
+                    "text": "Yakay kavay ki cepenge.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66248/924454"
+                },
+                "4": {
+                    "text": "Kadruanga? lukirimua silape iniane!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66249/924462"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "karadrare",
+                        "aneane",
+                        "lrenege",
+                        "manemane",
+                        "lakangituatumane",
+                        "ku",
+                        "baavane",
+                        "ka",
+                        "dilrungu"
+                    ],
+                    "auto": "lakangituatumane ku baavane ka dilrungu"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "sabiki",
+                        "asi?",
+                        "ubulu",
+                        "bengelray",
+                        "yainu",
+                        "ku",
+                        "tasaliane"
+                    ],
+                    "auto": "yainu ku tasaliane"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "belebele",
+                        "aneane",
+                        "daane",
+                        "malra",
+                        "wadreele",
+                        "su",
+                        "ku",
+                        "sabiki"
+                    ],
+                    "auto": "wadreele su ku sabiki"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "aneane",
+                        "manemane",
+                        "talragi",
+                        "sinisi",
+                        "yainu",
+                        "ku",
+                        "kaka",
+                        "ka",
+                        "sawvalay"
+                    ],
+                    "auto": "yainu ku kaka ka sawvalay",
+                    "complete": {
+                        "text": "Kauvadhaku, mathathiburaku turamuru.....",
+                        "sound": "text/sound/66249/924463"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

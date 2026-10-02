@@ -1,0 +1,408 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "Tukau’uq isuu ngaan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62576/868457",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Tupa’un saak tu Lian.",
+                "textCh": "我叫Lian。",
+                "sound": "text/sound/62576/868458",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Isaq isuu lumaq?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62576/868459",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Misnahaan saak Sinapalan mun’iti.",
+                "textCh": "我從新鄉部落來。",
+                "sound": "text/sound/62576/868460",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Mina’unin asu paitutingmut tu kakaunun?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62576/868461",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Nii’ang!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62576/868462",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Namabaliv saak paitutingmut tu kakaunun, asa asu taskun?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62576/868463",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Nii saak minadas sui, maqtu asu mapasimul zaku sui?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62576/868464",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "Uu! Napasimulan zaku asu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62576/868465",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Panitaz",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Aping",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Isi'ang",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Biung",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Nansalu",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Langus",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "Tukau’uq isuu tu ngaan",
+                    "textAb": "Tukau’uq isuu tu ngaan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62577/868466",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "Isaq isuu tu lumaq",
+                    "textAb": "Isaq isuu tu lumaq?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62578/868475",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Lian Pasimuli saak ispapatas qai",
+                    "textAb": "Lian! Pasimuli saak ispapatas qai?",
+                    "textCh": "Lian借我筆好嗎？",
+                    "sound": "text/sound/62579/868491",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Savungaz Pasimuli saak ispapatas qai",
+                    "textAb": "Savungaz! Pasimuli saak ispapatas qai?",
+                    "textCh": "Savungaz借我筆好嗎？",
+                    "sound": "text/sound/62579/868493",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Lian Maqtu asu mapasimul zaku isqaqaiqais",
+                    "textAb": "Lian! Maqtu asu mapasimul zaku isqaqaiqais?",
+                    "textCh": "Lian借我橡皮擦好嗎？",
+                    "sound": "text/sound/62580/868503",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Savungaz Pasimuli saak isqaqaisqais qai",
+                    "textAb": "Savungaz! Pasimuli saak isqaqaisqais qai?",
+                    "textCh": "Savungaz借我橡皮擦好嗎？",
+                    "sound": "text/sound/62580/868505",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Lian Indangazi azak siza asik",
+                    "textAb": "Lian! Indangazi azak siza asik.",
+                    "textCh": "Lian，請幫我拿掃把。",
+                    "sound": "text/sound/62581/868511",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Savungaz Indangazi azak siza asik",
+                    "textAb": "Savungaz Indangazi azak siza asik.",
+                    "textCh": "Savungaz，請幫我拿掃把。",
+                    "sound": "text/sound/62581/868513",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "nii tu maqansiap.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62575/868456"
+                },
+                "1": {
+                    "text": "Tupa’un inaak ngaan tu Lian.",
+                    "textCh": "我的名字叫Lian。",
+                    "sound": "text/sound/62577/868467"
+                },
+                "2": {
+                    "text": "Ihaan inaak lumaq Tavila tu asang.",
+                    "textCh": "我的家在Tavila",
+                    "sound": "text/sound/62578/868476"
+                },
+                "3": {
+                    "text": "Uu! Pasimulan zaku asu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62579/868492"
+                },
+                "4": {
+                    "text": "Uka amin inaak.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62580/868504"
+                },
+                "5": {
+                    "text": "Uu! Isiav asikun paisuu.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62581/868512"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Ma’aq?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62575/868454"
+                },
+                "1": {
+                    "text": "Tupa’un inaak ngaan tu Savungaz.",
+                    "textCh": "我的名字叫Savungaz。",
+                    "sound": "text/sound/62577/868468"
+                },
+                "2": {
+                    "text": "Ihaan inaak lumaq Panitaz tu asang.",
+                    "textCh": "我的家在Panitaz",
+                    "sound": "text/sound/62578/868477"
+                },
+                "3": {
+                    "text": "Muhaz inaak tas’a ispapatas.",
+                    "textCh": "我只有一隻筆。",
+                    "sound": "text/sound/62579/868494"
+                },
+                "4": {
+                    "text": "Uu! Siza’i!",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62580/868506"
+                },
+                "5": {
+                    "text": "Nii azak maqansiap tu isaq a asik.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62581/868514"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "naipa",
+                        "inaita",
+                        "isaq",
+                        "lumaq",
+                        "tukau’uq",
+                        "isuu",
+                        "tu",
+                        "ngaan"
+                    ],
+                    "auto": "Tukau’uq isuu tu ngaan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Lian",
+                            "Panitaz",
+                            "Sani",
+                            "Savungaz",
+                            "Tavila"
+                        ],
+                        "target-1": "Lian",
+                        "target-2": "Savungaz"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "daza",
+                        "simaq",
+                        "dingalan",
+                        "masipul",
+                        "mu’u",
+                        "naingka",
+                        "ba’av",
+                        "isaq",
+                        "isuu",
+                        "tu",
+                        "lumaqtaluqan"
+                    ],
+                    "auto": "Isaq isuu tu lumaq",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tavila",
+                            "mahansum",
+                            "diqanin",
+                            "Panitaz",
+                            "vanglaz"
+                        ],
+                        "target-1": "Tavila",
+                        "target-2": "Panitaz"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "isiata",
+                        "ispatunpaklis",
+                        "patasan",
+                        "azam",
+                        "isaq",
+                        "Lian",
+                        "Savungaz",
+                        "pasimuli",
+                        "saak",
+                        "ispapatas",
+                        "qai"
+                    ],
+                    "auto": {
+                        "target-1": "Lian Pasimuli saak ispapatas qai",
+                        "target-2": "Savungaz Pasimuli saak ispapatas qai"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "ispapatas",
+                        "patasan",
+                        "isuu",
+                        "isaq",
+                        "Lian",
+                        "Savungaz",
+                        "Pasimuli",
+                        "saak",
+                        "isqaqaisqais",
+                        "qai",
+						"asu",
+						"maqtu",
+						"mapasimul",
+						"zaku"
+                    ],
+                    "auto": {
+                        "target-1": "Lian Maqtu asu mapasimul zaku isqaqaiqais",
+                        "target-2": "Savungaz Pasimuli saak isqaqaisqais qai"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        " maqaihav",
+                        "maku’aq",
+                        "uka",
+                        "ma’asik",
+                        "naipa",
+                        "mu’u",
+                        "Lian",
+                        "Savungaz",
+                        "Indangazi",
+                        "azak",
+                        "siza",
+                        "asik"
+                    ],
+                    "auto": {
+                        "target-1": "Lian Indangazi azak siza asik",
+                        "target-2": "Savungaz Indangazi azak siza asik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

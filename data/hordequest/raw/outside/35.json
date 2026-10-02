@@ -1,0 +1,215 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "mo’o, ho hucma zou nicio, teko akoyu uhnenu?",
+                "textCh": "mo’o，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65791/919447",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ho hucma temia yuyuso ’o paicʉ ho uhne va’hʉ ho cmapo to fou, teko mainenu?",
+                "textCh": "我明天要和paicʉ去溪邊烤肉，你呢？",
+                "sound": "text/sound/65791/919448",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "hoeca ʉmnʉ ho isi talʉi ! te’o melʉ fiho?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65791/919449",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "auva tuocosi ’o ino.",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65791/919450",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ino, te’o melʉ fiho to ohaeva ho uhne va’hʉ?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65791/919451",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "naho, at’inghi temu bumemealʉ.",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65791/919452",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "’uatee, ’a temia.",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65791/919453",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "cuma na iko ei’eima",
+                    "textAb": "cuma na iko ei’eima?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65792/919457",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "te mo’unu nenu ho te uhne va’hʉ",
+                    "textAb": "te mo’unu nenu ho te uhne va’hʉ?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65793/919470",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "te’o pela yuevaha si poyave",
+                    "textAb": "te’o pela yuevaha si poyave?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65794/919478",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "cuma?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65790/919444"
+                },
+                "1": {
+                    "text": "mi’o biebimi to ongʉ ho seipi.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65792/919458"
+                },
+                "2": {
+                    "text": "’a ta’e, tamo ya meoi no fatu ta’e.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65793/919471"
+                },
+                "3": {
+                    "text": "zou, naho yaa!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65794/919479"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "o’te tma’hongʉ?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65790/919445"
+                },
+                "1": {
+                    "text": "mi’o biebimi to pohe ho f’ue.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65792/919459"
+                },
+                "2": {
+                    "text": "i’o a’ta cohivi mio yonenu na va’hʉ.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65793/919472"
+                },
+                "3": {
+                    "text": "mi’o maezo uk’a.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65794/919480"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "bocio!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65790/919446"
+                },
+                "2": {
+                    "text": "’a tan’e, mi’o n’a i’mi ne va’hʉ ne soni.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65793/919473"
+                },
+                "3": {
+                    "text": "mainenu’sio, mo kuzo ’e poyave’u.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65794/919481"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "nenu",
+                        "mainci",
+                        "yuevaho",
+                        "cuma",
+                        "na",
+                        "iko",
+                        "ei’eima"
+                    ],
+                    "auto": "cuma na iko ei’eima",
+                    "buylist": [
+                        "nate pieni ci macucuma",
+                        "ongʉ",
+                        "seipi",
+                        "pohe",
+                        "f’ue",
+                        "fou",
+                        "fcuyu"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "fuengu",
+                        "cuma",
+                        "’ote",
+                        "etʉpʉ",
+                        "te",
+                        "mo’unu",
+                        "nenu",
+                        "ho",
+                        "te",
+                        "uhne",
+                        "va’hʉ"
+                    ],
+                    "auto": "te mo’unu nenu ho te uhne va’hʉ"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "o’ate",
+                        "cuma",
+                        "husu",
+                        "takubingi",
+                        "te’o",
+                        "pela",
+                        "yuevaha",
+                        "si",
+                        "poyave"
+                    ],
+                    "auto": "te’o pela yuevaha si poyave",
+                    "complete": {
+                        "text": "’aveoveoyʉ ho iko to’usni",
+                        "sound": "text/sound/65794/919482"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

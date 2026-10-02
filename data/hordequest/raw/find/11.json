@@ -1,0 +1,262 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "piyux ci gluw lpyung nyu mwah sali yaya mu soni.",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66149/923688",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "soni ga ryax ms’un na suyan mlikuy, nanu yaca piyux ci c’oli nyu mwah.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66149/923689",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "p’asun calay wah! bsya ci ini texiy naha la!",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66149/923690",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "angu ha! mosa piyux ci yaw ta kisa, usa rmaw kwara naha.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66149/923691",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ba’un mu, mosa caku ci rmaw.",
+                "textCh": "好的，我一定會幫！",
+                "sound": "text/sound/66149/923692",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "hala caku lama sr’yu cikah y’aya kle’un mu kisa ha.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66149/923693",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "mwah cu rmaw isu.",
+                "textCh": "我來幫忙你！",
+                "sound": "text/sound/66149/923694",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ana uyi, nanu isu gluw kinang.",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66149/923695",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "yani kenu yakang uraw haca",
+                    "textAb": "yani kenu yakang uraw haca?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66150/923698",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "beh inu ga kyan geto nya",
+                    "textAb": "beh inu ga kyan geto nya?",
+                    "textCh": "哪裡有月桃？",
+                    "sound": "text/sound/66151/923706",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "waya su texan binro haca",
+                    "textAb": "waya su texan binro haca?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66152/923714",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "cyu inu suyan mlikuy",
+                    "textAb": "cyu inu suyan mlikuy?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66153/923722",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "mcwa?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66148/923685"
+                },
+                "1": {
+                    "text": "waya mu sbun tapang.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66150/923699"
+                },
+                "2": {
+                    "text": "ini mu ba’i uyi.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66151/923707"
+                },
+                "3": {
+                    "text": "beh mu hani ga ungat.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66152/923715"
+                },
+                "4": {
+                    "text": "ini texiy, wa inu heya la?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66153/923723"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ini ba’i mung?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66148/923686"
+                },
+                "1": {
+                    "text": "waya sbun talah tapang nku yaya.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66150/923700"
+                },
+                "2": {
+                    "text": "babaw rgyax ga maki.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66151/923708"
+                },
+                "3": {
+                    "text": "kyan, cyu babaw tman haca.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66152/923716"
+                },
+                "4": {
+                    "text": "ini htu heya na?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66153/923724"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ini ba’i!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66148/923687"
+                },
+                "1": {
+                    "text": "ini mu kba’i la.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66150/923701"
+                },
+                "2": {
+                    "text": "kyan msyaw mu, bi’ay misu.",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66151/923709"
+                },
+                "3": {
+                    "text": "cyu kyan beh iyik takin haca.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66152/923717"
+                },
+                "4": {
+                    "text": "ini texiy la? nahay usa hkani heya!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66153/923725"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "kesi",
+                        "ruma",
+                        "ima",
+                        "btunux",
+                        "mcwa",
+                        "yani",
+                        "kenu",
+                        "yakang",
+                        "uraw",
+                        "haca"
+                    ],
+                    "auto": "yani kenu yakang uraw haca"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "binro",
+                        "ca",
+                        "maha",
+                        "kaca",
+                        "k’man",
+                        "phpah",
+                        "beh",
+                        "inu",
+                        "ga",
+                        "kyan",
+                        "geto",
+                        "nya"
+                    ],
+                    "auto": "beh inu ga kyan geto nya"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "g’eloh",
+                        "ima",
+                        "sali",
+                        "kkyan",
+                        "agan",
+                        "waya",
+                        "su",
+                        "texan",
+                        "binro",
+                        "haca"
+                    ],
+                    "auto": "waya su texan binro haca"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "ima",
+                        "mcwa",
+                        "lpyung",
+                        "psba",
+                        "biru",
+                        "cyu",
+                        "inu",
+                        "suyan",
+                        "mlikuy"
+                    ],
+                    "auto": "cyu inu suyan mlikuy",
+                    "complete": {
+                        "text": "nyu caku cahay, nkux caku ci la! ......",
+                        "sound": "text/sound/66153/923726"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

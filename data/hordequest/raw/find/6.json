@@ -1,0 +1,255 @@
+{
+    "theme": "尋找物品",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天家裡要辦婚禮，很多親戚都來了。<br>看到大家忙得不可開交，主角決定要幫大家一起準備。"
+            },
+            {
+                "text": "aya, piyux balay lpyung nyux mwah ngasal ryax soni!",
+                "textCh": "媽媽今天家裡來了好多親戚哦！",
+                "sound": "text/sound/66119/923458",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "ryax soni ga pkekong qu qbsuyan mlikuy. nanu yasa qu piyux squliq mwah.",
+                "textCh": "今天是哥哥的婚禮，所以有很多人來。",
+                "sound": "text/sound/66119/923459",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "mqas balay wah ! bsyaq balay ini ktay lha la!",
+                "textCh": "好開心喔！很久沒有看到他們了！",
+                "sound": "text/sound/66119/923460",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "aw ga ! mosa mzyan balay yow ta ryax soni. pkraw mtiyow isu ki.",
+                "textCh": "對啊！今天大家都會很忙，你要幫忙大家。",
+                "sound": "text/sound/66119/923461",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "aw, pkraw saku!",
+                "textCh": "好的，我一定會！",
+                "sound": "text/sound/66119/923462",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "hala saku smsun cikah qeqaya sckaw kira ha.",
+                "textCh": "我要去準備等一下要用的東西了。",
+                "sound": "text/sound/66119/923463",
+                "image": "mom.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ragaw misu!",
+                "textCh": "我來幫忙！",
+                "sound": "text/sound/66119/923464",
+                "image": "girl.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "aw, uwah mluw knan!",
+                "textCh": "好，你跟我來！",
+                "sound": "text/sound/66119/923465",
+                "image": "mom.png",
+                "background": "1-2.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "menanu ktan qu giqas na mayaw",
+                    "textAb": "menanu ktan qu giqas na mayaw?",
+                    "textCh": "新的陶壺長怎樣？",
+                    "sound": "text/sound/66120/923468",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "inu maki qoyux",
+                    "textAb": "inu maki qoyux?",
+                    "textCh": "哪裡有黃藤？",
+                    "sound": "text/sound/66121/923476",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "wal su ktan pinlang ga",
+                    "textAb": "wal su ktan pinlang ga?",
+                    "textCh": "你有看到檳榔嗎？",
+                    "sound": "text/sound/66122/923484",
+                    "code": "3",
+                    "score": 100
+                },
+                {
+                    "text": "cyux inu qbsuyan mlikuy",
+                    "textAb": "cyux inu qbsuyan mlikuy?",
+                    "textCh": "哥哥在哪裡？",
+                    "sound": "text/sound/66123/923492",
+                    "code": "4",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "nanu?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/66118/923455"
+                },
+                "1": {
+                    "text": "wal maku sbwan galiq.",
+                    "textCh": "我有用布包起來。",
+                    "sound": "text/sound/66120/923469"
+                },
+                "2": {
+                    "text": "ini maku baqi uzi.",
+                    "textCh": "我也不知道。",
+                    "sound": "text/sound/66121/923477"
+                },
+                "3": {
+                    "text": "uka knan hani hya.",
+                    "textCh": "我這邊沒有。",
+                    "sound": "text/sound/66122/923485"
+                },
+                "4": {
+                    "text": "ini ktay, wayan inu la?",
+                    "textCh": "沒看到，他去哪了？",
+                    "sound": "text/sound/66123/923493"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ini baqi mung?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/66118/923456"
+                },
+                "1": {
+                    "text": "wal sbwan talah galiq ni yaya.",
+                    "textCh": "媽媽有用紅布包起來。",
+                    "sound": "text/sound/66120/923470"
+                },
+                "2": {
+                    "text": "nanak rgyax maki.",
+                    "textCh": "山上才有。",
+                    "sound": "text/sound/66121/923478"
+                },
+                "3": {
+                    "text": "maki, nyux babaw thekan.",
+                    "textCh": "有，在椅子上。",
+                    "sound": "text/sound/66122/923486"
+                },
+                "4": {
+                    "text": "ini htuw na’ ga hiya?",
+                    "textCh": "他還沒出來嗎？",
+                    "sound": "text/sound/66123/923494"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ini baqi!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/66118/923457"
+                },
+                "1": {
+                    "text": "wal maku zngyan la.",
+                    "textCh": "我不記得。",
+                    "sound": "text/sound/66120/923471"
+                },
+                "2": {
+                    "text": "nyux msyaw knan, biqaw misu!",
+                    "textCh": "我有多的，給你！",
+                    "sound": "text/sound/66121/923479"
+                },
+                "3": {
+                    "text": "cyux maki sa yawa qasa.",
+                    "textCh": "那個籃子裡有。",
+                    "sound": "text/sound/66122/923487"
+                },
+                "4": {
+                    "text": "uka kya lga ? hehazi say hmkangi!",
+                    "textCh": "不見了嗎？快去找他！",
+                    "sound": "text/sound/66123/923495"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "媽媽把陶壺搞混了，請你幫忙找出新訂做的陶壺。",
+                    "tips": "去問問看陶壺的特徵，找出新的陶壺吧！",
+                    "words": [
+                        "kiri",
+                        "ima",
+                        "btunux",
+                        "nanu",
+                        "menanu",
+                        "ktan",
+                        "qu",
+                        "giqas",
+                        "na",
+                        "mayaw"
+                    ],
+                    "auto": "menanu ktan qu giqas na mayaw"
+                },
+                {
+                    "quest": "阿嬤在包cinavu，發現月桃葉不夠了，請你去採。",
+                    "tips": "趕快去找找看哪裡有月桃，採一些放到籃子裡吧！",
+                    "words": [
+                        "pinlang",
+                        "mswa",
+                        "k’man",
+                        "phpah",
+                        "inu",
+                        "maki",
+                        "qoyux"
+                    ],
+                    "auto": "inu maki qoyux"
+                },
+                {
+                    "quest": "爸爸在點聘禮的數量，發現檳榔數量不對。",
+                    "tips": "趕快問問看其他人檳榔在哪裡，找出檳榔，把它們放在一起吧！",
+                    "words": [
+                        "buqoh",
+                        "ima",
+                        "ngasal",
+                        "agal",
+                        "wal",
+                        "su",
+                        "ktan",
+                        "pinlang",
+                        "ga"
+                    ],
+                    "auto": "wal su ktan pinlang ga"
+                },
+                {
+                    "quest": "婚禮快要開始了，親友們都在門外準備。",
+                    "tips": "咦，哥哥怎麼不見了？快點問問看哥哥去哪了，把哥哥找出來吧！",
+                    "words": [
+                        "ima",
+                        "nanu",
+                        "rangi",
+                        "sinsi",
+                        "cyux",
+                        "inu",
+                        "qbsuyan",
+                        "mlikuy"
+                    ],
+                    "auto": "cyux inu qbsuyan mlikuy",
+                    "complete": {
+                        "text": "nyux saku sqani, nyux saku mngungu yan la ....",
+                        "sound": "text/sound/66123/923496"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

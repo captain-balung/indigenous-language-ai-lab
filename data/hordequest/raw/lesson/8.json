@@ -1,0 +1,425 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "ima’ ku ralu’ su’? / nanuwan ku ralu’ su’?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62312/861521",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Kaynu’ ku ralu’ mu.",
+                "textCh": "我叫Kaynu'。",
+                "sound": "text/sound/62312/861522",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kiya inu’ ku imuwag su’?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62312/861523",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "minukahul kuwing i tinqalangan i Tabilas.",
+                "textCh": "我從圓墩部落來。",
+                "sound": "text/sound/62312/861524",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kumnunama’ su’ la qu?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62312/861525",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini’ na’ yo! / iqaat na’ yo!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62312/861526",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mausa’ kuwing i mabanay cu kakunama’, paglu su’ i musa’ qu?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62312/861527",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini’ kuwing aras cu pila’, pakabalayq su’ i pakabaxan kuwing cu pila’ qu?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62312/861528",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "uwal, pakabaxay mi su’.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62312/861529",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Malepa",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Yaway",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Pa'nakuwali",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Tuyaw",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Mstbon",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Habaw",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "nanuwan ku ralu’ su’",
+                    "textAb": "nanuwan ku ralu’ su’?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62313/861530",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "kiya i inu’ ku imuwag su’",
+                    "textAb": "kiya i inu’ ku imuwag su’?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62314/861539",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kaynu’ kabaxay mu ku papateq su’ qu",
+                    "textAb": "Kaynu’, kabaxay mu ku papateq su’ qu?",
+                    "textCh": " Kaynu'， 你的筆借我好嗎？",
+                    "sound": "text/sound/62315/861555",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Amuy kabaxay mu ku papateq su’ qu",
+                    "textAb": "Amuy, kabaxay mu ku papateq su’ qu?",
+                    "textCh": " Amuy， 妳的筆借我好嗎？",
+                    "sound": "text/sound/62315/861557",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kaynu’ kabaxay mu ku papawng cu pinateq su’ qu",
+                    "textAb": "Kaynu’, kabaxay mu ku papawng cu pinateq su’ qu?",
+                    "textCh": "Kaynu'， 你的橡皮擦借我好嗎？",
+                    "sound": "text/sound/62316/861567",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Amuy kabaxay mu ku papawng cu pinateq su’ qu",
+                    "textAb": "Amuy, kabaxay mu ku papawng cu pinateq su’ qu?",
+                    "textCh": "Amuy借我橡皮擦好嗎？",
+                    "sound": "text/sound/62316/861569",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kaynu’ anluani kuwing i magal cu cacaping",
+                    "textAb": "Kaynu’, anluani kuwing i magal cu cacaping.",
+                    "textCh": "Kaynu'，請幫我拿掃把。",
+                    "sound": "text/sound/62317/861575",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Amuy anluani kuwing i magal cu cacapoh",
+                    "textAb": "Amuy, anluani kuwing i magal cu cacapoh.",
+                    "textCh": "Amuy，請幫我拿掃把。",
+                    "sound": "text/sound/62317/861577",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ini’ baqi",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62311/861520"
+                },
+                "1": {
+                    "text": "Kaynu’ ku ralu’ mu.",
+                    "textCh": "我的名字叫Kaynu'。",
+                    "sound": "text/sound/62313/861531"
+                },
+                "2": {
+                    "text": "kiya i Saburuk ku imuwag mu.",
+                    "textCh": "我的家在沙部鹿.",
+                    "sound": "text/sound/62314/861540"
+                },
+                "3": {
+                    "text": "uwal, pakabaxay mi su’.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62315/861556"
+                },
+                "4": {
+                    "text": "ukas a ikuwing uwi.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62316/861568"
+                },
+                "5": {
+                    "text": "uwal, agal ku cacaping ka hani.",
+                    "textCh": "好，拿這支掃把。",
+                    "sound": "text/sound/62317/861576"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "nanuwan",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62311/861518"
+                },
+                "1": {
+                    "text": "Amuy ku ralu’ mu.",
+                    "textCh": "我的名字叫Amuy。",
+                    "sound": "text/sound/62313/861532"
+                },
+                "2": {
+                    "text": "kiya i pa’nakuwali’ ku imuwag mu.",
+                    "textCh": "我的家在八卦力.",
+                    "sound": "text/sound/62314/861541"
+                },
+                "3": {
+                    "text": "qutux nanak ku ikuwing.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62315/861558"
+                },
+                "4": {
+                    "text": "uwal, agal ga.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62316/861570"
+                },
+                "5": {
+                    "text": "ini’ mu baqi cu kiya i inu’.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62317/861578"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "hiya’",
+                        "ihya’",
+                        "nha’",
+                        "inha’",
+                        "inu’",
+                        "aynu’",
+                        "imuwag",
+                        "imug",
+                        "nanuwan",
+                        "ku",
+                        "ralu’",
+                        "su’"
+                    ],
+                    "auto": "nanuwan ku ralu’ su’",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kaynu’",
+                            "Pa’nakuwali’",
+                            "Haking",
+                            "Amuy",
+                            "Saburuk"
+                        ],
+                        "target-1": "Kaynu’",
+                        "target-2": "Amuy"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "riyatux",
+                        "raya’",
+                        "ima’",
+                        "kiyl",
+                        "beeh",
+                        "mateq",
+                        "inha’",
+                        "ragiyax",
+                        "kiya",
+                        "i",
+                        "inu’",
+                        "ku",
+                        "imuwag",
+                        "su’"
+                    ],
+                    "auto": "kiya i inu’ ku imuwag su’",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Saburuk",
+                            "sahahiya’",
+							"sawkan",
+                            "balayq",
+                            "kaal",
+                            "Pa’nakuwali’",
+                            "luliyung"
+                        ],
+                        "target-1": "Saburuk",
+                        "target-2": "Pa’nakuwali’"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "hiya’",
+                        "ihya’",
+                        "ruwas",
+                        "ta’",
+                        "ti",
+                        "cami",
+                        "inu’",
+                        "aynu’",
+                        "Kaynu’",
+                        "Amuy",
+                        "kabaxay",
+                        "mu",
+                        "ku",
+                        "papateq",
+                        "su’",
+                        "qu"
+                    ],
+                    "auto": {
+                        "target-1": "Kaynu’ kabaxay mu ku papateq su’ qu",
+                        "target-2": "Amuy kabaxay mu ku papateq su’ qu"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "papateq",
+                        "ruwas",
+                        "inu’",
+                        "aynu’",
+                        "Kaynu’",
+                        "Amuy",
+                        "kabaxay",
+                        "mu",
+                        "ku",
+                        "papawng",
+                        "cu",
+                        "pinateq",
+                        "su’",
+                        "qu"
+                    ],
+                    "auto": {
+                        "target-1": "Kaynu’ kabaxay mu ku papawng cu pinateq su’ qu",
+                        "target-2": "Amuy kabaxay mu ku papawng cu pinateq su’ qu"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "cacawm",
+                        "humicuwa’",
+                        "ukas",
+                        "cumapoh",
+                        "kumagaw",
+                        "icimu",
+                        "Kaynu’",
+                        "Amuy",
+                        "anluani",
+                        "kuwing",
+                        "i",
+                        "magal",
+                        "cu",
+                        "cacapoh",
+						"cacaping"						
+                    ],
+                    "auto": {
+                        "target-1": "Kaynu’ anluani kuwing i magal cu cacaping",
+                        "target-2": "Amuy anluani kuwing i magal cu cacapoh"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,409 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "timma su ngadan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62686/871347",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ti Kuliu a u ngadan.",
+                "textCh": "我叫Kuliu。",
+                "sound": "text/sound/62686/871348",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "inu a su tjumaq?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62686/871349",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kasi Sinevaudjan aen.",
+                "textCh": "我從牡丹部落來。",
+                "sound": "text/sound/62686/871350",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "na kenama nga sun?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62686/871351",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "nekanan i!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62686/871352",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "uri vaik aen a veneli tua kenemain, kiciyur sun?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62686/871353",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "inikaen  a na masi valjitjuq, maqti  a  su pasedjaman aen?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62686/871354",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "nanguaq, u su pasedjamay.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62686/871355",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "tjuaqau",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Selep",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "tjuaqau",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Puljaljuyan",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "tjuabar",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Muakay",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "tima su ngadan",
+                    "textAb": "tima su ngadan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62687/871356",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "inuan a su tjumaq",
+                    "textAb": "inuan a su tjumaq?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62688/871365",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Kuliu maqti a su pasedjaman aen tua sivecivecik",
+                    "textAb": "Kuliu, maqti a su pasedjaman aen tua sivecivecik?",
+                    "textCh": "Kuliu借我筆好嗎？",
+                    "sound": "text/sound/62689/871381",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Tjuku maqati a su pasedjaman aen tua sivecivecik",
+                    "textAb": "Tjuku, maqati a su pasedjaman aen tua sivecivecik?",
+                    "textCh": "Tjuku借我筆好嗎？",
+                    "sound": "text/sound/62689/871383",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kuliu maqati a su pasedjaman aen tua siquluqulup",
+                    "textAb": "Kuliu, maqati a su pasedjaman aen tua siquluqulup?",
+                    "textCh": "Kuliu借我橡皮擦好嗎？",
+                    "sound": "text/sound/62690/871393",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Tjuku maqati a su pasedjaman aen tua siquluqulip",
+                    "textAb": "Tjuku, maqati a su pasedjaman aen tua siquluqulip?",
+                    "textCh": "Tjuku借我橡皮擦好嗎？",
+                    "sound": "text/sound/62690/871395",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Kuliu pay alapan aen tua suapan",
+                    "textAb": "Kuliu, pay alapan aen tua suapan",
+                    "textCh": "Kuliu，請幫我拿掃把。",
+                    "sound": "text/sound/62691/871401",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Tjuku pay alapan aen tua suapan",
+                    "textAb": "Tjuku, pay alapan aen tua suapan.",
+                    "textCh": "Tjuku，請幫我拿掃把。",
+                    "sound": "text/sound/62691/871403",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "inikaen a kemeljang..",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62685/871346"
+                },
+                "1": {
+                    "text": "ti Kuliu a u ngadan.",
+                    "textCh": "我的名字叫Kuliu。",
+                    "sound": "text/sound/62687/871357"
+                },
+                "2": {
+                    "text": "i Kusekus a u tjumaq.",
+                    "textCh": "我的家在高士",
+                    "sound": "text/sound/62688/871366"
+                },
+                "3": {
+                    "text": "nanguaq, u pasedjamay sun.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62689/871382"
+                },
+                "4": {
+                    "text": "neka nu niyaen uta.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62690/871394"
+                },
+                "5": {
+                    "text": "nanguaq,  u sipavayan cu a suapan tjanusun.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62691/871402"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "anema?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62685/871344"
+                },
+                "1": {
+                    "text": "ti Tjuku a u ngadan.",
+                    "textCh": "我的名字叫Tjuku。",
+                    "sound": "text/sound/62687/871358"
+                },
+                "2": {
+                    "text": "i Kaydri a u tjumaq.",
+                    "textCh": "我的家在楓林",
+                    "sound": "text/sound/62688/871367"
+                },
+                "3": {
+                    "text": "ita u sivecivecik.",
+                    "textCh": "我只有一枝。",
+                    "sound": "text/sound/62689/871384"
+                },
+                "4": {
+                    "text": "maqati, alapu.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62690/871396"
+                },
+                "5": {
+                    "text": "ikaen a kemeljang tu inuan.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62691/871404"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "timadju",
+                        "niamadju",
+                        "inuan",
+                        "tjumaq",
+                        "tima",
+                        "su",
+                        "ngadan"
+                    ],
+                    "auto": "tima su ngadan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kuliu",
+                            "Kaydri",
+                            "Tjuku",
+                            "Kusekus"
+                        ],
+                        "target-1": "Kuliu",
+                        "target-2": "Tjuku"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "vavaw",
+                        "tima",
+                        "gidi",
+                        "kitulu",
+                        "timun",
+                        "tiyamadju",
+                        "gadu",
+                        "inuan",
+                        "a",
+                        "su",
+                        "tjumaq"
+                    ],
+                    "auto": "inuan a su tjumaq",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Kusekus",
+                            "nguljingulj",
+                            "kalevelevan",
+                            "Kaydri",
+                            "pana"
+                        ],
+                        "target-1": "Kusekus",
+                        "target-2": "Kaydri"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nimadju",
+                        "dingwa",
+                        "sapitj",
+                        "tiyaman",
+                        "inuan",
+                        "Kuliu",
+                        "Tjuku",
+                        "maqati",
+                        "a",
+                        "su",
+                        "pasedjaman",
+                        "aen",
+                        "tua",
+                        "sivecivecik"
+                    ],
+                    "auto": {
+                        "target-1": "Kuliu maqti a su pasedjaman aen tua sivecivecik",
+                        "target-2": "Tjuku maqati a su pasedjaman aen tua sivecivecik"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "sivecivecik",
+                        "sapitj",
+                        "nisun",
+                        "inuan",
+                        "Kuliu",
+                        "Tjuku",
+                        "maqati",
+                        "a",
+                        "su",
+                        "pasedjaman",
+                        "aen",
+                        "tua",
+                        "siquluqulip"
+                    ],
+                    "auto": {
+                        "target-1": "Kuliu maqati a su pasedjaman aen tua siquluqulup",
+                        "target-2": "Tjuku maqati a su pasedjaman aen tua siquluqulip"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "sidjuadjuas",
+                        "makuda",
+                        "neka",
+                        "sarasuap",
+                        "timadju",
+                        "timun",
+                        "Kuliu",
+                        "Tjuku",
+                        "pay",
+                        "alapan",
+                        "aen",
+                        "tua",
+                        "suapan"
+                    ],
+                    "auto": {
+                        "target-1": "Kuliu pay alapan aen tua suapan",
+                        "target-2": "Tjuku pay alapan aen tua suapan"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

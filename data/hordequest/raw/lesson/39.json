@@ -1,0 +1,409 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "i eman nu ngadan?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62972/878861",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "i Tanuvak aku ngadan.",
+                "textCh": "我叫Tanuvak。",
+                "sound": "text/sound/62972/878862",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ulra i iyan nu ruma’?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62972/878863",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kemay ku i Antung kana zekalr.",
+                "textCh": "我從安通部落來。",
+                "sound": "text/sound/62972/878864",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "kenama u lra?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62972/878865",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "’azi ku ziya!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62972/878866",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "awa ku tremima’a za kenanamain, salralrangan u mukuwa?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62972/878867",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "’azi ku mada za paisu. kararuwa u pavelas za paisu kaninku?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62972/878868",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ai, ku pavelasay u.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62972/878869",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Mulivelivek",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Sanay",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Papulu",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Kayaw",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Puyuma",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Lrevaw",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "i eman nu ngadan",
+                    "textAb": "i eman nu ngadan?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62973/878870",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "ulra i iyan nu ruma’",
+                    "textAb": "ulra i iyan nu ruma’?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62974/878879",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Tanuvak pavulasay ku za Tratruli mu",
+                    "textAb": "Tanuvak pavulasay ku za Tratruli mu?",
+                    "textCh": "Tanuvak借我筆好嗎？",
+                    "sound": "text/sound/62975/878895",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Imay pavulasay ku za tratruli mu",
+                    "textAb": "Imay, pavulasay ku za tratruli mu?",
+                    "textCh": "Imay借我筆好嗎？",
+                    "sound": "text/sound/62975/878897",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tanuvak pavulasay ku za aivas mu",
+                    "textAb": "Tanuvak, pavulasay ku za aivas mu?",
+                    "textCh": "Tanuvak借我橡皮擦好嗎？",
+                    "sound": "text/sound/62976/878907",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Imay pavulasay ku za aivas mu",
+                    "textAb": "Imay, pavulasay ku za aivas mu?",
+                    "textCh": "Imay借我橡皮擦好嗎？",
+                    "sound": "text/sound/62976/878909",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Tanuvak alra alakanay ku ziya za idap",
+                    "textAb": "Tanuvak, alra alakanay ku ziya za idap.",
+                    "textCh": "Tanuvak，請幫我拿掃把。",
+                    "sound": "text/sound/62977/878915",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Imay alra alakanay ku za idap",
+                    "textAb": "Imay, alra alakanay ku za idap.",
+                    "textCh": "Imay，請幫我拿掃把。",
+                    "sound": "text/sound/62977/878917",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "’azi ku mazalram.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62971/878860"
+                },
+                "1": {
+                    "text": "i Tanuvak aku ngadan.",
+                    "textCh": "我的名字叫Tanuvak。",
+                    "sound": "text/sound/62973/878871"
+                },
+                "2": {
+                    "text": "ulra i Katratripulr ku ruma’.",
+                    "textCh": "我的家在知本。",
+                    "sound": "text/sound/62974/878880"
+                },
+                "3": {
+                    "text": "ai, ku pavulasay u.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62975/878896"
+                },
+                "4": {
+                    "text": "iniyan ku za aivas.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62976/878908"
+                },
+                "5": {
+                    "text": "ai, niya ini na idap.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62977/878916"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "eman?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62971/878858"
+                },
+                "1": {
+                    "text": "ku ngadan mu maw i Imay.",
+                    "textCh": "我的名字叫Imay。",
+                    "sound": "text/sound/62973/878872"
+                },
+                "2": {
+                    "text": "ulra i Kasavakan ku ruma’.",
+                    "textCh": "我的家在建和",
+                    "sound": "text/sound/62974/878881"
+                },
+                "3": {
+                    "text": "sasaya ku tratruli.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62975/878898"
+                },
+                "4": {
+                    "text": "ai, alaku.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62976/878910"
+                },
+                "5": {
+                    "text": "’azi ku mazalram za ulra i iyan.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62977/878918"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "intaw",
+                        "nantu",
+						"nazu",
+                        "iyan",
+                        "i",
+                        "eman",
+                        "nu",
+                        "ngadan"
+                    ],
+                    "auto": "i eman nu ngadan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Tanuvak",
+                            "Kasavakan",
+                            "Valrayvay",
+                            "Imay",
+                            "Katratripulr"
+                        ],
+                        "target-1": "Tanuvak",
+                        "target-2": "Imay"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "itras",
+                        "eman",
+                        "ngidiran",
+                        "temakesi",
+                        "inmu",
+                        "nazu",
+                        "zenan",
+                        "ulra",
+                        "i",
+                        "iyan",
+                        "nu",
+                        "ruma’"
+                    ],
+                    "auto": "ulra i iyan nu ruma’",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Katratripulr",
+                            "ngulringulr",
+                            "rukup",
+                            "Kasavakan",
+                            "zinanuman"
+                        ],
+                        "target-1": "Katratripulr",
+                        "target-2": "Kasavakan"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nintu",
+                        "dingwa",
+                        "valray",
+                        "iniyam",
+                        "iyan",
+                        "Tanuvak",
+                        "Imay",
+                        "pavulasay",
+                        "ku",
+                        "za",
+                        "tratruli",
+                        "mu"
+                    ],
+                    "auto": {
+                        "target-1": "Tanuvak pavulasay ku za tratruli mu",
+                        "target-2": "Imay pavulasay ku za tratruli mu"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "tratruli",
+                        "valray",
+                        "nannu",
+                        "iyan",
+                        "Tanuvak",
+                        "Imay",
+                        "pavulasay",
+                        "ku",
+                        "za",
+                        "aivas",
+                        "mu"
+                    ],
+                    "auto": {
+                        "target-1": "Tanuvak pavulasay ku za aivas mu",
+                        "target-2": "Imay pavulasay ku za aivas mu"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "tupu",
+                        "kemuda",
+                        "iniyan",
+                        "maidap",
+                        "intaw",
+                        "inmu",
+                        "Tanuvak",
+                        "Imay",
+                        "alra",
+                        "alakanay",
+                        "ku",
+						"ziya",
+                        "za",
+                        "idap"
+                    ],
+                    "auto": {
+                        "target-1": "Tanuvak alra alakanay ku ziya za idap",
+                        "target-2": "Imay alra alakanay ku za idap"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

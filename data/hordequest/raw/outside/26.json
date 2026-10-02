@@ -1,0 +1,215 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Kapi, niciyubi nutiyaw, uri semainumun?",
+                "textCh": "Kapi，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65710/918793",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "uri vaik aen kati Tjuku a semapana cemapa tua qalum, saka tisun?",
+                "textCh": "我明天要和Tjuku去溪邊烤肉，你呢？",
+                "sound": "text/sound/65710/918794",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "nutja kilangdan nanguaq a sikivangavangan ! maqati aen a kiciyur?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65710/918795",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kivadaqi anan ti ina!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65710/918796",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ina, maqati aen a kiciur tjay kaka tjavulung a uqaljay a semapana?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65710/918797",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "mqati, ljakua kiljivaku a timun dri!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65710/918798",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "inikamakuda, tjaramen a kiljivak!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65710/918799",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "anema su karimen",
+                    "textAb": "anema su karimen?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65713/918824",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "makainu a sivaik a semapana",
+                    "textAb": "makainu a sivaik a semapana?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65719/918880",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "maqati aen a kisedjam tua siqunu",
+                    "textAb": "maqati aen a kisedjam tua siqunu?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65721/918899",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "anema?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65707/918779"
+                },
+                "1": {
+                    "text": "uri karim aen tua qidung katua aray a sicapacapa tua qalum.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65713/918825"
+                },
+                "2": {
+                    "text": "azua ,ta izua tjagulj.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65719/918881"
+                },
+                "3": {
+                    "text": "nanguaq, alapu!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65721/918900"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "inika en a saigu a kilangda?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65707/918780"
+                },
+                "1": {
+                    "text": "vaik aen a karim tua punug katua varasi.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65713/918826"
+                },
+                "2": {
+                    "text": "inikaen a kemeljang tu i zainu a pana.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65719/918882"
+                },
+                "3": {
+                    "text": "neka nu niyaen uta.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65721/918901"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "qadjaw.",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65707/918781"
+                },
+                "2": {
+                    "text": "aicu imaza, tjau pangtjez aen a kasipana.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65719/918883"
+                },
+                "3": {
+                    "text": "inikamaqati, mapalak anga u siqunu.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65721/918902"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "inuan",
+                        "akumaya",
+                        "kisdjam",
+                        "anema",
+                        "su",
+                        "karimen"
+                    ],
+                    "auto": "anema su karimen",
+                    "buylist": [
+                        "uri velin a nemanga",
+                        "qidung",
+                        "sicapacapa tua qalum a aray",
+                        "punug",
+                        "vurasi",
+                        "qalum/vutjulj",
+                        "qecilu"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "gadu.",
+                        "anema?",
+                        "maya.",
+                        "ljaving",
+                        "nua",
+                        "ljavek.",
+                        "makainu",
+                        "a",
+                        "sivaik",
+                        "a",
+                        "semapana"
+                    ],
+                    "auto": "makainu a sivaik a semapana"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "inikamaqati.",
+                        "anema",
+                        "qecap",
+                        "tjapaq",
+                        "maqati",
+                        "aen",
+                        "a",
+                        "kisedjam",
+                        "tua",
+                        "siqunu"
+                    ],
+                    "auto": "maqati aen a kisedjam tua siqunu",
+                    "complete": {
+                        "text": "masalu tua su qinljingan",
+                        "sound": "text/sound/65721/918903"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

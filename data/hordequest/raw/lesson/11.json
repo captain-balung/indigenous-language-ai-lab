@@ -1,0 +1,409 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "ima lalu su?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/62378/863255",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "Piho lalu mu.",
+                "textCh": "我叫Piho。",
+                "sound": "text/sound/62378/863256",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "cyu inu sali su?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/62378/863257",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "kahun cu alang Pyahaw mwah.",
+                "textCh": "我從碧候部落來。",
+                "sound": "text/sound/62378/863258",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "waya su mani knama la?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/62378/863259",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini nya!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/62378/863260",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "mosa cu bayi knama, pgluw su mosa?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/62378/863261",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ini cu aras pila. syugan cu pila su?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/62378/863262",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ana, syugay misu.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/62378/863263",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Ryoheng",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "Ciwas",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Maypuwan",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Payan",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Malepa",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Yaway",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "ima lalu su",
+                    "textAb": "ima lalu su?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/62379/863264",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "cyu maki inu sali su",
+                    "textAb": "cyu maki inu sali su?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/62380/863273",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "Piho syugiy cu bbrwan su ki",
+                    "textAb": "Piho, syugiy cu bbrwan su ki?",
+                    "textCh": "Piho借我筆好嗎？",
+                    "sound": "text/sound/62381/863289",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sayun syugiy cu bbrwan su ki",
+                    "textAb": "Sayun syugiy cu bbrwan su ki?",
+                    "textCh": "Sayun借我筆好嗎？",
+                    "sound": "text/sound/62381/863291",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Piho syugiy cu ccong su ki",
+                    "textAb": "Piho, syugiy cu ccong su ki?",
+                    "textCh": "Piho借我橡皮擦好嗎？",
+                    "sound": "text/sound/62382/863301",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sayun syugiy cu ccong su ki",
+                    "textAb": "Sayun, syugiy cu ccong su ki?",
+                    "textCh": "Sayun借我橡皮擦好嗎？",
+                    "sound": "text/sound/62382/863303",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "Piho rogiy cu magan kagaw haca",
+                    "textAb": "Piho rogiy cu magan kagaw haca.",
+                    "textCh": "Piho，請幫我拿掃把。",
+                    "sound": "text/sound/62383/863309",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "Sayun rogiy cu magan kagaw haca",
+                    "textAb": "Sayun rogiy cu magan kagaw haca.",
+                    "textCh": "Sayun，請幫我拿掃把。",
+                    "sound": "text/sound/62383/863311",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ini ba’i.",
+                    "textCh": "不知道",
+                    "sound": "text/sound/62377/863254"
+                },
+                "1": {
+                    "text": "Piho lalu mu.",
+                    "textCh": "我的名字叫Piho。",
+                    "sound": "text/sound/62379/863265"
+                },
+                "2": {
+                    "text": "cyu maki alang Pyahaw sali mu.",
+                    "textCh": "我的家在碧候部落。",
+                    "sound": "text/sound/62380/863274"
+                },
+                "3": {
+                    "text": "ang, syugaw misu.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/62381/863290"
+                },
+                "4": {
+                    "text": "ungat ’ra mu uyi.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/62382/863302"
+                },
+                "5": {
+                    "text": "aw, bi’ay misu utux kagaw hani.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/62383/863310"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "lalu maha nya?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/62377/863252"
+                },
+                "1": {
+                    "text": "Sayun lalu mu.",
+                    "textCh": "我的名字叫Sayun。",
+                    "sound": "text/sound/62379/863266"
+                },
+                "2": {
+                    "text": "cyu maki Ryoheng sali mu.",
+                    "textCh": "我的家在金岳部落。",
+                    "sound": "text/sound/62380/863275"
+                },
+                "3": {
+                    "text": "nanak ci utux kinang.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/62381/863292"
+                },
+                "4": {
+                    "text": "aw, agan ni.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/62382/863304"
+                },
+                "5": {
+                    "text": "ini mu ba’i cyu maki inu.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/62383/863312"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "heya",
+                        "’ra",
+						"naha",
+                        "henu",
+                        "sali",
+                        "ima",
+                        "lalu",
+                        "su"
+                    ],
+                    "auto": "ima lalu su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Piho",
+                            "Ryoheng",
+                            "Yageh",
+                            "Sayun",
+                            "Pyahaw"
+                        ],
+                        "target-1": "Piho",
+                        "target-2": "Sayun"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "babaw",
+                        "ima",
+                        "syaw",
+                        "biru",
+                        "cimu",
+                        "naha",
+                        "lahuy",
+                        "cyu",
+                        "maki",
+                        "inu",
+                        "sali",
+                        "su"
+                    ],
+                    "auto": "cyu maki inu sali su",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Pyahaw",
+                            "ble",
+                            "sokan",
+                            "kayan",
+                            "Ryoheng",
+                            "llyung"
+                        ],
+                        "target-1": "Pyahaw",
+                        "target-2": "Ryoheng"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "nya",
+                        "renwa",
+                        "biru",
+                        "ita",
+                        "henu",
+                        "Piho",
+                        "Sayun",
+                        "syugiy",
+                        "cu",
+                        "bbrwan",
+                        "su",
+                        "ki"
+                    ],
+                    "auto": {
+                        "target-1": "Piho syugiy cu bbrwan su ki",
+                        "target-2": "Sayun syugiy cu bbrwan su ki"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "bbrwan",
+                        "biru",
+                        "su",
+                        "henu",
+                        "Piho",
+                        "Sayun",
+                        "syugiy",
+                        "cu",
+                        "ccong",
+                        "su",
+                        "ki"
+                    ],
+                    "auto": {
+                        "target-1": "Piho syugiy cu ccong su ki",
+                        "target-2": "Sayun syugiy cu ccong su ki"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "tapang",
+                        "mcwa",
+                        "ungat",
+                        "kmagaw",
+                        "heya",
+                        "cimu",
+                        "Piho",
+                        "Sayun",
+                        "rogiy",
+                        "cu",
+                        "magan",
+                        "kagaw",
+                        "haca"
+                    ],
+                    "auto": {
+                        "target-1": "Piho rogiy cu magan kagaw haca",
+                        "target-2": "Sayun rogiy cu magan kagaw haca"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

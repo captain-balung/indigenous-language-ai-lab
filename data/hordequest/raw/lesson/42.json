@@ -1,0 +1,422 @@
+{
+    "theme": "上課用語",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是開學第一天！<br>主角在校門口遇到同學，他們在說什麼呢？"
+            },
+            {
+                "text": "sino o ngaran mo?",
+                "textCh": "你叫甚麼名字？",
+                "sound": "text/sound/63038/880595",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ngaran ko si Sakayan",
+                "textCh": "我叫Sakayan。",
+                "sound": "text/sound/63038/880596",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "do anjin mo pivahayan?",
+                "textCh": "你的家在哪裡？",
+                "sound": "text/sound/63038/880597",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ko nimapo do jivalino.",
+                "textCh": "我從野銀部落來。",
+                "sound": "text/sound/63038/880598",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ka nimaryag rana?",
+                "textCh": "你吃早餐了嗎？",
+                "sound": "text/sound/63038/880599",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "jiabo pa!",
+                "textCh": "還沒耶！",
+                "sound": "text/sound/63038/880600",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "ko mangay manazang so aryagen, macihza ka ang?",
+                "textCh": "我要去買早餐，要一起去嗎？",
+                "sound": "text/sound/63038/880601",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            },
+            {
+                "text": "ya abo a ta o nizpi a nipalolo ko, apya ka vood mo jiyaken pa so nizpi?",
+                "textCh": "我沒有帶錢。你可以借我錢嗎？",
+                "sound": "text/sound/63038/880602",
+                "image": "boy.png",
+                "background": "1-2.jpg"
+            },
+            {
+                "text": "noon, pavooden ko jimo.",
+                "textCh": "好，我借你。",
+                "sound": "text/sound/63038/880603",
+                "image": "girl.png",
+                "background": "1-1.jpg"
+            }
+        ],
+        "phase2": {
+            "setup": {
+                "text": [
+                    [
+                        "Yayo",
+                        "40",
+                        "25.5"
+                    ],
+                    [
+                        "manirey",
+                        "40",
+                        "34"
+                    ],
+                    [
+                        "Imaorod",
+                        "40",
+                        "60.8"
+                    ],
+                    [
+                        "Somakey",
+                        "40",
+                        "69"
+                    ],
+                    [
+                        "Iraraley",
+                        "61",
+                        "49"
+                    ],
+                    [
+                        "Saliwey",
+                        "61",
+                        "56"
+                    ]
+                ]
+            },
+            "player": [
+                {
+                    "text": "sino o ngaran mo",
+                    "textAb": "sino o ngaran mo?",
+                    "textCh": "你叫甚麼名字？",
+                    "sound": "text/sound/63039/880604",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "do wanjin mo pivahayan",
+                    "textAb": "do wanjin mo pivahayan?",
+                    "textCh": "你家住哪裡？",
+                    "sound": "text/sound/63040/880613",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "mo Sakayan pavooden pa jiaken o pivatvatek mo an",
+                    "textAb": "mo Sakayan pavooden pa jiaken o pivatvatek mo an?",
+                    "textCh": "Sakayan借我筆好嗎？",
+                    "sound": "text/sound/63041/880629",
+                    "code": "3",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "mo Sompo ipavooden mo jiaken pa pivatvatek mo an",
+                    "textAb": "mo Sompo ipavooden mo jiaken pa pivatvatek mo an?",
+                    "textCh": "Sompo借我筆好嗎？",
+                    "sound": "text/sound/63041/880631",
+                    "code": "3",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "mo Sakayan vooden mo pa jyaken o ipangongopas an",
+                    "textAb": "mo Sakayan vooden mo pa jyaken o ipangongopas an?",
+                    "textCh": "Sakayan借我橡皮擦好嗎？",
+                    "sound": "text/sound/63042/880641",
+                    "code": "4",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "mo Sompo panvooden mo pa jyaken o ipangongopas an",
+                    "textAb": "mo Sompo panvooden mo pa jyaken o ipangongopas an?",
+                    "textCh": "Sompo借我橡皮擦好嗎？",
+                    "sound": "text/sound/63042/880643",
+                    "code": "4",
+                    "only": "target-2",
+                    "score": 100
+                },
+                {
+                    "text": "mo Sakayan sidongen pa yaken a mahap so vivyas",
+                    "textAb": "mo Sakayan, sidongen pa yaken a mahap so vivyas.",
+                    "textCh": "Sakayan，請幫我拿掃把。",
+                    "sound": "text/sound/63043/880649",
+                    "code": "5",
+                    "only": "target-1",
+                    "score": 100
+                },
+                {
+                    "text": "mo Sompo sidongen pa yaken a mahap so vivyas",
+                    "textAb": "mo Sompo, sidongen pa yaken a mahap so vivyas.",
+                    "textCh": "Sompo，請幫我拿掃把。",
+                    "sound": "text/sound/63043/880651",
+                    "code": "5",
+                    "only": "target-2",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ji atenengi",
+                    "textCh": "不知道",
+                    "sound": "text/sound/63037/880594"
+                },
+                "1": {
+                    "text": "ngaran ko si Sakayan.",
+                    "textCh": "我的名字叫Sakayan。",
+                    "sound": "text/sound/63039/880605"
+                },
+                "2": {
+                    "text": "ko mivahay do ji valino.",
+                    "textCh": "我的家在野銀村",
+                    "sound": "text/sound/63040/880614"
+                },
+                "3": {
+                    "text": "noon, pavooden ko jimo.",
+                    "textCh": "好，我借你。",
+                    "sound": "text/sound/63041/880630"
+                },
+                "4": {
+                    "text": "ya abo o jyaken en.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/63042/880642"
+                },
+                "5": {
+                    "text": "noon, ahap oya vivyas.",
+                    "textCh": "好，這支掃把給你。",
+                    "sound": "text/sound/63043/880650"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ikongo",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/63037/880592"
+                },
+                "1": {
+                    "text": "ngaran ko si Sompo.",
+                    "textCh": "我的名字叫Sompo。",
+                    "sound": "text/sound/63039/880606"
+                },
+                "2": {
+                    "text": "ko mivahay do katangked no kyokay.",
+                    "textCh": "我的家位於教會旁.",
+                    "sound": "text/sound/63040/880615"
+                },
+                "3": {
+                    "text": "ya asa jyaken.",
+                    "textCh": "我只有一隻。",
+                    "sound": "text/sound/63041/880632"
+                },
+                "4": {
+                    "text": "noon, ahap pey.",
+                    "textCh": "好，拿去。",
+                    "sound": "text/sound/63042/880644"
+                },
+                "5": {
+                    "text": "ko ji atenengi o na yanan.",
+                    "textCh": "我不知道在哪裡。",
+                    "sound": "text/sound/63043/880652"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "你今天第一天上學，趕快認識你旁邊的兩個朋友吧，問問看他們叫甚麼名字。",
+                    "tips": "將名牌放到同學的桌上吧!",
+                    "words": [
+                        "iya",
+                        "sira",
+                        "do",
+						"dang",
+                        "vahay",
+                        "sino",
+                        "o",
+                        "ngaran",
+                        "mo"
+                    ],
+                    "auto": "sino o ngaran mo",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "Sakayan",
+                            "kyokay",
+                            "Liwawa",
+                            "Sompo",
+                            "valino"
+                        ],
+                        "target-1": "Sakayan",
+                        "target-2": "Sompo"
+                    }
+                },
+                {
+                    "quest": "很好，現在你認識了同學的名字，再問問他們家住哪裡吧！",
+                    "tips": "",
+                    "words": [
+                        "teyngato",
+                        "sino",
+                        "katangked",
+                        "mivilang",
+                        "inyo",
+                        "jira",
+                        "takey",
+                        "do",
+                        "wanjin",
+                        "mo",
+                        "pivahayan"
+                    ],
+                    "auto": "do wanjin mo pivahayan",
+                    "complete": {
+                        "type": "drag",
+                        "drag": [
+                            "ji valino",
+                            "mahangno",
+                            "angit",
+                            "katangked do kyokay",
+                            "oyo"
+                        ],
+                        "target-1": "ji valino",
+                        "target-2": "katangked do kyokay"
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你忘記帶筆了，你的同學有多的筆，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "iya",
+						"ri",
+                        "dingwa",
+                        "vakong",
+                        "namen",
+                        "anjin",
+                        "Sakayan",
+                        "mo",
+                        "Sompo",
+                        "ipavooden",
+                        "mo",
+                        "jiaken",
+                        "pa",
+                        "pivatvatek",
+                        "mo",
+                        "an",
+						"pavooden",
+						"pa",
+						"o"
+                    ],
+                    "auto": {
+                        "target-1": "mo Sakayan pavooden pa jiaken o pivatvatek mo an",
+                        "target-2": "mo Sompo ipavooden mo jiaken pa pivatvatek mo an"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "3",
+                        "item": {
+                            "id": "item-1-img",
+                            "css": {
+                                "top": "580px",
+                                "left": "360px",
+                                "rotate": "40deg"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "上課了，老師請你們寫筆記。你寫錯字了，需要使用橡皮擦，但是你忘了帶橡皮擦，快想想辦法吧。",
+                    "tips": "",
+                    "words": [
+                        "pivatvatek",
+                        "vakong",
+                        "mo",
+                        "anjin",
+                        "Sakayan",
+                        "mo",
+                        "Sompo",
+                        "panvooden",
+                        "mo",
+						"vooden",
+                        "pa",
+                        "jyaken",
+                        "o",
+                        "ipangongopas",
+                        "an"
+                    ],
+                    "auto": {
+                        "target-1": "mo Sakayan vooden mo pa jyaken o ipangongopas an",
+                        "target-2": "mo Sompo panvooden mo pa jyaken o ipangongopas an"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-2",
+                        "code": "4",
+                        "item": {
+                            "id": "item-2-img",
+                            "css": {
+                                "top": "560px",
+                                "right": "390px"
+                            }
+                        }
+                    }
+                },
+                {
+                    "quest": "老師分配你掃地工作，掃把在你同學旁邊，請他拿給你吧。",
+                    "tips": "",
+                    "words": [
+                        "panlinas",
+                        "nimakong",
+                        "abo",
+                        "mivyas",
+                        "iya",
+                        "inyo",
+                        "Sakayan",
+                        "mo",
+                        "Sompo",
+                        "sidongen",
+                        "pa",
+                        "yaken",
+                        "a",
+                        "mahap",
+                        "so",
+                        "vivyas"
+                    ],
+                    "auto": {
+                        "target-1": "mo Sakayan sidongen pa yaken a mahap so vivyas",
+                        "target-2": "mo Sompo sidongen pa yaken a mahap so vivyas"
+                    },
+                    "complete": {
+                        "type": "ask",
+                        "target": "target-1",
+                        "code": "5",
+                        "item": {
+                            "id": "item-3-img",
+                            "css": {
+                                "top": "380px",
+                                "left": "250px"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,212 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "angaw, melipay temawaR, qatiw pa isu seni?",
+                "textCh": "angaw，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65796/919490",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "temawaR qasulun pa iku ti abasan qatiw sa iRuR bulbul tu ’si. aisu i?",
+                "textCh": "我明天要和abas去溪邊烤肉，你呢？",
+                "sound": "text/sound/65796/919491",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "azu nengi qawRatan ipilan! qanengi iku masulun matiw qaya ni?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65796/919492",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "kunna ka mipil tu tina su.",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65796/919493",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "tina, nengi iku masulun tu qaqa ku matiw sa iRuR ni?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65796/919494",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "nengi ti, wanayka satawaR ka aimu yu!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65796/919495",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "kua, suppaRan niaq!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65796/919496",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "niana kiliman su",
+                    "textAb": "niana kiliman su?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65797/919500",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "pasanian ta saiRuR",
+                    "textAb": "pasanian ta saiRuR?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65798/919513",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "nengi isu paliway timaiku tu saRiq ni",
+                    "textAb": "nengi isu paliway timaiku tu saRiq ni?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65799/919521",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "niana",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65795/919487"
+                },
+                "1": {
+                    "text": "kilim pa iku tu bilu seRay sabulbulan ay balis.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65797/919501"
+                },
+                "2": {
+                    "text": "tawian, yau ta Rayan ay bettu.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65798/919514"
+                },
+                "3": {
+                    "text": "kua ya, ala ika!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65799/919522"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "Rayngu iku mipil?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65795/919488"
+                },
+                "1": {
+                    "text": "kilim pa iku tu mais seRay qawpiR.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65797/919502"
+                },
+                "2": {
+                    "text": "Raynguan ku yau tanian ya iRuR.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65798/919515"
+                },
+                "3": {
+                    "text": "mai zaku ay qaya.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65799/919523"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "Raynguan ku.",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65795/919489"
+                },
+                "2": {
+                    "text": "tazian, Rutanan iku maqezi ta iRuRan.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65798/919516"
+                },
+                "3": {
+                    "text": "sukaw, meRapsi ti zaku ay.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65799/919524"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "tanian",
+                        "mana",
+                        "meliway",
+                        "niana",
+                        "kiliman",
+                        "su"
+                    ],
+                    "auto": "niana kiliman su",
+                    "buylist": [
+                        "saRasan ay Ribang",
+                        "bilu",
+                        "sabulbulan ay balis",
+                        "mais",
+                        "qawpiR",
+                        "’si",
+                        "tiRuR"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "naung",
+                        "niana",
+                        "taqa",
+                        "lazing",
+                        "pasanian",
+                        "ta",
+                        "saiRuR"
+                    ],
+                    "auto": "pasanian ta saiRuR"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "sukaw",
+                        "niana",
+                        "ipit",
+                        "kaysing",
+                        "nengi",
+                        "isu",
+                        "paliway",
+                        "timaiku",
+                        "tu",
+                        "saRiq",
+                        "ni"
+                    ],
+                    "auto": "nengi isu paliway timaiku tu saRiq ni",
+                    "complete": {
+                        "text": "wanay ni panmuan su",
+                        "sound": "text/sound/65799/919525"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,216 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "mo Lapil, do mo nakman am, ka mangay jino simaraw do niciyo?",
+                "textCh": "Lapil，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65742/919056",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "simaraw am yaken na kani Liwawa a mangay do siri no oyo a manazap, imo am?",
+                "textCh": "我明天要和Liwawa去溪邊烤肉，你呢？",
+                "sound": "text/sound/65742/919057",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "yakmey apiya ri a piyalalaman! apya kangay ko macihza jinyo?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65742/919058",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "panci mo ji ina ta!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65742/919059",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "ina, apiya ka pacihza ko ji kaka mangay do oyo an?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65742/919060",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "apya a, am makazima kanyo an!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65742/919061",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "nonan, ji namen makaziman ri!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65742/919062",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "ikong mo kalaen",
+                    "textAb": "ikong mo kalaen?",
+                    "textCh": "你要找什麼？",
+                    "sound": "text/sound/65743/919066",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "do anjin rarahan angay do oyo",
+                    "textAb": "do anjin rarahan angay do oyo?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65746/919093",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "apya ka vooden mo jiaken so pangan an",
+                    "textAb": "apya ka vooden mo jiaken so pangan an?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65747/919101",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "ikong?",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65740/919042"
+                },
+                "1": {
+                    "text": "ko mangay mangala so panzateb aka no pananazaban.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65743/919067"
+                },
+                "2": {
+                    "text": "do jito, miyan so rakoa vato do dang.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65746/919094"
+                },
+                "3": {
+                    "text": "noon, ahap pey!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65747/919102"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ji toposi?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65740/919043"
+                },
+                "1": {
+                    "text": "mangay ko ahap o tomozokosi aka no wakay.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65743/919068"
+                },
+                "2": {
+                    "text": "ko ji atenengi o ayo do dang.",
+                    "textCh": "我不知道溪邊在哪裡。",
+                    "sound": "text/sound/65746/919095"
+                },
+                "3": {
+                    "text": "ji abo jiaken en.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65747/919103"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ta ko katenngan!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65740/919044"
+                },
+                "2": {
+                    "text": "do jia, ko kapo pa do ayo a nimai.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65746/919096"
+                },
+                "3": {
+                    "text": "tosya, ta nimakava rana o ipangan ko.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65747/919104"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "anjin",
+                        "ikongo",
+                        "vood",
+                        "ikong",
+                        "mo",
+                        "kalaen"
+                    ],
+                    "auto": "ikong mo kalaen",
+                    "buylist": [
+                        "sazasazangen",
+                        "zateb",
+                        "panazaban",
+                        "tomozokosi",
+                        "wakay",
+                        "asisi",
+                        "icoy"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "takey",
+                        "ikong",
+                        "tosya",
+                        "kisakan",
+                        "do",
+                        "anjin",
+                        "rarahan",
+                        "angay",
+                        "do",
+                        "oyo"
+                    ],
+                    "auto": "do anjin rarahan angay do oyo"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "tosya",
+                        "ikong",
+                        "sosopit",
+                        "cyawang",
+                        "apya",
+                        "ka",
+                        "vooden",
+                        "mo",
+                        "jiaken",
+                        "so",
+                        "pangan",
+                        "an"
+                    ],
+                    "auto": "apya ka vooden mo jiaken so pangan an",
+                    "complete": {
+                        "text": "ayoy mo nisidongan jiaken",
+                        "sound": "text/sound/65747/919105"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}

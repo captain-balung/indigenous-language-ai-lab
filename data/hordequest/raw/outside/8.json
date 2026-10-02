@@ -1,0 +1,222 @@
+{
+    "name": "戶外活動",
+    "data": {
+        "phase1": [
+            {
+                "text": "今天是星期六。主角正在和哥哥聊天，<br>討論明天的行程。來看看他們要去哪裡玩吧！"
+            },
+            {
+                "text": "Watan, a’hahangiqan i casan, mausa’ si inu’ a linanglung su’?",
+                "textCh": "Watan，明天是星期天，你打算去哪裡？",
+                "sound": "text/sound/65634/918210",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "mausa’ ci gumlu ki Haking cumuloh cu hyi’ i aping na gawng i casan, isu’ ga?",
+                "textCh": "我明天要和 Haking 去溪邊烤肉，你呢？",
+                "sound": "text/sound/65634/918211",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "pungan ga kii cubalay i balayq pagnawan! pakbalayq ci musa’ uwi qu?",
+                "textCh": "聽起來很好玩！我也可以一起去嗎？",
+                "sound": "text/sound/65634/918212",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "paquci isu’ i yaya’ han!",
+                "textCh": "你先問媽媽！",
+                "sound": "text/sound/65634/918213",
+                "image": "boy-2.png",
+                "background": "1-2.png"
+            },
+            {
+                "text": "aya’, pakbalayq ci gumlu yulah musa’ i aping na gawng qu?",
+                "textCh": "媽媽，我可以跟哥哥一起去溪邊嗎？",
+                "sound": "text/sound/65634/918214",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            },
+            {
+                "text": "balayq, ga’ asi cimu cubalay ki panabaq yo!",
+                "textCh": "可以，但你們要小心喔！",
+                "sound": "text/sound/65634/918215",
+                "image": "mom.png",
+                "background": "1-3.png"
+            },
+            {
+                "text": "uwal, papanabaq cami cubalay!",
+                "textCh": "沒問題，我們一定會的！",
+                "sound": "text/sound/65634/918216",
+                "image": "boy-1.png",
+                "background": "1-1.png"
+            }
+        ],
+        "phase2": {
+            "player": [
+                {
+                    "text": "nanuwan ku kakiyumun su’",
+                    "textAb": "nanuwan ku kakiyumun su’?",
+                    "textCh": "你要找什麼？？",
+                    "sound": "text/sound/65636/918224",
+                    "code": "1",
+                    "score": 100
+                },
+                {
+                    "text": "sipa’uwah inu’ ku ausa’ tagi aping na gawng",
+                    "textAb": "sipa’uwah inu’ ku ausa’ tagi aping na gawng?",
+                    "textCh": "溪邊要往哪裡走？",
+                    "sound": "text/sound/65639/918251",
+                    "code": "2",
+                    "score": 100
+                },
+                {
+                    "text": "pakbalayq sipkabawx kuwing cu saliwa’ qu",
+                    "textAb": "pakbalayq sipkabawx kuwing cu saliwa’ qu?",
+                    "textCh": "可以借我刀子嗎？",
+                    "sound": "text/sound/65642/918264",
+                    "code": "3",
+                    "score": 100
+                }
+            ],
+            "target-1": {
+                "0": {
+                    "text": "nanuwan",
+                    "textCh": "什麼？",
+                    "sound": "text/sound/65633/918207"
+                },
+                "1": {
+                    "text": "halay ci kumiyum cu batah ru a’napaan na caculuhun.",
+                    "textCh": "我去找木炭和烤肉網。",
+                    "sound": "text/sound/65636/918225"
+                },
+                "2": {
+                    "text": "haca, tiku kiya a rahwal batunux ka haca.",
+                    "textCh": "那邊，有顆大石頭那邊。",
+                    "sound": "text/sound/65639/918252"
+                },
+                "3": {
+                    "text": "balayq ga, agal!",
+                    "textCh": "好啊，拿去！",
+                    "sound": "text/sound/65642/918265"
+                }
+            },
+            "target-2": {
+                "0": {
+                    "text": "ini’ baqi muung?",
+                    "textCh": "聽不懂？",
+                    "sound": "text/sound/65633/918208"
+                },
+                "1": {
+                    "text": "halay ci kumiyum cu qatiyay ru bunga’.",
+                    "textCh": "我去找玉米和地瓜。",
+                    "sound": "text/sound/65636/918226"
+                },
+                "2": {
+                    "text": "ini’ mu baqi kiya tagi inu’ ku aping na gawng.",
+                    "textCh": "我不知道溪邊在哪裡。.",
+                    "sound": "text/sound/65639/918253"
+                },
+                "3": {
+                    "text": "ukas a ikuwing uwi.",
+                    "textCh": "我也沒有。",
+                    "sound": "text/sound/65642/918266"
+                }
+            },
+            "target-3": {
+                "0": {
+                    "text": "ini’ baqi!",
+                    "textCh": "不知道！",
+                    "sound": "text/sound/65633/918209"
+                },
+                "2": {
+                    "text": "runi, yani inuwahan mi tagi aping na gawng.",
+                    "textCh": "這邊，我剛從溪邊回來。",
+                    "sound": "text/sound/65639/918254"
+                },
+                "3": {
+                    "text": "aqeh wala! mahuwah a saliwa’ mi la.",
+                    "textCh": "不行，我的刀子壞掉了。",
+                    "sound": "text/sound/65642/918267"
+                }
+            },
+            "stage": [
+                {
+                    "quest": "公車快要來了，但你們還沒買食材和工具。",
+                    "tips": "問問看其他人「你要找什麼？」，<br>找出你要負責買的東西，放進購物籃吧！",
+                    "words": [
+                        "inu’",
+                        "aynu’",
+                        "micuwa’",
+                        "kabawx",
+                        "nanuwan",
+                        "ku",
+                        "kakiyumun",
+                        "su’"
+                    ],
+                    "auto": "nanuwan ku kakiyumun su’",
+                    "buylist": [
+                        "pinateq cu binaynay",
+                        "batah",
+                        "a’napan cu caculuhun",
+                        "qatiyay",
+                        "bunga’",
+                        "hyi’",
+                        "batu’"
+                    ]
+                },
+                {
+                    "quest": "你們提早了一站下車，不知道該往哪邊走。",
+                    "tips": "哥哥請你幫忙詢問路人「溪邊要往哪裡走？」。<br>趕快找出往溪邊的路吧！",
+                    "words": [
+                        "ragiyax",
+                        "nanuwan",
+                        "laxi",
+                        "kaa",
+                        "aping",
+                        "na",
+                        "baru’",
+                        "sipa’uwah",
+                        "inu’",
+                        "ku",
+                        "ausa’",
+                        "tagi",
+                        "aping",
+                        "na",
+                        "gawng"
+                    ],
+                    "auto": "sipa’uwah inu’ ku ausa’ tagi aping na gawng"
+                },
+                {
+                    "quest": "你正準備切菜，卻發現沒有刀子。",
+                    "tips": "去問看看其他人「可以借我刀子嗎？」，<br>別忘了和對方說「謝謝你的幫忙！」喔！",
+                    "words": [
+                        "aqeh",
+                        "laxi",
+                        "nanuwan",
+                        "qaquway",
+                        "salaman",
+                        "pakbalayq",
+                        "sipkabawx",
+                        "kuwing",
+                        "cu",
+                        "saliwa’",
+                        "qu"
+                    ],
+                    "auto": "pakbalayq sipkabawx kuwing cu saliwa’ qu",
+                    "complete": {
+                        "text": "uwal mahuway su’",
+                        "sound": "text/sound/65642/918268"
+                    }
+                },
+                {
+                    "quest": "",
+                    "tips": ""
+                }
+            ]
+        }
+    }
+}
