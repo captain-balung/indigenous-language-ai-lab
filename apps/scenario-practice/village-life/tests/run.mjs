@@ -613,6 +613,23 @@ assert.ok(thanksQuest.goal.prompt.split(" ").length >= 4, "要說的句子應該
 assert.equal(judgeQuestPrompt(thanksQuest, { answer: thanksQuest.goal.prompt, translation: "" }), "exact");
 assert.equal(judgeQuestPrompt(thanksQuest, { answer: thanksQuest.goal.prompt.toUpperCase(), translation: "" }), "exact");
 assert.equal(judgeQuestPrompt(thanksQuest, { answer: "謝謝", translation: "" }), "retry");
+assert.equal(judgeQuestPrompt(thanksQuest, { answer: "隨便說", translation: "謝謝你的幫忙" }), "semantic");
+assert.equal(thanksQuest.goal.promptChinese, "謝謝你的幫忙！");
+assert.ok(
+  thanksQuest.goal.prompt.split(/\s+/).every((word) => thanksQuest.hintWords.some((hint) => indigenousKey(hint) === indigenousKey(word))),
+  "道謝那句的詞要出現在提示裡"
+);
+assert.match(questProgress(thanksQuest, { picked: "people-1" }), /謝謝你的幫忙/);
+assert.equal(judgeQuestPick(thanksQuest, thanksQuest.goal.answers[0], {}).ok, true, "道謝要選教材指定的那一位");
+const wrongPerson = thanksQuest.goal.options.find((option) => !thanksQuest.goal.answers.includes(option.id));
+assert.equal(judgeQuestPick(thanksQuest, wrongPerson.id, {}).ok, false, "選錯人不能過關");
+
+const lessonTwo = lessonPack.quests[0];
+const [leftPerson, rightPerson] = [...lessonTwo.targets].sort((a, b) => a.box.left - b.box.left);
+assert.equal(targetLabel(leftPerson.id, lessonTwo), "左邊");
+assert.equal(targetLabel(rightPerson.id, lessonTwo), "右邊", "兩個人時右邊不能叫成中間");
+assert.match(questProgress(potQuest, { learned: [], picked: null }), /先問問同學/);
+assert.match(questProgress(potQuest, { learned: ["target-1"], picked: null }), /從下面的選項挑一個/);
 
 // take 關被鎖住時，進度要明講要先問誰，而且要說「先問」而不是看起來像已完成。
 // 「（1/1）」會讓人以為籃子滿了就是答對，其實還沒判。
@@ -645,8 +662,33 @@ assert.ok(
 assert.match(questHint(potQuest, {}), /挑一個/);
 assert.match(questHint(fernQuest, { taken: [] }), /放進籃子/);
 assert.match(questHint(findPack.quests[3], {}), /點場景/);
-assert.match(questHint(thanksQuest, {}), /先選要對誰說/);
-assert.match(questHint(thanksQuest, { picked: "people-1" }), /說出那句話/);
+assert.match(questHint(thanksQuest, {}), /先問問同學，再選要道謝的人/);
+assert.match(questHint(thanksQuest, { picked: "people-1" }), /謝謝你的幫忙/);
+assert.ok(appCode.includes("THEME_LABELS[themeKey]?.quest"), "任務說明要跟著場景走");
+assert.ok(appCode.includes("找出陶壺、月桃和檳榔，再點開門。"));
+assert.ok(appCode.includes("向借刀的人道謝。"));
+assert.ok(
+  appCode.includes('ui.myTurn.hidden = quest.goal.kind === "end"') &&
+  appCode.includes("questResults[questIndex] = { order: quest.order, quest: quest.quest, ok: true }"),
+  "結語關要算完成，而且不要留空的送出鈕"
+);
+assert.ok(appCode.includes("(questState.taken ?? []).includes(id)"), "購物籃按鈕要跟著籃子內容亮起");
+assert.ok(
+  appCode.includes('const thanking = quest.goal.kind === "selectAndSpeak" && questState?.picked && !questTarget'),
+  "點了場景上的人仍是問借刀，沒點人而且選對了才道謝"
+);
+assert.ok(appCode.includes("function questLocked()"), "過關或辨識中不能再改場景");
+assert.ok(appCode.includes("function dropped(epoch)"), "換關之後不能把舊的判定寫進來");
+assert.ok(!appCode.includes("value: optionId"), "選錯不能顯示內部代號");
+assert.ok(appCode.includes('aria-label="放進籃子"'), "放進籃子的按鈕不能念出內部代號");
+{
+  const finishTurn = appCode.match(/function finishQuestTurn\(\) \{[\s\S]*?\n\}/);
+  assert.ok(finishTurn && !finishTurn[0].includes("questAudio.pause"), "說對之後不能暫停剛開始的回應");
+}
+assert.ok(
+  /const runQuestLine = createSingleFlight\(async \(\) => \{[\s\S]*?ui\.questAudio\.pause\(\)/.test(appCode),
+  "送出新的一句時要先停掉上一句回應"
+);
 
 // ── 任務關卡的版面 ───────────────────────────────────────
 assert.ok(page.includes('id="quest"'), "要有任務關卡畫面");

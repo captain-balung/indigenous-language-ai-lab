@@ -182,11 +182,30 @@ export function questPack(shard, themeKey) {
   const quests = (theme?.quests ?? [])
     // 結語關沒有對象也沒有句子，只要 goal.kind 還在就留下來。
     .filter((quest) => quest?.goal?.kind && (quest.goal.kind === "end" || (Array.isArray(quest?.lines) && quest.lines.length > 0)))
-    .map((quest) => ({
-      ...quest,
-      targets: (quest.targets ?? []).filter((target) => target?.id && target?.imageUrl),
-      hintWords: (quest.hintWords ?? []).filter((word) => typeof word === "string" && word.trim())
-    }))
+    .map((quest) => {
+      const hintWords = (quest.hintWords ?? []).filter((word) => typeof word === "string" && word.trim());
+      let goal = quest.goal;
+      // 借刀那關的詞卡是「可以借我刀子嗎」，要說的卻是道謝。
+      // 詞卡沒有那句的詞，中文也沒收，不背過族語就過不了。
+      if (goal?.kind === "selectAndSpeak" && goal.prompt) {
+        const seen = new Set(hintWords.map((word) => indigenousKey(word)));
+        for (const token of String(goal.prompt).split(/\s+/)) {
+          const clean = token.replace(/^[，。！？、,.!?]+|[，。！？、,.!?]+$/g, "");
+          const key = indigenousKey(clean);
+          if (!key || seen.has(key)) continue;
+          seen.add(key);
+          hintWords.push(clean);
+        }
+        const promptChinese = goal.promptChinese || (String(quest.tips ?? "").match(/和對方說「([^」]+)」/)?.[1] ?? "");
+        goal = { ...goal, promptChinese };
+      }
+      return {
+        ...quest,
+        goal,
+        targets: (quest.targets ?? []).filter((target) => target?.id && target?.imageUrl),
+        hintWords
+      };
+    })
     .sort((a, b) => a.order - b.order);
   return {
     // 上課用語是一張共用的場景圖＋主角圖；尋找物品與戶外活動每一關都有自己的場景圖，
@@ -279,8 +298,10 @@ export function questProgress(quest, state) {
     if (learned.includes(goal.targetId)) return "任務完成";
     return learned.length ? "還沒問到對的人，換一位問問看" : `先問 ${total} 位同學（${learned.length}/${total}）`;
   }
-  // 選東西的關卡：先問人拿線索，再從候選裡挑或放進籃子。
-  if (goal.kind === "select") return state?.picked === undefined ? "先問問同學，再挑出正確的那一個" : "從下面的選項挑一個";
+  // 選東西的關卡：先問人拿線索，再從候選裡挑。picked 開局是 null，不能拿來判斷還沒選。
+  if (goal.kind === "select") {
+    return (state?.learned ?? []).length ? "從下面的選項挑一個" : "先問問同學，再挑出正確的那一個";
+  }
   if (goal.kind === "take") {
     // 有些東西要先問對人才拿得到（官方 condition.lock）。
     // 進度要講清楚要問誰、也講清楚「籃子滿了不代表答對」——
@@ -296,7 +317,8 @@ export function questProgress(quest, state) {
   }
   if (goal.kind === "click") return "先問問同學，再點場景裡該點的地方";
   if (goal.kind === "selectAndSpeak") {
-    return state?.picked ? "用族語說出那句話" : "先問問同學，再選要對誰說";
+    if (!state?.picked) return "先問問同學，再選要道謝的人";
+    return goal.promptChinese ? `用族語說出「${goal.promptChinese}」` : "用族語說出那句話";
   }
   return learned.length ? "對方已經回答" : `先問 ${total} 位同學（${learned.length}/${total}）`;
 }
@@ -336,13 +358,14 @@ export function questSceneOptions(quest) {
   return questOptions(quest).filter((option) => option.box);
 }
 
-// 教材的對象沒有名字，只有座標，所以用左右位置稱呼：左邊、中間、右邊。
-// 兩邊都要用到（進度文字、鎖住時的提示），放在這裡共用。
+// 教材的對象沒有名字，只有座標，所以用左右位置稱呼。
+// 兩個人是左／右；三個人才有中間。固定套「左、中、右」會把右邊那位叫成中間。
 export function targetLabel(targetId, quest) {
   const sorted = [...(quest?.targets ?? [])].sort((a, b) => (a.box?.left ?? 0) - (b.box?.left ?? 0));
   const index = sorted.findIndex((item) => item.id === targetId);
-  if (index < 0) return "那位同學";
-  return ["左邊", "中間", "右邊"][index] ?? "那位同學";
+  if (index < 0 || sorted.length < 2) return "那位同學";
+  const names = sorted.length === 2 ? ["左邊", "右邊"] : ["左邊", "中間", "右邊"];
+  return names[index] ?? "那位同學";
 }
 
 // 選項是不是被鎖住：官方 condition.lock 指定的那一個，要問對人才能拿。
@@ -405,8 +428,8 @@ export function questHint(quest, state) {
   if (goal.kind === "take") return `把正確的東西放進籃子（${(state?.taken ?? []).length}/${goal.answers.length}）`;
   if (goal.kind === "click") return "點場景裡該點的地方";
   if (goal.kind === "selectAndSpeak") {
-    if (!state?.picked) return "先選要對誰說";
-    return "用族語說出那句話";
+    if (!state?.picked) return "先問問同學，再選要道謝的人";
+    return goal.promptChinese ? `用族語說出「${goal.promptChinese}」` : "用族語說出那句話";
   }
   if (goal.kind === "nameTags") return "問完兩位同學後把名牌放對桌";
   return "問問看同學";
