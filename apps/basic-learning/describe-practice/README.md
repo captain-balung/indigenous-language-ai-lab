@@ -1,6 +1,8 @@
 # 看圖描述（MISSION 05）
 
-使用認證模擬同一批看圖題：初級「看圖說話」（四張圖）與中級「看圖表達」（一張圖）。用自己的話描述，不要求背標準句。系統會顯示它懂成的中文意思；若意思接近教材參考說明，只當附帶提示。
+使用認證模擬同一批看圖題：初級「看圖說話」（四張圖）與中級「看圖表達」（一張圖）。用自己的話描述，不要求背標準句。系統會顯示它懂成的中文意思，並以 OpenAI 語意評分（失敗時退回規則粗判）給練習用分數與一句說明。
+
+管線：Formosan ASR → `translate_to_zh` → `/api/llm-complete`（OpenAI）。錄音只送 Formosan。
 
 失敗（辨識或翻譯中斷）不判錯。對錯只存在當次頁面，不寫入瀏覽器儲存。
 
@@ -9,16 +11,16 @@
 1. 選語言別、方言別。
 2. 選「初級・看圖說話」或「中級・看圖表達」。
 3. 看圖與中文提示，打字或錄音描述。
-4. 送出後看到「系統懂成：⟨譯文⟩」。
+4. 送出後看到「系統懂成：⟨譯文⟩」與練習評分說明。
 
 ## 本機預覽與測試
 
 ```
 node apps/basic-learning/describe-practice/tests/run.mjs
-node scripts/serve.mjs 4173
+OPENAI_API_KEY=… node scripts/serve.mjs 4173
 ```
 
-開啟 `http://127.0.0.1:4173/apps/basic-learning/describe-practice/`。
+開啟 `http://127.0.0.1:4173/apps/basic-learning/describe-practice/`。未設定金鑰時自動改用規則粗判。
 
 ## 教材授權
 

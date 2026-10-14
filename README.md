@@ -8,19 +8,17 @@
 
 ## 本機預覽
 
-本專案是無建置步驟的純 HTML、CSS 與 JavaScript 網站：
+本專案是無建置步驟的純 HTML、CSS 與 JavaScript 網站。語意評分請用專案內伺服器（會讀根目錄 `.env`）：
 
-```powershell
-python -m http.server 4173
-```
-
-或使用專案內零依賴的靜態伺服器（需 Node 18 以上）：
-
-```powershell
+```bash
+cp .env.example .env   # 若尚未建立
+# 編輯 .env，填入 OPENAI_API_KEY=sk-...
 node scripts/serve.mjs 4173
 ```
 
-開啟 `http://127.0.0.1:4173/`。
+開啟 `http://127.0.0.1:4173/`。`.env` 已在 `.gitignore`，不會入庫。未設定金鑰時評分退回規則粗判。
+
+僅預覽靜態頁、不需 LLM 時也可用 `python -m http.server 4173`（此時 `/api/llm-complete` 不可用）。
 
 ## 修改卡片
 
@@ -46,6 +44,8 @@ node scripts/serve.mjs 4173
 ## 部署
 
 根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
+
+問答練習、看圖描述、接話小考與認證模擬的簡答／看圖語意評分會經 `/api/llm-complete` 呼叫 OpenAI（錄音仍只送 Formosan）。請在 Vercel 專案環境變數設定 `OPENAI_API_KEY`（見 `.env.example`）。未設定時自動退回本機規則粗判。
 
 ## 已上線應用
 

@@ -128,6 +128,8 @@ export function reportDetail(result) {
   const parts = [];
   if (result?.heard) parts.push(`系統聽到：${result.heard}`);
   if (result?.translation) parts.push(`系統懂成：${result.translation}`);
+  if (result?.rationale) parts.push(result.rationale);
+  if (result?.fallback === "heuristic") parts.push("改用規則粗判");
   if (result?.type === "exact") parts.push("與教材字面一致");
   if (result?.mode === "reply" && result?.type === "semantic") parts.push("有答到問句");
   if (result?.mode === "reply" && result?.type === "retry") parts.push("沒有答到問句");

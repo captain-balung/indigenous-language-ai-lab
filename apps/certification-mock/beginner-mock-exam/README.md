@@ -22,8 +22,8 @@
 Lokahsu 的題型音檔路徑（`3recognize`／`4choiceOne`／`5choiceTwo`／`6match`）與 klokah 的 typeId
 同名同構——兩者是同一批教材，而 klokah 版本以 CC BY-NC-SA 4.0 釋出。
 
-看圖說話的評分流程：語音辨識 → Formosan `translate_to_zh` → 語意評分介面給 0–10 分（預設規則粗判；可換成 LLM，見 `semantic-judge.mjs`）。
-這是練習用的機器粗評，**不是**正式測驗的委員評分。
+看圖說話／簡答的評分流程：語音辨識 → Formosan `translate_to_zh` → OpenAI 語意評分（經 `/api/llm-complete`；失敗時退回規則粗判，見 `semantic-judge.mjs`）。
+這是練習用的機器粗評，**不是**正式測驗的委員評分。錄音不送 OpenAI。
 
 ## 與正式測驗不同的地方
 
@@ -110,7 +110,7 @@ Lokahsu 的題型音檔路徑（`3recognize`／`4choiceOne`／`5choiceTwo`／`6m
 |---|---|
 | `paper.mjs` | 出卷器。純函式、無 DOM、無 fetch，`createPaper` 內不用 `Math.random` 或 `Date`。 |
 | `scoring.mjs` | 計分。誠實性規則都寫在這裡，每一條都有測試。 |
-| `semantic-judge.mjs` | 簡答／看圖說話的語意評分介面；預設規則粗判，可換成 `createLlmSemanticJudge`。 |
+| `semantic-judge.mjs` | 簡答／看圖說話的語意評分介面；OpenAI LLM（`/api/llm-complete`）＋規則粗判備援。 |
 | `recorder.mjs` | 麥克風、WAV 轉檔、`asr_transcribe`。規則全部 import 自 `asr.mjs`。 |
 | `app.mjs` | DOM 控制、音檔播放與降級、成績單渲染。 |
 

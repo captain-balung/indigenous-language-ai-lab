@@ -1,14 +1,12 @@
 /**
  * 語意評分介面（問答題／看圖表達）
  *
- * 目前預設為規則粗判（heuristic）。後續接 LLM 時：
- *   1. 實作 `complete({ system, user }) => Promise<string>`（回傳模型文字）
- *   2. `createLlmSemanticJudge({ complete, model })`
- *   3. 把下方 `activeSemanticJudge` 改成該實例（或由 app 注入）
- *
+ * 預設：OpenAI LLM（經 /api/llm-complete）＋規則粗判備援。
  * 輸入一律已含 ASR 原文與 translate_to_zh 譯文；評分端不再重跑 ASR。
  */
 
+import { createResilientSemanticJudge } from "../../shared/resilient-semantic-judge.mjs";
+import { DEFAULT_LLM_MODEL } from "../../shared/llm-complete.mjs";
 import {
   judgeShortAnswerTranslation,
   scorePictureTalkTranslation,
@@ -201,8 +199,10 @@ export function createLlmSemanticJudge({ complete, model = "custom" } = {}) {
 }
 
 /**
- * 目前啟用的語意評分實作。
- * 接 LLM 時改為：
- *   export const activeSemanticJudge = createLlmSemanticJudge({ complete, model: "..." });
+ * 目前啟用的語意評分實作：LLM 優先，proxy／金鑰失敗時退回 heuristic。
  */
-export const activeSemanticJudge = createHeuristicSemanticJudge();
+export const activeSemanticJudge = createResilientSemanticJudge({
+  createLlm: createLlmSemanticJudge,
+  createHeuristic: createHeuristicSemanticJudge,
+  model: DEFAULT_LLM_MODEL,
+});

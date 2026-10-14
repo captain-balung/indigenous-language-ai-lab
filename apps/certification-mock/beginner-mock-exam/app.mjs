@@ -504,14 +504,18 @@ function showSpeakingFeedback(section, question, response) {
       const points = Number.isFinite(response.shortPoints)
         ? response.shortPoints
         : (verdict === "reasonable" ? SHORT_ANSWER_MAX_POINTS : 0);
+      const rationale = response.shortRationale
+        ? `<p>評分說明：${escapeHtml(response.shortRationale)}</p>`
+        : "";
       ui.feedback.innerHTML = `<strong>分數 ${points} / ${SHORT_ANSWER_MAX_POINTS}　·　${verdict === "reasonable" ? "回答看起來合理" : "回答看起來不太合理"}</strong>
         <p>系統聽到：${escapeHtml(response.transcript ?? "")}</p>
         <p>翻譯成中文：${escapeHtml(response.translation ?? "")}</p>
         <p>問句（中文）：${escapeHtml(question.prompt.chineseText)}</p>
-        <p>這是依譯文與問句類型做的機器粗判，僅供練習參考；這不代表正式測驗評分，也不代表你答錯。</p>`;
+        ${rationale}
+        <p>這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分，也不代表你答錯。</p>`;
     } else {
       ui.feedback.innerHTML = `<strong>無法判定</strong>
-        <p>${escapeHtml(response.translateError ?? response.asrError ?? "辨識或翻譯沒有完成")}</p>
+        <p>${escapeHtml(response.shortRationale ?? response.translateError ?? response.asrError ?? "辨識或翻譯沒有完成")}</p>
         <p>你的作答尚未被判錯。</p>`;
     }
     return;
@@ -525,17 +529,21 @@ function showSpeakingFeedback(section, question, response) {
     ui.feedback.hidden = false;
     ui.feedback.dataset.status = status;
     if (response.pictureScore?.status === "scored") {
+      const rationale = response.pictureScore?.rationale
+        ? `<p>評分說明：${escapeHtml(response.pictureScore.rationale)}</p>`
+        : "";
       ui.feedback.innerHTML = `<strong>分數 ${points} / ${PICTURE_TALK_MAX_POINTS}</strong>
         <p>系統聽到：${escapeHtml(response.transcript ?? "")}</p>
         <p>翻譯成中文：${escapeHtml(response.translation ?? "")}</p>
         <p>教材參考答案（中文）：${escapeHtml(question.reference.chineseText)}</p>
-        <p>分數來自譯文與參考答案的內容重疊程度，僅供練習參考；這不代表正式測驗評分，也不代表你說錯。</p>
+        ${rationale}
+        <p>這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分，也不代表你說錯。</p>
         ${question.reference.audioUrl
           ? `<p><button type="button" class="feedback-replay" data-audio="${escapeHtml(question.reference.audioUrl)}">▶ 聽教材範例</button></p>`
           : ""}`;
     } else {
       ui.feedback.innerHTML = `<strong>無法判定</strong>
-        <p>${escapeHtml(response.translateError ?? response.asrError ?? "辨識或翻譯沒有完成")}</p>
+        <p>${escapeHtml(response.pictureScore?.rationale ?? response.translateError ?? response.asrError ?? "辨識或翻譯沒有完成")}</p>
         <p>你的作答尚未被判錯。</p>`;
     }
     ui.feedback.querySelector(".feedback-replay")?.addEventListener("click", (event) => {
