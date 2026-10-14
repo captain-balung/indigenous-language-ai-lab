@@ -28,8 +28,10 @@ assert.ok(!page.includes('href="styles.css"'));
 assert.ok(!page.includes("對方會看到你的 IP"));
 assert.ok(page.includes("CC BY-NC-SA 4.0"));
 assert.ok(appCode.includes("semanticMatch"));
+assert.ok(appCode.includes("activeSemanticJudge") || appCode.includes("scorePictureTalk"));
 assert.ok(appCode.includes("pictureTalkRecords"));
 assert.ok(appCode.includes("transcribe"));
+assert.ok(page.includes("OpenAI"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(appCode), "不得寫入瀏覽器儲存");
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + appSource), "介面不得使用 emoji");
 assert.ok(appCode.includes("prefers-reduced-motion"));
@@ -50,5 +52,13 @@ const caption = describeCaption({ translation: "我喜歡去學校。", matched:
 assert.equal(caption.headline, "系統懂成");
 assert.equal(caption.translation, "我喜歡去學校。");
 assert.ok(caption.aside.includes("教材參考說明"));
+
+const scored = describeCaption({
+  translation: "我喜歡去學校。",
+  matched: true,
+  pictureScore: { status: "scored", points: 8, maxPoints: 10, rationale: "內容大致相符" },
+});
+assert.match(scored.aside, /練習評分 8 \/ 10/);
+assert.match(scored.aside, /內容大致相符/);
 
 console.log("PASS: describe practice uses certification picture-talk items");

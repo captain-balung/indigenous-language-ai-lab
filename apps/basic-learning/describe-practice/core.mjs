@@ -29,10 +29,18 @@ export function pictureTalkRecords(juniorShard, seniorShard) {
   return { beginner, intermediate };
 }
 
-export function describeCaption({ translation, matched }) {
+export function describeCaption({ translation, matched, pictureScore } = {}) {
+  const scored = pictureScore?.status === "scored" && Number.isFinite(pictureScore.points);
+  const asides = [];
+  if (scored) {
+    asides.push(`練習評分 ${pictureScore.points} / ${pictureScore.maxPoints ?? 10}（非正式測驗）。`);
+  }
+  if (pictureScore?.rationale) asides.push(String(pictureScore.rationale));
+  if (pictureScore?.fallback === "heuristic") asides.push("改用規則粗判。");
+  if (matched && !scored) asides.push("意思接近教材參考說明。");
   return {
     headline: "系統懂成",
     translation: String(translation ?? "").trim(),
-    aside: matched ? "意思接近教材參考說明。" : ""
+    aside: asides.filter(Boolean).join(" ")
   };
 }

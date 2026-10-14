@@ -1,7 +1,7 @@
 import { exactMatch, judgeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
-import { judgeShortAnswerTranslation } from "../../certification-mock/beginner-mock-exam/scoring.mjs";
+import { activeSemanticJudge } from "../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
 import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
@@ -356,10 +356,19 @@ async function gradeSpeech() {
   if (question.mode === "reply") {
     try {
       const translation = await translateToZh(heard, selectedDialect.code);
+      const judged = await activeSemanticJudge.judgeShortAnswer({
+        questionChinese: question.chineseText,
+        questionIndigenous: question.indigenousText,
+        transcript: heard,
+        translation,
+        dialectCode: selectedDialect.code,
+      });
       finish({
-        type: replyVerdict(judgeShortAnswerTranslation(question.chineseText, translation)),
+        type: replyVerdict(judged),
         heard,
         translation,
+        rationale: judged.rationale,
+        fallback: judged.fallback,
         mode: "reply"
       }, false, current);
     } catch {

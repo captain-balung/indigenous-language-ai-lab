@@ -1,6 +1,7 @@
 import { createQuestionDeck, createSingleFlight, exactMatch, semanticMatch } from "../body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../body-parts-speaking/asr.mjs";
+import { activeSemanticJudge } from "../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
 import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
@@ -288,13 +289,32 @@ const runFlow = createSingleFlight(async () => {
 
   let translation;
   let matched = false;
+  let pictureScore = null;
   if (exactMatch(indigenous, question.indigenousText)) {
     translation = question.chineseText;
     matched = true;
+    pictureScore = {
+      points: 10,
+      maxPoints: 10,
+      ratio: 1,
+      status: "scored",
+      rationale: "與教材族語字面一致",
+    };
   } else {
     try {
       translation = await translateAnswer(indigenous);
-      matched = semanticMatch(translation, question.chineseText);
+      pictureScore = await activeSemanticJudge.scorePictureTalk({
+        tip: question.tip,
+        referenceChinese: question.chineseText,
+        referenceIndigenous: question.indigenousText,
+        transcript: indigenous,
+        translation,
+        imageUrls: question.imageUrls,
+        dialectCode: selectedDialect.code,
+      });
+      matched = pictureScore?.status === "scored"
+        ? (pictureScore.points ?? 0) >= 5
+        : semanticMatch(translation, question.chineseText);
     } catch (error) {
       showResult("unavailable", `目前無法完成判定（${error.message}），你的答案尚未被判錯。`);
       ui.retry.hidden = false;
@@ -303,7 +323,7 @@ const runFlow = createSingleFlight(async () => {
     }
   }
 
-  renderResult({ indigenous, translation, matched });
+  renderResult({ indigenous, translation, matched, pictureScore });
   finishFlow();
 });
 
@@ -325,8 +345,8 @@ function renderHeard(text) {
     <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯。</small>`;
 }
 
-function renderResult({ indigenous, translation, matched }) {
-  const caption = describeCaption({ translation, matched });
+function renderResult({ indigenous, translation, matched, pictureScore }) {
+  const caption = describeCaption({ translation, matched, pictureScore });
   ui.result.hidden = false;
   ui.result.dataset.state = matched ? "semantic" : "retry";
   ui.result.innerHTML = `<strong>${caption.headline}</strong>

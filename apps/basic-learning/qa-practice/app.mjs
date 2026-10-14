@@ -1,7 +1,7 @@
 import { createQuestionDeck, createSingleFlight } from "../body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../body-parts-speaking/asr.mjs";
-import { judgeShortAnswerTranslation } from "../../certification-mock/beginner-mock-exam/scoring.mjs";
+import { activeSemanticJudge } from "../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
 import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
@@ -302,8 +302,19 @@ const runFlow = createSingleFlight(async () => {
     return;
   }
 
-  const judged = judgeShortAnswerTranslation(question.chineseText, translation);
-  renderResult(judged.verdict, { indigenous, translation });
+  const judged = await activeSemanticJudge.judgeShortAnswer({
+    questionChinese: question.chineseText,
+    questionIndigenous: question.indigenousText,
+    transcript: indigenous,
+    translation,
+    dialectCode: selectedDialect.code,
+  });
+  renderResult(judged.verdict, {
+    indigenous,
+    translation,
+    rationale: judged.rationale,
+    fallback: judged.fallback,
+  });
   finishFlow();
 });
 
@@ -325,16 +336,21 @@ function renderHeard(text) {
     <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯。</small>`;
 }
 
-function renderResult(verdict, { indigenous, translation }) {
+function renderResult(verdict, { indigenous, translation, rationale, fallback } = {}) {
   const title = qaVerdictLabel(verdict);
   const details = {
     reasonable: "系統認為這段回答有對到問句。",
     unreasonable: "系統還沒聽出和問句相關的意思。可以換個說法再試。",
     undetermined: "目前無法判定。你的答案尚未被判錯。"
   };
+  const feedback = [
+    rationale ? escapeHtml(rationale) : "",
+    fallback === "heuristic" ? "（本次改用規則粗判）" : "",
+  ].filter(Boolean).join(" ");
   ui.result.hidden = false;
   ui.result.dataset.state = verdict === "reasonable" ? "semantic" : verdict === "unreasonable" ? "retry" : "unavailable";
   ui.result.innerHTML = `<strong>${title}</strong><p>${details[verdict] || details.undetermined}</p>
+    ${feedback ? `<p class="judge-rationale">${feedback}</p>` : ""}
     <dl><dt>${lastHeard ? "系統聽到的族語" : "你的族語回答"}</dt><dd>${escapeHtml(indigenous)}</dd>
     <dt>系統懂成</dt><dd>${escapeHtml(translation)}</dd></dl>`;
   ui.next.hidden = false;

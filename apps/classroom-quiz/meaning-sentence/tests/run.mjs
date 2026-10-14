@@ -81,7 +81,7 @@ assert.ok(!page.includes("?mode="));
 assert.ok(app.includes("verdictFromTranslation"));
 assert.ok(app.includes("replyVerdict"));
 assert.ok(app.includes("judgeAnswer"));
-assert.ok(app.includes("judgeShortAnswerTranslation"));
+assert.ok(app.includes("activeSemanticJudge"));
 assert.ok(app.includes("prefers-reduced-motion"));
 assert.ok(!app.includes("scrambleDecision"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(app));

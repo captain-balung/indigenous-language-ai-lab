@@ -505,13 +505,19 @@ assert.equal(judgeWordReading("wacu", ""), "undetermined");
 
 // ⑤d 語意評分介面（預設 heuristic；LLM 可替換）
 {
-  assert.equal(activeSemanticJudge.id, "heuristic");
+  assert.ok(activeSemanticJudge.id.startsWith("llm:"), "預設應走 LLM 語意評分（失敗時備援 heuristic）");
   assert.equal(typeof activeSemanticJudge.judgeShortAnswer, "function");
   assert.equal(typeof activeSemanticJudge.scorePictureTalk, "function");
-  assert.equal(
-    (await activeSemanticJudge.judgeShortAnswer({ questionChinese: "你好嗎？", translation: "很好", transcript: "x" })).points,
-    4,
-  );
+  {
+    const judged = await activeSemanticJudge.judgeShortAnswer({
+      questionChinese: "你好嗎？",
+      translation: "很好",
+      transcript: "x",
+    });
+    assert.equal(judged.points, 4);
+    // Node 測試環境無 proxy 時應退回規則粗判
+    if (judged.fallback) assert.equal(judged.fallback, "heuristic");
+  }
   assert.throws(() => createLlmSemanticJudge({}), /complete/);
   const llm = createLlmSemanticJudge({
     model: "mock",

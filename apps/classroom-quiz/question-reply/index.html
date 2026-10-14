@@ -28,8 +28,8 @@
         <p>播放時對方會看到你的 IP 位址。本站不儲存音檔。音檔載不出來的題目不計分。</p>
       </div>
       <div id="notice-mic" class="notice notice--privacy" hidden>
-        <strong>錄音會送到第三方服務</strong>
-        <p>口說題的錄音會傳送到 <code>ai3.iformosa.com.tw</code> 辨識。本站不儲存錄音。請不要錄入個人資料。</p>
+        <strong>錄音與評分會送到第三方服務</strong>
+        <p>錄音會傳送到 <code>ai3.iformosa.com.tw</code> 辨識並翻成中文；問句與譯文會經本站 proxy 送 <b>OpenAI</b> 練習評分（不送錄音；失敗時改用規則粗判）。本站不儲存錄音。請不要錄入個人資料。</p>
       </div>
       <div id="api-status" class="api-status" aria-live="polite">正在確認服務…</div>
       <button id="start" class="primary" type="button" disabled>開始本堂</button>
@@ -56,7 +56,7 @@
         <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
           <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
         </div>
-        <p class="inline-privacy">送出後會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。每題只錄一次。</p>
+        <p class="inline-privacy">送出後會上傳到 <code>ai3.iformosa.com.tw</code> 辨識；譯文會送 OpenAI 練習評分。每題只錄一次。</p>
       </div>
       <div id="heard" class="heard" hidden></div>
       <div class="submit-row">

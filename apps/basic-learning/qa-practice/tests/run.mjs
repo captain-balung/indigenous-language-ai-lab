@@ -3,6 +3,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { judgeShortAnswerTranslation } from "../../../certification-mock/beginner-mock-exam/scoring.mjs";
+import { activeSemanticJudge, createLlmSemanticJudge, createHeuristicSemanticJudge } from "../../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
+import { createResilientSemanticJudge } from "../../../shared/resilient-semantic-judge.mjs";
+import { isLlmTransportFailure } from "../../../shared/llm-complete.mjs";
 import { dialogueQuestions, qaVerdictLabel } from "../core.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
@@ -23,7 +26,9 @@ assert.ok(page.includes('src="/apps/basic-learning/qa-practice/app.mjs"'));
 assert.ok(!page.includes('href="styles.css"'));
 assert.ok(!page.includes("對方會看到你的 IP"));
 assert.ok(page.includes("CC BY-NC-SA 4.0"));
-assert.ok(appCode.includes("judgeShortAnswerTranslation"));
+assert.ok(appCode.includes("activeSemanticJudge"));
+assert.ok(appCode.includes("judge-rationale") || appSource.includes("rationale"));
+assert.ok(page.includes("OpenAI"));
 assert.ok(appCode.includes("asr_transcribe") || appSource.includes("transcribe"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(appCode), "不得寫入瀏覽器儲存");
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + appSource), "介面不得使用 emoji");
@@ -43,4 +48,32 @@ assert.equal(qaVerdictLabel(yes.verdict), "有答到");
 assert.equal(qaVerdictLabel("unreasonable"), "再想想");
 assert.equal(qaVerdictLabel("undetermined"), "無法判定");
 
-console.log("PASS: qa practice dialogue questions, ASR/judge imports, no storage");
+assert.ok(activeSemanticJudge.id.startsWith("llm:"));
+assert.ok(isLlmTransportFailure("無法連線 LLM proxy"));
+assert.ok(!isLlmTransportFailure("回答沒有對到問句"));
+
+const resilient = createResilientSemanticJudge({
+  createLlm: createLlmSemanticJudge,
+  createHeuristic: createHeuristicSemanticJudge,
+  model: "mock",
+  complete: async () => { throw new Error("無法連線 LLM proxy"); },
+});
+const fallback = await resilient.judgeShortAnswer({
+  questionChinese: "你好嗎？",
+  translation: "很好",
+  transcript: "x",
+});
+assert.equal(fallback.verdict, "reasonable");
+assert.equal(fallback.fallback, "heuristic");
+assert.match(String(fallback.rationale ?? ""), /規則粗判/);
+
+const llmOk = createLlmSemanticJudge({
+  model: "mock",
+  complete: async () => '{"verdict":"reasonable","points":4,"rationale":"有答到"}',
+});
+assert.equal(
+  (await llmOk.judgeShortAnswer({ questionChinese: "你好嗎？", translation: "很好", transcript: "x" })).rationale,
+  "有答到",
+);
+
+console.log("PASS: qa practice dialogue questions, LLM judge + heuristic fallback, no storage");
