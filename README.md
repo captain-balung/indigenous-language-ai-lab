@@ -61,6 +61,7 @@ node scripts/serve.mjs 4173
 - [初級模擬站](apps/certification-mock/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
 - [中級模擬站](apps/certification-mock/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
 - [部落大小事](apps/scenario-practice/village-life/README.md)：三個生活場景的對話——開學第一天、家裡辦婚禮、週末想出門。輪到你時打字或錄音，系統顯示它聽到的、懂成的意思，以及教材怎麼講。要說自己名字與來處的句子標為參考句，不判對錯；沒有配分。
+- [市場小幫手](apps/scenario-practice/market-helper/README.md)：100 元預算，依媽媽的購物清單（每局隨機菜／水果）問價、買齊、結帳。族語練貨品名；價錢與過關由程式判定，沒有配分。
 
 ## 素材與授權
 
@@ -91,6 +92,16 @@ node scripts/download-body-parts.mjs
 
 ```powershell
 node scripts/download-klokah-junior.mjs
+```
+
+### 市場小幫手貨品詞
+
+「市場小幫手」的資料位於 `data/market-helper/`，自「族語 E 樂園」[學習詞表／植物](https://web.klokah.tw/vocabulary/) 抽出可販售的菜／水果詞，每局隨機抽幾種；同樣依 [CC BY-NC-SA 4.0](data/market-helper/LICENSE.md) 使用。音檔與圖片不入庫，執行時由 `web.klokah.tw`／`klokah.tw` 直接載入。
+
+重新下載：
+
+```powershell
+node scripts/download-vocabulary-plants.mjs
 ```
 
 ### 中級認證題型語料
