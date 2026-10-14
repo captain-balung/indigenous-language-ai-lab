@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 2,
+  "name": "market-helper",
+  "description": "市場小幫手貨品詞：自族語 E 樂園學習詞表「08植物」抽出可販售的菜／水果詞，每局隨機抽幾種。音檔與圖片熱連結。",
+  "source": {
+    "website": "https://web.klokah.tw/vocabulary/",
+    "category": "08植物",
+    "api": "php/getWords.php"
+  },
+  "marketableChinese": [
+    "香蕉",
+    "芋頭",
+    "甘蔗",
+    "甘藷",
+    "柑橘",
+    "南瓜",
+    "玉米",
+    "檳榔",
+    "竹筍",
+    "香菇",
+    "鳳梨",
+    "桃子",
+    "李子",
+    "木耳",
+    "蕃茄",
+    "胡瓜",
+    "山蘇",
+    "胡蘿蔔",
+    "空心菜",
+    "長豆",
+    "綠豆",
+    "蔥",
+    "豆芽",
+    "百香果",
+    "山藥",
+    "野草莓",
+    "梅子",
+    "過貓",
+    "樹豆",
+    "柚子",
+    "辣椒(通稱)",
+    "地瓜",
+    "番石榴"
+  ],
+  "dialectCount": 42,
+  "dialects": [
+    {
+      "id": 1,
+      "name": "南勢阿美語",
+      "ethnicity": "阿美",
+      "itemCount": 32
+    },
+    {
+      "id": 2,
+      "name": "秀姑巒阿美語",
+      "ethnicity": "阿美",
+      "itemCount": 32
+    },
+    {
+      "id": 3,
+      "name": "海岸阿美語",
+      "ethnicity": "阿美",
+      "itemCount": 32
+    },
+    {
+      "id": 4,
+      "name": "馬蘭阿美語",
+      "ethnicity": "阿美",
+      "itemCount": 32
+    },
+    {
+      "id": 5,
+      "name": "恆春阿美語",
+      "ethnicity": "阿美",
+      "itemCount": 32
+    },
+    {
+      "id": 6,
+      "name": "賽考利克泰雅語",
+      "ethnicity": "泰雅",
+      "itemCount": 32
+    },
+    {
+      "id": 7,
+      "name": "澤敖利泰雅語",
+      "ethnicity": "泰雅",
+      "itemCount": 32
+    },
+    {
+      "id": 8,
+      "name": "汶水泰雅語",
+      "ethnicity": "泰雅",
+      "itemCount": 32
+    },
+    {
+      "id": 9,
+      "name": "萬大泰雅語",
+      "ethnicity": "泰雅",
+      "itemCount": 32
+    },
+    {
+      "id": 10,
+      "name": "四季泰雅語",
+      "ethnicity": "泰雅",
+      "itemCount": 32
+    },
+    {
+      "id": 11,
+      "name": "宜蘭澤敖利泰雅語",
+      "ethnicity": "泰雅",
+      "itemCount": 32
+    },
+    {
+      "id": 13,
+      "name": "賽夏語",
+      "ethnicity": "賽夏",
+      "itemCount": 32
+    },
+    {
+      "id": 14,
+      "name": "邵語",
+      "ethnicity": "邵",
+      "itemCount": 32
+    },
+    {
+      "id": 15,
+      "name": "都達賽德克語",
+      "ethnicity": "賽德克",
+      "itemCount": 32
+    },
+    {
+      "id": 16,
+      "name": "德固達雅賽德克語",
+      "ethnicity": "賽德克",
+      "itemCount": 32
+    },
+    {
+      "id": 17,
+      "name": "德鹿谷賽德克語",
+      "ethnicity": "賽德克",
+      "itemCount": 32
+    },
+    {
+      "id": 18,
+      "name": "卓群布農語",
+      "ethnicity": "布農",
+      "itemCount": 31
+    },
+    {
+      "id": 19,
+      "name": "卡群布農語",
+      "ethnicity": "布農",
+      "itemCount": 31
+    },
+    {
+      "id": 20,
+      "name": "丹群布農語",
+      "ethnicity": "布農",
+      "itemCount": 31
+    },
+    {
+      "id": 21,
+      "name": "巒群布農語",
+      "ethnicity": "布農",
+      "itemCount": 31
+    },
+    {
+      "id": 22,
+      "name": "郡群布農語",
+      "ethnicity": "布農",
+      "itemCount": 31
+    },
+    {
+      "id": 23,
+      "name": "東排灣語",
+      "ethnicity": "排灣",
+      "itemCount": 32
+    },
+    {
+      "id": 24,
+      "name": "北排灣語",
+      "ethnicity": "排灣",
+      "itemCount": 32
+    },
+    {
+      "id": 25,
+      "name": "中排灣語",
+      "ethnicity": "排灣",
+      "itemCount": 32
+    },
+    {
+      "id": 26,
+      "name": "南排灣語",
+      "ethnicity": "排灣",
+      "itemCount": 32
+    },
+    {
+      "id": 27,
+      "name": "東魯凱語",
+      "ethnicity": "魯凱",
+      "itemCount": 30
+    },
+    {
+      "id": 28,
+      "name": "霧台魯凱語",
+      "ethnicity": "魯凱",
+      "itemCount": 30
+    },
+    {
+      "id": 29,
+      "name": "大武魯凱語",
+      "ethnicity": "魯凱",
+      "itemCount": 30
+    },
+    {
+      "id": 30,
+      "name": "多納魯凱語",
+      "ethnicity": "魯凱",
+      "itemCount": 30
+    },
+    {
+      "id": 31,
+      "name": "茂林魯凱語",
+      "ethnicity": "魯凱",
+      "itemCount": 30
+    },
+    {
+      "id": 32,
+      "name": "萬山魯凱語",
+      "ethnicity": "魯凱",
+      "itemCount": 30
+    },
+    {
+      "id": 33,
+      "name": "太魯閣語",
+      "ethnicity": "太魯閣",
+      "itemCount": 29
+    },
+    {
+      "id": 34,
+      "name": "噶瑪蘭語",
+      "ethnicity": "噶瑪蘭",
+      "itemCount": 32
+    },
+    {
+      "id": 35,
+      "name": "鄒語",
+      "ethnicity": "鄒",
+      "itemCount": 30
+    },
+    {
+      "id": 36,
+      "name": "卡那卡那富語",
+      "ethnicity": "卡那卡那富",
+      "itemCount": 32
+    },
+    {
+      "id": 37,
+      "name": "拉阿魯哇語",
+      "ethnicity": "拉阿魯哇",
+      "itemCount": 31
+    },
+    {
+      "id": 38,
+      "name": "南王卑南語",
+      "ethnicity": "卑南",
+      "itemCount": 30
+    },
+    {
+      "id": 39,
+      "name": "知本卑南語",
+      "ethnicity": "卑南",
+      "itemCount": 30
+    },
+    {
+      "id": 40,
+      "name": "西群卑南語",
+      "ethnicity": "卑南",
+      "itemCount": 30
+    },
+    {
+      "id": 41,
+      "name": "建和卑南語",
+      "ethnicity": "卑南",
+      "itemCount": 30
+    },
+    {
+      "id": 42,
+      "name": "雅美語",
+      "ethnicity": "雅美",
+      "itemCount": 32
+    },
+    {
+      "id": 43,
+      "name": "撒奇萊雅語",
+      "ethnicity": "撒奇萊雅",
+      "itemCount": 32
+    }
+  ],
+  "notes": [],
+  "builtAt": "2026-10-14T10:09:27.297Z"
+}

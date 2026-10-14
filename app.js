@@ -27,7 +27,7 @@ const applicationSeeds = {
   ],
   scenarios: [
     ["部落大小事", "三個生活場景的對話：開學第一天、婚禮幫忙、週末出遊。", "assets/icons/village-house.webp", "available", "apps/scenario-practice/village-life/"],
-    ["市場小幫手", "學會購物、數量與食物相關說法。", "assets/icons/market-basket.webp"],
+    ["市場小幫手", "學會購物、數量與食物相關說法。", "assets/icons/market-basket.webp", "available", "apps/scenario-practice/market-helper/"],
     ["旅行會話包", "從問路到搭車，練習實用句型。", "assets/icons/travel-bus.webp"],
     ["文化故事屋", "跟著情境故事理解語言與文化。", "assets/icons/campfire-story.webp"]
   ],
