@@ -222,9 +222,14 @@ function playTwice(url, options = {}) {
     played += 1;
     if (played === 1) {
       setAudioState("playing", "第二遍…");
-      pendingReplay = setTimeout(() => { ui.player.currentTime = 0; ui.player.play().catch(fail); }, reduced() ? 0 : REPLAY_GAP_MS);
+      pendingReplay = setTimeout(() => {
+        pendingReplay = null;
+        ui.player.currentTime = 0;
+        ui.player.play().catch(fail);
+      }, reduced() ? 0 : REPLAY_GAP_MS);
       return;
     }
+    if (pendingReplay) { clearTimeout(pendingReplay); pendingReplay = null; }
     cleanup();
     setAudioState("idle", "播放完畢（已播兩遍）");
     settle();
@@ -832,10 +837,10 @@ function showReport() {
     const items = section.review.map((entry) => `
       <div class="review-item" data-status="${entry.status}">
         <h4>第 ${entry.no} 題　${statusLabel[entry.status]}　·　${entry.points} / ${entry.maxPoints} 分</h4>
+        ${entry.prompt.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.prompt.audioUrl)}">▶ 播放</button>` : ""}
         ${entry.prompt.indigenousText ? `<p class="ab">${escapeHtml(entry.prompt.indigenousText)}</p>` : ""}
         ${entry.prompt.chineseText ? `<p class="zh">${escapeHtml(entry.prompt.chineseText)}</p>` : ""}
         ${renderListeningReviewOptions(entry)}
-        ${entry.prompt.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.prompt.audioUrl)}">▶ 再聽一次</button>` : ""}
       </div>`).join("");
     return `<h3 class="review-section">${escapeHtml(section.title)}（${section.pointsSum} / ${section.maxPointsSum} 分　·　答對 ${section.correct} / ${section.total}）</h3>${items}`;
   }).join("");
@@ -843,31 +848,31 @@ function showReport() {
   const sentenceBlock = `<h3 class="review-section">口說第一部分：單句朗讀（${sentence.pointsSum} / ${sentence.maxPointsSum} 分）</h3>` + sentence.review.map((entry) => `
     <div class="review-item" data-status="${entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 播放</button>` : ""}
       <p class="ab">教材拼寫：${escapeHtml(entry.expected)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       ${entry.ratio == null ? "" : `<p>詞語重疊程度：${Math.round(entry.ratio * 100)}%</p>`}
-      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材錄音</button>` : ""}
     </div>`).join("");
 
   const shortBlock = `<h3 class="review-section">口說第二部分：問答題（${short.pointsSum} / ${short.maxPointsSum} 分）</h3>` + short.review.map((entry) => `
     <div class="review-item" data-status="${entry.status === "reasonable" ? "matched" : entry.status === "unreasonable" ? "mismatched" : entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
+      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 播放</button>` : ""}
       <p class="ab">問句：${escapeHtml(entry.question)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 再聽問句</button>` : ""}
     </div>`).join("");
 
   const pictureBlock = `<h3 class="review-section">口說第三部分：看圖表達</h3>` + picture.review.map((entry) => `
     <div class="review-item" data-status="${entry.status === "scored" ? "matched" : entry.status}">
       <h4>第 ${entry.no} 題　${entry.status === "scored" ? `分數 ${entry.points} / ${entry.maxPoints}` : statusLabel[entry.status]}</h4>
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 播放</button>` : ""}
       <p>中文提示：${escapeHtml(entry.tip)}</p>
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       <p>教材參考答案：${escapeHtml(entry.referenceChinese)}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材範例</button>` : ""}
     </div>`).join("");
 
   ui.reviewList.innerHTML = sentenceBlock + shortBlock + pictureBlock + listeningBlocks;

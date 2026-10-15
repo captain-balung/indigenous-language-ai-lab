@@ -553,6 +553,8 @@ assert.ok(!page.includes('id="finish"'), "不得再有交卷按鈕");
 assert.ok(!page.includes(">交卷<"), "文案不得出現交卷");
 assert.ok(appSource.includes("confirmed"), "確定後必須標記 confirmed");
 assert.ok(appSource.includes("advanceAfterConfirm"), "確定後必須自動前進或進結果頁");
+assert.ok(!appCode.includes("canReplay"), "作答中不得開放題幹無限再聽");
+assert.ok(/ui\.replay\.hidden = true/.test(appCode), "再聽一次按鈕必須隱藏");
 assert.ok(appSource.includes("activeSemanticJudge"), "簡答／看圖說話必須走語意評分介面");
 assert.ok(!appSource.includes("練習用機器評分"), "結果頁不得顯示機器評分免責");
 assert.ok(!appSource.includes("規則粗判"), "結果頁不得提規則粗判");

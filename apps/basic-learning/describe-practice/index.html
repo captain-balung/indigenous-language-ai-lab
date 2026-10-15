@@ -61,10 +61,11 @@
             <button id="record" class="primary record-button" type="button">
               <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
             </button>
-            <output id="record-time" aria-live="off">00:00</output>
           </div>
           <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-            <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+            <span class="record-state__icon" aria-hidden="true">●</span>
+            <span id="record-time" class="record-state__time">00:00</span>
+            <span id="record-state-text">尚未錄音</span>
           </div>
           <button id="rerecord" type="button" hidden>重新錄音</button>
         </div>

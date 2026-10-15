@@ -210,11 +210,16 @@ function playTwice(url, options = {}) {
     played += 1;
     if (played === 1) {
       setAudioState("playing", "第二遍…");
-      pendingReplay = setTimeout(() => { ui.player.currentTime = 0; ui.player.play().catch(fail); }, reduced() ? 0 : REPLAY_GAP_MS);
+      pendingReplay = setTimeout(() => {
+        pendingReplay = null;
+        ui.player.currentTime = 0;
+        ui.player.play().catch(fail);
+      }, reduced() ? 0 : REPLAY_GAP_MS);
       return;
     }
+    if (pendingReplay) { clearTimeout(pendingReplay); pendingReplay = null; }
     cleanup();
-    setAudioState("idle", "播放完畢，可以再聽一次");
+    setAudioState("idle", "播放完畢（已播兩遍）");
     settle();
   };
   const onPlaying = () => {
@@ -261,11 +266,10 @@ function revealFallbackText(question) {
   ui.promptFallback.hidden = false;
 }
 
-function markPromptReplayReady(question) {
-  const response = (responses[question.id] ??= {});
-  response.canReplay = true;
+function markPromptPlayDone(question) {
   if (flat[index]?.question.id !== question.id) return;
   syncPromptPlayButtons(question);
+  setAudioState("idle", "播放完畢（已播兩遍）");
 }
 
 ui.play.addEventListener("click", () => {
@@ -276,12 +280,8 @@ ui.play.addEventListener("click", () => {
   response.playedInitial = true;
   ui.play.disabled = true;
   ui.replay.hidden = true;
-  playTwice(url, { onComplete: () => markPromptReplayReady(question) });
-});
-ui.replay.addEventListener("click", () => {
-  const { question } = flat[index];
-  if (!responses[question.id]?.canReplay) return;
-  if (question.prompt.audioUrl) playTwice(question.prompt.audioUrl);
+  // 正式測驗每題只播兩遍：一次「播放兩遍」後不可再聽。
+  playTwice(url, { onComplete: () => markPromptPlayDone(question) });
 });
 
 /* ══════════ 渲染題目 ══════════ */
@@ -294,15 +294,12 @@ function syncPromptPlayButtons(question) {
   const hasAudio = Boolean(question.prompt.audioUrl);
   ui.play.hidden = !hasAudio;
   ui.audioState.hidden = !hasAudio;
-  if (!hasAudio) {
-    ui.replay.hidden = true;
-    return;
-  }
+  // 作答中不提供「再聽一次」：每題題幹音檔只播兩遍。
+  ui.replay.hidden = true;
+  ui.replay.disabled = true;
+  if (!hasAudio) return;
   const started = responses[question.id]?.playedInitial === true;
-  const canReplay = responses[question.id]?.canReplay === true;
   ui.play.disabled = started;
-  ui.replay.hidden = !canReplay;
-  ui.replay.disabled = !canReplay;
 }
 
 function renderQuestion() {
@@ -332,8 +329,8 @@ function renderQuestion() {
 
   syncPromptPlayButtons(question);
   if (question.prompt.audioUrl) {
-    const response = responses[question.id] ?? {};
-    setAudioState("idle", response.canReplay ? "可以再聽一次" : "尚未播放");
+    const started = responses[question.id]?.playedInitial === true;
+    setAudioState("idle", started ? "播放完畢（已播兩遍）" : "尚未播放");
   }
 
   // 之前就已經確定音檔壞掉的題目，回頭時要保留那個狀態。
@@ -740,6 +737,7 @@ function showReport() {
   const wordBlock = `<h3 class="review-section">口說第一部分：單詞朗讀（${word.pointsSum} / ${word.maxPointsSum} 分）</h3>` + word.review.map((entry) => `
     <div class="review-item" data-status="${entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}　·　${entry.points} / ${entry.maxPoints} 分</h4>
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 播放</button>` : ""}
       <p class="ab">教材拼寫：${escapeHtml(entry.expected)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p class="score-note">${entry.status === "matched"
@@ -747,28 +745,27 @@ function showReport() {
         : entry.status === "mismatched"
           ? "辨識結果與本題的教材拼寫不相符。可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"
           : "你的作答尚未被判錯。"}</p>
-      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材錄音</button>` : ""}
     </div>`).join("");
 
   const shortBlock = `<h3 class="review-section">口說第二部分：簡答題（${short.pointsSum} / ${short.maxPointsSum} 分）</h3>` + short.review.map((entry) => `
     <div class="review-item" data-status="${entry.status === "reasonable" ? "matched" : entry.status === "unreasonable" ? "mismatched" : entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
+      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 播放</button>` : ""}
       <p class="ab">問句：${escapeHtml(entry.question)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 再聽問句</button>` : ""}
     </div>`).join("");
 
   const pictureBlock = `<h3 class="review-section">口說第三部分：看圖說話</h3>` + picture.review.map((entry) => `
     <div class="review-item" data-status="${entry.status === "scored" ? "matched" : entry.status}">
       <h4>第 ${entry.no} 題　${entry.status === "scored" ? `分數 ${entry.points} / ${entry.maxPoints}` : statusLabel[entry.status]}</h4>
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 播放</button>` : ""}
       <p>中文提示：${escapeHtml(entry.tip)}</p>
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       <p>教材參考答案：${escapeHtml(entry.referenceChinese)}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材範例</button>` : ""}
     </div>`).join("");
 
   ui.reviewList.innerHTML = wordBlock + shortBlock + pictureBlock;
