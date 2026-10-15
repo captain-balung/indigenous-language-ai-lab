@@ -725,6 +725,7 @@ assert.ok(appCode.includes("mountInputPanel(ui.questSide)"), "任務關卡要掛
 assert.ok(appCode.includes("mountInputPanel(ui.sceneBody)"), "回到對話要把輸入面板搬回去");
 assert.ok(appCode.includes('if (mode === "quest") runQuestLine(); else runExchange();'), "送出鈕要分辨對話與任務");
 assert.ok(/state === "recorded"[\s\S]*?runQuestLine\(\)/.test(appCode), "語音停錄後必須自動送出");
+assert.ok(/mode\(\) === "voice"[\s\S]*?ui\.submit\.hidden = true/.test(appCode), "語音模式必須隱藏送出鈕");
 assert.ok(page.includes("語音錄完會自動送出"));
 assert.ok(appCode.includes("questState?.done"), "過關後要收掉輸入");
 

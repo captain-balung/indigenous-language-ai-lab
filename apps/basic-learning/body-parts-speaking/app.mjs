@@ -15,7 +15,7 @@ const ui = {
   image: $("#question-image"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
-  submit: $("#submit"), rerecord: $("#rerecord"), result: $("#result"),
+  rerecord: $("#rerecord"), result: $("#result"),
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
 
@@ -279,7 +279,6 @@ function finishRecording() {
   ui.record.classList.remove("is-recording");
   ui.record.disabled = true;
   ui.recordLabel.textContent = "已錄音";
-  ui.submit.disabled = true;
   ui.rerecord.hidden = true;
   setState("recorded");
   runFlow();
@@ -294,7 +293,6 @@ function clearRecording() {
   ui.record.classList.remove("is-recording");
   ui.recordLabel.textContent = "開始錄音";
   ui.time.textContent = "00:00";
-  ui.submit.disabled = true;
   ui.rerecord.hidden = true;
   setState("idle");
 }
@@ -320,13 +318,11 @@ async function convertToAsrWav(blob) {
 
 /* ---------- 送出與判定 ---------- */
 
-ui.submit.addEventListener("click", () => { runFlow(); });
 ui.retry.addEventListener("click", () => { runFlow(); });
 
 const runFlow = createSingleFlight(async () => {
   if (!recordedBlob || pending) return;
   pending = true;
-  ui.submit.disabled = true;
   ui.retry.disabled = true;
   ui.record.disabled = true;
 
@@ -372,7 +368,6 @@ function finishFlow() {
   pending = false;
   ui.retry.disabled = false;
   ui.record.disabled = false;
-  ui.submit.disabled = !recordedBlob;
 }
 
 async function transcribe(wav, ethnicity) {

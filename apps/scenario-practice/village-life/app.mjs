@@ -246,9 +246,11 @@ function inputReady() {
 function updateSubmit() {
   // 語音：停錄即自動送出，送出鈕只服務打字模式。
   if (inputMode?.mode() === "voice") {
+    ui.submit.hidden = true;
     ui.submit.disabled = true;
     return;
   }
+  ui.submit.hidden = false;
   if (mode === "quest") {
     ui.submit.disabled = pending || !questReadyToSpeak() || Boolean(questState?.done) || !inputReady();
     return;

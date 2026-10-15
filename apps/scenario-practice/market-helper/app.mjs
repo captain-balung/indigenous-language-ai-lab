@@ -241,9 +241,11 @@ function clearRecording() {
 function updateSubmit() {
   // 語音：停錄即自動送出，送出鈕只服務打字模式。
   if (inputMode?.mode() === "voice") {
+    ui.submit.hidden = true;
     ui.submit.disabled = true;
     return;
   }
+  ui.submit.hidden = false;
   ui.submit.disabled = pending || !selectedItemId || !ui.answer.value.trim();
 }
 

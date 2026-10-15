@@ -24,6 +24,7 @@ assert.ok(page.includes("選擇練習主題"));
 assert.ok(page.includes("播放音檔"));
 assert.ok(page.includes("停止錄音後會自動送出辨識"));
 assert.ok(app.includes("finishRecording") && /function finishRecording\(\)[\s\S]*?runFlow\(\)/.test(app), "停錄後必須自動送出");
+assert.ok(!page.includes('id="submit"') && !page.includes(">送出辨識<"), "純語音不得再有送出辨識鈕");
 
 /* ---------- §4 族 → ASR 族級模型：16 對 16，寫死不推導 ---------- */
 const models = Object.entries(ASR_MODELS);
