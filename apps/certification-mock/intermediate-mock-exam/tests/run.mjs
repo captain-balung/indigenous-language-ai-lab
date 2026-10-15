@@ -711,7 +711,7 @@ const pictureQuestions = samplePaper.speaking[2].questions;
     assert.ok(!serialized.includes(forbidden), `成績單不得有 ${forbidden} 欄位`);
   }
   assert.equal(report.official.quote, OFFICIAL.quote);
-  assert.ok(report.official.disclaimer.includes("不預測你是否會通過"));
+  assert.ok(report.official.disclaimer.includes("僅供本次模擬參考"));
 }
 
 /* ══════════ 4. 頁面契約 ══════════ */
@@ -757,15 +757,19 @@ assert.ok(/data-status=partial/.test(styles), "partial 狀態必須有樣式");
 assert.ok(/<section id="quiz"[^>]*\shidden/.test(page), "作答區初始必須隱藏");
 assert.ok(/<section id="report"[^>]*\shidden/.test(page), "成績單初始必須隱藏");
 
-// 練習導向：每題確定後即時回饋，不得再有交卷。
+// 練習導向：確定後不即時顯示對錯，整卷結束才進結果頁。
 assert.ok(page.includes('id="confirm"'), "必須有確定按鈕");
-assert.ok(page.includes('id="feedback"'), "必須有即時回饋區");
+assert.ok(page.includes('id="review-list"'), "結果頁必須有答題紀錄區");
 assert.ok(page.includes('id="end-practice"'), "必須有結束練習按鈕");
 assert.ok(!page.includes('id="finish"'), "不得有交卷按鈕");
 assert.ok(!page.includes(">交卷<"), "文案不得出現交卷");
 assert.ok(appSource.includes("confirmed"), "確定後必須標記 confirmed");
+assert.ok(appSource.includes("advanceAfterConfirm"), "確定後必須自動前進或進結果頁");
 assert.ok(appSource.includes("activeSemanticJudge"), "問答題／看圖表達必須走語意評分介面");
-assert.ok(appSource.includes("showListeningFeedback") || appSource.includes("答對了"), "聽力確定後必須顯示對錯");
+assert.ok(!appSource.includes("showListeningFeedback"), "作答過程不得呼叫即時聽力回饋");
+assert.ok(!appSource.includes("showSpeakingFeedback"), "作答過程不得呼叫即時口說回饋");
+assert.ok(page.includes("全部做完後一次看結果"), "setup 必須說明整卷後才看結果");
+assert.ok(page.includes("初級口說模擬站"), "alt-route 必須連到初級口說模擬站");
 assert.ok(page.includes("CC BY-NC-SA 4.0"), "頁尾必須有教材授權標示");
 assert.ok(page.includes("web.klokah.tw/extension/sp_senior/"), "頁尾必須標示高中版的原著作網址");
 assert.ok(page.includes(OFFICIAL.quote), "成績單必須引用中級的官方及格標準原文");

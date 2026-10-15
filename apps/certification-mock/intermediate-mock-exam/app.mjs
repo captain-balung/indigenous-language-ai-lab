@@ -2,11 +2,8 @@
  * 中級模擬站 · 頁面控制（練習導向）
  *
  * 兩條規則貫穿整個檔案：
- *   1. 按「確定」之前絕不渲染聽力題的族語文字。
- *      **唯一的例外是選擇題(三)**：那一節的題型本身就是「從三個拼寫文字裡選出你聽到的那一句」，
- *      三個族語選項一定要在作答前顯示，這是題目不是洩題。也因為如此，那一節的音檔載不出來時
- *      **不做**「揭露族語文字」的降級——文字就是答案；該題直接標成不計分。
- *      其餘聽力節次維持：音檔載不出來才揭露文字，而且那一題同時不計分。
+ *   1. 作答過程不顯示對錯／分數；評分寫入 responses，整卷結束（或按結束練習）才進結果頁。
+ *      聽力題作答前不渲染族語文字（選擇題(三)除外：選項本身就是拼寫）。
  *   2. 任何服務失敗都不會判使用者答錯：音檔失敗 → notScored，辨識失敗 → undetermined。
  */
 
@@ -14,7 +11,7 @@ import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-pa
 import { createSingleFlight } from "../../basic-learning/body-parts-practice/core.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
 import { createPaper, flattenPaper, randomSeed, paperIdToSeed } from "./paper.mjs";
-import { gradePaper, judgeSentenceReading, PICTURE_TALK_MAX_POINTS, SHORT_ANSWER_MAX_POINTS, SENTENCE_READING_MAX_POINTS, LISTENING_MAX_POINTS } from "./scoring.mjs";
+import { gradePaper, PICTURE_TALK_MAX_POINTS, SHORT_ANSWER_MAX_POINTS, SENTENCE_READING_MAX_POINTS, LISTENING_MAX_POINTS } from "./scoring.mjs";
 import { activeSemanticJudge } from "./semantic-judge.mjs";
 import { supportsRecording, createRecorder, convertToAsrWav, transcribe, translateToZh, fetchLiveAsrDialects } from "./recorder.mjs";
 
@@ -359,7 +356,10 @@ function renderQuestion() {
   if (isSpeaking) renderSpeaking(section, question);
   else renderListening(section, question);
 
-  if (confirmed) restoreConfirmedFeedback(section, question);
+  if (confirmed) {
+    ui.heard.hidden = false;
+    ui.heard.innerHTML = "<strong>已記錄作答</strong><small>整卷結束後才會顯示評分與說明。</small>";
+  }
 
   ui.prev.disabled = index === 0;
   ui.next.disabled = index === flat.length - 1;
@@ -461,7 +461,7 @@ function renderSpeaking(section, question) {
     ui.speakWord.hidden = false;
     ui.speakGloss.textContent = `（${question.prompt.chineseText}）`;
     ui.speakGloss.hidden = false;
-    ui.speakHint.textContent = "請按下錄音，照著上面的族語句子念出來。按「確定」後才會辨識；教材錄音會在確定後提供。";
+    ui.speakHint.textContent = "請按下錄音，照著上面的族語句子念出來。按「確定」後會辨識並記錄；整卷結束才顯示評分。教材錄音在結果頁提供。";
   } else if (section.id === "pictureTalk") {
     ui.speakWord.hidden = true;
     ui.speakGloss.hidden = true;
@@ -475,11 +475,11 @@ function renderSpeaking(section, question) {
         <img src="${escapeHtml(imageUrl)}" alt="" referrerpolicy="no-referrer">
         <figcaption>${pictures.length > 1 ? `圖片 ${index + 1}` : "本題圖片"}</figcaption>
       </figure>`).join("");
-    ui.speakHint.textContent = "看著圖與中文提示，用族語簡短說說你的想法。按「確定」後會辨識、翻成中文，並對照教材參考答案給分（滿分 10 分）。";
+    ui.speakHint.textContent = "看著圖與中文提示，用族語簡短說說你的想法。按「確定」後會辨識並記錄；整卷結束才顯示評分（滿分 10 分）。";
   } else {
     ui.speakWord.hidden = true;
     ui.speakGloss.hidden = true;
-    ui.speakHint.textContent = "請先播放族語問句，再按下錄音，用族語回答。按「確定」後會辨識、翻成中文，並粗判回答是否合理。";
+    ui.speakHint.textContent = "請先播放族語問句，再按下錄音，用族語回答。按「確定」後會辨識並記錄；整卷結束才顯示評分。";
   }
 
   const canRecord = supportsRecording() && !isConfirmed(question.id);
@@ -487,142 +487,13 @@ function renderSpeaking(section, question) {
   if (!supportsRecording()) setRecordState("failed", "這個瀏覽器不支援錄音");
 }
 
-function optionLabel(question, key) {
-  const option = question.options?.find((entry) => entry.key === key);
-  if (!option) return key ?? "—";
-  if (option.label) return option.label;
-  return `選項 ${option.key}`;
-}
-
-function showListeningFeedback(section, question, response) {
-  let status;
-  let title;
-  let detail;
-
-  if (response.audioFailed === true) {
-    status = "notScored";
-    title = "本題不計分";
-    detail = "音檔載入失敗，不算答錯。";
-  } else if (response.choice === question.answerKey) {
-    status = "correct";
-    title = "答對了";
-    detail = `你的作答：${optionLabel(question, response.choice)}`;
-  } else {
-    status = "wrong";
-    title = "答錯了";
-    detail = `你的作答：${optionLabel(question, response.choice)}　·　正解：${optionLabel(question, question.answerKey)}`;
-  }
-
-  const indigenous = question.prompt.indigenousText
-    ? `<p class="revealed">${escapeHtml(question.prompt.indigenousText)}</p>`
-    : "";
-
-  ui.feedback.hidden = false;
-  ui.feedback.dataset.status = status;
-  ui.feedback.innerHTML = `<strong>${title}</strong><p>${escapeHtml(detail)}</p>${indigenous}`;
-}
-
-function showSpeakingFeedback(section, question, response) {
-  if (section.id === "shortAnswer") {
-    const verdict = response.shortVerdict;
-    ui.feedback.hidden = false;
-    ui.feedback.dataset.status = verdict === "reasonable"
-      ? "matched"
-      : verdict === "unreasonable"
-        ? "mismatched"
-        : "undetermined";
-    if (verdict === "reasonable" || verdict === "unreasonable") {
-      const points = Number.isFinite(response.shortPoints)
-        ? response.shortPoints
-        : (verdict === "reasonable" ? SHORT_ANSWER_MAX_POINTS : 0);
-      const rationale = response.shortRationale
-        ? `<p>評分說明：${escapeHtml(response.shortRationale)}</p>`
-        : "";
-      ui.feedback.innerHTML = `<strong>分數 ${points} / ${SHORT_ANSWER_MAX_POINTS}　·　${verdict === "reasonable" ? "回答看起來合理" : "回答看起來不太合理"}</strong>
-        <p>系統聽到：${escapeHtml(response.transcript ?? "")}</p>
-        <p>翻譯成中文：${escapeHtml(response.translation ?? "")}</p>
-        <p>問句（中文）：${escapeHtml(question.prompt.chineseText)}</p>
-        ${rationale}
-        <p>這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分，也不代表你答錯。</p>`;
-    } else {
-      ui.feedback.innerHTML = `<strong>無法判定</strong>
-        <p>${escapeHtml(response.shortRationale ?? response.translateError ?? response.asrError ?? "辨識或翻譯沒有完成")}</p>
-        <p>你的作答尚未被判錯。</p>`;
-    }
+function advanceAfterConfirm() {
+  if (index < flat.length - 1) {
+    index += 1;
+    renderQuestion();
     return;
   }
-
-  if (section.id === "pictureTalk") {
-    const points = response.pictureScore?.points;
-    const status = response.pictureScore?.status === "scored"
-      ? (points >= 8 ? "scored-high" : points >= 5 ? "scored-mid" : "scored-low")
-      : "undetermined";
-    ui.feedback.hidden = false;
-    ui.feedback.dataset.status = status;
-    if (response.pictureScore?.status === "scored") {
-      const rationale = response.pictureScore?.rationale
-        ? `<p>評分說明：${escapeHtml(response.pictureScore.rationale)}</p>`
-        : "";
-      ui.feedback.innerHTML = `<strong>分數 ${points} / ${PICTURE_TALK_MAX_POINTS}</strong>
-        <p>系統聽到：${escapeHtml(response.transcript ?? "")}</p>
-        <p>翻譯成中文：${escapeHtml(response.translation ?? "")}</p>
-        <p>教材參考答案（中文）：${escapeHtml(question.reference.chineseText)}</p>
-        ${rationale}
-        <p>這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分，也不代表你說錯。</p>
-        ${question.reference.audioUrl
-          ? `<p><button type="button" class="feedback-replay" data-audio="${escapeHtml(question.reference.audioUrl)}">▶ 聽教材範例</button></p>`
-          : ""}`;
-    } else {
-      ui.feedback.innerHTML = `<strong>無法判定</strong>
-        <p>${escapeHtml(response.pictureScore?.rationale ?? response.translateError ?? response.asrError ?? "辨識或翻譯沒有完成")}</p>
-        <p>你的作答尚未被判錯。</p>`;
-    }
-    ui.feedback.querySelector(".feedback-replay")?.addEventListener("click", (event) => {
-      playTwice(event.currentTarget.dataset.audio);
-    });
-    return;
-  }
-
-  const judged = response.asrError || !response.transcript
-    ? { status: "undetermined", points: null, ratio: null }
-    : judgeSentenceReading(response.transcript, question.expected);
-  const titles = {
-    matched: "與教材拼寫幾乎完全重疊",
-    partial: "與教材拼寫部分重疊",
-    mismatched: "與教材拼寫重疊很少",
-    undetermined: "無法判定",
-  };
-  const overlap = judged.ratio == null ? null : Math.round(judged.ratio * 100);
-  ui.feedback.hidden = false;
-  ui.feedback.dataset.status = judged.status;
-  ui.feedback.innerHTML = `<strong>${titles[judged.status]}${judged.points == null
-      ? ""
-      : `　·　分數 ${judged.points} / ${SENTENCE_READING_MAX_POINTS}`}</strong>
-    <p>系統聽到：${escapeHtml(response.transcript ?? response.asrError ?? "未作答")}</p>
-    <p class="ab">教材拼寫：${escapeHtml(question.expected)}</p>
-    ${overlap == null ? "" : `<p>詞語重疊程度：${overlap}%</p>`}
-    <p>${judged.status === "undetermined"
-      ? "你的作答尚未被判錯。"
-      : "分數只反映系統聽到的內容與教材拼寫的詞語重疊程度。重疊低可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"}</p>
-    ${question.prompt.referenceAudioUrl
-      ? `<p><button type="button" class="feedback-replay" data-audio="${escapeHtml(question.prompt.referenceAudioUrl)}">▶ 聽教材錄音</button></p>`
-      : ""}`;
-  ui.feedback.querySelector(".feedback-replay")?.addEventListener("click", (event) => {
-    playTwice(event.currentTarget.dataset.audio);
-  });
-}
-
-function restoreConfirmedFeedback(section, question) {
-  const response = responses[question.id];
-  if (!response?.confirmed) return;
-  if (section.part === "listening") showListeningFeedback(section, question, response);
-  else {
-    showSpeakingFeedback(section, question, response);
-    // 口說確認後也把 heard 區補上，跟第一次確定時一致。
-    if (response.transcript || response.asrError) {
-      showHeard(response.transcript, response.asrError, section, question);
-    }
-  }
+  showReport();
 }
 
 function updateConfirmButton() {
@@ -673,10 +544,10 @@ function confirmListening(section, question) {
   if (response.draftChoice == null && response.choice == null && !response.audioFailed) return;
   if (response.choice == null && response.draftChoice != null) response.choice = response.draftChoice;
   response.confirmed = true;
-  showListeningFeedback(section, question, response);
   ui.options.querySelectorAll('input[name="answer"]').forEach((input) => { input.disabled = true; });
   updateConfirmButton();
   updateAnsweredCount();
+  advanceAfterConfirm();
 }
 
 async function confirmSpeaking(section, question) {
@@ -705,10 +576,9 @@ async function confirmSpeaking(section, question) {
       response.shortPoints = null;
     }
     response.confirmed = true;
-    showHeard(null, response.asrError, section, question);
-    showSpeakingFeedback(section, question, response);
     updateConfirmButton();
     updateAnsweredCount();
+    advanceAfterConfirm();
     return;
   }
 
@@ -718,7 +588,6 @@ async function confirmSpeaking(section, question) {
     const heard = await transcribe(wav, selectedDialect.ethnicity, { unavailable: unavailableEthnicities });
     response.transcript = heard;
     response.asrError = null;
-    showHeard(heard, null, section, question);
 
     if (section.id === "pictureTalk" || section.id === "shortAnswer") {
       setRecordState("transcribing", "翻譯與評分中");
@@ -773,13 +642,12 @@ async function confirmSpeaking(section, question) {
       response.shortPoints = null;
     }
     setRecordState("failed", "這次沒有辨識成功");
-    showHeard(null, error.message, section, question);
   } finally {
     clearTimeout(slowHint);
     response.confirmed = true;
-    showSpeakingFeedback(section, question, response);
     updateConfirmButton();
     updateAnsweredCount();
+    advanceAfterConfirm();
   }
 }
 
@@ -867,34 +735,6 @@ ui.record.addEventListener("click", async () => {
   }
 });
 
-function showHeard(transcript, error, section, question) {
-  ui.heard.hidden = false;
-  if (!transcript) {
-    ui.heard.innerHTML = `<strong>無法判定</strong>
-      <p class="heard-text">${escapeHtml(error ?? "辨識服務沒有回傳文字")}</p>
-      <small>你的作答尚未被判錯。</small>`;
-    return;
-  }
-  if (section.id === "shortAnswer") {
-    ui.heard.innerHTML = `<strong>系統聽到的是</strong>
-      <p class="heard-text">${escapeHtml(transcript)}</p>
-      <small>接下來會翻成中文，並粗判回答是否合理。</small>`;
-    return;
-  }
-  if (section.id === "pictureTalk") {
-    ui.heard.innerHTML = `<strong>系統聽到的是</strong>
-      <p class="heard-text">${escapeHtml(transcript)}</p>
-      <small>接下來會翻成中文，並與教材參考答案比對後給分。</small>`;
-    return;
-  }
-  const judged = judgeSentenceReading(transcript, question.expected);
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong>
-    <p class="heard-text">${escapeHtml(transcript)}</p>
-    <small>${judged.status === "matched"
-      ? "與本題的教材拼寫幾乎完全重疊。"
-      : "系統聽到的內容與本題的教材拼寫只有部分重疊。可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"}</small>`;
-}
-
 /* ══════════ 成績單 ══════════ */
 
 function showReport() {
@@ -973,7 +813,10 @@ function showReport() {
       <p class="ab">教材拼寫：${escapeHtml(entry.expected)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
       <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       ${entry.ratio == null ? "" : `<p>詞語重疊程度：${Math.round(entry.ratio * 100)}%</p>`}
-      <button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材錄音</button>
+      <p class="score-note">${entry.status === "undetermined" || entry.status === "skipped"
+        ? "你的作答尚未被判錯。"
+        : "分數只反映系統聽到的內容與教材拼寫的詞語重疊程度。重疊低可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"}</p>
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材錄音</button>` : ""}
     </div>`).join("");
 
   const shortBlock = `<h3 class="review-section">口說第二部分：問答題（${short.pointsSum} / ${short.maxPointsSum} 分）</h3>` + short.review.map((entry) => `
@@ -982,7 +825,9 @@ function showReport() {
       <p class="ab">問句：${escapeHtml(entry.question)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
       <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
-      <button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 再聽問句</button>
+      ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
+      <p class="score-note">這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分。</p>
+      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 再聽問句</button>` : ""}
     </div>`).join("");
 
   const pictureBlock = `<h3 class="review-section">口說第三部分：看圖表達</h3>` + picture.review.map((entry) => `
@@ -992,6 +837,8 @@ function showReport() {
       <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       <p>教材參考答案：${escapeHtml(entry.referenceChinese)}</p>
+      ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
+      <p class="score-note">這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分。</p>
       ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材範例</button>` : ""}
     </div>`).join("");
 

@@ -1,5 +1,5 @@
 /**
- * 初級模擬站 · 計分（純邏輯，可在 Node 測試）
+ * 初級口說模擬站 · 計分（純邏輯，可在 Node 測試）
  *
  * 這個模組刻意做不到三件事，而且每一件都有對應的測試把關：
  *
@@ -19,21 +19,21 @@ export const OFFICIAL = {
   speakingThreshold: 15,
   quote: "聽力成績須達45分以上，口說成績須達15分以上，始核發該級別之合格證書",
   sourceUrl: "https://lokahsu.ilrdf.org.tw/",
-  disclaimer: "下面的練習得分依公開配分加總，僅供本次模擬參考；不代表正式測驗成績，也不預測你是否會通過。",
+  disclaimer: "下面的練習得分依公開配分加總，僅供本次模擬參考。",
 };
 
 /**
- * 練習配分（與公開初級口說／聽力配分一致）。
- * 口說 40 + 聽力 60 = 100。
+ * 練習配分（與公開初級口說配分一致）。
+ * 本站只練口說三題型，滿分 40。
  */
 export const POINT_SCHEME = {
   wordReading: { perQuestion: 2, questions: 5, max: 10 },
   shortAnswer: { perQuestion: 4, questions: 5, max: 20 },
   pictureTalk: { perQuestion: 10, questions: 1, max: 10 },
-  listening: { perQuestion: 3, questions: 5, sectionMax: 15, max: 60 },
+  listening: { perQuestion: 3, questions: 0, sectionMax: 0, max: 0 },
   speakingMax: 40,
-  listeningMax: 60,
-  totalMax: 100,
+  listeningMax: 0,
+  totalMax: 40,
 };
 
 export const SPEAKING_COVERAGE_NOTE =
@@ -319,6 +319,7 @@ function gradeShortAnswer(section, responses) {
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
       translateError: response.translateError ?? null,
+      rationale: response.shortRationale ?? null,
     });
   }
 
@@ -373,6 +374,7 @@ function gradePictureTalk(section, responses) {
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
       translateError: response.translateError ?? null,
+      rationale: response.pictureScore?.rationale ?? null,
     });
   }
 

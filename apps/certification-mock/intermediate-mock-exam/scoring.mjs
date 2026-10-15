@@ -19,7 +19,7 @@ export const OFFICIAL = {
   speakingThreshold: 15,
   quote: "初級與中級測驗採分項合格制度，考生須同時通過聽力與口說兩項測驗，其中聽力成績須達45分以上，口說成績須達15分以上，始核發該級別之合格證書",
   sourceUrl: "https://lokahsu.ilrdf.org.tw/",
-  disclaimer: "下面的練習得分依公開配分加總，僅供本次模擬參考；不代表正式測驗成績，也不預測你是否會通過。",
+  disclaimer: "下面的練習得分依公開配分加總，僅供本次模擬參考。",
 };
 
 /**
@@ -385,6 +385,7 @@ function gradeShortAnswer(section, responses) {
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
       translateError: response.translateError ?? null,
+      rationale: response.shortRationale ?? null,
     });
   }
 
@@ -439,6 +440,7 @@ function gradePictureTalk(section, responses) {
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
       translateError: response.translateError ?? null,
+      rationale: response.pictureScore?.rationale ?? null,
     });
   }
 

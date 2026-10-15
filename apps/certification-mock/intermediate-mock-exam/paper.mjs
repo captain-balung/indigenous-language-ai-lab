@@ -34,7 +34,7 @@ export const SECTION_SPECS = [
     title: "第一部分：是非題",
     instruction: "試卷上每題都有一個圖片，請聽電腦播出一個族語句子，若與該圖片所描述的內容符合，請選「O」；若不符合，請選「X」，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "本站沒有答案卡，直接在畫面上選。按「確定」後立刻告訴你對錯。你可以重複播放，正式測驗只播兩遍。",
+    adaptationNote: "本站沒有答案卡，直接在畫面上選。按「確定」後只記錄作答，整卷結束才顯示對錯。你可以重複播放，正式測驗只播兩遍。",
     scorable: true,
   },
   {
@@ -44,7 +44,7 @@ export const SECTION_SPECS = [
     title: "第二部分：選擇題(一)",
     instruction: "試卷上每題有三個圖片，請聽電腦播出一個族語句子後，選一個與所聽到語意最相符的圖片，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "本站的三張圖片抽自同一個類別的三題教材；正式測驗的干擾圖由命題委員挑選。按「確定」後立刻告訴你對錯。",
+    adaptationNote: "本站的三張圖片抽自同一個類別的三題教材；正式測驗的干擾圖由命題委員挑選。按「確定」後只記錄作答，整卷結束才顯示對錯。",
     scorable: true,
   },
   {
@@ -54,7 +54,7 @@ export const SECTION_SPECS = [
     title: "第三部分：選擇題(二)",
     instruction: "請聽電腦播出一個中文句子及三句族語句子後，選出與中文句子語意最接近的族語句子，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "正式測驗會播出中文句子；本站因教材沒有中文錄音，改以文字呈現。三句族語仍然只能用聽的。按「確定」後立刻告訴你對錯。",
+    adaptationNote: "正式測驗會播出中文句子；本站因教材沒有中文錄音，改以文字呈現。三句族語仍然只能用聽的。按「確定」後只記錄作答，整卷結束才顯示對錯。",
     scorable: true,
   },
   {
@@ -75,7 +75,7 @@ export const SECTION_SPECS = [
     title: "口說第一部分：單句朗讀",
     instruction: "請看著螢幕上的族語句子念出來。",
     instructionSource: "site",
-    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後用語音辨識比對你念的內容與教材拼寫，依詞語重疊程度給 0–3 分。辨識結果只是參考，不代表正式測驗的評分。",
+    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後用語音辨識記錄你念的內容；整卷結束才依詞語重疊程度給 0–3 分。辨識結果只是參考，不代表正式測驗的評分。",
     scorable: true,
   },
   {
@@ -85,7 +85,7 @@ export const SECTION_SPECS = [
     title: "口說第二部分：問答題",
     instruction: "請聽電腦播出一個族語問句，然後用族語回答。",
     instructionSource: "site",
-    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後：語音辨識→翻成中文→粗判是否合理（合理得 3 分）。這是練習用的機器判斷，不是正式測驗評分。",
+    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後：語音辨識→翻成中文→粗判是否合理（合理得 3 分）；整卷結束才顯示結果。這是練習用的機器判斷，不是正式測驗評分。",
     scorable: true,
   },
   {
@@ -95,7 +95,7 @@ export const SECTION_SPECS = [
     title: "口說第三部分：看圖表達",
     instruction: "請根據螢幕上的圖片及中文提示，以族語簡短地說說你的想法。",
     instructionSource: "site",
-    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後：語音辨識→翻成中文→對照教材參考答案給 0–10 分。這是練習用的機器粗評，不是正式測驗評分。",
+    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後：語音辨識→翻成中文→對照教材參考答案給 0–10 分；整卷結束才顯示結果。這是練習用的機器粗評，不是正式測驗評分。",
     scorable: true,
   },
 ];

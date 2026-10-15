@@ -20,7 +20,7 @@ const applicationSeeds = {
     ["接話小考", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"]
   ],
   certification: [
-    ["初級模擬站", "照初級認證的口說與聽力題型，整卷練習一遍。", "assets/icons/bronze-medal.webp", "available", "apps/certification-mock/beginner-mock-exam/"],
+    ["初級口說模擬站", "照初級認證的口說三題型，整卷練習一遍。", "assets/icons/bronze-medal.webp", "available", "apps/certification-mock/beginner-mock-exam/"],
     ["中級模擬站", "照中級認證的口說與聽力題型，整卷練習一遍。", "assets/icons/silver-medal.webp", "available", "apps/certification-mock/intermediate-mock-exam/"],
     ["口說練習官", "依題目提示，組織內容並練習口頭表達。", "assets/icons/studio-microphone.webp"],
     ["考前任務包", "把多種題型集中起來，考前一次演練。", "assets/icons/school-backpack.webp"]
