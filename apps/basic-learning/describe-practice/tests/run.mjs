@@ -15,6 +15,7 @@ const appCode = stripComments(appSource);
 
 assert.ok(page.includes('lang="zh-Hant"'));
 assert.ok(page.includes("看圖描述"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes("用自己的話描述這些圖"));
 assert.ok(page.includes('id="picture-grid"'));
 assert.ok(page.includes("初級看圖說話") || page.includes("看圖說話"));

@@ -640,6 +640,7 @@ assert.ok(!page.includes('href="styles.css"'));
 assert.ok(!page.includes('src="app.mjs"'));
 assert.ok(page.includes('href="/"'), "必須有返回 AI 實驗室的連結");
 assert.ok(page.includes("認證模擬 · MISSION 01"), "hero 標籤是分類內的卡片序號");
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"), "setup 必須有遊玩說明");
 
 // klokah 不送 CORS 標頭：加 crossorigin 會讓音檔完全播不出來。
 assert.ok(!/crossorigin/.test(page), "音檔元素不得加 crossorigin");

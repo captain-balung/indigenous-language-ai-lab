@@ -18,6 +18,7 @@ assert.ok(!page.includes('href="styles.css"'));
 assert.ok(page.includes('href="/"'), "必須有返回 AI 實驗室的連結");
 assert.ok(page.includes("/apps/basic-learning/body-parts-practice/"), "需提供看圖練習的替代路徑");
 assert.ok(page.includes("口說練習"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes('id="theme-grid"'));
 assert.ok(page.includes("選擇練習主題"));
 assert.ok(page.includes("播放音檔"));

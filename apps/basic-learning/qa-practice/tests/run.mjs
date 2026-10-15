@@ -18,6 +18,7 @@ const appCode = stripComments(appSource);
 
 assert.ok(page.includes('lang="zh-Hant"'));
 assert.ok(page.includes("問答練習"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes("播放問句"));
 assert.ok(page.includes("顯示中文問句"));
 assert.ok(page.includes('href="/apps/basic-learning/body-parts-practice/styles.css"'));

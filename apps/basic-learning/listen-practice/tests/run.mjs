@@ -15,6 +15,7 @@ const appCode = stripComments(appSource);
 
 assert.ok(page.includes('lang="zh-Hant"'));
 assert.ok(page.includes("聽音練習"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes('href="/apps/basic-learning/body-parts-practice/styles.css"'));
 assert.ok(page.includes('href="/apps/basic-learning/listen-practice/styles.css"'));
 assert.ok(page.includes('src="/apps/basic-learning/listen-practice/app.mjs"'));

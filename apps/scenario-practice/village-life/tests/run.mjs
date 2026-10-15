@@ -24,6 +24,7 @@ assert.ok(page.includes('lang="zh-Hant"'));
 assert.ok(page.includes("部落大小事"));
 assert.ok(page.includes("情境應用 · MISSION 01"));
 assert.ok(page.includes("想練哪一個場景？"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 // 角色欄位已併入場景區，只有真的能選時才出現切換鈕；單一角色時不給假的選擇。
 assert.ok(!page.includes("你要當哪一位？"), "角色欄位不應再單獨存在");
 assert.ok(page.includes('id="role-picker"'));

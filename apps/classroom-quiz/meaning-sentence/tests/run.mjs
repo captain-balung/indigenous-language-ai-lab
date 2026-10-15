@@ -76,6 +76,7 @@ assert.ok(pages.oral.includes('id="question-image"'));
 assert.ok(!pages.retell.includes("播放短句"));
 assert.ok(pages.retell.includes(">播放<") && pages.reply.includes(">播放問句<"));
 assert.ok(page.includes('lang="zh-Hant"') && page.includes("CC BY-NC-SA 4.0"));
+assert.ok(Object.values(pages).every((html) => html.includes('class="task-brief"') && html.includes("怎麼玩")), "四個課堂頁都要有怎麼玩");
 assert.ok(!page.includes("聽寫快問快答") && !page.includes("句子排列所") && !page.includes("本堂挑戰卷"));
 assert.ok(!page.includes("?mode="));
 assert.ok(app.includes("verdictFromTranslation"));
