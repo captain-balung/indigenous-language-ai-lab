@@ -6,6 +6,7 @@ import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
 import { LEVELS, describeCaption, pictureTalkRecords } from "./core.mjs";
+import { wireInputMode } from "../../shared/input-mode.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
@@ -16,11 +17,12 @@ const ui = {
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"), preview: $("#preview"),
   submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
-  retry: $("#retry"), next: $("#next")
+  retry: $("#retry"), next: $("#next"),
+  inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
 
 const STATES = {
-  idle: ["●", "尚未錄音，打字也可以送出"],
+  idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
   recorded: ["■", "錄音完成，可以送出或重錄"],
   converting: ["◐", "轉檔中…"],
@@ -32,6 +34,7 @@ const STATES = {
 let selectedDialect, selectedLevel, pools = { beginner: [], intermediate: [] }, records = [], question, deck, roundSize = 0, answeredCount = 0, pending = false;
 let translationCodes = new Set(DIALECTS.map((item) => item.code));
 let asrAudit = null, recorder = null, lastHeard = null;
+let inputMode = null;
 
 function setState(key, override) {
   const [icon, text] = STATES[key] || STATES.idle;
@@ -76,10 +79,23 @@ async function init() {
     },
     onTick(seconds) { ui.time.textContent = clock(seconds); }
   });
+  inputMode = wireInputMode({
+    root: ui.quiz,
+    toggle: ui.inputModeToggle,
+    typePanel: ui.inputType,
+    voicePanel: ui.inputVoice,
+    onModeChange(mode) {
+      if (mode === "type") clearRecording();
+      else ui.answer.value = "";
+      updateSubmit();
+      if (mode === "type") ui.answer.focus();
+      else ui.record.focus();
+    }
+  });
   await verifyServices();
   if (!supportsRecording()) {
     ui.record.disabled = true;
-    setState("failed", "這個瀏覽器不支援錄音，請改用打字");
+    setState("failed", "這個瀏覽器不支援錄音，請切換為打字");
   }
 }
 
@@ -127,7 +143,10 @@ function updateModelNote() {
 }
 
 function updateStart() { ui.start.disabled = !selectedDialect || !selectedLevel || !records.length; }
-function updateSubmit() { ui.submit.disabled = pending || (!ui.answer.value.trim() && !recorder?.blob); }
+function updateSubmit() {
+  const ready = inputMode?.mode() === "voice" ? Boolean(recorder?.blob) : Boolean(ui.answer.value.trim());
+  ui.submit.disabled = pending || !ready;
+}
 
 ui.ethnicity.addEventListener("change", () => {
   resetQuiz();
@@ -218,7 +237,8 @@ function nextQuestion() {
   const canRecord = supportsRecording() && asrStateFor(selectedDialect.ethnicity).usable;
   ui.record.disabled = !canRecord;
   updateSubmit();
-  ui.answer.focus();
+  if (inputMode?.mode() === "voice") ui.record.focus();
+  else ui.answer.focus();
 }
 
 ui.record.addEventListener("click", async () => {
@@ -229,8 +249,8 @@ ui.record.addEventListener("click", async () => {
     const denied = error?.name === "NotAllowedError";
     setState("failed", denied ? "沒有麥克風權限" : "找不到可用的麥克風");
     showResult("unavailable", denied
-      ? "瀏覽器沒有給這個頁面麥克風權限。可改用打字，或在網址列允許麥克風後再錄。"
-      : "找不到可用的麥克風。可改用打字。");
+      ? "瀏覽器沒有給這個頁面麥克風權限。可切換為打字，或在網址列允許麥克風後再錄。"
+      : "找不到可用的麥克風。可切換為打字。");
   }
 });
 
@@ -248,8 +268,9 @@ ui.submit.addEventListener("click", () => { runFlow(); });
 ui.retry.addEventListener("click", () => { runFlow(); });
 
 const runFlow = createSingleFlight(async () => {
-  const typed = ui.answer.value.trim();
-  if (pending || (!typed && !recorder?.blob)) return;
+  const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
+  const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
+  if (pending || (!typed && !useVoice)) return;
   pending = true;
   ui.submit.disabled = true;
   ui.retry.disabled = true;

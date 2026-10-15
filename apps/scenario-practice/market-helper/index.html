@@ -94,24 +94,30 @@
               </div>
             </div>
 
-            <label for="answer">族語（打字）</label>
-            <textarea id="answer" autocomplete="off" spellcheck="false" rows="2"></textarea>
-
-            <div class="recorder">
-              <button id="record" class="primary record-button" type="button">
-                <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
-              </button>
-              <output id="record-time" aria-live="off">00:00</output>
+            <div class="input-mode-bar">
+              <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
             </div>
-            <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-              <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音，打字也可以送出</span>
+            <div id="input-type" hidden>
+              <label for="answer">族語</label>
+              <textarea id="answer" autocomplete="off" spellcheck="false" rows="2"></textarea>
             </div>
-            <p id="record-note" class="record-note" aria-live="polite"></p>
-            <audio id="preview" controls hidden></audio>
+            <div id="input-voice">
+              <div class="recorder">
+                <button id="record" class="primary record-button" type="button">
+                  <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+                </button>
+                <output id="record-time" aria-live="off">00:00</output>
+              </div>
+              <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+                <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+              </div>
+              <p id="record-note" class="record-note" aria-live="polite"></p>
+              <audio id="preview" controls hidden></audio>
+              <button id="rerecord" type="button" hidden>重錄</button>
+            </div>
 
             <div class="action-row">
               <button id="submit" class="primary" type="button" disabled>送出</button>
-              <button id="rerecord" type="button" hidden>重錄</button>
               <button id="retry" type="button" hidden>再試一次</button>
             </div>
             <p id="heard" class="heard" hidden></p>

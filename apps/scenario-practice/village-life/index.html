@@ -71,23 +71,29 @@
           <div class="scene-side">
             <div id="my-turn" class="my-turn" hidden>
             <h2 id="turn-title">換你說</h2>
-            <label for="answer">族語回應（打字）</label>
-            <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
-
-            <div class="recorder">
-              <button id="record" class="primary record-button" type="button">
-                <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
-              </button>
-              <output id="record-time" aria-live="off">00:00</output>
+            <div class="input-mode-bar">
+              <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
             </div>
-            <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-              <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音，打字也可以送出</span>
+            <div id="input-type" hidden>
+              <label for="answer">族語回應</label>
+              <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
             </div>
-            <p id="record-note" class="record-note" role="status"></p>
-            <audio id="preview" controls hidden></audio>
+            <div id="input-voice">
+              <div class="recorder">
+                <button id="record" class="primary record-button" type="button">
+                  <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+                </button>
+                <output id="record-time" aria-live="off">00:00</output>
+              </div>
+              <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+                <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+              </div>
+              <p id="record-note" class="record-note" role="status"></p>
+              <audio id="preview" controls hidden></audio>
+              <button id="rerecord" type="button" hidden>重新錄音</button>
+            </div>
             <div class="submit-row">
               <button id="submit" class="primary" disabled>送出這句</button>
-              <button id="rerecord" type="button" hidden>重新錄音</button>
               <button id="retry" type="button" hidden>重試判定</button>
             </div>
         </div>

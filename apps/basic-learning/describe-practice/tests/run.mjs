@@ -27,6 +27,8 @@ assert.ok(page.includes('src="/apps/basic-learning/describe-practice/app.mjs"'))
 assert.ok(!page.includes('href="styles.css"'));
 assert.ok(!page.includes("對方會看到你的 IP"));
 assert.ok(page.includes("CC BY-NC-SA 4.0"));
+assert.ok(page.includes('id="input-mode-toggle"') && page.includes('id="input-type"') && page.includes('id="input-voice"'));
+assert.ok(appCode.includes("wireInputMode"));
 assert.ok(appCode.includes("semanticMatch"));
 assert.ok(appCode.includes("activeSemanticJudge") || appCode.includes("scorePictureTalk"));
 assert.ok(appCode.includes("pictureTalkRecords"));

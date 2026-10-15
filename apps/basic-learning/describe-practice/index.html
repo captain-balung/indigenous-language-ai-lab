@@ -41,21 +41,28 @@
       <p id="picture-tip"></p>
       <div id="picture-grid" class="picture-grid"></div>
       <div class="answer-area">
-        <label for="answer">族語描述（打字）</label>
-        <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
-        <div class="recorder">
-          <button id="record" class="primary record-button" type="button">
-            <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
-          </button>
-          <output id="record-time" aria-live="off">00:00</output>
+        <div class="input-mode-bar">
+          <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
         </div>
-        <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-          <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音，打字也可以送出</span>
+        <div id="input-type" hidden>
+          <label for="answer">族語描述</label>
+          <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
         </div>
-        <audio id="preview" controls hidden></audio>
+        <div id="input-voice">
+          <div class="recorder">
+            <button id="record" class="primary record-button" type="button">
+              <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+            </button>
+            <output id="record-time" aria-live="off">00:00</output>
+          </div>
+          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+            <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+          </div>
+          <audio id="preview" controls hidden></audio>
+          <button id="rerecord" type="button" hidden>重新錄音</button>
+        </div>
         <div class="submit-row">
           <button id="submit" class="primary" disabled>送出描述</button>
-          <button id="rerecord" type="button" hidden>重新錄音</button>
         </div>
       </div>
       <div id="heard" class="heard" hidden aria-live="polite"></div>

@@ -87,7 +87,9 @@ const appCode = stripComments(appSource);
 
 assert.ok(page.includes("市場小幫手"));
 assert.ok(page.includes("情境應用 · MISSION 02"));
+assert.ok(page.includes('id="input-mode-toggle"') && page.includes('id="input-type"') && page.includes('id="input-voice"'));
 assert.ok(!page.includes("再買最多顆"));
+assert.ok(appCode.includes("wireInputMode"));
 assert.ok(appCode.includes("buildBrief"));
 assert.ok(appCode.includes("judgeCheckout"));
 assert.ok(appCode.includes("ui.setup.hidden = true"));

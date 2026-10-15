@@ -62,6 +62,8 @@ assert.ok(/ui\.player\.addEventListener\("error"[\s\S]{0,200}unlockPartnerTurn\(
 assert.ok(appCode.includes("play.catch"), "自動播放被擋要自己解鎖");
 // 換你說的那一句不能先露出教材中文：先看到等於看到答案。
 assert.ok(page.includes('id="record-note"'));
+assert.ok(page.includes('id="input-mode-toggle"') && page.includes('id="input-type"') && page.includes('id="input-voice"'));
+assert.ok(appCode.includes("wireInputMode"));
 assert.ok(appCode.includes('ui.zh.textContent = exchange.mine ? "" : exchange.chineseText'), "自己的句子不能預先顯示中文");
 assert.ok(appCode.includes("ui.zh.hidden = exchange.mine"));
 assert.ok(appCode.includes("turnHint(exchange)"), "自己的句子改用提示取代答案");

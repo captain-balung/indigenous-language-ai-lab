@@ -12,6 +12,7 @@ import {
   targetLabel,
   resultDetail, resultHeadline, tally, tallyLabel
 } from "./core.mjs";
+import { wireInputMode } from "../../shared/input-mode.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
@@ -41,11 +42,12 @@ const ui = {
   questText: $("#quest-text"), questReply: $("#quest-reply"),
   questTags: $("#quest-tags"), questTagDock: $("#quest-tag-dock"),
   questReplay: $("#quest-replay"), questAudioState: $("#quest-audio-state"),
-  questAudio: $("#quest-audio"), questNext: $("#quest-next")
+  questAudio: $("#quest-audio"), questNext: $("#quest-next"),
+  inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
 
 const STATES = {
-  idle: ["●", "尚未錄音，打字也可以送出"],
+  idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
   recorded: ["■", "錄音完成，可以送出或重錄"],
   converting: ["◐", "轉檔中…"],
@@ -84,6 +86,7 @@ let mode = "dialogue";
 let pack = null, quests = [], questIndex = 0, questState = null, questTarget = null, questTag = null, questResults = [];
 // 結果面板是共用的，要記住現在顯示的是哪一階段的結果，「再練一次」才知道要重來哪個。
 let reportKind = "dialogue";
+let inputMode = null;
 
 function setState(key, override) {
   const [icon, text] = STATES[key] || STATES.idle;
@@ -147,13 +150,26 @@ async function init() {
     },
     onTick(seconds) { ui.time.textContent = clock(seconds); }
   });
+  inputMode = wireInputMode({
+    root: ui.myTurn,
+    toggle: ui.inputModeToggle,
+    typePanel: ui.inputType,
+    voicePanel: ui.inputVoice,
+    onModeChange(next) {
+      if (next === "type") clearRecording();
+      else ui.answer.value = "";
+      updateSubmit();
+      if (next === "type") ui.answer.focus();
+      else ui.record.focus();
+    }
+  });
   // 場景與角色一進來就先畫出來，方言別還沒選也看得到有哪三個場景。
   renderThemes();
   renderRoles();
   await verifyServices();
   if (!supportsRecording()) {
     ui.record.disabled = true;
-    setState("failed", "這個瀏覽器不支援錄音，請改用打字");
+    setState("failed", "這個瀏覽器不支援錄音，請切換為打字");
   }
 }
 
@@ -226,12 +242,16 @@ function questLocked() {
   return pending || Boolean(questState?.done);
 }
 
+function inputReady() {
+  return inputMode?.mode() === "voice" ? Boolean(recorder?.blob) : Boolean(ui.answer.value.trim());
+}
+
 function updateSubmit() {
   if (mode === "quest") {
-    ui.submit.disabled = pending || !questReadyToSpeak() || Boolean(questState?.done) || (!ui.answer.value.trim() && !recorder?.blob);
+    ui.submit.disabled = pending || !questReadyToSpeak() || Boolean(questState?.done) || !inputReady();
     return;
   }
-  ui.submit.disabled = pending || graded || (!ui.answer.value.trim() && !recorder?.blob);
+  ui.submit.disabled = pending || graded || !inputReady();
 }
 
 ui.ethnicity.addEventListener("change", () => {
@@ -545,8 +565,8 @@ ui.record.addEventListener("click", async () => {
     // 所以只在錄音列說明原因，打字框繼續留著。
     if (denied || missing) {
       ui.recordNote.textContent = denied
-        ? "瀏覽器沒有給這個頁面麥克風權限。可以在網址列允許麥克風後再錄，或直接用打字送出。"
-        : "這台裝置沒有可用的麥克風，請用打字送出。";
+        ? "瀏覽器沒有給這個頁面麥克風權限。可以在網址列允許麥克風後再錄，或切換為打字。"
+        : "這台裝置沒有可用的麥克風，請切換為打字。";
     }
   }
 });
@@ -582,9 +602,10 @@ function clearRecording() {
 
 const runExchange = createSingleFlight(async () => {
   const exchange = exchanges[index];
-  const typed = ui.answer.value.trim();
+  const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
+  const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
   const epoch = runEpoch;
-  if (!exchange || pending || graded || (!typed && !recorder?.blob)) return;
+  if (!exchange || pending || graded || (!typed && !useVoice)) return;
   pending = true;
   ui.submit.disabled = true;
   ui.retry.disabled = true;
@@ -1327,9 +1348,10 @@ ui.questAudio.addEventListener("error", () => {
 // 只是判定對象換成「對這位同學該說的那句」，而且答錯不鎖住，可以一直重試。
 const runQuestLine = createSingleFlight(async () => {
   const quest = currentQuest();
-  const typed = ui.answer.value.trim();
+  const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
+  const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
   const epoch = runEpoch;
-  if (!quest || !questReadyToSpeak() || pending || (!typed && !recorder?.blob)) return;
+  if (!quest || !questReadyToSpeak() || pending || (!typed && !useVoice)) return;
   // 停掉上一句回應。不能放在判定結束後：那會把剛剛開始播的回應一起停掉，
   // play() 還會被中斷，畫面上變成「無法播放」。
   ui.questAudio.pause();
