@@ -143,7 +143,7 @@ assert.ok(!/crossorigin/.test(app), "音檔不得加 crossorigin");
 assert.ok(/ui\.record\.addEventListener\([\s\S]{0,250}ui\.player\.pause/.test(app), "錄音時要停教材音檔");
 
 /* ---------- §6.2 紅線：不得斷言使用者念錯 ---------- */
-assert.ok(page.includes("系統聽到的是") || app.includes("系統聽到的是"), "必須顯示系統聽到的內容");
+assert.ok(app.includes("系統聽到的族語"), "結果區必須顯示辨識文字");
 assert.ok(app.includes("不代表你念錯"));
 for (const forbidden of ["你念錯", "發音不正確", "發音錯誤", "念錯了"]) {
   assert.ok(!new RegExp(forbidden).test(app.replace(/不代表你念錯/g, "")), `措辭不得出現「${forbidden}」`);
@@ -192,7 +192,7 @@ assert.equal(first, second, "重複點擊只能產生一個有效請求");
 release(); await Promise.all([first, second]);
 assert.equal(flights, 1);
 assert.ok(/function resetQuiz\(\)[\s\S]{0,320}clearRecording\(\)/.test(app), "切換語別必須清除舊錄音");
-assert.ok(/function resetQuiz\(\)[\s\S]{0,320}ui\.heard\.hidden = true/.test(app), "切換語別必須清除舊辨識結果");
+assert.ok(/function resetQuiz\(\)[\s\S]{0,320}ui\.result\.hidden = true/.test(app), "切換語別必須清除舊判定結果");
 assert.ok(/function nextQuestion\(\)[\s\S]{0,600}clearRecording\(\)/.test(app), "下一題必須清除舊錄音");
 
 /* ---------- 抽題不重複 ---------- */

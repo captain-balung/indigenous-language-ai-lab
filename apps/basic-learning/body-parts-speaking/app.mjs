@@ -15,7 +15,7 @@ const ui = {
   image: $("#question-image"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
-  submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
+  submit: $("#submit"), rerecord: $("#rerecord"), result: $("#result"),
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
 
@@ -187,7 +187,6 @@ function nextQuestion() {
   ui.image.src = question.imageSrc;
   ui.image.alt = `請辨認圖片（${selectedTheme.name}，${selectedDialect.name}）`;
   clearRecording();
-  ui.heard.hidden = true;
   ui.result.hidden = ui.retry.hidden = ui.reveal.hidden = ui.next.hidden = ui.model.hidden = true;
   ui.record.disabled = false;
   resetModelAudio();
@@ -350,7 +349,6 @@ const runFlow = createSingleFlight(async () => {
   try {
     heard = await transcribe(wav, selectedDialect.ethnicity);
     lastHeard = heard;
-    renderHeard(heard);
   } catch (error) {
     clearTimeout(slowHint);
     setState("failed", "這次沒有辨識成功");
@@ -424,12 +422,6 @@ async function translateToZh(text, srcLang) {
 
 /* ---------- 呈現 ---------- */
 
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(text)}</p>
-    <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯——可以重新錄音再試一次。</small>`;
-}
-
 function renderResult(result, heard) {
   ui.result.hidden = false;
   ui.result.dataset.state = result.type;
@@ -437,16 +429,18 @@ function renderResult(result, heard) {
     exact: ["完全正確！", "與教材答案完全相符，不需要再呼叫翻譯服務。"],
     semantic: ["意思正確，通過！", "系統聽到的內容意思接近；可以參考教材的標準句型。"],
     // 不斷言使用者念錯：只陳述系統聽到什麼、與教材不同
-    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差；重新錄音再試一次即可。"],
+    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差，不代表你念錯；重新錄音再試一次即可。"],
     unavailable: ["目前無法完成判定", "你的答案尚未被判錯，錄音仍保留。"]
   };
   const [title, detail] = messages[result.type];
-  ui.result.innerHTML = `<strong>${title}</strong><p>${detail}</p>` + (result.translation
-    ? `<dl><dt>系統聽到的族語</dt><dd>${escapeHtml(heard)}</dd><dt>翻譯服務的中文</dt><dd>${escapeHtml(result.translation)}</dd>` +
-      (result.type === "semantic"
-        ? `<dt>教材族語</dt><dd>${escapeHtml(question.indigenousText)}</dd><dt>教材中文</dt><dd>${escapeHtml(question.chineseText)}</dd>`
-        : "") + `</dl>`
-    : "");
+  const rows = [
+    heard ? `<dt>系統聽到的族語</dt><dd>${escapeHtml(heard)}</dd>` : "",
+    result.translation ? `<dt>翻譯服務的中文</dt><dd>${escapeHtml(result.translation)}</dd>` : "",
+    result.type === "semantic"
+      ? `<dt>教材族語</dt><dd>${escapeHtml(question.indigenousText)}</dd><dt>教材中文</dt><dd>${escapeHtml(question.chineseText)}</dd>`
+      : ""
+  ].filter(Boolean).join("");
+  ui.result.innerHTML = `<strong>${title}</strong><p>${detail}</p>${rows ? `<dl>${rows}</dl>` : ""}`;
   const passed = result.type === "exact" || result.type === "semantic";
   ui.next.hidden = !passed;
   ui.reveal.hidden = passed;
@@ -467,7 +461,6 @@ function resetQuiz() {
   ui.quiz.hidden = true;
   clearRecording();
   selectedTheme = undefined; shards = undefined; records = [];
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.model.hidden = true;
   ui.themes.hidden = true;

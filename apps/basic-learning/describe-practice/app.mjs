@@ -16,7 +16,7 @@ const ui = {
   promptKind: $("#prompt-kind"), title: $("#question-title"), tip: $("#picture-tip"), pictures: $("#picture-grid"),
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
-  submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
+  submit: $("#submit"), rerecord: $("#rerecord"), result: $("#result"),
   retry: $("#retry"), next: $("#next"),
   inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
@@ -232,7 +232,7 @@ function nextQuestion() {
       <figcaption>圖片 ${index + 1}</figcaption>
     </figure>`).join("");
   ui.answer.value = "";
-  ui.heard.hidden = ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
+  ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
   clearRecording();
   const canRecord = supportsRecording() && asrStateFor(selectedDialect.ethnicity).usable;
   ui.record.disabled = !canRecord;
@@ -293,7 +293,6 @@ const runFlow = createSingleFlight(async () => {
     try {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       setState("failed", "這次沒有辨識成功");
@@ -305,7 +304,6 @@ const runFlow = createSingleFlight(async () => {
     clearTimeout(slowHint);
   } else {
     lastHeard = null;
-    ui.heard.hidden = true;
   }
 
   let translation;
@@ -360,12 +358,6 @@ async function translateAnswer(text) {
   return translateToZh(text, selectedDialect.code);
 }
 
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(text)}</p>
-    <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯。</small>`;
-}
-
 function renderResult({ indigenous, translation, matched, pictureScore }) {
   const caption = describeCaption({ translation, matched, pictureScore });
   ui.result.hidden = false;
@@ -398,7 +390,6 @@ function resetQuiz() {
   ui.themeGrid.replaceChildren();
   ui.pictures.replaceChildren();
   clearRecording();
-  ui.heard.hidden = true;
   ui.result.hidden = true;
 }
 

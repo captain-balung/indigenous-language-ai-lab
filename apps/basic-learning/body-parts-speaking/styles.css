@@ -43,10 +43,7 @@
 .submit-row{display:flex;gap:.7rem;flex-wrap:wrap}
 .submit-row .primary{flex:1 1 12rem;margin-top:0}
 
-.heard{margin-top:1.4rem;padding:1rem;border:3px dashed var(--ink);border-radius:16px;background:#f6f2ff}
-.heard strong{font-size:1.05rem}
 .heard-text{margin:.35rem 0;font-size:1.35rem;font-weight:900;word-break:break-word}
-.heard small{display:block;color:#4a5474;font-weight:700}
 
 @media(max-width:720px){
   /* 02 的標題比 01 長一行，窄螢幕會把副標推進插圖裡；

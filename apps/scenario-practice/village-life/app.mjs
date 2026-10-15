@@ -28,7 +28,7 @@ const ui = {
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"), recordNote: $("#record-note"),
   state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
-  heard: $("#heard"), result: $("#result"), next: $("#next"),
+  result: $("#result"), next: $("#next"),
   report: $("#report"), score: $("#score-line"), list: $("#score-list"), again: $("#again"),
   questOffer: $("#quest-offer"), startQuest: $("#start-quest"), toQuest: $("#to-quest"),
   toDialogue: $("#to-dialogue"), questLevels: $("#quest-levels"),
@@ -456,7 +456,6 @@ function showExchange() {
   ui.sceneBody.classList.toggle("scene-body--solo", !exchange.mine);
   ui.turnTitle.textContent = exchange.kind === "reference" ? "這句是你的名字或來處" : "換你說";
   ui.answer.value = "";
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.next.hidden = true;
   ui.retry.hidden = true;
@@ -630,7 +629,6 @@ const runExchange = createSingleFlight(async () => {
     try {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       if (dropped(epoch)) return;
@@ -671,12 +669,6 @@ function finish() {
   ui.retry.disabled = false;
   ui.record.disabled = !(supportsRecording() && selectedDialect && asrStateFor(selectedDialect.ethnicity).usable);
   updateSubmit();
-}
-
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(text)}</p>
-    <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯。</small>`;
 }
 
 function renderResult(type, { indigenous, translation }) {
@@ -831,7 +823,6 @@ function resetQuestRun() {
   ui.questHintBox.hidden = true;
   ui.questNext.hidden = true;
   ui.questReply.textContent = "";
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.questGoal.hidden = true;
   ui.questGoal.innerHTML = "";
@@ -1379,7 +1370,6 @@ const runQuestLine = createSingleFlight(async () => {
     try {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       if (dropped(epoch)) return;
@@ -1534,7 +1524,6 @@ function resetProgress() {
   questTarget = null;
   questTag = null;
   clearRecording();
-  ui.heard.hidden = true;
   ui.result.hidden = true;
 }
 

@@ -15,7 +15,7 @@ const ui = {
   replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"), showZh: $("#show-zh"),
   zhHint: $("#zh-hint"), answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"),
   time: $("#record-time"), state: $("#record-state"), stateText: $("#record-state-text"),
-  submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"),
+  submit: $("#submit"), rerecord: $("#rerecord"),
   result: $("#result"), retry: $("#retry"), next: $("#next"),
   inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
@@ -204,7 +204,7 @@ function nextQuestion() {
   ui.zhHint.textContent = question.chineseText;
   ui.zhHint.hidden = !ui.showZh.checked;
   ui.answer.value = "";
-  ui.heard.hidden = ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
+  ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
   clearRecording();
   resetPromptAudio();
   const canRecord = supportsRecording() && asrStateFor(selectedDialect.ethnicity).usable;
@@ -298,7 +298,6 @@ const runFlow = createSingleFlight(async () => {
     try {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       setState("failed", "這次沒有辨識成功");
@@ -310,7 +309,6 @@ const runFlow = createSingleFlight(async () => {
     clearTimeout(slowHint);
   } else {
     lastHeard = null;
-    ui.heard.hidden = true;
   }
 
   let translation;
@@ -351,12 +349,6 @@ async function translateAnswer(text) {
   return translateToZh(text, selectedDialect.code);
 }
 
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(text)}</p>
-    <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯。</small>`;
-}
-
 function renderResult(verdict, { indigenous, translation, rationale, fallback } = {}) {
   const title = qaVerdictLabel(verdict);
   const details = {
@@ -394,7 +386,6 @@ function resetQuiz() {
   question = undefined;
   ui.quiz.hidden = true;
   clearRecording();
-  ui.heard.hidden = true;
   ui.result.hidden = true;
 }
 

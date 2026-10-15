@@ -26,7 +26,7 @@ const ui = {
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"), recordNote: $("#record-note"),
   submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
-  heard: $("#heard"), result: $("#result"),
+  result: $("#result"),
   cartPanel: $("#cart-panel"), cartList: $("#cart-list"), cartTotal: $("#cart-total"), checkout: $("#checkout"),
   report: $("#report"), reportHeadline: $("#report-headline"), reportDetail: $("#report-detail"),
   reportMath: $("#report-math"), again: $("#again"), backSetupReport: $("#back-setup-report"),
@@ -214,7 +214,6 @@ function dealRound() {
   lastHeard = null;
   clearRecording();
   ui.answer.value = "";
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.retry.hidden = true;
   applyBrief(buildBrief(catalog));
@@ -363,7 +362,6 @@ ui.productGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-id]");
   if (!button) return;
   selectedItemId = button.dataset.id;
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.retry.hidden = true;
   ui.answer.value = "";
@@ -543,7 +541,6 @@ const runFlow = createSingleFlight(async () => {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       if (epoch !== runEpoch) return;
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       if (epoch !== runEpoch) return;
@@ -556,7 +553,6 @@ const runFlow = createSingleFlight(async () => {
     clearTimeout(slowHint);
   } else {
     lastHeard = null;
-    ui.heard.hidden = true;
   }
 
   let translation = "";
@@ -581,11 +577,12 @@ const runFlow = createSingleFlight(async () => {
     return;
   }
 
+  const heardNote = lastHeard ? ` 辨識：${indigenous}。` : "";
   if (phase === "ask") {
     unlocks = unlockPrice(unlocks, item.id);
     const quote = priceQuote(item, unlocks);
     ui.vendorSay.textContent = `攤主：${item.chineseText}？${quote}`;
-    showSpeakResult("semantic", `對，這是「${item.chineseText}」（${item.indigenousText}）。價錢已解鎖。`);
+    showSpeakResult("semantic", `對，這是「${item.chineseText}」（${item.indigenousText}）。價錢已解鎖。${heardNote}`);
     renderProducts();
     renderPhase();
     updateSpeakPanel();
@@ -593,7 +590,7 @@ const runFlow = createSingleFlight(async () => {
     const qty = Math.max(1, Math.min(20, Number.parseInt(ui.qty.value, 10) || 1));
     cart = addToCart(catalog, cart, item.id, qty);
     ui.vendorSay.textContent = `攤主：好，${item.chineseText} ${qty} ${item.unit}放進籃子了。還要別的嗎？`;
-    showSpeakResult("semantic", `已放入 ${item.chineseText} × ${qty}。`);
+    showSpeakResult("semantic", `已放入 ${item.chineseText} × ${qty}。${heardNote}`);
     renderCart();
     updateBudget();
   }
@@ -601,11 +598,6 @@ const runFlow = createSingleFlight(async () => {
   ui.answer.value = "";
   finishFlow();
 });
-
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.textContent = `系統聽到：${text}`;
-}
 
 function showSpeakResult(state, message) {
   ui.result.hidden = false;

@@ -408,14 +408,6 @@
   display: none;
 }
 
-.heard {
-  margin: 0.75rem 0 0;
-  padding: 0.55rem 0.75rem;
-  border-left: 6px solid var(--blue);
-  background: #eef5ff;
-  font-weight: 800;
-}
-
 .result {
   margin-top: 0.85rem;
   padding: 0.85rem 1rem;
