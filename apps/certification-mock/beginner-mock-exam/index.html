@@ -24,37 +24,7 @@
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
 
-      <div class="notice notice--scope">
-        <strong>練習用，非正式測驗</strong>
-        <p>口說 11 題（單詞朗讀、簡答、看圖說話）＋聽力 20 題。練習得分依公開配分加總，不代表正式測驗成績。</p>
-      </div>
-
-      <div class="notice notice--adaptation">
-        <strong>與正式測驗不同</strong>
-        <p>按「確定」會立刻告訴你對錯；可重複播放。選擇題(二)中文改文字；配合題每題各自一組圖。</p>
-      </div>
-
-      <div class="notice notice--audio">
-        <strong>音檔／看圖說話圖來自 klokah.tw</strong>
-        <p>音檔與看圖說話四張圖由 <code>klokah.tw</code> 直接載入（對方會看到你的 IP 位址）。本站不儲存這些檔；聽力音檔載失敗則改顯示文字且不計分。</p>
-      </div>
-
-      <div class="notice notice--model">
-        <strong>語音辨識是族級模型</strong>
-        <p>只有 16 個族級模型；方言別用來選教材。辨識偏差是模型限制，不代表你念錯。</p>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>口說錄音會外送辨識與評分</strong>
-        <p>錄音送到 <code>ai3.iformosa.com.tw</code> 辨識與翻譯；簡答／看圖說話的中文譯文與題目說明會經本站 proxy 送 <b>OpenAI</b> 練習評分（不送錄音；失敗時改用規則粗判）。本站不儲存。請不要錄入個人資料。聽力不必開麥克風。</p>
-      </div>
-
-      <div class="notice notice--a11y">
-        <strong>無障礙</strong>
-        <p>是非／選擇題(一)／配合題需看圖作答；選擇題(二)純聽力。可用鍵盤操作。</p>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認語音辨識服務…</div>
       <button id="start" class="primary" disabled>產生題目並開始練習</button>
       <p class="alt-route">想只練生活詞彙？<a href="/apps/basic-learning/body-parts-practice/">看圖練習</a>或<a href="/apps/basic-learning/body-parts-speaking/">口說練習</a>也會即時告訴你對錯。</p>
@@ -104,7 +74,6 @@
           <audio id="preview" controls hidden></audio>
         </div>
 
-        <p class="inline-privacy">按「確定」後錄音會上傳到 <code>ai3.iformosa.com.tw</code> 辨識；簡答／看圖說話的譯文會送 OpenAI 練習評分。請勿錄入個資。</p>
         <div id="heard" class="heard" hidden aria-live="polite"></div>
       </div>
 

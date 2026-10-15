@@ -73,7 +73,7 @@ for (const [mode, folder] of units) {
 }
 assert.ok(pages.compose.includes("用族語寫出這個意思"));
 assert.ok(pages.oral.includes('id="question-image"'));
-assert.ok(pages.retell.includes("對方會看到你的 IP 位址") && pages.retell.includes("播放短句") === false);
+assert.ok(!pages.retell.includes("播放短句"));
 assert.ok(pages.retell.includes(">播放<") && pages.reply.includes(">播放問句<"));
 assert.ok(page.includes('lang="zh-Hant"') && page.includes("CC BY-NC-SA 4.0"));
 assert.ok(!page.includes("聽寫快問快答") && !page.includes("句子排列所") && !page.includes("本堂挑戰卷"));

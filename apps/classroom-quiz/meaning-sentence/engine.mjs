@@ -15,7 +15,6 @@ let modeInfo;
 const ui = {
   mission: $("#mission"), title: $("#page-title"), lead: $("#page-lead"),
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
-  noticeAudio: $("#notice-audio"), noticeMic: $("#notice-mic"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"), prompt: $("#prompt"), questionTitle: $("#question-title"),
   compose: $("#panel-compose"), meaning: $("#compose-meaning"), oral: $("#panel-oral"),
   audio: $("#panel-audio"), speech: $("#panel-speech"),
@@ -81,8 +80,6 @@ async function init() {
   ui.mission.textContent = `課堂測驗 · MISSION ${modeInfo.mission}`;
   ui.title.textContent = modeInfo.title;
   ui.lead.textContent = modeInfo.lead;
-  setHidden(ui.noticeAudio, !needsAudio(mode));
-  setHidden(ui.noticeMic, !needsAsr(mode));
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));
   if (needsAsr(mode)) {
     if (!supportsRecording()) {

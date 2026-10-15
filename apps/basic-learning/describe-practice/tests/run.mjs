@@ -31,7 +31,6 @@ assert.ok(appCode.includes("semanticMatch"));
 assert.ok(appCode.includes("activeSemanticJudge") || appCode.includes("scorePictureTalk"));
 assert.ok(appCode.includes("pictureTalkRecords"));
 assert.ok(appCode.includes("transcribe"));
-assert.ok(page.includes("OpenAI"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(appCode), "不得寫入瀏覽器儲存");
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + appSource), "介面不得使用 emoji");
 assert.ok(appCode.includes("prefers-reduced-motion"));

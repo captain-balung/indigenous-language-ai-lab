@@ -1,13 +1,5 @@
 /* 身體部位口說練習：沿用 MISSION 01 的視覺系統，只補口說專屬的元件 */
 
-.notice{margin:1rem 0;padding:.9rem 1.1rem;border:3px solid var(--ink);border-radius:16px;background:#fff}
-.notice strong{display:block;margin-bottom:.35rem;font-size:1.02rem}
-.notice p,.notice ul{margin:.3rem 0}
-.notice ul{padding-left:1.2rem}
-.notice li+li{margin-top:.25rem}
-.notice code{padding:.05rem .35rem;border-radius:6px;background:#eef2f8;font-size:.95em;word-break:break-all}
-.notice--model{border-left-width:9px;background:#eaf3ff}
-.notice--privacy{border-left-width:9px;background:#fff3e2}
 .model-note{font-weight:900}
 .model-note[data-blocked=true]{color:#b03a24}
 
@@ -40,7 +32,6 @@
 .record-state[data-state=failed]{background:#f6e3e0}
 
 #preview{width:100%;margin:.4rem 0 .6rem}
-.inline-privacy{margin:.2rem 0 .8rem;padding:.5rem .7rem;border-left:5px solid #e2a33c;border-radius:0 10px 10px 0;background:#fdf6e4;font-size:.9rem;font-weight:700;color:#6b5426}
 .submit-row{display:flex;gap:.7rem;flex-wrap:wrap}
 .submit-row .primary{flex:1 1 12rem;margin-top:0}
 

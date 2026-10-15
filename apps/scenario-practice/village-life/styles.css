@@ -154,7 +154,6 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .dialogue__zh{font-size:2rem}
   .my-turn{padding:.9rem 1rem 1rem}
   .my-turn textarea{min-height:4.5rem}
-  .my-turn .inline-privacy{font-size:.85rem}
 }
 /* 夠寬（1700px 以上）才讓場景置中：左右各留 (輸入區 + 間距) 一樣寬的空白，
    場景才會是整個面板的正中央。1700px 這個門檻是算出來的——在這個寬度，

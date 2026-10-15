@@ -28,7 +28,6 @@ assert.ok(!page.includes("對方會看到你的 IP"));
 assert.ok(page.includes("CC BY-NC-SA 4.0"));
 assert.ok(appCode.includes("activeSemanticJudge"));
 assert.ok(appCode.includes("judge-rationale") || appSource.includes("rationale"));
-assert.ok(page.includes("OpenAI"));
 assert.ok(appCode.includes("asr_transcribe") || appSource.includes("transcribe"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(appCode), "不得寫入瀏覽器儲存");
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + appSource), "介面不得使用 emoji");

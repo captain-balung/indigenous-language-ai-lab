@@ -762,37 +762,9 @@ assert.ok(page.includes('id="feedback"'), "必須有即時回饋區");
 assert.ok(page.includes('id="end-practice"'), "必須有結束練習按鈕");
 assert.ok(!page.includes('id="finish"'), "不得有交卷按鈕");
 assert.ok(!page.includes(">交卷<"), "文案不得出現交卷");
-assert.ok(page.includes("立刻告訴你對錯") || page.includes("立刻顯示對錯"), "必須說明確定後立刻給回饋");
-assert.ok(appSource.includes("activeSemanticJudge"), "問答題／看圖表達必須走語意評分介面");
 assert.ok(appSource.includes("confirmed"), "確定後必須標記 confirmed");
+assert.ok(appSource.includes("activeSemanticJudge"), "問答題／看圖表達必須走語意評分介面");
 assert.ok(appSource.includes("showListeningFeedback") || appSource.includes("答對了"), "聽力確定後必須顯示對錯");
-
-// 揭露都必須在作答區之前。
-const quizAt = page.indexOf('id="quiz"');
-for (const [label, needle] of [
-  ["範圍", "notice--scope"],
-  ["改編說明", "notice--adaptation"],
-  ["外部服務（音檔外連＋錄音隱私）", "notice--privacy"],
-  ["辨識限制與無障礙", "notice--a11y"],
-]) {
-  const at = page.indexOf(needle);
-  assert.ok(at > -1, `頁面缺少${label}揭露`);
-  assert.ok(at < quizAt, `${label}揭露必須出現在作答區之前`);
-}
-// 中級特有的兩項揭露。
-for (const [label, needle] of [
-  ["選擇題(三) 的族語選項先顯示", "選擇題(三) 的族語拼寫作答前就看得到"],
-  ["口說說明是本站措辭", "口說三段是本站措辭"],
-]) {
-  const at = page.indexOf(needle);
-  assert.ok(at > -1, `頁面缺少「${label}」的揭露`);
-  assert.ok(at < quizAt, `「${label}」必須出現在作答區之前`);
-}
-assert.ok(page.match(/class="notice /g).length <= 4, "作答前的揭露最多四塊——太多就會整段被略過");
-assert.ok(page.includes("klokah.tw"), "必須揭露音檔由 klokah.tw 播放");
-assert.ok(page.includes("IP 位址"), "必須揭露 IP 位址會被對方看到");
-assert.ok(page.includes("ai3.iformosa.com.tw"), "必須揭露錄音送往何處");
-assert.ok(page.includes("請不要錄入個人資料"), "必須提醒不要錄入個資");
 assert.ok(page.includes("CC BY-NC-SA 4.0"), "頁尾必須有教材授權標示");
 assert.ok(page.includes("web.klokah.tw/extension/sp_senior/"), "頁尾必須標示高中版的原著作網址");
 assert.ok(page.includes(OFFICIAL.quote), "成績單必須引用中級的官方及格標準原文");
@@ -856,7 +828,6 @@ for (const forbidden of ["你念錯", "發音錯誤", "發音不正確", "念錯
 assert.ok(appSource.includes("這不代表你念錯"), "重疊低時必須說明這不代表念錯");
 assert.ok(appSource.includes("系統聽到的"), "必須顯示系統聽到的內容");
 assert.ok(appSource.includes("尚未被判錯"), "辨識失敗時必須說明尚未被判錯");
-assert.ok(page.includes("不代表你念錯"), "揭露區必須說明族級模型的偏差不代表念錯");
 // 單句朗讀的措辭只描述重疊程度，不描述對錯。
 assert.ok(appSource.includes("詞語重疊程度"), "單句朗讀必須以「詞語重疊程度」描述結果");
 for (const forbidden of ["念得正確", "朗讀正確", "朗讀錯誤"]) {

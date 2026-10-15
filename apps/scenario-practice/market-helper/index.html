@@ -24,35 +24,7 @@
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
 
-      <div class="notice notice--model">
-        <strong>語音辨識目前是「族級」模型</strong>
-        <p>
-          官方語音辨識只提供 <b>16 個族級模型</b>，沒有 42 個方言別模型。你選的方言別用來
-          <b>挑選教材與翻譯判定</b>，辨識時送出的是該族的通用模型。
-          方言之間的詞彙與音韻差異可能造成辨識偏差，<b>這是模型的限制，不代表你念錯</b>。
-        </p>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>錄音會送到第三方服務</strong>
-        <ul>
-          <li>你的錄音會傳送到 <code>ai3.iformosa.com.tw</code>，交由 Formosan AI 辨識後回傳文字。</li>
-          <li>貨品音檔由 <code>web.klokah.tw</code>、圖片由 <code>klokah.tw</code> 直接載入，載入時該網站會看到你的 IP 位址。</li>
-          <li>本站<b>不儲存</b>你的錄音，也<b>不轉送</b>給上述服務以外的任何對象；沒有帳號、沒有追蹤、沒有 cookie。</li>
-          <li><b>請不要錄入個人資料或不希望外流的內容。</b></li>
-        </ul>
-      </div>
-
-      <div class="notice">
-        <strong>教材來源</strong>
-        <p>
-          貨品詞取自「族語 E 樂園」<a href="https://web.klokah.tw/vocabulary/" rel="noopener">學習詞表／植物</a>，依
-          <a href="https://web.klokah.tw/creativeCommons/" rel="noopener">CC BY-NC-SA 4.0</a> 使用。
-          詳見 <a href="/data/market-helper/LICENSE.md">授權說明</a>。
-        </p>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認翻譯與語音辨識服務…</div>
       <button id="start" class="primary" disabled>開始任務</button>
       <p class="alt-route">想先練生活對話？<a href="/apps/scenario-practice/village-life/">部落大小事</a>；想練單句問答？<a href="/apps/basic-learning/qa-practice/">問答練習</a>。</p>
@@ -136,7 +108,6 @@
             </div>
             <p id="record-note" class="record-note" aria-live="polite"></p>
             <audio id="preview" controls hidden></audio>
-            <p class="inline-privacy">送出後錄音會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。請勿錄入個資。</p>
 
             <div class="action-row">
               <button id="submit" class="primary" type="button" disabled>送出</button>

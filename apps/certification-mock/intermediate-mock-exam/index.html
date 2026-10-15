@@ -24,38 +24,7 @@
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
 
-      <div class="notice notice--scope">
-        <strong>練習用，非正式測驗</strong>
-        <p>口說 11 題（單句朗讀、問答題、看圖表達）＋聽力 20 題。得分依公開配分加總（口說 40＋聽力 60），不代表正式測驗成績。</p>
-      </div>
-
-      <div class="notice notice--adaptation">
-        <strong>與正式測驗不同</strong>
-        <ul>
-          <li>按「確定」立刻顯示對錯，而且可以重複播放（正式測驗只播兩遍）。</li>
-          <li>選擇題(二) 的中文改以文字呈現；選擇題(一)(三) 的干擾選項抽自同類別的別題。</li>
-          <li><b>選擇題(三) 的族語拼寫作答前就看得到</b>——題型本身就是比對拼寫，不是洩題。</li>
-          <li>四段聽力說明是官方原文；<b>口說三段是本站措辭</b>，官方未公開該段原文。</li>
-        </ul>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>會連到外部服務</strong>
-        <ul>
-          <li>音檔與看圖表達圖片由 <code>klokah.tw</code> 直接載入，對方會看到你的 IP 位址；載不出來的題目不計分。</li>
-          <li>口說錄音送到 <code>ai3.iformosa.com.tw</code> 辨識與翻譯；問答題／看圖表達的中文譯文與題目說明會經本站 proxy 送 <b>OpenAI</b> 練習評分（不送錄音；失敗時改用規則粗判）。本站不儲存。請不要錄入個人資料。</li>
-        </ul>
-      </div>
-
-      <div class="notice notice--a11y">
-        <strong>辨識限制與無障礙</strong>
-        <ul>
-          <li>語音辨識只有 16 個族級模型，方言別用來選教材；辨識偏差是模型限制，不代表你念錯。</li>
-          <li>是非題與選擇題(一) 需看圖作答，選擇題(二)(三) 不需要視覺；聽力不必開麥克風，全程可用鍵盤操作。</li>
-        </ul>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認語音辨識服務…</div>
       <button id="start" class="primary" disabled>產生題目並開始練習</button>
       <p class="alt-route">想先從初級開始？<a href="/apps/certification-mock/beginner-mock-exam/">初級模擬站</a>有單詞朗讀與配合題。</p>
@@ -105,7 +74,6 @@
           <audio id="preview" controls hidden></audio>
         </div>
 
-        <p class="inline-privacy">按「確定」後錄音會上傳到 <code>ai3.iformosa.com.tw</code> 辨識；問答題／看圖表達的譯文會送 OpenAI 練習評分。請勿錄入個資。</p>
         <div id="heard" class="heard" hidden aria-live="polite"></div>
       </div>
 

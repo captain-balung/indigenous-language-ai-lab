@@ -151,18 +151,10 @@ assert.ok(app.includes("尚未被判錯"), "辨識失敗不得記為答錯");
 /* ---------- §7 隱私：錄音不得落地 ---------- */
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(app), "錄音與答案不得寫入本機儲存");
 assert.ok(app.includes("URL.revokeObjectURL"), "錄音物件 URL 必須釋放");
-assert.ok(page.includes("ai3.iformosa.com.tw"), "隱私揭露必須寫明送往的服務");
-assert.ok(page.includes("請不要錄入個人資料或不希望外流的內容"));
-assert.ok(page.indexOf("notice--privacy") < page.indexOf('id="quiz"'), "揭露必須在錄音介面之前就看得到");
 const ignore = fs.readFileSync(path.join(root, ".gitignore"), "utf8");
 for (const ext of ["wav", "mp3", "ogg", "flac", "m4a", "webm"]) {
   assert.ok(ignore.includes(`*.${ext}`), `.gitignore 必須擋住 *.${ext}`);
 }
-
-/* ---------- §3 族級模型揭露 ---------- */
-assert.ok(page.includes("16 個族級模型"));
-assert.ok(page.includes("不代表你念錯"));
-assert.ok(page.indexOf("族級") < page.indexOf('id="quiz"'), "族級揭露必須在送出前看得到");
 
 /* ---------- §11.1-5 判定 fixture（沿用 01 的判定邏輯） ---------- */
 assert.equal(normalizeAnswer("  O  ngoso’  kinian . "), "O ngoso' kinian.");

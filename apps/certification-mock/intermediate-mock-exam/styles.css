@@ -1,24 +1,12 @@
-/* 初級模擬站：沿用 MISSION 01 的視覺系統，只補模擬測驗專屬的元件。
-   .notice / .recorder / .record-state / .heard 等口說元件的樣式與 MISSION 02 相同，
-   但 02 的樣式表綁在 02 的頁面上，這裡自帶一份，避免互相牽動。 */
+/* 中級模擬站：沿用 MISSION 01 的視覺系統，只補模擬測驗專屬的元件。
+   .recorder / .record-state / .heard 等口說元件的樣式與初級模擬站相同，
+   但樣式表綁在本頁，避免互相牽動。 */
 
 /* MISSION 01 的樣式表給 figure 等元素設了明確的 display，會蓋掉瀏覽器預設的
    [hidden]{display:none}。01／02 從不隱藏這些元素所以沒踩到；本頁大量使用
    hidden 切換題型，必須把它補回來。 */
 [hidden]{display:none !important}
 
-.notice{margin:1rem 0;padding:.9rem 1.1rem;border:3px solid var(--ink);border-radius:16px;background:#fff}
-.notice strong{display:block;margin-bottom:.35rem;font-size:1.02rem}
-.notice p,.notice ul{margin:.3rem 0}
-.notice ul{padding-left:1.2rem}
-.notice li+li{margin-top:.25rem}
-.notice code{padding:.05rem .35rem;border-radius:6px;background:#eef2f8;font-size:.95em;word-break:break-all}
-.notice--scope{border-left-width:9px;background:#fdf0e6}
-.notice--adaptation{border-left-width:9px;background:#f3f0ff}
-.notice--audio{border-left-width:9px;background:#e9f6f1}
-.notice--model{border-left-width:9px;background:#eaf3ff}
-.notice--privacy{border-left-width:9px;background:#fff3e2}
-.notice--a11y{border-left-width:9px;background:#eef2f8}
 .model-note{font-weight:900}
 .model-note[data-blocked=true]{color:#b03a24}
 
@@ -98,8 +86,6 @@
 .record-state[data-state=failed]{background:#f6e3e0}
 
 #preview{width:auto;min-width:8rem;height:2.2rem;margin:0;flex:1 1 8rem}
-.inline-privacy{margin:0 0 .6rem;padding:0;border:0;border-radius:0;background:transparent;font-size:.85rem;font-weight:700;color:#6b5426}
-.inline-privacy code{padding:.05rem .3rem;border-radius:5px;background:#fdf6e4;font-size:.95em;word-break:break-all}
 .submit-row{display:flex;gap:.7rem;flex-wrap:wrap}
 .submit-row .primary{flex:1 1 12rem;margin-top:0}
 .heard{margin-top:.9rem;padding:.85rem 1rem;border:3px dashed var(--ink);border-radius:14px;background:#f6f2ff}

@@ -33,26 +33,7 @@
         </div>
       </fieldset>
 
-      <div class="notice notice--model">
-        <strong>語音辨識目前是「族級」模型</strong>
-        <p>
-          官方語音辨識只提供 <b>16 個族級模型</b>，沒有 42 個方言別模型。你選的方言別用來
-          <b>挑選教材與翻譯判定</b>，辨識時送出的是該族的通用模型。
-          方言之間的詞彙與音韻差異可能造成辨識偏差，<b>這是模型的限制，不代表你念錯</b>。
-        </p>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>錄音會送到第三方服務</strong>
-        <ul>
-          <li>你的錄音會傳送到 <code>ai3.iformosa.com.tw</code>，交由 Formosan AI 辨識後回傳文字。</li>
-          <li>教材音檔與場景圖由 <code>web.klokah.tw</code> 直接播放與載入，播放時該網站會看到你的 IP 位址。</li>
-          <li>本站<b>不儲存</b>你的錄音，也<b>不轉送</b>給上述服務以外的任何對象；沒有帳號、沒有追蹤、沒有 cookie。</li>
-          <li><b>請不要錄入個人資料或不希望外流的內容。</b></li>
-        </ul>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認翻譯與語音辨識服務…</div>
       <button id="start" class="primary" disabled>開始情境</button>
       <p class="alt-route">想先練單句？<a href="/apps/basic-learning/qa-practice/">問答練習</a>；想看圖說話？<a href="/apps/basic-learning/describe-practice/">看圖描述</a>。</p>
@@ -104,7 +85,6 @@
             </div>
             <p id="record-note" class="record-note" role="status"></p>
             <audio id="preview" controls hidden></audio>
-            <p class="inline-privacy">若送出錄音，會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。請勿錄入個資。</p>
             <div class="submit-row">
               <button id="submit" class="primary" disabled>送出這句</button>
               <button id="rerecord" type="button" hidden>重新錄音</button>
