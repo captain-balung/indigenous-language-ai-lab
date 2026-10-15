@@ -30,7 +30,7 @@ const ui = {
   pictureTip: $("#picture-tip"), pictureGrid: $("#picture-grid"),
   record: $("#record"), recordLabel: $("#record-label"), recordTime: $("#record-time"),
   recordState: $("#record-state"), recordStateText: $("#record-state-text"),
-  preview: $("#preview"), heard: $("#heard"),
+  heard: $("#heard"),
   feedback: $("#feedback"),
   prev: $("#prev"), next: $("#next"), confirm: $("#confirm"), endPractice: $("#end-practice"),
   answeredCount: $("#answered-count"),
@@ -659,8 +659,6 @@ function clearRecording({ keepHeard = false } = {}) {
   recorder?.clear();
   recorder = null;
   recordedBlob = null;
-  ui.preview.hidden = true;
-  ui.preview.removeAttribute("src");
   ui.record.classList.remove("is-recording");
   ui.recordLabel.textContent = "開始錄音";
   ui.recordTime.textContent = "00:00";
@@ -681,8 +679,6 @@ ui.record.addEventListener("click", async () => {
         setRecordState("recording");
       } else if (state === "recorded") {
         recordedBlob = blob;
-        ui.preview.src = recorder.objectUrl;
-        ui.preview.hidden = false;
         ui.record.classList.remove("is-recording");
         ui.record.disabled = true;
         ui.recordLabel.textContent = "已錄音";

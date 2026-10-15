@@ -14,7 +14,7 @@ const ui = {
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   image: $("#question-image"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
-  state: $("#record-state"), stateText: $("#record-state-text"), preview: $("#preview"),
+  state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
@@ -23,7 +23,7 @@ let selectedDialect, selectedTheme, shards, records = [], question, deck, roundS
 let translationCodes = new Set(DIALECTS.map((d) => d.code));
 let asrAudit = null;
 let recorder = null, mediaStream = null, chunks = [], startedAt = 0, timer = null;
-let recordedBlob = null, previewUrl = null, lastHeard = null;
+let recordedBlob = null, lastHeard = null;
 
 /* ---------- 狀態列：文字＋圖示，不只靠顏色 ---------- */
 
@@ -277,10 +277,6 @@ function finishRecording() {
   clearInterval(timer);
   mediaStream?.getTracks().forEach((track) => track.stop());
   recordedBlob = new Blob(chunks, { type: recorder.mimeType || "audio/webm" });
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
-  previewUrl = URL.createObjectURL(recordedBlob);
-  ui.preview.src = previewUrl;
-  ui.preview.hidden = false;
   ui.record.classList.remove("is-recording");
   ui.record.disabled = true;
   ui.recordLabel.textContent = "已錄音";
@@ -296,9 +292,6 @@ function clearRecording() {
   recordedBlob = null;
   lastHeard = null;
   chunks = [];
-  if (previewUrl) { URL.revokeObjectURL(previewUrl); previewUrl = null; }
-  ui.preview.hidden = true;
-  ui.preview.removeAttribute("src");
   ui.record.classList.remove("is-recording");
   ui.recordLabel.textContent = "開始錄音";
   ui.time.textContent = "00:00";
@@ -492,7 +485,6 @@ function escapeHtml(value) { const div = document.createElement("div"); div.text
 
 window.addEventListener("pagehide", () => {
   stopAudio();
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
 });
 
 init().catch((error) => {

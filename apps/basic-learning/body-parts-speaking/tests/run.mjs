@@ -152,7 +152,7 @@ assert.ok(app.includes("尚未被判錯"), "辨識失敗不得記為答錯");
 
 /* ---------- §7 隱私：錄音不得落地 ---------- */
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(app), "錄音與答案不得寫入本機儲存");
-assert.ok(app.includes("URL.revokeObjectURL"), "錄音物件 URL 必須釋放");
+assert.ok(!app.includes("id=\"preview\"") && !app.includes("previewUrl"), "停錄自動送出後不得再有錄音預覽播放器");
 const ignore = fs.readFileSync(path.join(root, ".gitignore"), "utf8");
 for (const ext of ["wav", "mp3", "ogg", "flac", "m4a", "webm"]) {
   assert.ok(ignore.includes(`*.${ext}`), `.gitignore 必須擋住 *.${ext}`);

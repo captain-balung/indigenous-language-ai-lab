@@ -62,7 +62,7 @@
 ## 隱私
 
 - 錄音會傳送至 `ai3.iformosa.com.tw` 交由語音辨識服務處理；本站不儲存、不轉送給該服務以外的任何對象。
-- 錄音只存在當次頁面狀態，切題、重錄與離開頁面都會 `URL.revokeObjectURL` 釋放。
+- 錄音只存在當次頁面狀態（Blob），切題與重錄會清掉；不再建立預覽播放用的 object URL。
 - **不寫入 localStorage、sessionStorage、IndexedDB、cookie 或任何遠端儲存**；沒有帳號、沒有追蹤。
 - `.gitignore` 擋住 `*.wav` `*.mp3` `*.ogg` `*.flac` `*.m4a` `*.webm`，錄音不會進版本庫。
 

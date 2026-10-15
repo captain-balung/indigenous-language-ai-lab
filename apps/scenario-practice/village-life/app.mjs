@@ -27,7 +27,7 @@ const ui = {
   replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"), recordNote: $("#record-note"),
   state: $("#record-state"), stateText: $("#record-state-text"),
-  preview: $("#preview"), submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
+  submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
   heard: $("#heard"), result: $("#result"), next: $("#next"),
   report: $("#report"), score: $("#score-line"), list: $("#score-list"), again: $("#again"),
   questOffer: $("#quest-offer"), startQuest: $("#start-quest"), toQuest: $("#to-quest"),
@@ -132,10 +132,6 @@ async function init() {
         ui.record.disabled = true;
         ui.recordLabel.textContent = "已錄音";
         ui.rerecord.hidden = true;
-        if (recorder.objectUrl) {
-          ui.preview.src = recorder.objectUrl;
-          ui.preview.hidden = false;
-        }
         setState("recorded");
         updateSubmit();
         if (mode === "quest") runQuestLine();
@@ -145,8 +141,6 @@ async function init() {
       if (blob) return;
       ui.record.classList.remove("is-recording");
       ui.recordLabel.textContent = "開始錄音";
-      ui.preview.hidden = true;
-      ui.preview.removeAttribute("src");
       ui.rerecord.hidden = true;
       setState("idle");
       updateSubmit();
@@ -601,8 +595,6 @@ function clearRecording() {
   clearRecordNote();
   ui.record.classList.remove("is-recording");
   ui.recordLabel.textContent = "開始錄音";
-  ui.preview.hidden = true;
-  ui.preview.removeAttribute("src");
   ui.rerecord.hidden = true;
   setState("idle");
   updateSubmit();

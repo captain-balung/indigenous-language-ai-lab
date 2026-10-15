@@ -15,7 +15,7 @@ const ui = {
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   promptKind: $("#prompt-kind"), title: $("#question-title"), tip: $("#picture-tip"), pictures: $("#picture-grid"),
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
-  state: $("#record-state"), stateText: $("#record-state-text"), preview: $("#preview"),
+  state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
   retry: $("#retry"), next: $("#next"),
   inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
@@ -62,10 +62,6 @@ async function init() {
         ui.record.disabled = true;
         ui.recordLabel.textContent = "已錄音";
         ui.rerecord.hidden = true;
-        if (recorder.objectUrl) {
-          ui.preview.src = recorder.objectUrl;
-          ui.preview.hidden = false;
-        }
         setState("recorded");
         updateSubmit();
         runFlow();
@@ -73,8 +69,6 @@ async function init() {
       }
       ui.record.classList.remove("is-recording");
       ui.recordLabel.textContent = "開始錄音";
-      ui.preview.hidden = true;
-      ui.preview.removeAttribute("src");
       ui.rerecord.hidden = true;
       setState("idle");
       updateSubmit();

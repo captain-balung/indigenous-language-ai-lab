@@ -40,7 +40,6 @@
 .record-state[data-state=converting],.record-state[data-state=transcribing],.record-state[data-state=slow]{background:#fff1c4}
 .record-state[data-state=failed]{background:#f6e3e0}
 
-#preview{width:100%;margin:.4rem 0 .6rem}
 .submit-row{display:flex;gap:.7rem;flex-wrap:wrap}
 .submit-row .primary{flex:1 1 12rem;margin-top:0}
 

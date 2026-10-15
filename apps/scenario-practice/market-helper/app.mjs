@@ -25,7 +25,7 @@ const ui = {
   qtyRow: $("#qty-row"), qty: $("#qty"), qtyDec: $("#qty-dec"), qtyInc: $("#qty-inc"),
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"), recordNote: $("#record-note"),
-  preview: $("#preview"), submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
+  submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
   heard: $("#heard"), result: $("#result"),
   cartPanel: $("#cart-panel"), cartList: $("#cart-list"), cartTotal: $("#cart-total"), checkout: $("#checkout"),
   report: $("#report"), reportHeadline: $("#report-headline"), reportDetail: $("#report-detail"),
@@ -104,10 +104,6 @@ async function init() {
         ui.record.disabled = true;
         ui.recordLabel.textContent = "已錄音";
         ui.rerecord.hidden = true;
-        if (recorder.objectUrl) {
-          ui.preview.src = recorder.objectUrl;
-          ui.preview.hidden = false;
-        }
         setState("recorded");
         updateSubmit();
         runFlow();
@@ -115,8 +111,6 @@ async function init() {
       }
       ui.record.classList.remove("is-recording");
       ui.recordLabel.textContent = "開始錄音";
-      ui.preview.hidden = true;
-      ui.preview.removeAttribute("src");
       ui.rerecord.hidden = true;
       setState("idle");
       updateSubmit();
