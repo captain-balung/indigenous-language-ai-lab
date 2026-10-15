@@ -19,6 +19,7 @@
  */
 
 import { createQuestionDeck } from "../../basic-learning/body-parts-practice/core.mjs";
+import { preferFirstAlt } from "../../shared/prefer-first-alt.mjs";
 
 const LETTERS_ABC = ["A", "B", "C"];
 const QUESTIONS_PER_SECTION = 5;
@@ -192,8 +193,8 @@ function buildTrueFalse(shard, rng) {
         audioUrl: target.audioUrl,
         imagePath: shown.imagePath,
         // 作答階段不得渲染；只有音檔載入失敗或成績單才揭露。
-        indigenousText: target.indigenousText,
-        chineseText: target.chineseText,
+        indigenousText: preferFirstAlt(target.indigenousText),
+        chineseText: preferFirstAlt(target.chineseText),
       },
       options: [
         { key: "O", label: "O（符合）" },
@@ -259,7 +260,7 @@ function buildChoiceOne(shard, rng) {
 }
 
 function joinTurns(item, key) {
-  return item.turns.map((turn) => turn[key]).join(" ／ ");
+  return item.turns.map((turn) => preferFirstAlt(turn[key])).filter(Boolean).join("\n");
 }
 
 // ── 第三部分：選擇題(二) ──────────────────────────────────
@@ -277,15 +278,15 @@ function buildChoiceTwo(shard, rng) {
       key: String(position + 1),
       letter: option.letter,
       audioUrl: option.audioUrl,
-      indigenousText: option.indigenousText,
-      chineseText: option.chineseText,
+      indigenousText: preferFirstAlt(option.indigenousText),
+      chineseText: preferFirstAlt(option.chineseText),
     }));
     return {
       id: `${spec.id}-${index + 1}`,
       sectionId: spec.id,
       no: index + 1,
       scorable: true,
-      prompt: { chineseText: target.chineseText },
+      prompt: { chineseText: preferFirstAlt(target.chineseText) },
       options,
       answerKey: options.find((option) => option.letter === letter).key,
       source: { family: "choiceTwo", classId: item.classId, classNo: item.classNo, order: item.order, letter },
@@ -314,8 +315,8 @@ function buildChoiceThree(shard, rng) {
     const options = shuffle([target, ...distractors], rng).map((item, position) => ({
       key: String(position + 1),
       order: item.order,
-      indigenousText: item.indigenousText,
-      chineseText: item.chineseText,
+      indigenousText: preferFirstAlt(item.indigenousText),
+      chineseText: preferFirstAlt(item.chineseText),
     }));
     return {
       id: `${spec.id}-${index + 1}`,
@@ -326,8 +327,8 @@ function buildChoiceThree(shard, rng) {
       revealOnAudioFailure: false,
       prompt: {
         audioUrl: target.audioUrl,
-        indigenousText: target.indigenousText,
-        chineseText: target.chineseText,
+        indigenousText: preferFirstAlt(target.indigenousText),
+        chineseText: preferFirstAlt(target.chineseText),
       },
       options,
       answerKey: options.find((option) => option.order === target.order).key,
@@ -356,19 +357,22 @@ function buildSentenceReading(shard, rng) {
   }
 
   const picked = drawDistinct(pool, QUESTIONS_PER_SECTION, rng);
-  const questions = picked.map((sentence, index) => ({
-    id: `${spec.id}-${index + 1}`,
-    sectionId: spec.id,
-    no: index + 1,
-    scorable: true,
-    prompt: {
-      indigenousText: sentence.indigenousText,
-      chineseText: sentence.chineseText,
-      referenceAudioUrl: sentence.audioUrl,
-    },
-    expected: sentence.indigenousText,
-    source: { family: "oralReading", classId: sentence.classId, classNo: sentence.classNo, order: sentence.order, letter: sentence.letter },
-  }));
+  const questions = picked.map((sentence, index) => {
+    const indigenousText = preferFirstAlt(sentence.indigenousText);
+    return {
+      id: `${spec.id}-${index + 1}`,
+      sectionId: spec.id,
+      no: index + 1,
+      scorable: true,
+      prompt: {
+        indigenousText,
+        chineseText: preferFirstAlt(sentence.chineseText),
+        referenceAudioUrl: sentence.audioUrl,
+      },
+      expected: indigenousText,
+      source: { family: "oralReading", classId: sentence.classId, classNo: sentence.classNo, order: sentence.order, letter: sentence.letter },
+    };
+  });
 
   return makeSection(spec, questions);
 }
@@ -398,8 +402,8 @@ function buildShortAnswer(shard, rng) {
     scorable: true,
     prompt: {
       audioUrl: question.audioUrl,
-      indigenousText: question.indigenousText,
-      chineseText: question.chineseText,
+      indigenousText: preferFirstAlt(question.indigenousText),
+      chineseText: preferFirstAlt(question.chineseText),
     },
     source: { family: "dialogue", classId: question.classId, classNo: question.classNo, order: question.order, letter: question.letter },
   }));
@@ -422,13 +426,13 @@ function buildPictureTalk(shard, rng) {
     no: 1,
     scorable: true,
     prompt: {
-      tip: item.tip,
+      tip: preferFirstAlt(item.tip),
       // 高中版每題只有 1 張圖；仍用陣列，讓版面與初級的圖格共用同一種資料形狀。
       imageUrls: [item.imageUrl],
     },
     reference: {
-      indigenousText: item.indigenousText,
-      chineseText: item.chineseText,
+      indigenousText: preferFirstAlt(item.indigenousText),
+      chineseText: preferFirstAlt(item.chineseText),
       audioUrl: item.audioUrl,
     },
     source: { family: "pictureTalk", classId: item.classId, classNo: item.classNo, order: item.order },

@@ -7,6 +7,7 @@ import {
   SECTION_SPECS, sectionSpecById, createRng, seedToPaperId, paperIdToSeed,
   pickOne, shuffle, createPaper, flattenPaper,
 } from "../paper.mjs";
+import { preferFirstAlt } from "../../../shared/prefer-first-alt.mjs";
 import { OFFICIAL, SPEAKING_COVERAGE_NOTE, POINT_SCHEME, judgeWordReading, judgeShortAnswerTranslation, scorePictureTalkTranslation, gradePaper } from "../scoring.mjs";
 import { activeSemanticJudge, createHeuristicSemanticJudge, createLlmSemanticJudge } from "../semantic-judge.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, encodeWav, readAsrText, ASR_TARGET_SAMPLE_RATE } from "../../../basic-learning/body-parts-speaking/asr.mjs";
@@ -173,6 +174,9 @@ assert.equal(sectionSpecById("shortAnswer").scorable, true, "簡答題會粗判�
 assert.equal(sectionSpecById("pictureTalk").scorable, true, "看圖說話會給分");
 
 // 出卷器不得偷用全域亂數或時間。
+assert.ok(paperSource.includes("preferFirstAlt"), "題目顯示必須只留斜線前的第一寫法");
+assert.equal(preferFirstAlt("egu / lala bi"), "egu bi");
+assert.equal(preferFirstAlt("他/她的揹簍在哪裡？"), "他的揹簍在哪裡？");
 assert.ok(!/Math\.random/.test(paperCode), "出卷器不得使用 Math.random");
 assert.ok(!/new Date|Date\.now/.test(paperCode), "出卷器不得依賴時間");
 assert.ok(!/\bfetch\s*\(/.test(paperCode), "出卷器不得發網路請求");
@@ -244,6 +248,8 @@ for (const dialectId of sampledDialects) {
     for (const question of wordReading.questions) {
       assert.equal(question.scorable, true);
       assert.equal(question.expected, question.prompt.indigenousText);
+      assert.ok(!/[\/／]/.test(question.expected), "朗讀 expected 不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText ?? ""), "朗讀中文不得含斜線");
       assert.ok(question.prompt.referenceAudioUrl, "教材錄音要留著，但只在結果頁提供");
       assert.equal(question.options, undefined, "朗讀題沒有選項");
       assert.ok(!("answerKey" in question), "朗讀題以逐字稿比對，不用 answerKey");
@@ -260,6 +266,8 @@ for (const dialectId of sampledDialects) {
       assert.ok(!("expected" in question), "開放式題目不得有標準答案欄位");
       assert.ok(question.prompt.audioUrl, "簡答題要播出族語問句");
       assert.ok(question.prompt.chineseText.trim(), "簡答題要有中文問句供語意粗判");
+      assert.ok(!/[\/／]/.test(question.prompt.indigenousText), "簡答題族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText), "簡答題中文不得含斜線");
     }
 
     // ── 看圖說話
@@ -271,11 +279,14 @@ for (const dialectId of sampledDialects) {
       const question = pictureTalk.questions[0];
       assert.equal(question.scorable, true);
       assert.ok(question.prompt.tip.trim());
+      assert.ok(!/[\/／]/.test(question.prompt.tip), "看圖 tip 不得含斜線");
       assert.equal(question.prompt.imageUrls.length, 4);
       for (const imageUrl of question.prompt.imageUrls) {
         assert.match(imageUrl, /^https:\/\/klokah\.tw\/extension\/sp_junior\/graphics_100x100\/pictureTalk\//);
       }
       assert.ok(question.reference.chineseText.trim());
+      assert.ok(!/[\/／]/.test(question.reference.indigenousText ?? ""), "看圖參考句族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.reference.chineseText), "看圖參考句中文不得含斜線");
       assert.ok(question.reference.audioUrl);
       assert.ok(!("answerKey" in question));
       assert.ok(!("expected" in question));

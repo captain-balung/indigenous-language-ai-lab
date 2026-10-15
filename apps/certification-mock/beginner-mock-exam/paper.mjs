@@ -14,6 +14,7 @@
  */
 
 import { createQuestionDeck } from "../../basic-learning/body-parts-practice/core.mjs";
+import { preferFirstAlt } from "../../shared/prefer-first-alt.mjs";
 
 const QUESTIONS_PER_SECTION = 5;
 
@@ -127,19 +128,22 @@ function buildWordReading(shard, rng) {
   }
   const words = drawDistinct(pool, QUESTIONS_PER_SECTION, rng);
 
-  const questions = words.map((word, index) => ({
-    id: `${spec.id}-${index + 1}`,
-    sectionId: spec.id,
-    no: index + 1,
-    scorable: true,
-    prompt: {
-      indigenousText: word.indigenousText,
-      chineseText: word.chineseText,
-      referenceAudioUrl: word.audioUrl,
-    },
-    expected: word.indigenousText,
-    source: { family: "word", classId: word.classId, classNo: word.classNo, order: word.order },
-  }));
+  const questions = words.map((word, index) => {
+    const indigenousText = preferFirstAlt(word.indigenousText);
+    return {
+      id: `${spec.id}-${index + 1}`,
+      sectionId: spec.id,
+      no: index + 1,
+      scorable: true,
+      prompt: {
+        indigenousText,
+        chineseText: preferFirstAlt(word.chineseText),
+        referenceAudioUrl: word.audioUrl,
+      },
+      expected: indigenousText,
+      source: { family: "word", classId: word.classId, classNo: word.classNo, order: word.order },
+    };
+  });
 
   return makeSection(spec, questions);
 }
@@ -169,8 +173,8 @@ function buildShortAnswer(shard, rng) {
     scorable: true,
     prompt: {
       audioUrl: question.audioUrl,
-      indigenousText: question.indigenousText,
-      chineseText: question.chineseText,
+      indigenousText: preferFirstAlt(question.indigenousText),
+      chineseText: preferFirstAlt(question.chineseText),
     },
     source: { family: "dialogue", classId: question.classId, classNo: question.classNo, order: question.order, letter: question.letter },
   }));
@@ -193,12 +197,12 @@ function buildPictureTalk(shard, rng) {
     no: 1,
     scorable: true,
     prompt: {
-      tip: item.tip,
+      tip: preferFirstAlt(item.tip),
       imageUrls: [...item.imageUrls],
     },
     reference: {
-      indigenousText: item.indigenousText,
-      chineseText: item.chineseText,
+      indigenousText: preferFirstAlt(item.indigenousText),
+      chineseText: preferFirstAlt(item.chineseText),
       audioUrl: item.audioUrl,
     },
     source: { family: "pictureTalk", classId: item.classId, classNo: item.classNo, order: item.order },

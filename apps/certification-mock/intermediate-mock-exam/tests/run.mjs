@@ -7,6 +7,7 @@ import {
   SECTION_SPECS, sectionSpecById, createRng, seedToPaperId, paperIdToSeed,
   pickOne, shuffle, createPaper, flattenPaper,
 } from "../paper.mjs";
+import { preferFirstAlt } from "../../../shared/prefer-first-alt.mjs";
 import {
   OFFICIAL, SPEAKING_COVERAGE_NOTE, POINT_SCHEME, SENTENCE_READING_THRESHOLDS,
   judgeSentenceReading, judgeShortAnswerTranslation, scorePictureTalkTranslation, gradePaper,
@@ -193,6 +194,12 @@ for (const spec of SECTION_SPECS) {
 }
 
 // 出卷器不得偷用全域亂數或時間。
+assert.ok(!paperSource.includes('join(" ／ ")') && !paperSource.includes('join(" / ")'), "joinTurns 不得再用斜線串接");
+assert.ok(paperSource.includes("preferFirstAlt"), "題目顯示必須只留斜線前的第一寫法");
+assert.equal(preferFirstAlt("egu / lala bi"), "egu bi");
+assert.equal(preferFirstAlt("Rbagan do egu / lala bi ka paru bgihur."), "Rbagan do egu bi ka paru bgihur.");
+assert.equal(preferFirstAlt("他/她的揹簍在哪裡？"), "他的揹簍在哪裡？");
+assert.equal(preferFirstAlt("溪水也很深(/多/大)。"), "溪水也很深。");
 assert.ok(!/Math\.random/.test(paperCode), "出卷器不得使用 Math.random");
 assert.ok(!/new Date|Date\.now/.test(paperCode), "出卷器不得依賴時間");
 assert.ok(!/\bfetch\s*\(/.test(paperCode), "出卷器不得發網路請求");
@@ -273,6 +280,8 @@ for (const dialectId of sampledDialects) {
       answerKeysSeen.trueFalse.add(question.answerKey);
       assert.ok(["O", "X"].includes(question.answerKey));
       assert.deepEqual(question.options.map((o) => o.key), ["O", "X"]);
+      assert.ok(!/[\/／]/.test(question.prompt.indigenousText ?? ""), "是非題族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText ?? ""), "是非題中文不得含斜線");
       const target = shard.recognize.find((r) => r.audioUrl === question.prompt.audioUrl);
       assert.ok(target, "是非題的音檔必須來自 recognize 題庫");
       if (question.answerKey === "O") {
@@ -297,10 +306,14 @@ for (const dialectId of sampledDialects) {
       const correct = question.options.find((o) => o.key === question.answerKey);
       assert.equal(correct.order, question.source.order, "正解必須是被播出的那一題");
       assert.equal(question.prompt.indigenousText, correct.indigenousText);
+      assert.ok(!/[\/／]/.test(question.prompt.indigenousText), "選擇題(一) 題幹族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText ?? ""), "選擇題(一) 題幹中文不得含斜線");
       for (const option of question.options) {
         const item = shard.choiceOne.find((i) => i.imagePath === option.imagePath);
         assert.ok(item, "每個選項圖片都必須來自 choiceOne 題庫");
         assert.equal(item.classNo, question.source.classNo, "干擾圖必須來自同一個類別");
+        assert.ok(!/[\/／]/.test(option.indigenousText ?? ""), "選擇題(一) 選項族語不得含斜線");
+        assert.ok(!/[\/／]/.test(option.chineseText ?? ""), "選擇題(一) 選項中文不得含斜線");
       }
       assert.ok(question.prompt.audioUrl.includes("/4choiceOne/"));
     }
@@ -312,10 +325,13 @@ for (const dialectId of sampledDialects) {
       answerKeysSeen.choiceTwo.add(question.answerKey);
       assert.equal(question.prompt.audioUrl, undefined, "選擇題(二) 的中文是文字，沒有音檔");
       assert.ok(question.prompt.chineseText.trim(), "選擇題(二) 必須有中文題幹");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText), "選擇題(二) 題幹不得含斜線");
       assert.equal(question.options.length, 3);
       for (const option of question.options) {
         assert.ok(option.audioUrl, "選擇題(二) 的每個族語選項都要有音檔");
         assert.equal(option.imagePath, undefined, "選擇題(二) 不該有圖片");
+        assert.ok(!/[\/／]/.test(option.indigenousText ?? ""), "選擇題(二) 選項族語不得含斜線");
+        assert.ok(!/[\/／]/.test(option.chineseText ?? ""), "選擇題(二) 選項中文不得含斜線");
       }
       const correct = question.options.find((o) => o.key === question.answerKey);
       assert.equal(correct.chineseText, question.prompt.chineseText, "正解的中文必須就是題幹");
@@ -335,10 +351,15 @@ for (const dialectId of sampledDialects) {
       const correct = question.options.find((o) => o.key === question.answerKey);
       assert.equal(correct.order, question.source.order, "正解必須是被播出的那一題");
       assert.equal(question.prompt.indigenousText, correct.indigenousText);
+      assert.ok(!/[\/／]/.test(question.prompt.indigenousText), "選擇題(三) 題幹族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText ?? ""), "選擇題(三) 題幹中文不得含斜線");
       for (const option of question.options) {
-        const record = shard.choiceThree.find((r) => r.indigenousText === option.indigenousText);
+        const record = shard.choiceThree.find((r) => preferFirstAlt(r.indigenousText) === option.indigenousText
+          && r.classNo === question.source.classNo);
         assert.ok(record, "每個拼寫選項都必須來自 choiceThree 題庫");
         assert.equal(record.classNo, question.source.classNo, "干擾句必須來自同一個類別");
+        assert.ok(!/[\/／]/.test(option.indigenousText ?? ""), "選擇題(三) 選項族語不得含斜線");
+        assert.ok(!/[\/／]/.test(option.chineseText ?? ""), "選擇題(三) 選項中文不得含斜線");
       }
       // 這一節不得走「音檔失敗就揭露族語文字」的降級——文字就是答案。
       assert.equal(question.revealOnAudioFailure, false);
@@ -358,6 +379,8 @@ for (const dialectId of sampledDialects) {
     for (const question of sentenceReading.questions) {
       assert.equal(question.scorable, true);
       assert.equal(question.expected, question.prompt.indigenousText);
+      assert.ok(!/[\/／]/.test(question.expected), "朗讀 expected 不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText ?? ""), "朗讀中文不得含斜線");
       assert.ok(question.prompt.referenceAudioUrl.includes("/8oralReading/"), "教材錄音要留著，但只在作答後提供");
       assert.equal(question.options, undefined, "朗讀題沒有選項");
       assert.ok(!("answerKey" in question), "朗讀題以逐字稿比對，不用 answerKey");
@@ -376,6 +399,8 @@ for (const dialectId of sampledDialects) {
       assert.ok(!("expected" in question), "開放式題目不得有標準答案欄位");
       assert.ok(question.prompt.audioUrl, "問答題要播出族語問句");
       assert.ok(question.prompt.chineseText.trim(), "問答題要有中文問句供語意粗判");
+      assert.ok(!/[\/／]/.test(question.prompt.indigenousText), "問答題族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.prompt.chineseText), "問答題中文不得含斜線");
     }
 
     // ── 看圖表達
@@ -387,11 +412,14 @@ for (const dialectId of sampledDialects) {
       const question = pictureTalk.questions[0];
       assert.equal(question.scorable, true);
       assert.ok(question.prompt.tip.trim());
+      assert.ok(!/[\/／]/.test(question.prompt.tip), "看圖 tip 不得含斜線");
       assert.equal(question.prompt.imageUrls.length, 1, "高中版每題只有一張圖");
       for (const imageUrl of question.prompt.imageUrls) {
         assert.match(imageUrl, /^https:\/\/klokah\.tw\/extension\/sp_senior\/graphics_100x100\/pictureTalk\//);
       }
       assert.ok(question.reference.chineseText.trim());
+      assert.ok(!/[\/／]/.test(question.reference.indigenousText ?? ""), "看圖參考句族語不得含斜線");
+      assert.ok(!/[\/／]/.test(question.reference.chineseText), "看圖參考句中文不得含斜線");
       assert.ok(question.reference.audioUrl);
       assert.ok(!("answerKey" in question));
       assert.ok(!("expected" in question));
