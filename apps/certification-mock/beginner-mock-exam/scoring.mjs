@@ -11,7 +11,7 @@
  *      不是 mismatched。音檔載不出來 → notScored，不是答錯。
  */
 
-import { exactMatch } from "../../basic-learning/body-parts-practice/core.mjs";
+import { normalizeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
 
 /** 官方及格標準原文，僅供對照，本站不據此推測結果。 */
 export const OFFICIAL = {
@@ -37,7 +37,7 @@ export const POINT_SCHEME = {
 };
 
 export const SPEAKING_COVERAGE_NOTE =
-  "本站的口說涵蓋 單詞朗讀（每題 2 分）、簡答題（每題 4 分）與 看圖說話（0–10 分）。簡答與看圖說話為語音辨識→中文翻譯後的機器粗判，非正式測驗評分。";
+  "本站的口說涵蓋 單詞朗讀（每題 2 分）、簡答題（每題 4 分）與 看圖說話（0–10 分）。";
 
 /** 看圖說話給分上限（0–10）。 */
 export const PICTURE_TALK_MAX_POINTS = POINT_SCHEME.pictureTalk.max;
@@ -62,7 +62,9 @@ export const LISTENING_MAX_POINTS = POINT_SCHEME.listening.perQuestion;
 export function judgeWordReading(transcript, expected) {
   if (typeof transcript !== "string" || !transcript.trim()) return "undetermined";
   if (typeof expected !== "string" || !expected.trim()) return "undetermined";
-  return exactMatch(transcript, expected) ? "matched" : "mismatched";
+  return normalizeAnswer(transcript).toLowerCase() === normalizeAnswer(expected).toLowerCase()
+    ? "matched"
+    : "mismatched";
 }
 
 function chineseOnly(text) {

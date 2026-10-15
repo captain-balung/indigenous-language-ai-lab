@@ -11,7 +11,7 @@ import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-pa
 import { createSingleFlight } from "../../basic-learning/body-parts-practice/core.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
 import { createPaper, flattenPaper, randomSeed, paperIdToSeed } from "./paper.mjs";
-import { gradePaper, PICTURE_TALK_MAX_POINTS, SHORT_ANSWER_MAX_POINTS, SENTENCE_READING_MAX_POINTS, LISTENING_MAX_POINTS } from "./scoring.mjs";
+import { gradePaper, PICTURE_TALK_MAX_POINTS } from "./scoring.mjs";
 import { activeSemanticJudge } from "./semantic-judge.mjs";
 import { supportsRecording, createRecorder, convertToAsrWav, transcribe, translateToZh, fetchLiveAsrDialects } from "./recorder.mjs";
 
@@ -42,6 +42,8 @@ const ui = {
 const DATA_ROOT = "/data/klokah-senior";
 const REPLAY_GAP_MS = 800;
 const AUDIO_STALL_MS = 15_000;
+/** 聽力點選後先讓選中樣式可見，再進下一題。 */
+const SELECT_ADVANCE_MS = 480;
 
 const LISTENING_LEGENDS = {
   trueFalse: "聽到的句子與圖片相符嗎？",
@@ -65,6 +67,7 @@ let index = 0;
 let responses = {};
 let recorder = null;
 let recordedBlob = null;
+let pendingSelectAdvance = null;
 
 /* ══════════ STEP 1：語別與服務狀態 ══════════ */
 
@@ -223,7 +226,7 @@ function playTwice(url, options = {}) {
       return;
     }
     cleanup();
-    setAudioState("idle", "播放完畢，可以再聽一次");
+    setAudioState("idle", "播放完畢（已播兩遍）");
     settle();
   };
   const onPlaying = () => {
@@ -259,6 +262,8 @@ function handleAudioFailure() {
   response.audioFailed = true;
   revealFallbackText(question);
   updateConfirmButton();
+  // 無法改以文字作答的聽力題：沒有可點選項，直接標記不計分並前進。
+  if (question.revealOnAudioFailure === false) confirmCurrent();
 }
 
 // 音檔載不出來時揭露族語文字，讓題目還是答得下去；這一題同時被標成不計分。
@@ -277,11 +282,10 @@ function revealFallbackText(question) {
   ui.promptFallback.hidden = false;
 }
 
-function markPromptReplayReady(question) {
-  const response = (responses[question.id] ??= {});
-  response.canReplay = true;
+function markPromptPlayDone(question) {
   if (flat[index]?.question.id !== question.id) return;
   syncPromptPlayButtons(question);
+  setAudioState("idle", "播放完畢（已播兩遍）");
 }
 
 ui.play.addEventListener("click", () => {
@@ -292,12 +296,8 @@ ui.play.addEventListener("click", () => {
   response.playedInitial = true;
   ui.play.disabled = true;
   ui.replay.hidden = true;
-  playTwice(url, { onComplete: () => markPromptReplayReady(question) });
-});
-ui.replay.addEventListener("click", () => {
-  const { question } = flat[index];
-  if (!responses[question.id]?.canReplay) return;
-  if (question.prompt.audioUrl) playTwice(question.prompt.audioUrl);
+  // 正式測驗每題只播兩遍：一次「播放兩遍」後不可再聽。
+  playTwice(url, { onComplete: () => markPromptPlayDone(question) });
 });
 
 /* ══════════ 渲染題目 ══════════ */
@@ -310,18 +310,23 @@ function syncPromptPlayButtons(question) {
   const hasAudio = Boolean(question.prompt.audioUrl);
   ui.play.hidden = !hasAudio;
   ui.audioState.hidden = !hasAudio;
-  if (!hasAudio) {
-    ui.replay.hidden = true;
-    return;
-  }
+  // 作答中不提供「再聽一次」：每題題幹音檔只播兩遍。
+  ui.replay.hidden = true;
+  ui.replay.disabled = true;
+  if (!hasAudio) return;
   const started = responses[question.id]?.playedInitial === true;
-  const canReplay = responses[question.id]?.canReplay === true;
   ui.play.disabled = started;
-  ui.replay.hidden = !canReplay;
-  ui.replay.disabled = !canReplay;
+}
+
+function clearPendingSelectAdvance() {
+  if (pendingSelectAdvance) {
+    clearTimeout(pendingSelectAdvance);
+    pendingSelectAdvance = null;
+  }
 }
 
 function renderQuestion() {
+  clearPendingSelectAdvance();
   clearAudio();
   clearRecording({ keepHeard: false });
 
@@ -333,6 +338,8 @@ function renderQuestion() {
   ui.sectionTitle.textContent = section.title;
   ui.instruction.textContent = section.instruction;
   ui.adaptation.textContent = section.adaptationNote;
+  ui.adaptation.hidden = !section.adaptationNote?.trim();
+
   ui.progress.textContent = `${partLabel} ${section.title.replace(/^.*：/, "")} ${question.no} / ${section.questions.length}　·　全卷 ${index + 1} / ${paper.totalQuestions}`;
   ui.questionTitle.textContent = `第 ${index + 1} 題`;
 
@@ -347,7 +354,7 @@ function renderQuestion() {
   syncPromptPlayButtons(question);
   if (question.prompt.audioUrl) {
     const response = responses[question.id] ?? {};
-    setAudioState("idle", response.canReplay ? "可以再聽一次" : "尚未播放");
+    setAudioState("idle", response.playedInitial ? "播放完畢（已播兩遍）" : "尚未播放");
   }
 
   // 之前就已經確定音檔壞掉的題目，回頭時要保留那個狀態。
@@ -393,21 +400,20 @@ function renderListening(section, question) {
   ui.optionsLegend.textContent = LISTENING_LEGENDS[section.id];
 
   const chosen = responses[question.id]?.choice ?? responses[question.id]?.draftChoice ?? null;
-  const locked = isConfirmed(question.id);
+  // 聽力可回頭改選；已確認的題仍顯示先前選項，但不鎖死。
   const cards = question.options.map((option) => {
     const id = `opt-${question.id}-${option.key}`;
     const checked = chosen === option.key ? " checked" : "";
-    const disabled = locked ? " disabled" : "";
     if (layout === "binary") {
       return `<div class="option option--binary">
-        <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}${disabled}>
+        <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}>
         <label for="${id}">${escapeHtml(option.label)}</label>
       </div>`;
     }
     if (layout === "text") {
       // 這一節的族語拼寫必須在作答前顯示——選項就是題目。
       return `<div class="option option--text">
-        <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}${disabled}>
+        <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}>
         <label for="${id}">
           <span class="option-key">選項 ${escapeHtml(option.key)}</span>
           <span class="option-ab">${escapeHtml(option.indigenousText)}</span>
@@ -415,10 +421,12 @@ function renderListening(section, question) {
       </div>`;
     }
     if (layout === "audio") {
+      const optionPlayed = responses[question.id]?.optionPlayed?.[option.key] === true;
+      const playDisabled = optionPlayed ? " disabled" : "";
       return `<div class="option option--audio">
-        <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}${disabled}>
+        <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}>
         <label for="${id}">選項 ${escapeHtml(option.key)}</label>
-        <button type="button" class="option-play" data-audio="${escapeHtml(option.audioUrl)}">▶ 播放選項 ${escapeHtml(option.key)}</button>
+        <button type="button" class="option-play" data-option-key="${escapeHtml(option.key)}" data-audio="${escapeHtml(option.audioUrl)}"${playDisabled}>▶ 播放選項 ${escapeHtml(option.key)}（兩遍）</button>
       </div>`;
     }
     return `<div class="option option--image">
@@ -426,7 +434,7 @@ function renderListening(section, question) {
         <img src="${DATA_ROOT}/${escapeHtml(option.imagePath)}" alt="">
         <span class="option-key">圖片 ${escapeHtml(option.key)}</span>
       </label>
-      <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}${disabled}>
+      <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}>
     </div>`;
   }).join("");
 
@@ -435,16 +443,37 @@ function renderListening(section, question) {
 
   ui.options.querySelectorAll('input[name="answer"]').forEach((input) => {
     input.addEventListener("change", () => {
-      if (isConfirmed(question.id)) return;
       const response = (responses[question.id] ??= {});
       response.draftChoice = input.value;
-      updateConfirmButton();
-      updateAnsweredCount();
+      if (isConfirmed(question.id)) {
+        // 上一題回頭改選：只更新紀錄，不自動跳下一題。
+        response.choice = input.value;
+        updateAnsweredCount();
+        return;
+      }
+      // 先鎖住選項，讓 :checked 樣式明顯可見，再送出並進下一題。
+      ui.options.querySelectorAll('input[name="answer"]').forEach((el) => { el.disabled = true; });
+      clearPendingSelectAdvance();
+      const questionId = question.id;
+      const delay = reduced() ? 0 : SELECT_ADVANCE_MS;
+      pendingSelectAdvance = setTimeout(() => {
+        pendingSelectAdvance = null;
+        if (flat[index]?.question.id !== questionId) return;
+        confirmCurrent();
+      }, delay);
     });
   });
-  // 播放鈕在 label 外面，點它不會選中該選項。
+  // 播放鈕在 label 外面，點它不會選中該選項；每個選項音檔也只播兩遍一次。
   ui.options.querySelectorAll(".option-play").forEach((button) => {
-    button.addEventListener("click", () => playTwice(button.dataset.audio));
+    button.addEventListener("click", () => {
+      const key = button.dataset.optionKey;
+      const response = (responses[question.id] ??= {});
+      response.optionPlayed ??= {};
+      if (response.optionPlayed[key]) return;
+      response.optionPlayed[key] = true;
+      button.disabled = true;
+      playTwice(button.dataset.audio);
+    });
   });
 }
 
@@ -498,23 +527,10 @@ function advanceAfterConfirm() {
 
 function updateConfirmButton() {
   if (!flat[index]) { ui.confirm.disabled = true; ui.confirm.hidden = true; return; }
-  const { section, question } = flat[index];
-  // 口說：停錄即自動送出，確定鈕只留給聽力。
-  ui.confirm.hidden = section.part === "speaking";
-  if (section.part === "speaking") {
-    ui.confirm.disabled = true;
-    return;
-  }
-  if (isConfirmed(question.id)) {
-    ui.confirm.disabled = true;
-    ui.confirm.textContent = "已確定";
-    return;
-  }
-  ui.confirm.textContent = "確定";
-  const response = responses[question.id] ?? {};
-  ui.confirm.disabled = response.draftChoice == null && response.choice == null && !response.audioFailed;
+  // 聽力點選即送、口說停錄即送，確定鈕一律隱藏。
+  ui.confirm.hidden = true;
+  ui.confirm.disabled = true;
 }
-
 function updateAnsweredCount() {
   const listeningIds = paper.listening.flatMap((section) => section.questions.map((q) => q.id));
   const speakingTotal = paper.speaking.reduce((sum, section) => sum + section.questions.length, 0);
@@ -546,7 +562,6 @@ function confirmListening(section, question) {
   if (response.draftChoice == null && response.choice == null && !response.audioFailed) return;
   if (response.choice == null && response.draftChoice != null) response.choice = response.draftChoice;
   response.confirmed = true;
-  ui.options.querySelectorAll('input[name="answer"]').forEach((input) => { input.disabled = true; });
   updateConfirmButton();
   updateAnsweredCount();
   advanceAfterConfirm();
@@ -736,6 +751,45 @@ ui.record.addEventListener("click", async () => {
 
 /* ══════════ 成績單 ══════════ */
 
+/** 聽力答題紀錄：列出全部選項，在選項上標正解／你的作答。 */
+function renderListeningReviewOptions(entry) {
+  const options = entry.options ?? [];
+  if (!options.length) return "";
+  const rows = options.map((option) => {
+    const isAnswer = option.key === entry.answerKey;
+    const isYours = entry.yourKey != null && option.key === entry.yourKey;
+    let mark = "";
+    let state = "neutral";
+    if (isAnswer && isYours) {
+      mark = "正解 · 你的作答";
+      state = "correct";
+    } else if (isAnswer) {
+      mark = "正解";
+      state = "correct";
+    } else if (isYours) {
+      mark = "你的作答";
+      state = "wrong";
+    }
+    let body = "";
+    if (option.label) body = escapeHtml(option.label);
+    else if (option.imagePath) {
+      body = `<img src="${DATA_ROOT}/${escapeHtml(option.imagePath)}" alt=""><span class="review-option-key">圖片 ${escapeHtml(option.key)}</span>`;
+    } else if (option.indigenousText) {
+      body = `<span class="review-option-key">選項 ${escapeHtml(option.key)}</span><span class="ab">${escapeHtml(option.indigenousText)}</span>`;
+    } else if (option.audioUrl) {
+      body = `<span class="review-option-key">選項 ${escapeHtml(option.key)}</span>`;
+    } else {
+      body = escapeHtml(option.key);
+    }
+    return `<li class="review-option" data-state="${state}">
+      <div class="review-option-body">${body}</div>
+      ${mark ? `<span class="review-option-mark">${mark}</span>` : ""}
+      ${option.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(option.audioUrl)}">▶ 播放</button>` : ""}
+    </li>`;
+  }).join("");
+  return `<ul class="review-options">${rows}</ul>`;
+}
+
 function showReport() {
   clearAudio();
   clearRecording();
@@ -752,57 +806,37 @@ function showReport() {
 
   const practice = report.practice;
   ui.scoreSummary.innerHTML = `
-    <div class="score-line">
+    <div class="score-total">
       <strong>本次練習得分</strong>
       <p class="score-big">${practice.total} / ${practice.totalMax}</p>
       <p class="score-note">口說 ${practice.speaking} / ${practice.speakingMax}　·　聽力 ${practice.listening} / ${practice.listeningMax}</p>
-      <p class="score-note">${escapeHtml(report.official.disclaimer)}</p>
     </div>
-    <div class="score-line">
-      <strong>口說 · 單句朗讀（每題 0–${SENTENCE_READING_MAX_POINTS} 分，共 ${sentence.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${sentence.pointsSum} / ${sentence.maxPointsSum}</p>
-      <p class="score-note">幾乎完全重疊 ${sentence.matched} 題　·　部分重疊 ${sentence.partial} 題　·　重疊很少 ${sentence.mismatched} 題　·　無法判定 ${sentence.undetermined} 題　·　未作答 ${sentence.skipped} 題</p>
-      <p class="score-note">分數只反映系統聽到的內容與教材拼寫的詞語重疊程度，不代表你念錯。</p>
-    </div>
-    <div class="score-line">
-      <strong>口說 · 問答題（每題 ${SHORT_ANSWER_MAX_POINTS} 分，共 ${short.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${short.pointsSum} / ${short.maxPointsSum}</p>
-      <p class="score-note">合理 ${short.reasonable} 題　·　不太合理 ${short.unreasonable} 題　·　無法判定 ${short.undetermined} 題　·　未作答 ${short.skipped} 題</p>
-      <p class="score-note">「不太合理」只是機器粗判，不代表正式測驗評分。</p>
-    </div>
-    <div class="score-line">
-      <strong>口說 · 看圖表達（共 ${picture.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${picture.pointsSum} / ${picture.maxPointsSum}</p>
-      <p class="score-note">已評分 ${picture.scoredCount} 題　·　無法判定 ${picture.undetermined} 題　·　未作答 ${picture.skipped} 題</p>
-      <p class="score-note">${escapeHtml(report.speaking.coverageNote)}</p>
-    </div>
-    <div class="score-line">
-      <strong>聽力（每題 ${LISTENING_MAX_POINTS} 分，共 ${listening.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${listening.pointsSum} / ${listening.maxPointsSum}</p>
-      <p class="score-note">答對 ${listening.correct} / ${listening.total} 題${accuracy === null
-        ? ""
-        : `　·　正確率 ${accuracy}%（以已作答且可計分的 ${listening.scoredDenominator} 題為分母）`}</p>
-      <p class="score-note">答錯 ${listening.wrong} 題　·　未作答 ${listening.unanswered} 題　·　音檔失敗不計分 ${listening.notScored} 題</p>
-    </div>`;
+    <ul class="score-breakdown">
+      <li><span>口說 · 單句朗讀</span><strong>${sentence.pointsSum} / ${sentence.maxPointsSum}</strong></li>
+      <li><span>口說 · 問答題</span><strong>${short.pointsSum} / ${short.maxPointsSum}</strong></li>
+      <li><span>口說 · 看圖表達</span><strong>${picture.pointsSum} / ${picture.maxPointsSum}</strong></li>
+      <li>
+        <span>聽力${accuracy === null ? "" : `（正確率 ${accuracy}%）`}</span>
+        <strong>${listening.pointsSum} / ${listening.maxPointsSum}</strong>
+      </li>
+    </ul>`;
 
   const statusLabel = {
     correct: "答對", wrong: "答錯", unanswered: "未作答", notScored: "音檔失敗·不計分",
     matched: "與教材拼寫幾乎完全重疊", partial: "與教材拼寫部分重疊", mismatched: "與教材拼寫重疊很少",
     undetermined: "無法判定", skipped: "未作答",
-    transcribed: "已錄下", scored: "已評分", reasonable: "回答看起來合理", unreasonable: "回答看起來不太合理",
+    transcribed: "已錄下", scored: "已評分", reasonable: "合理", unreasonable: "不合理",
   };
 
   const listeningBlocks = listening.bySection.map((section) => {
-    const items = section.review.map((entry) => {
-      const yours = entry.yourKey ?? "—";
-      return `<div class="review-item" data-status="${entry.status}">
+    const items = section.review.map((entry) => `
+      <div class="review-item" data-status="${entry.status}">
         <h4>第 ${entry.no} 題　${statusLabel[entry.status]}　·　${entry.points} / ${entry.maxPoints} 分</h4>
-        <p>你的作答：${escapeHtml(yours)}　·　正解：${escapeHtml(entry.answerKey)}</p>
         ${entry.prompt.indigenousText ? `<p class="ab">${escapeHtml(entry.prompt.indigenousText)}</p>` : ""}
         ${entry.prompt.chineseText ? `<p class="zh">${escapeHtml(entry.prompt.chineseText)}</p>` : ""}
+        ${renderListeningReviewOptions(entry)}
         ${entry.prompt.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.prompt.audioUrl)}">▶ 再聽一次</button>` : ""}
-      </div>`;
-    }).join("");
+      </div>`).join("");
     return `<h3 class="review-section">${escapeHtml(section.title)}（${section.pointsSum} / ${section.maxPointsSum} 分　·　答對 ${section.correct} / ${section.total}）</h3>${items}`;
   }).join("");
 
@@ -810,11 +844,8 @@ function showReport() {
     <div class="review-item" data-status="${entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
       <p class="ab">教材拼寫：${escapeHtml(entry.expected)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
-      <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
+      <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       ${entry.ratio == null ? "" : `<p>詞語重疊程度：${Math.round(entry.ratio * 100)}%</p>`}
-      <p class="score-note">${entry.status === "undetermined" || entry.status === "skipped"
-        ? "你的作答尚未被判錯。"
-        : "分數只反映系統聽到的內容與教材拼寫的詞語重疊程度。重疊低可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"}</p>
       ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材錄音</button>` : ""}
     </div>`).join("");
 
@@ -822,10 +853,9 @@ function showReport() {
     <div class="review-item" data-status="${entry.status === "reasonable" ? "matched" : entry.status === "unreasonable" ? "mismatched" : entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
       <p class="ab">問句：${escapeHtml(entry.question)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
-      <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
+      <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      <p class="score-note">這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分。</p>
       ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 再聽問句</button>` : ""}
     </div>`).join("");
 
@@ -833,11 +863,10 @@ function showReport() {
     <div class="review-item" data-status="${entry.status === "scored" ? "matched" : entry.status}">
       <h4>第 ${entry.no} 題　${entry.status === "scored" ? `分數 ${entry.points} / ${entry.maxPoints}` : statusLabel[entry.status]}</h4>
       <p>中文提示：${escapeHtml(entry.tip)}</p>
-      <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
+      <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       <p>教材參考答案：${escapeHtml(entry.referenceChinese)}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      <p class="score-note">這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分。</p>
       ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材範例</button>` : ""}
     </div>`).join("");
 

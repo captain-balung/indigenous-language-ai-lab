@@ -37,7 +37,7 @@ export const POINT_SCHEME = {
 };
 
 export const SPEAKING_COVERAGE_NOTE =
-  "本站的口說涵蓋 單句朗讀（每題 0–3 分，依詞語重疊程度）、問答題（每題 3 分）與 看圖表達（0–10 分）。問答題與看圖表達為語音辨識→中文翻譯後的機器粗判，非正式測驗評分。";
+  "本站的口說涵蓋 單句朗讀（每題 0–3 分）、問答題（每題 3 分）與 看圖表達（0–10 分）。";
 
 /** 看圖表達給分上限（0–10）。 */
 export const PICTURE_TALK_MAX_POINTS = POINT_SCHEME.pictureTalk.max;

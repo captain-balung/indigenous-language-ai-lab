@@ -184,19 +184,13 @@ assert.equal(sectionSpecById("choiceThree").instruction,
 // 官方頁面寫的是「第四部份」（份），不是「第四部分」。
 assert.equal(sectionSpecById("choiceThree").title, "第四部份：選擇題(三)");
 
-// 聽力說明是官方原文，口說說明是本站措辭——兩者必須分得出來。
+// 聽力說明是官方原文；口說 instructionSource 標 site。作答畫面不放改編說明。
 for (const spec of SECTION_SPECS) {
   assert.ok(["official", "site"].includes(spec.instructionSource), `${spec.id} 缺少 instructionSource`);
   assert.equal(spec.instructionSource, spec.part === "listening" ? "official" : "site",
     `${spec.id} 的說明來源標記不對：聽力才有官方原文`);
-  assert.ok(spec.adaptationNote.trim(), `${spec.id} 缺少改編說明`);
+  assert.equal(spec.adaptationNote.trim(), "", `${spec.id} 不得再顯示改編說明`);
 }
-for (const id of ["sentenceReading", "shortAnswer", "pictureTalk"]) {
-  assert.ok(sectionSpecById(id).adaptationNote.includes("本站措辭"),
-    `${id} 必須說明作答說明是本站措辭而非官方原文`);
-}
-assert.ok(sectionSpecById("choiceThree").adaptationNote.includes("不是洩題"),
-  "選擇題(三) 必須說明族語選項先顯示是題型使然");
 
 // 出卷器不得偷用全域亂數或時間。
 assert.ok(!/Math\.random/.test(paperCode), "出卷器不得使用 Math.random");
@@ -429,7 +423,7 @@ assert.equal(OFFICIAL.quote,
 assert.ok(SPEAKING_COVERAGE_NOTE.includes("看圖表達"), "必須說明看圖表達已涵蓋");
 assert.ok(SPEAKING_COVERAGE_NOTE.includes("0–10"), "必須說明看圖表達滿分 10 分");
 assert.ok(SPEAKING_COVERAGE_NOTE.includes("每題 3 分"), "必須說明問答題每題 3 分");
-assert.ok(SPEAKING_COVERAGE_NOTE.includes("詞語重疊程度"), "必須說明單句朗讀依重疊程度給分");
+assert.ok(!/LLM|規則粗判|機器粗判|機器評分|非正式測驗/.test(SPEAKING_COVERAGE_NOTE), "涵蓋說明不得提評分方式");
 assert.equal(POINT_SCHEME.sentenceReading.max, 15);
 assert.equal(POINT_SCHEME.shortAnswer.max, 15);
 assert.equal(POINT_SCHEME.pictureTalk.max, 10);
@@ -758,7 +752,15 @@ assert.ok(/<section id="quiz"[^>]*\shidden/.test(page), "作答區初始必須�
 assert.ok(/<section id="report"[^>]*\shidden/.test(page), "成績單初始必須隱藏");
 
 // 練習導向：確定後不即時顯示對錯，整卷結束才進結果頁。
-assert.ok(page.includes('id="confirm"'), "必須有確定按鈕");
+assert.ok(page.includes('id="confirm"'), "必須有確定按鈕節點（隱藏，供口說／程式共用 confirmCurrent）");
+assert.ok(/SELECT_ADVANCE_MS[\s\S]*?confirmCurrent\(\)/.test(appCode), "聽力選項須先顯示選中樣式再送出");
+assert.ok(appCode.includes("SELECT_ADVANCE_MS"), "必須有點選後再進下一題的延遲");
+assert.ok(!appCode.includes("canReplay"), "作答中不得開放題幹無限再聽");
+assert.ok(/optionPlayed[\s\S]*?playTwice/.test(appCode), "選項音檔必須限制只播兩遍一次");
+assert.ok(/isConfirmed\(question\.id\)[\s\S]*?response\.choice = input\.value/.test(appCode), "已作答聽力題回頭改選必須更新 choice");
+assert.ok(!/const locked = isConfirmed/.test(appCode), "聽力選項不得因已確認而 disabled");
+assert.ok(/ui\.confirm\.hidden = true/.test(appCode), "確定鈕必須隱藏");
+assert.ok(/revealOnAudioFailure === false[\s\S]*?confirmCurrent\(\)/.test(appCode), "無法作答的音檔失敗必須自動前進");
 assert.ok(page.includes('id="review-list"'), "結果頁必須有答題紀錄區");
 assert.ok(page.includes('id="end-practice"'), "必須有結束練習按鈕");
 assert.ok(!page.includes('id="finish"'), "不得有交卷按鈕");
@@ -832,9 +834,14 @@ for (const forbidden of ["你念錯", "發音錯誤", "發音不正確", "念錯
   assert.ok(!withoutNegations(page).includes(forbidden), `不得出現「${forbidden}」這種斷言發音的措辭`);
   assert.ok(!withoutNegations(scoringSource).includes(forbidden), `不得出現「${forbidden}」這種斷言發音的措辭`);
 }
-assert.ok(appSource.includes("這不代表你念錯"), "重疊低時必須說明這不代表念錯");
-assert.ok(appSource.includes("系統聽到的"), "必須顯示系統聽到的內容");
-assert.ok(appSource.includes("尚未被判錯"), "辨識失敗時必須說明尚未被判錯");
+assert.ok(appSource.includes("辨識："), "必須顯示辨識內容");
+assert.ok(appSource.includes("renderListeningReviewOptions"), "聽力成績單必須列出全部選項");
+assert.ok(appSource.includes("正解"), "聽力選項必須標記正解");
+assert.ok(!appSource.includes("你的作答："), "聽力成績單不得再用單行你的作答／正解");
+assert.ok(!appSource.includes("系統聽到"), "結果頁不得出現「系統聽到」");
+assert.ok(!appSource.includes("練習用機器評分"), "結果頁不得顯示機器評分免責");
+assert.ok(!appSource.includes("機器粗判"), "結果頁不得提機器粗判");
+assert.ok(!appSource.includes("不太合理"), "結果頁不得強調「不太合理」免責措辭");
 // 單句朗讀的措辭只描述重疊程度，不描述對錯。
 assert.ok(appSource.includes("詞語重疊程度"), "單句朗讀必須以「詞語重疊程度」描述結果");
 for (const forbidden of ["念得正確", "朗讀正確", "朗讀錯誤"]) {

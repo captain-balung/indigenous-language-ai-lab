@@ -167,8 +167,7 @@ assert.ok(SECTION_SPECS.every((spec) => spec.part === "speaking"), "本站只出
 
 assert.ok(sectionSpecById("pictureTalk").instruction.includes("四個圖片"));
 for (const spec of SECTION_SPECS) {
-  assert.ok(spec.adaptationNote.trim(), `${spec.id} 缺少改編說明`);
-  assert.ok(spec.adaptationNote.includes("整卷結束"), `${spec.id} 必須說明整卷結束才顯示結果`);
+  assert.equal(spec.adaptationNote.trim(), "", `${spec.id} 口說不得再顯示改編／評分方式說明`);
 }
 assert.equal(sectionSpecById("shortAnswer").scorable, true, "簡答題會粗判是否合理");
 assert.equal(sectionSpecById("pictureTalk").scorable, true, "看圖說話會給分");
@@ -292,6 +291,7 @@ assert.equal(OFFICIAL.quote, "聽力成績須達45分以上，口說成績須達
 assert.ok(SPEAKING_COVERAGE_NOTE.includes("看圖說話"), "必須說明看圖說話已涵蓋");
 assert.ok(SPEAKING_COVERAGE_NOTE.includes("0–10"), "必須說明看圖說話滿分 10 分");
 assert.ok(SPEAKING_COVERAGE_NOTE.includes("每題 4 分"), "必須說明簡答題每題 4 分");
+assert.ok(!/LLM|規則粗判|機器粗判|機器評分|非正式測驗/.test(SPEAKING_COVERAGE_NOTE), "涵蓋說明不得提評分方式");
 assert.equal(POINT_SCHEME.wordReading.max, 10);
 assert.equal(POINT_SCHEME.shortAnswer.max, 20);
 assert.equal(POINT_SCHEME.pictureTalk.max, 10);
@@ -329,6 +329,8 @@ const pictureQuestions = samplePaper.speaking[2].questions;
 assert.equal(judgeWordReading("wacu", "wacu"), "matched");
 assert.equal(judgeWordReading("  wacu  ", "wacu"), "matched", "前後空白不影響");
 assert.equal(judgeWordReading("luma’", "luma'"), "matched", "彎引號與直引號視為相同");
+assert.equal(judgeWordReading("Wacu", "wacu"), "matched", "大小寫視為相同");
+assert.equal(judgeWordReading("wacu", "Wacu"), "matched", "大小寫視為相同");
 assert.equal(judgeWordReading("ayam", "wacu"), "mismatched");
 assert.equal(judgeWordReading(null, "wacu"), "undetermined", "辨識失敗不得判成念錯");
 assert.equal(judgeWordReading("", "wacu"), "undetermined");
@@ -541,6 +543,9 @@ assert.ok(!page.includes(">交卷<"), "文案不得出現交卷");
 assert.ok(appSource.includes("confirmed"), "確定後必須標記 confirmed");
 assert.ok(appSource.includes("advanceAfterConfirm"), "確定後必須自動前進或進結果頁");
 assert.ok(appSource.includes("activeSemanticJudge"), "簡答／看圖說話必須走語意評分介面");
+assert.ok(!appSource.includes("練習用機器評分"), "結果頁不得顯示機器評分免責");
+assert.ok(!appSource.includes("規則粗判"), "結果頁不得提規則粗判");
+assert.ok(!appSource.includes("機器粗判"), "結果頁不得提機器粗判");
 assert.ok(!appSource.includes("showListeningFeedback"), "作答過程不得呼叫即時聽力回饋");
 assert.ok(!appSource.includes("showSpeakingFeedback"), "作答過程不得呼叫即時口說回饋");
 assert.ok(/state === "recorded"[\s\S]*?confirmCurrent\(\)/.test(appCode), "口說停錄後必須自動送出");
@@ -603,7 +608,8 @@ for (const forbidden of ["你念錯", "發音錯誤", "發音不正確", "念錯
   assert.ok(!withoutNegations(page).includes(forbidden), `不得出現「${forbidden}」這種斷言發音的措辭`);
 }
 assert.ok(appSource.includes("這不代表你念錯"), "不相符時必須說明這不代表念錯");
-assert.ok(appSource.includes("系統聽到的"), "必須顯示系統聽到的內容");
+assert.ok(appSource.includes("辨識："), "必須顯示辨識內容");
+assert.ok(!appSource.includes("系統聽到"), "結果頁不得出現「系統聽到」");
 assert.ok(appSource.includes("尚未被判錯"), "辨識失敗時必須說明尚未被判錯");
 
 // 無帳號、無追蹤、無 cookie。

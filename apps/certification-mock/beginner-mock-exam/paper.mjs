@@ -25,7 +25,7 @@ export const SECTION_SPECS = [
     no: 1,
     title: "口說第一部分：單詞朗讀",
     instruction: "請看著螢幕上的族語詞彙念出來。",
-    adaptationNote: "停止錄音後會自動用語音辨識記錄你念的內容；整卷結束才顯示與教材拼寫的比對結果（相符得 2 分）。辨識結果只是參考，不代表正式測驗的評分。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -34,7 +34,7 @@ export const SECTION_SPECS = [
     no: 2,
     title: "口說第二部分：簡答題",
     instruction: "請聽電腦播出一個族語問句，然後用族語回答。",
-    adaptationNote: "停止錄音後會自動：語音辨識→翻成中文→粗判是否合理（合理得 4 分）；整卷結束才顯示結果。這是練習用的機器判斷，不是正式測驗評分。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -43,7 +43,7 @@ export const SECTION_SPECS = [
     no: 3,
     title: "口說第三部分：看圖說話",
     instruction: "請根據下面四個圖片及中文提示，選擇一個、兩個、三個或全部的圖片，以族語簡短地說說你的想法。作答時間約2 分鐘。",
-    adaptationNote: "停止錄音後會自動：語音辨識→翻成中文→對照教材參考答案給 0–10 分；整卷結束才顯示結果。這是練習用的機器粗評，不是正式測驗評分。",
+    adaptationNote: "",
     scorable: true,
   },
 ];

@@ -10,7 +10,7 @@ import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-pa
 import { createSingleFlight } from "../../basic-learning/body-parts-practice/core.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
 import { createPaper, flattenPaper, randomSeed, paperIdToSeed } from "./paper.mjs";
-import { gradePaper, PICTURE_TALK_MAX_POINTS, SHORT_ANSWER_MAX_POINTS, WORD_READING_MAX_POINTS } from "./scoring.mjs";
+import { gradePaper, PICTURE_TALK_MAX_POINTS } from "./scoring.mjs";
 import { activeSemanticJudge } from "./semantic-judge.mjs";
 import { supportsRecording, createRecorder, convertToAsrWav, transcribe, translateToZh, fetchLiveAsrDialects } from "./recorder.mjs";
 
@@ -317,6 +317,8 @@ function renderQuestion() {
   ui.sectionTitle.textContent = section.title;
   ui.instruction.textContent = section.instruction;
   ui.adaptation.textContent = section.adaptationNote;
+  ui.adaptation.hidden = !section.adaptationNote?.trim();
+
   ui.progress.textContent = `${partLabel} ${section.title.replace(/^.*：/, "")} ${question.no} / ${section.questions.length}　·　全卷 ${index + 1} / ${paper.totalQuestions}`;
   ui.questionTitle.textContent = `第 ${index + 1} 題`;
 
@@ -719,45 +721,31 @@ function showReport() {
 
   const practice = report.practice;
   ui.scoreSummary.innerHTML = `
-    <div class="score-line">
+    <div class="score-total">
       <strong>本次練習得分</strong>
       <p class="score-big">${practice.total} / ${practice.totalMax}</p>
       <p class="score-note">口說 ${practice.speaking} / ${practice.speakingMax}</p>
-      <p class="score-note">${escapeHtml(report.official.disclaimer)}</p>
     </div>
-    <div class="score-line">
-      <strong>口說 · 單詞朗讀（每題 ${WORD_READING_MAX_POINTS} 分，共 ${word.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${word.pointsSum} / ${word.maxPointsSum}</p>
-      <p class="score-note">相符 ${word.matched} 題　·　不相符 ${word.mismatched} 題　·　無法判定 ${word.undetermined} 題　·　未作答 ${word.skipped} 題</p>
-      <p class="score-note">「不相符」只表示系統聽到的內容與教材拼寫不同，不代表你念錯。</p>
-    </div>
-    <div class="score-line">
-      <strong>口說 · 簡答題（每題 ${SHORT_ANSWER_MAX_POINTS} 分，共 ${short.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${short.pointsSum} / ${short.maxPointsSum}</p>
-      <p class="score-note">合理 ${short.reasonable} 題　·　不太合理 ${short.unreasonable} 題　·　無法判定 ${short.undetermined} 題　·　未作答 ${short.skipped} 題</p>
-      <p class="score-note">「不太合理」只是機器粗判，不代表正式測驗評分。</p>
-    </div>
-    <div class="score-line">
-      <strong>口說 · 看圖說話（共 ${picture.maxPointsSum} 分）</strong>
-      <p class="score-big">分數 ${picture.pointsSum} / ${picture.maxPointsSum}</p>
-      <p class="score-note">已評分 ${picture.scoredCount} 題　·　無法判定 ${picture.undetermined} 題　·　未作答 ${picture.skipped} 題</p>
-      <p class="score-note">${escapeHtml(report.speaking.coverageNote)}</p>
-    </div>`;
+    <ul class="score-breakdown">
+      <li><span>口說 · 單詞朗讀</span><strong>${word.pointsSum} / ${word.maxPointsSum}</strong></li>
+      <li><span>口說 · 簡答題</span><strong>${short.pointsSum} / ${short.maxPointsSum}</strong></li>
+      <li><span>口說 · 看圖說話</span><strong>${picture.pointsSum} / ${picture.maxPointsSum}</strong></li>
+    </ul>`;
 
   const statusLabel = {
     matched: "與教材拼寫相符", mismatched: "與教材拼寫不相符", undetermined: "無法判定", skipped: "未作答",
-    scored: "已評分", reasonable: "回答看起來合理", unreasonable: "回答看起來不太合理",
+    scored: "已評分", reasonable: "合理", unreasonable: "不合理",
   };
 
   const wordBlock = `<h3 class="review-section">口說第一部分：單詞朗讀（${word.pointsSum} / ${word.maxPointsSum} 分）</h3>` + word.review.map((entry) => `
     <div class="review-item" data-status="${entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}　·　${entry.points} / ${entry.maxPoints} 分</h4>
       <p class="ab">教材拼寫：${escapeHtml(entry.expected)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
-      <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
+      <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p class="score-note">${entry.status === "matched"
         ? "與本題的教材拼寫相符。"
         : entry.status === "mismatched"
-          ? "系統聽到的內容與本題的教材拼寫不相符。可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"
+          ? "辨識結果與本題的教材拼寫不相符。可能是念法不同，也可能是族級模型的辨識偏差；這不代表你念錯。"
           : "你的作答尚未被判錯。"}</p>
       ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材錄音</button>` : ""}
     </div>`).join("");
@@ -766,10 +754,9 @@ function showReport() {
     <div class="review-item" data-status="${entry.status === "reasonable" ? "matched" : entry.status === "unreasonable" ? "mismatched" : entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
       <p class="ab">問句：${escapeHtml(entry.question)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
-      <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
+      <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      <p class="score-note">這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分。</p>
       ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 再聽問句</button>` : ""}
     </div>`).join("");
 
@@ -777,11 +764,10 @@ function showReport() {
     <div class="review-item" data-status="${entry.status === "scored" ? "matched" : entry.status}">
       <h4>第 ${entry.no} 題　${entry.status === "scored" ? `分數 ${entry.points} / ${entry.maxPoints}` : statusLabel[entry.status]}</h4>
       <p>中文提示：${escapeHtml(entry.tip)}</p>
-      <p>系統聽到：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
+      <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       <p>教材參考答案：${escapeHtml(entry.referenceChinese)}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
-      <p class="score-note">這是練習用機器評分（LLM 或規則粗判），不代表正式測驗評分。</p>
       ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 聽教材範例</button>` : ""}
     </div>`).join("");
 
