@@ -22,7 +22,8 @@ assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes('id="theme-grid"'));
 assert.ok(page.includes("選擇練習主題"));
 assert.ok(page.includes("播放音檔"));
-assert.ok(page.includes("可以先聽教材再念，也可以直接錄音。"));
+assert.ok(page.includes("停止錄音後會自動送出辨識"));
+assert.ok(app.includes("finishRecording") && /function finishRecording\(\)[\s\S]*?runFlow\(\)/.test(app), "停錄後必須自動送出");
 
 /* ---------- §4 族 → ASR 族級模型：16 對 16，寫死不推導 ---------- */
 const models = Object.entries(ASR_MODELS);

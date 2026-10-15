@@ -543,6 +543,8 @@ assert.ok(appSource.includes("advanceAfterConfirm"), "確定後必須自動前�
 assert.ok(appSource.includes("activeSemanticJudge"), "簡答／看圖說話必須走語意評分介面");
 assert.ok(!appSource.includes("showListeningFeedback"), "作答過程不得呼叫即時聽力回饋");
 assert.ok(!appSource.includes("showSpeakingFeedback"), "作答過程不得呼叫即時口說回饋");
+assert.ok(/state === "recorded"[\s\S]*?confirmCurrent\(\)/.test(appCode), "口說停錄後必須自動送出");
+assert.ok(appSource.includes("停止錄音後會自動"), "口說文案必須說明停錄自動送出");
 assert.ok(page.includes("CC BY-NC-SA 4.0"), "頁尾必須有教材授權標示");
 assert.ok(page.includes("web.klokah.tw"), "頁尾必須標示原著作網址");
 

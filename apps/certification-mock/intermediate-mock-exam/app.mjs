@@ -461,7 +461,7 @@ function renderSpeaking(section, question) {
     ui.speakWord.hidden = false;
     ui.speakGloss.textContent = `（${question.prompt.chineseText}）`;
     ui.speakGloss.hidden = false;
-    ui.speakHint.textContent = "請按下錄音，照著上面的族語句子念出來。按「確定」後會辨識並記錄；整卷結束才顯示評分。教材錄音在結果頁提供。";
+    ui.speakHint.textContent = "請按下錄音，照著上面的族語句子念出來。停止錄音後會自動辨識並記錄；整卷結束才顯示評分。教材錄音在結果頁提供。";
   } else if (section.id === "pictureTalk") {
     ui.speakWord.hidden = true;
     ui.speakGloss.hidden = true;
@@ -475,11 +475,11 @@ function renderSpeaking(section, question) {
         <img src="${escapeHtml(imageUrl)}" alt="" referrerpolicy="no-referrer">
         <figcaption>${pictures.length > 1 ? `圖片 ${index + 1}` : "本題圖片"}</figcaption>
       </figure>`).join("");
-    ui.speakHint.textContent = "看著圖與中文提示，用族語簡短說說你的想法。按「確定」後會辨識並記錄；整卷結束才顯示評分（滿分 10 分）。";
+    ui.speakHint.textContent = "看著圖與中文提示，用族語簡短說說你的想法。停止錄音後會自動辨識並記錄；整卷結束才顯示評分（滿分 10 分）。";
   } else {
     ui.speakWord.hidden = true;
     ui.speakGloss.hidden = true;
-    ui.speakHint.textContent = "請先播放族語問句，再按下錄音，用族語回答。按「確定」後會辨識並記錄；整卷結束才顯示評分。";
+    ui.speakHint.textContent = "請先播放族語問句，再按下錄音，用族語回答。停止錄音後會自動辨識並記錄；整卷結束才顯示評分。";
   }
 
   const canRecord = supportsRecording() && !isConfirmed(question.id);
@@ -497,20 +497,22 @@ function advanceAfterConfirm() {
 }
 
 function updateConfirmButton() {
-  if (!flat[index]) { ui.confirm.disabled = true; return; }
+  if (!flat[index]) { ui.confirm.disabled = true; ui.confirm.hidden = true; return; }
   const { section, question } = flat[index];
+  // 口說：停錄即自動送出，確定鈕只留給聽力。
+  ui.confirm.hidden = section.part === "speaking";
+  if (section.part === "speaking") {
+    ui.confirm.disabled = true;
+    return;
+  }
   if (isConfirmed(question.id)) {
     ui.confirm.disabled = true;
     ui.confirm.textContent = "已確定";
     return;
   }
   ui.confirm.textContent = "確定";
-  if (section.part === "listening") {
-    const response = responses[question.id] ?? {};
-    ui.confirm.disabled = response.draftChoice == null && response.choice == null && !response.audioFailed;
-    return;
-  }
-  ui.confirm.disabled = !recordedBlob;
+  const response = responses[question.id] ?? {};
+  ui.confirm.disabled = response.draftChoice == null && response.choice == null && !response.audioFailed;
 }
 
 function updateAnsweredCount() {
@@ -670,7 +672,7 @@ ui.restart.addEventListener("click", () => {
 const RECORD_STATES = {
   idle: ["●", "尚未錄音"],
   recording: ["■", "錄音中，再按一次停止"],
-  recorded: ["✓", "已錄音，可以按確定"],
+  recorded: ["✓", "已錄音，正在送出"],
   converting: ["⋯", "轉檔中"],
   transcribing: ["⋯", "辨識中"],
   slow: ["⋯", "還在辨識，請再等一下"],
@@ -701,8 +703,7 @@ ui.record.addEventListener("click", async () => {
   const { question } = flat[index] ?? {};
   if (question && isConfirmed(question.id)) return;
   if (recorder?.recording) { recorder.stop(); return; }
-  // 錄完後主鈕就是「重新錄音」：清掉舊檔再錄，不必另開一顆按鈕。
-  if (recordedBlob) clearRecording();
+  if (recordedBlob) return;
   recorder = createRecorder({
     onState: (state, blob) => {
       if (state === "recording") {
@@ -714,9 +715,11 @@ ui.record.addEventListener("click", async () => {
         ui.preview.src = recorder.objectUrl;
         ui.preview.hidden = false;
         ui.record.classList.remove("is-recording");
-        ui.recordLabel.textContent = "重新錄音";
+        ui.record.disabled = true;
+        ui.recordLabel.textContent = "已錄音";
         setRecordState("recorded");
         updateConfirmButton();
+        confirmCurrent();
       }
     },
     onTick: (seconds) => {

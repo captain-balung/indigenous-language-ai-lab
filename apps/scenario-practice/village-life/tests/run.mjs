@@ -724,6 +724,8 @@ assert.ok(/\.quest-reward\{[^}]*z-index:2/.test(stageStyle), "過關物件要蓋
 assert.ok(appCode.includes("mountInputPanel(ui.questSide)"), "任務關卡要掛上共用的輸入面板");
 assert.ok(appCode.includes("mountInputPanel(ui.sceneBody)"), "回到對話要把輸入面板搬回去");
 assert.ok(appCode.includes('if (mode === "quest") runQuestLine(); else runExchange();'), "送出鈕要分辨對話與任務");
+assert.ok(/state === "recorded"[\s\S]*?runQuestLine\(\)/.test(appCode), "語音停錄後必須自動送出");
+assert.ok(page.includes("語音錄完會自動送出"));
 assert.ok(appCode.includes("questState?.done"), "過關後要收掉輸入");
 
 // ── 兩個階段互相可切換、關卡可挑 ───────────────────────────

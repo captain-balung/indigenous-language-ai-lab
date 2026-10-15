@@ -24,7 +24,7 @@ const ui = {
 const STATES = {
   idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
-  recorded: ["■", "錄音完成，可以送出或重錄"],
+  recorded: ["■", "錄音完成，正在送出"],
   converting: ["◐", "轉檔中…"],
   transcribing: ["◍", "辨識中，請稍候"],
   slow: ["◍", "辨識中，長句需要較久，請不要重新整理"],
@@ -59,14 +59,16 @@ async function init() {
       }
       if (state === "recorded") {
         ui.record.classList.remove("is-recording");
-        ui.recordLabel.textContent = "重新錄音";
-        ui.rerecord.hidden = false;
+        ui.record.disabled = true;
+        ui.recordLabel.textContent = "已錄音";
+        ui.rerecord.hidden = true;
         if (recorder.objectUrl) {
           ui.preview.src = recorder.objectUrl;
           ui.preview.hidden = false;
         }
         setState("recorded");
         updateSubmit();
+        runFlow();
         return;
       }
       ui.record.classList.remove("is-recording");
@@ -144,8 +146,12 @@ function updateModelNote() {
 
 function updateStart() { ui.start.disabled = !selectedDialect || !selectedLevel || !records.length; }
 function updateSubmit() {
-  const ready = inputMode?.mode() === "voice" ? Boolean(recorder?.blob) : Boolean(ui.answer.value.trim());
-  ui.submit.disabled = pending || !ready;
+  // 語音：停錄即自動送出，送出鈕只服務打字模式。
+  if (inputMode?.mode() === "voice") {
+    ui.submit.disabled = true;
+    return;
+  }
+  ui.submit.disabled = pending || !ui.answer.value.trim();
 }
 
 ui.ethnicity.addEventListener("change", () => {

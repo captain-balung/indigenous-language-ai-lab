@@ -30,7 +30,7 @@ let recordedBlob = null, previewUrl = null, lastHeard = null;
 const STATES = {
   idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
-  recorded: ["■", "錄音完成，可以送出或重錄"],
+  recorded: ["■", "錄音完成，正在送出"],
   converting: ["◐", "轉檔中…"],
   transcribing: ["◍", "辨識中，請稍候"],
   slow: ["◍", "辨識中，長句需要較久，請不要重新整理"],
@@ -282,10 +282,12 @@ function finishRecording() {
   ui.preview.src = previewUrl;
   ui.preview.hidden = false;
   ui.record.classList.remove("is-recording");
-  ui.recordLabel.textContent = "重新錄音";
-  ui.submit.disabled = false;
-  ui.rerecord.hidden = false;
+  ui.record.disabled = true;
+  ui.recordLabel.textContent = "已錄音";
+  ui.submit.disabled = true;
+  ui.rerecord.hidden = true;
   setState("recorded");
+  runFlow();
 }
 
 ui.rerecord.addEventListener("click", () => { clearRecording(); ui.record.focus(); });

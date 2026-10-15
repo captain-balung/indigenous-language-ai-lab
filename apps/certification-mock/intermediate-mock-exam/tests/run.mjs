@@ -770,6 +770,8 @@ assert.ok(!appSource.includes("showListeningFeedback"), "作答過程不得呼�
 assert.ok(!appSource.includes("showSpeakingFeedback"), "作答過程不得呼叫即時口說回饋");
 assert.ok(page.includes("全部做完後一次看結果"), "setup 必須說明整卷後才看結果");
 assert.ok(page.includes("初級口說模擬站"), "alt-route 必須連到初級口說模擬站");
+assert.ok(/state === "recorded"[\s\S]*?confirmCurrent\(\)/.test(appCode), "口說停錄後必須自動送出");
+assert.ok(appSource.includes("停止錄音後會自動"), "口說文案必須說明停錄自動送出");
 assert.ok(page.includes("CC BY-NC-SA 4.0"), "頁尾必須有教材授權標示");
 assert.ok(page.includes("web.klokah.tw/extension/sp_senior/"), "頁尾必須標示高中版的原著作網址");
 assert.ok(page.includes(OFFICIAL.quote), "成績單必須引用中級的官方及格標準原文");
