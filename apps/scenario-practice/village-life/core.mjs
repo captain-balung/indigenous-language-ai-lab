@@ -81,13 +81,23 @@ export function respondableRoles(theme) {
   return theme.roles.filter((role) => role.id !== opening);
 }
 
+// 聽力播放清單：整段對話依序播完，不標記「換你說」。
+export function buildPlaylist(shard, themeKey) {
+  const theme = dialogueTheme(shard, themeKey);
+  if (!theme.playable) return { theme, exchanges: [] };
+  return {
+    theme,
+    exchanges: theme.turns.map((turn) => ({ ...turn, mine: false, partnerName: "" }))
+  };
+}
+
 // 學者選的角色決定哪些輪次要開口。回傳的 exchanges 是完整時間線，只是 mine 標記不同。
+// （任務關卡與單元測試仍會用到；對話 STEP 2 已改走 buildPlaylist。）
 export function buildExchanges(shard, themeKey, learnerSpeaker) {
   const theme = dialogueTheme(shard, themeKey);
   if (!theme.playable) return { theme, exchanges: [] };
   if (learnerSpeaker === openingSpeaker(theme)) return { theme, exchanges: [] };
   if (!theme.roles.some((role) => role.id === learnerSpeaker)) return { theme, exchanges: [] };
-  const speakerNames = new Map(theme.turns.map((turn) => [turn.speaker, turn.speakerName]));
   const learnerName = theme.roles.find((role) => role.id === learnerSpeaker)?.name || "";
   return {
     theme,
@@ -212,6 +222,8 @@ export function questPack(shard, themeKey) {
     // 主角畫在場景裡，所以這兩個會是空字串。
     sceneUrl: String(theme?.questSceneUrl ?? ""),
     playerImageUrl: String(theme?.questPlayerImageUrl ?? ""),
+    // 上課用語場景圖桌上印好的藍色名牌文字（官方 .table-card）。
+    deskTags: Array.isArray(theme?.questDeskTags) ? theme.questDeskTags : [],
     quests,
     available: quests.length > 0
   };
@@ -221,14 +233,27 @@ export function questLineFor(quest, targetId) {
   return (quest?.lines ?? []).find((line) => line.targetId === targetId) ?? null;
 }
 
+// 句子沒對上時，那位同學照官方會說 rebound（phase2[target]["0"]：「什麼？」「不知道」），
+// 這裡只負責把資料撈出來；播與顯示在 app 做。
+export function questReboundFor(quest, targetId) {
+  return quest?.rebounds?.[targetId] ?? null;
+}
+
 // 判定跟對話同一套規則：族語去掉標點後相同 → 說對了；系統懂成的意思跟教材中文
 // 相同 → 意思對上；其餘 → 再試試看。
 // 多出一種 wrongTarget：句子本身是對的，但這句只能對另一個人說。
-export function judgeQuestLine(quest, targetId, { answer, translation }) {
+export function judgeQuestLine(quest, targetId, { answer, translation, allowChinese = false }) {
   const line = questLineFor(quest, targetId);
   if (!line) return { verdict: "retry", line: null, rightTargetId: null };
   const mine = indigenousKey(answer);
   if (mine && mine === indigenousKey(line.indigenousText)) return { verdict: "exact", line, rightTargetId: null };
+  // 直接把教材中文那句打進來（打字模式／除錯驗證用）也算過——但只限
+  // debug 開關（?debug_mode）放行，一般學者的輸入不能靠打中文過關，
+  // 也不要讓翻譯系統把這種輸入弄成「不清楚你在問什麼」。
+  if (allowChinese) {
+    const typedChinese = chineseKey(answer);
+    if (typedChinese && typedChinese === chineseKey(line.chineseText)) return { verdict: "exact", line, rightTargetId: null };
+  }
   const heard = chineseKey(translation);
   if (heard && heard === chineseKey(line.chineseText)) return { verdict: "semantic", line, rightTargetId: null };
   // 第 1、2 關兩個對象要說的是同一句，那種情況不存在「說錯人」，不要誤報。
@@ -247,16 +272,16 @@ export function questIsLearned(quest, targetId, state) {
 }
 
 // 兩種過關條件：
-//   nameTags：先問完兩位同學，再把名牌放到對的人桌上（choices 是候選名牌）
+//   nameTags：問出兩位同學的名字——說對那一句、聽到回應，名字就放上對的桌上
+//             （「放名牌」的動作由系統代做，學者只要問到人）
 //   askRightPerson：對指定的人問出指定的那句
-// 這裡只判「整關過了沒」，名牌放對放錯由 placeNameTag 回報。
 export function questIsComplete(quest, state) {
   const goal = quest?.goal;
   if (!goal) return false;
   const learned = state?.learned ?? [];
   const placed = state?.placed ?? {};
   if (goal.kind === "nameTags") {
-    // 還沒問完兩個人就不算過：名牌要從剛才聽到的名字來的。
+    // 兩位都問到、名字也都放上桌了才算過（問到人時就會放，這裡是雙重確認）。
     const everyone = (quest.targets ?? []).every((target) => learned.includes(target.id));
     if (!everyone) return false;
     return Object.entries(goal.answers ?? {}).every(([targetId, name]) => placed[targetId] === name);
@@ -267,36 +292,25 @@ export function questIsComplete(quest, state) {
   return false;
 }
 
-// 名牌放對才會固定下來；放錯不佔位，可以再換。
-// 早期版本放錯也寫進 placed，結果那張錯名牌會把這個位置鎖死、名牌也標成用過，
-// 學習者再也換不掉，整關卡住——放錯要能重來。
-export function placeNameTag(quest, { tag, targetId, state }) {
-  const goal = quest?.goal;
-  const placed = { ...(state?.placed ?? {}) };
-  if (goal?.kind !== "nameTags") return { ok: false, reason: "not-nameTags", placed };
-  if (placed[targetId]) return { ok: false, reason: "locked", placed };
-  if (!goal.choices.includes(tag)) return { ok: false, reason: "unknown", placed };
-  if (placed[targetId] === tag) return { ok: true, reason: "correct", placed };
-  if (tag !== goal.answers[targetId]) return { ok: false, reason: "wrong", placed };
-  placed[targetId] = tag;
-  return { ok: true, reason: "correct", placed };
-}
-
 // 任務進度給 UI 顯示：先問完人，再放名牌；問對象的關卡要說清楚「還沒問到對的人」。
 export function questProgress(quest, state) {
   const goal = quest?.goal;
   const learned = (state?.learned ?? []).filter((id) => (quest?.targets ?? []).some((target) => target.id === id));
   const total = (quest?.targets ?? []).length;
   if (goal?.kind === "nameTags") {
+    // 問到人，名字就會自動放上桌（不用再抓名牌去放）。
     const placedCount = Object.keys(state?.placed ?? {}).length;
     if (learned.length < total) return `先問完 ${total} 位同學（${learned.length}/${total}）`;
-    return `把名牌放到對的桌上（${placedCount}/${total}）`;
+    return `同學的名字都放上桌了（${placedCount}/${total}）`;
   }
   if (goal?.kind === "end") return "任務結束";
   // 問對象：問到指定那位才算過，問到別人只是換個人再問。
   if (goal.kind === "askRightPerson") {
     if (learned.includes(goal.targetId)) return "任務完成";
-    return learned.length ? "還沒問到對的人，換一位問問看" : `先問 ${total} 位同學（${learned.length}/${total}）`;
+    // 進度一行用位置說法（questProgress 沒有名字可查）；輸入區標題才用名字。
+    return learned.length
+      ? "還沒問到對的人，換一位問問看"
+      : `先問問${targetLabel(goal.targetId, quest)}的人`;
   }
   // 選東西的關卡：先問人拿線索，再從候選裡挑。picked 開局是 null，不能拿來判斷還沒選。
   if (goal.kind === "select") {
@@ -315,7 +329,7 @@ export function questProgress(quest, state) {
     const got = (state?.taken ?? []).length;
     return `把正確的東西放進籃子（已放 ${got} 樣，要 ${need} 樣）`;
   }
-  if (goal.kind === "click") return "先問問同學，再點場景裡該點的地方";
+  if (goal.kind === "click") return "點場景裡該點的地方";
   if (goal.kind === "selectAndSpeak") {
     if (!state?.picked) return "先問問同學，再選要道謝的人";
     return goal.promptChinese ? `用族語說出「${goal.promptChinese}」` : "用族語說出那句話";
@@ -363,9 +377,9 @@ export function questSceneOptions(quest) {
 export function targetLabel(targetId, quest) {
   const sorted = [...(quest?.targets ?? [])].sort((a, b) => (a.box?.left ?? 0) - (b.box?.left ?? 0));
   const index = sorted.findIndex((item) => item.id === targetId);
-  if (index < 0 || sorted.length < 2) return "那位同學";
+  if (index < 0 || sorted.length < 2) return "那邊";
   const names = sorted.length === 2 ? ["左邊", "右邊"] : ["左邊", "中間", "右邊"];
-  return names[index] ?? "那位同學";
+  return names[index] ?? "那邊";
 }
 
 // 選項是不是被鎖住：官方 condition.lock 指定的那一個，要問對人才能拿。
@@ -431,6 +445,61 @@ export function questHint(quest, state) {
     if (!state?.picked) return "先問問同學，再選要道謝的人";
     return goal.promptChinese ? `用族語說出「${goal.promptChinese}」` : "用族語說出那句話";
   }
-  if (goal.kind === "nameTags") return "問完兩位同學後把名牌放對桌";
+  if (goal.kind === "nameTags") return "問完兩位同學，名字就會放到對的桌上";
   return "問問看同學";
+}
+
+// 輸入區標題：依關卡顯示「點誰、說什麼」，不寫死「換你說」。
+function speakPhraseChinese(quest, targetId) {
+  if (targetId) {
+    const line = questLineFor(quest, targetId);
+    if (line?.chineseText) return String(line.chineseText).trim();
+  }
+  // 還沒點人到時，示範句要拿「這關要問的那位」的句子：借橡皮擦是右邊的同學，
+  // 不能拿第 1 行（左邊借筆那句）來當示範，不然提示會叫錯人。
+  const goalTarget = questLineFor(quest, quest?.goal?.targetId);
+  if (goalTarget?.chineseText) return String(goalTarget.chineseText).trim();
+  const first = (quest?.lines ?? []).find((line) => line?.chineseText);
+  if (first?.chineseText) return String(first.chineseText).trim();
+  return String(quest?.goal?.promptChinese ?? "").trim();
+}
+
+export function questTurnTitle(quest, { targetId = null, state = null, names = null } = {}) {
+  const goal = quest?.goal;
+  if (!goal || goal.kind === "end") return "";
+
+  // 稱呼用位置（左邊／右邊），不寫死「同學」——婚禮、出遊場景不是同學。
+  if (goal.kind === "selectAndSpeak") {
+    // 已選好道謝對象、且沒在問人：引導說出那句道謝話。
+    if (state?.picked && !targetId) {
+      const phrase = goal.promptChinese || "謝謝你的幫忙！";
+      return `說「${phrase}」`;
+    }
+    if (targetId) {
+      const phrase = speakPhraseChinese(quest, targetId);
+      const who = targetLabel(targetId, quest);
+      return phrase ? `對${who}的人說「${phrase}」` : `對${who}的人說話`;
+    }
+    const ask = speakPhraseChinese(quest, null);
+    return ask
+      ? `先點一個人問問「${ask}」，再選要道謝的人`
+      : "先問問場景裡的人，再選要道謝的人";
+  }
+
+  if (targetId) {
+    const phrase = speakPhraseChinese(quest, targetId);
+    // 問到名字的人直接叫名字（對 Muni 說「…」），沒有名字才用位置說法。
+    const who = names?.[targetId] ?? `${targetLabel(targetId, quest)}的人`;
+    return phrase ? `對${who}說「${phrase}」` : `對${who}說話`;
+  }
+
+  const phrase = speakPhraseChinese(quest, null);
+  if (goal.kind === "nameTags") {
+    return phrase ? `先點一個人，再說「${phrase}」` : "先點一個人，再開口問";
+  }
+  if (goal.kind === "askRightPerson") {
+    return phrase ? `先點要問的人，再說「${phrase}」` : "先點要問的人，再開口問";
+  }
+  // select／take／click：先問人拿線索。
+  return phrase ? `先點場景裡的人，再說「${phrase}」` : "先點場景裡的人，再開口問";
 }

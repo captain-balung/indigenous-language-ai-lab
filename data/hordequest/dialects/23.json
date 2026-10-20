@@ -208,7 +208,19 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/62621/869624.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "ika kemeljang!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869612.mp3"
+            },
+            "target-2": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869610.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-lesson-quest-2",
@@ -293,7 +305,19 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/62622/869633.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "ika kemeljang!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869612.mp3"
+            },
+            "target-2": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869610.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-lesson-quest-3",
@@ -378,7 +402,19 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/62623/869650.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "ika kemeljang!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869612.mp3"
+            },
+            "target-2": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869610.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-lesson-quest-4",
@@ -461,7 +497,19 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/62624/869662.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "ika kemeljang!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869612.mp3"
+            },
+            "target-2": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869610.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-lesson-quest-5",
@@ -545,7 +593,57 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/62625/869670.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "ika kemeljang!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869612.mp3"
+            },
+            "target-2": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/62619/869610.mp3"
+            }
+          }
+        }
+      ],
+      "questDeskTags": [
+        {
+          "text": "Pucunug",
+          "top": 57.14,
+          "left": 25.5,
+          "tone": "blue"
+        },
+        {
+          "text": "Tjuku",
+          "top": 57.14,
+          "left": 34,
+          "tone": "brown"
+        },
+        {
+          "text": "Tjaqaciljay",
+          "top": 57.14,
+          "left": 60.8,
+          "tone": "blue"
+        },
+        {
+          "text": "sulja",
+          "top": 57.14,
+          "left": 69,
+          "tone": "brown"
+        },
+        {
+          "text": "sagaran",
+          "top": 87.14,
+          "left": 49,
+          "tone": "blue"
+        },
+        {
+          "text": "savan",
+          "top": 87.14,
+          "left": 56,
+          "tone": "brown"
         }
       ]
     },
@@ -798,7 +896,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/66216/924208.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924192.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924193.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924194.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-find-quest-2",
@@ -983,7 +1098,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/66217/924216.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924192.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924193.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924194.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-find-quest-3",
@@ -1167,7 +1299,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/66218/924224.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924192.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924193.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924194.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-find-quest-4",
@@ -1306,7 +1455,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/66219/924232.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924192.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924193.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924194.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-find-quest-5",
@@ -1330,7 +1496,24 @@
           "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/find/6.png",
           "props": [],
           "targets": [],
-          "lines": []
+          "lines": [],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924192.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924193.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/66214/924194.mp3"
+            }
+          }
         }
       ]
     },
@@ -1688,7 +1871,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/65564/917749.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917734.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917735.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917736.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-outside-quest-2",
@@ -1826,7 +2026,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/65565/917763.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917734.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917735.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917736.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-outside-quest-3",
@@ -1970,7 +2187,24 @@
                 "audioUrl": "https://web.klokah.tw/text/sound/65566/917771.mp3"
               }
             }
-          ]
+          ],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917734.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917735.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917736.mp3"
+            }
+          }
         },
         {
           "id": "23-hordequest-outside-quest-4",
@@ -1994,7 +2228,24 @@
           "sceneUrl": "https://web.klokah.tw/interact/hordequest/img/outside/5.png",
           "props": [],
           "targets": [],
-          "lines": []
+          "lines": [],
+          "rebounds": {
+            "target-1": {
+              "indigenousText": "anema?",
+              "chineseText": "什麼？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917734.mp3"
+            },
+            "target-2": {
+              "indigenousText": "ika sepualan?",
+              "chineseText": "聽不懂？",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917735.mp3"
+            },
+            "target-3": {
+              "indigenousText": "ika kemeljan!",
+              "chineseText": "不知道！",
+              "audioUrl": "https://web.klokah.tw/text/sound/65562/917736.mp3"
+            }
+          }
         }
       ]
     }

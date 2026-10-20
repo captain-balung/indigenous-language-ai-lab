@@ -5,12 +5,11 @@ import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
 import {
-  THEME_ORDER, addToBasket, buildExchanges, dialogueTheme, judgeBasket, judgeQuestLine,
-  judgeQuestPick, judgeQuestPrompt, judgeReply, mineCount, placeNameTag, questHint,
+  THEME_ORDER, addToBasket, buildPlaylist, dialogueTheme, judgeBasket,
+  judgeQuestLine, judgeQuestPick, judgeQuestPrompt, questHint, questReboundFor,
   questIsComplete, questIsLearned, questLineFor, questOptionLocked, questOptions, questPack,
-  questProgress, questResultDetail, questResultHeadline, questSceneOptions, respondableRoles,
-  targetLabel,
-  resultDetail, resultHeadline, tally, tallyLabel
+  questProgress, questResultDetail, questResultHeadline, questSceneOptions, questTurnTitle,
+  targetLabel
 } from "./core.mjs";
 import { wireInputMode } from "../../shared/input-mode.mjs";
 
@@ -19,12 +18,12 @@ const ui = {
   setup: $("#setup"), ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
   modelNote: $("#model-note"), scene: $("#scene"), label: $("#dialect-label"), progress: $("#progress"),
   backSetup: $("#back-setup"), sceneIntro: $("#scene-intro"), backSetupReport: $("#back-setup-report"),
-  themeGrid: $("#theme-grid"), roleGrid: $("#role-grid"), rolePicker: $("#role-picker"),
+  themeGrid: $("#theme-grid"),
   sceneBody: $("#scene-body"), sceneSide: $(".scene-side"),
   background: $("#scene-background"), avatar: $("#scene-avatar"), speaker: $("#turn-speaker"),
   zh: $("#scene-title"), indigenous: $("#partner-text"),
   myTurn: $("#my-turn"), turnTitle: $("#turn-title"), answer: $("#answer"),
-  replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
+  player: $("#player"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"), recordNote: $("#record-note"),
   state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
@@ -36,13 +35,18 @@ const ui = {
   questBack: $("#quest-back"), questProgress: $("#quest-progress"),
   questHint: $("#quest-hint"), questHintBox: $("#quest-hint-box"), questHintWords: $("#quest-hint-words"),
   questBody: $("#quest-body"), questSide: $("#quest-side"), questGoal: $("#quest-goal"),
+  questStage: $("#quest-stage"),
   questScene: $("#quest-scene"), questSceneBox: $("#quest-scene-box"), questPlayer: $("#quest-player"),
   questLayers: $("#quest-layers"),
   questReward: $("#quest-reward"), questSpeaker: $("#quest-speaker"),
   questText: $("#quest-text"), questReply: $("#quest-reply"),
-  questTags: $("#quest-tags"), questTagDock: $("#quest-tag-dock"),
+  questTags: $("#quest-tags"), questHeard: $("#quest-heard"),
+  questTagsHelp: null, questTagDock: null,
+  questComplete: $("#quest-complete"),
+  questAutoAsk: $("#quest-autoask"),
   questReplay: $("#quest-replay"), questAudioState: $("#quest-audio-state"),
   questAudio: $("#quest-audio"), questNext: $("#quest-next"),
+  questRightSound: $("#quest-right-sound"), questWrongSound: $("#quest-wrong-sound"),
   inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
 
@@ -75,15 +79,15 @@ const THEME_LABELS = {
   }
 };
 
-let selectedDialect, shard, exchanges = [], index = 0, results = [];
-let themeKey = THEME_ORDER[0], role = null, learnerName = "";
-let pending = false, graded = false, unlocked = false, asrAudit = null, recorder = null, lastHeard = null;
+let selectedDialect, shard, exchanges = [], index = 0;
+let themeKey = THEME_ORDER[0];
+let pending = false, graded = false, asrAudit = null, recorder = null, lastHeard = null;
 // 辨識還沒回來就換句或換關時，舊的那次不能寫進新的畫面。
 let runEpoch = 0;
 // 「dialogue」是 STEP 2 的對話，「quest」是 STEP 4 的任務關卡。兩者共用同一個輸入面板
 // （.scene-side 會被搬到關卡畫面），所以送出、錄音狀態都要知道現在是哪一關。
 let mode = "dialogue";
-let pack = null, quests = [], questIndex = 0, questState = null, questTarget = null, questTag = null, questResults = [];
+let pack = null, quests = [], questIndex = 0, questState = null, questTarget = null, questResults = [];
 // 結果面板是共用的，要記住現在顯示的是哪一階段的結果，「再練一次」才知道要重來哪個。
 let reportKind = "dialogue";
 let inputMode = null;
@@ -134,8 +138,8 @@ async function init() {
         ui.rerecord.hidden = true;
         setState("recorded");
         updateSubmit();
+        // 對話 STEP 2 只播音；錄音送出只服務任務關卡。
         if (mode === "quest") runQuestLine();
-        else runExchange();
         return;
       }
       if (blob) return;
@@ -160,9 +164,8 @@ async function init() {
       else ui.record.focus();
     }
   });
-  // 場景與角色一進來就先畫出來，方言別還沒選也看得到有哪三個場景。
+  // 三個場景一進來就先畫出來，方言別還沒選也看得到。
   renderThemes();
-  renderRoles();
   await verifyServices();
   if (!supportsRecording()) {
     ui.record.disabled = true;
@@ -189,7 +192,7 @@ async function verifyServices() {
   } catch {
     notes.push("翻譯即時清單暫時無法取得，送出時再試");
   }
-  notes.push("說完一句就翻成中文，只顯示意思，不計分");
+  // 不附加「先聽再說／不計分」這類流程說明。
   ui.api.textContent = `● ${notes.join("；")}`;
   ui.api.dataset.state = asrAudit?.consistent ? "ok" : "fallback";
   // 服務檢查可能晚於教材載入回來，這時要讓「已載入幾輪對話」的訊息贏。
@@ -244,7 +247,7 @@ function inputReady() {
 }
 
 function updateSubmit() {
-  // 語音：停錄即自動送出，送出鈕只服務打字模式。
+  // 語音：停錄即自動送出，送出鈕只服務打字模式。對話 STEP 2 不收音，只有任務關卡會用到。
   if (inputMode?.mode() === "voice") {
     ui.submit.hidden = true;
     ui.submit.disabled = true;
@@ -255,7 +258,7 @@ function updateSubmit() {
     ui.submit.disabled = pending || !questReadyToSpeak() || Boolean(questState?.done) || !inputReady();
     return;
   }
-  ui.submit.disabled = pending || graded || !inputReady();
+  ui.submit.disabled = true;
 }
 
 ui.ethnicity.addEventListener("change", () => {
@@ -279,16 +282,6 @@ ui.themeGrid.addEventListener("click", (event) => {
   if (!button) return;
   themeKey = button.dataset.theme;
   renderThemes();
-  renderRoles();
-  rebuildExchanges();
-  updateSceneNote();
-});
-
-ui.roleGrid.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-role]");
-  if (!button) return;
-  role = button.dataset.role;
-  renderRoles();
   rebuildExchanges();
   updateSceneNote();
 });
@@ -300,32 +293,6 @@ function renderThemes() {
     const selected = key === themeKey;
     return `<button type="button" class="theme${selected ? " is-selected" : ""}" data-theme="${key}" aria-pressed="${selected}">
       <strong>${escapeHtml(label.name)}</strong><small>${escapeHtml(label.hint)}</small></button>`;
-  }).join("");
-}
-
-// 角色卡與狀態列只寫你要說幾句。
-// 不判對錯的句子等送出結果與最後總結時再說明，不要在開始前先丟一句細節。
-function roleNote(mine) {
-  return `${mine.length} 句要說`;
-}
-
-// 開場說第一句的角色不開放扮演：開場白前面沒有任何台詞可以接，只會讓人憑空猜一句。
-// 所以永遠由對方先開口；只有這齣有兩個以上可扮演的角色時才需要讓人挑，其餘在狀態列寫明就好。
-function renderRoles() {
-  const theme = dialogueTheme(shard, themeKey);
-  const roles = respondableRoles(theme);
-  if (!roles.some((item) => item.id === role)) role = roles[0]?.id ?? null;
-  if (roles.length < 2) {
-    ui.rolePicker.hidden = true;
-    ui.roleGrid.innerHTML = "";
-    return;
-  }
-  ui.rolePicker.hidden = false;
-  ui.roleGrid.innerHTML = roles.map((item) => {
-    const asLearner = buildExchanges(shard, themeKey, item.id).exchanges.filter((exchange) => exchange.mine);
-    return `<button type="button" class="role${item.id === role ? " is-selected" : ""}" data-role="${escapeHtml(item.id)}" aria-pressed="${item.id === role}">
-      <img src="${escapeHtml(item.imageUrl)}" alt="" aria-hidden="true">
-      <strong>${escapeHtml(item.name)}</strong><small>${escapeHtml(roleNote(asLearner))}</small></button>`;
   }).join("");
 }
 
@@ -341,7 +308,6 @@ async function loadScene() {
     shard = await response.json();
     if (selectedDialect !== dialect) return;
     renderThemes();
-    renderRoles();
     rebuildExchanges();
     updateSceneNote();
   } catch (error) {
@@ -366,9 +332,7 @@ function rebuildExchanges() {
     pack = null;
     quests = [];
   } else {
-    const built = buildExchanges(shard, themeKey, role);
-    exchanges = built.exchanges;
-    learnerName = built.learnerName;
+    exchanges = buildPlaylist(shard, themeKey).exchanges;
     const built2 = questPack(shard, themeKey);
     pack = built2;
     quests = built2.available ? built2.quests : [];
@@ -387,7 +351,6 @@ function updateQuestOffer() {
   ui.questOffer.textContent = `這個場景還有 ${quests.length} 個任務：${THEME_LABELS[themeKey]?.quest ?? ""}`;
 }
 
-// 每句都會比對的時候不必多講一句；只有混著不判對錯的句子時才說明是哪些。
 function updateSceneNote() {
   if (!shard) return;
   const theme = dialogueTheme(shard, themeKey);
@@ -396,16 +359,13 @@ function updateSceneNote() {
     ui.api.dataset.state = "fallback";
     return;
   }
-  const mine = mineCount(exchanges);
-  const who = learnerName ? `你當${learnerName}，` : "";
-  ui.api.textContent = `● ${theme.name}：已載入 ${theme.turns.length} 輪對話；${who}要說 ${mine} 句`;
+  ui.api.textContent = `● ${theme.name}：已載入 ${exchanges.length} 輪對話`;
   ui.api.dataset.state = "ok";
 }
 
 ui.start.addEventListener("click", () => {
   if (!exchanges.length) return;
   index = 0;
-  results = [];
   ui.scene.hidden = false;
   ui.report.hidden = true;
   // 情境一旦開始就把 STEP 1 收起來，這一頁只留對話；要改設定再按「回到設定」。
@@ -416,7 +376,7 @@ ui.start.addEventListener("click", () => {
 });
 
 // STEP 1 與 STEP 2 各自是一個畫面：回到設定時收掉場景、清掉對話進度，
-// 但語言別與已載入的教材留著，改角色或改方言別就能直接重來。
+// 但語言別與已載入的教材留著，改場景或改方言別就能直接重來。
 function showSetup() {
   resetProgress();
   ui.setup.hidden = false;
@@ -434,130 +394,65 @@ ui.backSetupReport.addEventListener("click", showSetup);
 
 function showExchange() {
   runEpoch += 1;
+  // 從任務回來時若對話已聽完（index 等於句數），停在最後一句，不要去讀不存在的句子。
+  if (!exchanges[index] && exchanges.length) index = exchanges.length - 1;
   const exchange = exchanges[index];
-  // 防護：對話走完後 index 會等於句數（報告頁就是這個狀態）。
-  // 萬一從任務按「回到對話」回到這裡，畫面會停在報告頁，
-  // 不會去讀不存在的第 index+1 句、把整個場景弄壞。
-  if (!exchange) { showReport(); return; }
+  if (!exchange) { showSetup(); return; }
   graded = false;
   lastHeard = null;
-  ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name} · ${themeName()} · 你當${learnerName}`;
+  ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name} · ${themeName()}`;
   ui.progress.textContent = `第 ${index + 1} / ${exchanges.length} 句`;
   // 來源有三種寬高比（上課用語 1000×700、另外兩個主題 1000×707），
   // 所以圖載入後用它自己的固有比例，否則 object-fit:contain 會在框內留邊。
   setSceneImage(ui.background, exchange.backgroundUrl ?? "");
   ui.avatar.src = exchange.imageUrl || "";
-  ui.speaker.textContent = exchange.mine ? `${exchange.speakerName}（換你說）` : `${exchange.speakerName}說`;
-  // 換你說的那一句不能先露出中文：那是教材的參考句，先看到等於看到答案。
-  // 只給對方的話看中文與族語，自己該說的那句等送出後才揭曉。
-  ui.zh.textContent = exchange.mine ? "" : exchange.chineseText;
-  ui.zh.hidden = exchange.mine;
-  ui.indigenous.textContent = exchange.mine ? turnHint(exchange) : exchange.indigenousText;
-  ui.myTurn.hidden = !exchange.mine;
-  // 對方說話時右欄是空的，場景就佔滿整欄；有輸入區時才左右並排（兩欄同高）。
-  ui.sceneBody.classList.toggle("scene-body--solo", !exchange.mine);
-  ui.turnTitle.textContent = exchange.kind === "reference" ? "這句是你的名字或來處" : "換你說";
+  ui.speaker.textContent = `${exchange.speakerName}說`;
+  // 顯示當句中文與族語；不收音、不用開口回應。
+  ui.zh.textContent = exchange.chineseText;
+  ui.zh.hidden = false;
+  ui.indigenous.textContent = exchange.indigenousText;
+  ui.indigenous.hidden = false;
+  ui.myTurn.hidden = true;
+  ui.sceneBody.classList.add("scene-body--solo");
   ui.answer.value = "";
   ui.result.hidden = true;
-  ui.next.hidden = true;
   ui.retry.hidden = true;
   clearRecording();
-  clearTimeout(unlockTimer);
-  unlocked = false;
-  prepareAudio(exchange.audioUrl);
-  if (exchange.mine) {
-    const canRecord = supportsRecording() && asrStateFor(selectedDialect.ethnicity).usable;
-    ui.record.disabled = !canRecord;
-    updateSubmit();
-    ui.answer.focus();
-  } else {
-    // 對方的台詞不能按「下一句」跳過：得先讓它自己播完，播完（或播不成）
-    // 才解鎖下一步按鈕，否則使用者會卡在這一句、也不知道要幹嘛。
-    playCurrent();
-  }
-}
-
-// 對方台詞的「下一句」：音檔播完（或播不成）之後才出現。
-let unlockTimer = null;
-
-function unlockPartnerTurn() {
-  if (unlocked) return;
-  unlocked = true;
-  if (exchanges[index]?.mine) return;
+  // 「下一步」一進句就顯示，不必等音檔播完。
+  const last = index + 1 >= exchanges.length;
   ui.next.hidden = false;
-  ui.next.textContent = index + 1 >= exchanges.length ? "看這段結果" : "接下一句 →";
-  ui.next.focus();
-}
-
-// 有些瀏覽器在 ended 不會照順序回來（自動播放被擋、來源中途改變），
-// 所以放一個看門的計時器：時間到就放行，不能讓這一句變成死路。
-function armPartnerUnlock(milliseconds) {
-  clearTimeout(unlockTimer);
-  unlockTimer = setTimeout(() => {
-    if (ui.audioState.dataset.state === "playing") setAudioState("failed", "音檔沒有播完，可以按播放重試");
-    unlockPartnerTurn();
-  }, milliseconds);
+  ui.next.textContent = last ? (quests.length ? "去任務" : "完成") : "下一步";
+  prepareAudio(exchange.audioUrl);
+  playCurrent();
 }
 
 function prepareAudio(url) {
   ui.player.pause();
   ui.player.src = url;
-  setAudioState("idle", "想聽再按播放");
-  ui.replay.disabled = !url;
-}
-
-// 換你說的時候，場景區要說明「現在該做什麼」，但不能說出這句的內容。
-// 參考句只是自我介紹與來處，提示可以講明要說什麼類型；比對句則提示接續對方的話。
-// 開場那一句前面沒有人說過話，寫成「接著X的話」會變成「接著的話」，要另外處理。
-function turnHint(exchange) {
-  if (exchange.kind === "reference") return "用族語說出自己的名字或來處。";
-  if (!exchange.partnerName) return "這是對話的第一句，用族語開口。";
-  return `接著${exchange.partnerName}的話，用族語回應。`;
 }
 
 function playCurrent() {
-  if (!ui.player.src) {
-    setAudioState("failed", "本句沒有音檔");
-    unlockPartnerTurn();
+  if (!ui.player.src) return;
+  try { ui.player.currentTime = 0; } catch { /* 來源還沒準備好時略過 */ }
+  const play = ui.player.play();
+  if (play && typeof play.catch === "function") play.catch(() => {});
+}
+
+ui.next.addEventListener("click", () => {
+  ui.player.pause();
+  index += 1;
+  if (index >= exchanges.length) {
+    if (quests.length) startQuest();
+    else showSetup();
     return;
   }
-  setAudioState("playing", "播放中…");
-  const play = ui.player.play();
-  if (play && typeof play.catch === "function") {
-    play.catch(() => {
-      setAudioState("failed", "無法播放，請再試一次");
-      unlockPartnerTurn();
-    });
-  }
-  // 每句教材錄音都很短，20 秒還沒結束就當它卡住了。
-  armPartnerUnlock(20000);
-}
-
-function setAudioState(state, text) {
-  ui.audioState.dataset.state = state;
-  ui.audioState.textContent = text;
-}
-
-// 已經解鎖之後又按重播，不要把焦點從使用者身上搶回來。
-ui.replay.addEventListener("click", playCurrent);
-ui.player.addEventListener("ended", () => {
-  setAudioState("ended", "播放結束");
-  const shouldFocus = !unlocked;
-  unlockPartnerTurn();
-  if (!shouldFocus) ui.replay.focus();
-});
-ui.player.addEventListener("error", () => {
-  if (!ui.player.src) return;
-  setAudioState("failed", "音檔載入失敗");
-  // 音檔壞掉不能變成死路：仍然讓使用者能往下走。
-  unlockPartnerTurn();
+  showExchange();
 });
 
 ui.record.addEventListener("click", async () => {
-  if (!recorder || graded || pending) return;
+  if (!recorder || graded || pending || mode !== "quest") return;
   if (recorder.recording) { recorder.stop(); return; }
   ui.player.pause();
-  if (ui.audioState.dataset.state === "playing") setAudioState("ended", "已停止播放");
   try {
     await recorder.start();
   } catch (error) {
@@ -580,14 +475,9 @@ function clearRecordNote() {
 
 ui.rerecord.addEventListener("click", () => { clearRecording(); ui.record.focus(); });
 ui.answer.addEventListener("input", updateSubmit);
-// 同一顆送出鈕服務兩個畫面：現在在對話就送對話，現在在任務就送任務那句。
-ui.submit.addEventListener("click", () => { if (mode === "quest") runQuestLine(); else runExchange(); });
-ui.retry.addEventListener("click", () => { if (mode === "quest") runQuestLine(); else runExchange(); });
-ui.next.addEventListener("click", () => {
-  index += 1;
-  if (index >= exchanges.length) showReport();
-  else showExchange();
-});
+// 送出鈕只服務任務關卡（對話 STEP 2 只播音）。
+ui.submit.addEventListener("click", () => { if (mode === "quest") runQuestLine(); });
+ui.retry.addEventListener("click", () => { if (mode === "quest") runQuestLine(); });
 
 function clearRecording() {
   lastHeard = null;
@@ -601,142 +491,8 @@ function clearRecording() {
   updateSubmit();
 }
 
-const runExchange = createSingleFlight(async () => {
-  const exchange = exchanges[index];
-  const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
-  const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
-  const epoch = runEpoch;
-  if (!exchange || pending || graded || (!typed && !useVoice)) return;
-  pending = true;
-  ui.submit.disabled = true;
-  ui.retry.disabled = true;
-  ui.record.disabled = true;
-
-  let indigenous = typed;
-  if (!indigenous) {
-    let wav;
-    setState("converting");
-    try {
-      wav = await convertToAsrWav(recorder.blob);
-    } catch (error) {
-      if (dropped(epoch)) return;
-      setState("failed", "轉檔失敗，沒有送出");
-      showResult("unavailable", `無法把這段錄音轉成辨識需要的格式（${error.message}），因此沒有送出任何資料。`);
-      finish();
-      return;
-    }
-    if (dropped(epoch)) return;
-    setState("transcribing");
-    const slowHint = setTimeout(() => { if (epoch === runEpoch) setState("slow"); }, SLOW_HINT_AFTER_MS);
-    try {
-      indigenous = await transcribe(wav, selectedDialect.ethnicity);
-      lastHeard = indigenous;
-    } catch (error) {
-      clearTimeout(slowHint);
-      if (dropped(epoch)) return;
-      setState("failed", "這次沒有辨識成功");
-      showResult("unavailable", `目前無法辨識（${error.message}），你這句還沒有被判錯。`);
-      ui.retry.hidden = false;
-      finish();
-      return;
-    }
-    clearTimeout(slowHint);
-    if (dropped(epoch)) return;
-  }
-
-  let translation = "";
-  try {
-    translation = await translateToZh(indigenous, selectedDialect.code);
-  } catch (error) {
-    if (dropped(epoch)) return;
-    setState("failed", "這次沒有翻譯成功");
-    showResult("unavailable", `目前無法翻譯（${error.message}），你這句還沒有被判錯。`);
-    ui.retry.hidden = false;
-    finish();
-    return;
-  }
-  if (dropped(epoch)) return;
-
-  // 參考句要說的是自己的名字或來處，跟教材本來就不同，只顯示不判定。
-  const type = exchange.kind === "reference"
-    ? "reference"
-    : judgeReply({ answer: indigenous, translation, exchange });
-  results[index] = type;
-  renderResult(type, { indigenous, translation });
-  finish();
-});
-
-function finish() {
-  pending = false;
-  ui.retry.disabled = false;
-  ui.record.disabled = !(supportsRecording() && selectedDialect && asrStateFor(selectedDialect.ethnicity).usable);
-  updateSubmit();
-}
-
-function renderResult(type, { indigenous, translation }) {
-  const exchange = exchanges[index];
-  ui.result.hidden = false;
-  ui.result.dataset.state = type;
-  const yours = lastHeard ? "系統聽到的族語" : "你的族語";
-  // 送出後就把麥克風提示收掉，否則它會一直擋在這一頁的說明裡。
-  clearRecordNote();
-  ui.result.innerHTML = `<strong>${resultHeadline(type)}</strong><p>${resultDetail(type)}</p>
-    <dl><dt>${yours}</dt><dd>${escapeHtml(indigenous)}</dd>
-    <dt>系統懂成</dt><dd>${escapeHtml(translation)}</dd>
-    <dt>教材族語</dt><dd>${escapeHtml(exchange.indigenousText)}</dd>
-    <dt>教材中文</dt><dd>${escapeHtml(exchange.chineseText)}</dd></dl>`;
-  graded = true;
-  ui.submit.disabled = true;
-  ui.record.disabled = true;
-  ui.next.hidden = false;
-  ui.next.textContent = index + 1 >= exchanges.length ? "看這段結果" : "下一句 →";
-  ui.next.focus();
-}
-
-// 失敗路徑：只顯示訊息，不鎖住這一句。
-// 如果在這裡設 graded = true，runExchange 開頭會直接 return，「重試判定」按了也不會有任何反應。
-function showResult(state, text) {
-  ui.result.hidden = false;
-  ui.result.dataset.state = "unavailable";
-  ui.result.textContent = text;
-  results[index] = state;
-  ui.next.hidden = false;
-  updateSubmit();
-}
-
-function showReport() {
-  ui.scene.hidden = true;
-  ui.report.hidden = false;
-  // results 以對話位置為索引，只有學者該說的句子會有值。
-  const summary = tally(results.filter((item) => typeof item === "string"));
-  const referenceNote = summary.reference ? `，${summary.reference} 句是自己的名字和來處，不判對錯` : "";
-  ui.score.textContent = `${tallyLabel(summary)}${referenceNote}`;
-  ui.list.innerHTML = exchanges
-    .map((exchange, position) => ({ exchange, type: results[position] ?? "unavailable" }))
-    .filter((item) => item.exchange.mine)
-    .map(({ exchange, type }) => {
-      const detail = type === "unavailable"
-        ? "沒有完成判定，不算答錯。"
-        : `${resultDetail(type)}教材：${exchange.chineseText}`;
-      return `<li><strong>${escapeHtml(exchange.speakerName)}｜${escapeHtml(resultHeadline(type))}</strong><p>${escapeHtml(detail)}</p></li>`;
-    }).join("");
-  ui.report.scrollIntoView({ behavior: reduced() ? "auto" : "smooth" });
-  updateStart();
-  reportKind = "dialogue";
-  ui.toDialogue.hidden = true;
-  ui.again.textContent = "再練一次";
-  updateQuestOffer();
-}
-
 ui.again.addEventListener("click", () => {
-  // 結果面板是共用的：「再練一次」要看剛才是哪個階段的結果。
-  if (reportKind === "quest") { startQuest(); return; }
-  index = 0;
-  results = [];
-  ui.report.hidden = true;
-  ui.scene.hidden = false;
-  showExchange();
-  scrollToTop();
+  if (reportKind === "quest") startQuest();
 });
 
 // ── STEP 4：任務關卡 ────────────────────────────────────────────
@@ -772,7 +528,7 @@ function startQuest(level) {
 }
 
 // 從任務切回對話。兩個階段共用一個輸入面板，所以要先把面板搬回去。
-// 對話的進度（index、results）都留著，切回去還是原來那一句。
+  // 對話的進度（index）留著，切回去還是原來那一句。
 function backToDialogue() {
   ui.quest.hidden = true;
   ui.report.hidden = true;
@@ -816,9 +572,11 @@ function currentQuest() {
 
 function resetQuestRun() {
   runEpoch += 1;
-  questState = { learned: [], placed: {}, taken: [], picked: null, done: false };
+  // questFailures 累計這一關「說了但判定沒對上」的次數；錯滿 3 次出現
+  // 「自動說這句」（官方 autoask-btn 的行為：系統代說，讓關卡往下走）。
+  questState = { learned: [], placed: {}, taken: [], picked: null, done: false, failures: 0, buylistOpen: true };
   questTarget = null;
-  questTag = null;
+  ui.questAutoAsk.hidden = true;
   ui.questReward.hidden = true;
   ui.questReward.removeAttribute("src");
   ui.questTags.hidden = true;
@@ -829,6 +587,54 @@ function resetQuestRun() {
   ui.questGoal.hidden = true;
   ui.questGoal.innerHTML = "";
   ui.questLayers.innerHTML = "";
+  hideQuestComplete();
+}
+
+// 完成任務／下一關：判定條件一滿，右欄下方出現「下一關 →」鈕（最後一關是
+// 「看任務結果」），學者自己按了才往前——不用彈窗，就是一顆按鈕。
+function showQuestComplete() {
+  const last = questIndex + 1 >= quests.length;
+  ui.questComplete.textContent = last ? "看任務結果" : "下一關 →";
+  ui.questComplete.hidden = false;
+  ui.questComplete.focus({ preventScroll: true });
+}
+function hideQuestComplete() {
+  ui.questComplete.hidden = true;
+}
+
+// 官方桌上名卡的座標（phase2.setup.text）是「字的左上角」，
+// 六張藍卡的實際範圍是從三張 1000×700 圖層裡量出來的（場景 2.jpg 的後排兩張桌
+// ＋ target-1-1.png 的前排左桌、target-2-1.png 的前排右桌、player-1.png 的前排中桌；
+// 範圍如下，key 是官方錨點 top|left 的百分比）：
+//   57.14|25.5 → 卡 253–323 × 399–422     57.14|34 → 卡 328–392 × 399–421
+//   57.14|60.8 → 卡 604–673 × 400–421     57.14|69 → 卡 679–742 × 399–422
+//   87.14|49   → 卡 477–546 × 608–631     87.14|56 → 卡 551–616 × 609–633
+// 官方錨點落在卡的最左上（少數偏進卡內 12px），字看起來偏在卡片左邊，
+// 長名字（如 remeremang、djiniljepan）整個伸出卡外。這裡把錨點換成卡片幾何中心，
+// 配合 .quest-desk-tag 的 translate(-50%,-50%) 讓字置中在卡上。
+// 42 個方言的錨點全是同一組（官方六張卡共用一套座標），所以 key 是座標不是文字。
+const DESK_TAG_CENTERS = {
+  "57.14|25.5": { x: 28.8, y: 58.64 },
+  "57.14|34": { x: 36, y: 58.57 },
+  "57.14|60.8": { x: 63.85, y: 58.64 },
+  "57.14|69": { x: 71.05, y: 58.64 },
+  "87.14|49": { x: 51.15, y: 88.5 },
+  "87.14|56": { x: 58.35, y: 88.71 },
+};
+// 官方座標可能有個位數的浮點誤差，兩軸都在 1%（約卡寬／卡高的十分之一）內
+// 就當同一張卡；對不上的錨點照官方座標去擺（退回左上角定位），不亂猜。
+function deskTagCenterFor(left, top) {
+  let best = null;
+  for (const [key, center] of Object.entries(DESK_TAG_CENTERS)) {
+    const [cardTop, cardLeft] = key.split("|").map(Number);
+    if (Math.abs(cardTop - top) > 1 || Math.abs(cardLeft - left) > 1) continue;
+    if (!best
+      || Math.abs(cardTop - top) + Math.abs(cardLeft - left)
+        < Math.abs(best.cardTop - top) + Math.abs(best.cardLeft - left)) {
+      best = { ...center, cardTop, cardLeft };
+    }
+  }
+  return best ? { x: best.x, y: best.y } : null;
 }
 
 // 場景疊圖與可點區。座標全部來自教材（已換算成百分比），所以疊在場景上就好。
@@ -843,7 +649,7 @@ function renderQuestLayers(quest) {
   }
   for (const target of quest.targets) {
     if (!propIds.has(target.id)) {
-      parts.push(`<img class="quest-layer" src="${escapeHtml(target.imageUrl)}" alt="${escapeHtml(target.name ?? "")}" aria-hidden="true">`);
+      parts.push(`<img class="quest-layer" data-target-img="${escapeHtml(target.id)}" src="${escapeHtml(target.imageUrl)}" alt="${escapeHtml(target.name ?? "")}" aria-hidden="true">`);
     }
   }
   for (const target of quest.targets) {
@@ -859,14 +665,23 @@ function renderQuestLayers(quest) {
     parts.push(`<button type="button" class="quest-click" data-click="1" style="${boxStyle(quest.goal.box)}"
       aria-label="點這裡"></button>`);
   }
+  // 上課用語才有獨立的主角圖層：中間那一位是「主角（你自己）」，放個小標示讓人
+  // 認得出來這是自己的座位；主角自己的名字官方已印在桌牌上，不用再顯示。
+  if (pack.playerImageUrl) {
+    parts.push(`<span class="quest-player-badge" aria-hidden="true">主角（就是你）</span>`);
+  }
+  // 桌上藍色名牌：字疊在場景圖印好的牌子上（官方 .table-card）。
+  for (const tag of pack?.deskTags ?? []) {
+    const tone = tag.tone === "brown" ? "quest-desk-tag--brown" : "quest-desk-tag--blue";
+    // 官方座標是「字的左上角」，字會貼著卡片左緣、長名字還會伸出卡外。
+    // 換成官方錨點對應那張藍卡的幾何中心，字用 translate(-50%,-50%) 置中在卡上。
+    const center = deskTagCenterFor(tag.left, tag.top);
+    const style = center
+      ? `top:${center.y}%;left:${center.x}%;transform:translate(-50%,-50%)`
+      : `top:${Number(tag.top)}%;left:${Number(tag.left)}%`;
+    parts.push(`<span class="quest-desk-tag ${tone}" style="${style}" aria-hidden="true">${escapeHtml(tag.text)}</span>`);
+  }
   ui.questLayers.innerHTML = parts.join("");
-}
-
-function questCompleteLine(quest) {
-  if (quest.goal.kind === "end") return "任務結束了。";
-  if (quest.goal.kind === "nameTags") return "名牌都放對了。";
-  if (quest.goal.kind === "click") return "找到答案了。";
-  return "這關過關了。";
 }
 
 function boxStyle(box) {
@@ -878,9 +693,17 @@ function boxStyle(box) {
 }
 
 // 右欄的目標面板：選項清單（select／selectAndSpeak）、購物籃（take）、
-// 或者結語（end）。上課用具牌 dock 在對話卡裡，所以這裡是空的。
+// 結語（end）、名牌（nameTags，見 #quest-tags）。
 function renderQuestGoal(quest) {
   const goal = quest.goal;
+  if (goal.kind === "nameTags") {
+    // 名牌關用獨立的 #quest-tags，右欄目標面板留空。
+    ui.questGoal.hidden = true;
+    ui.questGoal.innerHTML = "";
+    renderNameTagsPanel(quest);
+    return;
+  }
+  ui.questTags.hidden = true;
   if (goal.kind === "select" || goal.kind === "selectAndSpeak") {
     ui.questGoal.hidden = false;
     ui.questGoal.innerHTML = `<h3>${goal.kind === "selectAndSpeak" ? "選要道謝的人" : "挑出正確的那一個"}</h3>
@@ -894,9 +717,11 @@ function renderQuestGoal(quest) {
   if (goal.kind === "take") {
     ui.questGoal.hidden = false;
     // 購物清單放右欄而不是壓在場景上的任務卡：戶外活動第一關有 7 項，
-    // 放進卡片會把上半個場景蓋掉。
+    // 放進卡片會把上半個場景蓋掉。清單可以折疊（官方 #buying-list-btn 的行為）。
+    const open = questState.buylistOpen !== false;
     const list = quest.buylist?.length
-      ? `<h3>購物清單</h3><ul class="quest-shopping">${quest.buylist.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
+      ? `<h3>購物清單<button type="button" class="quest-buylist-toggle" data-buylist-toggle aria-expanded="${open}">${open ? "收起" : "展開"}</button></h3>
+         <ul class="quest-shopping${open ? "" : " is-collapsed"}">${quest.buylist.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
       : "";
     // 窄螢幕時場景裡的東西只有 30幾個像素寬（小到不好點），所以下面多給一列按鈕；
     // 寬螢幕就藏起來，讓人直接點場景（官方也是這樣）。
@@ -958,7 +783,11 @@ function showQuest() {
   ui.questPlayer.src = playerImage;
   if (!playerImage) ui.questPlayer.removeAttribute("src");
   renderQuestLayers(quest);
+  // 指定要問誰的關卡，一進關就要把其他人鎖起來（is-locked 的禁止光標）。
+  syncTargetLooks();
   renderQuestGoal(quest);
+  // click 關（點門）的可點區在場景上方：任務卡跟官方一樣讓到下面，否則被卡蓋住點不到。
+  ui.questStage.classList.toggle("is-click-stage", quest.goal.kind === "click");
   syncQuestMarks();
   updateQuestProgress();
   clearRecording();
@@ -966,11 +795,12 @@ function showQuest() {
   ui.questAudio.removeAttribute("src");
   setQuestAudioState("idle", "想聽再按播放");
   ui.questReplay.disabled = true;
-  ui.turnTitle.textContent = "換你說";
+  ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: questTarget });
   // 輸入面板是從 STEP 2 搬過來的，那邊最後一輪可能是對方在說、面板是收起的，
   // 搬過來要自己打開，否則右欄會是空的。結語關沒有要說的句子，面板留著只會是空的送出鈕。
   ui.myTurn.hidden = quest.goal.kind === "end";
   if (quest.goal.kind === "end") {
+    // 結語關：沒有互動，收尾文字顯示在右欄目標面板（#quest-end-next 是「下一關 →」）。
     questState.done = true;
     questResults[questIndex] = { order: quest.order, quest: quest.quest, ok: true };
     renderLevelPicker();
@@ -979,28 +809,53 @@ function showQuest() {
   focusFirstTarget();
 }
 
-// 已問過的人、已放進籃子的東西、已選好的選項，都要在畫面上留痕。
+// 問到的名字放上桌的位置：每張桌子有兩張空名牌卡（官方 1000×700 圖層實測：
+// 左桌卡 (161-230)/(235-299)、右桌卡 (800-870)/(875-938)，y 皆 610-632）。
+// 第 1 關的名字放**右卡置中**、第 2 關的名字放**左卡置中**——跟桌上印好的
+// 成對名牌（diniljepan／Veneng）同一種擺法，字級也同一套。
+const DESK_DROP_SLOTS = [
+  { "target-1": { x: 26.7, y: 88.7 }, "target-2": { x: 90.65, y: 88.8 } },
+  { "target-1": { x: 19.6, y: 88.7 }, "target-2": { x: 83.5, y: 88.8 } },
+];
+
 function syncQuestMarks() {
   const quest = currentQuest();
   if (!quest) return;
+  // 名字上桌：不再掛在人物按鈕框裡（那樣位置會跟著人的框漂、字級也跟桌上
+  // 印的字不一致），改放官方桌上卡片的右緣，換關或重問都會整批重畫。
+  for (const tag of ui.questLayers.querySelectorAll(".quest-dropped-tag")) tag.remove();
+  // 名字會累積：第 1、2 關問到的名字，之後第 3、4、5 關（同一間教室）照官方一直留在桌上。
+  // 沒玩到的關不能提前把答案放上桌；其他主題沒有名牌關，迴圈跑完不會有東西。
+  {
+    let nameStage = -1;
+    for (let s = 0; s < quests.length; s++) {
+      const level = quests[s];
+      if (level.goal.kind !== "nameTags") continue;
+      nameStage += 1;
+      const entries = s === questIndex
+        ? Object.entries(questState?.placed ?? {})
+        : s < questIndex
+          ? Object.entries(level.goal.answers ?? {})
+          : []; // 還沒玩到的關不能提前把答案放上桌
+      for (const [targetId, name] of entries) {
+        const slot = DESK_DROP_SLOTS[nameStage]?.[targetId];
+        if (!slot || !name) continue;
+        const tag = document.createElement("span");
+        tag.className = `quest-dropped-tag quest-dropped-tag--${nameStage + 1}`;
+        tag.textContent = name;
+        tag.style.top = `${slot.y}%`;
+        tag.style.left = `${slot.x}%`;
+        // 名字一律置中在卡上（跟桌上印好的名字同擺法）
+        tag.style.transform = "translate(-50%,-50%)";
+        ui.questLayers.append(tag);
+      }
+    }
+  }
   for (const button of ui.questLayers.querySelectorAll("[data-target]")) {
     const learned = questIsLearned(quest, button.dataset.target, questState);
     button.classList.toggle("is-asked", learned);
     button.setAttribute("aria-pressed", String(button.dataset.target === questTarget));
     button.classList.toggle("is-selected", button.dataset.target === questTarget);
-    const name = questState.placed?.[button.dataset.target];
-    // 名牌 slot 要自己生：可點框是每一關動態產生的，不會附帶名牌 span。
-    // 少了這一段，放對的名牌不會出現在桌上（畫面看起來像沒放上去）。
-    let slot = button.querySelector(".quest-target__tag");
-    if (name && !slot) {
-      slot = document.createElement("span");
-      slot.className = "quest-target__tag";
-      button.append(slot);
-    }
-    if (slot) {
-      slot.textContent = name ?? "";
-      slot.hidden = !name;
-    }
   }
   for (const button of ui.questLayers.querySelectorAll("[data-option]")) {
     const id = button.dataset.option;
@@ -1025,26 +880,37 @@ function updateQuestProgress() {
   if (!quest) return;
   const state = questState;
   ui.questProgress.textContent = questProgress(quest, state);
-  const placedCount = Object.keys(state.placed ?? {}).length;
-  const total = quest.targets.length;
-  // 問完兩位同學才放出名牌：名牌上的名字要從剛才聽到的回答來的。
-  const allLearned = quest.targets.every((target) => questIsLearned(quest, target.id, state));
-  if (quest.goal.kind === "nameTags" && allLearned && !questIsComplete(quest, state)) {
-    if (ui.questTags.hidden) renderTagDock(quest);
-  } else if (quest.goal.kind === "nameTags" && !allLearned) {
-    ui.questTags.hidden = true;
-  }
-  if (quest.goal.kind !== "nameTags") ui.questTags.hidden = true;
-  if (placedCount && placedCount < total) ui.questProgress.textContent += `（已放 ${placedCount} 張）`;
+  if (quest.goal.kind === "nameTags") renderNameTagsPanel(quest);
+  else ui.questTags.hidden = true;
   syncQuestMarks();
 }
 
-function renderTagDock(quest) {
-  ui.questTags.hidden = false;
-  questTag = null;
-  ui.questTagDock.innerHTML = quest.goal.choices.map((choice) => (
-    `<button type="button" class="quest-tag" data-tag="${escapeHtml(choice)}" aria-pressed="false">${escapeHtml(choice)}</button>`
-  )).join("");
+// 名牌關右欄：問過的人把名字留在這裡（對照桌上自動出現的名卡）。
+// 官方的候選名牌／拖放已按「問到即顯示」的玩法移除：說對那句、聽到回應，
+// 名牌就自動放到該位同學桌上，不用再拖曳。還沒問到人之前右欄保持空白，
+// 也不放操作說明——名字自己會上桌，不用教。
+function renderNameTagsPanel(quest) {
+  const heard = quest.targets.filter((target) => questIsLearned(quest, target.id, questState));
+  ui.questTags.hidden = heard.length === 0;
+  renderHeardNames(quest);
+}
+
+function renderHeardNames(quest) {
+  const heard = quest.targets.filter((target) => questIsLearned(quest, target.id, questState));
+  if (!heard.length) {
+    ui.questHeard.innerHTML = "";
+    return;
+  }
+  ui.questHeard.innerHTML = heard.map((target) => {
+    const name = quest.goal.answers?.[target.id] ?? "";
+    const line = questLineFor(quest, target.id);
+    const indigenous = line?.reply?.indigenousText ?? "";
+    return `<div class="quest-heard__row">
+      <span class="quest-heard__who">${escapeHtml(targetLabel(target.id, quest))}同學說</span>
+      <strong class="quest-heard__name">${escapeHtml(indigenous)}</strong>
+      ${name ? `<span class="quest-heard__say">他叫 ${escapeHtml(name)}</span>` : ""}
+    </div>`;
+  }).join("");
 }
 
 function focusFirstTarget() {
@@ -1054,33 +920,84 @@ function focusFirstTarget() {
   if (button && !reduced()) button.focus({ preventScroll: true });
 }
 
+// 第 1 關問到的名字（targetId → 名字）：之後關卡的提示直接叫名字，
+// 「先問問 Muni」「對 Muni 說…」不是只說位置的「右邊的人」。
+function questNamesMap() {
+  const stage = quests.find((level) => level?.goal.kind === "nameTags");
+  return stage?.goal.answers ?? {};
+}
+function questTurnTitleFor(quest, opts = {}) {
+  return questTurnTitle(quest, { ...opts, names: questNamesMap() });
+}
+
 function selectTarget(targetId) {
   const quest = currentQuest();
   if (!quest) return;
   if (questIsLearned(quest, targetId, questState)) return;
+  // 這關指定要問誰（借筆只能問左邊、橡皮擦只能問右邊），點錯人就擋下：
+  // 不選他，操作提醒照慣例寫在任務卡那一行（cursor 也會顯示禁止，見 .is-locked）。
+  if (quest.goal?.targetId && targetId !== quest.goal.targetId) {
+    const name = questNamesMap()[quest.goal.targetId];
+    ui.questSpeaker.textContent = name
+      ? `這句要問${name}，點錯人了`
+      : `這句要問${targetLabel(quest.goal.targetId, quest)}的同學，點錯人了`;
+    ui.answer.focus();
+    return;
+  }
   questTarget = targetId;
-  questTag = null;
-  for (const chip of ui.questTagDock.querySelectorAll(".quest-tag")) chip.classList.remove("is-selected");
-  ui.turnTitle.textContent = "換你說";
-  ui.questSpeaker.textContent = "換你說";
+  syncTargetLooks();
+  ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId });
+  // 任務卡維持「任務」＋關卡說明，操作指引寫在輸入區標題。
+  ui.questSpeaker.textContent = "任務";
   syncQuestMarks();
   updateSubmit();
   ui.answer.focus();
 }
 
+// 選人時的圖像變化對齊舊站 targetClick：
+//   被選中的同學圖層換成 target-N-2.png（官方選中變體）＋持續光暈
+//   主角圖**換向**：官方問右邊的同學（target-2）才換 player-2.png（朝右的變體），
+//   問左邊的同學時維持 player-1.png——兩張都是朝向那個方向的圖。
+const TARGET_SELECT_VARIANT = (url) => url ? url.replace(/-1\.png$/, "-2.png") : "";
+
+function syncTargetLooks() {
+  const quest = currentQuest();
+  for (const target of quest?.targets ?? []) {
+    const img = ui.questLayers.querySelector(`img[data-target-img="${target.id}"]`);
+    if (img) {
+      img.src = questTarget === target.id ? (TARGET_SELECT_VARIANT(target.imageUrl) || target.imageUrl) : target.imageUrl;
+      // 官方 hoverGlow2：選中的同學持續帶光暈。
+      img.classList.toggle("is-glow", questTarget === target.id);
+    }
+  }
+  // 主角圖隨點的對象換向（官方 targetClick）：點左邊的同學維持 player-1.png（朝左），
+  // 點右邊的同學換 player-2.png（朝右）。主角圖是獨立節點 #quest-player。
+  if (pack.playerImageUrl) {
+    ui.questPlayer.src = questTarget === "target-2"
+      ? (TARGET_SELECT_VARIANT(pack.playerImageUrl) || pack.playerImageUrl)
+      : pack.playerImageUrl;
+  }
+  for (const button of ui.questLayers.querySelectorAll("[data-target]")) {
+    const selected = button.dataset.target === questTarget;
+    // 官方 hoverGlow2 是持續的光暈：選中的同學一直亮著。
+    button.classList.toggle("is-selected", selected);
+    button.setAttribute("aria-pressed", String(selected));
+    // 這關指定要問誰時，其他人鎖起來：點了不會選中，光標顯示禁止。
+    const locked = Boolean(quest.goal?.targetId) && button.dataset.target !== quest.goal.targetId;
+    button.classList.toggle("is-locked", locked);
+    button.setAttribute("aria-disabled", String(locked));
+  }
+}
+
 // 場景上的點擊全部用事件委派處理：圖層與可點區是每一關重新產生的，
-// 直接綁在按鈕上的話換關就失效了。
+// 直接綁在按鈕上的話換關就失效了。hover 光暈也是：官方的 hoverGlow 用這裡代做。
 ui.questLayers.addEventListener("click", (event) => {
   if (questLocked()) return;
   const quest = currentQuest();
   if (!quest) return;
   const target = event.target.closest("[data-target]");
   if (target) {
-    const targetId = target.dataset.target;
-    // 名牌階段手上有名牌時，這一下是「把名牌放到這位同學桌上」；
-    // 還沒問完兩位同學時名牌還沒放出來，點同學只是換一位要問的人。
-    if (quest.goal.kind === "nameTags" && questTag) placeTag(targetId);
-    else selectTarget(targetId);
+    selectTarget(target.dataset.target);
     return;
   }
   const option = event.target.closest("[data-option]");
@@ -1088,23 +1005,18 @@ ui.questLayers.addEventListener("click", (event) => {
   if (event.target.closest("[data-click]")) handleQuestClick();
 });
 
-ui.questTagDock.addEventListener("click", (event) => {
-  if (questLocked()) return;
-  const chip = event.target.closest("[data-tag]");
-  if (!chip || chip.classList.contains("is-used")) return;
-  questTag = chip.dataset.tag;
-  for (const other of ui.questTagDock.querySelectorAll(".quest-tag")) {
-    const on = other === chip;
-    other.classList.toggle("is-selected", on);
-    other.setAttribute("aria-pressed", String(on));
-  }
-  ui.questSpeaker.textContent = `把「${questTag}」放到對的同學桌上`;
-  // 焦點要移到還沒放名牌的那位。這裡原本誤用了全域的 quest（只在別的函式裡有定義），
-  // 點名牌就會在 console 噴錯、焦點也不會移動。
-  const current = currentQuest();
-  const pendingId = (current?.targets ?? []).find((item) => !questState.placed?.[item.id])?.id ?? "";
-  const target = ui.questLayers.querySelector(`[data-target="${pendingId}"]`);
-  if (target && !reduced()) target.focus({ preventScroll: true });
+// hover 高亮：官方 hoverGlow 圖檔沒給，用濾鏡做出光暈。
+ui.questLayers.addEventListener("mouseover", (event) => {
+  const button = event.target.closest("[data-target]");
+  if (!button) return;
+  const img = ui.questLayers.querySelector(`img[data-target-img="${button.dataset.target}"]`);
+  if (img) img.classList.add("is-glow");
+});
+ui.questLayers.addEventListener("mouseout", (event) => {
+  const button = event.target.closest("[data-target]");
+  if (!button) return;
+  const img = ui.questLayers.querySelector(`img[data-target-img="${button.dataset.target}"]`);
+  if (img) img.classList.remove("is-glow");
 });
 
 // 目標面板的點擊：選項清單、購物籃的確定、結語的下一關。
@@ -1112,6 +1024,15 @@ ui.questGoal.addEventListener("click", (event) => {
   if (pending) return;
   // 結語關一進來就算完成，下一關按鈕仍要能點。其餘過關後不能再改答案。
   if (questState?.done && !event.target.closest("#quest-end-next")) return;
+  // 購物清單折疊（官方 #buying-list-btn 的 toggle）。
+  const toggle = event.target.closest("[data-buylist-toggle]");
+  if (toggle) {
+    const quest = currentQuest();
+    if (!quest) return;
+    questState.buylistOpen = !(questState.buylistOpen !== false);
+    renderQuestGoal(quest);
+    return;
+  }
   // 籃子裡的東西點一下就拿出來（官方行為）：放錯了要能自己拿回去換。
   const remove = event.target.closest("[data-remove]");
   if (remove) {
@@ -1140,15 +1061,21 @@ ui.questGoal.addEventListener("click", (event) => {
   }
 });
 
-// take：點場景裡的東西放進籃子。
+// take：點場景裡的東西放進籃子（跟 select 一樣：先答對一句才開放，官方 ask() 才 show）。
 function pickSceneOption(optionId) {
   const quest = currentQuest();
   if (!quest) return;
+  if (questPickGated(quest)) {
+    ui.questSpeaker.textContent = "先問問場景裡的人，他們才知道東西在哪裡";
+    ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: null });
+    return;
+  }
   const outcome = addToBasket(quest, optionId, questState);
   questState.taken = outcome.taken;
   if (outcome.reason === "locked") {
     const who = targetLabel(quest.goal.unlock?.targetId, quest);
-    renderQuestResult("retry", { detail: `這個還不能拿，先問問${who}的人，他才知道東西在哪裡。`, lines: [] });
+    // 操作狀況提醒寫在任務卡那一行，不畫結果卡（鎖著的東西不是「答錯」）。
+    ui.questSpeaker.textContent = `這個還不能拿，先問問${who}的人`;
     return;
   }
   if (outcome.reason === "already") {
@@ -1173,49 +1100,64 @@ function pickSceneOption(optionId) {
 }
 
 // take：按確定才判對錯（官方也是這樣，順序不影響結果）。
+// 對／錯的回饋照官方只有音效（right／wrong），不畫結果卡；
+// 沒放東西、還沒問到人這些操作狀況的提醒寫在任務卡那一行。
 function confirmBasket() {
   const quest = currentQuest();
   if (!quest) return;
   const ok = judgeBasket(quest, questState.taken);
+  playJudgeSound(ok);
   if (ok) { finishQuest(); return; }
-  // 還沒問到人的話，問題不是「拿錯東西」而是「還不知道要拿什麼」，
-  // 直接說「東西不對」會讓人一直換著按。
   if (quest.goal.lock && !(questState.learned ?? []).includes(quest.goal.unlock?.targetId)) {
     const who = targetLabel(quest.goal.unlock?.targetId, quest);
-    renderQuestResult("retry", { detail: `還不能確定，${who}的人還沒告訴你東西在哪裡。籃子裡的可以拿出來換。`, lines: [] });
+    ui.questSpeaker.textContent = `還不能確定，先問問${who}的人`;
     return;
   }
   if (!questState.taken.length) {
-    renderQuestResult("retry", { detail: "籃子還是空的，先點場景裡的東西。", lines: [] });
+    ui.questSpeaker.textContent = "籃子還是空的，先點場景裡的東西";
     return;
   }
-  renderQuestResult("retry", { detail: "籃子裡的東西還不對，再看看剛才問到的線索；點籃子裡的可以拿出來換。", lines: [] });
+  clearQuestResult();
 }
 
-// select：選一個就判。
+// 官方的 select／take／select&order 在還沒答對一句之前，右欄根本不顯示（
+// ask() code!=0 才 show。）這裡用同一個閘：問到人之前點選項一律不收。
+function questPickGated(quest) {
+  const kind = quest?.goal?.kind;
+  return (kind === "select" || kind === "take" || kind === "selectAndSpeak") && !(questState?.learned ?? []).length;
+}
+
+// select：選一個就判（判定音效照官方 respondClick：對 right、錯 wrong）。
 function pickQuestOption(optionId) {
   const quest = currentQuest();
   if (!quest) return;
+  if (questPickGated(quest)) {
+    ui.questSpeaker.textContent = "先問問場景裡的人，他們才知道答案";
+    ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: null });
+    return;
+  }
   const outcome = judgeQuestPick(quest, optionId, questState);
+  // 對／錯照官方只有音效回饋（select 也播 right／wrong），不畫結果卡。
   if (quest.goal.kind === "selectAndSpeak") {
     if (!outcome.ok) {
-      renderQuestResult("retry", { detail: "這個不是，再看看線索。", lines: [] });
+      playJudgeSound(false);
       return;
     }
     questState.picked = optionId;
     questTarget = null;
+    syncTargetLooks();
     clearQuestResult();
     renderQuestGoal(quest);
     updateQuestProgress();
-    ui.questSpeaker.textContent = quest.goal.promptChinese
-      ? `換你說「${quest.goal.promptChinese}」`
-      : "換你說出那句話";
+    ui.questSpeaker.textContent = "任務";
+    ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: null });
     ui.answer.focus();
     updateSubmit();
     return;
   }
+  playJudgeSound(outcome.ok);
   if (outcome.ok) { finishQuest(); return; }
-  renderQuestResult("retry", { detail: "這個不是，再看看線索。", lines: [] });
+  clearQuestResult();
 }
 
 // click：官方是點下去就換背景、播收尾台詞。
@@ -1230,32 +1172,11 @@ function handleQuestClick() {
   finishQuest();
 }
 
-function placeTag(targetId) {
-  const quest = currentQuest();
-  if (!quest || !questTag) return;
-  const outcome = placeNameTag(quest, { tag: questTag, targetId, state: questState });
-  questState.placed = outcome.placed;
-  // 放對才貼到桌上、名牌才收起來；放錯就留在手上，學習者可以換一張再試。
-  if (outcome.reason === "correct") {
-    const chip = [...ui.questTagDock.querySelectorAll(".quest-tag")].find((item) => item.dataset.tag === questTag);
-    if (chip) { chip.classList.add("is-used"); chip.setAttribute("aria-disabled", "true"); }
-    questTag = null;
-  }
-  const tagDetail = outcome.reason === "correct"
-    ? "名牌放對了。"
-    : outcome.reason === "locked"
-      ? "這位已經放好名牌了。"
-      : "這張不是這位同學的名牌，再看看剛才的回答。";
-  renderQuestResult(outcome.ok ? "exact" : "retry", {
-    detail: tagDetail,
-    lines: [{ label: "你放的名牌", value: outcome.placed[targetId] ?? questTag ?? "" }]
-  });
-  if (!outcome.ok) ui.questSpeaker.textContent = "換一張名牌試試";
-  updateQuestProgress();
-  if (questIsComplete(quest, questState)) finishQuest();
-}
+// 拖放名牌的機制已改成「問到即顯示」（見 onQuestAnswered）：說對那句、聽到回應，
+// 官方 complete.answers 的名字就自動放到該位同學的桌上，這裡沒有放錯重試的流程。
 
-// 任務完成：官方會讓那個東西出現在桌上（筆、橡皮擦、掃把），位置是官方 px 換算的百分比。
+// 判定條件一滿的過關：官方會讓那個東西出現在桌上（筆、橡皮擦、掃把），位置是官方 px 換算百分比；
+// 畫面亮「！」，學者自己按下才出現「任務完成！」（官方 showComplete → completeClick 的兩段）。
 function finishQuest() {
   const quest = currentQuest();
   // 過關之後輸入就沒用了，先收掉，免得學者以為還要再說一次。
@@ -1263,9 +1184,8 @@ function finishQuest() {
   ui.myTurn.hidden = true;
   for (const button of ui.questLayers.querySelectorAll("button")) button.disabled = true;
   for (const button of ui.questGoal.querySelectorAll("button")) button.disabled = true;
-  for (const button of ui.questTagDock.querySelectorAll("button")) button.disabled = true;
   updateSubmit();
-  renderQuestResult("exact", { detail: questCompleteLine(quest), lines: [] });
+  // 過關不畫「說對了」結果卡：完成是用「！」→「任務完成！」彈窗呈現。
   const reward = quest.goal.reward;
   if (reward?.imageUrl) {
     ui.questReward.src = reward.imageUrl;
@@ -1277,16 +1197,73 @@ function finishQuest() {
     ui.questReward.style.rotate = reward.rotate ?? "";
     ui.questReward.hidden = false;
   }
-  // 官方在完成時會播一句收尾台詞（方言別 JSON 的 stage.complete.sound）。
+  // 官方完成時會播一句收尾台詞（方言別 JSON 的 stage.complete.sound）。
   if (quest.closing?.audioUrl) playQuestClip(quest.closing.audioUrl);
   ui.questSpeaker.textContent = "任務完成";
-  ui.questNext.hidden = false;
-  ui.questNext.textContent = questIndex + 1 >= quests.length ? "看任務結果" : "下一關 →";
-  ui.questNext.focus();
-  questResults[questIndex] = { order: quest.order, quest: quest.quest, ok: true };
   // 關卡鈕上的完成標記要立刻更新，不然要換關卡才看得到。
+  questResults[questIndex] = { order: quest.order, quest: quest.quest, ok: true };
   renderLevelPicker();
+  showQuestComplete();
 }
+
+function questLevelCount() { return quests.length; }
+
+// 中文直入教材句子（打字模式）的判定後門：只供除錯驗證，網址帶 ?debug_mode 才生效。
+const QUEST_DEBUG_MODE = new URLSearchParams(globalThis.location?.search ?? "").has("debug_mode");
+
+// 官方判定音效：select／take 的確定鍵判定時播 right／wrong（官方 #right-sound／#wrong-sound，
+// 熱連結同一批素材）。答錯可以一直重試，音效只是回饋不改變流程。
+function playJudgeSound(ok) {
+  const audio = ok ? ui.questRightSound : ui.questWrongSound;
+  if (!audio || !audio.src) return;
+  audio.pause();
+  audio.currentTime = 0;
+  const play = audio.play();
+  if (play && typeof play.catch === "function") play.catch(() => {});
+}
+
+// 答錯 3 次（這關內累計）出現「自動說這句」：官方 autoask-btn 的行為——
+// 系統代學者說一次（含回應錄音照播），關卡照樣往下走，
+// 結果卡上會標明是系統代說、不是自己答對的。
+function updateAutoAsk() {
+  const quest = currentQuest();
+  const can = Boolean(questState && !questState.done && quest?.goal?.kind !== "end" && questState.failures >= 3);
+  ui.questAutoAsk.hidden = !can;
+  if (can) ui.questAutoAsk.focus({ preventScroll: true });
+}
+
+function autoAskClick() {
+  const quest = currentQuest();
+  if (!quest || questState?.done) return;
+  // 道謝關（selectAndSpeak）：選好對象之後，這句是 goal.prompt 的示範錄音。
+  if (quest.goal.kind === "selectAndSpeak" && questState.picked) {
+    if (quest.goal.promptAudioUrl) playQuestClip(quest.goal.promptAudioUrl);
+    finishQuest();
+    return;
+  }
+  // 沒點人時視同官方 autoAsk 用當下選取對象：這關還沒問到的人裡挑第一位。
+  const targetId = questTarget
+    ?? quest.targets.find((target) => !questState.learned.includes(target.id))?.id;
+  const line = questLineFor(quest, targetId);
+  if (!line) return;
+  questTarget = targetId;
+  syncTargetLooks();
+  // 系統代說：示範句播完接同學回應，關卡照樣往下走。畫面上不另寫
+  // 「系統替你說／不算答對」的結果卡。
+  if (line.audioUrl) playQuestClip(line.audioUrl, line.reply.audioUrl);
+  onQuestAnswered(line, { skipReplyAudio: true });
+}
+
+ui.questAutoAsk.addEventListener("click", autoAskClick);
+
+// 「下一關 →」（右欄下方）：按下去就往前一關（或看任務結果）。
+ui.questComplete.addEventListener("click", () => {
+  if (!questState?.done) return;
+  ui.questComplete.hidden = true;
+  questIndex += 1;
+  if (questIndex >= quests.length) { showQuestReport(); return; }
+  showQuest();
+});
 
 ui.questNext.addEventListener("click", () => {
   questIndex += 1;
@@ -1301,11 +1278,16 @@ function setQuestAudioState(state, text) {
   ui.questAudioState.textContent = text;
 }
 
-function playQuestClip(url) {
+function playQuestClip(url, nextUrl) {
   ui.questAudio.pause();
   ui.questAudio.src = url;
   ui.questReplay.disabled = false;
   setQuestAudioState("playing", "播放中…");
+  // nextUrl：上一段播完接著播（自動說的示範句→同學回應）。
+  // 用 once 監聽，避免「再聽一次」也把下一段鏈出去。
+  if (nextUrl) {
+    ui.questAudio.addEventListener("ended", () => { playQuestClip(nextUrl); }, { once: true });
+  }
   const play = ui.questAudio.play();
   if (play && typeof play.catch === "function") {
     play.catch((error) => {
@@ -1376,7 +1358,7 @@ const runQuestLine = createSingleFlight(async () => {
       clearTimeout(slowHint);
       if (dropped(epoch)) return;
       setState("failed", "這次沒有辨識成功");
-      showQuestResult("unavailable", `目前無法辨識（${error.message}），你這句還沒有被判錯。`);
+      showQuestResult("unavailable", `目前無法辨識（${error.message}），再說一次試試看。`);
       ui.retry.hidden = false;
       finishQuestTurn();
       return;
@@ -1391,7 +1373,7 @@ const runQuestLine = createSingleFlight(async () => {
   } catch (error) {
     if (dropped(epoch)) return;
     setState("failed", "這次沒有翻譯成功");
-    showQuestResult("unavailable", `目前無法翻譯（${error.message}），你這句還沒有被判錯。`);
+    showQuestResult("unavailable", `目前無法翻譯（${error.message}），再說一次試試看。`);
     ui.retry.hidden = false;
     finishQuestTurn();
     return;
@@ -1402,15 +1384,29 @@ const runQuestLine = createSingleFlight(async () => {
   const thanking = quest.goal.kind === "selectAndSpeak" && questState?.picked && !questTarget;
   const judged = thanking
     ? { verdict: judgeQuestPrompt(quest, { answer: indigenous, translation }), line: { indigenousText: quest.goal.prompt, chineseText: quest.goal.promptChinese || null, reply: null } }
-    : judgeQuestLine(quest, questTarget, { answer: indigenous, translation });
-  // 只有說對時才換文案；答錯要用預設的「再試試看」說明，不然會出現
-  // 「再試試看／你把那句話說出來了」這種自相矛盾的結果。
-  renderQuestResult(judged.verdict, thanking && (judged.verdict === "exact" || judged.verdict === "semantic")
-    ? { line: judged.line, indigenous, translation, detail: "你把那句話說出來了。" }
-    : { line: judged.line, indigenous, translation });
+    : judgeQuestLine(quest, questTarget, { answer: indigenous, translation, allowChinese: QUEST_DEBUG_MODE });
+  // 畫面上不顯示「對／錯」判定：對的人會直接聽到回應、場景跟進度自己往前；
+  // 沒對上就靜靜再說一次（錯 3 次會出現「自動說這句」當出口）。
   if (judged.verdict === "exact" || judged.verdict === "semantic") {
     if (thanking) finishQuest();
     else onQuestAnswered(judged.line);
+  } else if (judged.verdict === "retry" || judged.verdict === "wrongTarget") {
+    // 這關內的失敗累計（官方 count_w 只算「說了但沒對上」），滿 3 次出現「自動說這句」；
+    // 失敗本身不畫「你答錯了」的結果卡，而是照官方讓那位同學說 rebound
+    // （「什麼？／不知道」）：任務卡的回應行顯示他說的話、播 rebound 錄音。
+    questState.failures = (questState.failures ?? 0) + 1;
+    updateAutoAsk();
+    const reboundId = questTarget
+      ?? (quest.goal.kind === "selectAndSpeak" && questState.picked ? questState.picked : null);
+    const rebound = questReboundFor(quest, reboundId);
+    if (rebound?.audioUrl) {
+      playQuestClip(rebound.audioUrl);
+      if (reboundId) ui.questSpeaker.textContent = `${targetLabel(reboundId, quest)}的人說`;
+      // 中文照學習者需要的那句完整說明（官方 textCh 是「什麼？／不知道」的短話，
+      // 意思對不上時要讓人看懂整句：我不清楚你的問題）。
+      ui.questReply.textContent = `${rebound.indigenousText}（我不清楚你的問題）`;
+    }
+    clearQuestResult();
   }
   finishQuestTurn();
 });
@@ -1428,20 +1424,25 @@ function renderLearnedReplies() {
   }).join("");
 }
 
-function onQuestAnswered(line) {
+function onQuestAnswered(line, { skipReplyAudio = false } = {}) {
   const quest = currentQuest();
   questState.learned.push(line.targetId);
+  // 答對一次就把這關的失敗計數帶走（官方 count_w 每關重置，而且過關後不累計）。
+  questState.failures = 0;
+  updateAutoAsk();
+  if (quest.goal.kind === "nameTags") {
+    // 「問到即顯示」：說對那句、聽到他的名字，名牌就自動放到他的桌上。
+    const name = quest.goal.answers?.[line.targetId] ?? "";
+    if (name) questState.placed[line.targetId] = name;
+  }
   renderLearnedReplies();
-  playQuestReply(line);
+  if (!skipReplyAudio) playQuestReply(line);
   updateQuestProgress();
   if (questIsComplete(quest, questState)) { finishQuest(); return; }
-  if (quest.goal.kind === "nameTags" && quest.targets.every((target) => questIsLearned(quest, target.id, questState))) {
-    ui.questSpeaker.textContent = "名牌出來了";
-    renderTagDock(quest);
-    return;
-  }
   ui.questSpeaker.textContent = quest.goal.kind === "selectAndSpeak" ? "選要道謝的人" : "再問另一位同學";
   questTarget = null;
+  syncTargetLooks();
+  ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: null });
   ui.answer.value = "";
   syncQuestMarks();
   focusFirstTarget();
@@ -1499,10 +1500,11 @@ function showQuestReport() {
     const record = questResults[position];
     return `<li><strong>第 ${quest.order} 關｜${record ? "完成" : "未完成"}</strong><p>${escapeHtml(quest.quest)}</p></li>`;
   }).join("");
-  // 任務結果面板：可以重玩任務，也可以切回對話。兩個按鈕不會同時出現。
+  // 任務結果面板：可以重玩任務，也可以切回對話。
   ui.questOffer.hidden = true;
   ui.startQuest.hidden = true;
   ui.toDialogue.hidden = false;
+  ui.again.hidden = false;
   ui.again.textContent = "再玩一次任務";
   ui.report.scrollIntoView({ behavior: reduced() ? "auto" : "smooth" });
 }
@@ -1511,10 +1513,7 @@ function resetProgress() {
   runEpoch += 1;
   ui.player?.pause();
   ui.questAudio?.pause();
-  clearTimeout(unlockTimer);
-  unlocked = false;
   index = 0;
-  results = [];
   ui.scene.hidden = true;
   ui.report.hidden = true;
   ui.quest.hidden = true;
@@ -1524,7 +1523,6 @@ function resetProgress() {
   reportKind = "dialogue";
   questState = null;
   questTarget = null;
-  questTag = null;
   clearRecording();
   ui.result.hidden = true;
 }

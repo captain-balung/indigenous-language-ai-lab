@@ -26,7 +26,7 @@ const applicationSeeds = {
     ["考前任務包", "把多種題型集中起來，考前一次演練。", "assets/icons/school-backpack.webp"]
   ],
   scenarios: [
-    ["部落大小事", "走進開學、婚禮、出遊三個生活場景，輪流對話。", "assets/icons/village-house.webp", "available", "apps/scenario-practice/village-life/"],
+    ["部落大小事", "走進開學、婚禮、出遊三個生活場景，先聽對話再玩任務。", "assets/icons/village-house.webp", "available", "apps/scenario-practice/village-life/"],
     ["市場小幫手", "到攤位問價、比較與結帳，練習購物用語。", "assets/icons/market-basket.webp", "available", "apps/scenario-practice/market-helper/"],
     ["旅行會話包", "從問路到搭車，練習旅途中的實用句。", "assets/icons/travel-bus.webp"],
     ["文化故事屋", "跟著情境故事，認識語言背後的文化。", "assets/icons/campfire-story.webp"]

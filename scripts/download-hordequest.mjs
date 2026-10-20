@@ -498,12 +498,33 @@ function extractLessonQuests(json, setupStages, dialectId, dialectName) {
   return {
     sceneUrl: `${imageBase}/lesson/${QUEST_SCENE.phase2}`,
     playerImageUrl: `${imageBase}/lesson/${QUEST_PLAYER_IMAGE}`,
+    // 教室桌上印好的藍色名牌：官方 phase2.setup.text，用 .table-card 疊字在 2.jpg 的名牌上。
+    deskTags: deskTagsFromSetup(phase2.setup?.text),
     quests,
     // 官方漏改名字的自我介紹，記下來給 dataset 的 notes 與 README 用。
     nameMismatches,
     // auto 句在 player 清單裡找不到、改用同關同對象那一句的紀錄。
     sentenceRepairs: repairs,
   };
+}
+
+// 官方 $('.table-card').css({ top: text[k][1]+"vw", left: text[k][2]+"vw" })。
+// 舞台約 1000×700、寬≈100vw 時：left% ≈ left_vw；top% ≈ top_vw × (1000/700)。
+// HTML 交錯 qll（藍字 #2a528c）／qln（褐字 #71482b）。
+function deskTagsFromSetup(rows) {
+  if (!Array.isArray(rows)) return [];
+  return rows.map((row, index) => {
+    const text = stripTags(row?.[0]);
+    const topVw = Number(row?.[1]);
+    const leftVw = Number(row?.[2]);
+    if (!text || !Number.isFinite(topVw) || !Number.isFinite(leftVw)) return null;
+    return {
+      text,
+      top: Number((topVw * (QUEST_STAGE_SIZE.width / QUEST_STAGE_SIZE.height)).toFixed(2)),
+      left: Number(leftVw.toFixed(2)),
+      tone: index % 2 === 0 ? "blue" : "brown",
+    };
+  }).filter(Boolean);
 }
 
 // 尋找物品與戶外活動的 phase2：玩法是「先問人得到線索，再在場景裡挑出正確的東西」。
@@ -879,6 +900,7 @@ for (const entry of fetched) {
       ...(item.quests ? {
         ...(item.sceneUrl ? { questSceneUrl: item.sceneUrl } : {}),
         ...(item.playerImageUrl ? { questPlayerImageUrl: item.playerImageUrl } : {}),
+        ...(item.deskTags?.length ? { questDeskTags: item.deskTags } : {}),
         quests: item.quests
       } : {}),
     })),
