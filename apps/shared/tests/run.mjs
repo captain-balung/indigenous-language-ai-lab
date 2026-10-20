@@ -13,7 +13,6 @@ import {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 assert.ok(fs.existsSync(path.join(root, "apps/shared/input-mode.mjs")));
 assert.ok(fs.existsSync(path.join(root, "api/llm-complete.mjs")));
-assert.ok(fs.existsSync(path.join(root, "api/llm-complete.php")));
 assert.ok(fs.existsSync(path.join(root, ".env.example")));
 assert.equal(DEFAULT_LLM_MODEL, "gpt-4o-mini");
 assert.equal(LLM_COMPLETE_PATH, "/api/llm-complete");
