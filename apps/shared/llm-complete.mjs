@@ -3,7 +3,7 @@
  * POST /api/llm-complete → { text }
  */
 
-export const DEFAULT_LLM_MODEL = "gpt-4o-mini";
+export const DEFAULT_LLM_MODEL = "google/gemma-4-26B-A4B-it";
 export const LLM_COMPLETE_PATH = "/api/llm-complete";
 export const LLM_COMPLETE_TIMEOUT_MS = 35000;
 
@@ -49,5 +49,5 @@ export async function complete({ system, user, model = DEFAULT_LLM_MODEL, url = 
 /** 判斷語意評分是否因傳輸／proxy 失敗而 undetermined（應退回規則粗判）。 */
 export function isLlmTransportFailure(rationale) {
   const msg = String(rationale ?? "");
-  return /fetch|HTTP|proxy|逾時|timeout|Failed|OPENAI|金鑰|API key|無法連線|未設定|沒有回傳|AbortError|NetworkError/i.test(msg);
+  return /fetch|HTTP|proxy|逾時|timeout|Failed|OPENAI|LLM|金鑰|API key|無法連線|未設定|沒有回傳|AbortError|NetworkError/i.test(msg);
 }

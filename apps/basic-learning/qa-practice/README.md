@@ -12,7 +12,7 @@
 2. 播放族語問句；可選擇顯示中文問句當提示。
 3. 打字或錄音後送出。錄音會先辨識、翻成中文，再做語意評分。
 
-本機：在專案根目錄 `.env` 填入 `OPENAI_API_KEY`（可從 `.env.example` 複製），再執行 `node scripts/serve.mjs`（會自動載入 `.env` 並支援 `/api/llm-complete`）。未設定金鑰時自動改用規則粗判。
+本機：在專案根目錄 `.env` 填入 `LLM_BASE_URL`（自架 vLLM 端點，可從 `.env.example` 複製），再執行 `node scripts/serve.mjs`（會自動載入 `.env` 並支援 `/api/llm-complete`）。未設定時自動改用規則粗判。
 
 ## 本機預覽與測試
 

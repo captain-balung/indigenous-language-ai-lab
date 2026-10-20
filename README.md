@@ -12,11 +12,11 @@
 
 ```bash
 cp .env.example .env   # 若尚未建立
-# 編輯 .env，填入 OPENAI_API_KEY=sk-...
+# 編輯 .env，填入 LLM_BASE_URL（自架 vLLM 端點，見 .env.example）
 node scripts/serve.mjs 4173
 ```
 
-開啟 `http://127.0.0.1:4173/`。`.env` 已在 `.gitignore`，不會入庫。未設定金鑰時評分退回規則粗判。
+開啟 `http://127.0.0.1:4173/`。`.env` 已在 `.gitignore`，不會入庫。未設定 `LLM_BASE_URL` 時評分退回規則粗判。
 
 僅預覽靜態頁、不需 LLM 時也可用 `python -m http.server 4173`（此時 `/api/llm-complete` 不可用）。
 
@@ -45,7 +45,11 @@ node scripts/serve.mjs 4173
 
 根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
 
-問答練習、看圖描述、接話小考與認證模擬的簡答／看圖語意評分會經 `/api/llm-complete` 呼叫 OpenAI（錄音仍只送 Formosan）。請在 Vercel 專案環境變數設定 `OPENAI_API_KEY`（見 `.env.example`）。未設定時自動退回本機規則粗判。
+問答練習、看圖描述、接話小考與認證模擬的簡答／看圖語意評分會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan）。請在 Vercel 專案環境變數設定後端：
+
+- `LLM_BASE_URL`（必填）：閘道端點，例 `http://114.34.77.157:9002/llm/gemma4`（POST 直接打到該網址本身）。內網位址 Vercel 連不到，正式站一律使用公網位址。
+- `LLM_API_KEY`（選填）：閘道有啟用驗證時設定，以 Bearer 送出。
+- 模型名由前端統一提供（`google/gemma-4-26B-A4B-it`），不需後端設定。未設定 `LLM_BASE_URL` 時自動退回本機規則粗判。
 
 ## 已上線應用
 
