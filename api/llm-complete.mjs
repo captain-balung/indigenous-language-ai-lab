@@ -8,6 +8,63 @@ const DEFAULT_MODEL = "gpt-4o-mini";
 const MAX_CHARS = 8000;
 const OPENAI_TIMEOUT_MS = 30000;
 
+// ── 防護一：來源檢查（Origin allowlist）────────────────────────────
+// 瀏覽器對 POST 一律帶 Origin，站外腳本／curl 不帶或帶假來源都會被擋。
+// 可用環境變數 LLM_ALLOWED_ORIGINS 覆寫：逗號分隔，或 "*" 表示全部放行。
+const PROD_ORIGIN = "https://indigenous-language-ai-lab.vercel.app";
+
+function getDefaultAllowedOrigins() {
+  return [
+    (origin) => origin === PROD_ORIGIN,
+    (origin) => /^https:\/\/[a-z0-9-]+\.vercel\.app$/.test(origin), // 預覽部署
+    (origin) => /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin), // 本機開發
+  ];
+}
+
+function isOriginAllowed(origin) {
+  if (typeof origin !== "string" || !origin) return false;
+  const config = process.env.LLM_ALLOWED_ORIGINS?.trim();
+  if (config === "*") return true;
+  if (config) {
+    return config.split(",").map((s) => s.trim()).includes(origin);
+  }
+  return getDefaultAllowedOrigins().some((match) => match(origin));
+}
+
+// ── 防護二：IP 限流（每 IP 每分鐘上限，記憶體內近似值）────────────
+// serverless 可能有多個實例，此限流為每實例各自計數，足以擋掉隨手盜刷。
+// 可用環境變數 LLM_RATE_LIMIT 覆寫（設 0 可關閉）。
+const RATE_WINDOW_MS = 60000;
+const RATE_LIMIT_DEFAULT = 30;
+const rateHits = new Map(); // ip → 最近請求時間戳陣列
+
+function getClientIp(req) {
+  const forwarded = req.headers?.["x-forwarded-for"];
+  if (typeof forwarded === "string" && forwarded) return forwarded.split(",")[0].trim();
+  return req.socket?.remoteAddress || "unknown";
+}
+
+function isRateLimited(ip) {
+  const limit = Number.parseInt(process.env.LLM_RATE_LIMIT ?? "", 10);
+  const max = Number.isFinite(limit) ? limit : RATE_LIMIT_DEFAULT;
+  if (max <= 0) return false;
+  const now = Date.now();
+  const hits = (rateHits.get(ip) || []).filter((t) => now - t < RATE_WINDOW_MS);
+  if (hits.length >= max) {
+    rateHits.set(ip, hits);
+    return true;
+  }
+  hits.push(now);
+  rateHits.set(ip, hits);
+  if (rateHits.size > 5000) {
+    // 避免記憶體無限成長：清掉過期紀錄
+    for (const [key, times] of rateHits) {
+      if (times.every((t) => now - t >= RATE_WINDOW_MS)) rateHits.delete(key);
+    }
+  }
+  return false;
+}
+
 function readBody(req) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -42,6 +99,18 @@ export default async function handler(req, res) {
 
   if (req.method !== "POST") {
     send(res, 405, { error: "只接受 POST" });
+    return;
+  }
+
+  if (!isOriginAllowed(req.headers?.origin)) {
+    send(res, 403, { error: "來源不允許" });
+    return;
+  }
+
+  const clientIp = getClientIp(req);
+  if (isRateLimited(clientIp)) {
+    res.setHeader("Retry-After", "60");
+    send(res, 429, { error: "請求太頻繁，請稍後再試" });
     return;
   }
 
