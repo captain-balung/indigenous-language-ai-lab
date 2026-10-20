@@ -4,14 +4,15 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { complete, DEFAULT_LLM_MODEL, isLlmTransportFailure, LLM_COMPLETE_PATH } from "../llm-complete.mjs";
 import { createResilientSemanticJudge } from "../resilient-semantic-judge.mjs";
+import { wireInputMode } from "../input-mode.mjs";
 import {
   createHeuristicSemanticJudge,
   createLlmSemanticJudge,
 } from "../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
+assert.ok(fs.existsSync(path.join(root, "apps/shared/input-mode.mjs")));
 assert.ok(fs.existsSync(path.join(root, "api/llm-complete.mjs")));
-assert.ok(fs.existsSync(path.join(root, "api/llm-complete.php")));
 assert.ok(fs.existsSync(path.join(root, ".env.example")));
 assert.equal(DEFAULT_LLM_MODEL, "gpt-4o-mini");
 assert.equal(LLM_COMPLETE_PATH, "/api/llm-complete");
@@ -54,4 +55,34 @@ assert.equal(
   "unreasonable",
 );
 
-console.log("PASS: shared llm-complete + resilient semantic judge");
+{
+  const toggle = {
+    dataset: {},
+    setAttribute() {},
+    innerHTML: "",
+    addEventListener(_type, fn) { this._click = fn; }
+  };
+  const typePanel = { hidden: false };
+  const voicePanel = { hidden: true };
+  const host = { dataset: {} };
+  let changed = null;
+  const api = wireInputMode({
+    root: host,
+    toggle,
+    typePanel,
+    voicePanel,
+    onModeChange(mode) { changed = mode; }
+  });
+  assert.equal(api.mode(), "voice");
+  assert.equal(typePanel.hidden, true);
+  assert.equal(voicePanel.hidden, false);
+  assert.equal(host.dataset.inputMode, "voice");
+  toggle._click();
+  assert.equal(api.mode(), "type");
+  assert.equal(changed, "type");
+  assert.equal(typePanel.hidden, false);
+  assert.equal(voicePanel.hidden, true);
+  assert.match(toggle.innerHTML, /svg/i);
+}
+
+console.log("PASS: shared llm-complete + resilient semantic judge + input-mode");

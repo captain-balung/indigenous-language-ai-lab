@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="聽族語問句，用打字或錄音自由回答。系統會顯示它聽到、懂成的意思。">
+  <meta name="description" content="聽族語問句，用自己的話回答。">
   <title>問答練習｜族語e樂園 AI 實驗室</title>
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
@@ -12,38 +12,27 @@
   <a class="skip" href="#practice">跳至練習</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p>基礎學習 · MISSION 04</p><h1>問答練習</h1><span>聽問句，用自己的話回答；系統會顯示它聽到、懂成的意思。</span></div>
+    <div class="hero-copy"><p>基礎學習 · MISSION 04</p><h1>問答練習</h1><span>聽族語問句，用自己的話回答。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
   <main id="practice">
     <section class="setup panel" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選擇語別</h2>
+      <aside class="task-brief" aria-label="怎麼玩">
+        <p class="task-brief__lead">聽族語問句，用自己的話回答。</p>
+        <ol>
+          <li>選擇語言別與方言別。</li>
+          <li>播放問句，必要時可顯示中文提示。</li>
+          <li>語音錄完會自動送出；打字則按送出。</li>
+        </ol>
+      </aside>
       <div class="select-grid">
         <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
 
-      <div class="notice notice--model">
-        <strong>語音辨識目前是「族級」模型</strong>
-        <p>
-          官方語音辨識只提供 <b>16 個族級模型</b>，沒有 42 個方言別模型。你選的方言別用來
-          <b>挑選問句與翻譯判定</b>，辨識時送出的是該族的通用模型。
-          方言之間的詞彙與音韻差異可能造成辨識偏差，<b>這是模型的限制，不代表你念錯</b>。
-        </p>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>錄音與評分會送到第三方服務</strong>
-        <ul>
-          <li>你的錄音會傳送到 <code>ai3.iformosa.com.tw</code>，交由 Formosan AI 辨識後回傳文字，並翻成中文。</li>
-          <li>中文問句與譯文會經本站 proxy 送至 <b>OpenAI</b> 做練習用語意評分（<b>不送錄音</b>）。無法連線時改用本機規則粗判。</li>
-          <li>本站<b>不儲存</b>你的錄音；沒有帳號、沒有追蹤、沒有 cookie。</li>
-          <li><b>請不要錄入個人資料或不希望外流的內容。</b></li>
-        </ul>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認翻譯與語音辨識服務…</div>
       <button id="start" class="primary" disabled>開始練習</button>
       <p class="alt-route">不方便出聲也可以打字。想看圖寫句？<a href="/apps/basic-learning/body-parts-practice/">看圖練習</a>；想看圖描述？<a href="/apps/basic-learning/describe-practice/">看圖描述</a>。</p>
@@ -61,26 +50,30 @@
       <label class="hint-toggle"><input id="show-zh" type="checkbox" checked> 顯示中文問句</label>
       <p id="zh-hint"></p>
 
-      <label for="answer">族語回答（打字）</label>
-      <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
-
-      <div class="recorder">
-        <button id="record" class="primary record-button" type="button">
-          <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
-        </button>
-        <output id="record-time" aria-live="off">00:00</output>
+      <div class="input-mode-bar">
+        <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
       </div>
-      <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-        <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音，打字也可以送出</span>
+      <div id="input-type" hidden>
+        <label for="answer">族語回答</label>
+        <textarea id="answer" autocomplete="off" spellcheck="false"></textarea>
       </div>
-      <audio id="preview" controls hidden></audio>
-      <p class="inline-privacy">若送出錄音，會上傳到 <code>ai3.iformosa.com.tw</code> 辨識；譯文與問句會送 OpenAI 練習評分。請勿錄入個資。</p>
-      <div class="submit-row">
-        <button id="submit" class="primary" disabled>送出回答</button>
+      <div id="input-voice">
+        <div class="recorder">
+          <button id="record" class="primary record-button" type="button">
+            <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+          </button>
+        </div>
+        <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+          <span class="record-state__icon" aria-hidden="true">●</span>
+          <span id="record-time" class="record-state__time">00:00</span>
+          <span id="record-state-text">尚未錄音</span>
+        </div>
         <button id="rerecord" type="button" hidden>重新錄音</button>
       </div>
+      <div class="submit-row">
+        <button id="submit" class="primary" disabled>送出回答</button>
+      </div>
 
-      <div id="heard" class="heard" hidden aria-live="polite"></div>
       <div id="result" class="result" aria-live="polite" hidden></div>
       <div class="quiz-actions">
         <button id="retry" hidden>重試判定</button>

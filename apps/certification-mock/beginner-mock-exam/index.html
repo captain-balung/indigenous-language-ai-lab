@@ -2,8 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="模擬原住民族語言能力認證測驗初級的口說三題型與聽力四題型，聽教材錄音作答。">
-  <title>初級模擬站｜族語e樂園 AI 實驗室</title>
+  <meta name="description" content="模擬原住民族語言能力認證測驗初級的口說三題型，整卷練習後一次看結果。">
+  <title>初級口說模擬站｜族語e樂園 AI 實驗室</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23253154'/%3E%3Ccircle cx='16' cy='14' r='6.5' fill='%23e2a33c' stroke='%23fff5d7' stroke-width='2'/%3E%3Cpath d='M11 19l-2 7 7-3 7 3-2-7' fill='%23ff7957' stroke='%23fff5d7' stroke-width='1.6' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/certification-mock/beginner-mock-exam/styles.css">
@@ -12,49 +12,27 @@
   <a class="skip" href="#exam">跳至模擬測驗</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p>認證模擬 · MISSION 01</p><h1>初級模擬站</h1><span>用教材錄音模擬初級認證的口說三題型與聽力四題型。</span></div>
+    <div class="hero-copy"><p>認證模擬 · MISSION 01</p><h1>初級口說模擬站</h1><span>照初級認證的口說三題型，整卷練習一遍。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
   <main id="exam">
     <section class="setup panel" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選擇你要練習的語別</h2>
+      <aside class="task-brief" aria-label="怎麼玩">
+        <p class="task-brief__lead">照初級認證的口說三題型，整卷練習一遍。</p>
+        <ol>
+          <li>選擇語言別與方言別，產生題目。</li>
+          <li>依序完成單詞朗讀、簡答題、看圖說話。</li>
+          <li>全部做完後一次看結果與答題紀錄。</li>
+        </ol>
+      </aside>
       <div class="select-grid">
         <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
 
-      <div class="notice notice--scope">
-        <strong>練習用，非正式測驗</strong>
-        <p>口說 11 題（單詞朗讀、簡答、看圖說話）＋聽力 20 題。練習得分依公開配分加總，不代表正式測驗成績。</p>
-      </div>
-
-      <div class="notice notice--adaptation">
-        <strong>與正式測驗不同</strong>
-        <p>按「確定」會立刻告訴你對錯；可重複播放。選擇題(二)中文改文字；配合題每題各自一組圖。</p>
-      </div>
-
-      <div class="notice notice--audio">
-        <strong>音檔／看圖說話圖來自 klokah.tw</strong>
-        <p>音檔與看圖說話四張圖由 <code>klokah.tw</code> 直接載入（對方會看到你的 IP 位址）。本站不儲存這些檔；聽力音檔載失敗則改顯示文字且不計分。</p>
-      </div>
-
-      <div class="notice notice--model">
-        <strong>語音辨識是族級模型</strong>
-        <p>只有 16 個族級模型；方言別用來選教材。辨識偏差是模型限制，不代表你念錯。</p>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>口說錄音會外送辨識與評分</strong>
-        <p>錄音送到 <code>ai3.iformosa.com.tw</code> 辨識與翻譯；簡答／看圖說話的中文譯文與題目說明會經本站 proxy 送 <b>OpenAI</b> 練習評分（不送錄音；失敗時改用規則粗判）。本站不儲存。請不要錄入個人資料。聽力不必開麥克風。</p>
-      </div>
-
-      <div class="notice notice--a11y">
-        <strong>無障礙</strong>
-        <p>是非／選擇題(一)／配合題需看圖作答；選擇題(二)純聽力。可用鍵盤操作。</p>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認語音辨識服務…</div>
       <button id="start" class="primary" disabled>產生題目並開始練習</button>
       <p class="alt-route">想只練生活詞彙？<a href="/apps/basic-learning/body-parts-practice/">看圖練習</a>或<a href="/apps/basic-learning/body-parts-speaking/">口說練習</a>也會即時告訴你對錯。</p>
@@ -97,14 +75,13 @@
           <button id="record" class="primary record-button" type="button">
             <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
           </button>
-          <output id="record-time" aria-live="off">00:00</output>
           <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-            <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+            <span class="record-state__icon" aria-hidden="true">●</span>
+            <span id="record-time" class="record-state__time">00:00</span>
+            <span id="record-state-text">尚未錄音</span>
           </div>
-          <audio id="preview" controls hidden></audio>
         </div>
 
-        <p class="inline-privacy">按「確定」後錄音會上傳到 <code>ai3.iformosa.com.tw</code> 辨識；簡答／看圖說話的譯文會送 OpenAI 練習評分。請勿錄入個資。</p>
         <div id="heard" class="heard" hidden aria-live="polite"></div>
       </div>
 
@@ -127,7 +104,7 @@
         <p>「聽力成績須達45分以上，口說成績須達15分以上，始核發該級別之合格證書」</p>
         <cite>—— <a href="https://lokahsu.ilrdf.org.tw/" target="_blank" rel="noopener">Lokahsu 原住民族語言能力認證測驗</a> 認證測驗Q&amp;A</cite>
       </blockquote>
-      <p class="disclaimer">下面的練習得分依公開配分加總，僅供本次模擬參考；不代表正式測驗成績，也不預測你是否會通過。</p>
+      <p class="disclaimer">下面的練習得分依公開配分加總，僅供本次模擬參考。</p>
 
       <div id="review-list" class="review-list"></div>
 
@@ -141,7 +118,8 @@
     <strong>教材來源與授權</strong>
     <p>資料來源－<a href="https://web.klokah.tw/extension/sp_junior/practice.php" target="_blank" rel="noopener">原住民族語E樂園</a>，由財團法人原住民族語言研究發展基金會製作，以 <a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 釋出。題型參考 <a href="https://lokahsu.ilrdf.org.tw/web_lokahsu/" target="_blank" rel="noopener">Lokahsu 原住民族語言能力認證測驗</a> 公開的考試題型說明。本模擬不得作商業用途；教材不屬於本專案原始碼授權範圍。</p>
   </footer>
-  <audio id="player" preload="none"></audio>
+
+  <audio id="player" preload="none" hidden></audio>
   <script type="module" src="/apps/certification-mock/beginner-mock-exam/app.mjs"></script>
 </body>
 </html>

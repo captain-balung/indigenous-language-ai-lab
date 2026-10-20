@@ -73,9 +73,10 @@ for (const [mode, folder] of units) {
 }
 assert.ok(pages.compose.includes("用族語寫出這個意思"));
 assert.ok(pages.oral.includes('id="question-image"'));
-assert.ok(pages.retell.includes("對方會看到你的 IP 位址") && pages.retell.includes("播放短句") === false);
+assert.ok(!pages.retell.includes("播放短句"));
 assert.ok(pages.retell.includes(">播放<") && pages.reply.includes(">播放問句<"));
 assert.ok(page.includes('lang="zh-Hant"') && page.includes("CC BY-NC-SA 4.0"));
+assert.ok(Object.values(pages).every((html) => html.includes('class="task-brief"') && html.includes("怎麼玩")), "四個課堂頁都要有怎麼玩");
 assert.ok(!page.includes("聽寫快問快答") && !page.includes("句子排列所") && !page.includes("本堂挑戰卷"));
 assert.ok(!page.includes("?mode="));
 assert.ok(app.includes("verdictFromTranslation"));
@@ -83,6 +84,9 @@ assert.ok(app.includes("replyVerdict"));
 assert.ok(app.includes("judgeAnswer"));
 assert.ok(app.includes("activeSemanticJudge"));
 assert.ok(app.includes("prefers-reduced-motion"));
+assert.ok(app.includes("<dt>辨識</dt>"), "口說結果區必須併入辨識文字");
+assert.ok(!app.includes("系統聽到的是"), "不得再使用獨立系統聽到區");
+assert.ok(!page.includes('id="heard"'), "三個口說頁面不得再有獨立 #heard");
 assert.ok(!app.includes("scrambleDecision"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(app));
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + app));

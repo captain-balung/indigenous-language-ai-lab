@@ -14,8 +14,8 @@ const ui = {
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   image: $("#question-image"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
-  state: $("#record-state"), stateText: $("#record-state-text"), preview: $("#preview"),
-  submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"), result: $("#result"),
+  state: $("#record-state"), stateText: $("#record-state-text"),
+  rerecord: $("#rerecord"), result: $("#result"),
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
 
@@ -23,14 +23,14 @@ let selectedDialect, selectedTheme, shards, records = [], question, deck, roundS
 let translationCodes = new Set(DIALECTS.map((d) => d.code));
 let asrAudit = null;
 let recorder = null, mediaStream = null, chunks = [], startedAt = 0, timer = null;
-let recordedBlob = null, previewUrl = null, lastHeard = null;
+let recordedBlob = null, lastHeard = null;
 
 /* ---------- 狀態列：文字＋圖示，不只靠顏色 ---------- */
 
 const STATES = {
   idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
-  recorded: ["■", "錄音完成，可以送出或重錄"],
+  recorded: ["■", "錄音完成，正在送出"],
   converting: ["◐", "轉檔中…"],
   transcribing: ["◍", "辨識中，請稍候"],
   slow: ["◍", "辨識中，長句需要較久，請不要重新整理"],
@@ -187,7 +187,6 @@ function nextQuestion() {
   ui.image.src = question.imageSrc;
   ui.image.alt = `請辨認圖片（${selectedTheme.name}，${selectedDialect.name}）`;
   clearRecording();
-  ui.heard.hidden = true;
   ui.result.hidden = ui.retry.hidden = ui.reveal.hidden = ui.next.hidden = ui.model.hidden = true;
   ui.record.disabled = false;
   resetModelAudio();
@@ -277,15 +276,12 @@ function finishRecording() {
   clearInterval(timer);
   mediaStream?.getTracks().forEach((track) => track.stop());
   recordedBlob = new Blob(chunks, { type: recorder.mimeType || "audio/webm" });
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
-  previewUrl = URL.createObjectURL(recordedBlob);
-  ui.preview.src = previewUrl;
-  ui.preview.hidden = false;
   ui.record.classList.remove("is-recording");
-  ui.recordLabel.textContent = "重新錄音";
-  ui.submit.disabled = false;
-  ui.rerecord.hidden = false;
+  ui.record.disabled = true;
+  ui.recordLabel.textContent = "已錄音";
+  ui.rerecord.hidden = true;
   setState("recorded");
+  runFlow();
 }
 
 ui.rerecord.addEventListener("click", () => { clearRecording(); ui.record.focus(); });
@@ -294,13 +290,9 @@ function clearRecording() {
   recordedBlob = null;
   lastHeard = null;
   chunks = [];
-  if (previewUrl) { URL.revokeObjectURL(previewUrl); previewUrl = null; }
-  ui.preview.hidden = true;
-  ui.preview.removeAttribute("src");
   ui.record.classList.remove("is-recording");
   ui.recordLabel.textContent = "開始錄音";
   ui.time.textContent = "00:00";
-  ui.submit.disabled = true;
   ui.rerecord.hidden = true;
   setState("idle");
 }
@@ -326,13 +318,11 @@ async function convertToAsrWav(blob) {
 
 /* ---------- 送出與判定 ---------- */
 
-ui.submit.addEventListener("click", () => { runFlow(); });
 ui.retry.addEventListener("click", () => { runFlow(); });
 
 const runFlow = createSingleFlight(async () => {
   if (!recordedBlob || pending) return;
   pending = true;
-  ui.submit.disabled = true;
   ui.retry.disabled = true;
   ui.record.disabled = true;
 
@@ -355,7 +345,6 @@ const runFlow = createSingleFlight(async () => {
   try {
     heard = await transcribe(wav, selectedDialect.ethnicity);
     lastHeard = heard;
-    renderHeard(heard);
   } catch (error) {
     clearTimeout(slowHint);
     setState("failed", "這次沒有辨識成功");
@@ -379,7 +368,6 @@ function finishFlow() {
   pending = false;
   ui.retry.disabled = false;
   ui.record.disabled = false;
-  ui.submit.disabled = !recordedBlob;
 }
 
 async function transcribe(wav, ethnicity) {
@@ -429,12 +417,6 @@ async function translateToZh(text, srcLang) {
 
 /* ---------- 呈現 ---------- */
 
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(text)}</p>
-    <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯——可以重新錄音再試一次。</small>`;
-}
-
 function renderResult(result, heard) {
   ui.result.hidden = false;
   ui.result.dataset.state = result.type;
@@ -442,16 +424,18 @@ function renderResult(result, heard) {
     exact: ["完全正確！", "與教材答案完全相符，不需要再呼叫翻譯服務。"],
     semantic: ["意思正確，通過！", "系統聽到的內容意思接近；可以參考教材的標準句型。"],
     // 不斷言使用者念錯：只陳述系統聽到什麼、與教材不同
-    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差；重新錄音再試一次即可。"],
+    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差，不代表你念錯；重新錄音再試一次即可。"],
     unavailable: ["目前無法完成判定", "你的答案尚未被判錯，錄音仍保留。"]
   };
   const [title, detail] = messages[result.type];
-  ui.result.innerHTML = `<strong>${title}</strong><p>${detail}</p>` + (result.translation
-    ? `<dl><dt>系統聽到的族語</dt><dd>${escapeHtml(heard)}</dd><dt>翻譯服務的中文</dt><dd>${escapeHtml(result.translation)}</dd>` +
-      (result.type === "semantic"
-        ? `<dt>教材族語</dt><dd>${escapeHtml(question.indigenousText)}</dd><dt>教材中文</dt><dd>${escapeHtml(question.chineseText)}</dd>`
-        : "") + `</dl>`
-    : "");
+  const rows = [
+    heard ? `<dt>系統聽到的族語</dt><dd>${escapeHtml(heard)}</dd>` : "",
+    result.translation ? `<dt>翻譯服務的中文</dt><dd>${escapeHtml(result.translation)}</dd>` : "",
+    result.type === "semantic"
+      ? `<dt>教材族語</dt><dd>${escapeHtml(question.indigenousText)}</dd><dt>教材中文</dt><dd>${escapeHtml(question.chineseText)}</dd>`
+      : ""
+  ].filter(Boolean).join("");
+  ui.result.innerHTML = `<strong>${title}</strong><p>${detail}</p>${rows ? `<dl>${rows}</dl>` : ""}`;
   const passed = result.type === "exact" || result.type === "semantic";
   ui.next.hidden = !passed;
   ui.reveal.hidden = passed;
@@ -472,7 +456,6 @@ function resetQuiz() {
   ui.quiz.hidden = true;
   clearRecording();
   selectedTheme = undefined; shards = undefined; records = [];
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.model.hidden = true;
   ui.themes.hidden = true;
@@ -490,7 +473,6 @@ function escapeHtml(value) { const div = document.createElement("div"); div.text
 
 window.addEventListener("pagehide", () => {
   stopAudio();
-  if (previewUrl) URL.revokeObjectURL(previewUrl);
 });
 
 init().catch((error) => {

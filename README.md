@@ -58,9 +58,9 @@ node scripts/serve.mjs 4173
 - [看圖口說小考](apps/classroom-quiz/picture-speaking-quiz/README.md)：看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分。一輪 8 題。
 - [聽後轉述](apps/classroom-quiz/listen-retell/README.md)：只聽短句，用族語再講一次。系統顯示它聽到的話，以及懂成的中文。一輪 8 題。
 - [接話小考](apps/classroom-quiz/question-reply/README.md)：聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。一輪 8 題，不顯示配分。
-- [初級模擬站](apps/certification-mock/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型與聽力四題型，共 31 題一卷；音檔由 klokah.tw 直接播放；練習得分依公開配分加總，不宣告正式通過。
-- [中級模擬站](apps/certification-mock/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
-- [部落大小事](apps/scenario-practice/village-life/README.md)：三個生活場景的對話——開學第一天、家裡辦婚禮、週末想出門。輪到你時打字或錄音，系統顯示它聽到的、懂成的意思，以及教材怎麼講。要說自己名字與來處的句子標為參考句，不判對錯；沒有配分。
+- [初級口說模擬站](apps/certification-mock/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型，共 11 題一卷；全部做完後一次看結果；音檔由 klokah.tw 直接播放；練習得分依公開口說配分加總，不宣告正式通過。
+- [中級模擬站](apps/certification-mock/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；全部做完後一次看結果；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
+- [部落大小事](apps/scenario-practice/village-life/README.md)：三個生活場景的對話——開學第一天、家裡辦婚禮、週末想出門。先連續聽完整段對話，再玩任務關卡。
 - [市場小幫手](apps/scenario-practice/market-helper/README.md)：100 元預算，依媽媽的購物清單（每局隨機菜／水果）問價、買齊、結帳。族語練貨品名；價錢與過關由程式判定，沒有配分。
 
 ## 素材與授權
@@ -81,7 +81,7 @@ node scripts/download-body-parts.mjs
 
 ### 初級認證題型語料
 
-「初級模擬站」的資料位於 `data/klokah-junior/`，內容是「族語 E 樂園」句型篇國中版的六種題型：
+「初級口說模擬站」的資料位於 `data/klokah-junior/`，內容是「族語 E 樂園」句型篇國中版的六種題型（本站目前只用其中口說相關語料）：
 42 個方言別、共 7768 筆語料與 180 張共用圖片，同樣依
 [CC BY-NC-SA 4.0](data/klokah-junior/LICENSE.md) 使用。
 

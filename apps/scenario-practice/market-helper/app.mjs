@@ -9,6 +9,7 @@ import {
   addToCart, buildBrief, cartTotal, emptyCart, emptyUnlocks, judgeCheckout,
   matchItemName, pickRoundCatalog, priceQuote, unlockDetail, unlockPrice
 } from "./core.mjs";
+import { wireInputMode } from "../../shared/input-mode.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
@@ -24,17 +25,18 @@ const ui = {
   qtyRow: $("#qty-row"), qty: $("#qty"), qtyDec: $("#qty-dec"), qtyInc: $("#qty-inc"),
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"), recordNote: $("#record-note"),
-  preview: $("#preview"), submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
-  heard: $("#heard"), result: $("#result"),
+  submit: $("#submit"), rerecord: $("#rerecord"), retry: $("#retry"),
+  result: $("#result"),
   cartPanel: $("#cart-panel"), cartList: $("#cart-list"), cartTotal: $("#cart-total"), checkout: $("#checkout"),
   report: $("#report"), reportHeadline: $("#report-headline"), reportDetail: $("#report-detail"),
-  reportMath: $("#report-math"), again: $("#again"), backSetupReport: $("#back-setup-report")
+  reportMath: $("#report-math"), again: $("#again"), backSetupReport: $("#back-setup-report"),
+  inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
 
 const STATES = {
-  idle: ["●", "尚未錄音，打字也可以送出"],
+  idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
-  recorded: ["■", "錄音完成，可以送出或重錄"],
+  recorded: ["■", "錄音完成，正在送出"],
   converting: ["◐", "轉檔中…"],
   transcribing: ["◍", "辨識中，請稍候"],
   slow: ["◍", "辨識中，長句需要較久，請不要重新整理"],
@@ -55,6 +57,7 @@ let recorder = null;
 let lastHeard = null;
 let translationCodes = new Set(DIALECTS.map((item) => item.code));
 let runEpoch = 0;
+let inputMode = null;
 
 function setState(key, override) {
   const [icon, text] = STATES[key] || STATES.idle;
@@ -98,20 +101,16 @@ async function init() {
       }
       if (state === "recorded") {
         ui.record.classList.remove("is-recording");
-        ui.recordLabel.textContent = "重新錄音";
-        ui.rerecord.hidden = false;
-        if (recorder.objectUrl) {
-          ui.preview.src = recorder.objectUrl;
-          ui.preview.hidden = false;
-        }
+        ui.record.disabled = true;
+        ui.recordLabel.textContent = "已錄音";
+        ui.rerecord.hidden = true;
         setState("recorded");
         updateSubmit();
+        runFlow();
         return;
       }
       ui.record.classList.remove("is-recording");
       ui.recordLabel.textContent = "開始錄音";
-      ui.preview.hidden = true;
-      ui.preview.removeAttribute("src");
       ui.rerecord.hidden = true;
       setState("idle");
       updateSubmit();
@@ -119,10 +118,24 @@ async function init() {
     onTick(seconds) { ui.time.textContent = clock(seconds); }
   });
 
+  inputMode = wireInputMode({
+    root: ui.speakPanel,
+    toggle: ui.inputModeToggle,
+    typePanel: ui.inputType,
+    voicePanel: ui.inputVoice,
+    onModeChange(mode) {
+      if (mode === "type") clearRecording();
+      else ui.answer.value = "";
+      updateSubmit();
+      if (mode === "type") ui.answer.focus();
+      else ui.record.focus();
+    }
+  });
+
   await Promise.all([verifyServices(), loadDatasetIndex()]);
   if (!supportsRecording()) {
     ui.record.disabled = true;
-    setState("failed", "這個瀏覽器不支援錄音，請改用打字");
+    setState("failed", "這個瀏覽器不支援錄音，請切換為打字");
   }
 }
 
@@ -201,7 +214,6 @@ function dealRound() {
   lastHeard = null;
   clearRecording();
   ui.answer.value = "";
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.retry.hidden = true;
   applyBrief(buildBrief(catalog));
@@ -227,7 +239,14 @@ function clearRecording() {
 }
 
 function updateSubmit() {
-  ui.submit.disabled = pending || !selectedItemId || (!ui.answer.value.trim() && !recorder?.blob);
+  // 語音：停錄即自動送出，送出鈕只服務打字模式。
+  if (inputMode?.mode() === "voice") {
+    ui.submit.hidden = true;
+    ui.submit.disabled = true;
+    return;
+  }
+  ui.submit.hidden = false;
+  ui.submit.disabled = pending || !selectedItemId || !ui.answer.value.trim();
 }
 
 ui.ethnicity.addEventListener("change", () => {
@@ -345,7 +364,6 @@ ui.productGrid.addEventListener("click", (event) => {
   const button = event.target.closest("[data-id]");
   if (!button) return;
   selectedItemId = button.dataset.id;
-  ui.heard.hidden = true;
   ui.result.hidden = true;
   ui.retry.hidden = true;
   ui.answer.value = "";
@@ -371,7 +389,7 @@ function updateSpeakPanel() {
     ui.turnTitle.textContent = `問價：說出「${item.chineseText}」的族語`;
     ui.turnHint.textContent = unlocks.asked.has(item.id)
       ? "這種貨的價錢已經問過了，可以改問別的，或去購買。"
-      : "錄音或打字送出正確貨品名後，攤主會報價。";
+      : "語音錄完會自動送出；打字則按送出。說對貨品名後，攤主會報價。";
   } else {
     ui.turnTitle.textContent = `放入籃子：再說一次「${item.chineseText}」`;
     ui.turnHint.textContent = "選定數量後，用族語說出貨品名確認放入購物籃。";
@@ -481,8 +499,8 @@ ui.record.addEventListener("click", async () => {
     const denied = error?.name === "NotAllowedError";
     setState("failed", denied ? "沒有麥克風權限" : "找不到可用的麥克風");
     ui.recordNote.textContent = denied
-      ? "瀏覽器沒有給這個頁面麥克風權限。可改用打字，或在網址列允許麥克風後再錄。"
-      : "找不到可用的麥克風。可改用打字。";
+      ? "瀏覽器沒有給這個頁面麥克風權限。可切換為打字，或在網址列允許麥克風後再錄。"
+      : "找不到可用的麥克風。可切換為打字。";
   }
 });
 
@@ -498,8 +516,9 @@ async function translateAnswer(text) {
 
 const runFlow = createSingleFlight(async () => {
   const item = selectedItem();
-  const typed = ui.answer.value.trim();
-  if (pending || !item || (!typed && !recorder?.blob)) return;
+  const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
+  const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
+  if (pending || !item || (!typed && !useVoice)) return;
   const epoch = runEpoch;
   pending = true;
   ui.submit.disabled = true;
@@ -524,7 +543,6 @@ const runFlow = createSingleFlight(async () => {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       if (epoch !== runEpoch) return;
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       if (epoch !== runEpoch) return;
@@ -537,7 +555,6 @@ const runFlow = createSingleFlight(async () => {
     clearTimeout(slowHint);
   } else {
     lastHeard = null;
-    ui.heard.hidden = true;
   }
 
   let translation = "";
@@ -562,11 +579,12 @@ const runFlow = createSingleFlight(async () => {
     return;
   }
 
+  const heardNote = lastHeard ? ` 辨識：${indigenous}。` : "";
   if (phase === "ask") {
     unlocks = unlockPrice(unlocks, item.id);
     const quote = priceQuote(item, unlocks);
     ui.vendorSay.textContent = `攤主：${item.chineseText}？${quote}`;
-    showSpeakResult("semantic", `對，這是「${item.chineseText}」（${item.indigenousText}）。價錢已解鎖。`);
+    showSpeakResult("semantic", `對，這是「${item.chineseText}」（${item.indigenousText}）。價錢已解鎖。${heardNote}`);
     renderProducts();
     renderPhase();
     updateSpeakPanel();
@@ -574,7 +592,7 @@ const runFlow = createSingleFlight(async () => {
     const qty = Math.max(1, Math.min(20, Number.parseInt(ui.qty.value, 10) || 1));
     cart = addToCart(catalog, cart, item.id, qty);
     ui.vendorSay.textContent = `攤主：好，${item.chineseText} ${qty} ${item.unit}放進籃子了。還要別的嗎？`;
-    showSpeakResult("semantic", `已放入 ${item.chineseText} × ${qty}。`);
+    showSpeakResult("semantic", `已放入 ${item.chineseText} × ${qty}。${heardNote}`);
     renderCart();
     updateBudget();
   }
@@ -582,11 +600,6 @@ const runFlow = createSingleFlight(async () => {
   ui.answer.value = "";
   finishFlow();
 });
-
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.textContent = `系統聽到：${text}`;
-}
 
 function showSpeakResult(state, message) {
   ui.result.hidden = false;

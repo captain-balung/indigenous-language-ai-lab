@@ -1,5 +1,5 @@
 /**
- * 初級模擬站 · 計分（純邏輯，可在 Node 測試）
+ * 初級口說模擬站 · 計分（純邏輯，可在 Node 測試）
  *
  * 這個模組刻意做不到三件事，而且每一件都有對應的測試把關：
  *
@@ -11,7 +11,7 @@
  *      不是 mismatched。音檔載不出來 → notScored，不是答錯。
  */
 
-import { exactMatch } from "../../basic-learning/body-parts-practice/core.mjs";
+import { normalizeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
 
 /** 官方及格標準原文，僅供對照，本站不據此推測結果。 */
 export const OFFICIAL = {
@@ -19,25 +19,25 @@ export const OFFICIAL = {
   speakingThreshold: 15,
   quote: "聽力成績須達45分以上，口說成績須達15分以上，始核發該級別之合格證書",
   sourceUrl: "https://lokahsu.ilrdf.org.tw/",
-  disclaimer: "下面的練習得分依公開配分加總，僅供本次模擬參考；不代表正式測驗成績，也不預測你是否會通過。",
+  disclaimer: "下面的練習得分依公開配分加總，僅供本次模擬參考。",
 };
 
 /**
- * 練習配分（與公開初級口說／聽力配分一致）。
- * 口說 40 + 聽力 60 = 100。
+ * 練習配分（與公開初級口說配分一致）。
+ * 本站只練口說三題型，滿分 40。
  */
 export const POINT_SCHEME = {
   wordReading: { perQuestion: 2, questions: 5, max: 10 },
   shortAnswer: { perQuestion: 4, questions: 5, max: 20 },
   pictureTalk: { perQuestion: 10, questions: 1, max: 10 },
-  listening: { perQuestion: 3, questions: 5, sectionMax: 15, max: 60 },
+  listening: { perQuestion: 3, questions: 0, sectionMax: 0, max: 0 },
   speakingMax: 40,
-  listeningMax: 60,
-  totalMax: 100,
+  listeningMax: 0,
+  totalMax: 40,
 };
 
 export const SPEAKING_COVERAGE_NOTE =
-  "本站的口說涵蓋 單詞朗讀（每題 2 分）、簡答題（每題 4 分）與 看圖說話（0–10 分）。簡答與看圖說話為語音辨識→中文翻譯後的機器粗判，非正式測驗評分。";
+  "本站的口說涵蓋 單詞朗讀（每題 2 分）、簡答題（每題 4 分）與 看圖說話（0–10 分）。";
 
 /** 看圖說話給分上限（0–10）。 */
 export const PICTURE_TALK_MAX_POINTS = POINT_SCHEME.pictureTalk.max;
@@ -62,7 +62,9 @@ export const LISTENING_MAX_POINTS = POINT_SCHEME.listening.perQuestion;
 export function judgeWordReading(transcript, expected) {
   if (typeof transcript !== "string" || !transcript.trim()) return "undetermined";
   if (typeof expected !== "string" || !expected.trim()) return "undetermined";
-  return exactMatch(transcript, expected) ? "matched" : "mismatched";
+  return normalizeAnswer(transcript).toLowerCase() === normalizeAnswer(expected).toLowerCase()
+    ? "matched"
+    : "mismatched";
 }
 
 function chineseOnly(text) {
@@ -319,6 +321,7 @@ function gradeShortAnswer(section, responses) {
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
       translateError: response.translateError ?? null,
+      rationale: response.shortRationale ?? null,
     });
   }
 
@@ -373,6 +376,7 @@ function gradePictureTalk(section, responses) {
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
       translateError: response.translateError ?? null,
+      rationale: response.pictureScore?.rationale ?? null,
     });
   }
 

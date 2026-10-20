@@ -12,47 +12,27 @@
   <a class="skip" href="#practice">跳至練習</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p>情境應用 · MISSION 02</p><h1>市場小幫手</h1><span>100 元預算——依媽媽的清單問價、把菜或水果買齊。</span></div>
+    <div class="hero-copy"><p>情境應用 · MISSION 02</p><h1>市場小幫手</h1><span>到攤位問價、比較與結帳，練習購物用語。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
   <main id="practice">
     <section id="setup" class="setup panel" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選語言別，再開始買菜</h2>
+      <aside class="task-brief" aria-label="怎麼玩">
+        <p class="task-brief__lead">到攤位問價、比較與結帳，練習購物用語。</p>
+        <ol>
+          <li>選擇語言別與方言別。</li>
+          <li>點貨品，用族語問價或購買。</li>
+          <li>買齊清單後結帳，看結果。</li>
+        </ol>
+      </aside>
       <div class="select-grid">
         <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
 
-      <div class="notice notice--model">
-        <strong>語音辨識目前是「族級」模型</strong>
-        <p>
-          官方語音辨識只提供 <b>16 個族級模型</b>，沒有 42 個方言別模型。你選的方言別用來
-          <b>挑選教材與翻譯判定</b>，辨識時送出的是該族的通用模型。
-          方言之間的詞彙與音韻差異可能造成辨識偏差，<b>這是模型的限制，不代表你念錯</b>。
-        </p>
-        <p id="model-note" class="model-note" aria-live="polite"></p>
-      </div>
-
-      <div class="notice notice--privacy">
-        <strong>錄音會送到第三方服務</strong>
-        <ul>
-          <li>你的錄音會傳送到 <code>ai3.iformosa.com.tw</code>，交由 Formosan AI 辨識後回傳文字。</li>
-          <li>貨品音檔由 <code>web.klokah.tw</code>、圖片由 <code>klokah.tw</code> 直接載入，載入時該網站會看到你的 IP 位址。</li>
-          <li>本站<b>不儲存</b>你的錄音，也<b>不轉送</b>給上述服務以外的任何對象；沒有帳號、沒有追蹤、沒有 cookie。</li>
-          <li><b>請不要錄入個人資料或不希望外流的內容。</b></li>
-        </ul>
-      </div>
-
-      <div class="notice">
-        <strong>教材來源</strong>
-        <p>
-          貨品詞取自「族語 E 樂園」<a href="https://web.klokah.tw/vocabulary/" rel="noopener">學習詞表／植物</a>，依
-          <a href="https://web.klokah.tw/creativeCommons/" rel="noopener">CC BY-NC-SA 4.0</a> 使用。
-          詳見 <a href="/data/market-helper/LICENSE.md">授權說明</a>。
-        </p>
-      </div>
-
+      <p id="model-note" class="model-note" aria-live="polite"></p>
       <div id="api-status" class="api-status" aria-live="polite">正在確認翻譯與語音辨識服務…</div>
       <button id="start" class="primary" disabled>開始任務</button>
       <p class="alt-route">想先練生活對話？<a href="/apps/scenario-practice/village-life/">部落大小事</a>；想練單句問答？<a href="/apps/basic-learning/qa-practice/">問答練習</a>。</p>
@@ -122,28 +102,32 @@
               </div>
             </div>
 
-            <label for="answer">族語（打字）</label>
-            <textarea id="answer" autocomplete="off" spellcheck="false" rows="2"></textarea>
-
-            <div class="recorder">
-              <button id="record" class="primary record-button" type="button">
-                <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
-              </button>
-              <output id="record-time" aria-live="off">00:00</output>
+            <div class="input-mode-bar">
+              <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
             </div>
-            <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-              <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音，打字也可以送出</span>
+            <div id="input-type" hidden>
+              <label for="answer">族語</label>
+              <textarea id="answer" autocomplete="off" spellcheck="false" rows="2"></textarea>
             </div>
-            <p id="record-note" class="record-note" aria-live="polite"></p>
-            <audio id="preview" controls hidden></audio>
-            <p class="inline-privacy">送出後錄音會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。請勿錄入個資。</p>
+            <div id="input-voice">
+              <div class="recorder">
+                <button id="record" class="primary record-button" type="button">
+                  <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+                </button>
+              </div>
+              <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+                <span class="record-state__icon" aria-hidden="true">●</span>
+                <span id="record-time" class="record-state__time">00:00</span>
+                <span id="record-state-text">尚未錄音</span>
+              </div>
+              <p id="record-note" class="record-note" aria-live="polite"></p>
+              <button id="rerecord" type="button" hidden>重錄</button>
+            </div>
 
             <div class="action-row">
               <button id="submit" class="primary" type="button" disabled>送出</button>
-              <button id="rerecord" type="button" hidden>重錄</button>
               <button id="retry" type="button" hidden>再試一次</button>
             </div>
-            <p id="heard" class="heard" hidden></p>
             <div id="result" class="result" hidden></div>
           </div>
 

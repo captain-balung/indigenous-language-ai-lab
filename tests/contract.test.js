@@ -45,7 +45,7 @@ assert(applications[5].title === "看圖口說小考" && applications[5].href ==
 assert(applications[6].title === "聽後轉述" && applications[6].href === "apps/classroom-quiz/listen-retell/", "Classroom retell card");
 assert(applications[7].title === "接話小考" && applications[7].href === "apps/classroom-quiz/question-reply/", "Classroom reply card");
 assert(!applications.some((app) => app.title === "聽音練習" || app.href === "apps/basic-learning/listen-practice/"), "Listen practice must stay off the homepage");
-assert(applications[8].title === "初級模擬站" && applications[8].status === "available" && applications[8].href === "apps/certification-mock/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
+assert(applications[8].title === "初級口說模擬站" && applications[8].status === "available" && applications[8].href === "apps/certification-mock/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
 assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/certification-mock/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
 assert(applications[12].title === "部落大小事" && applications[12].status === "available" && applications[12].href === "apps/scenario-practice/village-life/", "First scenario card must link to the village-life role play");
 assert(applications[13].title === "市場小幫手" && applications[13].status === "available" && applications[13].href === "apps/scenario-practice/market-helper/", "Second scenario card must link to market-helper");

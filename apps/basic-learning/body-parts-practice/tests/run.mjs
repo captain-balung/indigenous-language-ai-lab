@@ -12,6 +12,7 @@ assert.ok(page.includes('href="/apps/basic-learning/body-parts-practice/styles.c
 assert.ok(page.includes('src="/apps/basic-learning/body-parts-practice/app.mjs"'));
 assert.ok(!page.includes('href="styles.css"'));
 assert.ok(page.includes("看圖練習"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes('id="theme-grid"'));
 assert.ok(page.includes("選擇練習主題"));
 assert.ok(!page.includes("動作、天氣等還沒有對應圖片"));

@@ -19,6 +19,7 @@
  */
 
 import { createQuestionDeck } from "../../basic-learning/body-parts-practice/core.mjs";
+import { preferFirstAlt } from "../../shared/prefer-first-alt.mjs";
 
 const LETTERS_ABC = ["A", "B", "C"];
 const QUESTIONS_PER_SECTION = 5;
@@ -34,7 +35,7 @@ export const SECTION_SPECS = [
     title: "第一部分：是非題",
     instruction: "試卷上每題都有一個圖片，請聽電腦播出一個族語句子，若與該圖片所描述的內容符合，請選「O」；若不符合，請選「X」，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "本站沒有答案卡，直接在畫面上選。按「確定」後立刻告訴你對錯。你可以重複播放，正式測驗只播兩遍。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -44,7 +45,7 @@ export const SECTION_SPECS = [
     title: "第二部分：選擇題(一)",
     instruction: "試卷上每題有三個圖片，請聽電腦播出一個族語句子後，選一個與所聽到語意最相符的圖片，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "本站的三張圖片抽自同一個類別的三題教材；正式測驗的干擾圖由命題委員挑選。按「確定」後立刻告訴你對錯。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -54,7 +55,7 @@ export const SECTION_SPECS = [
     title: "第三部分：選擇題(二)",
     instruction: "請聽電腦播出一個中文句子及三句族語句子後，選出與中文句子語意最接近的族語句子，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "正式測驗會播出中文句子；本站因教材沒有中文錄音，改以文字呈現。三句族語仍然只能用聽的。按「確定」後立刻告訴你對錯。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -65,7 +66,7 @@ export const SECTION_SPECS = [
     title: "第四部份：選擇題(三)",
     instruction: "請聽電腦播出一個族語句子後，從選項中選出該句子正確的拼寫文字，並在答案卡上作答。每題播出兩遍。",
     instructionSource: "official",
-    adaptationNote: "這一節的三個族語拼寫在作答前就會顯示——題型本身就是要你比對拼寫，不是洩題。三個選項抽自同一個類別的三題教材。音檔載不出來時本題無法作答，會標成不計分。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -75,7 +76,7 @@ export const SECTION_SPECS = [
     title: "口說第一部分：單句朗讀",
     instruction: "請看著螢幕上的族語句子念出來。",
     instructionSource: "site",
-    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後用語音辨識比對你念的內容與教材拼寫，依詞語重疊程度給 0–3 分。辨識結果只是參考，不代表正式測驗的評分。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -85,7 +86,7 @@ export const SECTION_SPECS = [
     title: "口說第二部分：問答題",
     instruction: "請聽電腦播出一個族語問句，然後用族語回答。",
     instructionSource: "site",
-    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後：語音辨識→翻成中文→粗判是否合理（合理得 3 分）。這是練習用的機器判斷，不是正式測驗評分。",
+    adaptationNote: "",
     scorable: true,
   },
   {
@@ -95,7 +96,7 @@ export const SECTION_SPECS = [
     title: "口說第三部分：看圖表達",
     instruction: "請根據螢幕上的圖片及中文提示，以族語簡短地說說你的想法。",
     instructionSource: "site",
-    adaptationNote: "官方沒有公開這一節的作答說明原文，上面這句是本站措辭。按「確定」後：語音辨識→翻成中文→對照教材參考答案給 0–10 分。這是練習用的機器粗評，不是正式測驗評分。",
+    adaptationNote: "",
     scorable: true,
   },
 ];
@@ -192,8 +193,8 @@ function buildTrueFalse(shard, rng) {
         audioUrl: target.audioUrl,
         imagePath: shown.imagePath,
         // 作答階段不得渲染；只有音檔載入失敗或成績單才揭露。
-        indigenousText: target.indigenousText,
-        chineseText: target.chineseText,
+        indigenousText: preferFirstAlt(target.indigenousText),
+        chineseText: preferFirstAlt(target.chineseText),
       },
       options: [
         { key: "O", label: "O（符合）" },
@@ -259,7 +260,7 @@ function buildChoiceOne(shard, rng) {
 }
 
 function joinTurns(item, key) {
-  return item.turns.map((turn) => turn[key]).join(" ／ ");
+  return item.turns.map((turn) => preferFirstAlt(turn[key])).filter(Boolean).join("\n");
 }
 
 // ── 第三部分：選擇題(二) ──────────────────────────────────
@@ -277,15 +278,15 @@ function buildChoiceTwo(shard, rng) {
       key: String(position + 1),
       letter: option.letter,
       audioUrl: option.audioUrl,
-      indigenousText: option.indigenousText,
-      chineseText: option.chineseText,
+      indigenousText: preferFirstAlt(option.indigenousText),
+      chineseText: preferFirstAlt(option.chineseText),
     }));
     return {
       id: `${spec.id}-${index + 1}`,
       sectionId: spec.id,
       no: index + 1,
       scorable: true,
-      prompt: { chineseText: target.chineseText },
+      prompt: { chineseText: preferFirstAlt(target.chineseText) },
       options,
       answerKey: options.find((option) => option.letter === letter).key,
       source: { family: "choiceTwo", classId: item.classId, classNo: item.classNo, order: item.order, letter },
@@ -314,8 +315,8 @@ function buildChoiceThree(shard, rng) {
     const options = shuffle([target, ...distractors], rng).map((item, position) => ({
       key: String(position + 1),
       order: item.order,
-      indigenousText: item.indigenousText,
-      chineseText: item.chineseText,
+      indigenousText: preferFirstAlt(item.indigenousText),
+      chineseText: preferFirstAlt(item.chineseText),
     }));
     return {
       id: `${spec.id}-${index + 1}`,
@@ -326,8 +327,8 @@ function buildChoiceThree(shard, rng) {
       revealOnAudioFailure: false,
       prompt: {
         audioUrl: target.audioUrl,
-        indigenousText: target.indigenousText,
-        chineseText: target.chineseText,
+        indigenousText: preferFirstAlt(target.indigenousText),
+        chineseText: preferFirstAlt(target.chineseText),
       },
       options,
       answerKey: options.find((option) => option.order === target.order).key,
@@ -356,19 +357,22 @@ function buildSentenceReading(shard, rng) {
   }
 
   const picked = drawDistinct(pool, QUESTIONS_PER_SECTION, rng);
-  const questions = picked.map((sentence, index) => ({
-    id: `${spec.id}-${index + 1}`,
-    sectionId: spec.id,
-    no: index + 1,
-    scorable: true,
-    prompt: {
-      indigenousText: sentence.indigenousText,
-      chineseText: sentence.chineseText,
-      referenceAudioUrl: sentence.audioUrl,
-    },
-    expected: sentence.indigenousText,
-    source: { family: "oralReading", classId: sentence.classId, classNo: sentence.classNo, order: sentence.order, letter: sentence.letter },
-  }));
+  const questions = picked.map((sentence, index) => {
+    const indigenousText = preferFirstAlt(sentence.indigenousText);
+    return {
+      id: `${spec.id}-${index + 1}`,
+      sectionId: spec.id,
+      no: index + 1,
+      scorable: true,
+      prompt: {
+        indigenousText,
+        chineseText: preferFirstAlt(sentence.chineseText),
+        referenceAudioUrl: sentence.audioUrl,
+      },
+      expected: indigenousText,
+      source: { family: "oralReading", classId: sentence.classId, classNo: sentence.classNo, order: sentence.order, letter: sentence.letter },
+    };
+  });
 
   return makeSection(spec, questions);
 }
@@ -398,8 +402,8 @@ function buildShortAnswer(shard, rng) {
     scorable: true,
     prompt: {
       audioUrl: question.audioUrl,
-      indigenousText: question.indigenousText,
-      chineseText: question.chineseText,
+      indigenousText: preferFirstAlt(question.indigenousText),
+      chineseText: preferFirstAlt(question.chineseText),
     },
     source: { family: "dialogue", classId: question.classId, classNo: question.classNo, order: question.order, letter: question.letter },
   }));
@@ -422,13 +426,13 @@ function buildPictureTalk(shard, rng) {
     no: 1,
     scorable: true,
     prompt: {
-      tip: item.tip,
+      tip: preferFirstAlt(item.tip),
       // 高中版每題只有 1 張圖；仍用陣列，讓版面與初級的圖格共用同一種資料形狀。
       imageUrls: [item.imageUrl],
     },
     reference: {
-      indigenousText: item.indigenousText,
-      chineseText: item.chineseText,
+      indigenousText: preferFirstAlt(item.indigenousText),
+      chineseText: preferFirstAlt(item.chineseText),
       audioUrl: item.audioUrl,
     },
     source: { family: "pictureTalk", classId: item.classId, classNo: item.classNo, order: item.order },

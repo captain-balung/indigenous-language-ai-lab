@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分。">
+  <meta name="description" content="看圖念出完整句，每題只錄一次。">
   <title>看圖口說小考｜族語e樂園 AI 實驗室</title>
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
@@ -12,20 +12,24 @@
   <a class="skip" href="#practice">跳至測驗</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p id="mission">課堂測驗 · MISSION 02</p><h1 id="page-title">看圖口說小考</h1><span id="page-lead">看圖念出完整句。每題只錄一次，由語音辨識與翻譯計分。</span></div>
+    <div class="hero-copy"><p id="mission">課堂測驗 · MISSION 02</p><h1 id="page-title">看圖口說小考</h1><span id="page-lead">看圖念出完整句，每題只錄一次。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
   <main id="practice">
     <section class="setup panel" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選擇語別</h2>
+      <aside class="task-brief" aria-label="怎麼玩">
+        <p class="task-brief__lead">看圖念出完整句，每題只錄一次。</p>
+        <ol>
+          <li>選擇語言別與方言別。</li>
+          <li>看圖，用族語念出完整句子。</li>
+          <li>每題只錄一次，接著進入下一題。</li>
+        </ol>
+      </aside>
       <div class="select-grid">
         <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
-      </div>
-      <div id="notice-mic" class="notice notice--privacy" hidden>
-        <strong>錄音會送到第三方服務</strong>
-        <p>口說題的錄音會傳送到 <code>ai3.iformosa.com.tw</code> 辨識。本站不儲存錄音。請不要錄入個人資料。</p>
       </div>
       <div id="api-status" class="api-status" aria-live="polite">正在確認服務…</div>
       <button id="start" class="primary" type="button" disabled>開始本堂</button>
@@ -43,14 +47,13 @@
           <button id="record" class="primary record-button" type="button">
             <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
           </button>
-          <output id="record-time" aria-live="off">00:00</output>
         </div>
         <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-          <span class="record-state__icon" aria-hidden="true">●</span><span id="record-state-text">尚未錄音</span>
+          <span class="record-state__icon" aria-hidden="true">●</span>
+          <span id="record-time" class="record-state__time">00:00</span>
+          <span id="record-state-text">尚未錄音</span>
         </div>
-        <p class="inline-privacy">送出後會上傳到 <code>ai3.iformosa.com.tw</code> 辨識。每題只錄一次。</p>
       </div>
-      <div id="heard" class="heard" hidden></div>
       <div id="result" class="result" aria-live="polite" hidden></div>
       <div class="quiz-actions"><button id="next" type="button" hidden>下一題 →</button></div>
     </section>
@@ -66,7 +69,7 @@
 
   <footer>
     <strong>教材來源與授權</strong>
-    <p>題目來自「族語 E 樂園」<a href="https://web.klokah.tw/extension/sp_junior/practice.php" target="_blank" rel="noopener">句型篇國中版</a>，由財團法人原住民族語言研究發展基金會製作，以 <a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 釋出。本測驗不得作商業用途。分數只留在這一輪畫面，不是認證成績。</p>
+    <p>題目來自「族語 E 樂園」<a href="https://web.klokah.tw/extension/sp_junior/practice.php" target="_blank" rel="noopener">句型篇國中版</a>，由財團法人原住民族語言研究發展基金會製作，以 <a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 釋出。本測驗不得作商業用途。</p>
   </footer>
   <script type="module" src="/apps/classroom-quiz/picture-speaking-quiz/app.mjs"></script>
 </body>

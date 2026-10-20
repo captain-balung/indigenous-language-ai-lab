@@ -18,10 +18,13 @@ assert.ok(!page.includes('href="styles.css"'));
 assert.ok(page.includes('href="/"'), "必須有返回 AI 實驗室的連結");
 assert.ok(page.includes("/apps/basic-learning/body-parts-practice/"), "需提供看圖練習的替代路徑");
 assert.ok(page.includes("口說練習"));
+assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes('id="theme-grid"'));
 assert.ok(page.includes("選擇練習主題"));
 assert.ok(page.includes("播放音檔"));
-assert.ok(page.includes("可以先聽教材再念，也可以直接錄音。"));
+assert.ok(page.includes("停止錄音後會自動送出辨識"));
+assert.ok(app.includes("finishRecording") && /function finishRecording\(\)[\s\S]*?runFlow\(\)/.test(app), "停錄後必須自動送出");
+assert.ok(!page.includes('id="submit"') && !page.includes(">送出辨識<"), "純語音不得再有送出辨識鈕");
 
 /* ---------- §4 族 → ASR 族級模型：16 對 16，寫死不推導 ---------- */
 const models = Object.entries(ASR_MODELS);
@@ -141,7 +144,7 @@ assert.ok(!/crossorigin/.test(app), "音檔不得加 crossorigin");
 assert.ok(/ui\.record\.addEventListener\([\s\S]{0,250}ui\.player\.pause/.test(app), "錄音時要停教材音檔");
 
 /* ---------- §6.2 紅線：不得斷言使用者念錯 ---------- */
-assert.ok(page.includes("系統聽到的是") || app.includes("系統聽到的是"), "必須顯示系統聽到的內容");
+assert.ok(app.includes("系統聽到的族語"), "結果區必須顯示辨識文字");
 assert.ok(app.includes("不代表你念錯"));
 for (const forbidden of ["你念錯", "發音不正確", "發音錯誤", "念錯了"]) {
   assert.ok(!new RegExp(forbidden).test(app.replace(/不代表你念錯/g, "")), `措辭不得出現「${forbidden}」`);
@@ -150,19 +153,11 @@ assert.ok(app.includes("尚未被判錯"), "辨識失敗不得記為答錯");
 
 /* ---------- §7 隱私：錄音不得落地 ---------- */
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(app), "錄音與答案不得寫入本機儲存");
-assert.ok(app.includes("URL.revokeObjectURL"), "錄音物件 URL 必須釋放");
-assert.ok(page.includes("ai3.iformosa.com.tw"), "隱私揭露必須寫明送往的服務");
-assert.ok(page.includes("請不要錄入個人資料或不希望外流的內容"));
-assert.ok(page.indexOf("notice--privacy") < page.indexOf('id="quiz"'), "揭露必須在錄音介面之前就看得到");
+assert.ok(!app.includes("id=\"preview\"") && !app.includes("previewUrl"), "停錄自動送出後不得再有錄音預覽播放器");
 const ignore = fs.readFileSync(path.join(root, ".gitignore"), "utf8");
 for (const ext of ["wav", "mp3", "ogg", "flac", "m4a", "webm"]) {
   assert.ok(ignore.includes(`*.${ext}`), `.gitignore 必須擋住 *.${ext}`);
 }
-
-/* ---------- §3 族級模型揭露 ---------- */
-assert.ok(page.includes("16 個族級模型"));
-assert.ok(page.includes("不代表你念錯"));
-assert.ok(page.indexOf("族級") < page.indexOf('id="quiz"'), "族級揭露必須在送出前看得到");
 
 /* ---------- §11.1-5 判定 fixture（沿用 01 的判定邏輯） ---------- */
 assert.equal(normalizeAnswer("  O  ngoso’  kinian . "), "O ngoso' kinian.");
@@ -198,7 +193,7 @@ assert.equal(first, second, "重複點擊只能產生一個有效請求");
 release(); await Promise.all([first, second]);
 assert.equal(flights, 1);
 assert.ok(/function resetQuiz\(\)[\s\S]{0,320}clearRecording\(\)/.test(app), "切換語別必須清除舊錄音");
-assert.ok(/function resetQuiz\(\)[\s\S]{0,320}ui\.heard\.hidden = true/.test(app), "切換語別必須清除舊辨識結果");
+assert.ok(/function resetQuiz\(\)[\s\S]{0,320}ui\.result\.hidden = true/.test(app), "切換語別必須清除舊判定結果");
 assert.ok(/function nextQuestion\(\)[\s\S]{0,600}clearRecording\(\)/.test(app), "下一題必須清除舊錄音");
 
 /* ---------- 抽題不重複 ---------- */

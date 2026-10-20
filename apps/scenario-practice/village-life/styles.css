@@ -71,7 +71,11 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
    （見 1200px 以下那段），.stage 會比圖高，圖層用 inset:0 就會被一起撐高，
    人物被畫偏、還蓋到下面的卡片上。所以場景圖與圖層、可點框一起放進 .quest-scene，
    這個盒子由圖本身撐高，比例與座標才不會跑掉。 */
-.quest-scene{position:relative;overflow:hidden}
+/* container-type 是給桌上名牌的字級當基準：字要跟著場景寬度等比縮（見 .quest-desk-tag），
+   否則字固定大小、場景窗小時相鄰兩個名字會疊在一起（官方的 1.2em／1.6vw 也是這個意思）。
+   盒子高度仍由場景圖自己撐（上課用語圖是 1000×700、另外兩個主題是 1000×707，
+   圖載入後 <img> 會照固有比例決定高，這裡不能寫死 aspect-ratio，否則另外兩個主題會被拉扁）。 */
+.quest-scene{position:relative;overflow:hidden;container-type:inline-size}
 .quest-layers{position:absolute;inset:0}
 .quest-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
 /* 可點區的座標全部來自教材（已換算成百分比），所以疊在場景上就好 */
@@ -81,7 +85,24 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .quest-target.is-selected::after,.quest-option.is-selected::after{border-color:var(--coral)}
 .quest-target:focus-visible,.quest-option:focus-visible,.quest-click:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
 .quest-target.is-asked{cursor:default}
-.quest-target__tag{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:.15rem .5rem;border:3px solid var(--ink);border-radius:10px;background:#fff;font-weight:900;white-space:nowrap}
+/* 這關不能問的人（借筆只能問左邊、橡皮擦只能問右邊）：不亮外框、禁止光標 */
+.quest-target.is-locked{cursor:not-allowed}
+.quest-target.is-locked:hover::after{border-color:transparent}
+.quest-target.is-locked:focus-visible{outline-color:var(--coral)}
+/* 場景圖桌上印好的藍色名牌：只疊字（官方 .table-card qll／qln；座標是牌子左上）。
+   字級要跟著場景寬度走：官方在 1000px 舞台上是 1.2em（≈14.4px，＝寬度的 1.45%），
+   手機（≤1000px）是 1.6vw。這裡取 official 的多半值 1.45cqw（1cqw＝場景寬的 1%），
+   最低 7px 保住可讀性；容器查詢不支援的瀏覽器落回上一行的舊 clamp 值。 */
+.quest-desk-tag{position:absolute;z-index:2;line-height:1;white-space:nowrap;pointer-events:none;font-size:clamp(.7rem,.5rem + .4vw,1rem);font-size:max(7px,1.45cqw)}
+.quest-desk-tag--blue{color:#2a528c}
+.quest-desk-tag--brown{color:#71482b}
+/* 問到的名字放上桌：字級、顏色跟桌上印好的字同一套（官方 card-1 棕、card-2 藍）；
+   卡上置中與排卡左側的位移由 app 依槽位的 anchor 設定。 */
+.quest-dropped-tag{position:absolute;z-index:3;white-space:nowrap;pointer-events:none;font-weight:800;font-size:max(7px,1.45cqw)}
+.quest-dropped-tag--1{color:#71482b}
+.quest-dropped-tag--2{color:#2a528c}
+/* 中間那一位的主角標示：自己的名字官方已印在桌牌上，不用再顯示一張 */
+.quest-player-badge{position:absolute;z-index:3;top:52%;left:48%;transform:translateX(-50%);padding:.15em .65em;border:2px solid var(--coral);border-radius:999px;background:#fff;color:var(--coral);font-weight:800;font-size:max(9px,1.05cqw);pointer-events:none;white-space:nowrap}
 /* take 的選項放在場景裡；被鎖住的那個要讓人看得出來不能點 */
 .quest-option.is-locked{cursor:not-allowed;opacity:.45}
 .quest-option.is-locked::after{border-color:rgba(37,49,84,.5);border-style:dashed}
@@ -115,18 +136,42 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .quest-target.is-selected::after{border-color:var(--coral)}
 .quest-target:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
 .quest-target.is-asked{cursor:default}
-.quest-target__tag{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);padding:.15rem .5rem;border:3px solid var(--ink);border-radius:10px;background:#fff;font-weight:900;white-space:nowrap}
 /* 任務卡改放在場景上方：官方把詞卡區放在場景「下面」，所以桌面是空的，
    過關時那支筆／橡皮擦／掃把才看得到。我們的卡片是壓在場景上的，
    壓在下面會把桌面蓋掉，所以移到上面，桌面留給過關的物件。 */
 .quest-board{top:1rem;bottom:auto}
+/* click 關（點門）：可點區在場景上方中間，任務卡讓到左下角，
+   右下的點人區和上方的門都留出來（官方任務卡本來就在場景外面） */
+.quest-stage.is-click-stage .quest-board{top:auto;bottom:1rem;left:1rem;right:auto;max-width:min(62%,540px)}
 .quest-reward{position:absolute;z-index:2;object-fit:contain}
+/* hover／選中光暈（官方 .hoverGlow / .hoverGlow2 的替作：官方用的是圖檔光暈） */
+.quest-layer.is-glow{filter:drop-shadow(0 0 10px rgba(255,117,63,.85))}
+/* 過關的「下一關」鈕：出現在右欄下方（跟其他面板對齊），樣式沿用 .
+   dialogue__controls .arrow 的珊瑚色膠囊——不用場景上的「！」也沒有彈窗。
+   [hidden] 要明確寫出來：否則上面 display 類規則會把 hidden 屬性蓋掉，按鈕會一直顯示。 */
+.quest-complete{display:block;width:fit-content;margin:.4rem 0 0 auto;padding:.55rem 1.4rem;white-space:nowrap;border:3px solid var(--ink);
+  border-radius:26px;background:var(--coral);color:#fff;font-weight:900;font-size:1.05rem;cursor:pointer;box-shadow:0 4px 0 var(--ink)}
+.quest-complete:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.quest-complete[hidden]{display:none}
+.quest-complete:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
+/* 「自動說這句」跟在送出鈕旁邊：珊瑚字配白底粗框，跟右邊實心的「送出這句」
+   做出主／輔的分別（原本寫了 color:coral 卻疊在 primary 的珊瑚底上，字被吃掉） */
+#quest-autoask{border:3px solid var(--coral);border-radius:13px;background:#fff;color:var(--coral);font-weight:900}
+/* 購物清單折疊（官方 #buying-list-btn 的 toggle） */
+.quest-buylist-toggle{margin-left:.5rem;padding:.05rem .6rem;border:2px solid var(--ink);border-radius:10px;background:#fff;font:inherit;font-size:.85rem;font-weight:800;cursor:pointer}
+.quest-shopping.is-collapsed{display:none}
 .quest-reply__line{display:block;font-weight:800}
 .quest-reply__line b{color:var(--coral)}
 /* 任務說明比對話長一點，字級略收 */
 .quest-board .dialogue__zh{font-size:1.5rem}
-.quest-tags{margin-top:.7rem;padding-top:.6rem;border-top:2px dashed var(--ink)}
-.quest-tags p{margin:0 0 .5rem;font-weight:800;font-size:.95rem}
+/* 名牌區在右欄（官方詞卡在場景旁／下），不要塞進會被 .stage overflow 裁掉的對話卡 */
+.quest-tags{margin-bottom:1rem}
+.quest-tags > p{margin:.7rem 0 .5rem;font-weight:800;font-size:.95rem}
+.quest-heard{display:grid;gap:.45rem;margin-top:.35rem}
+.quest-heard__row{display:grid;gap:.1rem;padding:.45rem .55rem;border:2px dashed var(--ink);border-radius:12px;background:#fffdf5}
+.quest-heard__who{font-size:.85rem;font-weight:800;opacity:.75}
+.quest-heard__name{font-size:1.25rem;font-weight:900;color:var(--coral)}
+.quest-heard__say{font-size:.9rem;font-weight:800;opacity:.85}
 .quest-tag-dock{display:flex;flex-wrap:wrap;gap:.5rem}
 .quest-tag{padding:.35rem .7rem;border:3px solid var(--ink);border-radius:12px;background:#fff;font:inherit;font-weight:900;cursor:pointer}
 .quest-tag.is-selected{background:var(--coral);color:#fff}
@@ -154,7 +199,6 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .dialogue__zh{font-size:2rem}
   .my-turn{padding:.9rem 1rem 1rem}
   .my-turn textarea{min-height:4.5rem}
-  .my-turn .inline-privacy{font-size:.85rem}
 }
 /* 夠寬（1700px 以上）才讓場景置中：左右各留 (輸入區 + 間距) 一樣寬的空白，
    場景才會是整個面板的正中央。1700px 這個門檻是算出來的——在這個寬度，
@@ -184,19 +228,24 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .dialogue__avatar{width:52px;height:52px}
   .dialogue__zh{font-size:1.3rem}
   .quest-board .dialogue__zh{font-size:1.15rem}
-  /* 名牌在小小的螢幕上不好點，給大一點的觸控範圍 */
-  .quest-target__tag{border-width:2px;font-size:.85rem}
+  /* 桌上名牌／放上去的名牌字級隨場景寬度縮（.quest-desk-tag 的 cqw），這裡不再寫死。 */
   .hint-box{font-size:.9rem}
   .dialogue__controls .audio-state{font-size:.85rem}
   .submit-row{flex-direction:column;align-items:stretch}
   .submit-row button{width:100%}
 }
 /* 螢幕很矮時場景圖還是照比例，只是畫面小一點。
-   這裡要讓「高度」決定大小、寬度跟著等比縮（width:auto），框才會剛好等於圖；
-   若維持 width:100% 只壓 max-height，框會比圖寬、左右留大片空白。 */
+   這裡改用「寬」當上限（341px ⇔ 上課用語高約 240px；另外兩個主題 1000×707，高約 241px），
+   圖自己的高度跟著固有比例走——盒子仍然由圖撐、正好等於圖的寬高比，
+   名牌、同學、可點框的百分比座標才不會跑位；
+   若壓「高度」，.stage 這個 block 盒寬還是會佔滿欄位，左右留白的地方座標會整組跑掉。 */
 @media(max-height:640px){
-  .stage__bg{width:auto;max-width:100%;height:240px;max-height:none;margin-inline:auto}
-  .quest-scene{width:auto;max-width:100%;height:240px;margin-inline:auto}
+  /* 長度只用 px／vw：盒子的寬與圖的寬要一樣（兩行都寫同一個 min()），
+     用 % 會跟 fit-content 互相參照（子的 % 參照盒、盒又依子縮），整組解成 0；
+     也不能用 fit-content——.quest-scene 有 container-type:inline-size，
+     大小不得依內容決定，fit-content 會解成 0。 */
+  .stage__bg{width:min(341px,92vw);height:auto;max-height:none;margin-inline:auto}
+  .quest-scene{width:min(341px,92vw);margin-inline:auto}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition-duration:.01ms!important}}
 

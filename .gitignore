@@ -5,6 +5,7 @@
 Thumbs.db
 .env
 .env.local
+prev_project/
 
 # 錄音與音訊一律不入庫（口說練習的錄音只存在當次頁面狀態）
 *.wav
@@ -13,3 +14,4 @@ Thumbs.db
 *.flac
 *.m4a
 *.webm
+tmp/

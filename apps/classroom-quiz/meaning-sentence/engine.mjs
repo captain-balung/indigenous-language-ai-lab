@@ -15,7 +15,6 @@ let modeInfo;
 const ui = {
   mission: $("#mission"), title: $("#page-title"), lead: $("#page-lead"),
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
-  noticeAudio: $("#notice-audio"), noticeMic: $("#notice-mic"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"), prompt: $("#prompt"), questionTitle: $("#question-title"),
   compose: $("#panel-compose"), meaning: $("#compose-meaning"), oral: $("#panel-oral"),
   audio: $("#panel-audio"), speech: $("#panel-speech"),
@@ -23,7 +22,7 @@ const ui = {
   image: $("#question-image"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), skipAudio: $("#skip-audio"),
-  heard: $("#heard"), result: $("#result"), next: $("#next"),
+  result: $("#result"), next: $("#next"),
   report: $("#report"), score: $("#score-line"), list: $("#score-list"), again: $("#again")
 };
 
@@ -81,8 +80,6 @@ async function init() {
   ui.mission.textContent = `課堂測驗 · MISSION ${modeInfo.mission}`;
   ui.title.textContent = modeInfo.title;
   ui.lead.textContent = modeInfo.lead;
-  setHidden(ui.noticeAudio, !needsAudio(mode));
-  setHidden(ui.noticeMic, !needsAsr(mode));
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));
   if (needsAsr(mode)) {
     if (!supportsRecording()) {
@@ -220,7 +217,6 @@ function showQuestion() {
   setHidden(ui.submit, question.mode !== "compose");
   if (ui.submit) ui.submit.disabled = true;
   setHidden(ui.skipAudio, true);
-  setHidden(ui.heard, true);
   ui.result.hidden = true;
   ui.next.hidden = true;
   if (ui.answer) ui.answer.value = "";
@@ -349,10 +345,6 @@ async function gradeSpeech() {
     return;
   }
   if (current !== attempt) return;
-  if (ui.heard) {
-    ui.heard.hidden = false;
-    ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(heard)}</p>`;
-  }
   if (question.mode === "reply") {
     try {
       const translation = await translateToZh(heard, selectedDialect.code);
@@ -424,8 +416,10 @@ function finish(result, reveal, current) {
     : reveal && result.type !== "unavailable"
       ? `<dt>教材族語</dt><dd>${escapeHtml(question.indigenousText)}</dd><dt>教材中文</dt><dd>${escapeHtml(question.chineseText)}</dd>`
       : "";
+  const heard = result.heard ? `<dt>辨識</dt><dd>${escapeHtml(result.heard)}</dd>` : "";
   const translation = result.translation ? `<dt>系統懂成</dt><dd>${escapeHtml(result.translation)}</dd>` : "";
-  ui.result.innerHTML = `<strong>${headline}</strong><p>${detail}</p>${translation || textbook ? `<dl>${translation}${textbook}</dl>` : ""}`;
+  const rows = `${heard}${translation}${textbook}`;
+  ui.result.innerHTML = `<strong>${headline}</strong><p>${detail}</p>${rows ? `<dl>${rows}</dl>` : ""}`;
   ui.next.hidden = false;
   ui.next.textContent = index + 1 >= round.length ? "看本堂分數" : "下一題 →";
   ui.next.focus();

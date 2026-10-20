@@ -6,6 +6,7 @@ import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
 import { dialogueQuestions, qaVerdictLabel } from "./core.mjs";
+import { wireInputMode } from "../../shared/input-mode.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
@@ -14,14 +15,15 @@ const ui = {
   replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"), showZh: $("#show-zh"),
   zhHint: $("#zh-hint"), answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"),
   time: $("#record-time"), state: $("#record-state"), stateText: $("#record-state-text"),
-  preview: $("#preview"), submit: $("#submit"), rerecord: $("#rerecord"), heard: $("#heard"),
-  result: $("#result"), retry: $("#retry"), next: $("#next")
+  submit: $("#submit"), rerecord: $("#rerecord"),
+  result: $("#result"), retry: $("#retry"), next: $("#next"),
+  inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
 
 const STATES = {
-  idle: ["●", "尚未錄音，打字也可以送出"],
+  idle: ["●", "尚未錄音"],
   recording: ["◉", "錄音中…再按一次停止"],
-  recorded: ["■", "錄音完成，可以送出或重錄"],
+  recorded: ["■", "錄音完成，正在送出"],
   converting: ["◐", "轉檔中…"],
   transcribing: ["◍", "辨識中，請稍候"],
   slow: ["◍", "辨識中，長句需要較久，請不要重新整理"],
@@ -31,6 +33,7 @@ const STATES = {
 let selectedDialect, questions = [], question, deck, roundSize = 0, answeredCount = 0, pending = false;
 let translationCodes = new Set(DIALECTS.map((item) => item.code));
 let asrAudit = null, recorder = null, lastHeard = null;
+let inputMode = null;
 
 function setState(key, override) {
   const [icon, text] = STATES[key] || STATES.idle;
@@ -55,31 +58,40 @@ async function init() {
       }
       if (state === "recorded") {
         ui.record.classList.remove("is-recording");
-        ui.recordLabel.textContent = "重新錄音";
-        ui.rerecord.hidden = false;
-        if (recorder.objectUrl) {
-          ui.preview.src = recorder.objectUrl;
-          ui.preview.hidden = false;
-        }
+        ui.record.disabled = true;
+        ui.recordLabel.textContent = "已錄音";
+        ui.rerecord.hidden = true;
         setState("recorded");
         updateSubmit();
+        runFlow();
         return;
       }
       if (blob) return;
       ui.record.classList.remove("is-recording");
       ui.recordLabel.textContent = "開始錄音";
-      ui.preview.hidden = true;
-      ui.preview.removeAttribute("src");
       ui.rerecord.hidden = true;
       setState("idle");
       updateSubmit();
     },
     onTick(seconds) { ui.time.textContent = clock(seconds); }
   });
+  inputMode = wireInputMode({
+    root: ui.quiz,
+    toggle: ui.inputModeToggle,
+    typePanel: ui.inputType,
+    voicePanel: ui.inputVoice,
+    onModeChange(mode) {
+      if (mode === "type") clearRecording();
+      else ui.answer.value = "";
+      updateSubmit();
+      if (mode === "type") ui.answer.focus();
+      else ui.record.focus();
+    }
+  });
   await verifyServices();
   if (!supportsRecording()) {
     ui.record.disabled = true;
-    setState("failed", "這個瀏覽器不支援錄音，請改用打字");
+    setState("failed", "這個瀏覽器不支援錄音，請切換為打字");
   }
 }
 
@@ -127,7 +139,16 @@ function updateModelNote() {
 }
 
 function updateStart() { ui.start.disabled = !selectedDialect || !questions.length; }
-function updateSubmit() { ui.submit.disabled = pending || (!ui.answer.value.trim() && !recorder?.blob); }
+function updateSubmit() {
+  // 語音：停錄即自動送出，送出鈕只服務打字模式。
+  if (inputMode?.mode() === "voice") {
+    ui.submit.hidden = true;
+    ui.submit.disabled = true;
+    return;
+  }
+  ui.submit.hidden = false;
+  ui.submit.disabled = pending || !ui.answer.value.trim();
+}
 
 ui.ethnicity.addEventListener("change", () => {
   resetQuiz();
@@ -185,13 +206,14 @@ function nextQuestion() {
   ui.zhHint.textContent = question.chineseText;
   ui.zhHint.hidden = !ui.showZh.checked;
   ui.answer.value = "";
-  ui.heard.hidden = ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
+  ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
   clearRecording();
   resetPromptAudio();
   const canRecord = supportsRecording() && asrStateFor(selectedDialect.ethnicity).usable;
   ui.record.disabled = !canRecord;
   updateSubmit();
-  ui.answer.focus();
+  if (inputMode?.mode() === "voice") ui.record.focus();
+  else ui.answer.focus();
 }
 
 ui.showZh.addEventListener("change", () => { ui.zhHint.hidden = !ui.showZh.checked; });
@@ -234,8 +256,8 @@ ui.record.addEventListener("click", async () => {
     const denied = error?.name === "NotAllowedError";
     setState("failed", denied ? "沒有麥克風權限" : "找不到可用的麥克風");
     showResult("undetermined", denied
-      ? "瀏覽器沒有給這個頁面麥克風權限。可改用打字，或在網址列允許麥克風後再錄。"
-      : "找不到可用的麥克風。可改用打字。");
+      ? "瀏覽器沒有給這個頁面麥克風權限。可切換為打字，或在網址列允許麥克風後再錄。"
+      : "找不到可用的麥克風。可切換為打字。");
   }
 });
 
@@ -253,8 +275,9 @@ ui.submit.addEventListener("click", () => { runFlow(); });
 ui.retry.addEventListener("click", () => { runFlow(); });
 
 const runFlow = createSingleFlight(async () => {
-  const typed = ui.answer.value.trim();
-  if (pending || (!typed && !recorder?.blob)) return;
+  const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
+  const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
+  if (pending || (!typed && !useVoice)) return;
   pending = true;
   ui.submit.disabled = true;
   ui.retry.disabled = true;
@@ -277,7 +300,6 @@ const runFlow = createSingleFlight(async () => {
     try {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
       lastHeard = indigenous;
-      renderHeard(indigenous);
     } catch (error) {
       clearTimeout(slowHint);
       setState("failed", "這次沒有辨識成功");
@@ -289,7 +311,6 @@ const runFlow = createSingleFlight(async () => {
     clearTimeout(slowHint);
   } else {
     lastHeard = null;
-    ui.heard.hidden = true;
   }
 
   let translation;
@@ -330,12 +351,6 @@ async function translateAnswer(text) {
   return translateToZh(text, selectedDialect.code);
 }
 
-function renderHeard(text) {
-  ui.heard.hidden = false;
-  ui.heard.innerHTML = `<strong>系統聽到的是</strong><p class="heard-text">${escapeHtml(text)}</p>
-    <small>這是語音辨識的結果。如果和你念的不一樣，可能是族級模型的限制，不代表你念錯。</small>`;
-}
-
 function renderResult(verdict, { indigenous, translation, rationale, fallback } = {}) {
   const title = qaVerdictLabel(verdict);
   const details = {
@@ -373,7 +388,6 @@ function resetQuiz() {
   question = undefined;
   ui.quiz.hidden = true;
   clearRecording();
-  ui.heard.hidden = true;
   ui.result.hidden = true;
 }
 
