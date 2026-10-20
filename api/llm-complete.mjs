@@ -1,12 +1,24 @@
 /**
- * OpenAI Chat Completions proxy（Vercel serverless）。
+ * LLM Chat Completions proxy（Vercel serverless，OpenAI 相容端點）。
  * POST JSON { system, user, model? } → { text }
- * 金鑰只從環境變數 OPENAI_API_KEY 讀取，不進前端。
+ * 後端為自架 vLLM（經 Flask 閘道等 OpenAI 相容服務），以環境變數設定：
+ *   LLM_BASE_URL（必填，例：http://114.34.77.157:9002/llm/gemma4）
+ *   LLM_API_KEY（選填；未設定時不打 Authorization header）
+ * 直接 POST 到 LLM_BASE_URL 本身，body 用 OpenAI 風格 {model, messages}；
+ * 回應相容 OpenAI（choices[0].message.content）與 Ollama 風格（message.content）。
+ * 模型名由前端統一提供（見 apps/shared/llm-complete.mjs 的 DEFAULT_LLM_MODEL）。
  */
 
-const DEFAULT_MODEL = "gpt-4o-mini";
+const DEFAULT_MODEL = "google/gemma-4-26B-A4B-it";
 const MAX_CHARS = 8000;
-const OPENAI_TIMEOUT_MS = 30000;
+const LLM_TIMEOUT_MS = 30000;
+
+// ── 後端設定（OpenAI 相容端點）──────────────────────────────────
+// LLM_BASE_URL：閘道端點，POST 直接打到該網址本身（含 /chat/completions 結尾會被去掉）。
+// LLM_API_KEY：後端金鑰；閘道未啟用驗證時可不設（不打 Authorization）。
+const baseUrl = (process.env.LLM_BASE_URL?.trim() || "")
+  .replace(/\/+$/, "")
+  .replace(/\/chat\/completions$/, "");
 
 // ── 防護一：來源檢查（Origin allowlist）────────────────────────────
 // 瀏覽器對 POST 一律帶 Origin，站外腳本／curl 不帶或帶假來源都會被擋。
@@ -114,9 +126,9 @@ export default async function handler(req, res) {
     return;
   }
 
-  const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) {
-    send(res, 503, { error: "未設定 OPENAI_API_KEY" });
+  const apiKey = process.env.LLM_API_KEY?.trim() || "";
+  if (!baseUrl) {
+    send(res, 503, { error: "未設定 LLM_BASE_URL" });
     return;
   }
 
@@ -146,14 +158,13 @@ export default async function handler(req, res) {
   }
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), OPENAI_TIMEOUT_MS);
+  const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const upstreamHeaders = { "Content-Type": "application/json" };
+    if (apiKey) upstreamHeaders.Authorization = `Bearer ${apiKey}`;
+    const response = await fetch(baseUrl, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
+      headers: upstreamHeaders,
       body: JSON.stringify({
         model,
         temperature: 0,
@@ -167,17 +178,18 @@ export default async function handler(req, res) {
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) {
       const detail = payload?.error?.message || `HTTP ${response.status}`;
-      send(res, 502, { error: `OpenAI 請求失敗：${detail}` });
+      send(res, 502, { error: `LLM 請求失敗：${detail}` });
       return;
     }
-    const text = payload?.choices?.[0]?.message?.content;
+    // 回應相容 OpenAI（choices[0].message.content）與 Ollama 風格（message.content）
+    const text = payload?.choices?.[0]?.message?.content ?? payload?.message?.content;
     if (typeof text !== "string" || !text.trim()) {
-      send(res, 502, { error: "OpenAI 沒有回傳文字" });
+      send(res, 502, { error: "LLM 沒有回傳文字" });
       return;
     }
     send(res, 200, { text: text.trim(), model });
   } catch (error) {
-    const message = error?.name === "AbortError" ? "OpenAI 逾時" : (error?.message || String(error));
+    const message = error?.name === "AbortError" ? "LLM 逾時" : (error?.message || String(error));
     send(res, 502, { error: message });
   } finally {
     clearTimeout(timer);

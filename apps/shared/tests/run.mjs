@@ -14,12 +14,12 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../.
 assert.ok(fs.existsSync(path.join(root, "apps/shared/input-mode.mjs")));
 assert.ok(fs.existsSync(path.join(root, "api/llm-complete.mjs")));
 assert.ok(fs.existsSync(path.join(root, ".env.example")));
-assert.equal(DEFAULT_LLM_MODEL, "gpt-4o-mini");
+assert.equal(DEFAULT_LLM_MODEL, "google/gemma-4-26B-A4B-it");
 assert.equal(LLM_COMPLETE_PATH, "/api/llm-complete");
 
-assert.ok(isLlmTransportFailure("未設定 OPENAI_API_KEY"));
+assert.ok(isLlmTransportFailure("未設定 LLM_BASE_URL"));
 assert.ok(isLlmTransportFailure("LLM proxy 逾時"));
-assert.ok(isLlmTransportFailure("OpenAI 請求失敗：HTTP 502"));
+assert.ok(isLlmTransportFailure("LLM 請求失敗：HTTP 502"));
 assert.ok(!isLlmTransportFailure("回答與問句無關"));
 assert.ok(!isLlmTransportFailure("沒有譯文"));
 
@@ -32,7 +32,7 @@ const resilient = createResilientSemanticJudge({
   createLlm: createLlmSemanticJudge,
   createHeuristic: createHeuristicSemanticJudge,
   model: "mock",
-  complete: async () => { throw new Error("未設定 OPENAI_API_KEY"); },
+  complete: async () => { throw new Error("未設定 LLM_BASE_URL"); },
 });
 const short = await resilient.judgeShortAnswer({
   questionChinese: "你好嗎？",

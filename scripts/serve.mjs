@@ -1,6 +1,6 @@
 // 本機預覽用的極簡靜態伺服器（零依賴）。
 //   node scripts/serve.mjs [port]
-// 正式部署由 Vercel 處理；本機另支援 POST /api/llm-complete（需 OPENAI_API_KEY）。
+// 正式部署由 Vercel 處理；本機另支援 POST /api/llm-complete（需 LLM_BASE_URL）。
 // 會自動讀取專案根目錄 `.env`（不覆蓋已存在的 process.env）。
 import { createReadStream, readFileSync, statSync } from "node:fs";
 import { createServer } from "node:http";
@@ -81,9 +81,10 @@ createServer((request, response) => {
   response.writeHead(200, { "Content-Type": TYPES[path.extname(file)] ?? "application/octet-stream" });
   createReadStream(file).pipe(response);
 }).listen(port, () => {
-  const hasKey = Boolean(process.env.OPENAI_API_KEY?.trim());
+  const hasBackend = Boolean(process.env.LLM_BASE_URL?.trim());
+  const hasKey = Boolean(process.env.LLM_API_KEY?.trim());
   console.log(`http://127.0.0.1:${port}/`);
-  if (envLoaded) console.log(`.env 已載入${hasKey ? "（OPENAI_API_KEY 可用）" : "（尚未設定 OPENAI_API_KEY）"}`);
-  else console.log("未找到 .env；可從 .env.example 複製後填入 OPENAI_API_KEY");
-  if (!hasKey) console.log("語意評分將退回規則粗判，直到設定 OPENAI_API_KEY");
+  if (envLoaded) console.log(`.env 已載入${hasBackend ? `（LLM_BASE_URL=${process.env.LLM_BASE_URL}${hasKey ? "，LLM_API_KEY 已設定" : "，未設 LLM_API_KEY"}）` : "（尚未設定 LLM_BASE_URL）"}`);
+  else console.log("未找到 .env；可從 .env.example 複製後填入 LLM_BASE_URL");
+  if (!hasBackend) console.log("語意評分將退回規則粗判，直到設定 LLM_BASE_URL");
 });

@@ -17,7 +17,7 @@
 
 ```
 node apps/basic-learning/describe-practice/tests/run.mjs
-OPENAI_API_KEY=… node scripts/serve.mjs 4173
+LLM_BASE_URL=http://192.168.0.226:11434/v1 node scripts/serve.mjs 4173
 ```
 
 開啟 `http://127.0.0.1:4173/apps/basic-learning/describe-practice/`。未設定金鑰時自動改用規則粗判。
