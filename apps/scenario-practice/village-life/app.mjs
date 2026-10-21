@@ -11,6 +11,7 @@ import {
   questProgress, questResultDetail, questResultHeadline, questSceneOptions, questTurnTitle,
   targetLabel
 } from "./core.mjs";
+import { judgeAiMeaning } from "./semantic-judge.mjs";
 import { wireInputMode } from "../../shared/input-mode.mjs";
 
 const $ = (selector) => document.querySelector(selector);
@@ -192,6 +193,7 @@ async function verifyServices() {
   } catch {
     notes.push("翻譯即時清單暫時無法取得，送出時再試");
   }
+  notes.push("語意使用 vLLM AI 判別");
   // 不附加「先聽再說／不計分」這類流程說明。
   ui.api.textContent = `● ${notes.join("；")}`;
   ui.api.dataset.state = asrAudit?.consistent ? "ok" : "fallback";
@@ -1382,9 +1384,23 @@ const runQuestLine = createSingleFlight(async () => {
 
   // 點了場景上的人就是問借刀；沒點人而且已選好對象，才比對道謝。
   const thanking = quest.goal.kind === "selectAndSpeak" && questState?.picked && !questTarget;
-  const judged = thanking
+  let judged = thanking
     ? { verdict: judgeQuestPrompt(quest, { answer: indigenous, translation, ethnicity: selectedDialect.ethnicity }), line: { indigenousText: quest.goal.prompt, chineseText: quest.goal.promptChinese || null, reply: null } }
     : judgeQuestLine(quest, questTarget, { answer: indigenous, translation, allowChinese: QUEST_DEBUG_MODE, ethnicity: selectedDialect.ethnicity });
+  // 規則沒過（retry）時，再用 AI 看譯文與教材中文意思是否一致；判過就升級成 semantic。
+  // wrongTarget（這句要對另一個人說）不升級——句子再對，對象錯了就是錯。AI 連不上
+  // 或判不通時維持 retry：連不上會在回應行註明，判定不會比本來的規則更嚴。
+  let aiOutcome = null;
+  if (judged.verdict === "retry") {
+    const targetChinese = thanking ? (quest.goal.promptChinese || "") : (judged.line?.chineseText || "");
+    setState("transcribing", "AI 判別中，請稍候");
+    aiOutcome = await judgeAiMeaning({ translation, targetChinese });
+    if (dropped(epoch)) return;
+    if (aiOutcome.pass) {
+      judged = { ...judged, verdict: "semantic", verdictBy: "ai", rationale: aiOutcome.rationale ?? null };
+      aiOutcome = null;
+    }
+  }
   // 畫面上不顯示「對／錯」判定：對的人會直接聽到回應、場景跟進度自己往前；
   // 沒對上就靜靜再說一次（錯 3 次會出現「自動說這句」當出口）。
   if (judged.verdict === "exact" || judged.verdict === "semantic") {
@@ -1404,7 +1420,15 @@ const runQuestLine = createSingleFlight(async () => {
       if (reboundId) ui.questSpeaker.textContent = `${targetLabel(reboundId, quest)}的人說`;
       // 中文照學習者需要的那句完整說明（官方 textCh 是「什麼？／不知道」的短話，
       // 意思對不上時要讓人看懂整句：我不清楚你的問題）。
-      ui.questReply.textContent = `${rebound.indigenousText}（我不清楚你的問題）`;
+      // AI 連不上時在後面註明原因（逾時／proxy 沒開／金鑰等），避免讓人以為是
+      // AI「聽不懂」；AI 判意思不同時不打擾畫面，只在 console 留一句 AI 的說明。
+      const aiHint = aiOutcome?.reason === "failed"
+        ? `　（AI 判別暫時連不上：${aiOutcome.error ?? "不明原因"}；這次照教材字面判定）`
+        : "";
+      if (aiOutcome?.reason === "rejected") {
+        console.log("[AI 判別] 認為意思不同：", aiOutcome.rationale);
+      }
+      ui.questReply.textContent = `${rebound.indigenousText}（我不清楚你的問題）${aiHint}`;
     }
     clearQuestResult();
   }

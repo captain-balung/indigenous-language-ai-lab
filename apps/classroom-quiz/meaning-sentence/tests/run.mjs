@@ -94,3 +94,32 @@ assert.ok(Object.values(MODES).every((item) => item.title && item.mission));
 assert.deepEqual(Object.keys(MODES), ["compose", "oral", "retell", "reply"]);
 
 console.log("PASS: classroom quiz compose, retell, reply, oral round size, no storage");
+
+
+/* ───── AI 意思判別（semantic-meaning.mjs，compose／retell／oral 共用）──── */
+
+{
+  const { judgeAiMeaning } = await import("../../../shared/semantic-meaning.mjs");
+  const engineSource = read("apps/classroom-quiz/meaning-sentence/engine.mjs").replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
+
+  // reasonable → 過；unreasonable／undetermined／失敗 → null（呼叫端維持 retry）。
+  assert.deepEqual(
+    await judgeAiMeaning({ translation: "那是我的眼睛", targetChinese: "這是我的眼睛。", complete: async () => '{"verdict":"reasonable","rationale":"同一件事"}' }),
+    { pass: true, reason: "reasonable", rationale: "同一件事" },
+  );
+  assert.equal(
+    (await judgeAiMeaning({ translation: "那是我的鼻子", targetChinese: "這是我的眼睛。", complete: async () => '{"verdict":"unreasonable","rationale":"x"}' })).reason,
+    "rejected",
+  );
+  assert.equal(
+    (await judgeAiMeaning({ translation: "那是我的眼睛", targetChinese: "這是我的眼睛。", complete: async () => { throw new Error("LLM proxy 逾時"); } })).reason,
+    "failed",
+  );
+
+  // engine：三個模式都接上 AI 補判，且只在 retry 時、失敗維持 retry。
+  assert.ok(engineSource.includes('import { judgeAiMeaning }'), "engine 要 import judgeAiMeaning");
+  assert.ok(engineSource.includes("judgeAiMeaning({ translation"), "compose／retell 要在 retry 時問 AI");
+  assert.ok(engineSource.includes('aiJudge: judgeAiMeaning'), "oral 模式要把 AI 判別帶進 judgeAnswer");
+  assert.ok(engineSource.includes("AI 判別中"), "AI 判別期間要有狀態提示");
+  console.log("PASS: classroom quiz AI meaning layer (retry-only upgrade, failure keeps rule result)");
+}

@@ -2,6 +2,7 @@ import { exactMatch, judgeAnswer } from "../../basic-learning/body-parts-practic
 import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
 import { activeSemanticJudge } from "../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
+import { judgeAiMeaning } from "../../shared/semantic-meaning.mjs";
 import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
@@ -131,6 +132,7 @@ async function verifyServices() {
     reply: "先辨識，再判斷回答有沒有答到問句"
   };
   notes.push(serviceNote[mode]);
+  notes.push("語意使用 vLLM AI 判別");
   statusNote = notes.join("；");
   showStatus();
   updateStart();
@@ -313,9 +315,26 @@ async function gradeCompose(answer) {
   const exact = exactMatch(answer, question.indigenousText, selectedDialect.ethnicity);
   try {
     const translation = await translateToZh(answer, selectedDialect.code);
+    const ruleVerdict = verdictFromTranslation({ exact, translation, chineseText: question.chineseText });
+    let verdict = ruleVerdict;
+    let verdictBy = null;
+    let rationale = null;
+    if (ruleVerdict === "retry") {
+      // 樣板比對沒過，再用 AI 看「譯文是否表達了目標中文意思」；失敗維持 retry。
+      setState("transcribing", "AI 判別中，請稍候");
+      const ai = await judgeAiMeaning({ translation, targetChinese: question.chineseText });
+      if (current !== attempt) return;
+      if (ai.pass) {
+        verdict = "semantic";
+        verdictBy = "ai";
+        rationale = ai.rationale ?? null;
+      }
+    }
     finish({
-      type: verdictFromTranslation({ exact, translation, chineseText: question.chineseText }),
+      type: verdict,
       translation,
+      verdictBy,
+      rationale,
       mode: "compose"
     }, true, current);
   } catch {
@@ -372,10 +391,27 @@ async function gradeSpeech() {
     const exact = exactMatch(heard, question.indigenousText, selectedDialect.ethnicity);
     try {
       const translation = await translateToZh(heard, selectedDialect.code);
+      const ruleVerdict = verdictFromTranslation({ exact, translation, chineseText: question.chineseText });
+      let verdict = ruleVerdict;
+      let verdictBy = null;
+      let rationale = null;
+      if (ruleVerdict === "retry") {
+        // 樣板比對沒過，再用 AI 看「譯文是否轉述到原句意思」；失敗維持 retry。
+        setState("transcribing", "AI 判別中，請稍候");
+        const ai = await judgeAiMeaning({ translation, targetChinese: question.chineseText });
+        if (current !== attempt) return;
+        if (ai.pass) {
+          verdict = "semantic";
+          verdictBy = "ai";
+          rationale = ai.rationale ?? null;
+        }
+      }
       finish({
-        type: verdictFromTranslation({ exact, translation, chineseText: question.chineseText }),
+        type: verdict,
         heard,
         translation,
+        verdictBy,
+        rationale,
         mode: "retell"
       }, true, current);
     } catch {
@@ -387,7 +423,8 @@ async function gradeSpeech() {
     answer: heard,
     question,
     translate: (text) => translateToZh(text, selectedDialect.code),
-    ethnicity: selectedDialect.ethnicity
+    ethnicity: selectedDialect.ethnicity,
+    aiJudge: judgeAiMeaning
   });
   finish({ ...result, heard, mode: "oral" }, true, current);
 }

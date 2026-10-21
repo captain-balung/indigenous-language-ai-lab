@@ -115,7 +115,7 @@ function renderModelNote() {
     console.warn("[ASR] 服務提供了對照表沒有的模型：", audit.unknownFromApi.map((entry) => entry.model).join("、"));
   }
   if (audit.consistent) {
-    ui.apiStatus.textContent = `語音辨識服務正常，16 個族級模型都可用。`;
+    ui.apiStatus.textContent = `語音辨識服務正常，16 個族級模型都可用。語意使用 vLLM AI 判別。`;
     ui.apiStatus.dataset.state = "ok";
   } else {
     ui.apiStatus.textContent = `語音辨識服務目前有 ${audit.unavailable.length} 個族級模型不可用；受影響的語言別在口說會顯示「無法判定」。`;

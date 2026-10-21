@@ -107,14 +107,26 @@ export function createSingleFlight(task) {
   };
 }
 
-export async function judgeAnswer({ answer, question, translate, ethnicity }) {
+// 判定順序：族語與教材整句相同 → exact；樣板比對（含意義鍵）過 → semantic；
+// 樣板沒過時若給了 aiJudge，用 AI 判「譯文與教材中文是不是同一個意思」，
+// 判過也是 semantic（verdictBy: "ai"）；AI 拒判或失敗，維持 retry 規則結果。
+export async function judgeAnswer({ answer, question, translate, ethnicity, aiJudge }) {
   if (exactMatch(answer, question.indigenousText, ethnicity)) {
     return { type: "exact", apiCalls: 0 };
   }
   try {
     const translation = await translate(answer);
+    if (semanticMatch(translation, question.chineseText)) {
+      return { type: "semantic", translation, apiCalls: 1 };
+    }
+    const ai = typeof aiJudge === "function"
+      ? await aiJudge({ translation, targetChinese: question.chineseText })
+      : null;
+    if (ai?.pass) {
+      return { type: "semantic", translation, verdictBy: "ai", rationale: ai.rationale ?? null, apiCalls: 1 };
+    }
     return {
-      type: semanticMatch(translation, question.chineseText) ? "semantic" : "retry",
+      type: "retry",
       translation,
       apiCalls: 1
     };

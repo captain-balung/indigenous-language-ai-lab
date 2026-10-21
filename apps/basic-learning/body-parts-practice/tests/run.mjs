@@ -55,3 +55,26 @@ assert.equal((await judgeAnswer({answer:"u tangila kiniyan.",question:q,ethnicit
 const deck=createQuestionDeck(dataset.records.filter(r=>r.dialectId===1),()=>.5);assert.equal(new Set(Array.from({length:10},()=>deck.next().id)).size,10);
 let flights=0;let release;const gate=new Promise(resolve=>{release=resolve;});const single=createSingleFlight(async()=>{flights++;await gate;return"done";});const first=single();const second=single();assert.equal(first,second);release();await Promise.all([first,second]);assert.equal(flights,1);
 console.log("PASS: 7 pictured themes, 42 dialects, exact/semantic/error/deck contracts");
+
+/* ───── AI 意思判別（judgeAnswer + aiJudge）────────────────────── */
+{
+  const { judgeAiMeaning } = await import("../../../shared/semantic-meaning.mjs");
+  // 樣板比對沒過，AI 判過 → semantic（verdictBy: ai）。
+  const aiPass = await judgeAnswer({ answer: "ngangus", question: q, translate: async () => "這是我的耳朵沒關係啦", aiJudge: async () => ({ pass: true, reason: "reasonable", rationale: "同一件事" }) });
+  assert.equal(aiPass.type, "semantic");
+  assert.equal(aiPass.verdictBy, "ai");
+  // 樣板比對過時不花 AI。
+  let aiCalls = 0;
+  const rulePass = await judgeAnswer({ answer: "tangila", question: q, translate: async () => "耳朵", aiJudge: async () => { aiCalls += 1; return { pass: true }; } });
+  assert.equal(rulePass.type, "semantic");
+  assert.equal(aiCalls, 0);
+  // AI 拒判／失敗 → 維持 retry 規則結果。
+  const aiFail = await judgeAnswer({ answer: "ngangus", question: q, translate: async () => "鼻子", aiJudge: async () => ({ pass: false, reason: "failed" }) });
+  assert.equal(aiFail.type, "retry");
+  // 不帶 aiJudge 時行為與原本相同（不發 AI 請求）。
+  assert.equal((await judgeAnswer({ answer: "ngangus", question: q, translate: async () => "鼻子" })).type, "retry");
+  // shared 模組的 judgeAiMeaning 本身：reasonable 過、失敗標 failed。
+  assert.equal((await judgeAiMeaning({ translation: "我的耳朵", targetChinese: "這是耳朵。", complete: async () => '{"verdict":"reasonable","rationale":"同一件事"}' })).pass, true);
+  assert.equal((await judgeAiMeaning({ translation: "x", targetChinese: "y", complete: async () => { throw new Error("逾時"); } })).reason, "failed");
+  console.log("PASS: judgeAnswer AI meaning layer (retry-only upgrade, rule shortcut, no-aiJudge unchanged)");
+}

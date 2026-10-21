@@ -5,6 +5,7 @@ import {
   ASR_MODELS, asrModelFor, auditAsrModels, encodeWav, readAsrText,
   ASR_TARGET_SAMPLE_RATE, ASR_TIMEOUT_MS, REQUEST_TIMEOUT_MS, SLOW_HINT_AFTER_MS
 } from "./asr.mjs";
+import { judgeAiMeaning } from "../../shared/semantic-meaning.mjs";
 
 const API = "https://ai3.iformosa.com.tw/formosan_ai/api.php";
 const $ = (selector) => document.querySelector(selector);
@@ -87,6 +88,7 @@ async function verifyServices() {
   } catch {
     notes.push("翻譯即時清單暫時無法取得；教材完全比對仍可離線運作");
   }
+  notes.push("語意使用 vLLM AI 判別");
 
   ui.api.textContent = `● ${notes.join("；")}`;
   ui.api.dataset.state = asrAudit?.consistent ? "ok" : "fallback";
@@ -359,7 +361,8 @@ const runFlow = createSingleFlight(async () => {
     answer: heard,
     question,
     translate: (text) => translateToZh(text, selectedDialect.code),
-    ethnicity: selectedDialect.ethnicity
+    ethnicity: selectedDialect.ethnicity,
+    aiJudge: judgeAiMeaning
   });
   renderResult(result, heard);
   finishFlow();

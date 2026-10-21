@@ -36,9 +36,21 @@ export async function complete({ system, user, model = DEFAULT_LLM_MODEL, url = 
     clearTimeout(timer);
   }
 
-  const payload = await response.json().catch(() => ({}));
+  const raw = await response.text().catch(() => "");
+  let payload = {};
+  try { payload = JSON.parse(raw); } catch { /* 保留原文片段供診斷 */ }
   if (!response.ok) {
-    throw new Error(typeof payload.error === "string" ? payload.error : `LLM proxy HTTP ${response.status}`);
+    // 不是我方 JSON 格式的失敗回應（例如外層代理／伺服器／擴充套件回的），
+    // 把一小段原文帶回去，貼出來就能看出是誰回的這一跳。
+    let message = "無法連線 LLM proxy";
+    if (typeof payload.error === "string") {
+      message = payload.error;
+    } else if (raw) {
+      message = `LLM proxy HTTP ${response.status}（回應片段：${raw.slice(0, 120)}）`;
+    } else {
+      message = `LLM proxy HTTP ${response.status}`;
+    }
+    throw new Error(message);
   }
   if (typeof payload.text !== "string" || !payload.text.trim()) {
     throw new Error("LLM proxy 沒有回傳文字");

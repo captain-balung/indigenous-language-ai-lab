@@ -45,7 +45,7 @@ node scripts/serve.mjs 4173
 
 根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
 
-問答練習、看圖描述、接話小考與認證模擬的簡答／看圖語意評分會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan）。請在 Vercel 專案環境變數設定後端：
+問答練習、看圖描述、意思造句／看圖口說小考／聽後轉述（課堂測驗共用引擎）、看圖／口說練習、部落大小事任務關卡、認證模擬的簡答／看圖與接話小考的語意評分，會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan），失敗時退回各題既有的規則比對。請在 Vercel 專案環境變數設定後端：
 
 - `LLM_BASE_URL`（必填）：閘道端點，例 `http://114.34.77.157:9002/llm/gemma4`（POST 直接打到該網址本身）。內網位址 Vercel 連不到，正式站一律使用公網位址。
 - `LLM_API_KEY`（選填）：閘道有啟用驗證時設定，以 Bearer 送出。
@@ -53,18 +53,18 @@ node scripts/serve.mjs 4173
 
 ## 已上線應用
 
-- [看圖練習](apps/basic-learning/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思。
-- [口說練習](apps/basic-learning/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；可先聽教材再念，也可以直接說。語音辨識會顯示系統聽到的內容。
+- [看圖練習](apps/basic-learning/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思，意思接近但說法不同時由自架 vLLM 做 AI 判別（失敗維持規則結果）。
+- [口說練習](apps/basic-learning/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；可先聽教材再念，也可以直接說。語音辨識會顯示系統聽到的內容，判定與看圖練習同一套（含 vLLM AI 判別）。
 - [聽音練習](apps/basic-learning/listen-practice/README.md)：與看圖練習同一批主題，聽族語音檔後選出對應圖片或中文意思；音檔由 klokah.tw／web.klokah.tw 直接播放。首頁不列出，網址仍可開啟。
 - [問答練習](apps/basic-learning/qa-practice/README.md)：聽國中版對話問句，用打字或錄音自由回答；系統顯示它聽到、懂成的意思，不做考試配分。
 - [看圖描述](apps/basic-learning/describe-practice/README.md)：用認證初級看圖說話、中級看圖表達的圖片自由描述；系統顯示它懂成的中文意思。
-- [意思造句](apps/classroom-quiz/meaning-sentence/README.md)：只看中文意思，自己寫族語。每題都翻譯，並顯示系統懂成。一輪 8 題。
-- [看圖口說小考](apps/classroom-quiz/picture-speaking-quiz/README.md)：看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分。一輪 8 題。
-- [聽後轉述](apps/classroom-quiz/listen-retell/README.md)：只聽短句，用族語再講一次。系統顯示它聽到的話，以及懂成的中文。一輪 8 題。
+- [意思造句](apps/classroom-quiz/meaning-sentence/README.md)：只看中文意思，自己寫族語。每題都翻譯，並顯示系統懂成；樣板比對沒過時由自架 vLLM 做 AI 意思判別。一輪 8 題。
+- [看圖口說小考](apps/classroom-quiz/picture-speaking-quiz/README.md)：看圖念出完整句，每題只錄一次，由語音辨識與翻譯計分（樣板沒過時加自架 vLLM AI 判別）。一輪 8 題。
+- [聽後轉述](apps/classroom-quiz/listen-retell/README.md)：只聽短句，用族語再講一次。系統顯示它聽到的話，以及懂成的中文；有沒有轉述到原句意思，除了字面／翻譯比對再加自架 vLLM AI 判別。一輪 8 題。
 - [接話小考](apps/classroom-quiz/question-reply/README.md)：聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。一輪 8 題，不顯示配分。
 - [初級口說模擬站](apps/certification-mock/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型，共 11 題一卷；全部做完後一次看結果；音檔由 klokah.tw 直接播放；練習得分依公開口說配分加總，不宣告正式通過。
 - [中級模擬站](apps/certification-mock/intermediate-mock-exam/README.md)：模擬族語認證中級的口說三題型（單句朗讀、問答題、看圖表達）與聽力四題型（是非題、選擇題一二三），同樣 31 題一卷；全部做完後一次看結果；單句朗讀依詞語重疊程度給 0–3 分，不做整句字面比對。
-- [部落大小事](apps/scenario-practice/village-life/README.md)：三個生活場景的對話——開學第一天、家裡辦婚禮、週末想出門。先連續聽完整段對話，再玩任務關卡。
+- [部落大小事](apps/scenario-practice/village-life/README.md)：三個生活場景的對話——開學第一天、家裡辦婚禮、週末想出門。先連續聽完整段對話，再玩任務關卡；任務「自己說」的句子按族語比對與翻譯判定，規則沒過時由自架 vLLM 補判意思是否對上（失敗維持規則結果）。
 - [市場小幫手](apps/scenario-practice/market-helper/README.md)：100 元預算，依媽媽的購物清單（每局隨機菜／水果）問價、買齊、結帳。族語練貨品名；價錢與過關由程式判定，沒有配分。
 
 ## 素材與授權

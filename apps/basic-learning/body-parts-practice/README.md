@@ -8,6 +8,7 @@
 2. 未完全符合時，`POST https://ai3.iformosa.com.tw/formosan_ai/api.php`，JSON body 使用 `action: translate_to_zh`、使用者 `text` 與該方言 NLLB `src_lang`。
 3. 讀取 `data.translation`：身體部位用十類受控中文同義詞（避免「頭／頭髮」互相放行）；其他主題比對去掉「這是／那是／他是／她是」後的中文詞。
 4. `GET ?action=translate_languages` 用於啟動時校驗 `data.languages`／`data.language_codes`；無法取得時降級使用 2026-07-27 官方清單。
+5. 樣板比對沒過時，再送自架 vLLM（經 `/api/llm-complete`，見 `apps/shared/semantic-meaning.mjs`）判譯文與教材中文**是不是同一個意思**——同一件事就算意思對上。LLM 失敗時維持本來的「再試試看」，判定不會因此變嚴。只送譯文與教材中文，不送參考族語句；服務狀態列會顯示「語意使用 vLLM AI 判別」。
 
 12 秒逾時、HTTP 400／413／502、其他非成功、無效 JSON、`ok:false`、缺少 `data.translation` 與網路錯誤均顯示「無法判定」，不把答案判錯並保留輸入。ASR `dialect_id` 未用於本功能。
 

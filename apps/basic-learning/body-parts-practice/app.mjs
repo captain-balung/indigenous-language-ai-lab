@@ -1,6 +1,7 @@
 import { createQuestionDeck, createSingleFlight, judgeAnswer } from "./core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "./dialects.mjs";
 import { THEMES, loadThemeShards, recordsForTheme, themeById } from "./themes.mjs";
+import { judgeAiMeaning } from "../../shared/semantic-meaning.mjs";
 
 const API = "https://ai3.iformosa.com.tw/formosan_ai/api.php";
 const $ = (selector) => document.querySelector(selector);
@@ -23,7 +24,7 @@ async function verifyApiLanguages() {
     const body = await response.json();
     if (!response.ok || body.ok !== true || !Array.isArray(body.data?.language_codes)) throw new Error();
     apiCodes = new Set(body.data.language_codes);
-    ui.api.textContent = `● 翻譯服務已連線；已驗證 ${apiCodes.size} 個語言代碼`;
+    ui.api.textContent = `● 翻譯服務已連線；已驗證 ${apiCodes.size} 個語言代碼；語意使用 vLLM AI 判別`;
     ui.api.dataset.state = "ok";
   } catch {
     ui.api.textContent = "△ 即時清單暫時無法取得，使用 2026-07-27 官方清單；教材完全比對仍可離線運作。";
@@ -103,7 +104,7 @@ async function submitAnswer() {
 }
 
 const runJudgement = createSingleFlight(({ answer, question, code, ethnicity }) =>
-  judgeAnswer({ answer, question, translate: (text) => translateToZh(text, code), ethnicity })
+  judgeAnswer({ answer, question, translate: (text) => translateToZh(text, code), ethnicity, aiJudge: judgeAiMeaning })
 );
 
 async function translateToZh(text, srcLang) {
