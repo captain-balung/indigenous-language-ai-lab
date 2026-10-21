@@ -14,8 +14,44 @@ export function normalizeAnswer(value) {
     .trim();
 }
 
-export function exactMatch(answer, expected) {
-  return normalizeAnswer(answer) === normalizeAnswer(expected);
+/**
+ * 大小寫在其正寫法裡「是字母的一部分」、不能用整句轉小寫折疊的方言：
+ *   賽夏：大寫 S 是獨立字母（'aewhaeS、talka: Sil'i:），句首助詞也慣用大寫（Sa'ila、U mata）。
+ *   噶瑪蘭：大寫 R 是獨立字母（biRi、qaRabi），句首助詞也慣用大寫（Rutung、Rabetin）。
+ * 其餘方言的大小寫純屬慣例（ASR 也常在句首補大寫），比對時一律不分大小寫。
+ */
+export const CASE_MEANINGFUL_ETHNICITIES = ["賽夏", "噶瑪蘭"];
+
+export function isCaseMeaningful(ethnicity) {
+  return CASE_MEANINGFUL_ETHNICITIES.includes(ethnicity);
+}
+
+/** 只折疊第一個字母的大小寫：吸收 ASR 在句首補大寫的慣例，其餘位置嚴格保留。 */
+function foldFirstLetter(value) {
+  const text = String(value ?? "");
+  if (!text) return text;
+  return text.charAt(0).toLowerCase() + text.slice(1);
+}
+
+/**
+ * 族語字面比對。
+ *
+ *   一般方言 → 不分大小寫（容得下 ASR 的句首大寫慣例）
+ *   賽夏／噶瑪蘭 → 大小寫敏感為主；不一致時再「只折疊第一個字母」重比一次
+ *     （句首允許大小寫差異，其餘位置的 S/R 等大寫字母不能被吃掉）
+ */
+export function indigenousEquals(answer, expected, ethnicity) {
+  const a = normalizeAnswer(answer);
+  const e = normalizeAnswer(expected);
+  if (!a || !e) return false;
+  if (isCaseMeaningful(ethnicity)) {
+    return a === e || foldFirstLetter(a) === foldFirstLetter(e);
+  }
+  return a.toLowerCase() === e.toLowerCase();
+}
+
+export function exactMatch(answer, expected, ethnicity) {
+  return indigenousEquals(answer, expected, ethnicity);
 }
 
 export function glossKey(value) {
@@ -71,8 +107,8 @@ export function createSingleFlight(task) {
   };
 }
 
-export async function judgeAnswer({ answer, question, translate }) {
-  if (exactMatch(answer, question.indigenousText)) {
+export async function judgeAnswer({ answer, question, translate, ethnicity }) {
+  if (exactMatch(answer, question.indigenousText, ethnicity)) {
     return { type: "exact", apiCalls: 0 };
   }
   try {

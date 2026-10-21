@@ -1383,8 +1383,8 @@ const runQuestLine = createSingleFlight(async () => {
   // 點了場景上的人就是問借刀；沒點人而且已選好對象，才比對道謝。
   const thanking = quest.goal.kind === "selectAndSpeak" && questState?.picked && !questTarget;
   const judged = thanking
-    ? { verdict: judgeQuestPrompt(quest, { answer: indigenous, translation }), line: { indigenousText: quest.goal.prompt, chineseText: quest.goal.promptChinese || null, reply: null } }
-    : judgeQuestLine(quest, questTarget, { answer: indigenous, translation, allowChinese: QUEST_DEBUG_MODE });
+    ? { verdict: judgeQuestPrompt(quest, { answer: indigenous, translation, ethnicity: selectedDialect.ethnicity }), line: { indigenousText: quest.goal.prompt, chineseText: quest.goal.promptChinese || null, reply: null } }
+    : judgeQuestLine(quest, questTarget, { answer: indigenous, translation, allowChinese: QUEST_DEBUG_MODE, ethnicity: selectedDialect.ethnicity });
   // 畫面上不顯示「對／錯」判定：對的人會直接聽到回應、場景跟進度自己往前；
   // 沒對上就靜靜再說一次（錯 3 次會出現「自動說這句」當出口）。
   if (judged.verdict === "exact" || judged.verdict === "semantic") {

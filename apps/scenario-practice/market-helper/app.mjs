@@ -569,7 +569,7 @@ const runFlow = createSingleFlight(async () => {
     return;
   }
 
-  const matched = matchItemName({ answer: indigenous, translation, item });
+  const matched = matchItemName({ answer: indigenous, translation, item, ethnicity: selectedDialect.ethnicity });
   if (epoch !== runEpoch) return;
 
   if (!matched.ok) {

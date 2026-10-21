@@ -358,7 +358,8 @@ const runFlow = createSingleFlight(async () => {
   const result = await judgeAnswer({
     answer: heard,
     question,
-    translate: (text) => translateToZh(text, selectedDialect.code)
+    translate: (text) => translateToZh(text, selectedDialect.code),
+    ethnicity: selectedDialect.ethnicity
   });
   renderResult(result, heard);
   finishFlow();

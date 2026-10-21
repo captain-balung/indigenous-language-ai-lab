@@ -167,6 +167,8 @@ assert.equal((await judgeAnswer({ answer: q.indigenousText, question: q, transla
 assert.equal(calls, 0, "完全相符不得呼叫翻譯 API");
 assert.equal((await judgeAnswer({ answer: " U  tangila kiniyan . ", question: q, translate: async () => { calls += 1; return "耳朵"; } })).type, "exact");
 assert.equal(calls, 0, "只有排版差異仍屬完全相符");
+assert.equal((await judgeAnswer({ answer: "u tangila kiniyan.", question: q, ethnicity: "賽夏", translate: async () => { calls += 1; return "耳朵"; } })).type, "exact");
+assert.equal(calls, 0, "ASR 句首大寫慣例：賽夏只容忍第一個字母，仍屬完全相符");
 assert.ok(!exactMatch("tangila", q.indigenousText), "少字不得被完全比對放行");
 assert.equal((await judgeAnswer({ answer: "tangila", question: q, translate: async () => "這是耳朵。" })).type, "semantic");
 assert.equal((await judgeAnswer({ answer: "tangila", question: q, translate: async () => "耳朵" })).type, "semantic");

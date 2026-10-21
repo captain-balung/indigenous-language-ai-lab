@@ -311,7 +311,7 @@ const runFlow = createSingleFlight(async () => {
   let translation;
   let matched = false;
   let pictureScore = null;
-  if (exactMatch(indigenous, question.indigenousText)) {
+  if (exactMatch(indigenous, question.indigenousText, selectedDialect.ethnicity)) {
     translation = question.chineseText;
     matched = true;
     pictureScore = {

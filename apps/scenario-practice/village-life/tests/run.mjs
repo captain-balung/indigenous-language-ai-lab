@@ -407,7 +407,16 @@ assert.equal(judgeReply({ answer: "Caay anini ku.", translation: "我要回家�
 assert.equal(judgeReply({ answer: "", translation: "", exchange }), "retry");
 assert.equal(judgeReply({ answer: "Caay hen!", translation: "", exchange }), "exact");
 assert.equal(indigenousKey("Caay hen!"), "caayhen");
+assert.equal(indigenousKey("Caay hen!","賽夏"), "Caayhen", "賽夏保留大小寫（大寫 S 是字母的一部分）");
+assert.equal(indigenousKey("Caay hen!","噶瑪蘭"), "Caayhen");
 assert.equal(chineseKey("我還沒吃早餐耶！"), "我還沒吃早餐");
+
+// 賽夏／噶瑪蘭的句首容忍：只放行第一個字母的大小寫差異，其餘嚴格。
+const caseExchange = { indigenousText: "Sa’ila pa:tol!", chineseText: "請聽話！" };
+assert.equal(judgeReply({ answer: "sa’ila pa:tol", translation: "", exchange: caseExchange, ethnicity: "賽夏" }), "exact", "句首容忍");
+assert.equal(judgeReply({ answer: "Sa’ila pa:ToL", translation: "", exchange: caseExchange, ethnicity: "賽夏" }), "retry", "句首以外要嚴格");
+assert.equal(judgeReply({ answer: "biRi", translation: "", exchange: { indigenousText: "biri", chineseText: "走" }, ethnicity: "噶瑪蘭" }), "retry", "噶瑪蘭大寫 R 不能吃掉");
+assert.equal(judgeReply({ answer: "Rutung", translation: "", exchange: { indigenousText: "rutung", chineseText: "猴子" }, ethnicity: "噶瑪蘭" }), "exact");
 
 const summary = tally(["exact", "semantic", "retry", "reference", "unavailable"]);
 assert.deepEqual(summary, { passed: 2, judged: 3, reference: 1, skipped: 1, total: 5 });

@@ -97,13 +97,13 @@ ui.answer.addEventListener("keydown", (event) => { if (event.key === "Enter" && 
 async function submitAnswer() {
   const answer = ui.answer.value.trim(); if (!answer || pending) return;
   pending = true; ui.submit.disabled = true; ui.submit.textContent = "判定中…";
-  const result = await runJudgement({ answer, question, code: selectedDialect.code });
+  const result = await runJudgement({ answer, question, code: selectedDialect.code, ethnicity: selectedDialect.ethnicity });
   ui.submit.textContent = "送出答案"; pending = false;
   renderResult(result, answer);
 }
 
-const runJudgement = createSingleFlight(({ answer, question, code }) =>
-  judgeAnswer({ answer, question, translate: (text) => translateToZh(text, code) })
+const runJudgement = createSingleFlight(({ answer, question, code, ethnicity }) =>
+  judgeAnswer({ answer, question, translate: (text) => translateToZh(text, code), ethnicity })
 );
 
 async function translateToZh(text, srcLang) {

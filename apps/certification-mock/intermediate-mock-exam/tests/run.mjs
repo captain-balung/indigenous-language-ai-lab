@@ -545,6 +545,22 @@ const pictureQuestions = samplePaper.speaking[2].questions;
   assert.equal(judgeSentenceReading("Ira ku luma’ nu maku.", "Ira ku luma' nu maku.").points, 3,
     "撇號是族語正寫法的一部分，彎引號與直引號視為相同，不得當標點吃掉");
 
+  // 賽夏／噶瑪蘭：大小寫是正寫法的一部分（賽夏 S、噶瑪蘭 R），整句保留原樣，
+  // 只有句首第一個詞的第一個字母額外容忍（ASR 慣例）。
+  const saisiyat = "Sa’ila pa:tol!";
+  assert.equal(judgeSentenceReading("sa’ila pa:tol!", saisiyat, "賽夏").points, 3, "句首第一個字母容忍");
+  assert.equal(judgeSentenceReading("Sa’ila pae'rem!", saisiyat, "賽夏").points, 0, "句首以外的詞要嚴格：只有第一個詞重疊");
+  assert.equal(judgeSentenceReading("sa’ila pa:tol!", saisiyat).points, 3, "未指定族群時沿用不分大小寫");
+  const kavalan = "biRi tibuq iku.";
+  assert.equal(judgeSentenceReading("biRi tibuq iku.", kavalan, "噶瑪蘭").points, 3);
+  // 句首字母是 b，折疊句首改不了句中的大寫 R——biRi→biri 是字母差異，要嚴格（不算句首慣例）。
+  assert.equal(judgeSentenceReading("biri tibuq iku.", kavalan, "噶瑪蘭").points, 1,
+    "噶瑪蘭句中的大寫 R 是字母的一部分，不得吃掉");
+  // 句首大寫慣例：Rabetin → rabetin 只差第一個字母，視為相同。
+  assert.equal(judgeSentenceReading("rabetin duki maynep iku qaRabi.", "Rabetin duki maynep iku qaRabi.", "噶瑪蘭").points, 3,
+    "句首第一個字母容忍");
+  assert.equal(judgeSentenceReading("buki tibuq iku.", kavalan).points, 1, "未指定族群時沿用不分大小寫（2/3 重疊 → 1 分）");
+
   // 少一個詞 → 部分重疊；只剩兩個詞 → 更低；完全無關 → 0 分但仍不說使用者念錯。
   assert.equal(judgeSentenceReading("Ira ku wacu nu", sentence).status, "partial");
   assert.equal(judgeSentenceReading("Ira ku", sentence).status, "partial");

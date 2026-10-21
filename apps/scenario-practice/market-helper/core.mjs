@@ -247,9 +247,9 @@ export function judgeCheckout(catalog, cart, budget = BUDGET) {
 }
 
 /** 族語詞或翻譯中文是否對上該貨品。 */
-export function matchItemName({ answer, translation, item }) {
+export function matchItemName({ answer, translation, item, ethnicity }) {
   if (!item) return { ok: false, kind: "miss" };
-  if (item.indigenousText && answer && exactMatch(answer, item.indigenousText)) {
+  if (item.indigenousText && answer && exactMatch(answer, item.indigenousText, ethnicity)) {
     return { ok: true, kind: "exact" };
   }
   const zh = String(translation ?? "").trim();

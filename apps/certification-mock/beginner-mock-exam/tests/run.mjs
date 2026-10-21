@@ -347,6 +347,10 @@ assert.equal(judgeWordReading(null, "wacu"), "undetermined", "辨識失敗不得
 assert.equal(judgeWordReading("", "wacu"), "undetermined");
 assert.equal(judgeWordReading("   ", "wacu"), "undetermined");
 assert.equal(judgeWordReading("wacu", ""), "undetermined");
+assert.equal(judgeWordReading("sa’ila", "Sa’ila", "賽夏"), "matched", "賽夏句首第一個字母容忍");
+assert.equal(judgeWordReading("’aewhaes", "’aewhaeS", "賽夏"), "mismatched", "賽夏大寫 S 是字母的一部分");
+assert.equal(judgeWordReading("rutung", "Rutung", "噶瑪蘭"), "matched", "噶瑪蘭句首第一個字母容忍");
+assert.equal(judgeWordReading("biri", "biRi", "噶瑪蘭"), "mismatched", "噶瑪蘭大寫 R 不能吃掉");
 
 // ⑤b 簡答題合理與否（合理 4 分）
 {

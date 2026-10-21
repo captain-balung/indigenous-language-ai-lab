@@ -3,6 +3,8 @@
 // 官方每個情境都是 1 段開場白 + 固定輪數的交替發話，角色由說話者圖檔辨識：
 // 主角、哥哥、媽媽、同學。學者選一個角色，其餘由系統代說，逐一輪到學者時才需要開口。
 
+import { isCaseMeaningful } from "../../basic-learning/body-parts-practice/core.mjs";
+
 // 要說的是「你自己的名字、你自己的來處」的句子，學者跟教材本來就不會一樣，
 // 這種只當參考句顯示，不判對錯。
 //
@@ -130,9 +132,25 @@ export function judgedCount(exchanges) {
 const PUNCTUATION = /[\s，。！？、,.!?'"「」『』（）()~…・:：;；\-—]/g;
 const TAIL_PARTICLE = /[耶呀喔哦呢啦嘛啊]/;
 
-export function indigenousKey(value) {
-  // 羅馬字的大小寫不帶意思，一律轉小寫再比。
-  return String(value ?? "").normalize("NFC").toLowerCase().replace(PUNCTUATION, "");
+export function indigenousKey(value, ethnicity) {
+  // 多數方言羅馬字的大小寫不帶意思，一律轉小寫再比。
+  // 例外：賽夏的大寫 S（'aewhaeS）、噶瑪蘭的大寫 R（biRi、qaRabi）是正寫法的一部分，
+  // 兩族要保留原樣，改由 sameIndigenousKey 的句首容忍處理 ASR 的句首大寫慣例。
+  const text = String(value ?? "").normalize("NFC").replace(PUNCTUATION, "");
+  return isCaseMeaningful(ethnicity) ? text : text.toLowerCase();
+}
+
+function foldFirstLetter(key) {
+  return key ? key.charAt(0).toLowerCase() + key.slice(1) : key;
+}
+
+// 兩個已 key 化的族語是否視為相同。
+//   一般方言 → 小寫後相同即可（indigenousKey 已折疊）。
+//   賽夏／噶瑪蘭 → 完全相同，或只剩「句首第一個字母」的大小寫差異（ASR 慣例）。
+export function sameIndigenousKey(mine, textbook, ethnicity) {
+  if (!mine || !textbook) return false;
+  if (mine === textbook) return true;
+  return isCaseMeaningful(ethnicity) && foldFirstLetter(mine) === foldFirstLetter(textbook);
 }
 
 export function chineseKey(value) {
@@ -140,10 +158,10 @@ export function chineseKey(value) {
 }
 
 // 判定順序：族語與教材相同 → 說對了；系統懂成與教材中文相同 → 意思對上；其餘 → 再試試看。
-export function judgeReply({ answer, translation, exchange }) {
-  const mine = indigenousKey(answer);
-  const textbook = indigenousKey(exchange?.indigenousText);
-  if (mine && mine === textbook) return "exact";
+export function judgeReply({ answer, translation, exchange, ethnicity }) {
+  const mine = indigenousKey(answer, ethnicity);
+  const textbook = indigenousKey(exchange?.indigenousText, ethnicity);
+  if (sameIndigenousKey(mine, textbook, ethnicity)) return "exact";
   const heard = chineseKey(translation);
   const expected = chineseKey(exchange?.chineseText);
   if (heard && heard === expected) return "semantic";
@@ -242,11 +260,13 @@ export function questReboundFor(quest, targetId) {
 // 判定跟對話同一套規則：族語去掉標點後相同 → 說對了；系統懂成的意思跟教材中文
 // 相同 → 意思對上；其餘 → 再試試看。
 // 多出一種 wrongTarget：句子本身是對的，但這句只能對另一個人說。
-export function judgeQuestLine(quest, targetId, { answer, translation, allowChinese = false }) {
+export function judgeQuestLine(quest, targetId, { answer, translation, allowChinese = false, ethnicity }) {
   const line = questLineFor(quest, targetId);
   if (!line) return { verdict: "retry", line: null, rightTargetId: null };
-  const mine = indigenousKey(answer);
-  if (mine && mine === indigenousKey(line.indigenousText)) return { verdict: "exact", line, rightTargetId: null };
+  const mine = indigenousKey(answer, ethnicity);
+  if (mine && sameIndigenousKey(mine, indigenousKey(line.indigenousText, ethnicity), ethnicity)) {
+    return { verdict: "exact", line, rightTargetId: null };
+  }
   // 直接把教材中文那句打進來（打字模式／除錯驗證用）也算過——但只限
   // debug 開關（?debug_mode）放行，一般學者的輸入不能靠打中文過關，
   // 也不要讓翻譯系統把這種輸入弄成「不清楚你在問什麼」。
@@ -261,7 +281,7 @@ export function judgeQuestLine(quest, targetId, { answer, translation, allowChin
     item.targetId !== targetId
     && item.indigenousText !== line.indigenousText
     && mine
-    && mine === indigenousKey(item.indigenousText)
+    && sameIndigenousKey(mine, indigenousKey(item.indigenousText, ethnicity), ethnicity)
   ));
   if (spokenElsewhere) return { verdict: "wrongTarget", line, rightTargetId: spokenElsewhere.targetId };
   return { verdict: "retry", line, rightTargetId: null };
@@ -423,11 +443,11 @@ export function judgeBasket(quest, taken) {
 
 // selectAndSpeak：先選一個人，再由學者自己說出那句話。
 // 官方是拖詞卡把句子排出來，我們換成錄音或打字，判定比對 goal.prompt。
-export function judgeQuestPrompt(quest, { answer, translation }) {
+export function judgeQuestPrompt(quest, { answer, translation, ethnicity }) {
   const prompt = quest?.goal?.prompt;
   if (!prompt) return "retry";
-  const mine = indigenousKey(answer);
-  if (mine && mine === indigenousKey(prompt)) return "exact";
+  const mine = indigenousKey(answer, ethnicity);
+  if (mine && sameIndigenousKey(mine, indigenousKey(prompt, ethnicity), ethnicity)) return "exact";
   const heard = chineseKey(translation);
   const expected = chineseKey(quest.goal.promptChinese ?? "");
   if (heard && expected && heard === expected) return "semantic";

@@ -33,6 +33,14 @@ assert.equal(dataset.dialectCount,42); assert.equal(dataset.recordCount,420); as
 for(const dialect of DIALECTS){const records=dataset.records.filter(r=>r.dialectId===dialect.id);assert.equal(records.length,10);assert.ok(dialect.code);for(const r of records){assert.ok(r.indigenousText&&r.chineseText&&r.imagePath);assert.ok(fs.existsSync(path.join(root,"data/body-parts",r.imagePath)));}}
 assert.equal(normalizeAnswer("  O  ngoso’  kinian . "),"O ngoso' kinian.");
 assert.ok(exactMatch("U mata kiniyan.","U mata kiniyan.")); assert.ok(!exactMatch("mata","U mata kiniyan."));
+// 大小寫：ASR 慣例會在句首補大寫。一般方言不分大小寫；賽夏／噶瑪蘭嚴格比對、只容忍句首第一個字母。
+assert.ok(exactMatch("u mata kiniyan.","U mata kiniyan.","邵"), "一般方言不分大小寫");
+assert.ok(exactMatch("u mata kiniyan.","U mata kiniyan."), "未指定族群走一般規則");
+assert.ok(exactMatch("sa’ila pa:tol!","Sa’ila pa:tol!","賽夏"), "賽夏只容忍句首第一個字母");
+assert.ok(!exactMatch("’aewhaes","’aewhaeS","賽夏"), "賽夏的大寫 S 是字母的一部分");
+assert.ok(exactMatch("rutung zau.","Rutung zau.","噶瑪蘭"), "噶瑪蘭只容忍句首第一個字母");
+assert.ok(!exactMatch("biri","biRi","噶瑪蘭"), "噶瑪蘭的大寫 R 是字母的一部分");
+assert.ok(exactMatch("pawli","pawli","阿美")); assert.ok(!exactMatch("pawli","palaw","阿美"));
 assert.ok(semanticMatch("這是耳朵。","這是耳朵。")); assert.ok(semanticMatch("耳朵","這是耳朵。")); assert.ok(!semanticMatch("這是鼻子。","這是耳朵。"));
 assert.ok(semanticMatch("這是頭髮。","這是頭髮。")); assert.ok(!semanticMatch("這是頭髮。","這是頭。")); assert.ok(!semanticMatch("這是頭。","這是頭髮。"));
 assert.ok(semanticMatch("這是雞。","這是雞。")); assert.ok(!semanticMatch("這是鳥。","這是雞。"));
@@ -42,6 +50,8 @@ assert.equal((await judgeAnswer({answer:q.indigenousText,question:q,translate:as
 assert.equal((await judgeAnswer({answer:"tangila",question:q,translate:async()=>{calls++;return"耳朵";}})).type,"semantic");
 assert.equal((await judgeAnswer({answer:"ngangus",question:q,translate:async()=>"鼻子"})).type,"retry");
 assert.equal((await judgeAnswer({answer:"x",question:q,translate:async()=>{throw new Error("502");}})).type,"unavailable");
+let caseCalls=0;
+assert.equal((await judgeAnswer({answer:"u tangila kiniyan.",question:q,ethnicity:"賽夏",translate:async()=>{caseCalls++;return"耳朵";}})).type,"exact"); assert.equal(caseCalls,0, "句首容忍直接判 exact，不花翻譯 API");
 const deck=createQuestionDeck(dataset.records.filter(r=>r.dialectId===1),()=>.5);assert.equal(new Set(Array.from({length:10},()=>deck.next().id)).size,10);
 let flights=0;let release;const gate=new Promise(resolve=>{release=resolve;});const single=createSingleFlight(async()=>{flights++;await gate;return"done";});const first=single();const second=single();assert.equal(first,second);release();await Promise.all([first,second]);assert.equal(flights,1);
 console.log("PASS: 7 pictured themes, 42 dialects, exact/semantic/error/deck contracts");

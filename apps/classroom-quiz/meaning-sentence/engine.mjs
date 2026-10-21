@@ -310,7 +310,7 @@ async function gradeCompose(answer) {
   const current = attempt;
   pending = true;
   ui.submit.disabled = true;
-  const exact = exactMatch(answer, question.indigenousText);
+  const exact = exactMatch(answer, question.indigenousText, selectedDialect.ethnicity);
   try {
     const translation = await translateToZh(answer, selectedDialect.code);
     finish({
@@ -369,7 +369,7 @@ async function gradeSpeech() {
     return;
   }
   if (question.mode === "retell") {
-    const exact = exactMatch(heard, question.indigenousText);
+    const exact = exactMatch(heard, question.indigenousText, selectedDialect.ethnicity);
     try {
       const translation = await translateToZh(heard, selectedDialect.code);
       finish({
@@ -386,7 +386,8 @@ async function gradeSpeech() {
   const result = await judgeAnswer({
     answer: heard,
     question,
-    translate: (text) => translateToZh(text, selectedDialect.code)
+    translate: (text) => translateToZh(text, selectedDialect.code),
+    ethnicity: selectedDialect.ethnicity
   });
   finish({ ...result, heard, mode: "oral" }, true, current);
 }

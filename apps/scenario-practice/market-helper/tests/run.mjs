@@ -74,6 +74,9 @@ cart = addToCart(catalog, cart, catalog[0].id, 30);
 assert.equal(judgeCheckout(catalog, cart).code, "overBudget");
 
 assert.equal(matchItemName({ answer: "pawli", item: { chineseText: "香蕉", indigenousText: "pawli" } }).kind, "exact");
+assert.equal(matchItemName({ answer: "pawli", item: { chineseText: "香蕉", indigenousText: "Pawli" }, ethnicity: "阿美" }).kind, "exact", "一般方言不分大小寫");
+assert.equal(matchItemName({ answer: "rutung", item: { chineseText: "猴子", indigenousText: "Rutung" }, ethnicity: "噶瑪蘭" }).kind, "exact", "句首第一個字母容忍");
+assert.equal(matchItemName({ answer: "biri", item: { chineseText: "走", indigenousText: "biRi" }, ethnicity: "噶瑪蘭" }).kind, "retry", "噶瑪蘭大寫 R 不能吃掉");
 assert.equal(matchItemName({ translation: "地瓜", item: { chineseText: "甘藷", indigenousText: "vunga" } }).kind, "semantic");
 assert.ok(catalogItem(catalog, catalog[0].id));
 assert.equal(cartQtyOf(setCartQty(catalog, emptyCart(), catalog[0].id, 2), catalog[0].id), 2);
