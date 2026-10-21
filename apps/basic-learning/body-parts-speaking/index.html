@@ -48,12 +48,7 @@
         <figure><img id="question-image" src="/data/klokah-junior/images/recognize/1_1.png" alt="口說練習題目圖片"></figure>
         <div class="answer-area">
           <p class="prompt">看圖回答</p><h2 id="question-title">這是什麼？</h2>
-          <p id="speak-hint">可以先聽教材再念，也可以直接錄音；停止錄音後會自動送出辨識。</p>
-          <div class="player-row">
-            <button id="replay" class="primary" type="button">播放音檔</button>
-            <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
-          </div>
-          <audio id="player"></audio>
+          <p id="speak-hint">想聽提示再按最下面的「播放提示」，或直接錄音；停止錄音後會自動送出辨識。</p>
 
           <div class="recorder">
             <button id="record" class="primary record-button" type="button">
@@ -70,6 +65,12 @@
           <div class="submit-row">
             <button id="rerecord" type="button" hidden>重新錄音</button>
           </div>
+
+          <div class="player-row">
+            <button id="replay" class="primary" type="button">播放提示</button>
+            <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽提示再按</span>
+          </div>
+          <audio id="player"></audio>
         </div>
       </div>
 

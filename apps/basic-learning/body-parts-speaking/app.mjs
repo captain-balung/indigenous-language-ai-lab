@@ -199,7 +199,7 @@ function resetModelAudio() {
   stopAudio();
   const hasAudio = Boolean(question?.audioUrl);
   ui.replay.disabled = !hasAudio;
-  setAudioState(hasAudio ? "idle" : "failed", hasAudio ? "想聽再按播放" : "本題沒有音檔");
+  setAudioState(hasAudio ? "idle" : "failed", hasAudio ? "想聽提示再按" : "本題沒有音檔");
 }
 
 ui.replay.addEventListener("click", () => {

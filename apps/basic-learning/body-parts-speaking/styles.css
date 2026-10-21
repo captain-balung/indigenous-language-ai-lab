@@ -16,7 +16,7 @@
 .alt-route a{color:#1a5fbd}
 
 #speak-hint{margin:.3rem 0 .9rem;font-weight:700;color:#4a5474}
-.player-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:0 0 1rem}
+.player-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:1rem 0 0}
 .player-row .primary{margin:0;width:auto}
 .audio-state{padding:.4rem .8rem;border:2px solid var(--ink);border-radius:99px;background:#eef2f8;font-weight:900;font-size:.9rem}
 .audio-state[data-state="playing"]{background:#ddf5e7}
@@ -25,13 +25,13 @@
 #player{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 
 .recorder{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-.record-button{display:inline-flex;align-items:center;gap:.6rem;min-width:11rem}
+.record-button{display:inline-flex;align-items:center;gap:.6rem;min-width:11rem;width:auto}
 .record-dot{width:.85rem;height:.85rem;border-radius:50%;background:#fff;border:2px solid var(--ink)}
 .record-button.is-recording{background:#b03a24}
 .record-button.is-recording .record-dot{background:#ffd7c9;animation:pulse 1.1s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 /* 狀態一律「圖示＋秒數＋文字」，不靠顏色或動畫單獨表意 */
-.record-state{display:flex;align-items:center;gap:.55rem;margin:.8rem 0;padding:.55rem .8rem;border:2px solid var(--ink);border-radius:12px;background:#eef2f8;font-weight:900}
+.record-state{display:inline-flex;align-items:center;gap:.55rem;margin:.8rem 0;padding:.55rem .8rem;border:2px solid var(--ink);border-radius:12px;background:#eef2f8;font-weight:900;width:fit-content;max-width:100%}
 .record-state__icon{font-size:1.05rem}
 .record-state__time{font-variant-numeric:tabular-nums}
 .record-state[data-state=recording]{background:#ffe0d6}
