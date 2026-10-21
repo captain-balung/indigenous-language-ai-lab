@@ -265,3 +265,5 @@ a:focus-visible,button:focus-visible,select:focus-visible,textarea:focus-visible
 .primary:focus-visible,.quest-dialogue button:focus-visible{
   outline-color:var(--ink);
 }
+/* STEP 1 的開始按鈕：整面板寬、放大字級，作為選單的收尾重點 */
+#start{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}

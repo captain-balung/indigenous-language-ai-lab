@@ -40,15 +40,17 @@
 
     <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
       <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">本輪 1 / 1</span></div>
-      <p class="prompt">聽問句回答</p>
-      <h2 id="question-title">用自己的話回答</h2>
-      <div class="player-row">
-        <button id="replay" class="primary" type="button">播放問句</button>
-        <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
+      <div class="qa-card">
+        <p class="prompt">聽問句回答</p>
+        <h2 id="question-title">用自己的話回答</h2>
+        <div class="player-row">
+          <button id="replay" class="primary" type="button">播放問句</button>
+          <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
+        </div>
+        <audio id="player"></audio>
+        <label class="hint-toggle"><input id="show-zh" type="checkbox"> 顯示中文問句</label>
+        <p id="zh-hint"></p>
       </div>
-      <audio id="player"></audio>
-      <label class="hint-toggle"><input id="show-zh" type="checkbox"> 顯示中文問句</label>
-      <p id="zh-hint"></p>
 
       <div class="input-mode-bar">
         <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
@@ -62,11 +64,11 @@
           <button id="record" class="primary record-button" type="button">
             <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
           </button>
-        </div>
-        <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-          <span class="record-state__icon" aria-hidden="true">●</span>
-          <span id="record-time" class="record-state__time">00:00</span>
-          <span id="record-state-text">尚未錄音</span>
+          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+            <span class="record-state__icon" aria-hidden="true">●</span>
+            <span id="record-time" class="record-state__time">00:00</span>
+            <span id="record-state-text">尚未錄音</span>
+          </div>
         </div>
         <button id="rerecord" type="button" hidden>重新錄音</button>
       </div>

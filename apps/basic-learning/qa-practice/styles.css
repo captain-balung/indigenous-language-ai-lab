@@ -1,28 +1,68 @@
-textarea{width:100%;min-height:7rem;padding:.65rem .8rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:13px;font:inherit;resize:vertical}
-.hint-toggle{display:flex;align-items:center;gap:.45rem;margin:.4rem 0 .8rem;font-weight:900}
-.hint-toggle input{width:auto;min-height:0;accent-color:var(--ink)}
-#zh-hint{margin:0 0 1rem;padding:.7rem .9rem;border:3px dashed var(--ink);border-radius:14px;background:#fff8e6;font-weight:800}
-#zh-hint[hidden]{display:none}
-.answer-area .primary{width:auto}
+/* 問答練習（MISSION 04）：沿用 01 的視覺系統，本頁只做版面與質感美化。
+   本頁有載 01＋02 的樣式表，這裡的規則疊在最後，會蓋掉需要本頁客製的部分。 */
 
-/* 錄音元件：沿用 02 的樣式（本頁沒有載 02 的樣式表，要自帶一份），寬度跟著內容走 */
+textarea{width:100%;min-height:7rem;padding:.75rem .9rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:14px;font:inherit;resize:vertical;box-shadow:inset 0 2px 0 rgba(37,49,84,.08)}
+.hint-toggle{display:flex;align-items:center;gap:.45rem;margin:.9rem 0 0;font-weight:900}
+.hint-toggle input{width:auto;min-height:0;accent-color:var(--coral)}
+#zh-hint{margin:.7rem 0 0;padding:.7rem .9rem;border:3px dashed var(--ink);border-radius:14px;background:#fff8e6;font-weight:800}
+#zh-hint[hidden]{display:none}
+
+/* STEP 1：讓「開始練習」成為整個面板的收尾重點 */
+.setup .primary{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}
+
+/* ── 問句語音卡：純文字題的視覺焦點 ─────────────────── */
+.qa-card{margin:0 0 1.3rem;padding:1.25rem 1.4rem 1.15rem;border:3px solid var(--ink);border-radius:20px;background:#fff;box-shadow:var(--shadow)}
+.qa-card .prompt{margin:0 0 .55rem}
+.qa-card h2{margin:.1rem 0 1rem;font-size:clamp(1.7rem,4vw,2.3rem)}
+.qa-card .player-row{margin:0 0 .3rem}
+
+/* ── 錄音元件（02 同款，寬度跟著內容） ───────────────── */
 .recorder{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
 .record-button{display:inline-flex;align-items:center;gap:.6rem;min-width:11rem;width:auto}
+.recorder .record-button{margin-top:0}
+.recorder .record-state{margin:0}
 .record-dot{width:.85rem;height:.85rem;border-radius:50%;background:#fff;border:2px solid var(--ink)}
 .record-button.is-recording{background:#b03a24}
 .record-button.is-recording .record-dot{background:#ffd7c9;animation:pulse 1.1s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.record-state{display:inline-flex;align-items:center;gap:.55rem;margin:.5rem 0;padding:.55rem .8rem;border:2px solid var(--ink);border-radius:12px;background:#eef2f8;font-weight:900;width:fit-content;max-width:100%}
+.record-state{display:inline-flex;align-items:center;gap:.55rem;min-height:48px;line-height:1.4;margin:.5rem 0;padding:.55rem .85rem;border:3px solid var(--ink);border-radius:13px;background:#fff;font-weight:900;width:fit-content;max-width:100%;box-shadow:0 4px 0 var(--ink)}
 .record-state__icon{font-size:1.05rem}
 .record-state__time{font-variant-numeric:tabular-nums}
 .record-state[data-state=recording]{background:#ffe0d6}
 .record-state[data-state=recorded]{background:#ddf5e7}
 .record-state[data-state=converting],.record-state[data-state=transcribing],.record-state[data-state=slow]{background:#fff1c4}
 .record-state[data-state=failed]{background:#f6e3e0}
+.answer-area .primary{width:auto}
+
+/* 按鈕回饋：hover 輕浮起、按下壓扁，符合 01 的「按壓式」立體感 */
+.quiz button{transition:transform .12s ease}
+.quiz button:hover:not(:disabled){transform:translateY(-2px)}
+.quiz button:active:not(:disabled){transform:translateY(2px);box-shadow:none}
+
+/* ── 判定結果卡：依狀態的左色條＋淡底色 ──────────────── */
+.result{position:relative;margin-top:1.4rem;padding:1.05rem 1.25rem 1.05rem 1.65rem;border:3px solid var(--ink);border-radius:18px;background:#eef2f8;overflow:hidden}
+.result:before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;border-right:3px solid var(--ink);background:#6b769b}
+.result[data-state=semantic]{background:#e7f6ee}
+.result[data-state=semantic]:before{background:#3e9b6d}
+.result[data-state=retry]{background:#fff3cd}
+.result[data-state=retry]:before{background:#d89b2c}
+.result[data-state=unavailable]{background:#e8edf8}
+.result strong{display:block;margin-bottom:.25rem;font-size:1.45rem}
+.result p{margin:.25rem 0;font-weight:700}
+.result .judge-rationale{font-weight:600;font-size:.95rem;color:#5a6478}
+
+/* ── 動作列：下一題是主角，其餘白底次按鈕靠右 ───────── */
+.quiz-actions{display:flex;justify-content:flex-end;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+.quiz-actions button{min-width:8rem}
+#next{background:var(--coral);color:#fff}
+
 @media(max-width:720px){
   header{min-height:640px}
   .hero-copy h1{font-size:2.7rem}
+  .qa-card{padding:1.05rem 1rem 1rem}
 }
 @media(prefers-reduced-motion:reduce){
   .record-button.is-recording .record-dot{animation:none}
+  .quiz button{transition:none}
+  .quiz button:hover:not(:disabled){transform:none}
 }

@@ -37,9 +37,9 @@
 
     <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
       <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">第 1 / 8 題</span></div>
-      <p id="prompt" class="prompt">轉述</p>
-      <h2 id="question-title">聽完後用族語再講一次</h2>
-      <div id="panel-audio">
+      <div id="panel-audio" class="qa-card">
+        <p id="prompt" class="prompt">轉述</p>
+        <h2 id="question-title">聽完後用族語再講一次</h2>
         <div class="player-row">
           <button id="replay" class="primary" type="button">播放</button>
           <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">按播放</span>
@@ -51,11 +51,11 @@
           <button id="record" class="primary record-button" type="button">
             <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
           </button>
-        </div>
-        <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-          <span class="record-state__icon" aria-hidden="true">●</span>
-          <span id="record-time" class="record-state__time">00:00</span>
-          <span id="record-state-text">尚未錄音</span>
+          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+            <span class="record-state__icon" aria-hidden="true">●</span>
+            <span id="record-time" class="record-state__time">00:00</span>
+            <span id="record-state-text">尚未錄音</span>
+          </div>
         </div>
       </div>
       <div class="submit-row">

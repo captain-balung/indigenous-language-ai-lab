@@ -1,10 +1,14 @@
-#start{margin-top:1.2rem}
+#start{width:100%;min-height:56px;font-size:1.1rem;margin-top:1.2rem}
 .alt-route{margin:.9rem 0 0;font-weight:700;color:#4a5474}
 .alt-route a{color:#1a5fbd}
 
 .player-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:1rem 0}
 .player-row .primary{margin:0}
-.audio-state{padding:.4rem .8rem;border:2px solid var(--ink);border-radius:99px;background:#eef2f8;font-weight:900;font-size:.9rem}
+.audio-state{padding:.4rem .8rem;border:3px solid var(--ink);border-radius:99px;background:#fff;font-weight:900;font-size:.9rem}
+.audio-state[data-state=playing]{background:#ddf5e7}
+.audio-state[data-state=ended]{background:#eaf3ff}
+.audio-state[data-state=failed]{background:#f6e3e0}
+#next{background:var(--coral);color:#fff}
 .audio-state[data-state="playing"]{background:#ddf5e7}
 .audio-state[data-state="ended"]{background:#eaf3ff}
 .audio-state[data-state="failed"]{background:#f6e3e0}

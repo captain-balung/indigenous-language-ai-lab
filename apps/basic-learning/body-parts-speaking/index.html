@@ -17,7 +17,7 @@
   </header>
 
   <main id="practice">
-    <section class="setup panel" aria-labelledby="setup-title">
+    <section class="setup panel setup-speak" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選擇語別與主題</h2>
       <aside class="task-brief" aria-label="怎麼玩">
         <p class="task-brief__lead">看圖用族語念出完整句子。</p>
@@ -42,7 +42,7 @@
       <p class="alt-route">不方便出聲，或麥克風不能用？<a href="/apps/basic-learning/body-parts-practice/">改用看圖練習（MISSION 01）</a>——同一批主題、同樣的判定方式。</p>
     </section>
 
-    <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
+    <section id="quiz" class="quiz panel speak-quiz" hidden aria-labelledby="question-title">
       <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">本輪 1 / 10</span></div>
       <div class="question-grid">
         <figure><img id="question-image" src="/data/klokah-junior/images/recognize/1_1.png" alt="口說練習題目圖片"></figure>
@@ -50,27 +50,28 @@
           <p class="prompt">看圖回答</p><h2 id="question-title">這是什麼？</h2>
           <p id="speak-hint">想聽提示再按最下面的「播放提示」，或直接錄音；停止錄音後會自動送出辨識。</p>
 
-          <div class="recorder">
-            <button id="record" class="primary record-button" type="button">
-              <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
-            </button>
-          </div>
+          <div class="speak-card">
+            <div class="recorder">
+              <button id="record" class="primary record-button" type="button">
+                <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+              </button>
+              <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+                <span class="record-state__icon" aria-hidden="true">●</span>
+                <span id="record-time" class="record-state__time">00:00</span>
+                <span id="record-state-text">尚未錄音</span>
+              </div>
+            </div>
 
-          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
-            <span class="record-state__icon" aria-hidden="true">●</span>
-            <span id="record-time" class="record-state__time">00:00</span>
-            <span id="record-state-text">尚未錄音</span>
-          </div>
+            <div class="submit-row">
+              <button id="rerecord" type="button" hidden>重新錄音</button>
+            </div>
 
-          <div class="submit-row">
-            <button id="rerecord" type="button" hidden>重新錄音</button>
+            <div class="player-row">
+              <button id="replay" class="primary" type="button">播放提示</button>
+              <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽提示再按</span>
+            </div>
+            <audio id="player"></audio>
           </div>
-
-          <div class="player-row">
-            <button id="replay" class="primary" type="button">播放提示</button>
-            <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽提示再按</span>
-          </div>
-          <audio id="player"></audio>
         </div>
       </div>
 

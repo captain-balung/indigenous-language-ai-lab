@@ -26,3 +26,12 @@ main{padding:2.4rem 1rem 3rem}
   .hero-copy h1{font-size:clamp(2.15rem,9vw,2.8rem)}
   header img{position:relative;display:block;width:min(100%,280px);max-width:280px;right:auto;bottom:auto;margin:.6rem auto 0}
 }
+
+/* STEP 1 的開始按鈕：整面板寬、放大字級，作為選單的收尾重點 */
+#start{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}
+#next{background:var(--coral);color:#fff}
+/* 題目卡（問答練習同款） */
+.qa-card{margin:0 0 1.3rem;padding:1.25rem 1.4rem 1.15rem;border:3px solid var(--ink);border-radius:20px;background:#fff;box-shadow:var(--shadow)}
+.qa-card .prompt{margin:0 0 .55rem}
+.qa-card h2{margin:.1rem 0 1rem;font-size:clamp(1.7rem,4vw,2.3rem)}
+.qa-card .player-row{margin:0 0 .3rem}
