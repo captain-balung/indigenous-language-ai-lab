@@ -136,6 +136,24 @@
 .review-item .zh{color:#4a5474}
 .review-item .replay{margin-top:.5rem;min-height:40px;font-size:.9rem}
 
+/* 結果頁「你的回答」：玩家自己的錄音回放，放在辨識結果上方。 */
+.review-answer{display:flex;align-items:center;gap:.5rem;margin:.3rem 0}
+.review-answer__label{font-weight:700;white-space:nowrap}
+.review-answer__none{color:#5a6478;font-weight:900}
+.review-answer audio{flex:1;max-width:420px;height:36px}
+
+/* 結果頁的題目圖片列（看圖說話／看圖表達）與聽力題幹圖。
+   底層 MISSION 01 樣式表把 figure 定成 min-height:320px 大圖框，這裡要整組覆寫回去。 */
+.review-figures{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:.4rem 0;max-width:520px}
+.review-figures--single{grid-template-columns:minmax(0,1fr);max-width:320px}
+.review-figures figure{display:block;min-height:0;margin:0;padding:.45rem;border:3px solid var(--ink);border-radius:14px;background:#fff;text-align:center}
+.review-figures img{width:100%;aspect-ratio:1;max-height:none;object-fit:contain;display:block}
+.review-figures figcaption{margin-top:.35rem;font-weight:900;color:#4a5474;font-size:.8rem}
+.review-figures figure[data-failed=true] img{display:none}
+.review-figures figure[data-failed=true]::before{content:"圖片連不上";font-weight:900;color:#b03a24;font-size:.9rem}
+.review-prompt-img{display:block;width:min(200px,60vw);margin:.35rem 0;border:2px solid var(--ink);border-radius:10px;background:#fff}
+.review-prompt-img[data-failed=true]{display:none}
+
 @media(max-width:720px){
   /* 標題比 01 長一行，窄螢幕會把副標推進插圖裡 */
   header{min-height:640px}
