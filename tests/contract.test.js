@@ -48,7 +48,7 @@ assert(!applications.some((app) => app.title === "聽音練習" || app.href === 
 assert(applications[8].title === "初級口說模擬站" && applications[8].status === "available" && applications[8].href === "apps/certification-mock/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
 assert(applications[9].title === "中級模擬站" && applications[9].status === "available" && applications[9].href === "apps/certification-mock/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
 assert(applications[12].title === "部落大小事" && applications[12].status === "available" && applications[12].href === "apps/scenario-practice/village-life/", "First scenario card must link to the village-life role play");
-assert(applications[13].title === "市場小幫手" && applications[13].status === "available" && applications[13].href === "apps/scenario-practice/market-helper/", "Second scenario card must link to market-helper");
+assert(applications[13].title === "市場小幫手" && applications[13].status === "coming-soon" && applications[13].href === "", "Market-helper card stays under wraps on the homepage; the app is reachable by URL only");
 assert(applications.slice(14, 16).every((app) => app.status === "coming-soon"), "The other scenario cards stay coming-soon");
 assert(applications.filter((app) => app.status === "available").every((app) => {
   const clean = app.href.split("?")[0].replace(/\/$/, "");

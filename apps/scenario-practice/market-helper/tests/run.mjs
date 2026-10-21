@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import {
   BARGAIN_REJECT, BRIEF_PLACEHOLDER, BUDGET, FAIL, PRICE_ROLES, ROUND_SIZE,
   addToCart, buildBrief, cartPieceCount, cartQtyOf, cartTotal, catalogItem,
-  emptyCart, emptyUnlocks, formatItemList, judgeCheckout, matchItemName,
+  emptyCart, emptyUnlocks, formatItemList, judgeCheckout, lineCost, matchItemName,
   pickRoundCatalog, priceQuote, removeFromCart, setCartQty, shoppingList,
   unlockDetail, unlockPrice
 } from "../core.mjs";
@@ -80,6 +80,14 @@ assert.equal(cartQtyOf(setCartQty(catalog, emptyCart(), catalog[0].id, 2), catal
 assert.equal(cartPieceCount(removeFromCart(addToCart(catalog, emptyCart(), catalog[0].id, 1), catalog[0].id)), 0);
 assert.ok(cartTotal(catalog, addToCart(catalog, emptyCart(), catalog[0].id, 1)) > 0);
 assert.equal(FAIL.notFull.headline, "清單還沒買齊");
+
+// 三種角色照販賣單位各買一份（1 個／3 個一組／1 斤＝約 5 個），總價必須能過關。
+const pricedSum = PRICE_ROLES.reduce((sum, role) => {
+  const qty = role.pricing.kind === "pack" ? role.pricing.packSize : role.pricing.kind === "jin" ? role.pricing.approxPerJin : 1;
+  return sum + lineCost({ pricing: role.pricing }, qty);
+}, 0);
+assert.ok(pricedSum <= BUDGET, `照定價買齊應在預算內，目前 ${pricedSum} > ${BUDGET}`);
+assert.equal(pricedSum, 90);
 
 const page = read("apps/scenario-practice/market-helper/index.html");
 const appSource = read("apps/scenario-practice/market-helper/app.mjs");
