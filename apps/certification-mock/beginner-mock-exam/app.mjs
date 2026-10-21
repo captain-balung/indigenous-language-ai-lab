@@ -115,7 +115,7 @@ function renderModelNote() {
     console.warn("[ASR] 服務提供了對照表沒有的模型：", audit.unknownFromApi.map((entry) => entry.model).join("、"));
   }
   if (audit.consistent) {
-    ui.apiStatus.textContent = `語音辨識服務正常，16 個族級模型都可用。`;
+    ui.apiStatus.textContent = `語音辨識服務正常，16 個族級模型都可用。語意使用 vLLM AI 判別。`;
     ui.apiStatus.dataset.state = "ok";
   } else {
     ui.apiStatus.textContent = `語音辨識服務目前有 ${audit.unavailable.length} 個族級模型不可用；受影響的語言別在口說會顯示「無法判定」。`;
@@ -389,7 +389,7 @@ function renderListening(section, question) {
       return `<div class="option option--audio">
         <input type="radio" id="${id}" name="answer" value="${option.key}"${checked}${disabled}>
         <label for="${id}">選項 ${escapeHtml(option.key)}</label>
-        <button type="button" class="option-play" data-audio="${escapeHtml(option.audioUrl)}">▶ 播放選項 ${escapeHtml(option.key)}</button>
+        <button type="button" class="option-play" data-audio="${escapeHtml(option.audioUrl)}">▶ 選項音檔 ${escapeHtml(option.key)}</button>
       </div>`;
     }
     return `<div class="option option--image">
@@ -524,6 +524,9 @@ async function confirmSpeaking(section, question) {
   if (!recordedBlob) return;
   const response = (responses[question.id] ??= {});
   response.attempted = true;
+  // 保存玩家自己的錄音（只在這一輪練習的記憶體裡），整卷結束在結果頁「你的回答」回放。
+  releaseAnswerUrl(response);
+  response.answerUrl = URL.createObjectURL(recordedBlob);
   ui.confirm.disabled = true;
   ui.record.disabled = true;
 
@@ -626,6 +629,7 @@ ui.endPractice.addEventListener("click", () => { showReport(); });
 ui.restart.addEventListener("click", () => {
   clearAudio();
   clearRecording();
+  releaseAllAnswerUrls();
   paper = null;
   flat = [];
   responses = {};
@@ -663,6 +667,17 @@ function clearRecording({ keepHeard = false } = {}) {
   ui.recordTime.textContent = "00:00";
   if (!keepHeard) ui.heard.hidden = true;
   setRecordState("idle");
+}
+
+/** 釋放該題前一輪的「你的回答」object URL（重錄不會發生，但重啟練習要清乾淨）。 */
+function releaseAnswerUrl(response) {
+  if (typeof response?.answerUrl !== "string" || !response.answerUrl) return;
+  try { URL.revokeObjectURL(response.answerUrl); } catch { /* 早已釋放 */ }
+  response.answerUrl = null;
+}
+
+function releaseAllAnswerUrls() {
+  for (const response of Object.values(responses)) releaseAnswerUrl(response);
 }
 
 ui.record.addEventListener("click", async () => {
@@ -704,6 +719,27 @@ ui.record.addEventListener("click", async () => {
 
 /* ══════════ 成績單 ══════════ */
 
+/**
+ * 「你的回答」：玩家自己的錄音，放在辨識結果上方。
+ * 沒錄音（未作答／不支援錄音）時不隱藏，改標「未作答」，讓答題紀錄一目了然。
+ * @param {string|null} url confirmSpeaking 時存的 blob object URL
+ */
+function yourAnswerBlock(url) {
+  if (!url) {
+    return '<div class="review-answer"><span class="review-answer__label">你的回答</span><span class="review-answer__none">未作答</span></div>';
+  }
+  return `<div class="review-answer"><span class="review-answer__label">你的回答</span>
+    <audio controls preload="none" src="${escapeHtml(url)}"></audio></div>`;
+}
+
+/** 結果頁的題目圖片列（看圖說話的每張圖）。載入失敗時在原格位顯示「圖片連不上」。 */
+function figureStrip(imageUrls = []) {
+  if (!imageUrls?.length) return "";
+  const caption = imageUrls.length > 1 ? (imageUrl, index) => `圖片 ${index + 1}` : () => "本題圖片";
+  return `<div class="review-figures${imageUrls.length > 1 ? "" : " review-figures--single"}">${imageUrls.map((imageUrl, index) => `
+    <figure><img src="${escapeHtml(imageUrl)}" alt="" referrerpolicy="no-referrer" onerror="this.closest('figure').dataset.failed='true'"><figcaption>${caption(imageUrl, index)}</figcaption></figure>`).join("")}</div>`;
+}
+
 function showReport() {
   clearAudio();
   clearRecording();
@@ -737,8 +773,9 @@ function showReport() {
   const wordBlock = `<h3 class="review-section">口說第一部分：單詞朗讀（${word.pointsSum} / ${word.maxPointsSum} 分）</h3>` + word.review.map((entry) => `
     <div class="review-item" data-status="${entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}　·　${entry.points} / ${entry.maxPoints} 分</h4>
-      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 播放</button>` : ""}
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 教材錄音</button>` : ""}
       <p class="ab">教材拼寫：${escapeHtml(entry.expected)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
+      ${yourAnswerBlock(entry.answerUrl)}
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p class="score-note">${entry.status === "matched"
         ? "與本題的教材拼寫相符。"
@@ -750,8 +787,9 @@ function showReport() {
   const shortBlock = `<h3 class="review-section">口說第二部分：簡答題（${short.pointsSum} / ${short.maxPointsSum} 分）</h3>` + short.review.map((entry) => `
     <div class="review-item" data-status="${entry.status === "reasonable" ? "matched" : entry.status === "unreasonable" ? "mismatched" : entry.status}">
       <h4>第 ${entry.no} 題　${statusLabel[entry.status]}${entry.points == null ? "" : `　·　${entry.points} / ${entry.maxPoints} 分`}</h4>
-      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 播放</button>` : ""}
+      ${entry.audioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.audioUrl)}">▶ 問題音檔</button>` : ""}
       <p class="ab">問句：${escapeHtml(entry.question)}<span class="zh">（${escapeHtml(entry.chineseText)}）</span></p>
+      ${yourAnswerBlock(entry.answerUrl)}
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       ${entry.rationale ? `<p>評分說明：${escapeHtml(entry.rationale)}</p>` : ""}
@@ -760,8 +798,10 @@ function showReport() {
   const pictureBlock = `<h3 class="review-section">口說第三部分：看圖說話</h3>` + picture.review.map((entry) => `
     <div class="review-item" data-status="${entry.status === "scored" ? "matched" : entry.status}">
       <h4>第 ${entry.no} 題　${entry.status === "scored" ? `分數 ${entry.points} / ${entry.maxPoints}` : statusLabel[entry.status]}</h4>
-      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 播放</button>` : ""}
+      ${entry.referenceAudioUrl ? `<button type="button" class="replay" data-audio="${escapeHtml(entry.referenceAudioUrl)}">▶ 參考答案</button>` : ""}
       <p>中文提示：${escapeHtml(entry.tip)}</p>
+      ${figureStrip(entry.imageUrls)}
+      ${yourAnswerBlock(entry.answerUrl)}
       <p>辨識：${escapeHtml(entry.transcript ?? entry.asrError ?? "未作答")}</p>
       <p>翻譯成中文：${escapeHtml(entry.translation ?? entry.translateError ?? "—")}</p>
       <p>教材參考答案：${escapeHtml(entry.referenceChinese)}</p>

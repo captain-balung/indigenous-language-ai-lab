@@ -545,6 +545,22 @@ const pictureQuestions = samplePaper.speaking[2].questions;
   assert.equal(judgeSentenceReading("Ira ku luma’ nu maku.", "Ira ku luma' nu maku.").points, 3,
     "撇號是族語正寫法的一部分，彎引號與直引號視為相同，不得當標點吃掉");
 
+  // 賽夏／噶瑪蘭：大小寫是正寫法的一部分（賽夏 S、噶瑪蘭 R），整句保留原樣，
+  // 只有句首第一個詞的第一個字母額外容忍（ASR 慣例）。
+  const saisiyat = "Sa’ila pa:tol!";
+  assert.equal(judgeSentenceReading("sa’ila pa:tol!", saisiyat, "賽夏").points, 3, "句首第一個字母容忍");
+  assert.equal(judgeSentenceReading("Sa’ila pae'rem!", saisiyat, "賽夏").points, 0, "句首以外的詞要嚴格：只有第一個詞重疊");
+  assert.equal(judgeSentenceReading("sa’ila pa:tol!", saisiyat).points, 3, "未指定族群時沿用不分大小寫");
+  const kavalan = "biRi tibuq iku.";
+  assert.equal(judgeSentenceReading("biRi tibuq iku.", kavalan, "噶瑪蘭").points, 3);
+  // 句首字母是 b，折疊句首改不了句中的大寫 R——biRi→biri 是字母差異，要嚴格（不算句首慣例）。
+  assert.equal(judgeSentenceReading("biri tibuq iku.", kavalan, "噶瑪蘭").points, 1,
+    "噶瑪蘭句中的大寫 R 是字母的一部分，不得吃掉");
+  // 句首大寫慣例：Rabetin → rabetin 只差第一個字母，視為相同。
+  assert.equal(judgeSentenceReading("rabetin duki maynep iku qaRabi.", "Rabetin duki maynep iku qaRabi.", "噶瑪蘭").points, 3,
+    "句首第一個字母容忍");
+  assert.equal(judgeSentenceReading("buki tibuq iku.", kavalan).points, 1, "未指定族群時沿用不分大小寫（2/3 重疊 → 1 分）");
+
   // 少一個詞 → 部分重疊；只剩兩個詞 → 更低；完全無關 → 0 分但仍不說使用者念錯。
   assert.equal(judgeSentenceReading("Ira ku wacu nu", sentence).status, "partial");
   assert.equal(judgeSentenceReading("Ira ku", sentence).status, "partial");
@@ -870,6 +886,28 @@ assert.ok(!appSource.includes("系統聽到"), "結果頁不得出現「系統�
 assert.ok(!appSource.includes("練習用機器評分"), "結果頁不得顯示機器評分免責");
 assert.ok(!appSource.includes("機器粗判"), "結果頁不得提機器粗判");
 assert.ok(!appSource.includes("不太合理"), "結果頁不得強調「不太合理」免責措辭");
+
+// 結果頁契約：保存玩家錄音、分類命名播放鈕、題幹圖、第四部份中文紅線。
+assert.ok(appCode.includes("response.answerUrl = URL.createObjectURL(recordedBlob)"), "確定作答時必須保存玩家自己的錄音");
+assert.ok(appCode.includes("releaseAllAnswerUrls()"), "重啟練習必須釋放你的回答 object URL");
+assert.ok(appSource.includes("你的回答"), "結果頁必須顯示「你的回答」");
+assert.ok(appSource.includes("review-answer__none"), "沒錄音的題「你的回答」必須顯示「未作答」，不得整行消失");
+assert.ok(appSource.includes("▶ 教材錄音"), "單句朗讀是照著念的示範音檔，必須標「教材錄音」，不叫參考答案");
+assert.ok(appSource.split("▶ 參考答案").length - 1 === 1, "「參考答案」只留給沒有示範性質的看圖表達");
+assert.ok(appSource.includes("▶ 問題音檔"), "簡答題與聽力的題目音檔按鈕必須標「問題音檔」");
+assert.ok(appSource.includes("▶ 選項音檔"), "選項音檔按鈕必須標「選項音檔」，不得顯示「播放」");
+assert.ok(!appSource.includes("播放選項"), "不得出現「播放選項」字樣");
+assert.ok(appSource.includes("review-figures"), "看圖表達結果必須顯示題目圖片");
+assert.ok(appSource.includes("review-prompt-img"), "聽力回顯必須顯示題幹圖");
+assert.ok(appSource.includes("onerror"), "題目圖載入失敗必須在格位上顯示「圖片連不上」，不得靜默空白");
+assert.ok(appSource.includes('entry.sectionId !== "choiceThree"'), "第四部份（選擇題(三)）結果不得顯示中文");
+for (const [start, name] of [["口說第一部分：單句朗讀", "單句朗讀"], ["口說第二部分：問答題", "問答題"], ["口說第三部分：看圖表達", "看圖表達"]]) {
+  const from = appSource.indexOf(start);
+  const answer = appSource.indexOf("yourAnswerBlock(entry.answerUrl)", from);
+  const heard = appSource.indexOf("<p>辨識：", from);
+  assert.ok(answer > -1 && answer < heard, `你的回答必須放在辨識結果上方（${name}）`);
+}
+assert.ok(scoringSource.includes("answerUrl: response.answerUrl ?? null"), "scoring 必須把你的回答音檔帶進 review");
 // 單句朗讀的措辭只描述重疊程度，不描述對錯。
 assert.ok(appSource.includes("詞語重疊程度"), "單句朗讀必須以「詞語重疊程度」描述結果");
 for (const forbidden of ["念得正確", "朗讀正確", "朗讀錯誤"]) {

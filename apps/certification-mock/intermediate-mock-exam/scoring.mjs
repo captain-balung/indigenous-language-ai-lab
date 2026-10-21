@@ -11,7 +11,7 @@
  *      不是 mismatched。音檔載不出來 → notScored，不是答錯。
  */
 
-import { normalizeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
+import { normalizeAnswer, indigenousEquals, isCaseMeaningful } from "../../basic-learning/body-parts-practice/core.mjs";
 
 /** 官方及格標準原文，僅供對照，本站不據此推測結果。 */
 export const OFFICIAL = {
@@ -66,12 +66,15 @@ export const SENTENCE_READING_THRESHOLDS = [
  * 切成可比對的詞。
  *
  * normalizeAnswer 已經統一撇號與空白——撇號在族語正寫法裡是字母的一部分
- * （例如 luma’），**不能**當成標點吃掉。這裡只再拿掉句末標點與全形標點，
- * 並轉小寫。
+ * （例如 luma’），**不能**當成標點吃掉。這裡只再拿掉句末標點與全形標點。
+ *
+ * 大小寫依方言別處理：一般方言轉小寫（ASR 慣例會在句首補大寫）；賽夏／噶瑪蘭的
+ * 大寫是正寫法的一部分（賽夏 S、噶瑪蘭 R），保留原樣，由呼叫端句首容忍。
  */
-function readingTokens(text) {
-  return normalizeAnswer(text)
-    .toLowerCase()
+function readingTokens(text, ethnicity) {
+  const normalized = normalizeAnswer(text);
+  const cased = isCaseMeaningful(ethnicity) ? normalized : normalized.toLowerCase();
+  return cased
     .replace(/[.,!?;:"「」『』（）()]/g, " ")
     .replace(/[。，、！？；：]/g, " ")
     .split(/\s+/)
@@ -84,6 +87,13 @@ function multisetCounts(tokens) {
   return counts;
 }
 
+/** 只折疊一個詞的第一個字母：賽夏／噶瑪蘭的句首容忍用。 */
+function foldFirstTokenLetter(token) {
+  return token
+    ? token.charAt(0).toLowerCase() + token.slice(1)
+    : token;
+}
+
 /**
  * 單句朗讀的判定：ASR 文字與教材整句的**詞語重疊程度**（多重集合 F1）。
  *
@@ -93,9 +103,15 @@ function multisetCounts(tokens) {
  *   mismatched   重疊 < 0.5
  *   undetermined 沒有辨識結果（不是使用者的錯，也不算念錯）
  *
+ * 大小寫依方言別處理：一般方言不分大小寫；賽夏／噶瑪蘭保留大小寫（S、R 是正寫法
+ * 的一部分），只對「句首第一個詞的第一個字母」折疊，吸收 ASR 的句首大寫慣例。
+ *
+ * @param {string} transcript
+ * @param {string} expected
+ * @param {string} [ethnicity]
  * @returns {{ status: string, points: number|null, ratio: number|null, maxPoints: number }}
  */
-export function judgeSentenceReading(transcript, expected) {
+export function judgeSentenceReading(transcript, expected, ethnicity) {
   const maxPoints = SENTENCE_READING_MAX_POINTS;
   if (typeof transcript !== "string" || !transcript.trim()) {
     return { status: "undetermined", points: null, ratio: null, maxPoints };
@@ -104,10 +120,15 @@ export function judgeSentenceReading(transcript, expected) {
     return { status: "undetermined", points: null, ratio: null, maxPoints };
   }
 
-  const heard = readingTokens(transcript);
-  const target = readingTokens(expected);
+  const heard = readingTokens(transcript, ethnicity);
+  const target = readingTokens(expected, ethnicity);
   if (heard.length === 0 || target.length === 0) {
     return { status: "undetermined", points: null, ratio: null, maxPoints };
+  }
+
+  if (isCaseMeaningful(ethnicity) && heard[0] && target[0]) {
+    heard[0] = foldFirstTokenLetter(heard[0]);
+    target[0] = foldFirstTokenLetter(target[0]);
   }
 
   const heardCounts = multisetCounts(heard);
@@ -288,7 +309,7 @@ function gradeListeningSection(section, responses) {
   return { id: section.id, title: section.title, ...tally, review };
 }
 
-function gradeSentenceReading(section, responses) {
+function gradeSentenceReading(section, responses, ethnicity = "") {
   const tally = { total: 0, matched: 0, partial: 0, mismatched: 0, undetermined: 0, skipped: 0, pointsSum: 0, maxPointsSum: 0 };
   const review = [];
   const per = SENTENCE_READING_MAX_POINTS;
@@ -305,7 +326,7 @@ function gradeSentenceReading(section, responses) {
       status = "skipped";
       tally.skipped += 1;
     } else {
-      const judged = judgeSentenceReading(response.transcript, question.expected);
+      const judged = judgeSentenceReading(response.transcript, question.expected, ethnicity);
       status = judged.status;
       ratio = judged.ratio;
       tally[status] += 1;
@@ -324,6 +345,7 @@ function gradeSentenceReading(section, responses) {
       ratio,
       expected: question.expected,
       chineseText: question.prompt.chineseText,
+      answerUrl: response.answerUrl ?? null,
       transcript: response.transcript ?? null,
       asrError: response.asrError ?? null,
       referenceAudioUrl: question.prompt.referenceAudioUrl,
@@ -381,6 +403,7 @@ function gradeShortAnswer(section, responses) {
       question: question.prompt.indigenousText,
       chineseText: question.prompt.chineseText,
       audioUrl: question.prompt.audioUrl,
+      answerUrl: response.answerUrl ?? null,
       transcript: response.transcript ?? null,
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
@@ -436,6 +459,7 @@ function gradePictureTalk(section, responses) {
       referenceChinese: question.reference.chineseText,
       referenceAudioUrl: question.reference.audioUrl,
       imageUrls: question.prompt.imageUrls,
+      answerUrl: response.answerUrl ?? null,
       transcript: response.transcript ?? null,
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
@@ -473,11 +497,12 @@ export function gradePaper(paper, responses = {}) {
   const scoredDenominator = listeningTotals.correct + listeningTotals.wrong;
   const accuracy = scoredDenominator > 0 ? listeningTotals.correct / scoredDenominator : null;
 
+  const ethnicity = paper.dialect?.ethnicity;
   const sentenceSection = paper.speaking.find((section) => section.id === "sentenceReading");
   const shortSection = paper.speaking.find((section) => section.id === "shortAnswer");
   const pictureSection = paper.speaking.find((section) => section.id === "pictureTalk");
 
-  const sentenceReading = sentenceSection ? gradeSentenceReading(sentenceSection, responses) : null;
+  const sentenceReading = sentenceSection ? gradeSentenceReading(sentenceSection, responses, ethnicity) : null;
   const shortAnswer = shortSection ? gradeShortAnswer(shortSection, responses) : null;
   const pictureTalk = pictureSection ? gradePictureTalk(pictureSection, responses) : null;
 

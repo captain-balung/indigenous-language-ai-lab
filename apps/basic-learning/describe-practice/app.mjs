@@ -115,6 +115,7 @@ async function verifyServices() {
   } catch {
     notes.push("翻譯即時清單暫時無法取得，送出時再試");
   }
+  notes.push("語意使用 vLLM AI 判別");
   ui.api.textContent = `● ${notes.join("；")}`;
   ui.api.dataset.state = asrAudit?.consistent ? "ok" : "fallback";
   updateStart();
@@ -311,7 +312,7 @@ const runFlow = createSingleFlight(async () => {
   let translation;
   let matched = false;
   let pictureScore = null;
-  if (exactMatch(indigenous, question.indigenousText)) {
+  if (exactMatch(indigenous, question.indigenousText, selectedDialect.ethnicity)) {
     translation = question.chineseText;
     matched = true;
     pictureScore = {

@@ -11,7 +11,7 @@
  *      不是 mismatched。音檔載不出來 → notScored，不是答錯。
  */
 
-import { normalizeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
+import { normalizeAnswer, indigenousEquals } from "../../basic-learning/body-parts-practice/core.mjs";
 
 /** 官方及格標準原文，僅供對照，本站不據此推測結果。 */
 export const OFFICIAL = {
@@ -57,12 +57,18 @@ export const LISTENING_MAX_POINTS = POINT_SCHEME.listening.perQuestion;
  * 只做字面比對，不呼叫翻譯 API：單一詞彙的中文註解（例如「老人；長輩」）
  * 沒辦法可靠地跟機器翻譯比對，而錯誤的「不相符」正是產品原則要避免的事。
  *
+ * 大小寫依方言別處理（indigenousEquals）：一般方言不分大小寫——ASR 慣例會在
+ * 句首補大寫；賽夏／噶瑪蘭的大寫是正寫法的一部分（S、R），嚴格比對但容忍句首第一個字母。
+ *
+ * @param {string} transcript
+ * @param {string} expected
+ * @param {string} [ethnicity] 族名（賽夏／噶瑪蘭走嚴格比對）
  * @returns {"matched"|"mismatched"|"undetermined"}
  */
-export function judgeWordReading(transcript, expected) {
+export function judgeWordReading(transcript, expected, ethnicity) {
   if (typeof transcript !== "string" || !transcript.trim()) return "undetermined";
   if (typeof expected !== "string" || !expected.trim()) return "undetermined";
-  return normalizeAnswer(transcript).toLowerCase() === normalizeAnswer(expected).toLowerCase()
+  return indigenousEquals(transcript, expected, ethnicity)
     ? "matched"
     : "mismatched";
 }
@@ -228,7 +234,7 @@ function gradeListeningSection(section, responses) {
   return { id: section.id, title: section.title, ...tally, review };
 }
 
-function gradeWordReading(section, responses) {
+function gradeWordReading(section, responses, ethnicity = "") {
   const tally = { total: 0, matched: 0, mismatched: 0, undetermined: 0, skipped: 0, pointsSum: 0, maxPointsSum: 0 };
   const review = [];
   const per = WORD_READING_MAX_POINTS;
@@ -244,7 +250,7 @@ function gradeWordReading(section, responses) {
       status = "skipped";
       tally.skipped += 1;
     } else {
-      status = judgeWordReading(response.transcript, question.expected);
+      status = judgeWordReading(response.transcript, question.expected, ethnicity);
       tally[status] += 1;
       if (status === "matched") {
         points = per;
@@ -260,6 +266,7 @@ function gradeWordReading(section, responses) {
       maxPoints: per,
       expected: question.expected,
       chineseText: question.prompt.chineseText,
+      answerUrl: response.answerUrl ?? null,
       transcript: response.transcript ?? null,
       asrError: response.asrError ?? null,
       referenceAudioUrl: question.prompt.referenceAudioUrl,
@@ -317,6 +324,7 @@ function gradeShortAnswer(section, responses) {
       question: question.prompt.indigenousText,
       chineseText: question.prompt.chineseText,
       audioUrl: question.prompt.audioUrl,
+      answerUrl: response.answerUrl ?? null,
       transcript: response.transcript ?? null,
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
@@ -372,6 +380,7 @@ function gradePictureTalk(section, responses) {
       referenceChinese: question.reference.chineseText,
       referenceAudioUrl: question.reference.audioUrl,
       imageUrls: question.prompt.imageUrls,
+      answerUrl: response.answerUrl ?? null,
       transcript: response.transcript ?? null,
       translation: response.translation ?? null,
       asrError: response.asrError ?? null,
@@ -409,11 +418,12 @@ export function gradePaper(paper, responses = {}) {
   const scoredDenominator = listeningTotals.correct + listeningTotals.wrong;
   const accuracy = scoredDenominator > 0 ? listeningTotals.correct / scoredDenominator : null;
 
+  const ethnicity = paper.dialect?.ethnicity;
   const wordSection = paper.speaking.find((section) => section.id === "wordReading");
   const shortSection = paper.speaking.find((section) => section.id === "shortAnswer");
   const pictureSection = paper.speaking.find((section) => section.id === "pictureTalk");
 
-  const wordReading = wordSection ? gradeWordReading(wordSection, responses) : null;
+  const wordReading = wordSection ? gradeWordReading(wordSection, responses, ethnicity) : null;
   const shortAnswer = shortSection ? gradeShortAnswer(shortSection, responses) : null;
   const pictureTalk = pictureSection ? gradePictureTalk(pictureSection, responses) : null;
 

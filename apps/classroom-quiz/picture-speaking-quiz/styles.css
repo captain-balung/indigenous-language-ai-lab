@@ -26,3 +26,7 @@ main{padding:2.4rem 1rem 3rem}
   .hero-copy h1{font-size:clamp(2.15rem,9vw,2.8rem)}
   header img{position:relative;display:block;width:min(100%,280px);max-width:280px;right:auto;bottom:auto;margin:.6rem auto 0}
 }
+
+/* STEP 1 的開始按鈕：整面板寬、放大字級，作為選單的收尾重點 */
+#start{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}
+#next{background:var(--coral);color:#fff}

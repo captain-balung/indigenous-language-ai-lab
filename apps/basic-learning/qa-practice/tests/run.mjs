@@ -21,6 +21,7 @@ assert.ok(page.includes("問答練習"));
 assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
 assert.ok(page.includes("播放問句"));
 assert.ok(page.includes("顯示中文問句"));
+assert.ok(!/id="show-zh"[^>]*checked/.test(page), "中文問句預設要不顯示，想看再勾「顯示中文問句」");
 assert.ok(page.includes('href="/apps/basic-learning/body-parts-practice/styles.css"'));
 assert.ok(page.includes('href="/apps/basic-learning/qa-practice/styles.css"'));
 assert.ok(page.includes('src="/apps/basic-learning/qa-practice/app.mjs"'));

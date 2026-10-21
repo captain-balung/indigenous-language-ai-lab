@@ -407,7 +407,16 @@ assert.equal(judgeReply({ answer: "Caay anini ku.", translation: "我要回家�
 assert.equal(judgeReply({ answer: "", translation: "", exchange }), "retry");
 assert.equal(judgeReply({ answer: "Caay hen!", translation: "", exchange }), "exact");
 assert.equal(indigenousKey("Caay hen!"), "caayhen");
+assert.equal(indigenousKey("Caay hen!","賽夏"), "Caayhen", "賽夏保留大小寫（大寫 S 是字母的一部分）");
+assert.equal(indigenousKey("Caay hen!","噶瑪蘭"), "Caayhen");
 assert.equal(chineseKey("我還沒吃早餐耶！"), "我還沒吃早餐");
+
+// 賽夏／噶瑪蘭的句首容忍：只放行第一個字母的大小寫差異，其餘嚴格。
+const caseExchange = { indigenousText: "Sa’ila pa:tol!", chineseText: "請聽話！" };
+assert.equal(judgeReply({ answer: "sa’ila pa:tol", translation: "", exchange: caseExchange, ethnicity: "賽夏" }), "exact", "句首容忍");
+assert.equal(judgeReply({ answer: "Sa’ila pa:ToL", translation: "", exchange: caseExchange, ethnicity: "賽夏" }), "retry", "句首以外要嚴格");
+assert.equal(judgeReply({ answer: "biRi", translation: "", exchange: { indigenousText: "biri", chineseText: "走" }, ethnicity: "噶瑪蘭" }), "retry", "噶瑪蘭大寫 R 不能吃掉");
+assert.equal(judgeReply({ answer: "Rutung", translation: "", exchange: { indigenousText: "rutung", chineseText: "猴子" }, ethnicity: "噶瑪蘭" }), "exact");
 
 const summary = tally(["exact", "semantic", "retry", "reference", "unavailable"]);
 assert.deepEqual(summary, { passed: 2, judged: 3, reference: 1, skipped: 1, total: 5 });
@@ -858,3 +867,62 @@ assert.match(downloader, /const QUEST_THEMES = \["lesson", "find", "outside"\]/)
 assert.match(downloader, /"item-1-img": \{ file: "pen\.png"/);
 assert.match(downloader, /order \+ 1/, "圖檔索引要用關卡序號 + 1（官方寫法），照字面組網址會全部 404");
 assert.ok(!appCode.includes("hordequest/json"), "執行期不應直接讀官方 JSON");
+
+/* ───── AI 語意補判（semantic-judge.mjs）────────────────────────── */
+
+{
+  const { judgeAiMeaning } = await import("../semantic-judge.mjs");
+  const judgeSource = stripComments(read("apps/scenario-practice/village-life/semantic-judge.mjs"));
+
+  // reasonable → 過（附 rationale）；unreasonable／undetermined → 不過但標 rejected。
+  const passed = await judgeAiMeaning({
+    translation: "我的名字叫 Kacaw。",
+    targetChinese: "我的名字叫 Kacaw。",
+    complete: async () => '{"verdict":"reasonable","rationale":"同一件事"}',
+  });
+  assert.deepEqual(passed, { pass: true, reason: "reasonable", rationale: "同一件事" }, "reasonable 要過並附一句 rationale");
+
+  assert.deepEqual(
+    await judgeAiMeaning({ translation: "我不知道", targetChinese: "我的名字是 Panay", complete: async () => '{"verdict":"unreasonable","rationale":"x"}' }),
+    { pass: false, reason: "rejected", rationale: "x" }, "unreasonable 不能過，標 rejected",
+  );
+  assert.deepEqual(
+    await judgeAiMeaning({ translation: "hello?", targetChinese: "我的名字是 Panay", complete: async () => '{"verdict":"undetermined","rationale":"x"}' }),
+    { pass: false, reason: "rejected", rationale: "x" }, "undetermined 不能過，標 rejected",
+  );
+
+  // transport 失敗／回傳不是 JSON → failed（呼叫端端維持 retry 規則結果並說明）。
+  assert.equal(
+    (await judgeAiMeaning({ translation: "x", targetChinese: "y", complete: async () => { throw new Error("LLM proxy 逾時"); } })).reason,
+    "failed", "LLM 失敗標 failed 當規則粗判降級",
+  );
+  assert.equal(
+    (await judgeAiMeaning({ translation: "x", targetChinese: "y", complete: async () => "不是 JSON" })).reason,
+    "failed", "回傳不是 JSON 標 failed",
+  );
+
+  // 沒有譯文或沒有教材中文時不發請求。
+  let called = 0;
+  await judgeAiMeaning({ translation: "  ", targetChinese: "y", complete: async () => { called += 1; return "{}"; } });
+  await judgeAiMeaning({ translation: "x", targetChinese: "", complete: async () => { called += 1; return "{}"; } });
+  assert.equal(called, 0, "沒有譯文或教材中文時不應打 LLM");
+
+  // 送出的內容只含教材中文與譯文（防洩參考族語句），也不碰錄音。
+  let sentUser = "";
+  await judgeAiMeaning({
+    translation: "還沒吃飯",
+    targetChinese: "還沒吃早餐",
+    complete: async ({ user }) => { sentUser = user; return '{"verdict":"reasonable"}'; },
+  });
+  assert.ok(sentUser.includes("目標中文：還沒吃早餐") && sentUser.includes("中文譯文：還沒吃飯"), "送 LLM 的內容要有目標中文與譯文");
+  assert.ok(!judgeSource.includes("transcribe"), "AI 判別模組不碰語音辨識");
+  assert.ok(!judgeSource.includes("transcribe"), "AI 判別模組不碰語音辨識");
+  assert.ok(sentUser.split("\n").every((line) => !/[A-Za-z]/.test(line.replace(/^[^：]*：/, ""))
+    || line.startsWith("目標中文") || line.startsWith("中文譯文")), "user 欄位只送目標中文與譯文");
+  assert.ok(appCode.includes("judgeAiMeaning"), "app 要接上 AI 語意補判");
+  assert.ok(appCode.includes("語意使用 vLLM AI 判別"), "服務狀態列要標示 AI 判別");
+  // 防呆：wrongTarget 不能被 AI 升級成 semantic。
+  assert.ok(appCode.includes('judged.verdict === "retry"'), "AI 補判只發生在 retry");
+  assert.ok(appCode.includes("AI 判別暫時連不上"), "AI 連不上要在回應行註明，不能讓人誤會 AI 不懂");
+  console.log("PASS: village life AI meaning judge (reasonable pass, failure keeps retry, no reference leak)");
+}
