@@ -15,15 +15,15 @@ export const PRICE_ROLES = [
   {
     key: "pack",
     unit: "個",
-    pricing: { kind: "pack", packSize: 3, packPrice: 50 },
-    reveal: { base: "3 個 50 元。" }
+    pricing: { kind: "pack", packSize: 3, packPrice: 30 },
+    reveal: { base: "3 個 30 元。" }
   },
   {
     key: "jin",
     unit: "個",
-    pricing: { kind: "jin", jinPrice: 80, approxPerJin: 5 },
+    pricing: { kind: "jin", jinPrice: 50, approxPerJin: 5 },
     reveal: {
-      base: "論斤賣，一斤 80 元。",
+      base: "論斤賣，一斤 50 元。",
       detail: "一斤大約 5 個。"
     }
   }
