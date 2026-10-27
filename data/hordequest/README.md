@@ -33,12 +33,12 @@
 
 | 欄位 | 說明 |
 | --- | --- |
-| `quest` / `tips` | 任務說明與提示，取自共用的 `json/setup/{theme}.json` |
-| `hintWords` | 官方詞卡，只在按下「看提示」時出現，不含順序 |
+| `quest` / `tips` | 任務說明與提示，取自共用的 `json/setup/{theme}.json`；app 會同時顯示兩者，`tips` 的「（同學名字）」在畫面代入當前對象 |
+| `hintWords` | 官方詞卡，只在按下「看提示」時出現，不含順序；畫面顯示前去重 |
 | `targets` | 在場的人，附可點範圍（`box`，百分比）與立像網址 |
 | `lines[]` | 對每個對象要說的句子：族語、帶標點的顯示用文字、中文、音檔、
 以及對方的回應（`reply`）。`onlyTargetId` 表示這句只能對某個人說 |
-| `goal` | 過關條件：`nameTags`（問完兩個人後把名牌放對桌）或 `askRightPerson`（問對的人） |
+| `goal` | 過關條件：`nameTags`（兩張名牌都放對桌，不必先問完兩位）或 `askRightPerson`（問對的人） |
 
 `goal.kind === "nameTags"` 的 `answers` 是每位同學的正確名牌，`choices` 是五張候選名牌。
 `goal.kind === "askRightPerson"` 的 `reward` 是過關後出現在桌上的物件（筆／橡皮擦／掃把）與其百分比座標。

@@ -140,14 +140,16 @@
         <div class="stage quest-stage" id="quest-stage">
           <div class="quest-scene" id="quest-scene-box">
           <img id="quest-scene" class="stage__bg" alt="任務場景" >
+          <!-- 獎勵物件要排在人物圖層前面，掃把才會在左邊同學的後面。 -->
+          <img id="quest-reward" class="quest-reward" alt="" hidden>
           <img id="quest-player" class="quest-layer" alt="" aria-hidden="true">
           <div id="quest-layers" class="quest-layers"></div>
-          <img id="quest-reward" class="quest-reward" alt="" hidden>
           </div>
           <div class="dialogue quest-board">
             <div class="dialogue__say">
               <span class="prompt" id="quest-speaker">任務</span>
               <p id="quest-text" class="dialogue__zh">任務說明</p>
+              <p id="quest-tips" class="quest-tips" hidden></p>
               <p id="quest-reply" class="dialogue__ab"></p>
             </div>
             <div class="dialogue__controls">
@@ -164,7 +166,13 @@
         <div id="quest-side" class="quest-side">
           <div id="quest-goal" class="quest-goal" hidden></div>
           <div id="quest-tags" class="quest-goal quest-tags" hidden>
+            <h3>已問過的同學</h3>
+            <p class="quest-tag-help">回答只播放語音；聽不清楚可以按「再聽一次」。</p>
             <div id="quest-heard" class="quest-heard"></div>
+            <div id="quest-tag-section" class="quest-tag-section" hidden>
+              <h3>名牌</h3>
+              <div id="quest-tag-dock" class="quest-tag-dock"></div>
+            </div>
           </div>
           <!-- 過關時出現在右欄下方的「完成任務」鈕：學者自己按了才開「任務完成！」彈窗 -->
           <button id="quest-complete" class="quest-complete" type="button" hidden>完成任務</button>

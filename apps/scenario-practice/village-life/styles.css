@@ -38,6 +38,7 @@ fieldset.themes{margin:1.7rem 0 1.4rem;background:#fff8e6}
 .dialogue__avatar{grid-row:1 / span 2;width:66px;height:66px;object-fit:contain}
 .dialogue__say .prompt{display:inline-block}
 .dialogue__zh{margin:.3rem 0 .2rem;font-size:1.7rem;font-weight:900;line-height:1.25}
+.quest-tips{margin:.15rem 0 .1rem;font-size:1rem;font-weight:800;line-height:1.45;opacity:.9}
 .dialogue__ab{margin:0;font-weight:800;opacity:.85}
 /* 播放狀態與「下一句」同一列 */
 .dialogue__controls{grid-column:1 / -1;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:.7rem}
@@ -85,10 +86,6 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .quest-target.is-selected::after,.quest-option.is-selected::after{border-color:var(--coral)}
 .quest-target:focus-visible,.quest-option:focus-visible,.quest-click:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
 .quest-target.is-asked{cursor:default}
-/* 這關不能問的人（借筆只能問左邊、橡皮擦只能問右邊）：不亮外框、禁止光標 */
-.quest-target.is-locked{cursor:not-allowed}
-.quest-target.is-locked:hover::after{border-color:transparent}
-.quest-target.is-locked:focus-visible{outline-color:var(--coral)}
 /* 場景圖桌上印好的藍色名牌：只疊字（官方 .table-card qll／qln；座標是牌子左上）。
    字級要跟著場景寬度走：官方在 1000px 舞台上是 1.2em（≈14.4px，＝寬度的 1.45%），
    手機（≤1000px）是 1.6vw。這裡取 official 的多半值 1.45cqw（1cqw＝場景寬的 1%），
@@ -101,9 +98,16 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .quest-dropped-tag{position:absolute;z-index:3;white-space:nowrap;pointer-events:none;font-weight:800;font-size:max(7px,1.45cqw)}
 .quest-dropped-tag--1{color:#71482b}
 .quest-dropped-tag--2{color:#2a528c}
+/* 這一關放上去的名牌可以再點一下拿回候選區；字級跟桌上印字同一套，
+   但按鈕本身要有一點可點的範圍，才不會只能點到字的筆畫。 */
+.quest-dropped-tag--movable{pointer-events:auto;cursor:pointer;min-height:0;padding:.16em .42em;border:0;border-radius:.35em;
+  background:rgba(255,253,245,.84);font:inherit;font-weight:800;font-size:max(7px,1.45cqw);line-height:1;
+  box-shadow:0 0 0 1px rgba(37,49,84,.22)}
+.quest-dropped-tag--movable:hover{outline:2px dashed var(--coral);outline-offset:2px}
+.quest-dropped-tag--movable:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 /* 中間那一位的主角標示：自己的名字官方已印在桌牌上，不用再顯示一張 */
 .quest-player-badge{position:absolute;z-index:3;top:52%;left:48%;transform:translateX(-50%);padding:.15em .65em;border:2px solid var(--coral);border-radius:999px;background:#fff;color:var(--coral);font-weight:800;font-size:max(9px,1.05cqw);pointer-events:none;white-space:nowrap}
-/* take 的選項放在場景裡；被鎖住的那個要讓人看得出來不能點 */
+/* take 的選項放在場景裡；被鎖住的那個先隱藏，問對解鎖者才顯示 */
 .quest-option.is-locked{cursor:not-allowed;opacity:.45}
 .quest-option.is-locked::after{border-color:rgba(37,49,84,.5);border-style:dashed}
 .quest-option.is-taken::after{border-color:var(--mint)}
@@ -143,7 +147,8 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 /* click 關（點門）：可點區在場景上方中間，任務卡讓到左下角，
    右下的點人區和上方的門都留出來（官方任務卡本來就在場景外面） */
 .quest-stage.is-click-stage .quest-board{top:auto;bottom:1rem;left:1rem;right:auto;max-width:min(62%,540px)}
-.quest-reward{position:absolute;z-index:2;object-fit:contain}
+/* 獎勵物件排在人物圖層前面，讓掃把被左邊同學遮住；pointer-events 關掉才不會擋點擊。 */
+.quest-reward{position:absolute;object-fit:contain;pointer-events:none}
 /* hover／選中光暈（官方 .hoverGlow / .hoverGlow2 的替作：官方用的是圖檔光暈） */
 .quest-layer.is-glow{filter:drop-shadow(0 0 10px rgba(255,117,63,.85))}
 /* 過關的「下一關」鈕：出現在右欄下方（跟其他面板對齊），樣式沿用 .
@@ -168,14 +173,33 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .quest-tags{margin-bottom:1rem}
 .quest-tags > p{margin:.7rem 0 .5rem;font-weight:800;font-size:.95rem}
 .quest-heard{display:grid;gap:.45rem;margin-top:.35rem}
-.quest-heard__row{display:grid;gap:.1rem;padding:.45rem .55rem;border:2px dashed var(--ink);border-radius:12px;background:#fffdf5}
-.quest-heard__who{font-size:.85rem;font-weight:800;opacity:.75}
-.quest-heard__name{font-size:1.25rem;font-weight:900;color:var(--coral)}
-.quest-heard__say{font-size:.9rem;font-weight:800;opacity:.85}
+.quest-heard__row{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;padding:.45rem .55rem;border:2px dashed var(--ink);border-radius:12px;background:#fffdf5}
+.quest-heard__who{font-size:.95rem;font-weight:900}
+.quest-heard__done{font-size:.85rem;font-weight:800;opacity:.7}
+.quest-heard__replay{padding:.2rem .55rem;border:2px solid var(--ink);border-radius:999px;background:#fff;font:inherit;font-size:.85rem;font-weight:900;cursor:pointer}
+.quest-heard__replay:hover{background:var(--mint)}
+.quest-tag-section{margin-top:.8rem;padding-top:.75rem;border-top:2px dashed var(--ink)}
+.quest-tag-section h3{margin:0 0 .45rem;font-size:1.05rem}
+.quest-tag-help{margin:0 0 .55rem;font-size:.9rem;font-weight:800;line-height:1.45}
 .quest-tag-dock{display:flex;flex-wrap:wrap;gap:.5rem}
 .quest-tag{padding:.35rem .7rem;border:3px solid var(--ink);border-radius:12px;background:#fff;font:inherit;font-weight:900;cursor:pointer}
+.quest-tag[draggable="true"]{cursor:grab;user-select:none;-webkit-user-drag:element}
 .quest-tag.is-selected{background:var(--coral);color:#fff}
+.quest-tag.is-dragging{opacity:.4}
+.quest-tag.is-wrong{animation:quest-tag-shake .35s}
 .quest-tag.is-used{opacity:.35;cursor:default}
+.quest-tag:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.quest-tag-empty{margin:0;font-weight:800;opacity:.75}
+@keyframes quest-tag-shake{
+  25%{transform:translateX(-4px)}
+  50%{transform:translateX(4px)}
+  75%{transform:translateX(-2px)}
+}
+/* 拖曳名牌時，同學的可點框亮起來，表示這裡可以放 */
+.quest-target.is-drop-over::after{border-color:var(--mint);background:rgba(255,255,255,.14)}
+/* 先點名牌、再點同學時，問過的同學用虛線框標出「可以放這裡」 */
+.quest-target.is-placing{cursor:pointer}
+.quest-target.is-placing::after{border-color:var(--mint);border-style:dashed}
 .hint-box{margin-top:1rem;padding:.8rem 1rem;border:3px dashed var(--ink);border-radius:18px;background:#fffdf5}
 .hint-box p{margin:0 0 .5rem;font-weight:800}
 .hint-box ul{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
@@ -196,6 +220,11 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .stage{width:100%;max-width:1000px}
   .scene-side{justify-self:end;width:100%;max-width:380px}
   .stage__bg{width:100%;height:auto;aspect-ratio:1000/700;object-fit:contain}
+  /* 尋找物品／戶外活動的任務卡改到場景下方，不要蓋住上方的對象。
+     外框改掛在場景盒上，維持原本「場景是一張卡」的樣子。 */
+  .quest-stage.is-static-board{border:0;background:none;overflow:visible}
+  .quest-stage.is-static-board .quest-scene{border:3px solid var(--ink);border-radius:24px;overflow:hidden}
+  .quest-stage.is-static-board .quest-board{position:static;margin-top:.9rem;left:auto;right:auto;top:auto;bottom:auto}
   .dialogue__zh{font-size:2rem}
   .my-turn{padding:.9rem 1rem 1rem}
   .my-turn textarea{min-height:4.5rem}
@@ -228,6 +257,7 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .dialogue__avatar{width:52px;height:52px}
   .dialogue__zh{font-size:1.3rem}
   .quest-board .dialogue__zh{font-size:1.15rem}
+  .quest-tips{font-size:.95rem}
   /* 桌上名牌／放上去的名牌字級隨場景寬度縮（.quest-desk-tag 的 cqw），這裡不再寫死。 */
   .hint-box{font-size:.9rem}
   .dialogue__controls .audio-state{font-size:.85rem}
