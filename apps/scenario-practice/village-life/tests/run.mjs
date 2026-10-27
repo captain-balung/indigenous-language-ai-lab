@@ -6,9 +6,11 @@ import { fileURLToPath } from "node:url";
 import {
   THEME_ORDER, addToBasket, buildExchanges, buildPlaylist, chineseKey, dialogueTheme, indigenousKey,
   isPersonalTurn, judgedCount, judgeBasket, judgeQuestLine, judgeQuestPick, judgeQuestPrompt,
-  judgeReply, mineCount, openingSpeaker, questHint, questIsComplete,
-  questLineFor, questOptionLocked, questOptions, questPack, questProgress, questResultDetail,
-  questResultHeadline, questSceneOptions, questTurnTitle, respondableRoles, resultDetail, resultHeadline,
+  judgeReply, mineCount, openingSpeaker, questHint, questIsBorrowQuest, questIsComplete,
+  questPeopleLabel, questLineFor, questOptionLocked, questOptions, questPack, questProgress,
+  questResultDetail, questResultHeadline, questSceneOptions, questTipsText, questTurnTitle,
+  questWrongPersonLine, respondableRoles,
+  resultDetail, resultHeadline,
   tally, tallyLabel, targetLabel, themeOf
 } from "../core.mjs";
 
@@ -134,15 +136,17 @@ assert.ok(
   /\.quest-scene\{width:min\(341px,92vw\)/.test(shortBlock[0]) && !/\.quest-scene\{[^}]*height:\d/.test(shortBlock[0]),
   "矮螢幕時場景盒寬要跟圖一樣（同一個 min() 上限），不能壓高度把盒跟圖撐開"
 );
-// 1201px 以上：左場景、右輸入區，兩欄都在正常流程裡——先前用絕對定位時
-// 輸入區不撐高容器，會從 STEP 2 面板底部溢出。較窄時場景填滿剩餘空間。
+// 1201px 以上：任務說明在左、場景在中、輸入區在右，三欄都在正常流程裡。
 const wideBlock = stageStyle.match(/@media\(min-width:1201px\)\{[\s\S]*?\n\}/);
 assert.ok(wideBlock, "要能找到寬螢幕的版面設定");
 assert.ok(
-  /\.scene-body\{[^}]*grid-template-columns:minmax\(0,1fr\) minmax\(\d+px,\d+px\)/.test(wideBlock[0]),
-  "寬螢幕要左右兩欄，右欄留給輸入區"
+  /\.scene-body\{[^}]*grid-template-columns:minmax\(250px,320px\) minmax\(0,1fr\) minmax\(300px,380px\)/.test(wideBlock[0]),
+  "寬螢幕要有任務說明、場景、輸入區三欄"
 );
-assert.ok(!/position:absolute/.test(wideBlock[0]), "兩欄不可用絕對定位，否則輸入區會溢出面板");
+assert.ok(/\.quest-board\{[^}]*grid-column:1/.test(wideBlock[0]), "寬螢幕任務說明要在場景左邊");
+assert.ok(/\.stage\{[^}]*grid-column:2/.test(wideBlock[0]), "寬螢幕場景要在中間");
+assert.ok(/\.scene-side\{[^}]*grid-column:3/.test(wideBlock[0]), "寬螢幕輸入區要在最右邊");
+assert.ok(!/position:absolute/.test(wideBlock[0]), "三欄不可用絕對定位，否則輸入區會溢出面板");
 // 夠寬才置中：左右各留 (輸入區 + 間距) 一樣寬，場景才是整個面板的正中央。
 // 1700px 這個門檻要讓置中的場景跟填滿剩餘空間的一樣大，切換時才不會突然縮小。
 const centeredBlock = stageStyle.match(/@media\(min-width:1700px\)\{[\s\S]*?\n\}/);
@@ -151,12 +155,23 @@ assert.ok(
   /\.scene-body\{[^}]*grid-template-columns:minmax\(\d+px,1fr\) minmax\(0,\d+px\) minmax\(\d+px,1fr\)/.test(centeredBlock[0]),
   "置中要用對稱三欄，左右留白一樣寬"
 );
+assert.ok(/\.quest-board\{[^}]*grid-column:1/.test(centeredBlock[0]), "任務說明要放在場景左邊那一欄");
 assert.ok(/\.stage\{[^}]*grid-column:2/.test(centeredBlock[0]), "場景要放在中間那一欄");
 assert.ok(/\.scene-side\{[^}]*grid-column:3/.test(centeredBlock[0]), "輸入區要放在最右邊那一欄");
 // 1200px 以下全部上下疊，場景用滿版寬
 assert.ok(
   /@media\(max-width:1200px\)\{[\s\S]*?\.scene-body\{grid-template-columns:1fr\}/.test(stageStyle),
   "1200px 以下要單欄，否則場景會被擠得很小"
+);
+assert.ok(
+  /@media\(min-width:1201px\)\{[\s\S]*\.scene-body--solo\{[^}]*minmax\(720px,1000px\)/.test(stageStyle)
+    && /@media\(min-width:1201px\)\{[\s\S]*\.scene-body--solo \.stage__bg\{[^}]*min-width:720px/.test(stageStyle),
+  "字幕疊在圖上時 STEP 2 場景最窄 720px"
+);
+assert.ok(
+  /\.scene-body--solo\{[^}]*minmax\(0,1000px\)/.test(stageStyle)
+    && !/\.scene-body--solo \.stage\{[^}]*min-width/.test(stageStyle),
+  "字幕在圖下時場景跟著視窗縮，不設最小寬"
 );
 // 主角圖層只有上課用語有（另外兩個主題的主角畫在場景圖裡）。
 // 沒有圖時必須整個隱藏：src 留空字串但沒隱藏的 <img> 會在場景左上角
@@ -179,12 +194,47 @@ assert.ok(
   appCode.includes("deskTagCenterFor(tag.left, tag.top)") && appCode.includes("transform:translate(-50%,-50%)"),
   "桌上名牌的字要用卡片幾何中心置中"
 );
-// 名牌改「問到即顯示」：說對那句、聽到回應，官方 complete.answers 的名字自動放到桌上。
-// 監聽 onQuestAnswered 之後要把 placed 補起來，否則桌上不會出現名字。
+// 上課用語第 1、2 關恢復官方的拖名牌：答對只會揭開候選名牌，不會自動放上桌。
+assert.ok(page.includes('id="quest-tag-dock"'), "第一位同學答對後要出現候選名牌區");
 assert.ok(
-  appCode.includes("questState.placed[line.targetId] = name"),
-  "問到同學的名字要自動放上他的桌上（不用再拖曳）"
+  !appCode.includes("questState.placed[line.targetId] = name")
+    && appCode.includes("placeNameCard") && appCode.includes("data-card="),
+  "問到名字不能自動上桌，要讓學習者自己拖名牌"
 );
+assert.ok(
+  appCode.includes('draggable="true"') && appCode.includes('addEventListener("drop"'),
+  "名牌要支援拖放"
+);
+assert.ok(
+  appCode.includes("cardAt") && appCode.includes("card.text !== expected"),
+  "候選名牌要有卡片實體，而且只接受該位同學的正確名牌"
+);
+const placeNameCardFn = appCode.match(/function placeNameCard\(targetId, cardId\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+assert.ok(
+  placeNameCardFn && !placeNameCardFn.includes("questIsLearned"),
+  "拉名牌不要限制先問完該位同學，跟官方一樣可以直接放"
+);
+// 回答句子會直接寫出名字／地名，等於提前公布拖曳答案：只播音，不顯示文字。
+const heardNamesFn = appCode.match(/function renderHeardNames\(quest\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+assert.ok(
+  heardNamesFn.includes("data-replay-target")
+    && heardNamesFn.indexOf("data-replay-target") < heardNamesFn.indexOf("quest-heard__who")
+    && heardNamesFn.includes("已問過")
+    && !heardNamesFn.includes("goal.answers")
+    && !heardNamesFn.includes("reply.indigenousText")
+    && !heardNamesFn.includes("quest-heard__name"),
+  "名牌關右欄只能顯示誰問過了與重播鈕，不能寫出回答或答案"
+);
+const learnedRepliesFn = appCode.match(/function renderLearnedReplies\(\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+assert.ok(
+  learnedRepliesFn.includes('quest?.goal.kind === "nameTags"')
+    && learnedRepliesFn.includes('ui.questReply.textContent = ""')
+    && appCode.includes("playQuestReply(line)"),
+  "名牌關的回應只播音檔；每位問過的人都要能單獨重播"
+);
+assert.ok(page.includes('id="quest-tips"'), "任務卡要有官方提示的位置");
+assert.ok(page.includes("已問過的同學"), "名牌關右欄不要寫「同學的回答」");
+assert.ok(stageStyle.includes(".quest-heard__replay") && stageStyle.includes(".quest-tips"), "提示與重播鈕要有樣式");
 // 對話走完後 index 會等於句數。從任務按「回到對話」要停在最後一句，不能讀不存在的句子。
 assert.ok(
   appCode.includes("if (!exchanges[index] && exchanges.length) index = exchanges.length - 1"),
@@ -485,7 +535,13 @@ for (const id of dialectIds) {
       assert.ok(quest.id && quest.quest, `${id}/${theme.key} 第 ${quest.order} 關缺文案`);
       assert.equal(goal.kind, expected[position], `${id}/${theme.key} 第 ${quest.order} 關的過關條件不對`);
       assert.ok(GOAL_KINDS.has(goal.kind));
-      assert.ok(Array.isArray(quest.hintWords), `${id}/${theme.key} 第 ${quest.order} 關缺提示詞`);
+      if (goal.kind === "end") {
+        assert.equal(quest.tips, "", `${id}/${theme.key} 第 ${quest.order} 關是結語，不該有官方提示`);
+        assert.equal(quest.hintWords.length, 0, `${id}/${theme.key} 第 ${quest.order} 關是結語，不該有詞卡`);
+      } else {
+        assert.ok(quest.tips, `${id}/${theme.key} 第 ${quest.order} 關缺官方任務提示`);
+        assert.ok(quest.hintWords.length > 0, `${id}/${theme.key} 第 ${quest.order} 關缺提示詞`);
+      }
       assert.ok(Array.isArray(quest.targets), `${id}/${theme.key} 第 ${quest.order} 關缺對象`);
       for (const target of quest.targets) {
         assert.ok(target.id && target.imageUrl, `${id} 對象缺欄位`);
@@ -509,8 +565,15 @@ for (const id of dialectIds) {
       if (goal.kind === "nameTags") {
         assert.ok(goal.choices.length >= 3, `${id} 第 ${quest.order} 關候選名牌太少`);
         assert.deepEqual(Object.keys(goal.answers).sort(), ["target-1", "target-2"]);
+        const needed = new Map();
         for (const answer of Object.values(goal.answers)) {
-          assert.ok(goal.choices.includes(answer), `${id} 正確名牌不在候選名單裡`);
+          needed.set(answer, (needed.get(answer) ?? 0) + 1);
+        }
+        for (const [answer, count] of needed) {
+          assert.ok(
+            goal.choices.filter((choice) => choice === answer).length >= count,
+            `${id} 第 ${quest.order} 關正確名牌「${answer}」的張數不足（同名要能各放一張）`
+          );
         }
       } else if (goal.kind === "select" || goal.kind === "take" || goal.kind === "selectAndSpeak") {
         assert.ok(goal.options.length >= 2, `${id} 第 ${quest.order} 關候選太少`);
@@ -540,10 +603,12 @@ for (const id of dialectIds) {
         if (goal.kind === "selectAndSpeak") {
           assert.ok(goal.prompt, `${id} selectAndSpeak 要有要說的句子`);
           assert.ok(quest.closing?.audioUrl, `${id} selectAndSpeak 要有完成音檔`);
+          assert.ok(quest.closing?.text, `${id} selectAndSpeak 要有官方收尾台詞`);
         }
       } else if (goal.kind === "click") {
         assert.ok(goal.box && goal.box.width > 0, `${id} click 關要有可點範圍`);
         assert.ok(quest.closing?.audioUrl, `${id} click 關要有結語音檔`);
+        assert.ok(quest.closing?.text, `${id} click 關要有官方收尾台詞`);
       } else if (goal.kind === "end") {
         assert.ok(goal.endText, `${id} 結語關要有文字`);
         assert.equal(quest.targets.length, 0, `${id} 結語關不該有對象`);
@@ -573,6 +638,69 @@ assert.equal(findPack.available, true, "尋找物品有任務關卡就該能進�
 assert.deepEqual(findPack.quests.map((quest) => quest.goal.kind), QUEST_KINDS.find);
 const outsidePack = questPack(readShard(1), "outside");
 assert.deepEqual(outsidePack.quests.map((quest) => quest.goal.kind), QUEST_KINDS.outside);
+for (const built of [lessonPack, findPack, outsidePack]) {
+  for (const quest of built.quests) {
+    const keys = quest.hintWords.map((word) => indigenousKey(word));
+    assert.equal(new Set(keys).size, keys.length, `${quest.id} 的提示詞顯示前要去重`);
+    assert.equal(quest.themeKey, quest.id.includes("-lesson-") ? "lesson" : quest.id.includes("-find-") ? "find" : "outside");
+  }
+}
+// 官方 tips 的（同學名字）要換成這一關的對象，其他情境沒有佔位符。
+assert.match(questTipsText(lessonPack.quests[0]), /你叫甚麼名字/);
+assert.doesNotMatch(questTipsText(lessonPack.quests[2]), /（同學名字）|Kacaw|左邊|右邊/);
+assert.match(questTipsText(lessonPack.quests[2]), /同學，借我筆好嗎/);
+assert.doesNotMatch(questTipsText(lessonPack.quests[3]), /（同學名字）|Kacaw|Panay|左邊|右邊/);
+assert.match(questTipsText(lessonPack.quests[3]), /同學，借我橡皮擦好嗎/);
+assert.doesNotMatch(questTipsText(lessonPack.quests[4]), /（同學名字）|Kacaw|Panay/);
+assert.match(questTipsText(lessonPack.quests[4]), /同學，請幫我拿掃把/);
+assert.equal(questTipsText(findPack.quests[0]), findPack.quests[0].tips);
+assert.equal(questTipsText(findPack.quests[4]), "");
+assert.equal(questPeopleLabel(lessonPack.quests[0]), "同學");
+assert.equal(questPeopleLabel(findPack.quests[0]), "其他人");
+assert.equal(questPeopleLabel(outsidePack.quests[0]), "其他人");
+// 第 3、4 關不先公布要問誰；問錯人時照官方回覆「我只有一隻／我也沒有」。
+assert.equal(questIsBorrowQuest(lessonPack.quests[2]), true);
+assert.equal(questIsBorrowQuest(lessonPack.quests[3]), true);
+assert.equal(questIsBorrowQuest(lessonPack.quests[4]), false);
+const level3Wrong = questWrongPersonLine(lessonPack.quests[2], "target-2");
+assert.equal(level3Wrong?.reply?.chineseText, "我只有一隻。");
+assert.ok(level3Wrong?.reply?.indigenousText && level3Wrong.reply.audioUrl, "第 3 關問錯人要有族語與錄音");
+const level4Wrong = questWrongPersonLine(lessonPack.quests[3], "target-1");
+assert.equal(level4Wrong?.reply?.chineseText, "我也沒有。");
+assert.ok(level4Wrong?.reply?.indigenousText && level4Wrong.reply.audioUrl, "第 4 關問錯人要有族語與錄音");
+assert.equal(questWrongPersonLine(lessonPack.quests[4], "target-2"), null);
+assert.match(lessonPack.quests[4].goal.reward.imageUrl, /broom\.png$/, "第 5 關過關要有掃把圖");
+// 42 個方言都要能顯示去重後的詞卡，而且上課用語的（同學名字）不能留在畫面上。
+for (const id of dialectIds) {
+  const currentShard = readShard(id);
+  for (const key of ["lesson", "find", "outside"]) {
+    for (const quest of questPack(currentShard, key).quests) {
+      const keys = quest.hintWords.map((word) => indigenousKey(word, currentShard.ethnicity));
+      assert.equal(new Set(keys).size, keys.length, `${id}/${key} 第 ${quest.order} 關提示詞重複`);
+      assert.doesNotMatch(questTipsText(quest), /（同學名字）/, `${id}/${key} 第 ${quest.order} 關提示還有名字佔位符`);
+      if (key === "lesson" && quest.goal.kind === "askRightPerson") {
+        assert.match(questTipsText(quest), /同學，/, `${id} 第 ${quest.order} 關選人前不公布對象名字`);
+      }
+      if (key === "lesson" && questIsBorrowQuest(quest)) {
+        const wrongTargetId = quest.targets.find((target) => target.id !== quest.goal.targetId)?.id;
+        const wrong = questWrongPersonLine(quest, wrongTargetId);
+        assert.ok(
+          wrong?.reply?.indigenousText && wrong?.reply?.chineseText && wrong?.reply?.audioUrl,
+          `${id} 第 ${quest.order} 關問錯人要有官方族語、中文與錄音`
+        );
+      }
+      if (key === "lesson" && (quest.order === 1 || quest.order === 2)) {
+        for (const target of quest.targets) {
+          const rebound = quest.rebounds?.[target.id];
+          assert.ok(
+            rebound?.indigenousText && rebound?.chineseText && rebound?.audioUrl,
+            `${id} 第 ${quest.order} 關問錯問句要有官方回應、中文與錄音`
+          );
+        }
+      }
+    }
+  }
+}
 
 // 判定規則：跟對話同一套，另加「這句只能對某一個人說」。
 const pack = lessonPack;
@@ -600,24 +728,47 @@ assert.equal(
   "wrongTarget",
   "對錯的人說對的句子也算答錯"
 );
+assert.equal(
+  judgeQuestLine(askQuest, otherLine.targetId, { answer: rightLine.chineseText, translation: "", allowChinese: true }).verdict,
+  "wrongTarget",
+  "中文直入也要能判斷這句是另一位同學的"
+);
 assert.equal(judgeQuestLine(askQuest, askQuest.goal.targetId, { answer: "月桃", translation: "月桃" }).verdict, "retry");
 // 第 1、2 關兩位同學要說的是同一句，不該誤報成「說錯人」。
 assert.equal(judgeQuestLine(pack.quests[0], "target-2", { answer: pack.quests[0].lines[0].indigenousText, translation: "" }).verdict, "exact");
 
-// 名牌改「問到即顯示」：問到誰，系統就替誰放上名牌（placed 由 onQuestAnswered 填官方
-// complete.answers）。過關條件仍是「兩位都問到、兩張名牌都放上桌」。
+// 名牌關跟官方一樣：第一位答對後候選名牌出現，兩張正確名牌都拖上桌就過關，
+// 不強制先問完第二位。
 const nameQuest = pack.quests[0];
-const autoPlaced = {
+const placedNames = {
   "target-1": nameQuest.goal.answers["target-1"],
   "target-2": nameQuest.goal.answers["target-2"],
 };
-assert.equal(questIsComplete(nameQuest, { learned: ["target-1"], placed: { "target-1": autoPlaced["target-1"], "target-2": autoPlaced["target-2"] } }), false, "還沒問完兩位不算過");
-assert.equal(questIsComplete(nameQuest, { learned: ["target-1", "target-2"], placed: autoPlaced }), true, "兩位都問到就過關");
+assert.equal(
+  questIsComplete(nameQuest, { learned: ["target-1"], placed: placedNames }),
+  true,
+  "只問一位、兩張名牌都放對也要過關"
+);
+assert.equal(
+  questIsComplete(nameQuest, { learned: ["target-1", "target-2"], placed: { "target-1": placedNames["target-1"] } }),
+  false,
+  "只放一張名牌不算過"
+);
+assert.equal(questIsComplete(nameQuest, { learned: ["target-1", "target-2"], placed: placedNames }), true, "兩張名牌都放對就過關");
+assert.equal(questProgress(nameQuest, { learned: [], placed: {} }), "先問一位同學，取得名牌");
+assert.equal(questProgress(nameQuest, { learned: ["target-1"], placed: {} }), "名牌已放 0/2");
+assert.equal(questProgress(nameQuest, { learned: ["target-1"], placed: placedNames }), "名牌都放上桌了（2/2）");
+assert.match(questHint(nameQuest, {}), /名牌/);
 
 assert.equal(questIsComplete(askQuest, { learned: [askQuest.goal.targetId], placed: {} }), true, "問對的人就過關");
 assert.equal(questIsComplete(askQuest, { learned: [otherLine.targetId], placed: {} }), false, "問錯的人不過關");
-assert.equal(questProgress(askQuest, { learned: [], placed: {} }), "先問問左邊的人");
+assert.equal(questProgress(askQuest, { learned: [], placed: {} }), "先問問同學，看看誰能借你");
+assert.doesNotMatch(questProgress(askQuest, { learned: [], placed: {} }), /左邊|右邊|Kacaw/);
 assert.match(questProgress(askQuest, { learned: [otherLine.targetId], placed: {} }), /換一位問問看/);
+assert.equal(questHint(askQuest, {}), "問問看同學，看看誰能借你");
+assert.doesNotMatch(questHint(askQuest, {}), /左邊|右邊|Kacaw/);
+assert.equal(questProgress(lessonPack.quests[3], { learned: [], placed: {} }), "先問問同學，看看誰能借你");
+assert.doesNotMatch(questProgress(lessonPack.quests[3], { learned: [], placed: {} }), /左邊|右邊|Panay/);
 assert.equal(questResultHeadline("wrongTarget"), "這句要問別人");
 assert.match(questResultDetail("wrongTarget"), /換個人再問一次/);
 assert.equal(questResultHeadline("exact"), "說對了");
@@ -673,12 +824,26 @@ const lessonTwo = lessonPack.quests[0];
 const [leftPerson, rightPerson] = [...lessonTwo.targets].sort((a, b) => a.box.left - b.box.left);
 assert.equal(targetLabel(leftPerson.id, lessonTwo), "左邊");
 assert.equal(targetLabel(rightPerson.id, lessonTwo), "右邊", "兩個人時右邊不能叫成中間");
-assert.match(questProgress(potQuest, { learned: [], picked: null }), /先問問同學/);
+assert.match(questProgress(potQuest, { learned: [], picked: null }), /先問問其他人/);
+assert.doesNotMatch(questProgress(potQuest, { learned: [], picked: null }), /同學/);
 assert.match(questProgress(potQuest, { learned: ["target-1"], picked: null }), /從下面的選項挑一個/);
+assert.match(questProgress(potQuest, { learned: ["target-1"], picked: "pot-2" }), /按確定/);
+assert.match(questProgress(findPack.quests[3], { learned: [] }), /先問問其他人.*點場景/);
+assert.match(questProgress(findPack.quests[3], { learned: ["target-1"] }), /^點場景/);
+assert.match(questProgress(outsidePack.quests[0], { learned: [] }), /先問問其他人.*拿正確的東西/);
+assert.match(questProgress(outsidePack.quests[0], { learned: ["target-1"] }), /放進籃子/);
+assert.equal(
+  questProgress(thanksQuest, { learned: ["target-1"], picked: null }),
+  "選要道謝的人",
+  "問到人後進度要改成選要道謝的人"
+);
 
-// take 關被鎖住時，進度要明講要先問誰，而且要說「先問」而不是看起來像已完成。
-// 「（1/1）」會讓人以為籃子滿了就是答對，其實還沒判。
-assert.match(questProgress(fernQuest, { learned: [], taken: [] }), /先問問中間的人/);
+// take 關被鎖住時，不能先公布解鎖者；要讓學習者從回答判斷誰知道，
+// 而且「（1/1）」不能看起來像已完成（其實還沒按確定判）。
+assert.match(questProgress(fernQuest, { learned: [], taken: [] }), /先問問其他人/);
+assert.doesNotMatch(questProgress(fernQuest, { learned: [], taken: [] }), /中間|target-3/);
+assert.match(questProgress(fernQuest, { learned: ["target-1"], taken: [] }), /換一位問問看/);
+assert.doesNotMatch(questProgress(fernQuest, { learned: ["target-1"], taken: [] }), /中間|target-3/);
 assert.equal(targetLabel(fernQuest.goal.unlock.targetId, fernQuest), "中間");
 assert.match(questProgress(fernQuest, { learned: [fernQuest.goal.unlock.targetId], taken: [] }), /要 1 樣/);
 assert.doesNotMatch(questProgress(fernQuest, { learned: [], taken: ["plant-2"] }), /\/1/,
@@ -704,19 +869,86 @@ assert.ok(
   appCode.includes("還不能確定，") && appCode.includes("籃子還是空的"),
   "還沒問人或籃子空時，確定的提示要對應情況"
 );
-assert.match(questHint(potQuest, {}), /挑一個/);
-assert.match(questHint(fernQuest, { taken: [] }), /放進籃子/);
-assert.match(questHint(findPack.quests[3], {}), /點場景/);
-assert.match(questHint(thanksQuest, {}), /先問問同學，再選要道謝的人/);
+assert.match(questHint(potQuest, {}), /先問問其他人/);
+assert.match(questHint(potQuest, { learned: ["target-1"] }), /挑一個/);
+assert.match(questHint(potQuest, { learned: ["target-1"], picked: "pot-2" }), /按確定/);
+assert.match(questHint(fernQuest, { taken: [] }), /先問問其他人/);
+assert.doesNotMatch(questHint(fernQuest, { taken: [] }), /中間|target-3/);
+assert.match(questHint(fernQuest, { learned: ["target-1"], taken: [] }), /換一位問問看/);
+assert.match(questHint(fernQuest, { learned: [fernQuest.goal.unlock.targetId], taken: [] }), /放進籃子/);
+assert.match(questHint(findPack.quests[3], {}), /先問問其他人.*點場景/);
+assert.match(questHint(findPack.quests[3], { learned: ["target-1"] }), /點場景/);
+assert.match(questHint(thanksQuest, {}), /先問問其他人，再選要道謝的人/);
+assert.doesNotMatch(questHint(thanksQuest, {}), /同學/);
+assert.equal(questHint(thanksQuest, { learned: ["target-1"] }), "選要道謝的人");
 assert.match(questHint(thanksQuest, { picked: "people-1" }), /謝謝你的幫忙/);
+assert.equal(questHint(findPack.quests[4], {}), "任務結束");
+assert.doesNotMatch(questResultDetail("wrongTarget"), /同學/);
 // 輸入區標題：依關卡顯示點誰、說什麼，不寫死「換你說」。
 assert.match(questTurnTitle(lessonPack.quests[0], {}), /先點一個人，再說「/);
+assert.match(
+  questTurnTitle(lessonPack.quests[0], {
+    targetId: "target-1",
+    names: { "target-1": "Kacaw", "target-2": "Panay" }
+  }),
+  /對左邊的人說「你叫甚麼名字？」/,
+  "名牌關選對象時要用位置稱呼，不能提前顯示名字答案"
+);
+assert.doesNotMatch(
+  questTurnTitle(lessonPack.quests[0], {
+    targetId: "target-1",
+    names: { "target-1": "Kacaw", "target-2": "Panay" }
+  }),
+  /Kacaw|Panay/,
+  "名牌關的輸入標題不能提前公布名牌答案"
+);
+assert.match(
+  questTurnTitle(lessonPack.quests[1], {
+    targetId: "target-2",
+    names: { "target-1": "Kacaw", "target-2": "Panay" }
+  }),
+  /對Panay說「你家住哪裡？」/,
+  "第 1 關問過名字後，第 2 關可以用名字稱呼"
+);
+assert.match(
+  questTurnTitle(lessonPack.quests[1], { targetId: "target-2" }),
+  /對右邊的人說「你家住哪裡？」/,
+  "沒有已知名字時，第 2 關仍要能退回位置稱呼"
+);
 assert.match(questTurnTitle(askQuest, {}), /先點要問的人，再說「/);
+assert.match(questTurnTitle(askQuest, {}), /同學，借我筆好嗎/);
+assert.doesNotMatch(questTurnTitle(askQuest, {}), /Kacaw|左邊|右邊/);
+assert.match(questTurnTitle(lessonPack.quests[3], {}), /同學，借我橡皮擦好嗎/);
+assert.doesNotMatch(questTurnTitle(lessonPack.quests[3], {}), /Panay|Kacaw|左邊|右邊/);
+assert.match(questTurnTitle(lessonPack.quests[4], {}), /同學，請幫我拿掃把/);
+assert.doesNotMatch(questTurnTitle(lessonPack.quests[4], {}), /Panay|Kacaw|左邊|右邊/);
 assert.match(questTurnTitle(askQuest, { targetId: askQuest.goal.targetId }), /對.+的人說「/);
 assert.match(questTurnTitle(thanksQuest, { state: { picked: "people-1" } }), /^說「/);
+assert.match(questTurnTitle(findPack.quests[0], {}), /新的陶壺/);
+assert.doesNotMatch(questTurnTitle(findPack.quests[0], {}), /陶甕/, "輸入標題要和官方 tips 用同一個說法");
+assert.equal(
+  questTurnTitle(findPack.quests[0], { state: { learned: ["target-1"] } }),
+  "從下面的選項挑一個",
+  "問到人之後輸入區要改提示挑東西，不要一直叫學習者問人"
+);
+assert.equal(
+  questTurnTitle(lessonPack.quests[0], { state: { learned: ["target-1"] } }),
+  "任務",
+  "名牌關問完一位後不要再顯示放名牌的操作提示"
+);
+assert.equal(
+  questTurnTitle(thanksQuest, { state: { learned: ["target-1"] } }),
+  "選要道謝的人",
+  "問完後要改提示選要道謝的人"
+);
 assert.ok(!/同學/.test(questTurnTitle(fernQuest, {})), "尋找物品場景不得稱同學");
 assert.ok(!/同學/.test(questTurnTitle(thanksQuest, {})), "戶外活動場景不得稱同學");
 assert.ok(appCode.includes("questTurnTitle"), "任務輸入區要用關卡指引");
+assert.ok(
+  appCode.includes("const asksThenActs = quest.goal.kind === \"select\"")
+    && appCode.includes("questProgress(quest, questState)"),
+  "問到人之後任務卡要改提示下一個動作，不要一直叫學習者問人"
+);
 assert.ok(!appCode.includes('ui.turnTitle.textContent = "換你說"'), "不得再寫死換你說");
 assert.ok(!appCode.includes('ui.questSpeaker.textContent = "換你說"'), "任務卡不得改成換你說");
 assert.ok(appCode.includes("THEME_LABELS[themeKey]?.quest"), "任務說明要跟著場景走");
@@ -749,8 +981,43 @@ assert.ok(
 assert.ok(page.includes('id="quest"'), "要有任務關卡畫面");
 assert.ok(page.includes("STEP 3"));
 assert.ok(page.includes('id="quest-hint"'), "要有看提示的按鈕");
-// 名牌改成「問到即顯示」：沒有候選名牌區與拖放（問完名字名字自己上桌）。
-assert.ok(!page.includes('id="quest-tag-dock"'), "拖放名牌的 dock 要移除");
+// 任務卡要同時顯示官方的 quest 與 tips；結語關不顯示提示，也不重複收尾文字。
+assert.ok(
+  appCode.includes("const tips = questTipsText(quest)")
+    && appCode.includes("ui.questTips.textContent = tips")
+    && appCode.includes("ui.questTips.hidden = !tips"),
+  "任務卡要顯示官方任務提示"
+);
+assert.ok(
+  appCode.includes("const isEnd = quest.goal.kind === \"end\"")
+    && appCode.includes("ui.questHint.hidden = isEnd")
+    && !appCode.includes("goal.endText"),
+  "結語關要收起提示，而且收尾文字只能出現一次"
+);
+// 名牌關恢復官方的候選名牌區與拖放；其他關卡沒有這個區塊。
+assert.ok(
+  page.includes('id="quest-tag-dock"') && page.includes('id="quest-tag-section"'),
+  "名牌關要有候選名牌區"
+);
+assert.ok(
+  appCode.includes("questState?.selectedCard")
+    && appCode.includes("placeNameCard(target.dataset.target, questState.selectedCard)"),
+  "也可以先點名牌，再點同學"
+);
+assert.ok(
+  !page.includes("也可以先點名牌")
+    && !appCode.includes("點一下同學")
+    && !appCode.includes("名牌放對了")
+    && !appCode.includes("再放另一張")
+    && !appCode.includes("再放到對的桌上"),
+  "名牌關不要顯示直接放、再放一張這類操作提示"
+);
+assert.ok(
+  stageStyle.includes(".quest-tag.is-selected")
+    && stageStyle.includes(".quest-dropped-tag--movable")
+    && stageStyle.includes(".quest-target.is-drop-over"),
+  "名牌要看得出來已選取、可拿回，拖到同學身上也要有提示"
+);
 // 選人時的圖像變化對齊官方 targetClick：選中的同學換 target-N-2.png（持續光暈）、
 // 上課用語的主角圖換 player-2.png；hover 用 is-glow 做光暈。
 assert.ok(
@@ -758,15 +1025,43 @@ assert.ok(
   stageStyle.includes(".quest-layer.is-glow"),
   "選中的同學要換 target-N-2.png 變體並帶光暈（hover 也是）"
 );
+// 官方 quest-find.css 的 hoverGlow／selectGlow 是紅色 0 0 10px rgba(255,0,0,.8)；
+// hover 只靠紅光，不要再疊一個白色可點框蓋掉它。
+assert.ok(
+  stageStyle.includes("drop-shadow(0 0 10px rgba(255,0,0,.8))"),
+  "人物 hover／選取光暈要用官方紅色"
+);
+assert.ok(
+  !stageStyle.includes(".quest-target:hover::after"),
+  "人物 hover 不要再用白色框，官方只有紅光"
+);
 assert.ok(
   appCode.includes('ui.questPlayer.src = questTarget === "target-2"'),
   "主角圖要跟官方一樣換向：問右邊的同學才換 player-2.png（問左邊維持 player-1.png）"
 );
-// click 關（點門）的可點區在場景上方：任務卡要讓到左下角，否則門被蓋住點不到。
+// 任務說明在場景外面：寬螢幕左側欄、窄螢幕排在場景上方，所以不會再蓋住門或人物。
 assert.ok(
-  appCode.includes('ui.questStage.classList.toggle("is-click-stage"') &&
-  stageStyle.includes(".quest-stage.is-click-stage .quest-board"),
-  "click 關的任務卡要讓到左下角"
+  !stageStyle.includes(".quest-stage.is-click-stage .quest-board")
+    && !stageStyle.includes(".quest-stage.is-static-board .quest-board"),
+  "任務卡不要再用 is-click-stage／is-static-board 疊回場景"
+);
+assert.ok(
+  appCode.includes('ui.questStage.classList.toggle("is-static-board", quest.themeKey !== "lesson")')
+    && stageStyle.includes(".quest-stage.is-static-board .quest-scene"),
+  "尋找物品與戶外活動仍要保留場景盒外框"
+);
+// 原版要問到一次正確句子才顯示 respond-box／take-option／門。
+assert.ok(
+  appCode.includes("ui.questGoal.hidden = !ready")
+    && appCode.includes("button.hidden = !ready || locked")
+    && appCode.includes("button.hidden = !ready")
+    && appCode.includes("filter((option) => !questOptionLocked"),
+  "還沒問到人前要藏起選項、購物籃與鎖住的東西"
+);
+assert.ok(
+  appCode.includes("if (!(questState?.learned ?? []).length)")
+    && appCode.includes("再點場景裡該點的地方"),
+  "click 關要先問到人才能開門，不能直接跳過提問"
 );
 // 購物清單折疊（官方 #buying-list-btn）
 assert.ok(
@@ -778,10 +1073,25 @@ assert.ok(
   appCode.includes("QUEST_DEBUG_MODE") && coreCode.includes("allowChinese"),
   "中文直入教材句要由 ?debug_mode 開關放行"
 );
-// 指定要問誰的關卡，點錯人要擋下（借筆只能問左邊、橡皮擦只能問右邊）
+// 指定要問誰的關卡跟原版一樣不鎖人：點錯人會得到那位同學的 rebound，不是介面擋下。
+const selectTargetFn = appCode.match(/function selectTarget\(targetId\) \{[\s\S]*?\n\}/)?.[0] ?? "";
 assert.ok(
-  appCode.includes("is-locked") && appCode.includes("點錯人了"),
-  "指定對象的關卡要鎖住其他人，點錯人有提醒"
+  selectTargetFn
+    && !selectTargetFn.includes("is-locked")
+    && !selectTargetFn.includes("點錯人了")
+    && appCode.includes("wrongTarget"),
+  "指定對象的關卡不要鎖住其他人，問錯人要能換人"
+);
+assert.ok(
+  appCode.includes("showBorrowRefusal")
+    && appCode.includes("questWrongPersonLine")
+    && appCode.includes("questIsBorrowQuest(quest) && questTarget")
+    && appCode.includes("line.reply.audioUrl"),
+  "借筆／借橡皮擦問錯人要照官方回覆族語、中文與錄音，不能先被判定成問對"
+);
+assert.ok(
+  appCode.includes("rebound.chineseText") && appCode.includes("rebound.audioUrl"),
+  "問句不對時要播官方 rebound，中文也要用官方 textCh，不自行改寫"
 );
 // 「自動說這句」與 3 次失敗的關聯
 assert.ok(
@@ -809,11 +1119,15 @@ assert.ok(appCode.includes("quest.buylist?.length"), "戶外活動第一關的�
 assert.ok(appCode.includes('<button type="button" class="quest-target"'), "同學要是可以點的按鈕");
 assert.ok(appCode.includes('class="quest-option"'), "take 的候選要是可以點的按鈕");
 assert.ok(!/<button[^>]*class="quest-target"[^>]*>\s*<img/.test(page), "人物圖層要在按鈕外面");
-// 圖層與可點框要相對「場景圖」定位：窄螢幕時對話卡排在圖的下面，.stage 會比圖高，
-// 圖層用 inset:0 就會被一起撐高、人物被畫偏，還會蓋到下面的卡片上。
+// 圖層與可點框要相對「場景圖」定位；任務說明在 .quest-stage 外面，
+// DOM 順序是任務說明 → 場景 → 右欄，窄螢幕自然變成說明在場景上方。
 assert.ok(
-  /<div class="quest-scene" id="quest-scene-box">[\s\S]*?id="quest-layers"[\s\S]*?<\/div>\s*<div class="dialogue quest-board">/.test(page),
-  "場景圖、圖層與可點框要包在 .quest-scene 裡，對話卡要在它外面"
+  /<div class="quest-scene" id="quest-scene-box">[\s\S]*?id="quest-layers"[\s\S]*?<\/div>\s*<\/div>\s*<div id="quest-side"/.test(page),
+  "場景圖、圖層與可點框要包在 .quest-scene 裡"
+);
+assert.ok(
+  page.indexOf('class="dialogue quest-board"') < page.indexOf('class="stage quest-stage"'),
+  "任務說明要在場景之前，窄螢幕才會排在遊戲畫面上方"
 );
 assert.ok(/\.quest-scene\{position:relative;overflow:hidden;container-type:inline-size\}/.test(stageStyle), "場景盒要相對定位、裁掉溢出的圖層，而且是名牌字級的容器查詢基準");
 // 桌上名牌的字級要跟著場景寬度縮（官方 1000px 舞台是 1.2em ≈ 寬度的 1.45%）：
@@ -828,9 +1142,31 @@ assert.ok(
 // 座標一律由資料帶進來，CSS 不再寫死上課用語的位置
 assert.ok(!/\.quest-target\[data-target/.test(stageStyle), "可點範圍應該來自教材，不該寫死在上課用品");
 assert.ok(/\.quest-layers\{position:absolute;inset:0\}/.test(stageStyle), "圖層容器要鋪滿場景");
-// 任務卡放在場景上方，桌面要留給過關的筆／橡皮擦／掃把
-assert.ok(/\.quest-board\{top:1rem;bottom:auto\}/.test(stageStyle), "任務卡要放上方，否則桌面被蓋掉");
-assert.ok(/\.quest-reward\{[^}]*z-index:2/.test(stageStyle), "過關物件要蓋在任務卡之上");
+// 任務卡不再絕對定位壓在場景上；寬螢幕靠 grid-column:1 放到左邊，
+// 窄螢幕靠 DOM 順序排在場景上方。
+assert.ok(
+  /\.quest-board\{[^}]*position:static[^}]*margin:0 0 1rem/.test(stageStyle),
+  "任務卡要離開場景的絕對定位"
+);
+assert.ok(!/\.quest-board\{[^}]*top:1rem/.test(stageStyle), "任務卡不能再壓在場景上方");
+const rewardIndex = page.indexOf('id="quest-reward"');
+const playerIndex = page.indexOf('id="quest-player"');
+const layersIndex = page.indexOf('id="quest-layers"');
+assert.ok(
+  rewardIndex > page.indexOf('id="quest-scene"')
+    && rewardIndex < playerIndex
+    && rewardIndex < layersIndex,
+  "獎勵物件要在人物圖層前面，掃把才會在左邊同學後面"
+);
+assert.ok(/\.quest-reward\{[^}]*pointer-events:none/.test(stageStyle), "場景裡的獎勵物件不能擋住人物點擊");
+assert.ok(
+  appCode.includes("quest.order === 5")
+    && appCode.includes("showQuestReward(quest, { initial: true })")
+    && appCode.includes("LESSON_BROOM_START")
+    && appCode.includes('left: "-4%"')
+    && appCode.includes("questReward.scrollIntoView"),
+  "第五關掃把要依官方初始座標顯示在左邊同學左側，完成後也要把獎勵物件捲進畫面"
+);
 // 輸入面板是從 STEP 2 搬過來共用的，錄音與翻譯只有一套
 assert.ok(appCode.includes("mountInputPanel(ui.questSide)"), "任務關卡要掛上共用的輸入面板");
 assert.ok(appCode.includes("mountInputPanel(ui.sceneBody)"), "回到對話要把輸入面板搬回去");
@@ -838,6 +1174,35 @@ assert.ok(appCode.includes('if (mode === "quest") runQuestLine();'), "送出鈕�
 assert.ok(/state === "recorded"[\s\S]*?runQuestLine\(\)/.test(appCode), "語音停錄後必須自動送出");
 assert.ok(/mode\(\) === "voice"[\s\S]*?ui\.submit\.hidden = true/.test(appCode), "語音模式必須隱藏送出鈕");
 assert.ok(appCode.includes("questState?.done"), "過關後要收掉輸入");
+
+// 第二場景（尋找物品）的人物圖在 props 裡，也要套用官方的 hover／選取光暈。
+// 但 2-target-1.png 不是 lesson 的 target-N-2 選中變體，不能誤換成另一個人。
+assert.match(appCode, /const targetIds = new Set\(quest\.targets\.map/);
+assert.match(appCode, /targetIds\.has\(prop\.id\) \? ` data-target-img=/);
+assert.match(appCode, /selected && quest\.themeKey === "lesson"/);
+assert.match(
+  appCode,
+  /!button\.classList\.contains\("is-selected"\)[\s\S]*?classList\.remove\("is-glow"\)/,
+  "滑鼠移出時要保留已選人物的光暈"
+);
+// 陶壺照官方先選取、再按確定；候選順序每次進關卡隨機洗牌。
+assert.ok(appCode.includes("function shuffledOptions"));
+assert.ok(appCode.includes("optionOrder"));
+assert.ok(appCode.includes('id="option-confirm"'));
+assert.ok(appCode.includes("function confirmSelectOption"));
+assert.ok(appCode.includes("questState.picked = optionId"));
+assert.ok(
+  /\.quest-option-btn--select\.is-picked\{/.test(stageStyle),
+  "陶壺選取要用「已選、尚未確定」的樣式，不能長得像答對的綠色"
+);
+// 點門完成後顯示官方收尾台詞，收掉舊目標面板。
+assert.ok(appCode.includes("quest.closing?.text"));
+assert.ok(appCode.includes('aria-label="點門"'));
+assert.ok(
+  appCode.includes("data-click-img") && /\.quest-layer\.is-glow2/.test(stageStyle) &&
+  stageStyle.includes("drop-shadow(0 0 10px rgba(255,255,0,.8))"),
+  "點門前要有官方黃色 hoverGlow2"
+);
 
 // ── 兩個階段互相可切換、關卡可挑 ───────────────────────────
 assert.ok(page.includes('id="to-quest"'), "對話進行中要能直接跳去任務關卡");
@@ -856,6 +1221,11 @@ assert.ok(appCode.includes('if (reportKind === "quest") startQuest()'), "再玩�
 // 關卡按鈕要標出目前那關與已完成過的關
 assert.ok(appCode.includes('class="${current ? "is-current" : ""}${done ? " is-done" : ""}"'), "關卡鈕要標目前與完成");
 assert.ok(appCode.includes("renderLevelPicker();"), "過關後要重畫關卡鈕的完成標記");
+assert.match(
+  appCode,
+  /function showQuest\(\)[\s\S]*?renderLevelPicker\(\);/,
+  "每次換關（含按下一關）都要重畫左上角目前關卡"
+);
 assert.ok(/\.level-picker button\.is-current\{/.test(stageStyle), "目前那關要看得見");
 assert.ok(/\.level-picker button\.is-done::after\{content:" ✓"\}/.test(stageStyle), "完成過的關卡要有記號");
 assert.ok(/\.level-picker button\{[^}]*min-width:44px/.test(stageStyle), "關卡鈕要夠大好點");
