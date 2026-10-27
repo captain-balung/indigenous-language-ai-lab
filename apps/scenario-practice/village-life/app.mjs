@@ -572,6 +572,17 @@ function currentQuest() {
   return quests[questIndex] ?? null;
 }
 
+// 官方 select 候選用 randomArray 隨機排；這裡只在進入關卡時洗一次，
+// 之後重畫（選取、提示、換焦點）不會一直跳位。
+function shuffledOptions(ids) {
+  const list = [...ids];
+  for (let i = list.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [list[i], list[j]] = [list[j], list[i]];
+  }
+  return list;
+}
+
 function resetQuestRun() {
   runEpoch += 1;
   // questFailures 累計這一關「說了但判定沒對上」的次數；錯滿 3 次出現
@@ -584,7 +595,10 @@ function resetQuestRun() {
     : [];
   questState = {
     learned: [], placed: {}, cardAt: {}, cards, selectedCard: null,
-    taken: [], picked: null, done: false, failures: 0, buylistOpen: true
+    taken: [], picked: null, done: false, failures: 0, buylistOpen: true,
+    optionOrder: quest?.goal?.kind === "select"
+      ? shuffledOptions(questOptions(quest).map((option) => option.id))
+      : []
   };
   questTarget = null;
   ui.questAutoAsk.hidden = true;
@@ -657,9 +671,16 @@ function deskTagCenterFor(left, top) {
 function renderQuestLayers(quest) {
   const parts = [];
   const propIds = new Set();
+  const targetIds = new Set(quest.targets.map((target) => target.id));
+  const clickTargetId = quest.goal.kind === "click" ? (quest.goal.answers ?? [])[0] : null;
   for (const prop of quest.props ?? []) {
     propIds.add(prop.id);
-    parts.push(`<img class="quest-layer" src="${escapeHtml(prop.imageUrl)}" alt="" aria-hidden="true">`);
+    // 尋找物品／戶外活動的人物是 props 的整幅透明圖；掛上 data-target-img
+    // 才能跟 lesson 的獨立人物圖層一樣套用 hover／選取光暈。
+    const targetAttr = targetIds.has(prop.id) ? ` data-target-img="${escapeHtml(prop.id)}"` : "";
+    // 官方點門前的 hoverGlow2：門的可點區 hover 時讓門的圖層發亮。
+    const clickAttr = prop.id === clickTargetId ? ` data-click-img="${escapeHtml(prop.id)}"` : "";
+    parts.push(`<img class="quest-layer"${targetAttr}${clickAttr} src="${escapeHtml(prop.imageUrl)}" alt="" aria-hidden="true">`);
   }
   for (const target of quest.targets) {
     if (!propIds.has(target.id)) {
@@ -677,7 +698,7 @@ function renderQuestLayers(quest) {
   }
   if (quest.goal.kind === "click" && quest.goal.box) {
     parts.push(`<button type="button" class="quest-click" data-click="1" style="${boxStyle(quest.goal.box)}"
-      aria-label="點這裡"></button>`);
+      aria-label="點門"></button>`);
   }
   // 上課用語才有獨立的主角圖層：中間那一位是「主角（你自己）」，放個小標示讓人
   // 認得出來這是自己的座位；主角自己的名字官方已印在桌牌上，不用再顯示。
@@ -724,12 +745,21 @@ function renderQuestGoal(quest) {
   if (goal.kind === "select" || goal.kind === "selectAndSpeak") {
     ui.questGoal.hidden = !ready;
     if (!ready) { ui.questGoal.innerHTML = ""; return; }
+    const options = questOptions(quest);
+    // select 照官方每次進入關卡隨機排候選；selectAndSpeak 的對象維持官方順序。
+    const ordered = goal.kind === "select" && questState.optionOrder?.length
+      ? questState.optionOrder.map((id) => options.find((option) => option.id === id)).filter(Boolean)
+      : options;
+    const confirm = goal.kind === "select"
+      ? `<button type="button" class="primary" id="option-confirm" ${questState.picked ? "" : "disabled"}>確定</button>`
+      : "";
     ui.questGoal.innerHTML = `<h3>${goal.kind === "selectAndSpeak" ? "選要道謝的人" : "挑出正確的那一個"}</h3>
-      <div class="quest-options">${questOptions(quest).map((option) => `
-        <button type="button" class="quest-option-btn${questState.picked === option.id ? " is-picked" : ""}"
-          data-pick="${escapeHtml(option.id)}" aria-pressed="${questState.picked === option.id}">
+      <div class="quest-options">${ordered.map((option, index) => `
+        <button type="button" class="quest-option-btn${goal.kind === "select" ? " quest-option-btn--select" : ""}${questState.picked === option.id ? " is-picked" : ""}"
+          data-pick="${escapeHtml(option.id)}" aria-pressed="${questState.picked === option.id}"
+          ${goal.kind === "select" ? `aria-label="選擇第 ${index + 1} 個"` : ""}>
           <img src="${escapeHtml(option.imageUrl)}" alt="${escapeHtml(option.name ?? "")}">
-        </button>`).join("")}</div>`;
+        </button>`).join("")}</div>${confirm}`;
     return;
   }
   if (goal.kind === "take") {
@@ -776,6 +806,34 @@ function renderQuestGoal(quest) {
   }
   ui.questGoal.hidden = true;
   ui.questGoal.innerHTML = "";
+}
+
+// 手機／平板的輸入區在場景與目標面板下方；問對後目標面板才出現，
+// 若不把面板帶進視窗，學習者會停在輸入框、看不到剛出現的選項／購物籃。
+function revealQuestGoal() {
+  if (!ui.questGoal || ui.questGoal.hidden) return;
+  if (!matchMedia("(max-width: 1200px)").matches) return;
+  requestAnimationFrame(() => {
+    ui.questGoal.scrollIntoView({
+      block: "start",
+      inline: "nearest",
+      behavior: reduced() ? "auto" : "smooth"
+    });
+  });
+}
+
+// 點門關的行動目標在場景上；手機問完人後把門帶進視窗，不用自己找。
+function revealQuestClick() {
+  if (!matchMedia("(max-width: 1200px)").matches) return;
+  const click = ui.questLayers.querySelector("[data-click]");
+  if (!click) return;
+  requestAnimationFrame(() => {
+    click.scrollIntoView({
+      block: "center",
+      inline: "nearest",
+      behavior: reduced() ? "auto" : "smooth"
+    });
+  });
 }
 
 function renderBasket(quest) {
@@ -826,10 +884,8 @@ function showQuest() {
   // 對象都可以點；指定要問誰的關卡讓學習者自己判斷，問錯人會得到原版的反應。
   syncTargetLooks();
   renderQuestGoal(quest);
-  // click 關（點門）的可點區在場景上方：任務卡跟官方一樣讓到下面，否則被卡蓋住點不到。
-  ui.questStage.classList.toggle("is-click-stage", quest.goal.kind === "click");
-  // 尋找物品／戶外活動的對象常在上方，任務卡不要壓在場景上；和手機版一樣改成
-  // 場景下方的一般區塊，避免任務提示變長後蓋住可點的人。
+  // 任務說明在 #quest-stage 外面，所以 click 關不用再把卡片讓開。
+  // 尋找物品／戶外活動只保留場景盒的外框樣式，不再需要移動任務卡。
   ui.questStage.classList.toggle("is-static-board", quest.themeKey !== "lesson");
   syncQuestMarks();
   updateQuestProgress();
@@ -1122,7 +1178,9 @@ function selectTarget(targetId) {
 }
 
 // 選人時的圖像變化對齊舊站 targetClick：
-//   被選中的同學圖層換成 target-N-2.png（官方選中變體）＋持續光暈
+//   上課用語的同學圖層換成 target-N-2.png（官方選中變體）＋持續光暈；
+//   尋找物品／戶外活動的 2-target-1.png 不是選中變體，不能套 replace，
+//   否則會換成另一個人的圖（2-target-1.png → 2-target-2.png）。
 //   主角圖**換向**：官方問右邊的同學（target-2）才換 player-2.png（朝右的變體），
 //   問左邊的同學時維持 player-1.png——兩張都是朝向那個方向的圖。
 const TARGET_SELECT_VARIANT = (url) => url ? url.replace(/-1\.png$/, "-2.png") : "";
@@ -1132,9 +1190,13 @@ function syncTargetLooks() {
   for (const target of quest?.targets ?? []) {
     const img = ui.questLayers.querySelector(`img[data-target-img="${target.id}"]`);
     if (img) {
-      img.src = questTarget === target.id ? (TARGET_SELECT_VARIANT(target.imageUrl) || target.imageUrl) : target.imageUrl;
+      const selected = questTarget === target.id;
+      const selectedSrc = selected && quest.themeKey === "lesson"
+        ? (TARGET_SELECT_VARIANT(target.imageUrl) || target.imageUrl)
+        : target.imageUrl;
+      img.src = selectedSrc;
       // 官方 hoverGlow2：選中的同學持續帶光暈。
-      img.classList.toggle("is-glow", questTarget === target.id);
+      img.classList.toggle("is-glow", selected);
     }
   }
   // 主角圖隨點的對象換向（官方 targetClick）：點左邊的同學維持 player-1.png（朝左），
@@ -1186,18 +1248,31 @@ ui.questLayers.addEventListener("click", (event) => {
   if (event.target.closest("[data-click]")) handleQuestClick();
 });
 
-// hover 高亮：官方 hoverGlow 圖檔沒給，用濾鏡做出光暈。
+// hover 高亮：官方 hoverGlow／hoverGlow2 圖檔沒給，用濾鏡做出光暈。
 ui.questLayers.addEventListener("mouseover", (event) => {
+  const click = event.target.closest("[data-click]");
+  if (click) {
+    const img = ui.questLayers.querySelector("img[data-click-img]");
+    if (img) img.classList.add("is-glow2");
+    return;
+  }
   const button = event.target.closest("[data-target]");
   if (!button) return;
   const img = ui.questLayers.querySelector(`img[data-target-img="${button.dataset.target}"]`);
   if (img) img.classList.add("is-glow");
 });
 ui.questLayers.addEventListener("mouseout", (event) => {
+  const click = event.target.closest("[data-click]");
+  if (click) {
+    const img = ui.questLayers.querySelector("img[data-click-img]");
+    if (img) img.classList.remove("is-glow2");
+    return;
+  }
   const button = event.target.closest("[data-target]");
   if (!button) return;
   const img = ui.questLayers.querySelector(`img[data-target-img="${button.dataset.target}"]`);
-  if (img) img.classList.remove("is-glow");
+  // 已選中的人要保留官方 selectGlow；這裡只清掉 hover 暫時加上的光暈。
+  if (img && !button.classList.contains("is-selected")) img.classList.remove("is-glow");
 });
 
 // 候選名牌：桌面用原生拖曳，手機／鍵盤用點選（官方在手機上也是點選放置）。
@@ -1300,6 +1375,7 @@ ui.questGoal.addEventListener("click", (event) => {
     else pickQuestOption(pick.dataset.pick);
     return;
   }
+  if (event.target.closest("#option-confirm")) { confirmSelectOption(); return; }
   if (event.target.closest("#basket-confirm")) { confirmBasket(); return; }
   if (event.target.closest("#quest-end-next")) {
     questIndex += 1;
@@ -1321,9 +1397,9 @@ function pickSceneOption(optionId) {
   const outcome = addToBasket(quest, optionId, questState);
   questState.taken = outcome.taken;
   if (outcome.reason === "locked") {
-    const who = targetLabel(quest.goal.unlock?.targetId, quest);
     // 操作狀況提醒寫在任務卡那一行，不畫結果卡（鎖著的東西不是「答錯」）。
-    ui.questSpeaker.textContent = `這個還不能拿，先問問${who}的人`;
+    // 不要在這裡公布解鎖者，讓學習者從對方的回答判斷。
+    ui.questSpeaker.textContent = "這個還不能拿，先問問其他人，看看誰知道";
     return;
   }
   if (outcome.reason === "already") {
@@ -1341,7 +1417,7 @@ function pickSceneOption(optionId) {
   const stillLocked = quest.goal.lock
     && !(questState.learned ?? []).includes(quest.goal.unlock?.targetId);
   ui.questSpeaker.textContent = stillLocked
-    ? `先問問${targetLabel(quest.goal.unlock?.targetId, quest)}的人，才知道要拿什麼`
+    ? "先問問其他人，才知道要拿什麼"
     : questState.taken.length >= need
       ? `放進籃子了，按「確定」看看有沒有拿對`
       : `放進籃子了，再看看還缺什麼（${questState.taken.length}/${need}）`;
@@ -1357,8 +1433,7 @@ function confirmBasket() {
   playJudgeSound(ok);
   if (ok) { finishQuest(); return; }
   if (quest.goal.lock && !(questState.learned ?? []).includes(quest.goal.unlock?.targetId)) {
-    const who = targetLabel(quest.goal.unlock?.targetId, quest);
-    ui.questSpeaker.textContent = `還不能確定，先問問${who}的人`;
+    ui.questSpeaker.textContent = "還不能確定，先問問其他人，看看誰知道";
     return;
   }
   if (!questState.taken.length) {
@@ -1384,8 +1459,22 @@ function pickQuestOption(optionId) {
     ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: null });
     return;
   }
+  // 官方 select 的 optionClick 只先標記選取，按「確認」才在 respondClick 判定；
+  // 這裡保留兩段式，讓學習者能換陶壺後再確定。
+  if (quest.goal.kind === "select") {
+    const option = questOptions(quest).find((item) => item.id === optionId);
+    if (!option) return;
+    questState.picked = optionId;
+    clearQuestResult();
+    updateQuestProgress();
+    ui.questSpeaker.textContent = "任務";
+    ui.turnTitle.textContent = questTurnTitleFor(quest, { state: questState, targetId: null });
+    // 重畫後把焦點留在「確定」，鍵盤操作不用再找一次按鈕。
+    ui.questGoal.querySelector("#option-confirm")?.focus({ preventScroll: true });
+    return;
+  }
   const outcome = judgeQuestPick(quest, optionId, questState);
-  // 對／錯照官方只有音效回饋（select 也播 right／wrong），不畫結果卡。
+  // 對／錯照官方只有音效回饋（selectAndSpeak 也播 right／wrong），不畫結果卡。
   if (quest.goal.kind === "selectAndSpeak") {
     if (!outcome.ok) {
       playJudgeSound(false);
@@ -1403,6 +1492,16 @@ function pickQuestOption(optionId) {
     updateSubmit();
     return;
   }
+  playJudgeSound(outcome.ok);
+  if (outcome.ok) { finishQuest(); return; }
+  clearQuestResult();
+}
+
+// 官方 select 的「確認」：只有這時才判對錯，錯了可以換一個再按。
+function confirmSelectOption() {
+  const quest = currentQuest();
+  if (!quest || quest.goal.kind !== "select" || !questState?.picked || pending) return;
+  const outcome = judgeQuestPick(quest, questState.picked, questState);
   playJudgeSound(outcome.ok);
   if (outcome.ok) { finishQuest(); return; }
   clearQuestResult();
@@ -1469,12 +1568,19 @@ function finishQuest() {
   for (const button of ui.questTags.querySelectorAll("button")) button.disabled = true;
   ui.questTagSection.hidden = true;
   ui.questTagDock.innerHTML = "";
+  // 過關後不要再留著「點場景…」或購物籃的舊指令；右欄只留完成鈕。
+  ui.questGoal.hidden = true;
+  ui.questGoal.innerHTML = "";
   // 過關後桌上的名牌改成不可再拿回來的靜態字（狀態已 done）。
   syncQuestMarks();
   updateSubmit();
   // 過關不畫「說對了」結果卡：完成是用「！」→「任務完成！」彈窗呈現。
   showQuestReward(quest);
-  // 官方完成時會播一句收尾台詞（方言別 JSON 的 stage.complete.sound）。
+  // 官方完成時會播一句收尾台詞（方言別 JSON 的 stage.complete.sound），
+  // 收起台詞（例如第 4 關點門後的 Ini kaku…）也照官方顯示在任務卡。
+  if (quest.closing?.text) {
+    ui.questReply.innerHTML = `<span class="quest-reply__line">${escapeHtml(quest.closing.text)}</span>`;
+  }
   if (quest.closing?.audioUrl) playQuestClip(quest.closing.audioUrl);
   ui.questSpeaker.textContent = "任務完成";
   // 關卡鈕上的完成標記要立刻更新，不然要換關卡才看得到。
@@ -1486,6 +1592,9 @@ function finishQuest() {
   requestAnimationFrame(() => {
     if (!ui.questReward.hidden) {
       ui.questReward.scrollIntoView({ block: "nearest", inline: "nearest" });
+    } else if (matchMedia("(max-width: 1200px)").matches && !ui.questComplete.hidden) {
+      // 手機的完成鈕在下方；完成後把它帶進視窗，才不會停在一塊空白。
+      ui.questComplete.scrollIntoView({ block: "nearest", inline: "nearest" });
     }
   });
 }
@@ -1806,6 +1915,12 @@ function onQuestAnswered(line, { skipReplyAudio = false } = {}) {
   syncQuestMarks();
   if (allAsked) focusFirstCard();
   else focusFirstTarget();
+  // 手機的目標面板在輸入區下方，問對後把剛出現的選項／購物籃帶進畫面；
+  // 點門關則把場景上的門帶進來，下一步才不會停在看不到的畫面。
+  if (quest.goal.kind === "click") revealQuestClick();
+  else if (quest.goal.kind === "select" || quest.goal.kind === "take" || quest.goal.kind === "selectAndSpeak") {
+    revealQuestGoal();
+  }
 }
 
 function renderQuestResult(verdict, { line, indigenous, translation, detail, lines }) {

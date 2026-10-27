@@ -411,7 +411,9 @@ export function questProgress(quest, state) {
   }
   // 選東西的關卡：先問人拿線索，再從候選裡挑。picked 開局是 null，不能拿來判斷還沒選。
   if (goal.kind === "select") {
-    return (state?.learned ?? []).length ? "從下面的選項挑一個" : `先問問${questPeopleLabel(quest)}，再挑出正確的那一個`;
+    if (!(state?.learned ?? []).length) return `先問問${questPeopleLabel(quest)}，再挑出正確的那一個`;
+    // 官方 select 是先選取、再按確認；picked 只代表目前選了哪一個，不代表答對。
+    return state?.picked ? "按確定看看是不是這個" : "從下面的選項挑一個";
   }
   if (goal.kind === "take") {
     // 有些東西要先問對人才拿得到（官方 condition.lock）。
@@ -420,8 +422,12 @@ export function questProgress(quest, state) {
     const unlocked = !goal.lock
       || goal.unlock?.targetId === undefined
       || learned.includes(goal.unlock.targetId);
-    // 有 lock 的關卡先講清楚要問哪一位；沒有 lock 才用一般「先問人」。
-    if (!unlocked) return `先問問${targetLabel(goal.unlock.targetId, quest)}的人，才拿得到正確的東西`;
+    // 官方不公布解鎖者；只提示要繼續問人，讓學習者從回答判斷誰知道東西在哪。
+    if (!unlocked) {
+      return learned.length
+        ? "還沒問到知道的人，換一位問問看"
+        : `先問問${questPeopleLabel(quest)}，看看誰知道要拿什麼`;
+    }
     if (!learned.length) return `先問問${questPeopleLabel(quest)}，再拿正確的東西`;
     const need = goal.answers.length;
     const got = (state?.taken ?? []).length;
@@ -544,11 +550,15 @@ export function questHint(quest, state) {
   if (goal.kind === "end") return "任務結束";
   if (goal.kind === "select") {
     if (!learned.length) return `先問問${questPeopleLabel(quest)}，再挑出正確的那一個`;
-    return state?.picked ? "再看看誰才對" : "從下面的選項挑一個";
+    // 官方 select 是先選取、再按確認；不要讓 picked 看起來像已經答對。
+    return state?.picked ? "按確定看看是不是這個" : "從下面的選項挑一個";
   }
   if (goal.kind === "take") {
     if (goal.lock && goal.unlock?.targetId && !learned.includes(goal.unlock.targetId)) {
-      return `先問問${targetLabel(goal.unlock.targetId, quest)}的人，才拿得到正確的東西`;
+      // 官方不公布解鎖者；讓學習者從對方的回答判斷誰知道東西在哪。
+      return learned.length
+        ? "還沒問到知道的人，換一位問問看"
+        : `先問問${questPeopleLabel(quest)}，看看誰知道要拿什麼`;
     }
     if (!learned.length) return `先問問${questPeopleLabel(quest)}，再拿正確的東西`;
     return `把正確的東西放進籃子（${(state?.taken ?? []).length}/${goal.answers.length}）`;

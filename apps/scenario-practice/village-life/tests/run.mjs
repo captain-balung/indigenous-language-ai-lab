@@ -136,15 +136,17 @@ assert.ok(
   /\.quest-scene\{width:min\(341px,92vw\)/.test(shortBlock[0]) && !/\.quest-scene\{[^}]*height:\d/.test(shortBlock[0]),
   "矮螢幕時場景盒寬要跟圖一樣（同一個 min() 上限），不能壓高度把盒跟圖撐開"
 );
-// 1201px 以上：左場景、右輸入區，兩欄都在正常流程裡——先前用絕對定位時
-// 輸入區不撐高容器，會從 STEP 2 面板底部溢出。較窄時場景填滿剩餘空間。
+// 1201px 以上：任務說明在左、場景在中、輸入區在右，三欄都在正常流程裡。
 const wideBlock = stageStyle.match(/@media\(min-width:1201px\)\{[\s\S]*?\n\}/);
 assert.ok(wideBlock, "要能找到寬螢幕的版面設定");
 assert.ok(
-  /\.scene-body\{[^}]*grid-template-columns:minmax\(0,1fr\) minmax\(\d+px,\d+px\)/.test(wideBlock[0]),
-  "寬螢幕要左右兩欄，右欄留給輸入區"
+  /\.scene-body\{[^}]*grid-template-columns:minmax\(250px,320px\) minmax\(0,1fr\) minmax\(300px,380px\)/.test(wideBlock[0]),
+  "寬螢幕要有任務說明、場景、輸入區三欄"
 );
-assert.ok(!/position:absolute/.test(wideBlock[0]), "兩欄不可用絕對定位，否則輸入區會溢出面板");
+assert.ok(/\.quest-board\{[^}]*grid-column:1/.test(wideBlock[0]), "寬螢幕任務說明要在場景左邊");
+assert.ok(/\.stage\{[^}]*grid-column:2/.test(wideBlock[0]), "寬螢幕場景要在中間");
+assert.ok(/\.scene-side\{[^}]*grid-column:3/.test(wideBlock[0]), "寬螢幕輸入區要在最右邊");
+assert.ok(!/position:absolute/.test(wideBlock[0]), "三欄不可用絕對定位，否則輸入區會溢出面板");
 // 夠寬才置中：左右各留 (輸入區 + 間距) 一樣寬，場景才是整個面板的正中央。
 // 1700px 這個門檻要讓置中的場景跟填滿剩餘空間的一樣大，切換時才不會突然縮小。
 const centeredBlock = stageStyle.match(/@media\(min-width:1700px\)\{[\s\S]*?\n\}/);
@@ -153,12 +155,23 @@ assert.ok(
   /\.scene-body\{[^}]*grid-template-columns:minmax\(\d+px,1fr\) minmax\(0,\d+px\) minmax\(\d+px,1fr\)/.test(centeredBlock[0]),
   "置中要用對稱三欄，左右留白一樣寬"
 );
+assert.ok(/\.quest-board\{[^}]*grid-column:1/.test(centeredBlock[0]), "任務說明要放在場景左邊那一欄");
 assert.ok(/\.stage\{[^}]*grid-column:2/.test(centeredBlock[0]), "場景要放在中間那一欄");
 assert.ok(/\.scene-side\{[^}]*grid-column:3/.test(centeredBlock[0]), "輸入區要放在最右邊那一欄");
 // 1200px 以下全部上下疊，場景用滿版寬
 assert.ok(
   /@media\(max-width:1200px\)\{[\s\S]*?\.scene-body\{grid-template-columns:1fr\}/.test(stageStyle),
   "1200px 以下要單欄，否則場景會被擠得很小"
+);
+assert.ok(
+  /@media\(min-width:1201px\)\{[\s\S]*\.scene-body--solo\{[^}]*minmax\(720px,1000px\)/.test(stageStyle)
+    && /@media\(min-width:1201px\)\{[\s\S]*\.scene-body--solo \.stage__bg\{[^}]*min-width:720px/.test(stageStyle),
+  "字幕疊在圖上時 STEP 2 場景最窄 720px"
+);
+assert.ok(
+  /\.scene-body--solo\{[^}]*minmax\(0,1000px\)/.test(stageStyle)
+    && !/\.scene-body--solo \.stage\{[^}]*min-width/.test(stageStyle),
+  "字幕在圖下時場景跟著視窗縮，不設最小寬"
 );
 // 主角圖層只有上課用語有（另外兩個主題的主角畫在場景圖裡）。
 // 沒有圖時必須整個隱藏：src 留空字串但沒隱藏的 <img> 會在場景左上角
@@ -590,10 +603,12 @@ for (const id of dialectIds) {
         if (goal.kind === "selectAndSpeak") {
           assert.ok(goal.prompt, `${id} selectAndSpeak 要有要說的句子`);
           assert.ok(quest.closing?.audioUrl, `${id} selectAndSpeak 要有完成音檔`);
+          assert.ok(quest.closing?.text, `${id} selectAndSpeak 要有官方收尾台詞`);
         }
       } else if (goal.kind === "click") {
         assert.ok(goal.box && goal.box.width > 0, `${id} click 關要有可點範圍`);
         assert.ok(quest.closing?.audioUrl, `${id} click 關要有結語音檔`);
+        assert.ok(quest.closing?.text, `${id} click 關要有官方收尾台詞`);
       } else if (goal.kind === "end") {
         assert.ok(goal.endText, `${id} 結語關要有文字`);
         assert.equal(quest.targets.length, 0, `${id} 結語關不該有對象`);
@@ -812,6 +827,7 @@ assert.equal(targetLabel(rightPerson.id, lessonTwo), "右邊", "兩個人時右�
 assert.match(questProgress(potQuest, { learned: [], picked: null }), /先問問其他人/);
 assert.doesNotMatch(questProgress(potQuest, { learned: [], picked: null }), /同學/);
 assert.match(questProgress(potQuest, { learned: ["target-1"], picked: null }), /從下面的選項挑一個/);
+assert.match(questProgress(potQuest, { learned: ["target-1"], picked: "pot-2" }), /按確定/);
 assert.match(questProgress(findPack.quests[3], { learned: [] }), /先問問其他人.*點場景/);
 assert.match(questProgress(findPack.quests[3], { learned: ["target-1"] }), /^點場景/);
 assert.match(questProgress(outsidePack.quests[0], { learned: [] }), /先問問其他人.*拿正確的東西/);
@@ -822,9 +838,12 @@ assert.equal(
   "問到人後進度要改成選要道謝的人"
 );
 
-// take 關被鎖住時，進度要明講要先問誰，而且要說「先問」而不是看起來像已完成。
-// 「（1/1）」會讓人以為籃子滿了就是答對，其實還沒判。
-assert.match(questProgress(fernQuest, { learned: [], taken: [] }), /先問問中間的人/);
+// take 關被鎖住時，不能先公布解鎖者；要讓學習者從回答判斷誰知道，
+// 而且「（1/1）」不能看起來像已完成（其實還沒按確定判）。
+assert.match(questProgress(fernQuest, { learned: [], taken: [] }), /先問問其他人/);
+assert.doesNotMatch(questProgress(fernQuest, { learned: [], taken: [] }), /中間|target-3/);
+assert.match(questProgress(fernQuest, { learned: ["target-1"], taken: [] }), /換一位問問看/);
+assert.doesNotMatch(questProgress(fernQuest, { learned: ["target-1"], taken: [] }), /中間|target-3/);
 assert.equal(targetLabel(fernQuest.goal.unlock.targetId, fernQuest), "中間");
 assert.match(questProgress(fernQuest, { learned: [fernQuest.goal.unlock.targetId], taken: [] }), /要 1 樣/);
 assert.doesNotMatch(questProgress(fernQuest, { learned: [], taken: ["plant-2"] }), /\/1/,
@@ -852,7 +871,10 @@ assert.ok(
 );
 assert.match(questHint(potQuest, {}), /先問問其他人/);
 assert.match(questHint(potQuest, { learned: ["target-1"] }), /挑一個/);
-assert.match(questHint(fernQuest, { taken: [] }), /先問問中間的人/);
+assert.match(questHint(potQuest, { learned: ["target-1"], picked: "pot-2" }), /按確定/);
+assert.match(questHint(fernQuest, { taken: [] }), /先問問其他人/);
+assert.doesNotMatch(questHint(fernQuest, { taken: [] }), /中間|target-3/);
+assert.match(questHint(fernQuest, { learned: ["target-1"], taken: [] }), /換一位問問看/);
 assert.match(questHint(fernQuest, { learned: [fernQuest.goal.unlock.targetId], taken: [] }), /放進籃子/);
 assert.match(questHint(findPack.quests[3], {}), /先問問其他人.*點場景/);
 assert.match(questHint(findPack.quests[3], { learned: ["target-1"] }), /點場景/);
@@ -1003,21 +1025,30 @@ assert.ok(
   stageStyle.includes(".quest-layer.is-glow"),
   "選中的同學要換 target-N-2.png 變體並帶光暈（hover 也是）"
 );
+// 官方 quest-find.css 的 hoverGlow／selectGlow 是紅色 0 0 10px rgba(255,0,0,.8)；
+// hover 只靠紅光，不要再疊一個白色可點框蓋掉它。
+assert.ok(
+  stageStyle.includes("drop-shadow(0 0 10px rgba(255,0,0,.8))"),
+  "人物 hover／選取光暈要用官方紅色"
+);
+assert.ok(
+  !stageStyle.includes(".quest-target:hover::after"),
+  "人物 hover 不要再用白色框，官方只有紅光"
+);
 assert.ok(
   appCode.includes('ui.questPlayer.src = questTarget === "target-2"'),
   "主角圖要跟官方一樣換向：問右邊的同學才換 player-2.png（問左邊維持 player-1.png）"
 );
-// click 關（點門）的可點區在場景上方：任務卡要讓到左下角，否則門被蓋住點不到。
+// 任務說明在場景外面：寬螢幕左側欄、窄螢幕排在場景上方，所以不會再蓋住門或人物。
 assert.ok(
-  appCode.includes('ui.questStage.classList.toggle("is-click-stage"') &&
-  stageStyle.includes(".quest-stage.is-click-stage .quest-board"),
-  "click 關的任務卡要讓到左下角"
+  !stageStyle.includes(".quest-stage.is-click-stage .quest-board")
+    && !stageStyle.includes(".quest-stage.is-static-board .quest-board"),
+  "任務卡不要再用 is-click-stage／is-static-board 疊回場景"
 );
-// 尋找物品／戶外活動的對象在上方：任務卡要移到場景下方，不然加長後會蓋住可點的人。
 assert.ok(
   appCode.includes('ui.questStage.classList.toggle("is-static-board", quest.themeKey !== "lesson")')
-    && stageStyle.includes(".quest-stage.is-static-board .quest-board"),
-  "尋找物品與戶外活動的任務卡不能壓在場景上"
+    && stageStyle.includes(".quest-stage.is-static-board .quest-scene"),
+  "尋找物品與戶外活動仍要保留場景盒外框"
 );
 // 原版要問到一次正確句子才顯示 respond-box／take-option／門。
 assert.ok(
@@ -1088,11 +1119,15 @@ assert.ok(appCode.includes("quest.buylist?.length"), "戶外活動第一關的�
 assert.ok(appCode.includes('<button type="button" class="quest-target"'), "同學要是可以點的按鈕");
 assert.ok(appCode.includes('class="quest-option"'), "take 的候選要是可以點的按鈕");
 assert.ok(!/<button[^>]*class="quest-target"[^>]*>\s*<img/.test(page), "人物圖層要在按鈕外面");
-// 圖層與可點框要相對「場景圖」定位：窄螢幕時對話卡排在圖的下面，.stage 會比圖高，
-// 圖層用 inset:0 就會被一起撐高、人物被畫偏，還會蓋到下面的卡片上。
+// 圖層與可點框要相對「場景圖」定位；任務說明在 .quest-stage 外面，
+// DOM 順序是任務說明 → 場景 → 右欄，窄螢幕自然變成說明在場景上方。
 assert.ok(
-  /<div class="quest-scene" id="quest-scene-box">[\s\S]*?id="quest-layers"[\s\S]*?<\/div>\s*<div class="dialogue quest-board">/.test(page),
-  "場景圖、圖層與可點框要包在 .quest-scene 裡，對話卡要在它外面"
+  /<div class="quest-scene" id="quest-scene-box">[\s\S]*?id="quest-layers"[\s\S]*?<\/div>\s*<\/div>\s*<div id="quest-side"/.test(page),
+  "場景圖、圖層與可點框要包在 .quest-scene 裡"
+);
+assert.ok(
+  page.indexOf('class="dialogue quest-board"') < page.indexOf('class="stage quest-stage"'),
+  "任務說明要在場景之前，窄螢幕才會排在遊戲畫面上方"
 );
 assert.ok(/\.quest-scene\{position:relative;overflow:hidden;container-type:inline-size\}/.test(stageStyle), "場景盒要相對定位、裁掉溢出的圖層，而且是名牌字級的容器查詢基準");
 // 桌上名牌的字級要跟著場景寬度縮（官方 1000px 舞台是 1.2em ≈ 寬度的 1.45%）：
@@ -1107,8 +1142,13 @@ assert.ok(
 // 座標一律由資料帶進來，CSS 不再寫死上課用語的位置
 assert.ok(!/\.quest-target\[data-target/.test(stageStyle), "可點範圍應該來自教材，不該寫死在上課用品");
 assert.ok(/\.quest-layers\{position:absolute;inset:0\}/.test(stageStyle), "圖層容器要鋪滿場景");
-// 任務卡放在場景上方，桌面要留給過關的筆／橡皮擦／掃把
-assert.ok(/\.quest-board\{top:1rem;bottom:auto\}/.test(stageStyle), "任務卡要放上方，否則桌面被蓋掉");
+// 任務卡不再絕對定位壓在場景上；寬螢幕靠 grid-column:1 放到左邊，
+// 窄螢幕靠 DOM 順序排在場景上方。
+assert.ok(
+  /\.quest-board\{[^}]*position:static[^}]*margin:0 0 1rem/.test(stageStyle),
+  "任務卡要離開場景的絕對定位"
+);
+assert.ok(!/\.quest-board\{[^}]*top:1rem/.test(stageStyle), "任務卡不能再壓在場景上方");
 const rewardIndex = page.indexOf('id="quest-reward"');
 const playerIndex = page.indexOf('id="quest-player"');
 const layersIndex = page.indexOf('id="quest-layers"');
@@ -1134,6 +1174,35 @@ assert.ok(appCode.includes('if (mode === "quest") runQuestLine();'), "送出鈕�
 assert.ok(/state === "recorded"[\s\S]*?runQuestLine\(\)/.test(appCode), "語音停錄後必須自動送出");
 assert.ok(/mode\(\) === "voice"[\s\S]*?ui\.submit\.hidden = true/.test(appCode), "語音模式必須隱藏送出鈕");
 assert.ok(appCode.includes("questState?.done"), "過關後要收掉輸入");
+
+// 第二場景（尋找物品）的人物圖在 props 裡，也要套用官方的 hover／選取光暈。
+// 但 2-target-1.png 不是 lesson 的 target-N-2 選中變體，不能誤換成另一個人。
+assert.match(appCode, /const targetIds = new Set\(quest\.targets\.map/);
+assert.match(appCode, /targetIds\.has\(prop\.id\) \? ` data-target-img=/);
+assert.match(appCode, /selected && quest\.themeKey === "lesson"/);
+assert.match(
+  appCode,
+  /!button\.classList\.contains\("is-selected"\)[\s\S]*?classList\.remove\("is-glow"\)/,
+  "滑鼠移出時要保留已選人物的光暈"
+);
+// 陶壺照官方先選取、再按確定；候選順序每次進關卡隨機洗牌。
+assert.ok(appCode.includes("function shuffledOptions"));
+assert.ok(appCode.includes("optionOrder"));
+assert.ok(appCode.includes('id="option-confirm"'));
+assert.ok(appCode.includes("function confirmSelectOption"));
+assert.ok(appCode.includes("questState.picked = optionId"));
+assert.ok(
+  /\.quest-option-btn--select\.is-picked\{/.test(stageStyle),
+  "陶壺選取要用「已選、尚未確定」的樣式，不能長得像答對的綠色"
+);
+// 點門完成後顯示官方收尾台詞，收掉舊目標面板。
+assert.ok(appCode.includes("quest.closing?.text"));
+assert.ok(appCode.includes('aria-label="點門"'));
+assert.ok(
+  appCode.includes("data-click-img") && /\.quest-layer\.is-glow2/.test(stageStyle) &&
+  stageStyle.includes("drop-shadow(0 0 10px rgba(255,255,0,.8))"),
+  "點門前要有官方黃色 hoverGlow2"
+);
 
 // ── 兩個階段互相可切換、關卡可挑 ───────────────────────────
 assert.ok(page.includes('id="to-quest"'), "對話進行中要能直接跳去任務關卡");
