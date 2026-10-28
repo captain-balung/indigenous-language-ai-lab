@@ -29,6 +29,15 @@ export function pictureTalkRecords(juniorShard, seniorShard) {
   return { beginner, intermediate };
 }
 
+/** 練習一次只出一張。多圖題拆成連續幾題，每題只帶該張圖。 */
+export function singleImageTurns(records) {
+  return (records ?? []).flatMap((item) => (item.imageUrls ?? []).map((imageUrl, index) => ({
+    ...item,
+    id: `${item.id}#${index + 1}`,
+    imageUrls: [imageUrl]
+  })));
+}
+
 export function describeCaption({ translation, matched, pictureScore } = {}) {
   const scored = pictureScore?.status === "scored" && Number.isFinite(pictureScore.points);
   const asides = [];

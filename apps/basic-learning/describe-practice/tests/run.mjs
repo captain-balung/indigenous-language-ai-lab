@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { semanticMatch } from "../../body-parts-practice/core.mjs";
-import { LEVELS, describeCaption, pictureTalkRecords } from "../core.mjs";
+import { LEVELS, describeCaption, pictureTalkRecords, singleImageTurns } from "../core.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
 const read = (relative) => fs.readFileSync(path.join(root, relative), "utf8");
@@ -16,7 +16,9 @@ const appCode = stripComments(appSource);
 assert.ok(page.includes('lang="zh-Hant"'));
 assert.ok(page.includes("看圖描述"));
 assert.ok(page.includes('class="task-brief"') && page.includes("怎麼玩"));
-assert.ok(page.includes("用自己的話描述這些圖"));
+assert.ok(page.includes("用自己的話描述這張圖"));
+assert.ok(page.includes("一次看一張圖"));
+assert.ok(appCode.includes("singleImageTurns"));
 assert.ok(page.includes('id="picture-grid"'));
 assert.ok(page.includes("初級看圖說話") || page.includes("看圖說話"));
 assert.ok(page.includes("看圖表達"));
@@ -51,6 +53,11 @@ assert.ok(pools.beginner[0].imageUrls.every((url) => url.includes("/pictureTalk/
 assert.equal(pools.intermediate.length, 2);
 assert.equal(pools.intermediate[0].imageUrls.length, 1);
 assert.ok(pools.intermediate[0].imageUrls[0].includes("/sp_senior/"));
+const turns = singleImageTurns(pools.beginner);
+assert.equal(turns.length, 4);
+assert.ok(turns.every((item) => item.imageUrls.length === 1));
+assert.equal(turns[0].imageUrls[0], pools.beginner[0].imageUrls[0]);
+assert.equal(turns[3].id, `${pools.beginner[0].id}#4`);
 assert.equal(pictureTalkRecords({}, {}).beginner.length, 0);
 
 const caption = describeCaption({ translation: "我喜歡去學校。", matched: semanticMatch("我喜歡去學校。", "我喜歡去學校。") });

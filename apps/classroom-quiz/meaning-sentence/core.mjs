@@ -6,22 +6,26 @@ export const ROUND_SIZE = 8;
 export const MODES = {
   compose: {
     title: "意思造句",
-    mission: "01",
+    mission: "02",
+    track: "課堂測驗",
     lead: "只看中文意思，自己寫出對應的族語。"
   },
   oral: {
-    title: "看圖口說小考",
-    mission: "02",
-    lead: "看圖念出完整句，每題只錄一次。"
+    title: "發音練習",
+    mission: "01",
+    track: "課堂測驗",
+    lead: "看到圖片就念出對應的族語，每題只錄一次。"
   },
   retell: {
-    title: "聽後轉述",
-    mission: "03",
+    title: "跟唸",
+    mission: "01",
+    track: "基礎學習",
     lead: "聽一段短句，再用族語講一次。"
   },
   reply: {
-    title: "接話小考",
-    mission: "04",
+    title: "問答測驗",
+    mission: "03",
+    track: "課堂測驗",
     lead: "聽問句，立刻用族語回一句。"
   }
 };

@@ -90,8 +90,21 @@ assert.ok(!page.includes('id="heard"'), "三個口說頁面不得再有獨立 #h
 assert.ok(!app.includes("scrambleDecision"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(app));
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + app));
-assert.ok(Object.values(MODES).every((item) => item.title && item.mission));
+assert.ok(Object.values(MODES).every((item) => item.title && item.mission && item.track));
 assert.deepEqual(Object.keys(MODES), ["compose", "oral", "retell", "reply"]);
+assert.equal(MODES.oral.title, "發音練習");
+assert.equal(MODES.oral.mission, "01");
+assert.equal(MODES.compose.mission, "02");
+assert.equal(MODES.reply.title, "問答測驗");
+assert.equal(MODES.reply.mission, "03");
+assert.equal(MODES.retell.title, "跟唸");
+assert.equal(MODES.retell.track, "基礎學習");
+assert.equal(MODES.retell.mission, "01");
+assert.ok(app.includes("${modeInfo.track}"));
+assert.ok(pages.oral.includes("發音練習") && pages.oral.includes("MISSION 01"));
+assert.ok(pages.compose.includes("MISSION 02"));
+assert.ok(pages.reply.includes("問答測驗") && pages.reply.includes("MISSION 03"));
+assert.ok(pages.retell.includes("跟唸") && pages.retell.includes("基礎學習 · MISSION 01"));
 
 console.log("PASS: classroom quiz compose, retell, reply, oral round size, no storage");
 

@@ -5,7 +5,7 @@ import { activeSemanticJudge } from "../../certification-mock/beginner-mock-exam
 import {
   convertToAsrWav, createRecorder, fetchLiveAsrDialects, supportsRecording, transcribe, translateToZh
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
-import { LEVELS, describeCaption, pictureTalkRecords } from "./core.mjs";
+import { LEVELS, describeCaption, pictureTalkRecords, singleImageTurns } from "./core.mjs";
 import { wireInputMode } from "../../shared/input-mode.mjs";
 
 const $ = (selector) => document.querySelector(selector);
@@ -172,7 +172,7 @@ ui.themeGrid.addEventListener("click", (event) => {
   const button = event.target.closest("button[data-level]");
   if (!button || button.disabled) return;
   selectedLevel = LEVELS.find((level) => level.id === button.dataset.level);
-  records = pools[selectedLevel.id] ?? [];
+  records = singleImageTurns(pools[selectedLevel.id]);
   for (const item of ui.themeGrid.querySelectorAll("button[data-level]")) {
     item.setAttribute("aria-pressed", String(item === button));
   }
@@ -198,7 +198,7 @@ async function loadLevels() {
     if (selectedDialect !== dialect) return;
     pools = pictureTalkRecords(junior, senior);
     ui.themeGrid.innerHTML = LEVELS.map((level) => {
-      const count = pools[level.id].length;
+      const count = singleImageTurns(pools[level.id]).length;
       return `<button type="button" data-level="${level.id}" ${count ? "" : "disabled"} aria-pressed="false">${escapeHtml(level.name)}<small>${count} 題</small></button>`;
     }).join("");
   } catch (error) {
@@ -226,13 +226,13 @@ function nextQuestion() {
   ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name} · ${selectedLevel.name}`;
   ui.progress.textContent = `本輪 ${answeredCount} / ${roundSize}`;
   ui.promptKind.textContent = question.title;
-  ui.title.textContent = "用自己的話描述這些圖";
+  ui.title.textContent = "用自己的話描述這張圖";
   ui.tip.textContent = `中文提示：${question.tip}`;
   ui.pictures.dataset.count = String(question.imageUrls.length);
   ui.pictures.innerHTML = question.imageUrls.map((imageUrl, index) => `
     <figure>
       <img src="${escapeHtml(imageUrl)}" alt="看圖描述圖片 ${index + 1}" referrerpolicy="no-referrer">
-      <figcaption>圖片 ${index + 1}</figcaption>
+      <figcaption>${question.imageUrls.length > 1 ? `圖片 ${index + 1}` : "本題圖片"}</figcaption>
     </figure>`).join("");
   ui.answer.value = "";
   ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;

@@ -12,8 +12,8 @@ const $ = (selector) => document.querySelector(selector);
 const ui = {
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
   modelNote: $("#model-note"), quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
-  replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"), showZh: $("#show-zh"),
-  zhHint: $("#zh-hint"), answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"),
+  replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
+  questionTitle: $("#question-title"), answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"),
   time: $("#record-time"), state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"),
   result: $("#result"), retry: $("#retry"), next: $("#next"),
@@ -204,8 +204,7 @@ function nextQuestion() {
   pending = false;
   ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name}`;
   ui.progress.textContent = `本輪 ${answeredCount} / ${roundSize}`;
-  ui.zhHint.textContent = question.chineseText;
-  ui.zhHint.hidden = !ui.showZh.checked;
+  ui.questionTitle.textContent = question.chineseText;
   ui.answer.value = "";
   ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
   clearRecording();
@@ -216,8 +215,6 @@ function nextQuestion() {
   if (inputMode?.mode() === "voice") ui.record.focus();
   else ui.answer.focus();
 }
-
-ui.showZh.addEventListener("change", () => { ui.zhHint.hidden = !ui.showZh.checked; });
 
 function resetPromptAudio() {
   stopAudio();
