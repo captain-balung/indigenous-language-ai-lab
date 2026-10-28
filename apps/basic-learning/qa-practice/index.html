@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="聽族語問句，用自己的話回答。">
+  <meta name="description" content="看中文題目，用自己的話回答。">
   <title>問答練習｜族語e樂園 AI 實驗室</title>
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
@@ -12,7 +12,7 @@
   <a class="skip" href="#practice">跳至練習</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p>基礎學習 · MISSION 04</p><h1>問答練習</h1><span>聽族語問句，用自己的話回答。</span></div>
+    <div class="hero-copy"><p>基礎學習 · MISSION 03</p><h1>問答練習</h1><span>看中文題目，用自己的話回答。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
@@ -20,10 +20,10 @@
     <section class="setup panel" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選擇語別</h2>
       <aside class="task-brief" aria-label="怎麼玩">
-        <p class="task-brief__lead">聽族語問句，用自己的話回答。</p>
+        <p class="task-brief__lead">看中文題目，用自己的話回答。</p>
         <ol>
           <li>選擇語言別與方言別。</li>
-          <li>播放問句，必要時可顯示中文提示。</li>
+          <li>看中文問句；想聽族語再按播放。</li>
           <li>語音錄完會自動送出；打字則按送出。</li>
         </ol>
       </aside>
@@ -41,15 +41,13 @@
     <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
       <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">本輪 1 / 1</span></div>
       <div class="qa-card">
-        <p class="prompt">聽問句回答</p>
-        <h2 id="question-title">用自己的話回答</h2>
+        <p class="prompt">看中文回答</p>
+        <h2 id="question-title">中文問句</h2>
         <div class="player-row">
-          <button id="replay" class="primary" type="button">播放問句</button>
+          <button id="replay" type="button">想聽問句</button>
           <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
         </div>
         <audio id="player"></audio>
-        <label class="hint-toggle"><input id="show-zh" type="checkbox"> 顯示中文問句</label>
-        <p id="zh-hint"></p>
       </div>
 
       <div class="input-mode-bar">

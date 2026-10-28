@@ -29,9 +29,9 @@ const ui = {
 
 const TITLES = {
   compose: ["造句", "看中文，寫出族語"],
-  oral: ["口說", "看圖念出完整句"],
-  retell: ["轉述", "聽完後用族語再講一次"],
-  reply: ["接話", "聽問句，用族語回答"]
+  oral: ["發音", "看到圖片就念出對應的族語"],
+  retell: ["跟唸", "聽完後用族語再講一次"],
+  reply: ["問答", "聽問句，用族語回答"]
 };
 const SPEECH = new Set(["oral", "retell", "reply"]);
 const STATES = {
@@ -78,7 +78,7 @@ function asrUsable(ethnicity) {
 
 async function init() {
   document.title = `${modeInfo.title}｜族語e樂園 AI 實驗室`;
-  ui.mission.textContent = `課堂測驗 · MISSION ${modeInfo.mission}`;
+  ui.mission.textContent = `${modeInfo.track} · MISSION ${modeInfo.mission}`;
   ui.title.textContent = modeInfo.title;
   ui.lead.textContent = modeInfo.lead;
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));

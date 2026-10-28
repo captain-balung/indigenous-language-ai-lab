@@ -51,7 +51,7 @@ async function init() {
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));
 
   if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === "undefined") {
-    ui.api.textContent = "△ 這個瀏覽器不支援錄音。請改用看圖練習（MISSION 01），或換用支援錄音的瀏覽器。";
+    ui.api.textContent = "△ 這個瀏覽器不支援錄音。請改用看圖練習，或換用支援錄音的瀏覽器。";
     ui.api.dataset.state = "error";
     ui.start.disabled = true;
     return;

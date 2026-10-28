@@ -8,16 +8,16 @@ const categories = [
 
 const applicationSeeds = {
   basics: [
-    ["看圖練習", "看生活主題圖片，寫出完整的族語句子。", "assets/icons/friendly-robot.webp", "available", "apps/basic-learning/body-parts-practice/"],
-    ["口說練習", "看圖用族語念出完整句子；想聽教材再跟讀也可以。", "assets/icons/studio-microphone.webp", "available", "apps/basic-learning/body-parts-speaking/"],
-    ["問答練習", "聽族語問句，用自己的話回答。", "assets/icons/speaking-microphone.webp", "available", "apps/basic-learning/qa-practice/"],
-    ["看圖描述", "看一組圖，用自己的話描述畫面裡的事。", "assets/icons/open-storybook.webp", "available", "apps/basic-learning/describe-practice/"]
+    ["跟唸", "聽一段短句，再用族語講一次。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/listen-retell/"],
+    ["看圖口說練習", "看圖用族語念出完整句子；想聽教材再跟讀也可以。", "assets/icons/studio-microphone.webp", "available", "apps/basic-learning/body-parts-speaking/"],
+    ["問答練習", "看中文題目，用自己的話回答。", "assets/icons/speaking-microphone.webp", "available", "apps/basic-learning/qa-practice/"],
+    ["看圖描述", "一次看一張圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/basic-learning/describe-practice/"]
   ],
   classroom: [
+    ["發音練習", "看到圖片就念出對應的族語，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
     ["意思造句", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
-    ["看圖口說小考", "看圖念出完整句，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
-    ["聽後轉述", "聽一段短句，再用族語講一次。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/listen-retell/"],
-    ["接話小考", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"]
+    ["問答測驗", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"],
+    ["看圖測驗", "一次看完整組圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/classroom-quiz/picture-quiz/"]
   ],
   certification: [
     ["初級口說模擬站", "照初級認證的口說三題型，整卷練習一遍。", "assets/icons/bronze-medal.webp", "available", "apps/certification-mock/beginner-mock-exam/"],
