@@ -14,6 +14,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../.
 assert.ok(fs.existsSync(path.join(root, "apps/shared/input-mode.mjs")));
 assert.ok(fs.existsSync(path.join(root, "api/llm-complete.mjs")));
 assert.ok(fs.existsSync(path.join(root, ".env.example")));
+assert.match(
+  fs.readFileSync(path.join(root, "apps/basic-learning/body-parts-practice/styles.css"), "utf8"),
+  /\.record-state\[data-state=["']?idle["']?\]\s*\{[^}]*display\s*:\s*none/,
+);
 assert.equal(DEFAULT_LLM_MODEL, "google/gemma-4-26B-A4B-it");
 assert.equal(LLM_COMPLETE_PATH, "/api/llm-complete");
 
