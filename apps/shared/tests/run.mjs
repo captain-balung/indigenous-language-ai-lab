@@ -77,9 +77,14 @@ assert.equal(
   assert.equal(typePanel.hidden, true);
   assert.equal(voicePanel.hidden, false);
   assert.equal(host.dataset.inputMode, "voice");
+  assert.equal(toggle.dataset.mode, "voice");
+  assert.equal((toggle.innerHTML.match(/<svg/g) || []).length, 2);
+  assert.ok(!toggle.innerHTML.includes("錄音") && !toggle.innerHTML.includes("打字"));
+  assert.match(toggle.innerHTML, /input-mode-toggle__thumb/);
   toggle._click();
   assert.equal(api.mode(), "type");
   assert.equal(changed, "type");
+  assert.equal(toggle.dataset.mode, "type");
   assert.equal(typePanel.hidden, false);
   assert.equal(voicePanel.hidden, true);
   assert.match(toggle.innerHTML, /svg/i);

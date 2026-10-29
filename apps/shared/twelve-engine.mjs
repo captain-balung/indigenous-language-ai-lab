@@ -358,7 +358,7 @@ function showQuestion() {
       ui.inputModeToggle.setAttribute(
         "aria-label",
         speechAvailable
-          ? answerMode === "speech" ? "目前語音，按一下改為打字" : "目前打字，按一下改為語音"
+          ? answerMode === "speech" ? "目前錄音，按一下改為打字" : "目前打字，按一下改為錄音"
           : "此方言沒有語音辨識，使用打字"
       );
     }
