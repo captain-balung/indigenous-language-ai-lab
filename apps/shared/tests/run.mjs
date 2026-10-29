@@ -85,4 +85,6 @@ assert.equal(
   assert.match(toggle.innerHTML, /svg/i);
 }
 
-console.log("PASS: shared llm-complete + resilient semantic judge + input-mode");
+await import("./twelve-data.test.mjs");
+
+console.log("PASS: shared llm-complete + resilient semantic judge + input-mode + twelve data");

@@ -1,6 +1,6 @@
 # 任務圖示
 
-本目錄的 20 枚任務圖示由 OpenAI 內建 ImageGen 產生，再以 `remove_chroma_key.py` 去除洋紅背景，最後由 `crop_atlas.py` 裁切為一致的 256×256 lossless WebP。
+本目錄的 20 枚任務圖示由 OpenAI 內建 ImageGen 產生，再以 `remove_chroma_key.py` 去除洋紅背景，最後由 `crop_atlas.py` 裁切為一致的 256×256 lossless WebP。首頁 22 張卡片沿用這 20 枚圖示，十二年國教的兩張卡沒有另做新圖。
 
 ## 最終生成提示摘要
 
