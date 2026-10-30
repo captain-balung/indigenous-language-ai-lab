@@ -7,6 +7,7 @@ import {
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
 import { dialogueQuestions, qaVerdictLabel } from "./core.mjs";
 import { wireInputMode } from "../../shared/input-mode.mjs";
+import { createHintPanel } from "../../shared/hint.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
@@ -17,8 +18,11 @@ const ui = {
   time: $("#record-time"), state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"),
   result: $("#result"), retry: $("#retry"), next: $("#next"),
+  hintToggle: $(".hint-toggle"), hintPanel: $("#hint-panel"),
   inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
+
+const hint = createHintPanel({ toggle: ui.hintToggle, panel: ui.hintPanel });
 
 const STATES = {
   idle: ["●", "尚未錄音"],
@@ -205,6 +209,7 @@ function nextQuestion() {
   ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name}`;
   ui.progress.textContent = `本輪 ${answeredCount} / ${roundSize}`;
   ui.questionTitle.textContent = question.chineseText;
+  hint.render({ indigenous: question.indigenousText });
   ui.answer.value = "";
   ui.result.hidden = ui.retry.hidden = ui.next.hidden = true;
   clearRecording();
@@ -350,6 +355,7 @@ async function translateAnswer(text) {
 }
 
 function renderResult(verdict, { indigenous, translation, rationale, fallback } = {}) {
+  hint.close();
   const title = qaVerdictLabel(verdict);
   const details = {
     reasonable: "系統認為這段回答有對到問句。",
@@ -371,6 +377,7 @@ function renderResult(verdict, { indigenous, translation, rationale, fallback } 
 }
 
 function showResult(state, text) {
+  hint.close();
   ui.result.hidden = false;
   ui.result.dataset.state = state === "undetermined" ? "unavailable" : state;
   ui.result.textContent = text;
@@ -380,6 +387,7 @@ ui.next.addEventListener("click", () => { if (answeredCount >= roundSize) answer
 
 function resetQuiz() {
   stopAudio();
+  hint.close();
   selectedDialect = undefined;
   questions = [];
   deck = undefined;

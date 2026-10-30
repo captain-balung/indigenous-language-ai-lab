@@ -41,7 +41,7 @@ assert(applications[1].title === "跟唸" && applications[1].status === "availab
 assert(applications[2].title === "看圖口說練習" && applications[2].status === "available" && applications[2].href === "apps/basic-learning/body-parts-speaking/", "Third basics card must link to picture speaking practice");
 assert(applications[3].title === "問答練習" && applications[3].status === "available" && applications[3].href === "apps/basic-learning/qa-practice/", "Fourth basics card must link to Q&A practice");
 assert(applications[4].title === "看圖描述" && applications[4].status === "available" && applications[4].href === "apps/basic-learning/describe-practice/", "Fifth basics card must link to picture-describe practice");
-assert(applications[5].title === "十二年國教" && applications[5].status === "available" && applications[5].href === "apps/classroom-quiz/twelve-translation/", "First classroom card must link to the twelve-year translation practice");
+assert(applications[5].title === "十二年國教" && applications[5].status === "available" && applications[5].href === "apps/classroom-quiz/twelve/", "First classroom card must link to the twelve-year hub");
 assert(applications[6].title === "發音練習" && applications[6].href === "apps/classroom-quiz/picture-speaking-quiz/", "Classroom pronunciation card");
 assert(applications[7].title === "意思造句" && applications[7].href === "apps/classroom-quiz/meaning-sentence/", "Classroom compose card");
 assert(applications[8].title === "問答測驗" && applications[8].href === "apps/classroom-quiz/question-reply/", "Classroom reply card");

@@ -1,7 +1,7 @@
-// 十二年國教兩個練習的共用流程：跟唸、翻譯。
+// 十二年國教三個練習的共用流程：跟唸、發音練習、翻譯。
 //
 // 資料只在 data/twelve/；語音辨識、翻譯與 AI 判別沿用既有模組。
-// 兩個 app 的 index.html 共用同一組元素 ID，由 boot(activity) 決定顯示哪一種作答方式。
+// 三個 app 的 index.html 共用同一組元素 ID，由 boot(activity) 決定顯示哪一種作答方式。
 
 import { exactMatch, judgeAnswer } from "../basic-learning/body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../basic-learning/body-parts-practice/dialects.mjs";
@@ -72,6 +72,7 @@ const STATES = {
 
 const TITLES = {
   retell: ["跟唸", "聽完後用族語再講一次"],
+  pronounce: ["發音", "看族語文字，錄音念出來"],
   translateTyping: ["翻譯・打字", "看中文，用族語寫出來"],
   translateSpeech: ["翻譯・錄音", "看中文，用族語說出來"]
 };
@@ -110,12 +111,14 @@ function setHintOpen(open) {
 
 function renderHint(question) {
   if (!ui.hintPanel || !question) return;
-  const lesson = `第 ${question.level} 階第 ${question.lesson} 課`;
-  ui.hintLesson.textContent = question.lessonTitleCh
-    ? `${lesson}・${question.lessonTitleCh}`
-    : lesson;
-  ui.hintChinese.textContent = question.chineseText;
-  ui.hintIndigenous.textContent = question.indigenousText;
+  if (ui.hintLesson) {
+    const lesson = `第 ${question.level} 階第 ${question.lesson} 課`;
+    ui.hintLesson.textContent = question.lessonTitleCh
+      ? `${lesson}・${question.lessonTitleCh}`
+      : lesson;
+  }
+  if (ui.hintChinese) ui.hintChinese.textContent = question.chineseText;
+  if (ui.hintIndigenous) ui.hintIndigenous.textContent = question.indigenousText;
   setHintOpen(false);
 }
 
@@ -262,6 +265,7 @@ async function verifyServices() {
     notes.push("語音辨識即時清單暫時無法取得，改以內建對照表送出");
   }
   if (activity === "retell") notes.push("先辨識，再把聽到的句子翻成中文");
+  if (activity === "pronounce") notes.push("先辨識；與教材字面一致時不另外翻譯");
   if (activity === "translate") notes.push("打字會把句子送去翻譯；錄音先辨識再翻譯");
   notes.push("語意使用 vLLM AI 判別");
   if (!supportsRecording()) notes.push("這個瀏覽器不支援錄音，錄音模式無法使用");
@@ -368,8 +372,10 @@ function showQuestion() {
   renderHint(question);
 
   ui.questionText.hidden = activity === "retell";
-  ui.questionSubtext.hidden = activity === "retell";
-  if (activity === "translate") {
+  ui.questionSubtext.hidden = activity === "retell" || activity === "pronounce";
+  if (activity === "pronounce") {
+    ui.questionText.textContent = question.indigenousText;
+  } else if (activity === "translate") {
     ui.questionText.textContent = question.chineseText;
     ui.questionSubtext.textContent = `第 ${question.level} 階第 ${question.lesson} 課・${question.lessonTitleCh}`;
   }
@@ -377,7 +383,7 @@ function showQuestion() {
   setHidden(ui.compose, activity !== "translate" || speech);
   setHidden(ui.submitRow, activity !== "translate" || speech);
   setHidden(ui.speech, !speech);
-  setHidden(ui.audioPanel, activity === "translate");
+  setHidden(ui.audioPanel, activity === "translate" || activity === "pronounce");
   ui.audioPanel.classList.remove("is-after-answer");
   setHidden(ui.skipAudio, true);
   ui.result.hidden = true;
@@ -404,6 +410,8 @@ function showQuestion() {
   if (activity === "translate") {
     if (speech) ui.record?.focus();
     else ui.answer?.focus();
+  } else if (activity === "pronounce") {
+    ui.record?.focus();
   } else {
     ui.replay?.focus();
   }
@@ -411,9 +419,12 @@ function showQuestion() {
 
 function prepareAudio(url) {
   ui.player.pause();
-  pendingAudioUrl = activity === "translate" ? (url || null) : null;
-  if (activity === "translate") {
-    // 翻譯在作答前不載入答案音檔，避免從網路預先取得教材句子。
+  const deferAudio = activity === "translate" || activity === "pronounce";
+  pendingAudioUrl = deferAudio ? (url || null) : null;
+  if (deferAudio) {
+    // 翻譯與發音練習在作答前不載入答案音檔，避免從網路預先取得教材句子或範例。
+    ui.audioPanel.hidden = true;
+    ui.audioPanel.classList.remove("is-after-answer");
     ui.player.removeAttribute("src");
     ui.player.load?.();
     ui.replay.disabled = true;
@@ -423,9 +434,10 @@ function prepareAudio(url) {
     ui.player.load?.();
     ui.replay.disabled = !url;
   }
-  ui.replay.textContent = activity === "retell" ? "播放短句" : "播放教材音檔";
+  ui.replay.textContent = activity === "retell" ? "播放短句" : activity === "pronounce" ? "播放範例" : "播放教材音檔";
   const messages = {
     retell: "按播放聽短句",
+    pronounce: "作答後可播放範例",
     translate: "作答後可聽教材音檔"
   };
   ui.audioState.textContent = url ? messages[activity] : "本題沒有教材音檔";
@@ -645,7 +657,7 @@ function finish(result, reveal, current) {
   const rationale = result.rationale ? `<p class="judge-rationale">${escapeHtml(result.rationale)}</p>` : "";
   ui.result.innerHTML = `<strong>${headline}</strong><p>${detail}</p>${rationale}${heard || translation || textbook ? `<dl>${heard}${translation}${textbook}</dl>` : ""}`;
 
-  if (activity === "translate") {
+  if (activity === "translate" || activity === "pronounce") {
     ui.audioPanel.hidden = false;
     ui.audioPanel.classList.add("is-after-answer");
     if (pendingAudioUrl) {
@@ -653,7 +665,9 @@ function finish(result, reveal, current) {
       ui.player.load?.();
     }
     ui.replay.disabled = !pendingAudioUrl;
-    ui.audioState.textContent = pendingAudioUrl ? "可播放教材音檔" : "本題沒有教材音檔";
+    ui.audioState.textContent = pendingAudioUrl
+      ? activity === "pronounce" ? "可播放教材範例" : "可播放教材音檔"
+      : "本題沒有教材音檔";
     ui.audioState.dataset.state = "idle";
   } else if (ui.audioState.dataset.state === "ended") {
     ui.audioState.textContent = "播放完畢";

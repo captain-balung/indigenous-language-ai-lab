@@ -15,7 +15,7 @@ const applicationSeeds = {
     ["看圖描述", "一次看一張圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/basic-learning/describe-practice/"]
   ],
   classroom: [
-    ["十二年國教", "看中文，作答時切換錄音或打字，翻成族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/twelve-translation/"],
+    ["十二年國教", "看族語句子練發音，或看中文練翻譯；兩種練習都在這裡。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/twelve/"],
     ["發音練習", "看到圖片就念出對應的族語，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
     ["意思造句", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
     ["問答測驗", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"],

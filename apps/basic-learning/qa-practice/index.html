@@ -6,6 +6,7 @@
   <title>問答練習｜族語e樂園 AI 實驗室</title>
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
+  <link rel="stylesheet" href="/apps/shared/hint.css">
   <link rel="stylesheet" href="/apps/basic-learning/qa-practice/styles.css">
 </head>
 <body>
@@ -48,6 +49,15 @@
           <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
         </div>
         <audio id="player"></audio>
+      </div>
+
+      <div class="hint-bar">
+        <button class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint-panel">看提示</button>
+      </div>
+      <div id="hint-panel" class="sentence-hint" hidden>
+        <dl>
+          <dt>族語問句</dt><dd data-hint="indigenous"></dd>
+        </dl>
       </div>
 
       <div class="input-mode-bar">

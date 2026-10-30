@@ -13,6 +13,7 @@ export function pictureTalkRecords(juniorShard, seniorShard) {
       tip: item.tip,
       indigenousText: item.indigenousText,
       chineseText: item.chineseText,
+      audioUrl: item.audioUrl ?? "",
       imageUrls: [...item.imageUrls]
     }));
   const intermediate = (seniorShard?.pictureTalk ?? [])
@@ -24,6 +25,7 @@ export function pictureTalkRecords(juniorShard, seniorShard) {
       tip: item.tip,
       indigenousText: item.indigenousText,
       chineseText: item.chineseText,
+      audioUrl: item.audioUrl ?? "",
       imageUrls: [item.imageUrl]
     }));
   return { beginner, intermediate };

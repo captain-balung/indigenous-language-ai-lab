@@ -2,7 +2,6 @@ textarea{width:100%;min-height:7rem;padding:.65rem .8rem;color:var(--ink);backgr
 .answer-area .primary{width:auto}
 #start{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}
 #next{background:var(--coral);color:#fff}
-#picture-tip{margin:.2rem 0 .9rem;font-weight:800}
 .picture-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;margin:0 0 1rem}
 .picture-grid[data-count="1"]{grid-template-columns:minmax(0,280px)}
 .picture-grid figure{margin:0;padding:.45rem;border:3px solid var(--ink);border-radius:14px;background:#fff;text-align:center}

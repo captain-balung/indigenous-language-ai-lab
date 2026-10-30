@@ -18,8 +18,9 @@ assert.deepEqual(LEVELS.map((item) => item.level), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
 assert.equal(ROUND_SIZE, 8);
 assert.equal(levelOptions().length, 9);
 assert.ok(Object.values(ACTIVITIES).every((item) => item.label && item.track && item.mission));
-assert.deepEqual(Object.keys(ACTIVITIES).sort(), ["retell", "translate"], "只保留跟唸與翻譯");
+assert.deepEqual(Object.keys(ACTIVITIES).sort(), ["pronounce", "retell", "translate"], "保留跟唸、發音與翻譯");
 assert.equal(ACTIVITIES.retell.track, "基礎學習");
+assert.equal(ACTIVITIES.pronounce.track, "課堂測驗");
 assert.equal(ACTIVITIES.translate.track, "課堂測驗");
 
 assert.equal(normalizeText("  ’inava   u  ziya? "), "'inava u ziya?");
@@ -53,7 +54,7 @@ for (const shard of shards) {
     const translatePool = sentencePool(shard, level.level, { key: "chinese" });
     assert.ok(translatePool.length >= ROUND_SIZE, `${shard.dialectName} 第 ${level.level} 階可出翻譯的句子不足`);
 
-    for (const activity of ["retell"]) {
+    for (const activity of ["retell", "pronounce"]) {
       const round = buildRound({ shard, level: level.level, activity, size: ROUND_SIZE, random: () => 0.37 });
       assert.equal(round.length, ROUND_SIZE, `${shard.dialectName} 第 ${level.level} 階 ${activity} 題數`);
       assert.equal(new Set(round.map((item) => item.roundId)).size, ROUND_SIZE);
@@ -97,4 +98,4 @@ const fakeFetch = async (url) => ({
 });
 assert.deepEqual(await loadShard(1, fakeFetch), { dialectId: 1 });
 
-console.log(`PASS: twelve data ${shards.length} shards, ${dataset.sentenceCount} sentences, 2 activities × 9 levels`);
+console.log(`PASS: twelve data ${shards.length} shards, ${dataset.sentenceCount} sentences, 3 activities × 9 levels`);

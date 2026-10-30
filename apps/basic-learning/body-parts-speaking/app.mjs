@@ -6,6 +6,7 @@ import {
   ASR_TARGET_SAMPLE_RATE, ASR_TIMEOUT_MS, REQUEST_TIMEOUT_MS, SLOW_HINT_AFTER_MS
 } from "./asr.mjs";
 import { judgeAiMeaning } from "../../shared/semantic-meaning.mjs";
+import { createHintPanel } from "../../shared/hint.mjs";
 
 const API = "https://ai3.iformosa.com.tw/formosan_ai/api.php";
 const $ = (selector) => document.querySelector(selector);
@@ -14,6 +15,7 @@ const ui = {
   modelNote: $("#model-note"), themes: $("#themes"), themeGrid: $("#theme-grid"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   image: $("#question-image"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
+  hintToggle: $(".hint-toggle"), hintPanel: $("#hint-panel"),
   record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
   rerecord: $("#rerecord"), result: $("#result"),
@@ -25,6 +27,12 @@ let translationCodes = new Set(DIALECTS.map((d) => d.code));
 let asrAudit = null;
 let recorder = null, mediaStream = null, chunks = [], startedAt = 0, timer = null;
 let recordedBlob = null, lastHeard = null;
+
+const hint = createHintPanel({
+  toggle: ui.hintToggle,
+  panel: ui.hintPanel,
+  onClose: () => resetModelAudio()
+});
 
 /* ---------- 狀態列：文字＋圖示，不只靠顏色 ---------- */
 
@@ -188,6 +196,7 @@ function nextQuestion() {
   ui.progress.textContent = `本輪 ${answeredCount} / ${roundSize}`;
   ui.image.src = question.imageSrc;
   ui.image.alt = `請辨認圖片（${selectedTheme.name}，${selectedDialect.name}）`;
+  hint.render({ chinese: question.chineseText, indigenous: question.indigenousText });
   clearRecording();
   ui.result.hidden = ui.retry.hidden = ui.reveal.hidden = ui.next.hidden = ui.model.hidden = true;
   ui.record.disabled = false;
@@ -208,7 +217,9 @@ ui.replay.addEventListener("click", () => {
   setAudioState("playing", "播放中…");
   const play = ui.player.play();
   if (play && typeof play.catch === "function") {
-    play.catch(() => setAudioState("failed", "無法播放，請再試一次"));
+    play.catch(() => {
+      if (ui.player.getAttribute("src")) setAudioState("failed", "無法播放，請再試一次");
+    });
   }
 });
 
@@ -224,7 +235,9 @@ function setAudioState(state, text) {
 }
 
 ui.player.addEventListener("ended", () => setAudioState("ended", "播放結束"));
-ui.player.addEventListener("error", () => setAudioState("failed", "音檔載入失敗"));
+ui.player.addEventListener("error", () => {
+  if (ui.player.getAttribute("src")) setAudioState("failed", "音檔載入失敗");
+});
 
 /* ---------- 錄音 ---------- */
 
@@ -422,6 +435,7 @@ async function translateToZh(text, srcLang) {
 /* ---------- 呈現 ---------- */
 
 function renderResult(result, heard) {
+  hint.close();
   ui.result.hidden = false;
   ui.result.dataset.state = result.type;
   const messages = {
@@ -456,6 +470,7 @@ ui.next.addEventListener("click", () => { if (answeredCount >= roundSize) answer
 
 function resetQuiz() {
   stopAudio();
+  hint.close();
   selectedDialect = undefined; deck = undefined; question = undefined;
   ui.quiz.hidden = true;
   clearRecording();
@@ -467,6 +482,7 @@ function resetQuiz() {
 }
 
 function showResult(state, text) {
+  hint.close();
   ui.result.hidden = false;
   ui.result.dataset.state = state;
   ui.result.textContent = text;

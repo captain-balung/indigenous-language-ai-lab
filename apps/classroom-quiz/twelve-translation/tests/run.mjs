@@ -21,8 +21,8 @@ assert.ok(page.includes('id="panel-compose"') && page.includes('id="panel-speech
 assert.ok(page.includes('id="answer"') && page.includes('id="submit"'));
 assert.ok(page.includes("/apps/shared/twelve.css"));
 assert.ok(page.includes("/apps/classroom-quiz/twelve-translation/app.mjs"));
-assert.ok(!page.includes('href="/apps/classroom-quiz/twelve/"'));
-assert.ok(!page.includes("回十二年國教選單"));
+assert.ok(page.includes('href="/apps/classroom-quiz/twelve/"'));
+assert.ok(page.includes("回十二年國教選單"));
 assert.ok(page.includes("用錄音或打字翻成族語"));
 assert.ok(page.includes("作答時可切換錄音或打字"));
 assert.ok(page.includes("不適用 CC BY-NC-SA 4.0"));

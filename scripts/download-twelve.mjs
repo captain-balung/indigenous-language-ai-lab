@@ -1,6 +1,6 @@
 // 族語 E 樂園「十二年國教課程原住民族語文教材」語料下載器。
 //
-// 只收第 1–9 階：這九年是短句（每課約 3–7 句），適合跟唸與翻譯練習。
+// 只收第 1–9 階：這九年是短句（每課約 3–7 句），適合跟唸、發音與翻譯練習。
 // 第 10–12 階是長段落，本版不收。
 //
 // 來源是族語 E 樂園公開的舊站 API：
@@ -341,7 +341,7 @@ const sentenceCount = [...shards.values()].reduce(
   ),
   0
 );
-if (missingAudioCount) console.warn(`注意：有 ${missingAudioCount} 句沒有音檔；跟唸會跳過這些句子。`);
+if (missingAudioCount) console.warn(`注意：有 ${missingAudioCount} 句沒有音檔；跟唸與發音練習會跳過這些句子。`);
 
 if (dryRun) {
   const firstId = selectedDialects[0].id;
@@ -381,7 +381,7 @@ for (const [dialectId, shard] of shards) {
 const dataset = {
   schemaVersion: 1,
   title: "十二年國教課程原住民族語文教材：第 1–9 階語料",
-  description: "族語 E 樂園十二年國教課程原住民族語文教材的第 1–9 階，42 個方言別、每方言 90 課，供跟唸與翻譯練習使用。",
+  description: "族語 E 樂園十二年國教課程原住民族語文教材的第 1–9 階，42 個方言別、每方言 90 課，供跟唸、發音與翻譯練習使用。",
   source: {
     publisher: "教育部國民及學前教育署、原住民族委員會",
     editor: "國立政治大學原住民族研究中心",
@@ -424,9 +424,9 @@ const manifest = {
 await writeFile(path.join(tempRoot, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
 
 const readme = `# 十二年國教課程原住民族語文教材：第 1–9 階\n\n` +
-  `本目錄保存「族語 E 樂園」十二年國教課程原住民族語文教材的第 1–9 階，供「跟唸」「翻譯」兩個練習使用。\n\n` +
+  `本目錄保存「族語 E 樂園」十二年國教課程原住民族語文教材的第 1–9 階，供「跟唸」「發音練習」「翻譯」三個練習使用。\n\n` +
   `- 42 個方言別，每方言 9 階 × 10 課 = 90 課，共 ${sentenceCount} 句。\n` +
-  `- 其中 ${missingAudioCount} 句沒有官方音檔；跟唸會跳過這些句子，翻譯仍可使用文字。\n` +
+  `- 其中 ${missingAudioCount} 句沒有官方音檔；跟唸與發音練習會跳過這些句子，翻譯仍可使用文字。\n` +
   `- \`dialects/{dialectId}.json\`：每個方言一個分片，頁面只載入使用者選的那一個。\n` +
   `- \`dataset.json\`：索引、來源、階級表與完整性數字。**不含題目本身。**\n` +
   `- \`manifest.json\`：來源 URL、檔案大小與 SHA-256。\n` +

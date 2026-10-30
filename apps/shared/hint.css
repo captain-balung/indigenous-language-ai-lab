@@ -1,0 +1,22 @@
+/* 基礎學習共用的「看提示」樣式：預設收合，展開後才看到中文／族語與範例音檔。 */
+
+[hidden]{display:none!important}
+
+.hint-bar{display:flex;justify-content:flex-start;margin:0 0 .85rem}
+.hint-toggle,#hint-toggle{min-height:44px;padding:.45rem .95rem;background:#eef5ff;font-size:.95rem}
+.hint-toggle[aria-expanded="true"],#hint-toggle[aria-expanded="true"]{background:#dff5e7}
+.sentence-hint{margin:0 0 1rem;padding:1rem 1.1rem;border:3px dashed var(--ink);border-radius:18px;background:#fffdf5}
+.sentence-hint__lesson{margin:0 0 .55rem;font-weight:900;color:#4a5474}
+.sentence-hint .player-row{margin:.85rem 0 0}
+.sentence-hint dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;margin:0}
+.sentence-hint dt{font-weight:900;color:#5a6478}
+.sentence-hint dd{margin:0;font-weight:800;line-height:1.55;word-break:break-word}
+.sentence-hint [data-hint="chinese"],#hint-chinese{font-size:1.05rem}
+.sentence-hint [data-hint="indigenous"],#hint-indigenous{font-size:1.15rem}
+.sentence-hint [data-hint="tip"]{font-size:1.05rem}
+
+@media(max-width:720px){
+  .sentence-hint dl{grid-template-columns:1fr}
+  .sentence-hint dt{margin-top:.25rem}
+  .sentence-hint dt:first-of-type{margin-top:0}
+}

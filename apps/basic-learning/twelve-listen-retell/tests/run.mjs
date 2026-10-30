@@ -9,6 +9,7 @@ const page = read("apps/basic-learning/twelve-listen-retell/index.html");
 const app = read("apps/basic-learning/twelve-listen-retell/app.mjs");
 const engine = read("apps/shared/twelve-engine.mjs");
 const styles = read("apps/shared/twelve.css");
+const hintStyles = read("apps/shared/hint.css");
 const home = read("app.js");
 const index = read("index.html");
 
@@ -27,6 +28,7 @@ assert.ok(page.includes('id="hint-lesson"'));
 assert.ok(page.includes('id="hint-chinese"') && page.includes('id="hint-indigenous"'));
 assert.ok(page.includes("看提示"));
 assert.ok(page.includes("/apps/shared/twelve.css"));
+assert.ok(page.includes("/apps/shared/hint.css"));
 assert.ok(page.includes("/apps/basic-learning/twelve-listen-retell/app.mjs"));
 assert.ok(page.includes("十二年國教"));
 assert.ok(page.includes("不適用 CC BY-NC-SA 4.0"));
@@ -49,10 +51,10 @@ assert.ok(engine.includes("question.indigenousText"));
 assert.ok(engine.includes('setAttribute("aria-expanded"'));
 assert.ok(engine.includes("setHintOpen(false)"));
 assert.ok(styles.includes("[hidden]{display:none!important}"));
+assert.ok(hintStyles.includes(".hint-toggle") && hintStyles.includes(".sentence-hint"));
 assert.ok(home.includes("十二年國教"));
 assert.ok(home.includes("apps/basic-learning/twelve-listen-retell/"));
-assert.ok(home.includes("apps/classroom-quiz/twelve-translation/"));
-assert.ok(!home.includes('"apps/classroom-quiz/twelve/"'));
+assert.ok(home.includes("apps/classroom-quiz/twelve/"));
 assert.ok(index.includes("22 項任務"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(page + app + engine));
 

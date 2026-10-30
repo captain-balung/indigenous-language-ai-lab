@@ -6,6 +6,7 @@
   <title>看圖描述｜族語e樂園 AI 實驗室</title>
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
+  <link rel="stylesheet" href="/apps/shared/hint.css">
   <link rel="stylesheet" href="/apps/basic-learning/describe-practice/styles.css">
 </head>
 <body>
@@ -46,7 +47,21 @@
       <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">本輪 1 / 1</span></div>
       <p class="prompt" id="prompt-kind">看圖描述</p>
       <h2 id="question-title">用自己的話描述這張圖</h2>
-      <p id="picture-tip"></p>
+      <div class="hint-bar">
+        <button class="hint-toggle" type="button" aria-expanded="false" aria-controls="hint-panel">看提示</button>
+      </div>
+      <div id="hint-panel" class="sentence-hint" hidden>
+        <dl>
+          <dt>中文提示</dt><dd data-hint="tip"></dd>
+          <dt>教材中文</dt><dd data-hint="chinese"></dd>
+          <dt>教材族語</dt><dd data-hint="indigenous"></dd>
+        </dl>
+        <div class="player-row">
+          <button id="replay" class="primary" type="button">播放範例</button>
+          <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽範例再按</span>
+        </div>
+        <audio id="player"></audio>
+      </div>
       <div id="picture-grid" class="picture-grid"></div>
       <div class="answer-area">
         <div class="input-mode-bar">

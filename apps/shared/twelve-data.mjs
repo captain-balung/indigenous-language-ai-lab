@@ -1,6 +1,6 @@
 // 十二年國教練習的共用資料層。
 //
-// 只處理第 1–9 階：每階 10 課，句子較短，適合跟唸與翻譯。
+// 只處理第 1–9 階：每階 10 課，句子較短，適合跟唸、發音與翻譯。
 // 分片格式見 data/twelve/README.md；本模組不碰錄音或 UI。
 
 export const LEVELS = [
@@ -25,6 +25,12 @@ export const ACTIVITIES = {
     track: "基礎學習",
     mission: "05",
     lead: "聽一段短句，再用族語跟唸一次。"
+  },
+  pronounce: {
+    label: "發音練習",
+    track: "課堂測驗",
+    mission: "05",
+    lead: "看族語文字，錄音念出來。"
   },
   translate: {
     label: "翻譯",
@@ -122,7 +128,7 @@ function uniqueKeyFor(activity) {
  * @param {object} input
  * @param {object} input.shard 方言分片
  * @param {number} input.level 1–9
- * @param {"retell"|"translate"} input.activity
+ * @param {"retell"|"pronounce"|"translate"} input.activity
  * @param {"typing"|"speech"} [input.answerMode] 翻譯限定
  * @param {number} [input.size]
  * @param {() => number} [input.random]
