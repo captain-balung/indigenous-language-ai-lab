@@ -871,6 +871,16 @@ assert.ok(appCode.includes("lostTarget = Boolean(questTarget)"), "答錯後輸�
 assert.ok(!appCode.includes("先點一個人") && !appCode.includes("先點場景裡的人"), "不再顯示先點人的操作句子");
 assert.ok(!appCode.includes("questHint(") && !coreCode.includes("questHint("), "移除多餘的任務提示函式");
 assert.ok(page.includes('id="quest-hint"') && page.includes('aria-expanded="false"'), "看提示保留、預設收起");
+assert.ok(page.includes('>聽正確說法</button>'), "提示區要有聽正確說法的按鈕");
+assert.ok(
+  page.indexOf('id="quest-hint-box"') < page.indexOf('id="quest-replay"')
+    && page.indexOf('id="quest-replay"') < page.indexOf('id="quest-body"'),
+  "聽正確說法要放在看提示區塊內，任務卡上不公布答案"
+);
+{
+  const board = page.slice(page.indexOf('class="dialogue quest-board"'), page.indexOf('id="quest-goal"'));
+  assert.ok(!board.includes("quest-replay"), "任務卡不要再出現正確說法播放鈕");
+}
 assert.ok(appCode.includes('ui.questHint.textContent = open ? "收起提示" : "看提示"'), "看提示要能展開／收起");
 assert.ok(appCode.includes("finishQuestTurn({ keepRecording: Boolean(useVoice) })"), "服務失敗時要保留錄音重試");
 assert.ok(appCode.includes("const keepRetry = !ui.retry.hidden"), "重試判定不能把上次錄音清掉");
@@ -984,8 +994,8 @@ assert.ok(
   "還沒問到人前要藏起選項、購物籃與鎖住的東西"
 );
 assert.ok(
-  appCode.includes("if (!(questState?.learned ?? []).length) return"),
-  "click 關要先問到人才能開門，不能直接跳過提問"
+  /if \(!\(questState\?\.learned \?\? \[\]\)\.length\) \{\n\s*playJudgeSound\(false\);\n\s*return;\n\s*\}/.test(appCode),
+  "click 關要先問到人才能開門；太早點要播 wrong，不能直接跳過提問"
 );
 // 購物清單折疊（官方 #buying-list-btn）
 assert.ok(
@@ -1013,15 +1023,38 @@ assert.ok(
     && appCode.includes("line.reply.audioUrl"),
   "借筆／借橡皮擦問錯人要照官方回覆族語、中文與錄音，不能先被判定成問對"
 );
+// 婚禮（尋找物品）等關卡問到第一個人後，動作雖然出現，還沒問過的人仍要能再問。
+const canAskMoreFn = appCode.match(/function canAskMore\(\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+assert.ok(
+  canAskMoreFn.includes('kind !== "select" && kind !== "take" && kind !== "click"')
+    && canAskMoreFn.includes("!questIsLearned(quest, target.id, questState)"),
+  "選物／放籃子／點門關卡要保留還沒問過的人"
+);
+assert.ok(
+  appCode.includes('phase === "act" && !canAskMore()')
+    && appCode.includes('canAsk || phase === "place" || canAskExtra')
+    && appCode.includes('phase === "ask" || phase === "speak" || canAskMore()'),
+  "動作階段點人仍要能再問，不能問完一位就鎖住其他人物"
+);
 assert.ok(
   appCode.includes("rebound.chineseText") && appCode.includes("rebound.audioUrl"),
   "問句不對時要播官方 rebound，中文也要用官方 textCh，不自行改寫"
 );
 assert.ok(
   !appCode.includes("ui.questReplay.disabled")
-    && appCode.includes('ui.questReplay.addEventListener("click", replayQuestAudio)')
-    && appCode.includes("questLineFor(quest, targetId)?.audioUrl"),
-  "「再聽一次」任何時候都能按；還沒播過錄音就播這一關該說的示範句"
+    && appCode.includes('ui.questReplay.addEventListener("click", replayQuestAudio)'),
+  "「聽正確說法」任何時候都能按"
+);
+{
+  const replayFn = appCode.match(/function replayQuestAudio\(\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+  assert.ok(
+    replayFn.includes("questCorrectSentenceUrl()") && !replayFn.includes('getAttribute("src")'),
+    "「聽正確說法」每次都要播當前這一步的正確句子，不是重播上一段"
+  );
+}
+assert.ok(
+  appCode.includes("let questAudioNextUrl") && appCode.includes('questAudioNextUrl = "";'),
+  "換句時要清掉待接音檔，避免聽完正確說法又播出上一段的下一句"
 );
 // 過關只鎖名牌卡，不能把「已問過的同學」那排重播鈕一起鎖住。
 const finishQuestFn = appCode.match(/function finishQuest\(\) \{[\s\S]*?\n\}/)?.[0] ?? "";
@@ -1029,6 +1062,11 @@ assert.ok(
   finishQuestFn.includes('ui.questTagDock.querySelectorAll("button")')
     && !finishQuestFn.includes('ui.questTags.querySelectorAll("button")'),
   "過關後「已問過的同學」重播鈕仍要能按"
+);
+assert.ok(
+  !finishQuestFn.includes("ui.questProgress.hidden = true")
+    && /\.scene-nav #quest-hint\{[^}]*margin-left:auto/.test(stageStyle),
+  "過關後進度列不能消失、看提示要釘在右邊，位置才不會跳"
 );
 assert.ok(
   appCode.includes("if (line) playQuestReply(line);"),
@@ -1051,6 +1089,32 @@ assert.ok(page.includes('id="quest-right-sound"') && page.includes('id="quest-wr
 assert.ok(appCode.includes("showQuestComplete"), "過關先出「完成任務」鈕，學者自己按了才彈窗");
 assert.ok(appCode.includes("questState.failures") , "答錯要累計次數，滿 3 次出現自動說");
 assert.ok(appCode.includes("playJudgeSound(ok)"), "確定鍵判定要播對／錯音效");
+// 所有有判定的互動都要有官方 right／wrong；純選取（挑名牌、放進籃子）不算判定。
+{
+  const placeCardFn = appCode.match(/function placeNameCard\(targetId, cardId\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+  assert.ok(
+    placeCardFn.includes("playJudgeSound(false)") && placeCardFn.includes("playJudgeSound(true)"),
+    "拉名牌放對／放錯都要有對錯音效"
+  );
+  const clickFn = appCode.match(/function handleQuestClick\(\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+  assert.ok(
+    clickFn.includes("playJudgeSound(false)") && clickFn.includes("playJudgeSound(true)"),
+    "點門成功／還沒問人就點都要有對錯音效"
+  );
+  const runLineFn = appCode.slice(appCode.indexOf("const runQuestLine = createSingleFlight"), appCode.indexOf("// 同學的回應要同時給族語與中文"));
+  assert.ok(
+    runLineFn.includes("playJudgeSound(true)")
+      && runLineFn.includes("playJudgeSound(false)")
+      && runLineFn.includes("scheduleQuestVoice(() => playQuestReply(line))")
+      && runLineFn.includes("scheduleQuestVoice(() => playQuestClip(rebound.audioUrl))"),
+    "回答句子要先播對錯音效，再播回應或 rebound"
+  );
+  const refusalFn = appCode.match(/function showBorrowRefusal\(targetId\) \{[\s\S]*?\n\}/)?.[0] ?? "";
+  assert.ok(
+    refusalFn.includes("playJudgeSound(false)") && refusalFn.includes("scheduleQuestVoice"),
+    "借東西問錯人要先播 wrong，再播對方拒絕"
+  );
+}
 assert.ok(page.includes('id="start-quest"'), "任務結果區保留接著玩任務鈕");
 assert.ok(page.includes('id="quest-layers"'), "圖層與可點區要有一個容器");
 assert.ok(page.includes('id="quest-goal"'), "要有目標面板（選項清單、購物籃、結語）");
@@ -1148,6 +1212,10 @@ assert.ok(appCode.includes("questState.picked = optionId"));
 assert.ok(
   /\.quest-option-btn--select\.is-picked\{/.test(stageStyle),
   "陶壺選取要用「已選、尚未確定」的樣式，不能長得像答對的綠色"
+);
+assert.ok(
+  /\.quest-goal #option-confirm,\.quest-goal #basket-confirm\{[^}]*margin-top/.test(stageStyle),
+  "候選物品／購物籃和「確定」按鈕之間要留出間隔"
 );
 // 點門完成後顯示官方收尾台詞，收掉舊目標面板。
 assert.ok(appCode.includes("quest.closing?.text"));

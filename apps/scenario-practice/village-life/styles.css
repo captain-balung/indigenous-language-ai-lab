@@ -25,6 +25,8 @@ fieldset.themes{margin:1.7rem 0 1.4rem;background:#fff8e6}
 .quiz-top>span{white-space:nowrap}
 .scene-nav{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:.8rem 0 0}
 .scene-nav button{min-height:44px;flex:0 0 auto}
+/* 進度列只在部分關卡出現；把「看提示」釘在右邊，進度出現或消失時才不會左右跳。 */
+.scene-nav #quest-hint{margin-left:auto}
 .scene-nav p{flex:1 1 260px;margin:0;font-weight:800;opacity:.85}
 
 /* 遊戲化舞台：官方互動模組是全幅場景圖，對話卡半透明地壓在場景上。
@@ -115,6 +117,8 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .quest-goal h3{margin:0 0 .5rem;font-size:1.2rem}
 .quest-goal p{margin:.3rem 0 0;font-weight:800}
 .quest-options{display:flex;flex-wrap:wrap;gap:.5rem}
+/* 候選物品／購物籃和下面的「確定」之間要留白，不然按鈕會貼在物品下緣。 */
+.quest-goal #option-confirm,.quest-goal #basket-confirm{margin-top:.8rem}
 .quest-option-btn{display:grid;justify-items:center;gap:.2rem;padding:.35rem;border:2px solid var(--ink);border-radius:14px;background:#fff;font:inherit;font-weight:800;cursor:pointer}
 .quest-option-btn img{width:74px;height:74px;object-fit:contain}
 .quest-option-btn.is-picked{background:var(--mint);box-shadow:0 3px 0 var(--ink)}
@@ -223,6 +227,10 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .hint-box p{margin:0 0 .5rem;font-weight:800}
 .hint-box ul{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
 .hint-box li{padding:.2rem .55rem;border:2px solid var(--ink);border-radius:10px;background:#fff;font-weight:800}
+/* 提示區的「聽正確說法」：按鈕與播放狀態排成一列，預設不占位。 */
+.hint-box__audio{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.8rem;padding-top:.7rem;border-top:2px dashed rgba(37,49,84,.35)}
+.hint-box__audio button{min-height:40px;padding:.35rem .9rem;font-size:.95rem}
+.hint-box__audio .audio-state[data-state="idle"]{display:none}
 .quest-offer{margin:0 0 .6rem;font-weight:800}
 /* 關卡選擇：想重玩第幾關就直接點，不必從第 1 關玩回去 */
 .level-picker{display:flex;flex-wrap:wrap;gap:.35rem;margin:0}
@@ -270,7 +278,7 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .quest-tips{font-size:.95rem}
   /* 桌上名牌／放上去的名牌字級隨場景寬度縮（.quest-desk-tag 的 cqw），這裡不再寫死。 */
   .hint-box{font-size:.9rem}
-  .dialogue__controls .audio-state{font-size:.85rem}
+  .hint-box__audio .audio-state{font-size:.85rem}
   .submit-row{flex-direction:column;align-items:stretch}
   .submit-row button{width:100%}
 }

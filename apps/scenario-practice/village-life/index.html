@@ -131,6 +131,10 @@
       <div id="quest-hint-box" class="hint-box" hidden>
         <p>這關可能用到的詞（沒有順序）：</p>
         <ul id="quest-hint-words"></ul>
+        <div class="hint-box__audio">
+          <button id="quest-replay" type="button">聽正確說法</button>
+          <span id="quest-audio-state" class="audio-state" data-state="idle" aria-live="polite">按一下聽正確說法</span>
+        </div>
       </div>
       <div id="quest-body" class="scene-body scene-body--quest">
         <div class="stage quest-stage" id="quest-stage">
@@ -150,10 +154,6 @@
               <p id="quest-text" class="dialogue__zh">任務說明</p>
               <p id="quest-tips" class="quest-tips" hidden></p>
               <p id="quest-reply" class="dialogue__ab"></p>
-            </div>
-            <div class="dialogue__controls">
-              <button id="quest-replay" class="primary" type="button">再聽一次</button>
-              <span id="quest-audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
             </div>
             <audio id="quest-audio"></audio>
             <!-- 判定的對錯音效照舊站（官方 <audio id="right-sound"/#wrong-sound">，熱連結） -->
