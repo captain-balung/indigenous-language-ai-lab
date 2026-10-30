@@ -9,6 +9,7 @@ import {
 import {
   MODES, buildRound, needsAsr, needsAudio, replyVerdict, reportDetail, scoreLabel, tally, verdictFromTranslation
 } from "./core.mjs";
+import { createHintPanel } from "../../shared/hint.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 let mode;
@@ -20,12 +21,15 @@ const ui = {
   compose: $("#panel-compose"), meaning: $("#compose-meaning"), oral: $("#panel-oral"),
   audio: $("#panel-audio"), speech: $("#panel-speech"),
   replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"), answer: $("#answer"),
+  hintToggle: $(".hint-toggle"), hintPanel: $("#hint-panel"),
   image: $("#question-image"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), skipAudio: $("#skip-audio"),
   result: $("#result"), next: $("#next"),
   report: $("#report"), score: $("#score-line"), list: $("#score-list"), again: $("#again")
 };
+
+const hint = createHintPanel({ toggle: ui.hintToggle, panel: ui.hintPanel });
 
 const TITLES = {
   compose: ["造句", "看中文，寫出族語"],
@@ -212,6 +216,7 @@ function showQuestion() {
   const [prompt, title] = TITLES[question.mode];
   ui.prompt.textContent = prompt;
   ui.questionTitle.textContent = title;
+  hint.render({ chinese: question.chineseText, indigenous: question.indigenousText });
   setHidden(ui.compose, question.mode !== "compose");
   setHidden(ui.oral, question.mode !== "oral");
   setHidden(ui.audio, !needsAudio(question.mode));
@@ -436,6 +441,7 @@ function finish(result, reveal, current) {
   if (ui.submit) ui.submit.disabled = true;
   if (ui.record) ui.record.disabled = true;
   setHidden(ui.skipAudio, true);
+  hint.close();
   results.push(result);
   ui.result.hidden = false;
   ui.result.dataset.state = result.type;
@@ -486,6 +492,7 @@ function resetQuiz() {
   attempt += 1;
   acceptRecording = false;
   ui.player?.pause();
+  hint.close();
   selectedDialect = undefined;
   shard = undefined;
   round = [];

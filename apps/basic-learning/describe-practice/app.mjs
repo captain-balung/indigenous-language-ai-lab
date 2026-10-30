@@ -7,19 +7,28 @@ import {
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
 import { LEVELS, describeCaption, pictureTalkRecords, singleImageTurns } from "./core.mjs";
 import { wireInputMode } from "../../shared/input-mode.mjs";
+import { createHintPanel } from "../../shared/hint.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 const ui = {
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
   modelNote: $("#model-note"), themes: $("#themes"), themeGrid: $("#theme-grid"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
-  promptKind: $("#prompt-kind"), title: $("#question-title"), tip: $("#picture-tip"), pictures: $("#picture-grid"),
+  promptKind: $("#prompt-kind"), title: $("#question-title"), pictures: $("#picture-grid"),
+  replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   answer: $("#answer"), record: $("#record"), recordLabel: $("#record-label"), time: $("#record-time"),
   state: $("#record-state"), stateText: $("#record-state-text"),
   submit: $("#submit"), rerecord: $("#rerecord"), result: $("#result"),
   retry: $("#retry"), next: $("#next"),
+  hintToggle: $(".hint-toggle"), hintPanel: $("#hint-panel"),
   inputModeToggle: $("#input-mode-toggle"), inputType: $("#input-type"), inputVoice: $("#input-voice")
 };
+
+const hint = createHintPanel({
+  toggle: ui.hintToggle,
+  panel: ui.hintPanel,
+  onClose: () => resetHintAudio()
+});
 
 const STATES = {
   idle: ["●", "尚未錄音"],
@@ -42,6 +51,47 @@ function setState(key, override) {
   ui.state.querySelector(".record-state__icon").textContent = icon;
   ui.stateText.textContent = override || text;
 }
+
+function stopAudio() {
+  ui.player.pause();
+  ui.player.removeAttribute("src");
+  ui.player.load();
+}
+
+function resetHintAudio() {
+  stopAudio();
+  const hasAudio = Boolean(question?.audioUrl);
+  ui.replay.disabled = !hasAudio;
+  ui.audioState.dataset.state = hasAudio ? "idle" : "failed";
+  ui.audioState.textContent = hasAudio ? "想聽範例再按" : "本題沒有音檔";
+}
+
+ui.replay.addEventListener("click", () => {
+  if (!question?.audioUrl) return;
+  ui.player.src = question.audioUrl;
+  ui.audioState.dataset.state = "playing";
+  ui.audioState.textContent = "播放中…";
+  const play = ui.player.play();
+  if (play && typeof play.catch === "function") {
+    play.catch(() => {
+      if (ui.player.getAttribute("src")) {
+        ui.audioState.dataset.state = "failed";
+        ui.audioState.textContent = "無法播放，請再試一次";
+      }
+    });
+  }
+});
+
+ui.player.addEventListener("ended", () => {
+  ui.audioState.dataset.state = "ended";
+  ui.audioState.textContent = "播放完畢";
+});
+
+ui.player.addEventListener("error", () => {
+  if (!ui.player.getAttribute("src")) return;
+  ui.audioState.dataset.state = "failed";
+  ui.audioState.textContent = "音檔載入失敗";
+});
 
 function clock(seconds) {
   return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
@@ -227,7 +277,8 @@ function nextQuestion() {
   ui.progress.textContent = `本輪 ${answeredCount} / ${roundSize}`;
   ui.promptKind.textContent = question.title;
   ui.title.textContent = "用自己的話描述這張圖";
-  ui.tip.textContent = `中文提示：${question.tip}`;
+  hint.render({ tip: question.tip, chinese: question.chineseText, indigenous: question.indigenousText });
+  resetHintAudio();
   ui.pictures.dataset.count = String(question.imageUrls.length);
   ui.pictures.innerHTML = question.imageUrls.map((imageUrl, index) => `
     <figure>
@@ -246,6 +297,7 @@ function nextQuestion() {
 
 ui.record.addEventListener("click", async () => {
   if (recorder.recording) { recorder.stop(); return; }
+  resetHintAudio();
   try {
     await recorder.start();
   } catch (error) {
@@ -362,6 +414,7 @@ async function translateAnswer(text) {
 }
 
 function renderResult({ indigenous, translation, matched, pictureScore }) {
+  hint.close();
   const caption = describeCaption({ translation, matched, pictureScore });
   ui.result.hidden = false;
   ui.result.dataset.state = matched ? "semantic" : "retry";
@@ -374,6 +427,7 @@ function renderResult({ indigenous, translation, matched, pictureScore }) {
 }
 
 function showResult(state, text) {
+  hint.close();
   ui.result.hidden = false;
   ui.result.dataset.state = state;
   ui.result.textContent = text;
@@ -382,6 +436,7 @@ function showResult(state, text) {
 ui.next.addEventListener("click", () => { if (answeredCount >= roundSize) answeredCount = 0; nextQuestion(); });
 
 function resetQuiz() {
+  hint.close();
   selectedDialect = undefined;
   selectedLevel = undefined;
   pools = { beginner: [], intermediate: [] };
@@ -399,7 +454,7 @@ function resetQuiz() {
 function reduced() { return matchMedia("(prefers-reduced-motion: reduce)").matches; }
 function escapeHtml(value) { const div = document.createElement("div"); div.textContent = value; return div.innerHTML; }
 
-window.addEventListener("pagehide", () => { recorder?.clear(); });
+window.addEventListener("pagehide", () => { stopAudio(); recorder?.clear(); });
 
 init().catch((error) => {
   ui.api.textContent = `教材無法載入：${error.message}`;

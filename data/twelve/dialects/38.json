@@ -1,0 +1,3845 @@
+{
+  "schemaVersion": 1,
+  "dialectId": 38,
+  "ethnicity": "卑南",
+  "dialectName": "南王卑南語",
+  "code": "pyu_Nanw",
+  "levels": [
+    {
+      "level": 1,
+      "label": "第一階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "inabayan",
+          "titleCh": "大家好",
+          "sentences": [
+            {
+              "id": "38-1-1-1",
+              "order": 1,
+              "indigenousText": "inabayan!",
+              "chineseText": "大家好！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/f564bf7939754578beb6fead59a2dd66.wav"
+            },
+            {
+              "id": "38-1-1-2",
+              "order": 2,
+              "indigenousText": "inabayan!",
+              "chineseText": "大家好！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/36dade08a49cf4d1ccb415009f20d56a.wav"
+            },
+            {
+              "id": "38-1-1-3",
+              "order": 3,
+              "indigenousText": "sinsi, inaba yu driya?",
+              "chineseText": "老師，您好嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/1702f7424bf7117fce16d5aecf520704.wav"
+            },
+            {
+              "id": "38-1-1-4",
+              "order": 4,
+              "indigenousText": "aiwa, inaba ku driya.",
+              "chineseText": "是的，我很好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/783ee8978aafec0539c866332b9f7698.wav"
+            },
+            {
+              "id": "38-1-1-5",
+              "order": 5,
+              "indigenousText": "yuyu i? inaba yu driya?",
+              "chineseText": "你呢？你好嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/f6c8be6501c84397e338909115b360c5.wav"
+            },
+            {
+              "id": "38-1-1-6",
+              "order": 6,
+              "indigenousText": "semangalan! inaba ku driya.",
+              "chineseText": "謝謝！我很好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/ca62e9199135b5314c7af362c807c4ed.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "a temakakesi ku",
+          "titleCh": "我是學生",
+          "sentences": [
+            {
+              "id": "38-1-2-1",
+              "order": 1,
+              "indigenousText": "a temakakesi yu?",
+              "chineseText": "你是學生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/5cbe6667d4234c229a033158452d43ae.wav"
+            },
+            {
+              "id": "38-1-2-2",
+              "order": 2,
+              "indigenousText": "aiwa, a temakakesi ku.",
+              "chineseText": "是的，我是學生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/65ae12d3de4d38c4c3c36fe8c973ae71.wav"
+            },
+            {
+              "id": "38-1-2-3",
+              "order": 3,
+              "indigenousText": "taytaw i? a temakakesi i?",
+              "chineseText": "他呢？也是學生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/3823c00e1c5dd6096fc39a69b7b43af4.wav"
+            },
+            {
+              "id": "38-1-2-4",
+              "order": 4,
+              "indigenousText": "amelri, taytaw i, a sinsi.",
+              "chineseText": "不是，他是老師。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/c1a0cacaff65515c5a697f159140ed80.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "karetigir",
+          "titleCh": "請起立",
+          "sentences": [
+            {
+              "id": "38-1-3-1",
+              "order": 1,
+              "indigenousText": "karetigir driya.",
+              "chineseText": "請起立。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b65b5f6529c32e673432a7fc95c1235d.wav"
+            },
+            {
+              "id": "38-1-3-2",
+              "order": 2,
+              "indigenousText": "talram driya marengay.",
+              "chineseText": "請說說看。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/614a7db583c09d564b7cbb64511f0445.wav"
+            },
+            {
+              "id": "38-1-3-3",
+              "order": 3,
+              "indigenousText": "kilrengawi driya.",
+              "chineseText": "請聽聽看。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/7eb500bf7fa5112a919576e0e22e5135.wav"
+            },
+            {
+              "id": "38-1-3-4",
+              "order": 4,
+              "indigenousText": "katengadraw lra.",
+              "chineseText": "請坐下。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/07dc3e7c72ed3f97509915d359b58c02.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "i manay nu ngalad?",
+          "titleCh": "你叫什麼名字？",
+          "sentences": [
+            {
+              "id": "38-1-4-1",
+              "order": 1,
+              "indigenousText": "i manay nu ngalad?",
+              "chineseText": "你叫什麼名字？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/cebf6857726dcc68f3bcd525c9a375ab.wav"
+            },
+            {
+              "id": "38-1-4-2",
+              "order": 2,
+              "indigenousText": "i Uratr ku.",
+              "chineseText": "我是Uratr。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/a7a7f53fedaca38c7eeff23fde2dc193.wav"
+            },
+            {
+              "id": "38-1-4-3",
+              "order": 3,
+              "indigenousText": "i Puni tu ngalad?",
+              "chineseText": "她的名字是Puni嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/b5fab40909b605eecfdfd2000df62d59.wav"
+            },
+            {
+              "id": "38-1-4-4",
+              "order": 4,
+              "indigenousText": "amelri, i Pilray tu ngalad.",
+              "chineseText": "不是，她的名字是Pilray。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/e62e137a0e856d0fbf858e4071bc9e8b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "a babayan mi",
+          "titleCh": "我們是女生",
+          "sentences": [
+            {
+              "id": "38-1-5-1",
+              "order": 1,
+              "indigenousText": "a babayan mu?",
+              "chineseText": "你們是女生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b20306e3ab993fd3b9357aeb0fb15d68.wav"
+            },
+            {
+              "id": "38-1-5-2",
+              "order": 2,
+              "indigenousText": "aiwa, a babayan mi.",
+              "chineseText": "是的，我們是女生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/c25690f486bb3a79b0f8b3d11e30c99a.wav"
+            },
+            {
+              "id": "38-1-5-3",
+              "order": 3,
+              "indigenousText": "i Puni i, a mainayan?",
+              "chineseText": "Puni是男生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/38cf221d5f7a2f292214a6fe84fee9f9.wav"
+            },
+            {
+              "id": "38-1-5-4",
+              "order": 4,
+              "indigenousText": "amelri, a babayan taytaw.",
+              "chineseText": "不是，她是女生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b156bdd4a4a195012e438f0aea035934.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "nanku suwan",
+          "titleCh": "我的狗",
+          "sentences": [
+            {
+              "id": "38-1-6-1",
+              "order": 1,
+              "indigenousText": "ulraya ku suwan a saya.",
+              "chineseText": "我有一隻狗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/66ba96a4fc6187e096fcf43d8b675601.wav"
+            },
+            {
+              "id": "38-1-6-2",
+              "order": 2,
+              "indigenousText": "a udreudrem ku suwan.",
+              "chineseText": "我的狗是黑色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/437acf5b991d8d52099566da93ee7574.wav"
+            },
+            {
+              "id": "38-1-6-3",
+              "order": 3,
+              "indigenousText": "sagar ku kananku suwan.",
+              "chineseText": "我很喜歡我的狗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/5d608728e319b7d1c52f04abf69f573c.wav"
+            },
+            {
+              "id": "38-1-6-4",
+              "order": 4,
+              "indigenousText": "na suwan i, sagar kanku.",
+              "chineseText": "狗也喜歡我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/4b31010b1ea04168e2937b53295934a8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "ulraya isuwa na sinsi?",
+          "titleCh": "老師在哪裡？",
+          "sentences": [
+            {
+              "id": "38-1-7-1",
+              "order": 1,
+              "indigenousText": "ulraya isuwa na sinsi?",
+              "chineseText": "老師在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/31ec9b223a0b14f7332a2d89b9dc162c.wav"
+            },
+            {
+              "id": "38-1-7-2",
+              "order": 2,
+              "indigenousText": "ulraya kadrini.",
+              "chineseText": "在這裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/4cad765a19d81004c898e00a1e0f6529.wav"
+            },
+            {
+              "id": "38-1-7-3",
+              "order": 3,
+              "indigenousText": "ulraya isuwa nu tratruri?",
+              "chineseText": "你的鉛筆在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/08357744f231d9f802b0083e23ba7cd1.wav"
+            },
+            {
+              "id": "38-1-7-4",
+              "order": 4,
+              "indigenousText": "ulraya kadriyu ku tratruri.",
+              "chineseText": "我的鉛筆在那裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/eba8ff182470bba2e4be7d421fbc165b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "a manay idrini?",
+          "titleCh": "這是什麼？",
+          "sentences": [
+            {
+              "id": "38-1-8-1",
+              "order": 1,
+              "indigenousText": "a manay idrini?",
+              "chineseText": "這是什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/0640902d1bc2c3436ed12f5953133784.wav"
+            },
+            {
+              "id": "38-1-8-2",
+              "order": 2,
+              "indigenousText": "idrini i, a papadraran.",
+              "chineseText": "這是桌子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/1174501012a5b7de7ef0b135345d03ce.wav"
+            },
+            {
+              "id": "38-1-8-3",
+              "order": 3,
+              "indigenousText": "idru na katengadrawan i, aludrun?",
+              "chineseText": "那張椅子很重嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/2458cd2f12d72b5588ab184b19cc1e2a.wav"
+            },
+            {
+              "id": "38-1-8-4",
+              "order": 4,
+              "indigenousText": "aiwa, salaw aludrun.",
+              "chineseText": "是的，很重。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/4cb14e1d89a19bdd6aa5da95a5351ec6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "i nanalri",
+          "titleCh": "我的媽媽",
+          "sentences": [
+            {
+              "id": "38-1-9-1",
+              "order": 1,
+              "indigenousText": "i manay idriyu na trau?",
+              "chineseText": "那個人是誰呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/d9e2e6ff82667310979bd51c13665dba.wav"
+            },
+            {
+              "id": "38-1-9-2",
+              "order": 2,
+              "indigenousText": "i nanalri.",
+              "chineseText": "是我的媽媽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/6bf552f05f93209d3fed0d669d59f3bd.wav"
+            },
+            {
+              "id": "38-1-9-3",
+              "order": 3,
+              "indigenousText": "kiyakarun dra manay i taina?",
+              "chineseText": "你的媽媽是做什麼工作的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/d3f0c86f18500edf818f393a6d7fed1d.wav"
+            },
+            {
+              "id": "38-1-9-4",
+              "order": 4,
+              "indigenousText": "a muwauma i nanalri.",
+              "chineseText": "我的媽媽是務農的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/43b5f23a67b4cf15b1af7a992452a322.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "na tilin na midrarang",
+          "titleCh": "紅色的書",
+          "sentences": [
+            {
+              "id": "38-1-10-1",
+              "order": 1,
+              "indigenousText": "i makasatr kana papadraran i, ulraya a tilin?",
+              "chineseText": "桌上有書嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/88945247880428fdf4273f11e0e9fed5.wav"
+            },
+            {
+              "id": "38-1-10-2",
+              "order": 2,
+              "indigenousText": "aiwa, i makasatr kana papadraran i, ulraya a tilin a tuluwa etib.",
+              "chineseText": "是的，桌上有三本書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/81cac1728d28c17f09d9128035b6fb8a.wav"
+            },
+            {
+              "id": "38-1-10-3",
+              "order": 3,
+              "indigenousText": "na saetib i, a midrarang. na druwaya etib i, a udreudrem.",
+              "chineseText": "一本是紅色的，兩本是黑色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/771ca8dd25b856757d333e3f17480ab3.wav"
+            },
+            {
+              "id": "38-1-10-4",
+              "order": 4,
+              "indigenousText": "na midrarang i, tu tilin kan manay?",
+              "chineseText": "紅色的書，是誰的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/e7ccec356bfdc4cfcef826af9fc4cd4a.wav"
+            },
+            {
+              "id": "38-1-10-5",
+              "order": 5,
+              "indigenousText": "na midrarang i, tu tilin kana sinsi.",
+              "chineseText": "紅色的書是老師的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/0a608e1b025deca0c5ba1e9b443da6f5.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "label": "第二階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "nanku ruma",
+          "titleCh": "我的家",
+          "sentences": [
+            {
+              "id": "38-2-1-1",
+              "order": 1,
+              "indigenousText": "miyalruwatr mi sarumaenan.",
+              "chineseText": "我們全家有五位。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/53f617af0a5655161b954862483fd7de.wav"
+            },
+            {
+              "id": "38-2-1-2",
+              "order": 2,
+              "indigenousText": "ulraya i mulri na babayan, i namalri, i nanalri, ku wadi na babayan aw kuyku.",
+              "chineseText": "有祖母、爸爸、媽媽、妹妹和我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/9cbe9ef802bd2fa90fd981d6cb911596.wav"
+            },
+            {
+              "id": "38-2-1-3",
+              "order": 3,
+              "indigenousText": "temakakesi ku kana palribak na takesian.",
+              "chineseText": "我就讀國民小學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/1fcb3a8999a5f8d893fd9c97a2eab255.wav"
+            },
+            {
+              "id": "38-2-1-4",
+              "order": 4,
+              "indigenousText": "nanku wadi na babayan i, adri driya temakesi.",
+              "chineseText": "我的妹妹還沒有上學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/8c67065c437991cf4d77daebfe55811c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "kenama",
+          "titleCh": "早餐",
+          "sentences": [
+            {
+              "id": "38-2-2-1",
+              "order": 1,
+              "indigenousText": "ina, semabalran!",
+              "chineseText": "媽媽，早安！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b1c1c7e32d16181a9121300964418480.wav"
+            },
+            {
+              "id": "38-2-2-2",
+              "order": 2,
+              "indigenousText": "semabalran! alamu kenamaa ta.",
+              "chineseText": "早安！來來來，吃早餐了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/427d9bf2fd884e59c80f3c3e6246851b.wav"
+            },
+            {
+              "id": "38-2-2-3",
+              "order": 3,
+              "indigenousText": "angaremay lra! matimuremura ku driya.",
+              "chineseText": "等一下啦！我要先漱口。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b02fd5a0f7f6d95e4f57b539c3f03076.wav"
+            },
+            {
+              "id": "38-2-2-4",
+              "order": 4,
+              "indigenousText": "rienup driya!",
+              "chineseText": "先洗把臉吧！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/fc76cbd1d6a5f19d867d41131013a9f7.wav"
+            },
+            {
+              "id": "38-2-2-5",
+              "order": 5,
+              "indigenousText": "aiwa, malradram ku lra.",
+              "chineseText": "好的，我知道了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/8f7a2e27716461fec461914390f5b505.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "muketrep lra ku ami garem",
+          "titleCh": "我今年十歲",
+          "sentences": [
+            {
+              "id": "38-2-3-1",
+              "order": 1,
+              "indigenousText": "munuma lra nu ami garem?",
+              "chineseText": "你今年幾歲？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/73a6fd591358645aaa7ce27d2bffe273.wav"
+            },
+            {
+              "id": "38-2-3-2",
+              "order": 2,
+              "indigenousText": "muketrep lra ku ami garem.",
+              "chineseText": "我今年十歲了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/3c6e7e6fe747de9c00abe105b91a5e83.wav"
+            },
+            {
+              "id": "38-2-3-3",
+              "order": 3,
+              "indigenousText": "miyasama mu maluwadiyadi?",
+              "chineseText": "你有幾位兄弟姊妹？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/5acd68f6c601ce92fd9af531793c28d4.wav"
+            },
+            {
+              "id": "38-2-3-4",
+              "order": 4,
+              "indigenousText": "miyadruwa i baelri na mainayan. aw misasa ku wadi na babayan.",
+              "chineseText": "我有兩位哥哥和一位妹妹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/eceb10abc4cb8c2279f6e0a743a060b7.wav"
+            },
+            {
+              "id": "38-2-3-5",
+              "order": 5,
+              "indigenousText": "munuma lra tu ami dranu wadi na babayan?",
+              "chineseText": "你的妹妹幾歲了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/9c7f245ba2ec6d9616469224e213ab3b.wav"
+            },
+            {
+              "id": "38-2-3-6",
+              "order": 6,
+              "indigenousText": "kalralruwatr tu ami kananku wadi na babayan.",
+              "chineseText": "我的妹妹五歲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/8146fd1f1b4a329fb640af6616d19bfc.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "ulraya isuwa nu ruma?",
+          "titleCh": "你的家在哪裡？",
+          "sentences": [
+            {
+              "id": "38-2-4-1",
+              "order": 1,
+              "indigenousText": "ulraya isuwa nu ruma?",
+              "chineseText": "你的家在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/9cc86afc2ef8755d40fafac298a0a42f.wav"
+            },
+            {
+              "id": "38-2-4-2",
+              "order": 2,
+              "indigenousText": "ulraya i drenan ku ruma.",
+              "chineseText": "我的家在山上。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/003208b269879140545e003f24051e61.wav"
+            },
+            {
+              "id": "38-2-4-3",
+              "order": 3,
+              "indigenousText": "nu ruma i, adalrep i takesian?",
+              "chineseText": "你的家在學校附近嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/ca38c6a70ea01c1265699a4cf70c5d99.wav"
+            },
+            {
+              "id": "38-2-4-4",
+              "order": 4,
+              "indigenousText": "aiwa, nanku ruma i, adalrep i takesian.",
+              "chineseText": "是的，我的家在學校附近。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/66eae7d7c2fe2f89b912fa368979cebb.wav"
+            },
+            {
+              "id": "38-2-4-5",
+              "order": 5,
+              "indigenousText": "kemakawang ku muka i takesian kana wawariwari driya.",
+              "chineseText": "我每天走路去學校。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/ae8949391a8664c0e6b95918167cda1a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "kemay i Balangaw ku",
+          "titleCh": "我從台東來",
+          "sentences": [
+            {
+              "id": "38-2-5-1",
+              "order": 1,
+              "indigenousText": "Alaw, kemay isuwa yu?",
+              "chineseText": "Alaw，你從哪裡來？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/168a40d11b7f4f1557a17ee036cf5c15.wav"
+            },
+            {
+              "id": "38-2-5-2",
+              "order": 2,
+              "indigenousText": "kemay i Balangaw ku.",
+              "chineseText": "我從台東來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/bfd181721776dde5ac8e7985eaebe951.wav"
+            },
+            {
+              "id": "38-2-5-3",
+              "order": 3,
+              "indigenousText": "auka yu isuwa an daman?",
+              "chineseText": "你明天要去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/5c56baff7a9bb787379259fb1ea7d068.wav"
+            },
+            {
+              "id": "38-2-5-4",
+              "order": 4,
+              "indigenousText": "auka ku i takesian an daman.",
+              "chineseText": "我明天要去學校。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/afdb37a8e241f28ad14d6a8c611186b3.wav"
+            },
+            {
+              "id": "38-2-5-5",
+              "order": 5,
+              "indigenousText": "aiwa! taranapaw i dalan!",
+              "chineseText": "是喔！路上小心喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/00c6d40091e1ed50fe27d0212e36a5f3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "na drenan aw na inayan",
+          "titleCh": "山和溪",
+          "sentences": [
+            {
+              "id": "38-2-6-1",
+              "order": 1,
+              "indigenousText": "inaba na wari garem.",
+              "chineseText": "今天是好天氣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/90b1556d7a428731843b3076123e71f9.wav"
+            },
+            {
+              "id": "38-2-6-2",
+              "order": 2,
+              "indigenousText": "muka penetrira i namalri i drenan.",
+              "chineseText": "爸爸去山上打獵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/ed82529d90f0dd00797dd05c69e3349b.wav"
+            },
+            {
+              "id": "38-2-6-3",
+              "order": 3,
+              "indigenousText": "muka i inayan benasea dra kiruwan i nanalri.",
+              "chineseText": "媽媽去溪邊洗衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/d4f2b06cd1c4b3d8ea79569393721ccb.wav"
+            },
+            {
+              "id": "38-2-6-4",
+              "order": 4,
+              "indigenousText": "mimi na lralrak i, kadru mi i ruma malinay.",
+              "chineseText": "我們這些孩子們就在家裡玩。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/b3e4e33df1570523bcd467c9e67f3dc5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "mupatraran lra na kadaw",
+          "titleCh": "太陽出來了",
+          "sentences": [
+            {
+              "id": "38-2-7-1",
+              "order": 1,
+              "indigenousText": "mupatraran lra na kadaw.",
+              "chineseText": "太陽出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/2537da3b81b9015d526d91b696f375ac.wav"
+            },
+            {
+              "id": "38-2-7-2",
+              "order": 2,
+              "indigenousText": "muka lra kikaruna i namalri kay nanalri.",
+              "chineseText": "爸爸和媽媽去工作了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/9ab2bbb3a42d5f0b40d2abaa7e49db74.wav"
+            },
+            {
+              "id": "38-2-7-3",
+              "order": 3,
+              "indigenousText": "mupatraran lra na bulan.",
+              "chineseText": "月亮出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/c4caf428e7d4adc2a998a83203cc7814.wav"
+            },
+            {
+              "id": "38-2-7-4",
+              "order": 4,
+              "indigenousText": "muruma lra i namalri kay nanalri.",
+              "chineseText": "爸爸和媽媽回到家裡了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/0fbb7575d5208616f7a6bbd1c067d1fc.wav"
+            },
+            {
+              "id": "38-2-7-5",
+              "order": 5,
+              "indigenousText": "mukasakasa mi kerabi, aw karanaunau mi dra triur.",
+              "chineseText": "我們一起吃晚餐，然後一起看星星。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/3e49d98f4c7e749da5951818931422eb.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "maudalr",
+          "titleCh": "下雨",
+          "sentences": [
+            {
+              "id": "38-2-8-1",
+              "order": 1,
+              "indigenousText": "maudalr lra.",
+              "chineseText": "下雨了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/363edb0914fcbee68ded439d78c04ec4.wav"
+            },
+            {
+              "id": "38-2-8-2",
+              "order": 2,
+              "indigenousText": "kemasu yu dra kalipang?",
+              "chineseText": "你有沒有帶雨傘？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/05ae9a1acea88881ddc6914970f7f12d.wav"
+            },
+            {
+              "id": "38-2-8-3",
+              "order": 3,
+              "indigenousText": "aiwa, kemasu ku.",
+              "chineseText": "有，我帶了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/90bca183b600bb8299204ac6ef424d83.wav"
+            },
+            {
+              "id": "38-2-8-4",
+              "order": 4,
+              "indigenousText": "amau na isuwa nu kalipang?",
+              "chineseText": "你的雨傘是哪一把？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/2255c294559bb38befff2fa3e63bf990.wav"
+            },
+            {
+              "id": "38-2-8-5",
+              "order": 5,
+              "indigenousText": "amau idrini ku kalipang.",
+              "chineseText": "我的雨傘是這一把。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/1716f0d70266bc00a950d843c8af6d1b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "bulenan na kutrem",
+          "titleCh": "白色的雲",
+          "sentences": [
+            {
+              "id": "38-2-9-1",
+              "order": 1,
+              "indigenousText": "a manay tu edad kana kutrem i langitr?",
+              "chineseText": "天上的雲是什麼顏色？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/1727f6aa85908b679b24ee062803e39d.wav"
+            },
+            {
+              "id": "38-2-9-2",
+              "order": 2,
+              "indigenousText": "a bulenan tu edad kana kutrem i langitr.",
+              "chineseText": "天上的雲是白色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/17217dfe013dc69dedcd3d8c6050955d.wav"
+            },
+            {
+              "id": "38-2-9-3",
+              "order": 3,
+              "indigenousText": "bulay na riwanes i langitr?",
+              "chineseText": "天上的彩虹美麗嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/0b80da9c6f37357ffa4791f3af35227c.wav"
+            },
+            {
+              "id": "38-2-9-4",
+              "order": 4,
+              "indigenousText": "aiwa, salaw bulay na riwanes i langitr.",
+              "chineseText": "是的，天上的彩虹很美麗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b6199b0bfd929a0d2524f4a0c96f7615.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "i umauma",
+          "titleCh": "田野",
+          "sentences": [
+            {
+              "id": "38-2-10-1",
+              "order": 1,
+              "indigenousText": "bulay na apuaputr i umauma.",
+              "chineseText": "田野開滿了花。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/c9ebeaeb6bb1d3bcc61371dae833ca9c.wav"
+            },
+            {
+              "id": "38-2-10-2",
+              "order": 2,
+              "indigenousText": "miraaraat na tralun i umauma.",
+              "chineseText": "大地長滿了綠草。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/b0404d0b3559aeae4af2645a85b7dea4.wav"
+            },
+            {
+              "id": "38-2-10-3",
+              "order": 3,
+              "indigenousText": "an tu baliyanay i,",
+              "chineseText": "風吹來時，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/a7095e9942b3749c95cea0c74d722484.wav"
+            },
+            {
+              "id": "38-2-10-4",
+              "order": 4,
+              "indigenousText": "kamawan dra temiutiung na aputr,",
+              "chineseText": "花兒好像在點頭，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/1834d67f297cdcc5e58b0c5a761b8d87.wav"
+            },
+            {
+              "id": "38-2-10-5",
+              "order": 5,
+              "indigenousText": "kamawan dra patraaetra na tralun.",
+              "chineseText": "青草好像在拍手。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/25/21833ba389b322cac834fc5185512c1c.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "label": "第三階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "nanku alialian",
+          "titleCh": "我的朋友",
+          "sentences": [
+            {
+              "id": "38-3-1-1",
+              "order": 1,
+              "indigenousText": "kadruwan ku alialian.",
+              "chineseText": "我有很多朋友。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/9c9293000b53344704f3784a0b9aecff.wav"
+            },
+            {
+              "id": "38-3-1-2",
+              "order": 2,
+              "indigenousText": "i Malray i, asatr; i Uratr i, adare.",
+              "chineseText": "Malray很高，Uratr很矮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/732d4d938916ed146cb9aad9b1aeb8fc.wav"
+            },
+            {
+              "id": "38-3-1-3",
+              "order": 3,
+              "indigenousText": "i Isaw i, raemetr; i Panaway i, matuka.",
+              "chineseText": "Isaw很勤勞，Panaway很懶惰。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/bb153f1c2e51a1a03e47bc95887f2f69.wav"
+            },
+            {
+              "id": "38-3-1-4",
+              "order": 4,
+              "indigenousText": "kana wawariwari driya i, salrangan mi temakesi aw malinalinay.",
+              "chineseText": "我們每天一起唸書（學習）和遊戲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/abf9c0c9c894cbda12d4c29abcd51976.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "tu ngai kana sinsi",
+          "titleCh": "老師的話",
+          "sentences": [
+            {
+              "id": "38-3-2-1",
+              "order": 1,
+              "indigenousText": "kemadri marengay na sinsi kaniyam,",
+              "chineseText": "老師對我們這樣說：",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/895abe65bf93bc7ec344a8c797d65b78.wav"
+            },
+            {
+              "id": "38-3-2-2",
+              "order": 2,
+              "indigenousText": "temaranapaw ta dra maaidrangan.",
+              "chineseText": "對長輩要尊敬。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/7aab5f281707c276f4053f6e6f8259d1.wav"
+            },
+            {
+              "id": "38-3-2-3",
+              "order": 3,
+              "indigenousText": "marekigelagela ta, mapulrapulrang ta dra alialian.",
+              "chineseText": "對朋友要相親相愛，互相幫助。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/cb3340be5b21f5762295ccefc45da689.wav"
+            },
+            {
+              "id": "38-3-2-4",
+              "order": 4,
+              "indigenousText": "adri ta puwariyari muka i takesian.",
+              "chineseText": "上學不可以遲到。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/cfacb6d25e78292b63803808814583f0.wav"
+            },
+            {
+              "id": "38-3-2-5",
+              "order": 5,
+              "indigenousText": "adri ta meranaranak dra paisu.",
+              "chineseText": "用錢不可以浪費。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/ec7d237351041471cd48ba0a8795a596.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "talaulepan temakesi",
+          "titleCh": "下課",
+          "sentences": [
+            {
+              "id": "38-3-3-1",
+              "order": 1,
+              "indigenousText": "an patrepa dra talaulepan temakesi i, mupatraran ku i takakesian.",
+              "chineseText": "下課了，我走出教室。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/28ce2ef30b291fab806c8dfc11c96637.wav"
+            },
+            {
+              "id": "38-3-3-2",
+              "order": 2,
+              "indigenousText": "i patraran kana takakesian i, ulraya a kawi.",
+              "chineseText": "教室外面有棵樹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/01e8be24b3990e9713164f88100b7dc4.wav"
+            },
+            {
+              "id": "38-3-3-3",
+              "order": 3,
+              "indigenousText": "isatr kana kawi i, ulraya a sirut.",
+              "chineseText": "樹上有隻畫眉鳥。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/7df115eb854573af732e8b9f0d4863ac.wav"
+            },
+            {
+              "id": "38-3-3-4",
+              "order": 4,
+              "indigenousText": "maruniruni na sirut.",
+              "chineseText": "畫眉鳥正在唱歌。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/26/7eebe944fa109b4b405ccacf07150029.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "kualeng ku",
+          "titleCh": "我生病了",
+          "sentences": [
+            {
+              "id": "38-3-4-1",
+              "order": 1,
+              "indigenousText": "ama, semabalran!",
+              "chineseText": "叔叔，早安！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/f1e2d0440b5cbca7fe961b1f56fd1fc2.wav"
+            },
+            {
+              "id": "38-3-4-2",
+              "order": 2,
+              "indigenousText": "Atrung, auka yu isuwa?",
+              "chineseText": "Atrung，你要去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/8c44f5846bc490eea43926e883be2e91.wav"
+            },
+            {
+              "id": "38-3-4-3",
+              "order": 3,
+              "indigenousText": "tu papilrangi ku kan nanalri muka kiputremela kana ising.",
+              "chineseText": "媽媽要帶我去給醫生看病。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b478f5565b1d9620a5e309ed2b33a560.wav"
+            },
+            {
+              "id": "38-3-4-4",
+              "order": 4,
+              "indigenousText": "kudrama yu amaw?",
+              "chineseText": "你怎麼了呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/c92eac756405330d303b19dedd6cf648.wav"
+            },
+            {
+              "id": "38-3-4-5",
+              "order": 5,
+              "indigenousText": "kualeng ku, adri ku salikesik.",
+              "chineseText": "我生病了，人不舒服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/f1ebbbf69f81dbab1a5076ccffaaa8a8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "rarenadran",
+          "titleCh": "運動",
+          "sentences": [
+            {
+              "id": "38-3-5-1",
+              "order": 1,
+              "indigenousText": "a manay nu kinasagaran na rarenadran?",
+              "chineseText": "你最喜歡什麼運動？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/83c243b52befc7d86a4b003f1a5959b3.wav"
+            },
+            {
+              "id": "38-3-5-2",
+              "order": 2,
+              "indigenousText": "sagar ku tremepuk dra mali.",
+              "chineseText": "我喜歡打棒球。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/391db80c8d1ed062a648c6166db7f9b3.wav"
+            },
+            {
+              "id": "38-3-5-3",
+              "order": 3,
+              "indigenousText": "daw sagar yu?",
+              "chineseText": "為什麼喜歡呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/06ed9687291b4a2873e3a431e01bad84.wav"
+            },
+            {
+              "id": "38-3-5-4",
+              "order": 4,
+              "indigenousText": "an tremepuk ku dra mali i, kurenang dar salikesik ku dradrek.",
+              "chineseText": "因為打棒球時，我的身體會隨著活絡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b1a76bed703d4780ca453cd2c357db6f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "semenay aw muarak",
+          "titleCh": "唱歌和跳舞",
+          "sentences": [
+            {
+              "id": "38-3-6-1",
+              "order": 1,
+              "indigenousText": "saigu yu semenay?",
+              "chineseText": "你會唱歌嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/857b3c85f73d65be99f7734b42c00d24.wav"
+            },
+            {
+              "id": "38-3-6-2",
+              "order": 2,
+              "indigenousText": "aiwa, saigu ku semenay aw salaw bulay an semenay ku.",
+              "chineseText": "會的，我會唱歌而且很好聽（優美）。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/c6ba782c244aaab92cdc4e90cfbcfbe8.wav"
+            },
+            {
+              "id": "38-3-6-3",
+              "order": 3,
+              "indigenousText": "saigu yu muarak?",
+              "chineseText": "你會跳舞嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/89d16a09856e46f5f2025c36db70e607.wav"
+            },
+            {
+              "id": "38-3-6-4",
+              "order": 4,
+              "indigenousText": "aiwa, salaw apelr an muarak ku.",
+              "chineseText": "會的，我的舞姿輕妙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/344f4ba3a8e3b7bd98ca5ae3c1fa3eb3.wav"
+            },
+            {
+              "id": "38-3-6-5",
+              "order": 5,
+              "indigenousText": "an kemadru i, salrangana ta semenay aw muaraka ta!",
+              "chineseText": "那麼，我們一起唱歌和跳舞吧！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/75feae985f2a4f706bf5962cf11ca4d3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "munuma lra tuki garem?",
+          "titleCh": "現在是幾點？",
+          "sentences": [
+            {
+              "id": "38-3-7-1",
+              "order": 1,
+              "indigenousText": "munuma lra tuki garem?",
+              "chineseText": "現在幾點鐘了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/ff79eb43e974fd0c406098f707f71ed6.wav"
+            },
+            {
+              "id": "38-3-7-2",
+              "order": 2,
+              "indigenousText": "waluwa tuki dra semaluwaluwan garem.",
+              "chineseText": "現在是早上八點。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/6d60f8a1b42a9b8934f2c9af927673ea.wav"
+            },
+            {
+              "id": "38-3-7-3",
+              "order": 3,
+              "indigenousText": "munuma tuki i, maragan yu an semaluwaluwan?",
+              "chineseText": "你早上幾點起床？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/4688aa2cd595c13b65cd7ec5a8763f33.wav"
+            },
+            {
+              "id": "38-3-7-4",
+              "order": 4,
+              "indigenousText": "maragan ku dra nenema tuki an semaluwaluwan.",
+              "chineseText": "我早上六點起床。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/0e43d27ea045b09ad140592708c181bb.wav"
+            },
+            {
+              "id": "38-3-7-5",
+              "order": 5,
+              "indigenousText": "alrupe yu an munuma tuki an karaub?",
+              "chineseText": "你晚上幾點睡覺？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/0485ff175ea493b152c2d90db43b8d6e.wav"
+            },
+            {
+              "id": "38-3-7-6",
+              "order": 6,
+              "indigenousText": "alrupe ku dra muketrep tuki an karaub.",
+              "chineseText": "我晚上十點睡覺。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/5a31f4d5dedcd6d378c81db4e2b86133.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "padingwa",
+          "titleCh": "打電話",
+          "sentences": [
+            {
+              "id": "38-3-8-1",
+              "order": 1,
+              "indigenousText": "inabayan! i Lruway ku. kiyumalra ku driya. ulraya i bau i Taata?",
+              "chineseText": "你好！我是Lruway，請問令姊Taata在家嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/c58391c52ca587b099f1a3362f8729cb.wav"
+            },
+            {
+              "id": "38-3-8-2",
+              "order": 2,
+              "indigenousText": "i Sunay ku. uniyan i ruma i baelri Taata. mupatraran lra.",
+              "chineseText": "我是Sunay，姊姊Taata不在家，她出去一下。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/fda9d9404ad8757f69a3a2bceae5e703.wav"
+            },
+            {
+              "id": "38-3-8-3",
+              "order": 3,
+              "indigenousText": "aiwa! uwaruma an asuwa?",
+              "chineseText": "是喔！她什麼時候回來呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/907b500615aea5c920a1ea29c250ffb7.wav"
+            },
+            {
+              "id": "38-3-8-4",
+              "order": 4,
+              "indigenousText": "uwaruma lra angaremay.",
+              "chineseText": "等一下就會回來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/66a64b89e89163ed486f52e085ddfa9b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "muka mi kirepanauwa kan mulri na mainayan",
+          "titleCh": "拜訪祖父",
+          "sentences": [
+            {
+              "id": "38-3-9-1",
+              "order": 1,
+              "indigenousText": "muka mu isuwa a daman?",
+              "chineseText": "昨天你們去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/884b7ca65bf40f3080a091b8782160e0.wav"
+            },
+            {
+              "id": "38-3-9-2",
+              "order": 2,
+              "indigenousText": "muka mi i drenan kirepanauwa kan mulri na mainayan.",
+              "chineseText": "我們到山上去拜訪祖父。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/327ef206d3016606f9fbf4171fde4cef.wav"
+            },
+            {
+              "id": "38-3-9-3",
+              "order": 3,
+              "indigenousText": "tu pakanay mu dra manay kan temuu na mainayan?",
+              "chineseText": "祖父請你們吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/12619fb409872e6654c1d3be9aa75eee.wav"
+            },
+            {
+              "id": "38-3-9-4",
+              "order": 4,
+              "indigenousText": "tu pakanay mi dra babuy, dra abay aw tu siyaw dra lrusi.",
+              "chineseText": "祖父請我們吃山豬肉、糯米糕還有藤心湯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/7444bd8ff6b45b0a41d66903765aef39.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "saigu ku temutrautrau",
+          "titleCh": "我會畫圖",
+          "sentences": [
+            {
+              "id": "38-3-10-1",
+              "order": 1,
+              "indigenousText": "saigu ku temutrautrau.",
+              "chineseText": "我會畫圖。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/4ec67d06f37114ae0c598be89330930a.wav"
+            },
+            {
+              "id": "38-3-10-2",
+              "order": 2,
+              "indigenousText": "saigu ku temutrautrau kan nanalri.",
+              "chineseText": "我會畫我的媽媽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/da1934278f22fa6c922cb0eebfb5de8a.wav"
+            },
+            {
+              "id": "38-3-10-3",
+              "order": 3,
+              "indigenousText": "salaw bulay tu matra kan nanalri.",
+              "chineseText": "我媽媽的眼睛很漂亮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/d6581fb06844883fe75e751ff26d0fee.wav"
+            },
+            {
+              "id": "38-3-10-4",
+              "order": 4,
+              "indigenousText": "udreudrem aw belakas tu arebu kan nanalri.",
+              "chineseText": "媽媽的頭髮又黑又長。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/9d1ba49928ed3adc3483a7e271c91724.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "label": "第四階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "aremeng lra",
+          "titleCh": "天黑了",
+          "sentences": [
+            {
+              "id": "38-4-1-1",
+              "order": 1,
+              "indigenousText": "mutenep lra na kadaw, aremeng lra.",
+              "chineseText": "太陽下山了，天黑了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/c71b4b3010408be27889931f6deb0f80.wav"
+            },
+            {
+              "id": "38-4-1-2",
+              "order": 2,
+              "indigenousText": "aremeng lra, maruniruni na kuliling.",
+              "chineseText": "天黑了，蟋蟀叫了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/a4b3fac11dd3075364c5a6001d9753ca.wav"
+            },
+            {
+              "id": "38-4-1-3",
+              "order": 3,
+              "indigenousText": "mupatraran lra na bulan, maruniruni na tabilraelra.",
+              "chineseText": "月亮出來了，青蛙叫了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/ae39a7b7999d23d386ab25b3ea4aa6c6.wav"
+            },
+            {
+              "id": "38-4-1-4",
+              "order": 4,
+              "indigenousText": "mupatraran lra na bulan, mubalruk na lreu.",
+              "chineseText": "月亮出來了，貓頭鷹睡醒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/4d6630108d77b4699453ad43dc5aa53f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "kemakadaw",
+          "titleCh": "出太陽",
+          "sentences": [
+            {
+              "id": "38-4-2-1",
+              "order": 1,
+              "indigenousText": "kemakadaw na wari garem?",
+              "chineseText": "今天有出太陽嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/511fd832aa92a3fef12b1c046c33f7a6.wav"
+            },
+            {
+              "id": "38-4-2-2",
+              "order": 2,
+              "indigenousText": "aiwa, bias na wari garem.",
+              "chineseText": "是的，今天天氣很熱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/8f6ca0e7fa16d1b19b02669afcdc0d6e.wav"
+            },
+            {
+              "id": "38-4-2-3",
+              "order": 3,
+              "indigenousText": "mupatraran i ina i, mikabung?",
+              "chineseText": "媽媽外出的時候，有戴帽子嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/8839bf72c638a16e2246bc6223146078.wav"
+            },
+            {
+              "id": "38-4-2-4",
+              "order": 4,
+              "indigenousText": "adri, abalu mikabung i ina.",
+              "chineseText": "不，媽媽忘了戴帽子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/89b7e2dda415fab1c210e55b9a9ecc10.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "paelipas dra karealriyan",
+          "titleCh": "下午",
+          "sentences": [
+            {
+              "id": "38-4-3-1",
+              "order": 1,
+              "indigenousText": "karuwa ku mupatraran an paelipas dra karealriyan?",
+              "chineseText": "下午我可以出去嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b846aed66c43f555d28b4aeaf85f3e5d.wav"
+            },
+            {
+              "id": "38-4-3-2",
+              "order": 2,
+              "indigenousText": "adri auka! pakireb na udalr i patraran.",
+              "chineseText": "不要去，外面下著大雨。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/110cb30b00e20590551f69a2bf5e8c17.wav"
+            },
+            {
+              "id": "38-4-3-3",
+              "order": 3,
+              "indigenousText": "an madranga na udalr i, karuwa ku mupatraran?",
+              "chineseText": "如果雨停了，我可以出去嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/28a689147037ff2cad677f9d85332cef.wav"
+            },
+            {
+              "id": "38-4-3-4",
+              "order": 4,
+              "indigenousText": "aiwa, adri kaabalu muruma an kakerabian.",
+              "chineseText": "好啊（是的）！記得回來吃晚飯喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/058be1fc06ca11124db532174d3e792a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "tu piniwalrakan na wari kan emu",
+          "titleCh": "奶奶的生日",
+          "sentences": [
+            {
+              "id": "38-4-4-1",
+              "order": 1,
+              "indigenousText": "an daman i, tu piniwalrakan na wari kan emu na babayan.",
+              "chineseText": "明天是奶奶的生日。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/804c3dfc47fd1e0f1a670b6e0489899c.wav"
+            },
+            {
+              "id": "38-4-4-2",
+              "order": 2,
+              "indigenousText": "mukasa mi temuabay kan baelri na babayan a uninan.",
+              "chineseText": "今天我和姊姊一起做了麻糬。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/46ae5eae6c44403075f6937b16a0372f.wav"
+            },
+            {
+              "id": "38-4-4-3",
+              "order": 3,
+              "indigenousText": "a baberay kan emu na babayan an daman.",
+              "chineseText": "明天要送給奶奶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/6cfae737041b2901d4f0bcbd10d1d4a1.wav"
+            },
+            {
+              "id": "38-4-4-4",
+              "order": 4,
+              "indigenousText": "maranger mi pakasemangal kan emu na babayan.",
+              "chineseText": "我們希望讓奶奶驚喜。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/70d0a2113170e7cea895de8204f2e661.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "kasangalan dra piniwalrakan",
+          "titleCh": "生日快樂",
+          "sentences": [
+            {
+              "id": "38-4-5-1",
+              "order": 1,
+              "indigenousText": "i manay yu?",
+              "chineseText": "你是誰？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/b8ffb727115c77df6b12a5b7fca056db.wav"
+            },
+            {
+              "id": "38-4-5-2",
+              "order": 2,
+              "indigenousText": "emu, i Uratr kay Puni mi. truwalri mi driya!",
+              "chineseText": "奶奶，我們是Uratr和Puni，請開門！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/3fc26aa77bced7d4e688b6dca1888347.wav"
+            },
+            {
+              "id": "38-4-5-3",
+              "order": 3,
+              "indigenousText": "aiwa! amau muymu. masupeng ta lra kanmu i!",
+              "chineseText": "好的！原來是你們，好想念你們。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/1ce81fc5776c1bee3985f3e34ed92ff5.wav"
+            },
+            {
+              "id": "38-4-5-4",
+              "order": 4,
+              "indigenousText": "emu, semangalan dranu piniwalrakan na wari!",
+              "chineseText": "奶奶，祝你生日快樂！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/3f3a189a871274ef89c3623d179066c8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "kiniangeran",
+          "titleCh": "願望",
+          "sentences": [
+            {
+              "id": "38-4-6-1",
+              "order": 1,
+              "indigenousText": "emu, palrupeu nu matra aw kianun driya.",
+              "chineseText": "奶奶，請閉上眼睛祈禱！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/e433b9d6aa0ecf3ff29dbcdc308d90f4.wav"
+            },
+            {
+              "id": "38-4-6-2",
+              "order": 2,
+              "indigenousText": "kianun dra tuluwa dra kiniangeran dra kainabayan.",
+              "chineseText": "請許三個願望。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/c1df9bdc743664d996a4ef8d3c5b420a.wav"
+            },
+            {
+              "id": "38-4-6-3",
+              "order": 3,
+              "indigenousText": "maruwaya mu arei silamu matrina.",
+              "chineseText": "希望你們快點長大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/e099fa493c5e408ec37e9b790cb74a92.wav"
+            },
+            {
+              "id": "38-4-6-4",
+              "order": 4,
+              "indigenousText": "maruwaya ta inanabayan sarumaenan.",
+              "chineseText": "希望我們全家人都平安。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/3bc20ea6189b8e1ddf5b5a9b0d7ff0d6.wav"
+            },
+            {
+              "id": "38-4-6-5",
+              "order": 5,
+              "indigenousText": "maruwaya bulay ta sinaleman kandri kana amiyan.",
+              "chineseText": "希望今年大豐收。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b714bebd0ce702fecdcac4f90b6da133.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "kasedean dra saliyusan",
+          "titleCh": "星期天",
+          "sentences": [
+            {
+              "id": "38-4-7-1",
+              "order": 1,
+              "indigenousText": "samaya wariyan an saliyusan?",
+              "chineseText": "一個星期有幾天？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b674751e2afb15073bde0f59ece75968.wav"
+            },
+            {
+              "id": "38-4-7-2",
+              "order": 2,
+              "indigenousText": "pituwa wariyan an saliyusan.",
+              "chineseText": "一個星期有七天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/86fc5a8a73350c1f0bc6bd92ac074e4f.wav"
+            },
+            {
+              "id": "38-4-7-3",
+              "order": 3,
+              "indigenousText": "karesasama na wari garem kana saliyusan?",
+              "chineseText": "今天是星期幾？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/9cf6492846b8b5efaebd644e13606e7f.wav"
+            },
+            {
+              "id": "38-4-7-4",
+              "order": 4,
+              "indigenousText": "kasedean na wari garem kana saliyusan.",
+              "chineseText": "今天是星期天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/c8e430a69f3063b87fca9b6f710e8a1c.wav"
+            },
+            {
+              "id": "38-4-7-5",
+              "order": 5,
+              "indigenousText": "auka ta semungala i kiyukay.",
+              "chineseText": "我們要去教會做禮拜。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/1021b51884934ac9d7a901a0ff7b3a40.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "kadenunan",
+          "titleCh": "夏天",
+          "sentences": [
+            {
+              "id": "38-4-8-1",
+              "order": 1,
+              "indigenousText": "kadenunan lra garem, semasede mi i takesian.",
+              "chineseText": "現在是夏天，學校放暑假。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/c3fcd115002eed76aae5f03da6a35668.wav"
+            },
+            {
+              "id": "38-4-8-2",
+              "order": 2,
+              "indigenousText": "amawna, sadru a bariwan an kadenunan.",
+              "chineseText": "但是，夏天很多颱風。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/60284cc3f045793daa34fd53ee952ec1.wav"
+            },
+            {
+              "id": "38-4-8-3",
+              "order": 3,
+              "indigenousText": "asabak na enay i inayan an kadenunan.",
+              "chineseText": "夏天溪水很深。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/032e6949027daf1007cc3fb41679b89e.wav"
+            },
+            {
+              "id": "38-4-8-4",
+              "order": 4,
+              "indigenousText": "driyama, temaranapaw ta dra balenan aw dra bariwan an kadenunan.",
+              "chineseText": "所以，要小心水災和颱風。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/8fa238dd66c26b43430e0c655e200ad3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "bariwan",
+          "titleCh": "颱風",
+          "sentences": [
+            {
+              "id": "38-4-9-1",
+              "order": 1,
+              "indigenousText": "maylralra lra a bariwan! auka mu i takesian garem?",
+              "chineseText": "颱風來了，今天你們要上學嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/d7bc5c7fd50b25c3ffe41cd212ad5284.wav"
+            },
+            {
+              "id": "38-4-9-2",
+              "order": 2,
+              "indigenousText": "adri mi auka i takesian garem.",
+              "chineseText": "我們今天不必上學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/0c437193e35502a7eb638e043c42de47.wav"
+            },
+            {
+              "id": "38-4-9-3",
+              "order": 3,
+              "indigenousText": "kikadru i sabak, adri uwapatraran!",
+              "chineseText": "留在屋子裡，不要外出！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/0151e2e416b878e431b9dae68db2165a.wav"
+            },
+            {
+              "id": "38-4-9-4",
+              "order": 4,
+              "indigenousText": "aiwa, malradram mi lra.",
+              "chineseText": "好的，我們知道了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/619eba617482fcd5ea839fd025db3478.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "kapuluan",
+          "titleCh": "秋天",
+          "sentences": [
+            {
+              "id": "38-4-10-1",
+              "order": 1,
+              "indigenousText": "an kapuluan i, malulu lra na asiru.",
+              "chineseText": "秋天，橘子成熟了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/6dbcbea48deb034508ec5304268bcfa1.wav"
+            },
+            {
+              "id": "38-4-10-2",
+              "order": 2,
+              "indigenousText": "menau ta i drenan i, ulraya a miraat, a midrarang aw a milanang a kawi.",
+              "chineseText": "望向山上，看到綠的、紅的和黃的樹木。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/5a6378bd25cde4f33a1af0a8bafe7cf9.wav"
+            },
+            {
+              "id": "38-4-10-3",
+              "order": 3,
+              "indigenousText": "na Puni sarumaenan i, muka kiasirua i drenan.",
+              "chineseText": "Puni一家人到山上摘橘子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/7686c9e93594067cef190129a306ddf1.wav"
+            },
+            {
+              "id": "38-4-10-4",
+              "order": 4,
+              "indigenousText": "adri driya i, matemuy lra tu punun.",
+              "chineseText": "一下子，他們的簍子就裝滿了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/2322891461601d0e4ddbb70606a2fec7.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "label": "第五階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "iyabureng",
+          "titleCh": "螞蟻",
+          "sentences": [
+            {
+              "id": "38-5-1-1",
+              "order": 1,
+              "indigenousText": "a iyabureng mi a salepunan.",
+              "chineseText": "我們是一群螞蟻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/4c50ed5c5bf72f99bec1ea51c56a8617.wav"
+            },
+            {
+              "id": "38-5-1-2",
+              "order": 2,
+              "indigenousText": "raemetr mi kikarun.",
+              "chineseText": "工作很勤勞。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/316614ad8b236f22b393d9a61679f99b.wav"
+            },
+            {
+              "id": "38-5-1-3",
+              "order": 3,
+              "indigenousText": "na beras i dadare aw na uled i makadare kana kawi i,",
+              "chineseText": "地上的米粒和樹下的蟲，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/af6e707496a054e439c2eb489901c5ee.wav"
+            },
+            {
+              "id": "38-5-1-4",
+              "order": 4,
+              "indigenousText": "niyam akutraw muruma.",
+              "chineseText": "我們搬回家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/268e43282f98fdf2f8180e5733f5e5b1.wav"
+            },
+            {
+              "id": "38-5-1-5",
+              "order": 5,
+              "indigenousText": "a raaemetran mi a iyabureng.",
+              "chineseText": "我們是勤快的螞蟻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/5d9d3ee33bb52fc7c16bec8a337f7269.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "maariari",
+          "titleCh": "比賽",
+          "sentences": [
+            {
+              "id": "38-5-2-1",
+              "order": 1,
+              "indigenousText": "ulraya isuwa na Sawagu kay Kelalraw?",
+              "chineseText": "Sawagu和Kelalraw在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/9c630dac5bacd490133442b135b84de8.wav"
+            },
+            {
+              "id": "38-5-2-2",
+              "order": 2,
+              "indigenousText": "ulraya i paariariyan.",
+              "chineseText": "在比賽場上。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/3f09c7e6b8c32e543ac5c70d53be8ba2.wav"
+            },
+            {
+              "id": "38-5-2-3",
+              "order": 3,
+              "indigenousText": "maariari kabekas nadrunu.",
+              "chineseText": "他們在比賽跑步。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/066c1d0d0d12ab3bd244754161e61a70.wav"
+            },
+            {
+              "id": "38-5-2-4",
+              "order": 4,
+              "indigenousText": "i manay na makeser?",
+              "chineseText": "誰跑贏了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/5cb9dd55c2f3aa0aec59600421604fed.wav"
+            },
+            {
+              "id": "38-5-2-5",
+              "order": 5,
+              "indigenousText": "makeser i Sawagu i!",
+              "chineseText": "當然是Sawagu贏囉！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/1a928356c00693c489bf367e00191cd8.wav"
+            },
+            {
+              "id": "38-5-2-6",
+              "order": 6,
+              "indigenousText": "amau na raemetr meladaladam kana wawariwari maku!",
+              "chineseText": "就是因為他每天努力練習啊！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/c156713cb1fc14d93ce2b04b0e48afa8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "daramang",
+          "titleCh": "豐收",
+          "sentences": [
+            {
+              "id": "38-5-3-1",
+              "order": 1,
+              "indigenousText": "kiyakarun i uma kana wawariwari i namalri.",
+              "chineseText": "我的爸爸每天在田裡工作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/51c1a217aa1ecb73d9486bfcbb1c3a0b.wav"
+            },
+            {
+              "id": "38-5-3-2",
+              "order": 2,
+              "indigenousText": "kurekakadaw aw marelradelradek.",
+              "chineseText": "日曬與汗流浹背。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/353dbf9f6a612623541b9c1f8c2ffd28.wav"
+            },
+            {
+              "id": "38-5-3-3",
+              "order": 3,
+              "indigenousText": "salaw maulep i namalri!",
+              "chineseText": "我的父親非常辛苦！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/1d4555c7b0f1ee22cc5bc9fb4995fe6f.wav"
+            },
+            {
+              "id": "38-5-3-4",
+              "order": 4,
+              "indigenousText": "daramang tu nireaniyan kandri kana amiyan.",
+              "chineseText": "今年稻米豐收。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/00d57dedca5a0d0ad2481a7c0f6dda69.wav"
+            },
+            {
+              "id": "38-5-3-5",
+              "order": 5,
+              "indigenousText": "saerueru i namalri dratu semangalan.",
+              "chineseText": "我的爸爸樂得笑開懷。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/204c4e8cb1b8df0d60a95b8f02ee2589.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "dinsiya",
+          "titleCh": "腳踏車",
+          "sentences": [
+            {
+              "id": "38-5-4-1",
+              "order": 1,
+              "indigenousText": "ulraya ku dinsiya a saya.",
+              "chineseText": "我有一輛腳踏車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/2178b533c4c4f8c9b6dba4be7ec01ec2.wav"
+            },
+            {
+              "id": "38-5-4-2",
+              "order": 2,
+              "indigenousText": "ku uisatray muka i takesian kana wawariwari.",
+              "chineseText": "我每天騎它上學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/9c8454415211edd766dd1676ad25b7b9.wav"
+            },
+            {
+              "id": "38-5-4-3",
+              "order": 3,
+              "indigenousText": "a daman a mauka ku i takesian i,",
+              "chineseText": "前幾天上學時，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/83203c81e0d4cc8f2ce17266bd5bb9cf.wav"
+            },
+            {
+              "id": "38-5-4-4",
+              "order": 4,
+              "indigenousText": "mukuwatis ku dinsiya i dalan,",
+              "chineseText": "我的腳踏車在路上壞掉了，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/c3094c64b6630ffec742cd9b011b8961.wav"
+            },
+            {
+              "id": "38-5-4-5",
+              "order": 5,
+              "indigenousText": "kadru a trau a misasa a melalibat,",
+              "chineseText": "有一個人經過，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/36e89d636eef617112e25838f0a51744.wav"
+            },
+            {
+              "id": "38-5-4-6",
+              "order": 6,
+              "indigenousText": "tu pulrangay ku semeket kananku dinsiya.",
+              "chineseText": "幫我修好腳踏車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/64d80ae6627e87581131ff809d151bd1.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "muisatr dra igiw",
+          "titleCh": "搭火車",
+          "sentences": [
+            {
+              "id": "38-5-5-1",
+              "order": 1,
+              "indigenousText": "kemudakuda ta muka i Taipei?",
+              "chineseText": "要怎樣去台北？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/6c8952f0f2082937bd8048011654d04a.wav"
+            },
+            {
+              "id": "38-5-5-2",
+              "order": 2,
+              "indigenousText": "muisatr ta dra igiw.",
+              "chineseText": "搭火車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b9619e53a811bf0307b0e33fb6f81180.wav"
+            },
+            {
+              "id": "38-5-5-3",
+              "order": 3,
+              "indigenousText": "an muisatr ta dra igiw i, samaya tuki i, raredek ta?",
+              "chineseText": "搭火車要多久才會到達？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/588755d59a95e57869e5e436f2ca4052.wav"
+            },
+            {
+              "id": "38-5-5-4",
+              "order": 4,
+              "indigenousText": "kararuwa dra nenema tuki.",
+              "chineseText": "大約要六小時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/ee7c9e6a4e916c04e8b2549236c4601e.wav"
+            },
+            {
+              "id": "38-5-5-5",
+              "order": 5,
+              "indigenousText": "na igiw i, maraarei dra palidring?",
+              "chineseText": "火車比汽車快嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/3396fb09e8d59cdfe6407c7932e8d9c4.wav"
+            },
+            {
+              "id": "38-5-5-6",
+              "order": 6,
+              "indigenousText": "aiwa, maraarei na igiw.",
+              "chineseText": "是的，火車比較快。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/4118c7e12a9d75714bd76f79438e144d.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "i dalan",
+          "titleCh": "路上",
+          "sentences": [
+            {
+              "id": "38-5-6-1",
+              "order": 1,
+              "indigenousText": "i dalan i, sadru a palidring.",
+              "chineseText": "路上汽車很多。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/db2daf296931ef68241a8173776e1eaf.wav"
+            },
+            {
+              "id": "38-5-6-2",
+              "order": 2,
+              "indigenousText": "an kemakawang ta i dalan i, temaranapaw ta.",
+              "chineseText": "走在路上要小心。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/6a3af9702c02d9f9b44918ee1d7f9f34.wav"
+            },
+            {
+              "id": "38-5-6-3",
+              "order": 3,
+              "indigenousText": "an muwaisatr ta dra bas i, muturik ta.",
+              "chineseText": "搭公車要排隊上車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/6a404cf39ee0a42707789ab499f0094a.wav"
+            },
+            {
+              "id": "38-5-6-4",
+              "order": 4,
+              "indigenousText": "an muisatr ta dra utubay i, adriadri ta mikabung kana pakaamametreg.",
+              "chineseText": "騎機車一定要戴安全帽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/899236a5e8fb5c73e6b5e13b73b8018f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "na drenan i Taiwan",
+          "titleCh": "台灣的山",
+          "sentences": [
+            {
+              "id": "38-5-7-1",
+              "order": 1,
+              "indigenousText": "i Taiwan i, sadru a drenan.",
+              "chineseText": "台灣有很多山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/400c26d294e498ee48b922216d410df7.wav"
+            },
+            {
+              "id": "38-5-7-2",
+              "order": 2,
+              "indigenousText": "makalaudr i Taiwan na maraasaasatr na drenan i, amau i Truwangalan.",
+              "chineseText": "台灣東部最高的山是都蘭山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/5c392a9805b963340f81a1ec59393125.wav"
+            },
+            {
+              "id": "38-5-7-3",
+              "order": 3,
+              "indigenousText": "nanta drekalr i, ulraya a drenan?",
+              "chineseText": "我們的部落有山嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/68a319a1533404a44c0215ffda59c01d.wav"
+            },
+            {
+              "id": "38-5-7-4",
+              "order": 4,
+              "indigenousText": "aiwa, nanta drekalr i sadru a drenan.",
+              "chineseText": "是的，我們的部落有很多山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/802f5979df3551c868e63192b830ab1f.wav"
+            },
+            {
+              "id": "38-5-7-5",
+              "order": 5,
+              "indigenousText": "ulraya na asatr, ulraya na adare.",
+              "chineseText": "有高的，有低的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/ef841d5fdd9ac661d7282aa77961032d.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "kiyumalr dra dalan",
+          "titleCh": "問路",
+          "sentences": [
+            {
+              "id": "38-5-8-1",
+              "order": 1,
+              "indigenousText": "kiyumalra ku driya, i Truwangalan i, ulraya isuwa?",
+              "chineseText": "請問，都蘭山在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/9f4975c4ce91bfa777c86f01ec002f7b.wav"
+            },
+            {
+              "id": "38-5-8-2",
+              "order": 2,
+              "indigenousText": "i Truwangalan i, ulraya i makalaudr i Taiwan.",
+              "chineseText": "都蘭山在台灣的東邊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/ab0ba0d9f249dd5a9d4af3273005b380.wav"
+            },
+            {
+              "id": "38-5-8-3",
+              "order": 3,
+              "indigenousText": "kakakuda ku muka i Puyuma?",
+              "chineseText": "我要怎麼去南王部落？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/5e82d62f124a47bccea627a55f0c5248.wav"
+            },
+            {
+              "id": "38-5-8-4",
+              "order": 4,
+              "indigenousText": "kurenangi idri na dalan. raredek yu kana drekalr i Puyuma.",
+              "chineseText": "沿著這條路，你就會到達南王（普悠瑪）部落。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/bdf0fe79aafd9560b2752a8d8481e315.wav"
+            },
+            {
+              "id": "38-5-8-5",
+              "order": 5,
+              "indigenousText": "kakawang ku dra munuma tuki i, raredek ku?",
+              "chineseText": "我要走多久才會到達呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/9bda9c6773c09ed9d0cfd84600781fc9.wav"
+            },
+            {
+              "id": "38-5-8-6",
+              "order": 6,
+              "indigenousText": "kararuwa dra parekadruwa tuki.",
+              "chineseText": "大約要半個小時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/6a39e02d6d8e2f462742a7d72b90c9a0.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "ine",
+          "titleCh": "海",
+          "sentences": [
+            {
+              "id": "38-5-9-1",
+              "order": 1,
+              "indigenousText": "a manamanay na garamgaman i ine?",
+              "chineseText": "海裡有哪些動物？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/1d40307e3c27fc045e9d1cba9068cc5e.wav"
+            },
+            {
+              "id": "38-5-9-2",
+              "order": 2,
+              "indigenousText": "i ine i, ulraya a kuraw, a kuyan aw a garang.",
+              "chineseText": "海裡有魚，有蝦和螃蟹等。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/372229e9e0ad5860b6dfb5de2c736574.wav"
+            },
+            {
+              "id": "38-5-9-3",
+              "order": 3,
+              "indigenousText": "samaya tu dapalr dra garang?",
+              "chineseText": "螃蟹有幾隻腳？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/4acdba0e9f150a717e52256867586068.wav"
+            },
+            {
+              "id": "38-5-9-4",
+              "order": 4,
+              "indigenousText": "a garang i, waluwa tu dapalr.",
+              "chineseText": "螃蟹有八隻腳。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/15e4e0993f030fcca6dc64cf5859fb16.wav"
+            },
+            {
+              "id": "38-5-9-5",
+              "order": 5,
+              "indigenousText": "na ine i, aremamanay an temamtam ta?",
+              "chineseText": "海水是什麼味道？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/903e188b4bac9c80e7fb282a93979fc6.wav"
+            },
+            {
+              "id": "38-5-9-6",
+              "order": 6,
+              "indigenousText": "a labeni na ine.",
+              "chineseText": "海水是鹹的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/a6cac4b55180e6987482f993cef0fc0b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "kikuraw",
+          "titleCh": "捕魚",
+          "sentences": [
+            {
+              "id": "38-5-10-1",
+              "order": 1,
+              "indigenousText": "na kiyakuraw i, marayas muka kikurawa.",
+              "chineseText": "漁夫常常出海去捕魚。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/9625e4cf339b2491950bd3606d7538c9.wav"
+            },
+            {
+              "id": "38-5-10-2",
+              "order": 2,
+              "indigenousText": "an pakireb lra na bali kemuda,",
+              "chineseText": "不管風有多麼大，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/6e6b14395e1178ebbfc39989578dbae5.wav"
+            },
+            {
+              "id": "38-5-10-3",
+              "order": 3,
+              "indigenousText": "an matrina lra na kelun kemuda i,",
+              "chineseText": "不管浪有多麼高，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/396102f665203788ab088a969852d66a.wav"
+            },
+            {
+              "id": "38-5-10-4",
+              "order": 4,
+              "indigenousText": "uniyan dra kininedangan.",
+              "chineseText": "都不害怕。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/8a0f2a79570f991eeeb818a70d0360de.wav"
+            },
+            {
+              "id": "38-5-10-5",
+              "order": 5,
+              "indigenousText": "adriadri matemuy dra kuraw dra kuyan tu sasudang.",
+              "chineseText": "船上總是裝滿了魚和蝦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/afdeaae9be3409d3588d6d0214db77af.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "label": "第六階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "muruma ku lra",
+          "titleCh": "我回來了",
+          "sentences": [
+            {
+              "id": "38-6-1-1",
+              "order": 1,
+              "indigenousText": "mumu, muruma ku lra.",
+              "chineseText": "阿嬤，我回來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/1e49ed84451d45606549903a3198ca83.wav"
+            },
+            {
+              "id": "38-6-1-2",
+              "order": 2,
+              "indigenousText": "aiwa! murarumaan mu lra!",
+              "chineseText": "喔！你們放學啦！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/78defc294d34676b8f38c5fe05ddeaf0.wav"
+            },
+            {
+              "id": "38-6-1-3",
+              "order": 3,
+              "indigenousText": "aiwa. mumu, sabelaw ku i!",
+              "chineseText": "是的。阿嬤，我肚子好餓喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/fadfcc8d5ad446085b59a9c3162c7711.wav"
+            },
+            {
+              "id": "38-6-1-4",
+              "order": 4,
+              "indigenousText": "maranger yu mekan dra manay?",
+              "chineseText": "你想要吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/2128643e50b556fb8ba5faa859a3ec32.wav"
+            },
+            {
+              "id": "38-6-1-5",
+              "order": 5,
+              "indigenousText": "maranger ku mekan dra buir.",
+              "chineseText": "我想要吃芋頭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/d57ad5626c84e5e6576cca7bf9cd328e.wav"
+            },
+            {
+              "id": "38-6-1-6",
+              "order": 6,
+              "indigenousText": "ulraya a buir kana papadraran. alaku mekan!",
+              "chineseText": "桌上有芋頭，你拿去吃吧!",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/a9eaeffa5494674922366c94d0499e3f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "sagar yu mekan dra manay?",
+          "titleCh": "你喜歡吃什麼？",
+          "sentences": [
+            {
+              "id": "38-6-2-1",
+              "order": 1,
+              "indigenousText": "sagar yu mekan dra manay?",
+              "chineseText": "你喜歡吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/2e1ca267cb76c7980d1422a2b06da544.wav"
+            },
+            {
+              "id": "38-6-2-2",
+              "order": 2,
+              "indigenousText": "sagar ku mekan dra tinalrek, yuyu i?",
+              "chineseText": "我喜歡吃米飯，你呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/e7bef632790c584f453dabec4d0304e4.wav"
+            },
+            {
+              "id": "38-6-2-3",
+              "order": 3,
+              "indigenousText": "sagar ku mekan dra abay, adri ku sagar mekan dra tinalrek.",
+              "chineseText": "我喜歡吃糯米粿，不喜歡吃飯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/0ecbcdf6c39fdb146ee3132e302e6f55.wav"
+            },
+            {
+              "id": "38-6-2-4",
+              "order": 4,
+              "indigenousText": "malradram yu? na abay i, sinanga dra manay?",
+              "chineseText": "你知道嗎？糯米粿是用什麼做的嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/45d7c2f753d82b6927f0d6e0b33a4a64.wav"
+            },
+            {
+              "id": "38-6-2-5",
+              "order": 5,
+              "indigenousText": "adri ku malradram.",
+              "chineseText": "我不知道。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/ab3b42d15c96cc4066d71cab3d9fed59.wav"
+            },
+            {
+              "id": "38-6-2-6",
+              "order": 6,
+              "indigenousText": "ti paladamaw yu. na abay i, a sinanga dra driketran.",
+              "chineseText": "我教你，糯米粿是用糯米做的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/68cee9c0c1f2d5725c4dda1ab5f8e3f4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "i aekaekanan",
+          "titleCh": "餐廳",
+          "sentences": [
+            {
+              "id": "38-6-3-1",
+              "order": 1,
+              "indigenousText": "katengadraw driya kadri! aekan yu dra manay?",
+              "chineseText": "請坐！請問你要吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/a3d1232c28e99f21a186f505f21d465c.wav"
+            },
+            {
+              "id": "38-6-3-2",
+              "order": 2,
+              "indigenousText": "ulraya a tinalrek?",
+              "chineseText": "有飯嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/939c78b3e4d94ef362eaaed64d0e3ce1.wav"
+            },
+            {
+              "id": "38-6-3-3",
+              "order": 3,
+              "indigenousText": "aiuwa dra igelayan i! uniyan dra tinalrek kadrini, ulraya a tuwami.",
+              "chineseText": "抱歉！這裡沒有飯，只有麵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/3e4fc41b4dd4fd2f209168b5c4fc7f2e.wav"
+            },
+            {
+              "id": "38-6-3-4",
+              "order": 4,
+              "indigenousText": "aiwa! berayi ku dra sakaisingan dra tuwami.",
+              "chineseText": "好吧！請給我一碗麵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/f75a58e30315e5dbbab2b6c408a6ec67.wav"
+            },
+            {
+              "id": "38-6-3-5",
+              "order": 5,
+              "indigenousText": "sagar yu dra galrem?",
+              "chineseText": "你喜歡辣嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/ec47c3b1bcca48cd32cf277a86c42789.wav"
+            },
+            {
+              "id": "38-6-3-6",
+              "order": 6,
+              "indigenousText": "aeman, malatak ku mekan dra galrem.",
+              "chineseText": "不要，我不敢吃辣的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/cd56070527c969ae35c65a21428d84d3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "inilaban",
+          "titleCh": "水果",
+          "sentences": [
+            {
+              "id": "38-6-4-1",
+              "order": 1,
+              "indigenousText": "kalra rengay driya, i Taiwan i, ulraya a manamanay a inilaban?",
+              "chineseText": "請說說看，台灣有哪些水果？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/731a4ef56b537b39f81d8272fc8be06e.wav"
+            },
+            {
+              "id": "38-6-4-2",
+              "order": 2,
+              "indigenousText": "ulraya a kulriyabes, a katawa, a belrbelr aw ulraya driya a druma.",
+              "chineseText": "有芭樂、木瓜和香蕉，還有其他的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/03043c70b42f376cc4289a5f9cc8f97e.wav"
+            },
+            {
+              "id": "38-6-4-3",
+              "order": 3,
+              "indigenousText": "marayas yu mekan dra inilaban kana wawariwari?",
+              "chineseText": "你每天吃水果嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/66a1239ed75ad0c0ac2def91894bfcc3.wav"
+            },
+            {
+              "id": "38-6-4-4",
+              "order": 4,
+              "indigenousText": "adri, adri ku kamaekanan dra inilaban.",
+              "chineseText": "不，我不常吃水果。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/6b3eb6a85eb808ba738ee9f69a2c654c.wav"
+            },
+            {
+              "id": "38-6-4-5",
+              "order": 5,
+              "indigenousText": "mekaekan ta dra inilaban i, inaba ta dradrek.",
+              "chineseText": "多吃水果，身體才會好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/6cd95d3432950f8416cb6d9980a2f93b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "kawi a aekanan tu buwa",
+          "titleCh": "果樹",
+          "sentences": [
+            {
+              "id": "38-6-5-1",
+              "order": 1,
+              "indigenousText": "ulraya mu sinalem a kawi a aekanan tu buwa?",
+              "chineseText": "你們家種果樹了嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/a231f965440fe37eab940d02bef11e2d.wav"
+            },
+            {
+              "id": "38-6-5-2",
+              "order": 2,
+              "indigenousText": "ulraya, i nguwayan kaniyam ruma i, ulraya a kulriyabes, i likudran i, ulraya a gingging.",
+              "chineseText": "有，我們家前面有芭樂，後面有龍眼。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/fe6a2c616b11957b097fdc440ac9cc0d.wav"
+            },
+            {
+              "id": "38-6-5-3",
+              "order": 3,
+              "indigenousText": "nadru na kawi i, miyabuwa kana aamiami?",
+              "chineseText": "那些果樹每年結果實嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/0bfd1c9464b0f9dabb714147b0eca87b.wav"
+            },
+            {
+              "id": "38-6-5-4",
+              "order": 4,
+              "indigenousText": "aiwa, tarakisenan dra kadaw aw risepu an mibuwa.",
+              "chineseText": "是的，因為陽光充足，結了很多果實。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/b79874c0b8fb4216b6c76e43f9cd4859.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "palralritekan",
+          "titleCh": "冰箱",
+          "sentences": [
+            {
+              "id": "38-6-6-1",
+              "order": 1,
+              "indigenousText": "ulraya a taramunag kana palralritekan?",
+              "chineseText": "冰箱裡有西瓜嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/bc9fb6cc12fd0720260e3265782d02a2.wav"
+            },
+            {
+              "id": "38-6-6-2",
+              "order": 2,
+              "indigenousText": "ulraya, tremima lra a daman i ama.",
+              "chineseText": "有，爸爸昨天買了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/36f699ad8abfaa79120790073fd5eff1.wav"
+            },
+            {
+              "id": "38-6-6-3",
+              "order": 3,
+              "indigenousText": "salaw bias na wari! ta trekabaw aw karaekana ta.",
+              "chineseText": "天氣非常熱！我們趕快切來吃。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/45d0ab7c140c4721d924941cab5ed9ae.wav"
+            },
+            {
+              "id": "38-6-6-4",
+              "order": 4,
+              "indigenousText": "aiwa, ta payasaw tremekab! ta amerasay dra iyam i, mangaleb dalreu.",
+              "chineseText": "好，馬上切！加一點鹽會更好吃。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/4964116737ddcf20f192baed136934c4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "walri a mautreutran",
+          "titleCh": "蛀牙",
+          "sentences": [
+            {
+              "id": "38-6-7-1",
+              "order": 1,
+              "indigenousText": "sinsi, nana ku walri!",
+              "chineseText": "老師，我牙痛！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/5dd9df8a1bd2f0d3cf0ca46cf4099ac4.wav"
+            },
+            {
+              "id": "38-6-7-2",
+              "order": 2,
+              "indigenousText": "mekan yu dra sadru dra walru? an sadru lra dradru ta niekan i, mautreutran ta walri.",
+              "chineseText": "你是不是吃太多糖果了？如果吃太多，就會蛀牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/e610d9574f66edc2a7c569cf02c49e80.wav"
+            },
+            {
+              "id": "38-6-7-3",
+              "order": 3,
+              "indigenousText": "kakuda ku lra an kemadru?",
+              "chineseText": "我該怎麼辦？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/361a0a58712948863afbf9e216db7062.wav"
+            },
+            {
+              "id": "38-6-7-4",
+              "order": 4,
+              "indigenousText": "kamelamui uwa kinauwan kana ising!",
+              "chineseText": "你趕快去給醫生看！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/553d2c5360db0e4a77dbd2be41f52e0b.wav"
+            },
+            {
+              "id": "38-6-7-5",
+              "order": 5,
+              "indigenousText": "kasaimaimayu lra mekan dra walru, aw karayas emisaus dra walri.",
+              "chineseText": "以後少吃糖果，要多刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/07/85ef29c7da333bcfc94d6062c8e4e643.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "semakal",
+          "titleCh": "稱讚",
+          "sentences": [
+            {
+              "id": "38-6-8-1",
+              "order": 1,
+              "indigenousText": "“a walrak yu a salaw inaba!” kema semakal na sinsi kanku.",
+              "chineseText": "老師稱讚我說：「你是一個很乖的小孩！」",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/2c4b84006c996a0c8aab1f0df55eebb8.wav"
+            },
+            {
+              "id": "38-6-8-2",
+              "order": 2,
+              "indigenousText": "an aru aekan i, kinunguwayan driya semabesab dra lima.",
+              "chineseText": "吃飯之前先洗手。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/793df655bee2b2e8fd68ad626b878b8f.wav"
+            },
+            {
+              "id": "38-6-8-3",
+              "order": 3,
+              "indigenousText": "tu piyayaw mekan na tinalrek aw na irupan i kaising.",
+              "chineseText": "把碗裡的飯菜吃完。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/78dd5817a4c2e4d000cbd4c0dd869b80.wav"
+            },
+            {
+              "id": "38-6-8-4",
+              "order": 4,
+              "indigenousText": "an peniya mekan i, emisaus dra walri.",
+              "chineseText": "飯後會刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/afdeb51e2be53d411d4dfb6270f48313.wav"
+            },
+            {
+              "id": "38-6-8-5",
+              "order": 5,
+              "indigenousText": "pulrang dar melrisaw dra kaisising aw dra tratringal.",
+              "chineseText": "還會幫忙洗碗筷。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/0b7a117129f7b29f0c46f1388a02f45b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "karealriyan",
+          "titleCh": "午餐",
+          "sentences": [
+            {
+              "id": "38-6-9-1",
+              "order": 1,
+              "indigenousText": "na karealriyan garem i, ulraya a patraka dra terekuk, a bitrenun, a balratung aw a lukut.",
+              "chineseText": "今天的午餐有雞肉、蛋、四季豆，還有山蘇。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/16f02f8c443560320b83ee0b6903f03f.wav"
+            },
+            {
+              "id": "38-6-9-2",
+              "order": 2,
+              "indigenousText": "nadrini i, a mipuwaseberan a karealriyan i takesian?",
+              "chineseText": "這些是學校的營養午餐嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/1ccbfcceb5d91c29c9e67b350bfb1a31.wav"
+            },
+            {
+              "id": "38-6-9-3",
+              "order": 3,
+              "indigenousText": "aiwa, nadrini i, tu pinadangan kana takesian.",
+              "chineseText": "是的，這些是學校準備的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/df54d9d90f44c952f2bf9e0123de0425.wav"
+            },
+            {
+              "id": "38-6-9-4",
+              "order": 4,
+              "indigenousText": "betratrekeran mu peniya?",
+              "chineseText": "你們都吃得飽嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/e373c6c1824cee71a790e5cfb26f0496.wav"
+            },
+            {
+              "id": "38-6-9-5",
+              "order": 5,
+              "indigenousText": "aiwa, mipuwaseberan aw betratrekeran mi.",
+              "chineseText": "是的，營養豐富而且我們吃得很飽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/c0bacb846ec14dbcd21568672624d6bd.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "malradu",
+          "titleCh": "跌倒",
+          "sentences": [
+            {
+              "id": "38-6-10-1",
+              "order": 1,
+              "indigenousText": "malalinay ku a semaluwan i, malradu ku.",
+              "chineseText": "今天早上，我在玩耍的時候跌倒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/4e88cf6df1f687135a689f9e0418ba5a.wav"
+            },
+            {
+              "id": "38-6-10-2",
+              "order": 2,
+              "indigenousText": "mabuli ku sungal aw mudadamuk.",
+              "chineseText": "我的膝蓋受傷而且流血。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/1acd9297a1aba7bce0a6898f6704631e.wav"
+            },
+            {
+              "id": "38-6-10-3",
+              "order": 3,
+              "indigenousText": "tu putremelay ku kana sinsi aw tu liputraw benetbet.",
+              "chineseText": "老師為我擦藥並且包紮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/230dcaed0fe4af87be788ede795b3b7a.wav"
+            },
+            {
+              "id": "38-6-10-4",
+              "order": 4,
+              "indigenousText": "tremiputripu ku kemakawang.",
+              "chineseText": "我走路一跛一跛的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/5bcea81769ae5478febd7ffc2e6f45d5.wav"
+            },
+            {
+              "id": "38-6-10-5",
+              "order": 5,
+              "indigenousText": "amawna, an adri driya munuma wariyan i, kainanaba lra.",
+              "chineseText": "沒關係的（但是），過幾天就會康復的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/08/70ca6be5332a6d96180a88ae9a18bdb5.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "label": "第七階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "tratrima yu dra manay?",
+          "titleCh": "你要買什麼？",
+          "sentences": [
+            {
+              "id": "38-7-1-1",
+              "order": 1,
+              "indigenousText": "tiyan a! tratrima yu dra manay?",
+              "chineseText": "小女孩，你要買什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/6227cc9a10a924ae68fb8d6102946614.wav"
+            },
+            {
+              "id": "38-7-1-2",
+              "order": 2,
+              "indigenousText": "lawpan, tratrima ku dra tratruri aw dra tatililran.",
+              "chineseText": "老闆，我要買鉛筆和筆記簿。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d7cdb86685547e282389660d517a6284.wav"
+            },
+            {
+              "id": "38-7-1-3",
+              "order": 3,
+              "indigenousText": "munuma nu tratrimaan?",
+              "chineseText": "你要買多少？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0b6df7b872b88a3233ed0d85a1e57325.wav"
+            },
+            {
+              "id": "38-7-1-4",
+              "order": 4,
+              "indigenousText": "saya na tratruri aw saya na tatililran.",
+              "chineseText": "鉛筆一枝和筆記簿一本。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/7f065334377cef9fb19e2e60306415a1.wav"
+            },
+            {
+              "id": "38-7-1-5",
+              "order": 5,
+              "indigenousText": "lruwatra paisu na saya na tratruri. aw waiwaya paisu na saya na tatililran.",
+              "chineseText": "鉛筆一枝五元，筆記簿一本九元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5049903c76d5f184645c0cbbf29bd70c.wav"
+            },
+            {
+              "id": "38-7-1-6",
+              "order": 6,
+              "indigenousText": "na lruwatra telruay dra waiwaya i, muketrep misama dra pata paisu. adri padrangal.",
+              "chineseText": "五加九，總共十四元。不貴。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/e8083be65ff9b7d66eb0b2e9d0f15ec1.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "dradrulun dra paisu",
+          "titleCh": "換錢",
+          "sentences": [
+            {
+              "id": "38-7-2-1",
+              "order": 1,
+              "indigenousText": "lawpan, ulraya ku saleman paisu. dradrulun ku dra paisu.",
+              "chineseText": "老闆，我有一百元，要換錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/5b9d2a9b1704e98848469985317cd412.wav"
+            },
+            {
+              "id": "38-7-2-2",
+              "order": 2,
+              "indigenousText": "dradrulun yu dra kemudakuda?",
+              "chineseText": "你要怎麼換？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/e3ee3cd7891ec39e52a5754daa06ce3d.wav"
+            },
+            {
+              "id": "38-7-2-3",
+              "order": 3,
+              "indigenousText": "dradrulun ku dra muketrep kana muketrep paisu.",
+              "chineseText": "我要換十個十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/358efa9d598077a18e92056ee0a93b5a.wav"
+            },
+            {
+              "id": "38-7-2-4",
+              "order": 4,
+              "indigenousText": "aiwa, muketrep, makabetraan, makatelun, makapetelr, makalruwatr, makanemen, makapitu, makawalu, makaiwa, yaka! sangeut i! maumau a makaiwa paisu.",
+              "chineseText": "好，十、二十、三十、四十、五十、六十、七十、八十、九十。哎呀！不夠耶！只有九十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/78520e5bd6e1975cc0c3fdfd5f61e974.wav"
+            },
+            {
+              "id": "38-7-2-5",
+              "order": 5,
+              "indigenousText": "an kemadru i, kakuda amaw! berayi ku driya dra druwaya kana lruwatra paisu.",
+              "chineseText": "那又怎麼樣呢！你可以再給我兩個五元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/26f4a4dba20cdfab67d1c61d77c891ee.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "paapetr dra paisu",
+          "titleCh": "存錢",
+          "sentences": [
+            {
+              "id": "38-7-3-1",
+              "order": 1,
+              "indigenousText": "i ina i, tu berayay ku dra makalruwatr dra paisu kana sasayasaya liyusan.",
+              "chineseText": "媽媽每星期給我五十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/7f9ed5649dc61e2a57882819159c5279.wav"
+            },
+            {
+              "id": "38-7-3-2",
+              "order": 2,
+              "indigenousText": "ku paapetranay na makabetraan paisu.",
+              "chineseText": "我就存二十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/049ee76e445ed7ea597432ce2b54ccdb.wav"
+            },
+            {
+              "id": "38-7-3-3",
+              "order": 3,
+              "indigenousText": "an matrina ku lra i, kasasadru lra ku paisu.",
+              "chineseText": "我長大之後，就會有很多錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/35e0d49d78b95d0cceda03090c6b4612.wav"
+            },
+            {
+              "id": "38-7-3-4",
+              "order": 4,
+              "indigenousText": "marayas marengay na sinsi dra, “druwadrukaw na saima i, kararuwa esadru.”",
+              "chineseText": "老師常說：「積少成多」。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/b4c09a885c80e46815e12df18582a2b5.wav"
+            },
+            {
+              "id": "38-7-3-5",
+              "order": 5,
+              "indigenousText": "panaan idri na ngai i!",
+              "chineseText": "這句話是真的耶！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/8d73e0d445de3d340c4e08c85472ee38.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "tuki",
+          "titleCh": "時鐘",
+          "sentences": [
+            {
+              "id": "38-7-4-1",
+              "order": 1,
+              "indigenousText": "na tuki i, ulraya a druwaya tu daum.",
+              "chineseText": "時鐘有兩支針。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/27356be055ce74d81e24e2026fd7fb3e.wav"
+            },
+            {
+              "id": "38-7-4-2",
+              "order": 2,
+              "indigenousText": "na saya i, belakas. na saya i, lriketri.",
+              "chineseText": "一支長的，一支短的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/7c74a878c514106bf401aaa3eeffa8f8.wav"
+            },
+            {
+              "id": "38-7-4-3",
+              "order": 3,
+              "indigenousText": "na daum na belakas i, arei kemakawang. an saya wariyan i, makabetraan misama dra parepat muliyus.",
+              "chineseText": "長針走得快，一天走二十四圈。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/2e1886caa7ea14781cf5d34776130520.wav"
+            },
+            {
+              "id": "38-7-4-4",
+              "order": 4,
+              "indigenousText": "na daum na lriketri i, puwari kemakawang. an saya wariyan i, parepuwan muliyus.",
+              "chineseText": "短針走得慢，一天走兩圈。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/f2c7fd02a3c16556bf91428c817e1e98.wav"
+            },
+            {
+              "id": "38-7-4-5",
+              "order": 5,
+              "indigenousText": "kemay an semaluwan palru an aremeng i, adri madradranga kemakawang na tuki.",
+              "chineseText": "時鐘從早上到晚上，不停地走。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/cf2d088b8ffc366b2d8dc1f0e805bcf1.wav"
+            },
+            {
+              "id": "38-7-4-6",
+              "order": 6,
+              "indigenousText": "kamawan dra palaladam kanta dra, sasimean dra wari.",
+              "chineseText": "好像在告訴我們要愛惜光陰。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/9aef49a630d2b4ef8440b13f1bcfae4b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "penauwa na tuki",
+          "titleCh": "準時",
+          "sentences": [
+            {
+              "id": "38-7-5-1",
+              "order": 1,
+              "indigenousText": "tu trimaanay ku kan namalri dra bekal dra tuki i aselr.",
+              "chineseText": "爸爸買給我新手錶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a5d6d7c562ad0751d663dca569e8bc2d.wav"
+            },
+            {
+              "id": "38-7-5-2",
+              "order": 2,
+              "indigenousText": "ku pitukiaw kana wawariwari.",
+              "chineseText": "我每天戴著它。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/11803ffba01b7f0702de7be05d007b4c.wav"
+            },
+            {
+              "id": "38-7-5-3",
+              "order": 3,
+              "indigenousText": "an maruni i, trek-trek-trek-trek kema.",
+              "chineseText": "它發出滴答滴答的聲音。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/394cad1bac2367b852d86742005a16ed.wav"
+            },
+            {
+              "id": "38-7-5-4",
+              "order": 4,
+              "indigenousText": "an muka ku temakesia aw an muwaruma ku i, menau ku dra tuki dar.",
+              "chineseText": "不論上學還是回家，我會看錶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/8b848e60077d76ea983c3256f6a02b92.wav"
+            },
+            {
+              "id": "38-7-5-5",
+              "order": 5,
+              "indigenousText": "pakalralradram kanku dra penauwaya yu dra tuki.",
+              "chineseText": "在提醒我要準時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2171f5abedbc418d5c08e67755d5245d.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "tu saya wariyan kan ina",
+          "titleCh": "媽媽的一天",
+          "sentences": [
+            {
+              "id": "38-7-6-1",
+              "order": 1,
+              "indigenousText": "semaluwan an nenema tuki i, tu balrukaw ku kan ina.",
+              "chineseText": "上午六點，媽媽叫我起床。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/065ac2190ec5bd23c74ac0edbf7e7d35.wav"
+            },
+            {
+              "id": "38-7-6-2",
+              "order": 2,
+              "indigenousText": "an muketrep misama dra druwaya tuki i, mabangabang dra karealriyan i ina.",
+              "chineseText": "十二點，媽媽忙著做午餐。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/8586af4d6cf700524f977a0e12c2a004.wav"
+            },
+            {
+              "id": "38-7-6-3",
+              "order": 3,
+              "indigenousText": "paelipas dra karealriyan dra tuluwa tuki i, muka kan nanalri na maraidrang meladama temenun i ina.",
+              "chineseText": "午後三點，媽媽到大阿姨家，去學習織布。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/129dd8285b886bf3f20574b1b3b389fb.wav"
+            },
+            {
+              "id": "38-7-6-4",
+              "order": 4,
+              "indigenousText": "parekadruwa sungan lra i, mabangabang driya i sabak i ina.",
+              "chineseText": "夜深了，媽媽還在忙做家務事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/06e4ecb7b046af0caa47bd26ba126cad.wav"
+            },
+            {
+              "id": "38-7-6-5",
+              "order": 5,
+              "indigenousText": "kemay an semaluwan palru an aremeng i, adri dar temalaulep i ina!",
+              "chineseText": "從早上到晚上，媽媽從來不休息呢！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/a2d9ccaa0ad1f1b45158b32f1178c60f.wav"
+            },
+            {
+              "id": "38-7-6-6",
+              "order": 6,
+              "indigenousText": "salaw maulep i ina.",
+              "chineseText": "媽媽很辛苦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/0eec937bd98abf8a0bfbd08d5fde0efa.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "malremes a saya a siri",
+          "titleCh": "少了一隻羊",
+          "sentences": [
+            {
+              "id": "38-7-7-1",
+              "order": 1,
+              "indigenousText": "i Kunas i, ulraya tu siri a muketrep.",
+              "chineseText": "Kunas有十隻羊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/dc84e35e3f560c71dde254fe29e4c4c3.wav"
+            },
+            {
+              "id": "38-7-7-2",
+              "order": 2,
+              "indigenousText": "tu purikanaw i tralutralun kana wawariwari.",
+              "chineseText": "他每天讓羊在草地上吃草。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/bd7ce091ef554f79d54236195f946631.wav"
+            },
+            {
+              "id": "38-7-7-3",
+              "order": 3,
+              "indigenousText": "aipu driya! adri saima nay?",
+              "chineseText": "數一數，有沒有少呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/02a69f43ca6cd2a986115ec0172464ba.wav"
+            },
+            {
+              "id": "38-7-7-4",
+              "order": 4,
+              "indigenousText": "saya, druwaya, tuluwa, papata, lruwatra, nenema, pituwa, waluwa, waiwaya. wa! saima dra saya.",
+              "chineseText": "一隻、二隻、三隻、四隻、五隻、六隻、七隻、八隻、九隻，哇！少了一隻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/ac4db8eba99b78586e9da3713be060e8.wav"
+            },
+            {
+              "id": "38-7-7-5",
+              "order": 5,
+              "indigenousText": "ulraya isuwa? kamelamuwa ku muka mayaa!",
+              "chineseText": "在哪裡？我快去找！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/d085f590dbd780684bc735072ec66618.wav"
+            },
+            {
+              "id": "38-7-7-6",
+              "order": 6,
+              "indigenousText": "atrebungay lra! ulraya mulrasedr i likudran kana matrina na barasa.",
+              "chineseText": "找到了！原來躲在大石頭的後面。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/8613cc41837ed7669317680f27a8d0a9.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "unan",
+          "titleCh": "蛇",
+          "sentences": [
+            {
+              "id": "38-7-8-1",
+              "order": 1,
+              "indigenousText": "a unan i, sagar mupatraran an aremeng.",
+              "chineseText": "蛇喜歡在晚上出現。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/a3c83ebbca0e4f962fb89e3a708c4998.wav"
+            },
+            {
+              "id": "38-7-8-2",
+              "order": 2,
+              "indigenousText": "marayas mulrasedr kana linek aw kana barasarasa.",
+              "chineseText": "經常躲在潮濕的地方和石頭堆裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/af9c7f662d9272bfaea9a4a04a736451.wav"
+            },
+            {
+              "id": "38-7-8-3",
+              "order": 3,
+              "indigenousText": "an mingalra driya tu indan i, na kulabaw lra aw na tabilraelra lra i, adri lra karuwa penuwar.",
+              "chineseText": "只要張開嘴，老鼠和青蛙都很難逃開。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/7aae99065218141434c7ccc1114796f3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "aribanglranglrawan",
+          "titleCh": "蝴蝶",
+          "sentences": [
+            {
+              "id": "38-7-9-1",
+              "order": 1,
+              "indigenousText": "a aribanglranglrawan i, salaw bulay!",
+              "chineseText": "蝴蝶真美麗！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/919a3c27ae75865f612b8e51c97902c4.wav"
+            },
+            {
+              "id": "38-7-9-2",
+              "order": 2,
+              "indigenousText": "amau driya i, a uled a panapanaan.",
+              "chineseText": "原本，牠是一隻毛毛蟲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/6fc5c8edfa5a2a87c693b64198edcfe4.wav"
+            },
+            {
+              "id": "38-7-9-3",
+              "order": 3,
+              "indigenousText": "garem i, mikiruwan lra dra bulay!",
+              "chineseText": "現在，牠穿著美麗的衣服！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/3bc5062951735ca6e8f54bad56426fac.wav"
+            },
+            {
+              "id": "38-7-9-4",
+              "order": 4,
+              "indigenousText": "mubiibii kana apuaputr.",
+              "chineseText": "在花叢裡飛來飛去。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/6a9f7b652db6d1a4eb0e02bdff7ce8a4.wav"
+            },
+            {
+              "id": "38-7-9-5",
+              "order": 5,
+              "indigenousText": "aribanglranglrawan a! taranapaw! adriya yu mutabukulr dratu belalawatr kana kamakamang.",
+              "chineseText": "蝴蝶啊！小心喔！別掉進蜘蛛的陷阱（網）裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/c4660dbeb0036286b6538ca527a1b35c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "daw midrarang tu tedrek kana lutung?",
+          "titleCh": "猴子的屁股為什麼是紅色的？",
+          "sentences": [
+            {
+              "id": "38-7-10-1",
+              "order": 1,
+              "indigenousText": "kadru a saya wari. na lutung i, tu tariyamayaw na arem.",
+              "chineseText": "有一天，猴子欺負穿山甲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/06e5dfe88106afe104c00b19d9a50612.wav"
+            },
+            {
+              "id": "38-7-10-2",
+              "order": 2,
+              "indigenousText": "na lutung i, tu purebuway na buwang dratu marangeran pupatraran kana arem.",
+              "chineseText": "起火燒洞穴，想要逼穿山甲出來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/5351ec018e398d78e7469f3aa1580cbb.wav"
+            },
+            {
+              "id": "38-7-10-3",
+              "order": 3,
+              "indigenousText": "adri malradram dra marekamatrina na apuy.",
+              "chineseText": "沒想到，火勢越燒越大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/1884205454e2bf91a5e8fee38c5b555a.wav"
+            },
+            {
+              "id": "38-7-10-4",
+              "order": 4,
+              "indigenousText": "aw tu baitraw tu tedrek.",
+              "chineseText": "燒到牠自己的屁股。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/7d3860b350c94e8e7d3cff8a1a68f072.wav"
+            },
+            {
+              "id": "38-7-10-5",
+              "order": 5,
+              "indigenousText": "kemay kandru lra. na lutung i, midrarang lra tu tedrek.",
+              "chineseText": "從那時候，猴子的屁股就變成紅色了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/a5549753399c6362f988b8c2d921ed91.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "label": "第八階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "saigu ku temarapuyuma",
+          "titleCh": "我會講卑南族語",
+          "sentences": [
+            {
+              "id": "38-8-1-1",
+              "order": 1,
+              "indigenousText": "saigu yu temarapuyuma?",
+              "chineseText": "你會講卑南族語嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/25a652e8498705fc0919a19df9722ad3.wav"
+            },
+            {
+              "id": "38-8-1-2",
+              "order": 2,
+              "indigenousText": "aiwa, melaladam ku driya, saima ku kinalradraman.",
+              "chineseText": "是的，會一點點，我還正在學習中。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/3a823347dd1717cbe1bae3d4dd2009aa.wav"
+            },
+            {
+              "id": "38-8-1-3",
+              "order": 3,
+              "indigenousText": "mukuwa yu isuwa meladama?",
+              "chineseText": "你在哪裡學的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/beaf42c21f61ea9d4f553a5914c6534b.wav"
+            },
+            {
+              "id": "38-8-1-4",
+              "order": 4,
+              "indigenousText": "meladaladam ku i takesian.",
+              "chineseText": "我在學校學的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/fa1718ab99f21399c5d937b27f9a87f9.wav"
+            },
+            {
+              "id": "38-8-1-5",
+              "order": 5,
+              "indigenousText": "kalreayan ta meladaladam dra temarapuyuma?",
+              "chineseText": "卑南族語容易學嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/b5efc38e3ab8bfc2681e8c56e302d116.wav"
+            },
+            {
+              "id": "38-8-1-6",
+              "order": 6,
+              "indigenousText": "aiwa, kalreayan ta meladaladam aw salaw kasagasagar.",
+              "chineseText": "是的，很好學而且也很有趣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2186b55230e272ef4e1fe5bb36311433.wav"
+            },
+            {
+              "id": "38-8-1-7",
+              "order": 7,
+              "indigenousText": "saigu yu lra temarapuyuma maw!",
+              "chineseText": "你很會講卑南族語了嘛！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/5a0c49f1f2c21ade4b9dde1d31aa466c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "a Pinuyumayan mi",
+          "titleCh": "我們是卑南族",
+          "sentences": [
+            {
+              "id": "38-8-2-1",
+              "order": 1,
+              "indigenousText": "a yiēncumin mu i Taiwan?",
+              "chineseText": "你們是台灣的原住民嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/320d2f0e9315ba3aae2ce6d3b72b6a47.wav"
+            },
+            {
+              "id": "38-8-2-2",
+              "order": 2,
+              "indigenousText": "aiwa, a yiēncumin mi i Taiwan.",
+              "chineseText": "是的，我們是台灣的原住民。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/ae2647ff9fd3f959584cab2eaa2e317f.wav"
+            },
+            {
+              "id": "38-8-2-3",
+              "order": 3,
+              "indigenousText": "a Amis mu?",
+              "chineseText": "你們是阿美族嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/298ca8e0c59bd53632177afa19ff4789.wav"
+            },
+            {
+              "id": "38-8-2-4",
+              "order": 4,
+              "indigenousText": "amelri, a Pinuyumayan mi.",
+              "chineseText": "不是，我們是卑南族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/69b3561518d5c4fddea439e32db78ece.wav"
+            },
+            {
+              "id": "38-8-2-5",
+              "order": 5,
+              "indigenousText": "naniyam pinitrauwan i drekalr i, marakadruwan a Pinuyumayan.",
+              "chineseText": "我們村子裡的人大多是卑南族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/8b7b6218199194bfc9b1372f5d42fcff.wav"
+            },
+            {
+              "id": "38-8-2-6",
+              "order": 6,
+              "indigenousText": "maymi na Pinuyumayan i, kaadru mi i makalaulaudr i Taiwan.",
+              "chineseText": "我們卑南族居住在台灣的東部。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/bffadab6f6d86a930a2d8f2755623636.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "benabati dra batibatiyan",
+          "titleCh": "講故事",
+          "sentences": [
+            {
+              "id": "38-8-3-1",
+              "order": 1,
+              "indigenousText": "i emu na mainayan i, saigu benabati dra batibatiyan.",
+              "chineseText": "爺爺很會講故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/b562378419230463dbacbf638ad56a5b.wav"
+            },
+            {
+              "id": "38-8-3-2",
+              "order": 2,
+              "indigenousText": "marayas ku kadru i babalu kilrengalrengaw dratu binabatiyan na batibatiyan kan emu na mainayan.",
+              "chineseText": "我常常在院子裡，聽爺爺講故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/1164218949d5d37fae787cae912eee02.wav"
+            },
+            {
+              "id": "38-8-3-3",
+              "order": 3,
+              "indigenousText": "sadru tu kinalradraman na batibatiyan kan emu na mainayan. benabati dra “kemudakuda mudaway na punapunan?” “kemay isuwa a trau?” kema.",
+              "chineseText": "他有許多精彩的故事，說說世界怎麼樣形成的，還有人類從哪裡來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/7b4dcabc04de240c91163adc999f850e.wav"
+            },
+            {
+              "id": "38-8-3-4",
+              "order": 4,
+              "indigenousText": "na kasagasagar lra, na kasepesepelr lra i, sagar ku peniya.",
+              "chineseText": "不論是快樂的故事或是悲傷的故事，我都很喜歡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/be856f8dcb866f141e0a18f056aaf2c1.wav"
+            },
+            {
+              "id": "38-8-3-5",
+              "order": 5,
+              "indigenousText": "ku luingaw tu binabatiyan na batibatiyan kan emu na mainayan,",
+              "chineseText": "我錄下阿公講的故事，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/9309e37bab1361df05515abb34dbcdeb.wav"
+            },
+            {
+              "id": "38-8-3-6",
+              "order": 6,
+              "indigenousText": "ku pakilrengaway kananku risarisan i takesian.",
+              "chineseText": "在學校讓同學欣賞。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/d1df149c8abb201431aba7950de6cf98.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "temakesi",
+          "titleCh": "讀書",
+          "sentences": [
+            {
+              "id": "38-8-4-1",
+              "order": 1,
+              "indigenousText": "i manay na parebuwa dra dingwa?",
+              "chineseText": "是誰發明了電話？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/ef0e9ca9db6a90dbed34a37c40351d86.wav"
+            },
+            {
+              "id": "38-8-4-2",
+              "order": 2,
+              "indigenousText": "na ruma na maraasaasatr i punapunan i, ulraya isuwa?",
+              "chineseText": "世界最高的大樓在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/5e6d01398d8c7f7af7055f136194639d.wav"
+            },
+            {
+              "id": "38-8-4-3",
+              "order": 3,
+              "indigenousText": "na kuraw i, kemudakuda mengadr?",
+              "chineseText": "魚是怎樣呼吸？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/549c642938cd86565af6a5dc6a303350.wav"
+            },
+            {
+              "id": "38-8-4-4",
+              "order": 4,
+              "indigenousText": "daw dremerung dar na langitr?",
+              "chineseText": "天空為什麼會打雷？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/df4034433076c94d8c37a1818e33f61f.wav"
+            },
+            {
+              "id": "38-8-4-5",
+              "order": 5,
+              "indigenousText": "nadri na kalralradraman i, auka ta isuwa mayaa?",
+              "chineseText": "這些知識在哪裡可以找到？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/05e73546c7e9a61991beddac142e6e02.wav"
+            },
+            {
+              "id": "38-8-4-6",
+              "order": 6,
+              "indigenousText": "ulraya kana tilitilin. an pakirungetr ta temakesi i, marekasadru ta kinalradraman.",
+              "chineseText": "在書裡，勤讀書可以增加我們的知識。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/23/2cc7277a89bec0a2490fd3cea12fc612.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "kibulas dra tilin",
+          "titleCh": "借書",
+          "sentences": [
+            {
+              "id": "38-8-5-1",
+              "order": 1,
+              "indigenousText": "na tilin na “An-tu-sen tong-huwa” i, emaip yu lra?",
+              "chineseText": "你讀過《安徒生童話》嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d2121c23b961bb4b838e98eb70698963.wav"
+            },
+            {
+              "id": "38-8-5-2",
+              "order": 2,
+              "indigenousText": "emaip ku lra kandri na tilin, salaw kasagasagar.",
+              "chineseText": "我讀過這本書，很好看。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0a468df7b05029fa3513ef05e73765f5.wav"
+            },
+            {
+              "id": "38-8-5-3",
+              "order": 3,
+              "indigenousText": "karuwa ku kibulas kandru na tilin?",
+              "chineseText": "我可以借那本書嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/7212ee6855b4862c58891232f2b3279e.wav"
+            },
+            {
+              "id": "38-8-5-4",
+              "order": 4,
+              "indigenousText": "uniyan ku kandru na tilin. amawna, ulraya tu tilin kan Balraybay. ti kibulasanay yu.",
+              "chineseText": "我沒有那本書，但是Balraybay有。我可以幫你向她借。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c45f9b08c7750e269d281799b305aab2.wav"
+            },
+            {
+              "id": "38-8-5-5",
+              "order": 5,
+              "indigenousText": "semangalan! an mikinibulas yu i, pabulasi ku lra.",
+              "chineseText": "謝謝，如果借到的話，就借給我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/ef9705cb24d7c1d2c00f43ffae634418.wav"
+            },
+            {
+              "id": "38-8-5-6",
+              "order": 6,
+              "indigenousText": "aiwa. amawna, an peniya yu emaip i, parebeliyasan lra kan Balraybay.",
+              "chineseText": "好的，不過看完了，你要還給Balraybay。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/39af876d4356ed8e94b08202dec8c73a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "tremima dra tilin",
+          "titleCh": "買書",
+          "sentences": [
+            {
+              "id": "38-8-6-1",
+              "order": 1,
+              "indigenousText": "mararenang mi kananku risarisan muka i tiyam dra tilin a daman.",
+              "chineseText": "昨天，我和同學一起去書店。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/321042968f4d18434049ed025aca0c0b.wav"
+            },
+            {
+              "id": "38-8-6-2",
+              "order": 2,
+              "indigenousText": "maranger mi tremima dra ce-tiēn aw dra tilin dra batibatiyan.",
+              "chineseText": "我們都想買字典和故事書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/7ee973f8b695d3263e05bcf6d2e6d0a9.wav"
+            },
+            {
+              "id": "38-8-6-3",
+              "order": 3,
+              "indigenousText": "karatrima mi dra ce-tiēn dra mararisan.",
+              "chineseText": "我們一起買了相同的字典。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/2a730ef357ec4be1d5ea768f0dffef9c.wav"
+            },
+            {
+              "id": "38-8-6-4",
+              "order": 4,
+              "indigenousText": "amawna, adri marisan naniyam trinimaan na tilin na batibatiyan.",
+              "chineseText": "但是，我們買的故事書不同。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/b7467f946a18cafd0ec316a60471bdc5.wav"
+            },
+            {
+              "id": "38-8-6-5",
+              "order": 5,
+              "indigenousText": "tu trinimaan kananku risarisan i, amau na An-tu-sen tong-huwa. ku trinimaan i. amau tu dinapalran dra temuwamuwan na tilin.",
+              "chineseText": "他買的是《安徒生童話》，我買的是《祖先的足跡》。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/24d261af5cf006c3f1ac6386ab1aba21.wav"
+            },
+            {
+              "id": "38-8-6-6",
+              "order": 6,
+              "indigenousText": "adri marisan naniyam trinimaan na tilin. amawna, marisan tu trima.",
+              "chineseText": "買的書不同，但是價錢是相同的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/6872bf595d7b182c9869bceb60071812.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "temililr",
+          "titleCh": "在寫字",
+          "sentences": [
+            {
+              "id": "38-8-7-1",
+              "order": 1,
+              "indigenousText": "meladaladam ku temililr.",
+              "chineseText": "我在練習寫字。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/babf34e0fcd58d88c5e5cb95f57e503b.wav"
+            },
+            {
+              "id": "38-8-7-2",
+              "order": 2,
+              "indigenousText": "maranger ku pamelamu saigu temililr.",
+              "chineseText": "我希望能趕快會寫字。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/8e695fef0165c78e9f14343da6a335db.wav"
+            },
+            {
+              "id": "38-8-7-3",
+              "order": 3,
+              "indigenousText": "an saigu ku lra temililr i,",
+              "chineseText": "當我學會寫字的時候，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/fd3119436c09ec17f572b0d4e63b17c4.wav"
+            },
+            {
+              "id": "38-8-7-4",
+              "order": 4,
+              "indigenousText": "kararuwa ku lra temililr dra tigami paatedr kan baelri na mainayan na ulraya i dawilr.",
+              "chineseText": "就可以寄信給在遠方的哥哥。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a2ec9d413b6457e5057a66cb61793799.wav"
+            },
+            {
+              "id": "38-8-7-5",
+              "order": 5,
+              "indigenousText": "kiyakarun i sidrumayan i baelri na mainayan.",
+              "chineseText": "我哥哥在外地工作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/da27acb549dd11f492def9b576cf555d.wav"
+            },
+            {
+              "id": "38-8-7-6",
+              "order": 6,
+              "indigenousText": "kemudakuda lra i baelri na mainayan garem? masupeng ku kantaw i!",
+              "chineseText": "哥哥現在怎麼樣了？我好想念他喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c27190271e56d3dfc2146d627f4a8577.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "a tigami a baberay kan baelri",
+          "titleCh": "給哥哥的一封信",
+          "sentences": [
+            {
+              "id": "38-8-8-1",
+              "order": 1,
+              "indigenousText": "eba a, inaba yu driya?",
+              "chineseText": "哥哥，你好嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/db221089ed9e4484b754e97fa789e9ca.wav"
+            },
+            {
+              "id": "38-8-8-2",
+              "order": 2,
+              "indigenousText": "kituludr ku lra kanu tigami, salaw ku semangal!",
+              "chineseText": "我接到了你的信，我非常高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/1d584c54b9d5f7583f24e02ec8fddeb5.wav"
+            },
+            {
+              "id": "38-8-8-3",
+              "order": 3,
+              "indigenousText": "pakanguwayan kandri na bulan. nu pinaatedr na tilin na tuluwa i, salaw ku sagar.",
+              "chineseText": "上個月，你寄給我的三本書我很喜歡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d55603ce2b850ec20694d126193bbb0d.wav"
+            },
+            {
+              "id": "38-8-8-4",
+              "order": 4,
+              "indigenousText": "meretra yu lra dranu tinakesian i, aru uwatusinsi yu lra.",
+              "chineseText": "你畢業了，就要成為老師了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/520c54245dc576794b9466494c410363.wav"
+            },
+            {
+              "id": "38-8-8-5",
+              "order": 5,
+              "indigenousText": "karaaemetr ku lra temakesi.",
+              "chineseText": "我要努力讀書了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/1d1ea446bd0f587e41114e059aec5d9f.wav"
+            },
+            {
+              "id": "38-8-8-6",
+              "order": 6,
+              "indigenousText": "maruwaya ku kamawan kanu mutusinsi.",
+              "chineseText": "希望和你一樣當個老師。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d4df6e4b7156d056c69b6d1cea948421.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "ze-ci",
+          "titleCh": "日記",
+          "sentences": [
+            {
+              "id": "38-8-9-1",
+              "order": 1,
+              "indigenousText": "temililr ku dra ze-ci kana wawariwari.",
+              "chineseText": "我每天寫日記。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/ba4854970544b8f5efec9a4744818f3f.wav"
+            },
+            {
+              "id": "38-8-9-2",
+              "order": 2,
+              "indigenousText": "ku tililray ku pinakalrangan aw ku kiniangeran.",
+              "chineseText": "我把發生的事及所想的記下來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b8e210c1a8e171d5a77650ed40f3b69f.wav"
+            },
+            {
+              "id": "38-8-9-3",
+              "order": 3,
+              "indigenousText": "idru i, a ladaladaman dra tatililran aw dra kiyaangeran.",
+              "chineseText": "那是可以練習寫字和思考的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/01949b572887f35a9863a48890c1e9df.wav"
+            },
+            {
+              "id": "38-8-9-4",
+              "order": 4,
+              "indigenousText": "karuwa pakaametreg draku wanger.",
+              "chineseText": "可以培養我的耐心。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/7d5dda5d4817c9f86eb1570de704c00f.wav"
+            },
+            {
+              "id": "38-8-9-5",
+              "order": 5,
+              "indigenousText": "kandru kana ze-ci i, ulraya a esadru ku kiniangeangeran.",
+              "chineseText": "日記裡有許多我的回憶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d388675759a36ccd4fef5d4b4908249f.wav"
+            },
+            {
+              "id": "38-8-9-6",
+              "order": 6,
+              "indigenousText": "ti kiyarungetr semime emapetr.",
+              "chineseText": "我要好好地珍惜保存。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5d14fa3dab994ef29ddc6a8a53b85b3b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "na mitrepa panini dra tigami",
+          "titleCh": "專門發送信件的（郵差）",
+          "sentences": [
+            {
+              "id": "38-8-10-1",
+              "order": 1,
+              "indigenousText": "na mitrepa panini dra tigami i, mikiruwan dra miraat.",
+              "chineseText": "郵差穿著綠色的衣服，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/941d82b96578b67f2ffb4a301f832dc5.wav"
+            },
+            {
+              "id": "38-8-10-2",
+              "order": 2,
+              "indigenousText": "kana wawariwari muka paninia dra tigami makarumaruma.",
+              "chineseText": "每天挨家挨戶去送信。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d41343b789ebfafe25f290dc941fa0c6.wav"
+            },
+            {
+              "id": "38-8-10-3",
+              "order": 3,
+              "indigenousText": "tu kadaway lra. adri i, tu udalray lra kemuda i,",
+              "chineseText": "不論被大太陽曬，或者被大雨淋，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c7f7b7110c0fa8b855506abfecde8dbc.wav"
+            },
+            {
+              "id": "38-8-10-4",
+              "order": 4,
+              "indigenousText": "tu atedranay na tigami kana rarumaruma driya.",
+              "chineseText": "他還是把信送到每個家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2f5f9700834d06c15865a7bcbe4d3d13.wav"
+            },
+            {
+              "id": "38-8-10-5",
+              "order": 5,
+              "indigenousText": "na kituludr dra tigami na trau i, salaw semangal!",
+              "chineseText": "人們收到了信都很高興！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a7ed81a167254f3a04fbe89e65f036d8.wav"
+            },
+            {
+              "id": "38-8-10-6",
+              "order": 6,
+              "indigenousText": "na mitrepa panini dra tigami i, kurenang semangal!",
+              "chineseText": "郵差也感到很高興！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/7d605d1a788de86e06157dc214606369.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "label": "第九階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "semepad",
+          "titleCh": "分享",
+          "sentences": [
+            {
+              "id": "38-9-1-1",
+              "order": 1,
+              "indigenousText": "an muka paalrupa ta drinekalranan i, ta sepadanay pakasemangal ta nirumaenan dra rawa.",
+              "chineseText": "我們的族人去打獵，會把獵物分享給親友。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/29/8c630d4bf72f19ef214f2c379aad3df5.wav"
+            },
+            {
+              "id": "38-9-1-2",
+              "order": 2,
+              "indigenousText": "an kemay i dawilr druwa kirepanauwa a trau i, ta padanganay kana marainabanaba na aekanan.",
+              "chineseText": "遠方的朋友來拜訪，主人會把最好的食物拿出來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/29/c9a7df71d8f01cbc6f6580cbc731b7b2.wav"
+            },
+            {
+              "id": "38-9-1-3",
+              "order": 3,
+              "indigenousText": "an kadru a lregiyan i drekalr i, ulraya na demadukel dra abay. ulraya na temuwaeraw. ulraya na trematruwak dra lriyung.",
+              "chineseText": "部落裡舉行祭典，有人在舂打麻糬，有人在釀小米酒，有人在殺豬。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/29/70f2aaec7e6a7884e8cb0fbcbd7a4844.wav"
+            },
+            {
+              "id": "38-9-1-4",
+              "order": 4,
+              "indigenousText": "idri i, ta kakuwayanan i drekalr.",
+              "chineseText": "這是我們部落裡的傳統習慣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/06/29/51e077907cf588ac7c135d4a8fede020.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "tu bati dra maaidrangan",
+          "titleCh": "老人的話",
+          "sentences": [
+            {
+              "id": "38-9-2-1",
+              "order": 1,
+              "indigenousText": "“an maruni na tabilraelra i, kaaudalr. an maruni na kuliling i, kakadaw.” kema tu bati dra maidrangan.",
+              "chineseText": "老人常說：「蛙鳴降雨，蟋蟀鳴天晴。」",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/06180ea48283f9793db417998c9544fd.wav"
+            },
+            {
+              "id": "38-9-2-2",
+              "order": 2,
+              "indigenousText": "idri na bati tu pauwayan i,",
+              "chineseText": "這句話的意思是：",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/150c87dc91bb522fd28613bb50a85608.wav"
+            },
+            {
+              "id": "38-9-2-3",
+              "order": 3,
+              "indigenousText": "an maruni na tabilraelra an aremeng. an dadaman i, adri adri dar maudalr.",
+              "chineseText": "如果夜晚聽見蛙鳴，那麼隔天一定會下雨；",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/ab2bba738e177b6340b59b678f4ca9f9.wav"
+            },
+            {
+              "id": "38-9-2-4",
+              "order": 4,
+              "indigenousText": "an maruni na kuliling an karauraub i, kababias an dadaman.",
+              "chineseText": "如果傍晚時聽見蟋蟀鳴，那麼天氣一定會很熱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/0a2f2699367c2ee84f92c2f5d587d90b.wav"
+            },
+            {
+              "id": "38-9-2-5",
+              "order": 5,
+              "indigenousText": "idri i, tu tinalraman aw tu drinuwadruk dra temuwamuwan driya.",
+              "chineseText": "這曾是祖先所經歷及累積的經驗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/5aa8535a0acab53ca8a0762d5165766f.wav"
+            },
+            {
+              "id": "38-9-2-6",
+              "order": 6,
+              "indigenousText": "alra amelri a pananaan kemuda. amawna, marayas dar patika.",
+              "chineseText": "雖然不一定真的，但是通常很準（靈）。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/03/ba25f85e3fb334e1cc6a4215bdfe8a76.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "lreber",
+          "titleCh": "口簧琴",
+          "sentences": [
+            {
+              "id": "38-9-3-1",
+              "order": 1,
+              "indigenousText": "garem kana wari i, tu palaladami ta semanga dra lreber kana sinsi.",
+              "chineseText": "今天，老師會教我們製作口簧琴。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/9e7fba495af0dc16452def25ebf9f199.wav"
+            },
+            {
+              "id": "38-9-3-2",
+              "order": 2,
+              "indigenousText": "lreber kema ta dra manay?",
+              "chineseText": "什麼是口簧琴？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/7b686d472b7d94069b931ebdc460255c.wav"
+            },
+            {
+              "id": "38-9-3-3",
+              "order": 3,
+              "indigenousText": "idru i, tu dinaway drata temuwamuwan a pararuniyan. a sinanga dra basikaw.",
+              "chineseText": "它是我們祖先發明的樂器，是用竹片做成的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/f35f10f2d4e1ff1b6f20500a2098a8a0.wav"
+            },
+            {
+              "id": "38-9-3-4",
+              "order": 4,
+              "indigenousText": "an asuwa i, karuwa ta paruni dra lreber?",
+              "chineseText": "什麼時候可以吹奏口簧琴？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/513c59126aaaaef20ed14b5dd378409a.wav"
+            },
+            {
+              "id": "38-9-3-5",
+              "order": 5,
+              "indigenousText": "driyama lra nanta wanger. an peniya ta driya drata bangabangan i uma.",
+              "chineseText": "任何時候都可以，只要是農閒的時候。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/bbe12cb76bf7f5dcbfdeec4a93a4cfd2.wav"
+            },
+            {
+              "id": "38-9-3-6",
+              "order": 6,
+              "indigenousText": "amawna, an kadru a minatray ta trau i, adri ta pararuni. malregi.",
+              "chineseText": "但是，如果家裡有人去世就不能吹奏，很忌諱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/453a5425d2f45b6f876d52fa2ea62611.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "nanta drekalr",
+          "titleCh": "我們的部落",
+          "sentences": [
+            {
+              "id": "38-9-4-1",
+              "order": 1,
+              "indigenousText": "nanta drekalr i, ulraya a karumaan, a palakuwan aw a trakuban.",
+              "chineseText": "我們的部落有祖靈屋、成人會所和少年會所。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/05/01/a813a2335eb30eb12d7451fe74e119c3.wav"
+            },
+            {
+              "id": "38-9-4-2",
+              "order": 2,
+              "indigenousText": "na palakuwan i, tu kararadrukan dra mainayan na miyalaus malealaw i drekalr.",
+              "chineseText": "成人會所是男性聚集、防禦、保衛部落的地方。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/bdcfa6f3c3f425f7f12ef4337a4b3a1a.wav"
+            },
+            {
+              "id": "38-9-4-3",
+              "order": 3,
+              "indigenousText": "na karumaan i, a kiyaanunan dra temuwamuwan. aw sasunanan dra dawa aw dra lumay.",
+              "chineseText": "祖靈屋是用來祭拜祖先的，當收割後要供奉小米和稻米祭品來祭祖的地方。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5cef96352dab3ae80205d716d913471d.wav"
+            },
+            {
+              "id": "38-9-4-4",
+              "order": 4,
+              "indigenousText": "na trakuban i, tu kaadruwan kipaladam dra trakubakuban.",
+              "chineseText": "少年會所，是少年們聚集受訓的場所。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/f006f0e2a37b341172491d43cf623f85.wav"
+            },
+            {
+              "id": "38-9-4-5",
+              "order": 5,
+              "indigenousText": "idri i, ta ruma na bulretrenganan i Puyuma.",
+              "chineseText": "這是我們普悠瑪南王部落傳統的建築。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/be6b971cde483b810244b322a1be8d06.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "garemanan na pinaraganan",
+          "titleCh": "現代的設施",
+          "sentences": [
+            {
+              "id": "38-9-5-1",
+              "order": 1,
+              "indigenousText": "na adalrep kanta drekalr na sinki i, amau i Balangaw.",
+              "chineseText": "距離部落最近的城鎮是台東市。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/74bc152b11f1117a9f54ed3f4e7e2cd3.wav"
+            },
+            {
+              "id": "38-9-5-2",
+              "order": 2,
+              "indigenousText": "kadru i, ulraya a tiyam, a yu-ci aw a paisingan.",
+              "chineseText": "那裡有商店、郵局、醫院。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2f4bb265eed99d57cb8282b113006e88.wav"
+            },
+            {
+              "id": "38-9-5-3",
+              "order": 3,
+              "indigenousText": "auka ta tremimaa dra manay driya i tiyam.",
+              "chineseText": "我們去商店買東西。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b8677fe5a0cca66585a0f8a4072f17aa.wav"
+            },
+            {
+              "id": "38-9-5-4",
+              "order": 4,
+              "indigenousText": "karuwa ta paapetr dra paisu aw paatedr dra tigami i yu-ci.",
+              "chineseText": "可以到郵局存錢和寄信。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/f4a2cb7dc8559eb2a814ad0277367381.wav"
+            },
+            {
+              "id": "38-9-5-5",
+              "order": 5,
+              "indigenousText": "an kualeng ta i, karuwa ta muka i paisingan kinauwa.",
+              "chineseText": "如果生病了，可以到醫院看病。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/879375503c8cfe31331d4e5a9d19340f.wav"
+            },
+            {
+              "id": "38-9-5-6",
+              "order": 6,
+              "indigenousText": "kadru lra nadri na garemanan na pinaraganan i, salaw ta lra kalreayan.",
+              "chineseText": "有了這些現代的設施，讓我們的生活更方便。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d245dec6f74976b2d06e716538bba620.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "na yiēncumin i sinki",
+          "titleCh": "都市的原住民",
+          "sentences": [
+            {
+              "id": "38-9-6-1",
+              "order": 1,
+              "indigenousText": "tu pinitrauwan dra yiēncumin i Taiwan. an saleman i, miyadruwa.",
+              "chineseText": "原住民的人口佔台灣總人口的百分之二。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/f604e53101a89e5e6e6cc932a32a68f0.wav"
+            },
+            {
+              "id": "38-9-6-2",
+              "order": 2,
+              "indigenousText": "kararuwa dra parekadruwa na pinitrauwan na kikadru i drekalr.",
+              "chineseText": "大約有一半的人口住在部落。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/708ae2fd64d47aac3d90f063aedc6b0e.wav"
+            },
+            {
+              "id": "38-9-6-3",
+              "order": 3,
+              "indigenousText": "na parekadruwa na pinitrauwan i, kikadru lra i sinki.",
+              "chineseText": "另一半人口已經住在都市。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/3a71c8eba3cb5d5968493fdef61c9b9f.wav"
+            },
+            {
+              "id": "38-9-6-4",
+              "order": 4,
+              "indigenousText": "i sinki i, marasadru a kiyakarunan kana drekalr. driyama kemakedreng dra lralrakan.",
+              "chineseText": "都市的工作機會比部落多，所以吸引很多年輕人。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/dc97741d367febb53695374bff72522f.wav"
+            },
+            {
+              "id": "38-9-6-5",
+              "order": 5,
+              "indigenousText": "patrengetreng lra kikadru i sinki, kikarun, mikataguwin aw miwalrak.",
+              "chineseText": "他們在都市定居，工作，結婚並生子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5cd7f2e2a23c18d2de3a4cd6071b021d.wav"
+            },
+            {
+              "id": "38-9-6-6",
+              "order": 6,
+              "indigenousText": "driyama lra! kadruwan a kakitengan a yiēncumin na piniwalrak aw matrina i sinki garem.",
+              "chineseText": "所以囉！現在有許多小原住民在都市出生和長大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/869d1b140799998000e43d1c14c4dbb8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "mangayaw",
+          "titleCh": "年祭",
+          "sentences": [
+            {
+              "id": "38-9-7-1",
+              "order": 1,
+              "indigenousText": "kana aamiami an puwaludus na amiyan i, basibas aw mangayaw ta drekalr.",
+              "chineseText": "每年到年尾，我們的部落舉行少年祭與年祭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5257223bb52d6d013956bf04423a43fa.wav"
+            },
+            {
+              "id": "38-9-7-2",
+              "order": 2,
+              "indigenousText": "tu kinatalrimayan, tu kinapadrangalan dra drekalr idri na wari. aw amau tu paruturutungan dra kasarumaemaenan.",
+              "chineseText": "這是部落最重視，最重要的日子，也是每個家族團聚的時刻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/4d9e8a2add1e5a332630aa3f2a380965.wav"
+            },
+            {
+              "id": "38-9-7-3",
+              "order": 3,
+              "indigenousText": "mukasakasa ta semenay aw muarak i palakuwan. a pakasemangal dra amiyan.",
+              "chineseText": "大家一起在成人會所唱歌跳舞來慶祝年節。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/20ef1123806185058a13ad277c627e28.wav"
+            },
+            {
+              "id": "38-9-7-4",
+              "order": 4,
+              "indigenousText": "kandri na ami i, tu wadi na mainayan kan namalri. sarumaenan kemay i Taipei muisatr dra hikuki muruma.",
+              "chineseText": "今年，叔叔全家人從台北搭飛機回來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d80dbd3824d012ee67141c287dadbdb3.wav"
+            },
+            {
+              "id": "38-9-7-5",
+              "order": 5,
+              "indigenousText": "“ta kinasareedran i, amau ta kangayawan i drekalr.” kema i baelri na mainayan na nirekaraasa.",
+              "chineseText": "堂哥說：「我們最懷念的，就是家鄉的年祭。」",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/460c0111cd8833eccd57047d5226c424.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "pubiyaw",
+          "titleCh": "獻祭",
+          "sentences": [
+            {
+              "id": "38-9-8-1",
+              "order": 1,
+              "indigenousText": "kanta drekalr i, ulraya a karumaan a bulretrenganan.",
+              "chineseText": "我們的部落有一間古老的祖靈屋。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/839eb66a0f8e91a5d024418ae5506248.wav"
+            },
+            {
+              "id": "38-9-8-2",
+              "order": 2,
+              "indigenousText": "an pubiyaw i, kadru i pitaun kana karumaan melabelab dratu gumulr kana ura.",
+              "chineseText": "獻祭祖先時，在祖靈屋門前火燒山羌的毛。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5f63a6781b408b7b93b42b544bd72380.wav"
+            },
+            {
+              "id": "38-9-8-3",
+              "order": 3,
+              "indigenousText": "na drinekalranan i, muka muliyusa kana masibulebul. tu pakurenanganay tu kualengan aw tu siputran kana aseban.",
+              "chineseText": "族人就在煙霧中走一圈，將身上的疾病和憂傷隨煙霧飄走。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2df488d804f25a6f06c097339039f58b.wav"
+            },
+            {
+              "id": "38-9-8-4",
+              "order": 4,
+              "indigenousText": "na meraruwa i, tu patabanganay na ura pubiyaw i karumaan. aw mengadir semungal dra temuwamuwan.",
+              "chineseText": "祭司在祖靈屋供上羌肉，朗誦祭文感謝祖靈。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/88f26095a813554bd6e61c1f5f1694d8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "puwaruma",
+          "titleCh": "婚禮",
+          "sentences": [
+            {
+              "id": "38-9-9-1",
+              "order": 1,
+              "indigenousText": "tayta na Pinuyumayan i, puwaruma kema dra mikatagaguwin.",
+              "chineseText": "我們卑南族人，講成家就是結婚的意思。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/137e22061b1358d94f94a16bb1808c29.wav"
+            },
+            {
+              "id": "38-9-9-2",
+              "order": 2,
+              "indigenousText": "an ulraya ta nirumaenan a puwaruma i, a kasangalan dra sadrekalran.",
+              "chineseText": "如果家族有人結婚，是整個部落裡的大事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c12eb64fa3baad25ddc0ecf39062bcc6.wav"
+            },
+            {
+              "id": "38-9-9-3",
+              "order": 3,
+              "indigenousText": "na kinumainay lra aw na kinubabay lra i, penadang dra aekanan, dra dinalreu. patengadraw pakan dra nirumaenan.",
+              "chineseText": "新郎與新娘家裡會準備佳餚、甜酒宴請親友。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/805dd02208f29df5a17858c08a5e3fa6.wav"
+            },
+            {
+              "id": "38-9-9-4",
+              "order": 4,
+              "indigenousText": "na pinuwarumaan na mainayan aw na babayan i, marepatakilr dra eraw aw madradrulun dra puwalima.",
+              "chineseText": "新郎和新娘要相互敬酒，還要互相交換手飾。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/4f6cd300e90388fcc54728eaa0c0db3f.wav"
+            },
+            {
+              "id": "38-9-9-5",
+              "order": 5,
+              "indigenousText": "tu turuway kana maaidrangan. tu pakasemangalay dra ngai dra bulay dratu nirumaenan.",
+              "chineseText": "長老為他們福證、訓話，族人為他們讚美祝福。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/294dcf08d8409813cf7bf8d6a8eba4a0.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "meretra i takesian",
+          "titleCh": "畢業",
+          "sentences": [
+            {
+              "id": "38-9-10-1",
+              "order": 1,
+              "indigenousText": "garem kana wari i, meraretra mi i takesian.",
+              "chineseText": "今天，是我們在學校畢業的日子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/467983489e2dd89fe429a6a9ceb7e575.wav"
+            },
+            {
+              "id": "38-9-10-2",
+              "order": 2,
+              "indigenousText": "tu langetriaw mi kana maradawan aw tu pulapusaw mi i takesian.",
+              "chineseText": "學長打我們的臀部並在校為我們舉辦晉級儀式。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/dddae494b569bb9d56fb5c306f8caab5.wav"
+            },
+            {
+              "id": "38-9-10-3",
+              "order": 3,
+              "indigenousText": "tu paariariyaw mi belenu kana maradawan.",
+              "chineseText": "學長讓我們賽跑。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/335b67883bfcbefb9381f07a4f20626f.wav"
+            },
+            {
+              "id": "38-9-10-4",
+              "order": 4,
+              "indigenousText": "na meredek i papalruwan i, tu puaputray.",
+              "chineseText": "到達終點的就為他戴上花環。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b13afa63ca80717354dd1a99737df632.wav"
+            },
+            {
+              "id": "38-9-10-5",
+              "order": 5,
+              "indigenousText": "na sinsian i, tu asiretaw mi aw tu turuway mi dra kauwaringetran.",
+              "chineseText": "老師為我們祝福，並且勉勵我們要勇敢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/be2cd3dca0939cd60706fb0313934425.wav"
+            },
+            {
+              "id": "38-9-10-6",
+              "order": 6,
+              "indigenousText": "semenay dratu senay dra puwaludusan. karamisasayan mi mupatraran i takesian. auka mi trempaya dra bekalan dra kakawangan.",
+              "chineseText": "驪歌響起，我們一個接一個地走出學校，邁向新的人生旅程。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/de5dd7df0035ea3910b3f5db44f9d489.wav"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -71,10 +71,9 @@
           </div>
 
           <div class="scene-side">
-            <div id="my-turn" class="my-turn" hidden>
-            <h2 id="turn-title">換你說</h2>
+            <div id="my-turn" class="my-turn" role="group" aria-label="任務作答" hidden>
             <div class="input-mode-bar">
-              <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前語音，按一下改為打字"></button>
+              <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前錄音，按一下改為打字"></button>
             </div>
             <div id="input-type" hidden>
               <label for="answer">族語回應</label>
@@ -95,9 +94,6 @@
               <button id="rerecord" type="button" hidden>重新錄音</button>
             </div>
             <div class="submit-row">
-              <!-- 答錯 3 次出現的「自動說這句」（官方 autoask-btn：系統代說，讓關卡往下走），
-                   放在送出鈕旁邊，跟著輸入面板走 -->
-              <button id="quest-autoask" class="primary" type="button" hidden>自動說一次這句</button>
               <button id="submit" class="primary" disabled>送出這句</button>
               <button id="retry" type="button" hidden>重試判定</button>
             </div>
@@ -129,32 +125,18 @@
       <div class="scene-nav">
         <button id="quest-back" type="button">← 回到對話</button>
         <div id="quest-levels" class="level-picker" role="group" aria-label="選擇要玩的關卡"></div>
-        <p id="quest-progress"></p>
-        <button id="quest-hint" type="button">看提示</button>
+        <p id="quest-progress" hidden></p>
+        <button id="quest-hint" type="button" aria-controls="quest-hint-box" aria-expanded="false">看提示</button>
       </div>
       <div id="quest-hint-box" class="hint-box" hidden>
         <p>這關可能用到的詞（沒有順序）：</p>
         <ul id="quest-hint-words"></ul>
-      </div>
-      <div id="quest-body" class="scene-body">
-        <!-- 任務說明：寬螢幕在場景左邊，窄螢幕在場景上方。 -->
-        <div class="dialogue quest-board">
-          <div class="dialogue__say">
-            <span class="prompt" id="quest-speaker">任務</span>
-            <p id="quest-text" class="dialogue__zh">任務說明</p>
-            <p id="quest-tips" class="quest-tips" hidden></p>
-            <p id="quest-reply" class="dialogue__ab"></p>
-          </div>
-          <div class="dialogue__controls">
-            <button id="quest-replay" class="primary" type="button">再聽一次</button>
-            <span id="quest-audio-state" class="audio-state" data-state="idle" aria-live="polite">想聽再按播放</span>
-            <button id="quest-next" class="arrow" type="button" hidden>下一關 →</button>
-          </div>
-          <audio id="quest-audio"></audio>
-          <!-- 判定的對錯音效照舊站（官方 <audio id="right-sound"/#wrong-sound">，熱連結） -->
-          <audio id="quest-right-sound" src="https://web.klokah.tw/text/mp3/right.mp3" preload="auto"></audio>
-          <audio id="quest-wrong-sound" src="https://web.klokah.tw/text/mp3/wrong.mp3" preload="auto"></audio>
+        <div class="hint-box__audio">
+          <button id="quest-replay" type="button">聽正確說法</button>
+          <span id="quest-audio-state" class="audio-state" data-state="idle" aria-live="polite">按一下聽正確說法</span>
         </div>
+      </div>
+      <div id="quest-body" class="scene-body scene-body--quest">
         <div class="stage quest-stage" id="quest-stage">
           <div class="quest-scene" id="quest-scene-box">
           <img id="quest-scene" class="stage__bg" alt="任務場景" >
@@ -165,16 +147,31 @@
           </div>
         </div>
         <div id="quest-side" class="quest-side">
+          <!-- 任務卡：寬螢幕在右欄最上方（輸入區上面），窄螢幕接在場景後面。 -->
+          <div class="dialogue quest-board">
+            <div class="dialogue__say">
+              <span class="prompt" id="quest-speaker">任務</span>
+              <p id="quest-text" class="dialogue__zh">任務說明</p>
+              <p id="quest-tips" class="quest-tips" hidden></p>
+              <p id="quest-reply" class="dialogue__ab"></p>
+            </div>
+            <audio id="quest-audio"></audio>
+            <!-- 判定的對錯音效照舊站（官方 <audio id="right-sound"/#wrong-sound">，熱連結） -->
+            <audio id="quest-right-sound" src="https://web.klokah.tw/text/mp3/right.mp3" preload="auto"></audio>
+            <audio id="quest-wrong-sound" src="https://web.klokah.tw/text/mp3/wrong.mp3" preload="auto"></audio>
+          </div>
           <div id="quest-goal" class="quest-goal" hidden></div>
           <div id="quest-tags" class="quest-goal quest-tags" hidden>
             <h3>已問過的同學</h3>
-            <p class="quest-tag-help">回答只播放語音；聽不清楚可以按「再聽一次」。</p>
             <div id="quest-heard" class="quest-heard"></div>
             <div id="quest-tag-section" class="quest-tag-section" hidden>
               <h3>名牌</h3>
               <div id="quest-tag-dock" class="quest-tag-dock"></div>
             </div>
           </div>
+          <!-- 答錯 3 次出現的「自動說這句」（官方 autoask-btn：系統代說，讓關卡往下走）。
+               放在輸入面板外面，選人失敗後面板收起時仍看得到。 -->
+          <button id="quest-autoask" class="primary quest-autoask" type="button" hidden>自動說一次這句</button>
           <!-- 過關時出現在右欄下方的「完成任務」鈕：學者自己按了才開「任務完成！」彈窗 -->
           <button id="quest-complete" class="quest-complete" type="button" hidden>完成任務</button>
         </div>

@@ -23,9 +23,14 @@ assert.ok(page.includes('id="theme-grid"'));
 assert.ok(page.includes("選擇練習主題"));
 assert.ok(page.includes("播放提示"), "教材音檔按鈕必須叫「播放提示」，不叫播放音檔");
 assert.ok(!page.includes("播放音檔"), "不得再出現「播放音檔」字樣");
-assert.ok(page.indexOf("id=\"rerecord\"") < page.indexOf(">播放提示</button>"), "「播放提示」按鈕必須放在作答區最下面（重新錄音之後）");
+assert.ok(page.includes('class="hint-toggle"') && page.includes('aria-expanded="false"') && page.includes('aria-controls="hint-panel"'), "看提示必須預設收合");
+assert.ok(page.includes('id="hint-panel" class="sentence-hint" hidden'));
+assert.ok(page.indexOf('id="hint-panel"') < page.indexOf('id="replay"'), "播放提示音檔必須放在提示區內");
+assert.ok(page.includes('data-hint="chinese"') && page.includes('data-hint="indigenous"'), "提示需提供中文與族語對照");
 assert.ok(page.includes("停止錄音後會自動送出辨識"));
 assert.ok(app.includes("finishRecording") && /function finishRecording\(\)[\s\S]*?runFlow\(\)/.test(app), "停錄後必須自動送出");
+assert.ok(app.includes("createHintPanel") && app.includes("hint.render") && app.includes("hint.close"), "提示需接上共用面板");
+assert.ok(/function renderResult[\s\S]*?hint\.close\(\)/.test(app), "送出後提示需自動收合");
 assert.ok(!page.includes('id="submit"') && !page.includes(">送出辨識<"), "純語音不得再有送出辨識鈕");
 
 /* ---------- §4 族 → ASR 族級模型：16 對 16，寫死不推導 ---------- */

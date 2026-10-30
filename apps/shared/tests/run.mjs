@@ -14,6 +14,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../.
 assert.ok(fs.existsSync(path.join(root, "apps/shared/input-mode.mjs")));
 assert.ok(fs.existsSync(path.join(root, "api/llm-complete.mjs")));
 assert.ok(fs.existsSync(path.join(root, ".env.example")));
+assert.match(
+  fs.readFileSync(path.join(root, "apps/basic-learning/body-parts-practice/styles.css"), "utf8"),
+  /\.record-state\[data-state=["']?idle["']?\]\s*\{[^}]*display\s*:\s*none/,
+);
 assert.equal(DEFAULT_LLM_MODEL, "google/gemma-4-26B-A4B-it");
 assert.equal(LLM_COMPLETE_PATH, "/api/llm-complete");
 
@@ -77,12 +81,19 @@ assert.equal(
   assert.equal(typePanel.hidden, true);
   assert.equal(voicePanel.hidden, false);
   assert.equal(host.dataset.inputMode, "voice");
+  assert.equal(toggle.dataset.mode, "voice");
+  assert.equal((toggle.innerHTML.match(/<svg/g) || []).length, 2);
+  assert.ok(!toggle.innerHTML.includes("錄音") && !toggle.innerHTML.includes("打字"));
+  assert.match(toggle.innerHTML, /input-mode-toggle__thumb/);
   toggle._click();
   assert.equal(api.mode(), "type");
   assert.equal(changed, "type");
+  assert.equal(toggle.dataset.mode, "type");
   assert.equal(typePanel.hidden, false);
   assert.equal(voicePanel.hidden, true);
   assert.match(toggle.innerHTML, /svg/i);
 }
 
-console.log("PASS: shared llm-complete + resilient semantic judge + input-mode");
+await import("./twelve-data.test.mjs");
+
+console.log("PASS: shared llm-complete + resilient semantic judge + input-mode + twelve data");

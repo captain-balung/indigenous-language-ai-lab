@@ -5,6 +5,9 @@
 /* 01 開始按鈕成為 STEP 1 的收尾重點（scoped，只在帶 .setup-hero 的頁面生效） */
 .setup-hero .primary{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}
 
+/* 錄音狀態列：尚未錄音時不顯示，按下錄音後才出現 */
+.record-state[data-state=idle]{display:none}
+
 /* ── 全站標準（口說／問答同款）：判定結果卡、動作列、按鈕壓按回饋 ──
    所有 app 都載入本表，且 .result／.quiz-actions 的標記全站一致；
    模擬站沒有 .result 元素，不會被結果卡規則影響。 */

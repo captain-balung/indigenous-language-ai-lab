@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="看十二年國教的中文句子，用錄音或打字翻成族語。">
+  <title>十二年國教｜族語e樂園 AI 實驗室</title>
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
+  <link rel="stylesheet" href="/apps/shared/twelve.css">
+  <link rel="stylesheet" href="/apps/classroom-quiz/twelve-translation/styles.css">
+</head>
+<body>
+  <a class="skip" href="#practice">跳至測驗</a>
+  <header>
+    <a class="back" href="/">← 返回 AI 實驗室</a>
+    <div class="hero-copy"><p id="mission">課堂測驗 · MISSION 06</p><h1 id="page-title">十二年國教</h1><span id="page-lead">看中文，用錄音或打字翻成族語。</span></div>
+    <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
+  </header>
+
+  <main id="practice">
+    <section class="setup panel" aria-labelledby="setup-title">
+      <div class="step">STEP 1</div><h2 id="setup-title">選擇語別與階級</h2>
+      <aside class="task-brief" aria-label="怎麼玩">
+        <p class="task-brief__lead">看中文，用打字或錄音翻成族語。</p>
+        <ol>
+          <li>選擇語言別、方言別與階級。</li>
+          <li>看中文翻成族語。</li>
+          <li>作答時可切換錄音或打字；送出後看系統聽到／懂成什麼。</li>
+        </ol>
+      </aside>
+      <div class="select-grid select-grid--three">
+        <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
+        <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
+        <label>階級<select id="level"><option value="">請選擇階級</option></select></label>
+      </div>
+      <div id="api-status" class="api-status" aria-live="polite">正在確認服務…</div>
+      <p class="setup-note">教材收錄第 1–9 階；第 10–12 階是長段落，不在這個練習範圍。每輪 8 題，句子從選定階級隨機抽出。作答時可切換錄音或打字。</p>
+      <button id="start" class="primary" type="button" disabled>開始本堂</button>
+    </section>
+
+    <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
+      <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">第 1 / 8 題</span></div>
+      <p id="prompt" class="prompt">翻譯</p>
+      <h2 id="question-title">看中文，用族語寫出來</h2>
+      <p id="question-text"></p>
+      <p id="question-subtext"></p>
+      <div id="panel-audio" class="audio-card" hidden>
+        <div class="player-row">
+          <button id="replay" class="primary" type="button">播放教材音檔</button>
+          <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">作答後可聽教材音檔</span>
+        </div>
+        <audio id="player"></audio>
+      </div>
+      <div class="input-mode-bar">
+        <button id="input-mode-toggle" class="input-mode-toggle" type="button" data-mode="voice" aria-label="目前錄音，按一下改為打字"></button>
+      </div>
+      <div id="panel-compose">
+        <label for="answer">用族語寫出這個意思，不必逐字相同</label>
+        <input id="answer" autocomplete="off" spellcheck="false">
+      </div>
+      <div id="panel-speech" hidden>
+        <div class="recorder">
+          <button id="record" class="primary record-button" type="button">
+            <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+          </button>
+          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+            <span class="record-state__icon" aria-hidden="true">●</span>
+            <span id="record-time" class="record-state__time">00:00</span>
+            <span id="record-state-text">尚未錄音</span>
+          </div>
+        </div>
+      </div>
+      <div id="submit-row" class="submit-row" hidden><button id="submit" class="primary" type="button" disabled>送出答案</button></div>
+      <div class="submit-row"><button id="skip-audio" type="button" hidden>音檔無法播放，略過且不計分</button></div>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+      <div class="quiz-actions"><button id="next" type="button" hidden>下一題 →</button></div>
+    </section>
+
+    <section id="report" class="panel" hidden aria-labelledby="report-title">
+      <div class="step">STEP 3</div>
+      <h2 id="report-title">本堂結果</h2>
+      <p id="score-line" class="score-line"></p>
+      <ol id="score-list" class="score-list"></ol>
+      <button id="again" class="primary" type="button">再練一輪</button>
+    </section>
+  </main>
+
+  <footer>
+    <strong>教材來源與授權</strong>
+    <p>題目來自「族語 E 樂園」<a href="https://web.klokah.tw/twelve/learn2.php" target="_blank" rel="noopener">十二年國教課程原住民族語文教材</a>；發行單位為教育部、原住民族委員會，編輯單位為國立政治大學原住民族研究中心，教材內容出處為 <a href="https://ebook.alcd.center/" target="_blank" rel="noopener">ebook.alcd.center</a>。依族語 E 樂園〈創用CC授權說明〉第 9 條第 3 款，這批教材不適用 CC BY-NC-SA 4.0，利用前應取得教育部同意；本頁僅供族語練習，不作商業用途。</p>
+    <p>音檔由官方 CloudFront 直接播放，播放時該站會看到使用者的 IP 位址。</p>
+    <p><a href="/apps/classroom-quiz/twelve/">← 回十二年國教選單</a></p>
+    <p><a href="/data/twelve/LICENSE.md">教材授權與使用限制</a></p>
+  </footer>
+  <script type="module" src="/apps/classroom-quiz/twelve-translation/app.mjs"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+/* 十二年國教課堂練習選單：一張卡通往發音練習與翻譯。 */
+
+.hub-lead{margin:0 0 1.2rem;font-weight:700;color:#4a5474}
+.choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.2rem 0 1rem}
+.choice-card{display:flex;flex-direction:column;gap:.45rem;padding:1.25rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:22px 18px 24px 16px;box-shadow:var(--shadow);text-decoration:none}
+.choice-card--speak{background:linear-gradient(145deg,#eaf7f1,#fff)}
+.choice-card--translate{background:linear-gradient(145deg,#eef5ff,#fff)}
+.choice-card:hover{transform:translateY(-2px)}
+.choice-card:focus-visible{outline:4px solid #186bd8;outline-offset:3px}
+.choice-card__kicker{color:#d94d37;font-size:.75rem;font-weight:1000;letter-spacing:.15em}
+.choice-card strong{font-size:clamp(1.45rem,3vw,1.9rem);line-height:1.2}
+.choice-card>span:not(.choice-card__kicker):not(.choice-card__action){font-weight:700;color:#4a5474}
+.choice-card__action{margin-top:.4rem;color:#1a5fbd;font-weight:900}
+
+@media(max-width:720px){
+  .choice-grid{grid-template-columns:1fr}
+}

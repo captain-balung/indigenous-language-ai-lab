@@ -8,12 +8,14 @@ const categories = [
 
 const applicationSeeds = {
   basics: [
+    ["十二年國教", "聽十二年國教教材的短句，再用族語跟唸一次。", "assets/icons/listening-ear.webp", "available", "apps/basic-learning/twelve-listen-retell/"],
     ["跟唸", "聽一段短句，再用族語講一次。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/listen-retell/"],
     ["看圖口說練習", "看圖用族語念出完整句子；想聽教材再跟讀也可以。", "assets/icons/studio-microphone.webp", "available", "apps/basic-learning/body-parts-speaking/"],
     ["問答練習", "看中文題目，用自己的話回答。", "assets/icons/speaking-microphone.webp", "available", "apps/basic-learning/qa-practice/"],
     ["看圖描述", "一次看一張圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/basic-learning/describe-practice/"]
   ],
   classroom: [
+    ["十二年國教", "看族語句子練發音，或看中文練翻譯；兩種練習都在這裡。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/twelve/"],
     ["發音練習", "看到圖片就念出對應的族語，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
     ["意思造句", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
     ["問答測驗", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"],

@@ -1,0 +1,3824 @@
+{
+  "schemaVersion": 1,
+  "dialectId": 22,
+  "ethnicity": "布農",
+  "dialectName": "郡群布農語",
+  "code": "bnn_Junq",
+  "levels": [
+    {
+      "level": 1,
+      "label": "第一階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Mihumisang pingan",
+          "titleCh": "問候語",
+          "sentences": [
+            {
+              "id": "22-1-1-1",
+              "order": 1,
+              "indigenousText": "Mihumisang pingan.",
+              "chineseText": "祝福語（你，平安）。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/28/4ca502ef31869300a1cd5d667af89af5.wav"
+            },
+            {
+              "id": "22-1-1-2",
+              "order": 2,
+              "indigenousText": "Adu masial kasu?",
+              "chineseText": "你好嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/13/25e1b2205a09e9ad444e198a5d09402e.wav"
+            },
+            {
+              "id": "22-1-1-3",
+              "order": 3,
+              "indigenousText": "Masial saikin.",
+              "chineseText": "我很好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/a8348a0c58aa56fca80dc7e093fab3ef.wav"
+            },
+            {
+              "id": "22-1-1-4",
+              "order": 4,
+              "indigenousText": "Adu masial kamu?",
+              "chineseText": "你們好嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/13/1a9cbcf9f6cd57620d7cd3c9c94d4435.wav"
+            },
+            {
+              "id": "22-1-1-5",
+              "order": 5,
+              "indigenousText": "Masial amin, uninang.",
+              "chineseText": "都很好，謝謝。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/f7a6adff4d349f27886320eeab4dc198.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Isnanavan saikin",
+          "titleCh": "我是學生",
+          "sentences": [
+            {
+              "id": "22-1-2-1",
+              "order": 1,
+              "indigenousText": "Adu isnanavan kasu?",
+              "chineseText": "你是學生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/13/7855289ee2d59269af661ea2fc5bd6c9.wav"
+            },
+            {
+              "id": "22-1-2-2",
+              "order": 2,
+              "indigenousText": "Ung, isnanavan saikin.",
+              "chineseText": "是的，我是學生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/a246cfe0633bf42fbdedf3e1b8b9f165.wav"
+            },
+            {
+              "id": "22-1-2-3",
+              "order": 3,
+              "indigenousText": "Adu masnanava kasu?",
+              "chineseText": "你是老師嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/13/a33f94b69acca6f8563e3871f8a94540.wav"
+            },
+            {
+              "id": "22-1-2-4",
+              "order": 4,
+              "indigenousText": "Nii, isnanavan saikin.",
+              "chineseText": "不是，我是學生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/1f3772e7383cd95ca5c7e5ad5f9c12d4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Minduldula!",
+          "titleCh": "請站起來！",
+          "sentences": [
+            {
+              "id": "22-1-3-1",
+              "order": 1,
+              "indigenousText": "Minduldula!",
+              "chineseText": "請起立！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/b9d1f4950003326e82cae8f1fd9bb50e.wav"
+            },
+            {
+              "id": "22-1-3-2",
+              "order": 2,
+              "indigenousText": "Mal’anuhua!",
+              "chineseText": "請坐！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/423e525c76cf606343e83a895a0dd6c6.wav"
+            },
+            {
+              "id": "22-1-3-3",
+              "order": 3,
+              "indigenousText": "Tupaa!",
+              "chineseText": "請說！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/a057f952880b123e838ba375ef6db949.wav"
+            },
+            {
+              "id": "22-1-3-4",
+              "order": 4,
+              "indigenousText": "Ta’azaa!",
+              "chineseText": "請聽！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/70adc36c44d16d6a8e35de3b2d4adb8a.wav"
+            },
+            {
+              "id": "22-1-3-5",
+              "order": 5,
+              "indigenousText": "Uninang, mihumisang.",
+              "chineseText": "謝謝，祝福你。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/8359f63aab8977552d26752b6016c8ce.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Kasiman kasu?",
+          "titleCh": "你叫什麼名字？",
+          "sentences": [
+            {
+              "id": "22-1-4-1",
+              "order": 1,
+              "indigenousText": "Kasiman kasu?",
+              "chineseText": "你叫什麼名字？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/f6a93362cbe60018b8aab85b25887c6a.wav"
+            },
+            {
+              "id": "22-1-4-2",
+              "order": 2,
+              "indigenousText": "Biung saikin.",
+              "chineseText": "我是Biung。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/5187384d858f0d673c5af8b1fa1d6ea0.wav"
+            },
+            {
+              "id": "22-1-4-3",
+              "order": 3,
+              "indigenousText": "Tukun isaicia ngan?",
+              "chineseText": "他叫什麼名字？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/35e9f2f96a6f1e16e10aa761442ec928.wav"
+            },
+            {
+              "id": "22-1-4-4",
+              "order": 4,
+              "indigenousText": "Dahu sai’ia.",
+              "chineseText": "他是Dahu。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/14/1c9a5bc3d4c58db03b470c213ff4926a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Maluspingaz kaimin",
+          "titleCh": "我們是女生",
+          "sentences": [
+            {
+              "id": "22-1-5-1",
+              "order": 1,
+              "indigenousText": "Mabananaz kasu.",
+              "chineseText": "你是男生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/6461b1a4ad6b93c1097bbfc7623eb298.wav"
+            },
+            {
+              "id": "22-1-5-2",
+              "order": 2,
+              "indigenousText": "Maluspingaz kaimin.",
+              "chineseText": "我們是女生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/475dcba4bf52824b5daf1c1142771f13.wav"
+            },
+            {
+              "id": "22-1-5-3",
+              "order": 3,
+              "indigenousText": "Asa tu mapakadaidaz.",
+              "chineseText": "一定要相親相愛。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/0f59e5659f8e6dc4225963c7d7b3badb.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Inak tu asu",
+          "titleCh": "我的狗",
+          "sentences": [
+            {
+              "id": "22-1-6-1",
+              "order": 1,
+              "indigenousText": "Aizan saikin matahdung tu asu.",
+              "chineseText": "我有黑色的狗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/a677123e661b9e013fa84e687b1d181c.wav"
+            },
+            {
+              "id": "22-1-6-2",
+              "order": 2,
+              "indigenousText": "Mazima saikin saicia.",
+              "chineseText": "我喜歡牠。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/d6543dfeb8ae9b6df8ecd8175b3f06bb.wav"
+            },
+            {
+              "id": "22-1-6-3",
+              "order": 3,
+              "indigenousText": "Sai’ia hai mazima ku amin.",
+              "chineseText": "牠也喜歡我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/16/5b67f4fccef80146fc381de76ca5c287.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Isa masnanava?",
+          "titleCh": "老師在哪裡？",
+          "sentences": [
+            {
+              "id": "22-1-7-1",
+              "order": 1,
+              "indigenousText": "Isa masnanava’a?",
+              "chineseText": "老師在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/2279dd307664b1f6d47384f9bf5e0c95.wav"
+            },
+            {
+              "id": "22-1-7-2",
+              "order": 2,
+              "indigenousText": "Avandii.",
+              "chineseText": "在這裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/35910cd451d24a7b75dabf4556cb955f.wav"
+            },
+            {
+              "id": "22-1-7-3",
+              "order": 3,
+              "indigenousText": "Adu aiza isu ispapatas?",
+              "chineseText": "你有鉛筆嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/56ec502f21dfbd9ec21f560373acf829.wav"
+            },
+            {
+              "id": "22-1-7-4",
+              "order": 4,
+              "indigenousText": "Pasimulavan saikin.",
+              "chineseText": "請借我用。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/8469e930cbdb07d4d16a05ddc8c8fda7.wav"
+            },
+            {
+              "id": "22-1-7-5",
+              "order": 5,
+              "indigenousText": "Uninang, mihumisang.",
+              "chineseText": "謝謝，祝福你。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/6aaeac17ee9766a40070e528b4b7c572.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Maaz sain?",
+          "titleCh": "這是什麼？",
+          "sentences": [
+            {
+              "id": "22-1-8-1",
+              "order": 1,
+              "indigenousText": "Maaz sain?",
+              "chineseText": "這是什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/6bf0e9ab1ec3a644b1ce3ba74e41c89c.wav"
+            },
+            {
+              "id": "22-1-8-2",
+              "order": 2,
+              "indigenousText": "Pangkaka sain.",
+              "chineseText": "這是桌子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/acc4711e3297e99203e7d4441f2ebcd2.wav"
+            },
+            {
+              "id": "22-1-8-3",
+              "order": 3,
+              "indigenousText": "Palusu sain.",
+              "chineseText": "這是椅子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/85cc98a80fdd53322845a5c76c0a1248.wav"
+            },
+            {
+              "id": "22-1-8-4",
+              "order": 4,
+              "indigenousText": "Pisi’alav makusia.",
+              "chineseText": "要好好使用。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/44cf3c4a155ed3ac251da499ca998929.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Inak tu cina",
+          "titleCh": "我的媽媽",
+          "sentences": [
+            {
+              "id": "22-1-9-1",
+              "order": 1,
+              "indigenousText": "Sima sai’ia?",
+              "chineseText": "那個人是誰？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/64428294cf67819c8c5192e17022b456.wav"
+            },
+            {
+              "id": "22-1-9-2",
+              "order": 2,
+              "indigenousText": "Inak sai’ia tu cina.",
+              "chineseText": "那是我的媽媽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/3a529bb0760ac27b6b1476c4471d3174.wav"
+            },
+            {
+              "id": "22-1-9-3",
+              "order": 3,
+              "indigenousText": "Maaz isaicia palkadan?",
+              "chineseText": "她做什麼工作？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/a4df52011e8b49c251cbe6b3827ef8f7.wav"
+            },
+            {
+              "id": "22-1-9-4",
+              "order": 4,
+              "indigenousText": "Sai’ia hai kangkuhu.",
+              "chineseText": "她是護士。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/17/ef74e34fdf6889bc3dc2f6f65264c8c5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Madanghas tu ahil",
+          "titleCh": "紅色的書",
+          "sentences": [
+            {
+              "id": "22-1-10-1",
+              "order": 1,
+              "indigenousText": "Adu aiza idadaza sia pangkaka tan ahil?",
+              "chineseText": "這桌子的上面有書嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/c0441dd8c4e4bfda5f8844bde1fd20ab.wav"
+            },
+            {
+              "id": "22-1-10-2",
+              "order": 2,
+              "indigenousText": "Aiza tu tau ahil idadaza sia pangkaka tan.",
+              "chineseText": "桌子的上面有三本書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/05eb3aa2924905109dd97ef23379f70f.wav"
+            },
+            {
+              "id": "22-1-10-3",
+              "order": 3,
+              "indigenousText": "Isima madanghas ahila?",
+              "chineseText": "紅色的書是誰的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/8c65c377f09bad02bfcb0eccd922cf85.wav"
+            },
+            {
+              "id": "22-1-10-4",
+              "order": 4,
+              "indigenousText": "Itu masnanava.",
+              "chineseText": "是老師的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/19/baeaf44c6be8cb23cb6e721b509060d3.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "label": "第二階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Inak tu lumah",
+          "titleCh": "我的家",
+          "sentences": [
+            {
+              "id": "22-2-1-1",
+              "order": 1,
+              "indigenousText": "Aiza kaimin tu a’ima bunun.",
+              "chineseText": "我們家有五個人。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/38407b1fa7a10f17e3efe00e8d4019c8.wav"
+            },
+            {
+              "id": "22-2-1-2",
+              "order": 2,
+              "indigenousText": "Aiza hudaspingaz, tama, cina, sinmas nauba-pingaz.",
+              "chineseText": "有祖母、爸爸、媽媽、和妹妹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/14/05c373e0d11d3c2105537b03058ba8fc.wav"
+            },
+            {
+              "id": "22-2-1-3",
+              "order": 3,
+              "indigenousText": "Isian saikin kukumingkaku pasnanavan mapasnava.",
+              "chineseText": "我在國小讀書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/9361a8e955371a62bf28688c8bddc54e.wav"
+            },
+            {
+              "id": "22-2-1-4",
+              "order": 4,
+              "indigenousText": "Inak naubamaluspingaz hai, isainang sia iucing isnavan.",
+              "chineseText": "我的妹妹還在幼兒園受教。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/files/2024/11/13/5f9e28ce87bf8722eab4438d9fb45842.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Maunin haising",
+          "titleCh": "請用餐",
+          "sentences": [
+            {
+              "id": "22-2-2-1",
+              "order": 1,
+              "indigenousText": "Cina, mihumisang.",
+              "chineseText": "媽媽，早安。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/261ee577c8fbf993c5ff8df1581f6a15.wav"
+            },
+            {
+              "id": "22-2-2-2",
+              "order": 2,
+              "indigenousText": "Mihumisang, maunin haising.",
+              "chineseText": "早安，請用餐了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/d19310a0140163806fdf6aa96c191859.wav"
+            },
+            {
+              "id": "22-2-2-3",
+              "order": 3,
+              "indigenousText": "Niang at nangausang saikin masinav mas nipun.",
+              "chineseText": "等一下，我要先刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/20/5d440ad1780f359e371c67b2960344d0.wav"
+            },
+            {
+              "id": "22-2-2-4",
+              "order": 4,
+              "indigenousText": "Nataldanavang amin dahis ha!",
+              "chineseText": "也要洗臉喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/e3ecaaa1f805dee46d3c7dc69ed125e1.wav"
+            },
+            {
+              "id": "22-2-2-5",
+              "order": 5,
+              "indigenousText": "Ung, hai’ap saikin.",
+              "chineseText": "好，我知道。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/16/5c1d8cd97dcf5215ffdc00a5df6d6112.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Punmas’anin saikin",
+          "titleCh": "我已經十歲了",
+          "sentences": [
+            {
+              "id": "22-2-3-1",
+              "order": 1,
+              "indigenousText": "Punpin isu a hamisan?",
+              "chineseText": "您幾歲了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/6625178e5313456cbfb11302f33c82ce.wav"
+            },
+            {
+              "id": "22-2-3-2",
+              "order": 2,
+              "indigenousText": "Punmas’anin inak hamisan.",
+              "chineseText": "我已經十歲了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/32c60528e46da815e3a74febcf04868b.wav"
+            },
+            {
+              "id": "22-2-3-3",
+              "order": 3,
+              "indigenousText": "Papia isu tas’an?",
+              "chineseText": "你有幾個兄弟姊妹？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/1c4d4359a611c211200ac90098daaa73.wav"
+            },
+            {
+              "id": "22-2-3-4",
+              "order": 4,
+              "indigenousText": "Aizan saikin dusa tu tuhasmabananaz sinmas tacini tu naubamaluspingaz.",
+              "chineseText": "我有二個哥哥和一位妹妹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/639ae09a08482e1d09a0d18477b0dbe8.wav"
+            },
+            {
+              "id": "22-2-3-5",
+              "order": 5,
+              "indigenousText": "Punpin isu tu naubapingaz painsanan?",
+              "chineseText": "你的妹妹幾歲？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/092fad6b1307a6397a66020ccaec067a.wav"
+            },
+            {
+              "id": "22-2-3-6",
+              "order": 6,
+              "indigenousText": "Pun’numin inak naubapingaz painsanan.",
+              "chineseText": "我的妹妹六歲了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/0fe800bd0a164b218435934d0a5377a7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Isa isu lumah?",
+          "titleCh": "你的家在哪裡？",
+          "sentences": [
+            {
+              "id": "22-2-4-1",
+              "order": 1,
+              "indigenousText": "Antan isa isu a lumah sia asangtan?",
+              "chineseText": "你的家在部落的哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/16/30baaa21eb77610a03c877726678f9d7.wav"
+            },
+            {
+              "id": "22-2-4-2",
+              "order": 2,
+              "indigenousText": "Antanbavcia inak lumah.",
+              "chineseText": "我的家在上面。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/16/980fe69f1397e58ea80de9f3c29b22ce.wav"
+            },
+            {
+              "id": "22-2-4-3",
+              "order": 3,
+              "indigenousText": "Isa isu lumah?",
+              "chineseText": "你的家在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/c7d56802603dd5686334c1e0b11cd3bf.wav"
+            },
+            {
+              "id": "22-2-4-4",
+              "order": 4,
+              "indigenousText": "Takisiaanik sia Taihuku tu bunun.",
+              "chineseText": "我是住在台北的人。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/c548b9d2f5742b437f584d18b5279ed1.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Maisna Taitu saikin minsuma",
+          "titleCh": "我從台東來",
+          "sentences": [
+            {
+              "id": "22-2-5-1",
+              "order": 1,
+              "indigenousText": "Maisna isa kasu minsuma?",
+              "chineseText": "你從哪裡來？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/c1219211c9cee738fc5b2b3de5a97af4.wav"
+            },
+            {
+              "id": "22-2-5-2",
+              "order": 2,
+              "indigenousText": "Maisna Taitu saikin minsuma.",
+              "chineseText": "我從台東來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/0559cd25884e3210103e5f5c23e305db.wav"
+            },
+            {
+              "id": "22-2-5-3",
+              "order": 3,
+              "indigenousText": "Nakuisa kasu kutunin?",
+              "chineseText": "你明天要去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/20152bc9c351e26997d0e807f44fa1c0.wav"
+            },
+            {
+              "id": "22-2-5-4",
+              "order": 4,
+              "indigenousText": "Na kusian a saikin sia Kalinku.",
+              "chineseText": "我要去花蓮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/11f1c035cd8080ed78578e1ecfced3c9.wav"
+            },
+            {
+              "id": "22-2-5-5",
+              "order": 5,
+              "indigenousText": "Mihumisang.",
+              "chineseText": "再見了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/8d7f2c486246eca3baefc27d461e24b8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Ludun mas sivsiv",
+          "titleCh": "山和溪",
+          "sentences": [
+            {
+              "id": "22-2-6-1",
+              "order": 1,
+              "indigenousText": "Masial aip tu hanian.",
+              "chineseText": "今天是好天氣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/2cfd6a39ad8734561e8f1e25887c9454.wav"
+            },
+            {
+              "id": "22-2-6-2",
+              "order": 2,
+              "indigenousText": "Kusian a tama sia ludun hanup.",
+              "chineseText": "爸爸上山打獵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/8fb64e9737509922e4178b664729341c.wav"
+            },
+            {
+              "id": "22-2-6-3",
+              "order": 3,
+              "indigenousText": "Kusian a cina sia silas vahlas mapas’ah ulus.",
+              "chineseText": "媽媽去河邊洗衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/9d209148a734751a2d1ffaea5326a585.wav"
+            },
+            {
+              "id": "22-2-6-4",
+              "order": 4,
+              "indigenousText": "Ilumah saikin mas tuhasmabananaz pishasibang.",
+              "chineseText": "我和哥哥在家裡玩。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/7213f8a39394ab612a64bdedc31f2e8a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Mun’apavin vali",
+          "titleCh": "太陽出來了",
+          "sentences": [
+            {
+              "id": "22-2-7-1",
+              "order": 1,
+              "indigenousText": "Mun’apavin vali.",
+              "chineseText": "太陽出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/ed5bbcb160677f4b912b4e4a9b9cc9e4.wav"
+            },
+            {
+              "id": "22-2-7-2",
+              "order": 2,
+              "indigenousText": "Kudip tama mas cina kuzakuza.",
+              "chineseText": "爸爸和媽媽去工作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/351b9624c836f064900393ecd13f89af.wav"
+            },
+            {
+              "id": "22-2-7-3",
+              "order": 3,
+              "indigenousText": "Mun’apavin buan.",
+              "chineseText": "月亮出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/818ff55c9e4be7dedb0b10b901238b15.wav"
+            },
+            {
+              "id": "22-2-7-4",
+              "order": 4,
+              "indigenousText": "Kulumahin tama mas cina.",
+              "chineseText": "爸爸和媽媽回家了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/9d320f5d505410a2b2ac1c6c44f2b437.wav"
+            },
+            {
+              "id": "22-2-7-5",
+              "order": 5,
+              "indigenousText": "Muskun kata sadu bintuhan.",
+              "chineseText": "我們一起看星星。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/46ea85ded44349364b020bdfe3584a50.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Hudananin",
+          "titleCh": "下雨了",
+          "sentences": [
+            {
+              "id": "22-2-8-1",
+              "order": 1,
+              "indigenousText": "Hudananin.",
+              "chineseText": "下雨了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/b6cc4cc1317f0130d063faac8665463d.wav"
+            },
+            {
+              "id": "22-2-8-2",
+              "order": 2,
+              "indigenousText": "Adu minadas kasu talulung?",
+              "chineseText": "你有帶雨傘嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/95f169bf74415cf61080cde86f3dab6d.wav"
+            },
+            {
+              "id": "22-2-8-3",
+              "order": 3,
+              "indigenousText": "Minadas.",
+              "chineseText": "有攜帶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/7a97df9fed18002a502df0a037a1d982.wav"
+            },
+            {
+              "id": "22-2-8-4",
+              "order": 4,
+              "indigenousText": "Isa isu talulung?",
+              "chineseText": "你的雨傘在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/01b1a2c292231a21f41ed9841b04bf70.wav"
+            },
+            {
+              "id": "22-2-8-5",
+              "order": 5,
+              "indigenousText": "Avandii inaka talulung.",
+              "chineseText": "我的雨傘在這裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/e80f20a2765bd529457b99c813be77ec.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Lu’um mas hanivalval",
+          "titleCh": "雲和彩虹",
+          "sentences": [
+            {
+              "id": "22-2-9-1",
+              "order": 1,
+              "indigenousText": "Makua aip lu’um mais saduan?",
+              "chineseText": "今天的雲彩看起來如何？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/707e6374cf10bb3b13aa1fb6de8a21c1.wav"
+            },
+            {
+              "id": "22-2-9-2",
+              "order": 2,
+              "indigenousText": "Saduan hai maduhlas.",
+              "chineseText": "看起來是白色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/c0795a7392738386647ee870db730669.wav"
+            },
+            {
+              "id": "22-2-9-3",
+              "order": 3,
+              "indigenousText": "Adu manau’uaz hanivalval saduan?",
+              "chineseText": "那道彩虹看起來美麗嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/49ceea1e9fb8f6dd54dc2bd22e82c631.wav"
+            },
+            {
+              "id": "22-2-9-4",
+              "order": 4,
+              "indigenousText": "Manau’uaz daingaz saduan.",
+              "chineseText": "看起來非常美麗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/555fd6ccad154021399e5981d69e2985.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Huma",
+          "titleCh": "田地",
+          "sentences": [
+            {
+              "id": "22-2-10-1",
+              "order": 1,
+              "indigenousText": "Aiza tu paat lipuah sia huma.",
+              "chineseText": "田地有四朵花。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/964f880750772b168509d9bd225ed7d1.wav"
+            },
+            {
+              "id": "22-2-10-2",
+              "order": 2,
+              "indigenousText": "Aiza tu vau lukis sia huma.",
+              "chineseText": "有八棵樹在田地。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/95a5c8337f72f92208ad98e67a0c1fa5.wav"
+            },
+            {
+              "id": "22-2-10-3",
+              "order": 3,
+              "indigenousText": "Manaskal nai’ia mais kalinluvluvun.",
+              "chineseText": "被風吹時，他們很高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/abb8480d7edc4b733ef6b17671a3e734.wav"
+            },
+            {
+              "id": "22-2-10-4",
+              "order": 4,
+              "indigenousText": "Maszang pisusuhdung a lipuh mais saduan.",
+              "chineseText": "花看起來，好像在點頭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/2fe8516d9c02a8de372ad75eb0c5be66.wav"
+            },
+            {
+              "id": "22-2-10-5",
+              "order": 5,
+              "indigenousText": "Maszang kipapahpah a lukis mais saduan.",
+              "chineseText": "樹看起來，好像在拍手。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/f7b7dcf1f30ac624afe12b4ac0055f37.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "label": "第三階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Inak tu kaviaz",
+          "titleCh": "我的朋友",
+          "sentences": [
+            {
+              "id": "22-3-1-1",
+              "order": 1,
+              "indigenousText": "Supah inak kaviaz.",
+              "chineseText": "我有很多朋友。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/dcb5543f225c284762894263e1112b27.wav"
+            },
+            {
+              "id": "22-3-1-2",
+              "order": 2,
+              "indigenousText": "Malauskav a Anu at mapucis a Tahai.",
+              "chineseText": "Anu很高，Tahai很矮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/6853176a54671505177998752b19caa4.wav"
+            },
+            {
+              "id": "22-3-1-3",
+              "order": 3,
+              "indigenousText": "Makaskas a Puni at makasa a Savi.",
+              "chineseText": "Puni很認真，Savi很懶惰。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/8269bbf64e5b586b66bf3b068856e4b2.wav"
+            },
+            {
+              "id": "22-3-1-4",
+              "order": 4,
+              "indigenousText": "Kaupa hanian kaimin muskun mapasnava sinmas pishasibang.",
+              "chineseText": "我們每天一起學習和玩耍。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/c763def5943a05052cb7b9eaaf2f5cd5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Isnavan kaimin masnanava",
+          "titleCh": "老師教導我們",
+          "sentences": [
+            {
+              "id": "22-3-2-1",
+              "order": 1,
+              "indigenousText": "Tahuan kaimin masnanava tu.",
+              "chineseText": "老師告訴我們。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/06/6c3e3a41e5dc16b42a1f624c11c03504.wav"
+            },
+            {
+              "id": "22-3-2-2",
+              "order": 2,
+              "indigenousText": "Asa tu madaidaz madadaingaz.",
+              "chineseText": "一定要孝順長輩。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/7f0c408a0ecd5163ce9d2da2a0ea5b60.wav"
+            },
+            {
+              "id": "22-3-2-3",
+              "order": 3,
+              "indigenousText": "Pakadaidaz tas’an.",
+              "chineseText": "友愛兄弟。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/88552752de3df9ac89c0e6ae7280a8fa.wav"
+            },
+            {
+              "id": "22-3-2-4",
+              "order": 4,
+              "indigenousText": "Kaka tu pinmamaz sui.",
+              "chineseText": "不要浪費金錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/e427ccb04d37cddda16e47b66a96e580.wav"
+            },
+            {
+              "id": "22-3-2-5",
+              "order": 5,
+              "indigenousText": "Kaka tu haungun bunun.",
+              "chineseText": "不可以罵人。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/04a53d903a0d809b446dd193b96f42e5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Islunghuin",
+          "titleCh": "下課了",
+          "sentences": [
+            {
+              "id": "22-3-3-1",
+              "order": 1,
+              "indigenousText": "Islunghuin, kunata saikin.",
+              "chineseText": "下課了，我要出去。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/9f48113a53798f544f1f9bb0e3aaebe4.wav"
+            },
+            {
+              "id": "22-3-3-2",
+              "order": 2,
+              "indigenousText": "Aiza inatacia tasa butnusaz.",
+              "chineseText": "外面有一棵苦楝樹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/7e1bf58b2acd7ff318fbc334f2d7f15a.wav"
+            },
+            {
+              "id": "22-3-3-3",
+              "order": 3,
+              "indigenousText": "Aiza tasa pacikaul idadaza sia lukiscia.",
+              "chineseText": "樹上有一隻五色鳥。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/5df42275a0d77dd538bb948d0a1183aa.wav"
+            },
+            {
+              "id": "22-3-3-4",
+              "order": 4,
+              "indigenousText": "Tui’ia pacikaul.",
+              "chineseText": "五色鳥在叫著。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/4b4390dea10d535e07dde0a91bc753d7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Anbahaisun saikin",
+          "titleCh": "我發燒了",
+          "sentences": [
+            {
+              "id": "22-3-4-1",
+              "order": 1,
+              "indigenousText": "Tama Alang, mihumisang.",
+              "chineseText": "Alang叔叔你好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/e7e028d337cec81259f58b00a7fda166.wav"
+            },
+            {
+              "id": "22-3-4-2",
+              "order": 2,
+              "indigenousText": "Puni, naku’isa kasu?",
+              "chineseText": "Puni，你要去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/90c1e03795ccfd04aefe4fe4c581f694.wav"
+            },
+            {
+              "id": "22-3-4-3",
+              "order": 3,
+              "indigenousText": "Adasun saikin cina mapa’iu.",
+              "chineseText": "媽媽帶我去看病。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/6ab7a915a6891e1079abf0ac3edffbc6.wav"
+            },
+            {
+              "id": "22-3-4-4",
+              "order": 4,
+              "indigenousText": "Mikuabin tu?",
+              "chineseText": "怎麼了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/a019aaf8aa53e3cafdd344e17223dd14.wav"
+            },
+            {
+              "id": "22-3-4-5",
+              "order": 5,
+              "indigenousText": "Anbahaisun saikin.",
+              "chineseText": "我發燒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/759793adb0ad54728f4cf8ac42696a85.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Undu",
+          "titleCh": "運動",
+          "sentences": [
+            {
+              "id": "22-3-5-1",
+              "order": 1,
+              "indigenousText": "Maaz tu undu kazimaun su?",
+              "chineseText": "你喜歡什麼運動？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/da975ba3f61e642e5909e81b7ebe5e37.wav"
+            },
+            {
+              "id": "22-3-5-2",
+              "order": 2,
+              "indigenousText": "Mazima saikin malka’iakiu.",
+              "chineseText": "我喜歡打棒球。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/bd7587b431eebfe3bd2cf64a461a82e9.wav"
+            },
+            {
+              "id": "22-3-5-3",
+              "order": 3,
+              "indigenousText": "Mavia tu?",
+              "chineseText": "為什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/287c71f449e5badf067f5373f2b09f37.wav"
+            },
+            {
+              "id": "22-3-5-4",
+              "order": 4,
+              "indigenousText": "Mahtu mapin hatba mas lutbu.",
+              "chineseText": "可以強壯身體。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/fc6ca9d947649ea07d5d178350291574.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Kahuzas mas uduli",
+          "titleCh": "唱歌和跳舞",
+          "sentences": [
+            {
+              "id": "22-3-6-1",
+              "order": 1,
+              "indigenousText": "Adu hai’iap kasu kahuzas?",
+              "chineseText": "你會唱歌嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/31f6019fb8c1ad7d6096741d2d31e4dd.wav"
+            },
+            {
+              "id": "22-3-6-2",
+              "order": 2,
+              "indigenousText": "Hai’iap saikin kahuzas.",
+              "chineseText": "我會唱歌。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/8db2686e67fa716b0a5408137e17eb05.wav"
+            },
+            {
+              "id": "22-3-6-3",
+              "order": 3,
+              "indigenousText": "Adu mahtu kasu uduli?",
+              "chineseText": "你可以跳舞嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/9b417025f7b9ab9adc9512beb5a65bdd.wav"
+            },
+            {
+              "id": "22-3-6-4",
+              "order": 4,
+              "indigenousText": "Mahtu saikin uduli.",
+              "chineseText": "我可以跳舞。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/59290f3d41cd2fd447a12a0bdb08c6fe.wav"
+            },
+            {
+              "id": "22-3-6-5",
+              "order": 5,
+              "indigenousText": "Muskun kata kahuzas, uduli.",
+              "chineseText": "我們一起唱歌、跳舞吧。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/0490ec30eb05a82ee2efd58f32174e55.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Cinpia laupakadau?",
+          "titleCh": "現在是幾點？",
+          "sentences": [
+            {
+              "id": "22-3-7-1",
+              "order": 1,
+              "indigenousText": "Cinpiain laupakadau?",
+              "chineseText": "現在是幾點？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/1df1f711715e8740f48d01edd2423985.wav"
+            },
+            {
+              "id": "22-3-7-2",
+              "order": 2,
+              "indigenousText": "Cinvauin.",
+              "chineseText": "八點了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/6fad38ed52dbecb31b0f12ab0f833d84.wav"
+            },
+            {
+              "id": "22-3-7-3",
+              "order": 3,
+              "indigenousText": "Cinpia kasu minkailas?",
+              "chineseText": "你幾點起床？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/5acc7b6b72c12e22cf35afbc54418c5c.wav"
+            },
+            {
+              "id": "22-3-7-4",
+              "order": 4,
+              "indigenousText": "Cinnum tu tuki.",
+              "chineseText": "六點鐘。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/b3c4335d92caf7b5ebcaee71a166aa23.wav"
+            },
+            {
+              "id": "22-3-7-5",
+              "order": 5,
+              "indigenousText": "Cinpia kasu sanavan masabah?",
+              "chineseText": "你晚上幾點睡覺？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/1a9fe9698578b51f3849e764eb0ab702.wav"
+            },
+            {
+              "id": "22-3-7-6",
+              "order": 6,
+              "indigenousText": "Cinsiva tu mapadusa tuki.",
+              "chineseText": "九點半。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/17/deed0de8733e56814ee3fc80eb57da63.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Patundingua",
+          "titleCh": "打電話",
+          "sentences": [
+            {
+              "id": "22-3-8-1",
+              "order": 1,
+              "indigenousText": "Mihumisang, Puni saikin, adu isaincia Bukun?",
+              "chineseText": "你好，我是Puni，Bukun在嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/b9d0a2784003ff1ca78cebaf53ebc7e5.wav"
+            },
+            {
+              "id": "22-3-8-2",
+              "order": 2,
+              "indigenousText": "Uka. Kunatain sai’ia.",
+              "chineseText": "不在。他出去了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/64faef6afa0b31cea54d0527d7707057.wav"
+            },
+            {
+              "id": "22-3-8-3",
+              "order": 3,
+              "indigenousText": "Nalakua sai’ia musuhis kulumah?",
+              "chineseText": "他何時回家？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/6a1241ef3df31fb50cbf53c2995769e1.wav"
+            },
+            {
+              "id": "22-3-8-4",
+              "order": 4,
+              "indigenousText": "Namusuhis sanganin.",
+              "chineseText": "待會兒就回來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/f8d8ae699cd50114ba44d7717be2990b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Mincivi hudas-nanaz",
+          "titleCh": "探視祖父",
+          "sentences": [
+            {
+              "id": "22-3-9-1",
+              "order": 1,
+              "indigenousText": "Sai’isa kasu takna?",
+              "chineseText": "你昨天去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/708314a1556ea390100e1ac24937b104.wav"
+            },
+            {
+              "id": "22-3-9-2",
+              "order": 2,
+              "indigenousText": "Saibavcia saikin mincivi mas hudasmabananaz(tamahudas).",
+              "chineseText": "我上山去探視祖父。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/20/4dd5ee53084a7f1cd3f511331b4367c5.wav"
+            },
+            {
+              "id": "22-3-9-3",
+              "order": 3,
+              "indigenousText": "Maaz a sinpakaun mas mu?",
+              "chineseText": "請你們吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/aaeca65ecc794ca33106184e98d26ed6.wav"
+            },
+            {
+              "id": "22-3-9-4",
+              "order": 4,
+              "indigenousText": "Pakaunan kaimin mai’aval sinmas mailungus tu pandian.",
+              "chineseText": "給我們吃了飛鼠肉和藤心湯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/6f90b5d7f4fa6d93bea3caf6ac7181f8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Hai’iap saikin kahaningu",
+          "titleCh": "我會畫圖",
+          "sentences": [
+            {
+              "id": "22-3-10-1",
+              "order": 1,
+              "indigenousText": "Hai’iap saikin kahaningu.",
+              "chineseText": "我會畫畫。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/17c5a3a6a8ae702cc81b47381e543a1f.wav"
+            },
+            {
+              "id": "22-3-10-2",
+              "order": 2,
+              "indigenousText": "Hai’iap saikin kahaningu mas inak tu cina.",
+              "chineseText": "我會畫我媽媽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/57d32c42a25a8141ec5a65721717a8e0.wav"
+            },
+            {
+              "id": "22-3-10-3",
+              "order": 3,
+              "indigenousText": "Manau’uaz inak tu cina cia a mata.",
+              "chineseText": "我媽媽的眼睛很漂亮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/c8b8b0dc75ee79f2edc1d1ab6e6e74a0.wav"
+            },
+            {
+              "id": "22-3-10-4",
+              "order": 4,
+              "indigenousText": "Matahdung at madaulu isaicia hulbu.",
+              "chineseText": "她的頭髮又黑又長。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/15/b717e2fe36eb4369dadc60676cd96829.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "label": "第四階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Isdumdumin",
+          "titleCh": "天黑了",
+          "sentences": [
+            {
+              "id": "22-4-1-1",
+              "order": 1,
+              "indigenousText": "Muhaivin vali, isdumdumin.",
+              "chineseText": "太陽下山了，天黑了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/3047662284ae87f465c8c27fba7db4e3.wav"
+            },
+            {
+              "id": "22-4-1-2",
+              "order": 2,
+              "indigenousText": "Isdumdumin, tu’iain haludung.",
+              "chineseText": "天黑了，蟋蟀叫了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/ab3b74cf91eda273a48963d443976ef8.wav"
+            },
+            {
+              "id": "22-4-1-3",
+              "order": 3,
+              "indigenousText": "Tu’iain sisiuh, mun’apavin buan.",
+              "chineseText": "青蛙叫了，月亮出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/588435f6d36d4acc282cd9b3ed6b6423.wav"
+            },
+            {
+              "id": "22-4-1-4",
+              "order": 4,
+              "indigenousText": "Mun’apavin buan, minkailasin ithu.",
+              "chineseText": "月亮出現了，貓頭鷹睡醒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/41ca5d5d5cf7670aacd91998abada224.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Valian",
+          "titleCh": "出太陽",
+          "sentences": [
+            {
+              "id": "22-4-2-1",
+              "order": 1,
+              "indigenousText": "Adu navalian aip tu hanian?",
+              "chineseText": "今天會出太陽嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/01/0bf1109dd46bbd4b160b8c1a2ca61363.wav"
+            },
+            {
+              "id": "22-4-2-2",
+              "order": 2,
+              "indigenousText": "Ung, namaklang aip tu hanian.",
+              "chineseText": "是的，今天天氣會很熱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/1292f59ea25c031190f208d4a1ed0252.wav"
+            },
+            {
+              "id": "22-4-2-3",
+              "order": 3,
+              "indigenousText": "Adu minadas a cina mas talulung masa mudadaa sia nata?",
+              "chineseText": "媽媽外出的時候，有攜帶傘嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/7e75ec0578c5d1d48c0caf933075fc48.wav"
+            },
+            {
+              "id": "22-4-2-4",
+              "order": 4,
+              "indigenousText": "Nii, makaunga sai’ia madas talulung.",
+              "chineseText": "沒有，她忘了帶傘。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/c609daae99e482451aafc281068acda8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Muktaunghuin vali",
+          "titleCh": "下午",
+          "sentences": [
+            {
+              "id": "22-4-3-1",
+              "order": 1,
+              "indigenousText": "Adu mahtu saikin pishasibang mais muktaunghuin vali?",
+              "chineseText": "下午我可以去玩嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/f352f2e828c17cdc2e0741bf9391eb48.wav"
+            },
+            {
+              "id": "22-4-3-2",
+              "order": 2,
+              "indigenousText": "Ni tu mahtu, aupa subzah inata hudan.",
+              "chineseText": "不行，因為外面下著大雨。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/edbcd357a7bcd9f05c45b6a950dedfda.wav"
+            },
+            {
+              "id": "22-4-3-3",
+              "order": 3,
+              "indigenousText": "Mais isdangazin hai, adu mahtu saikin kunata?",
+              "chineseText": "如果雨停了，我可以出去嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/91b77f379b25155d5224446c6452653d.wav"
+            },
+            {
+              "id": "22-4-3-4",
+              "order": 4,
+              "indigenousText": "Mahtu, katu sipungul mais isdalavdavin hai kulumaha!",
+              "chineseText": "可以，不要忘了（記得）傍晚要回來喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/34d656f6b397bed0032bc4e7ac8b5fcc.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Hudas-pingaz tu cinus’uvazan",
+          "titleCh": "阿嬤的生日",
+          "sentences": [
+            {
+              "id": "22-4-4-1",
+              "order": 1,
+              "indigenousText": "Kutun tu hanian hai itu hudaspingaz tu cinus’uvazan.",
+              "chineseText": "明天是阿嬤的生日。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/ff7738fbb4afc4323e9648cb7158a11f.wav"
+            },
+            {
+              "id": "22-4-4-2",
+              "order": 2,
+              "indigenousText": "Aip tu hanian muskun saikin mas tuhaspingaz ka’inaliv.",
+              "chineseText": "今天我和姊姊一起做麻糬。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/7c59a9b95b7fba26132737cabdd0767e.wav"
+            },
+            {
+              "id": "22-4-4-3",
+              "order": 3,
+              "indigenousText": "Naispaska kutun mas hudas-pingaz.",
+              "chineseText": "明天要送給阿嬤。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/b537d978219d167b2517b0e71ac8941c.wav"
+            },
+            {
+              "id": "22-4-4-4",
+              "order": 4,
+              "indigenousText": "Asa kaimin mapinaskal saicia.",
+              "chineseText": "我們希望讓她高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/02/2d2537a43a146cd7225c10317fa1718a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Lus’an cinus’uvazan tu hanian",
+          "titleCh": "生日",
+          "sentences": [
+            {
+              "id": "22-4-5-1",
+              "order": 1,
+              "indigenousText": "Sima minsuma’a?",
+              "chineseText": "誰來了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/8c1e0095e9b032c210856b403931d9d7.wav"
+            },
+            {
+              "id": "22-4-5-2",
+              "order": 2,
+              "indigenousText": "Hudaspingaz, kaimin hai Biung mas Ibu, tau’uavang ilavan.",
+              "chineseText": "阿嬤，我們是Biung和Ibu，請開門。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/b27c6e788545e583f755f68b0dfe3cc4.wav"
+            },
+            {
+              "id": "22-4-5-3",
+              "order": 3,
+              "indigenousText": "Mu hangsia, mililiskin saikin mamu.",
+              "chineseText": "原來是你們，我好想念你們。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/d6db3a622dca84f47870bc41cc69f403.wav"
+            },
+            {
+              "id": "22-4-5-4",
+              "order": 4,
+              "indigenousText": "Hudaspingaz, mahtuang kasu malsisial malinaskal!",
+              "chineseText": "阿嬤，祝妳健康快樂！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/8ec89d62266b5a166f59ca9fbe811a1c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Akas’angun",
+          "titleCh": "願望",
+          "sentences": [
+            {
+              "id": "22-4-6-1",
+              "order": 1,
+              "indigenousText": "Macihav itu cinahudas mata tu pisvangdu.",
+              "chineseText": "阿嬤閉上眼睛祈禱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/e86a4c5753d6c70d64d398ccabdd0645.wav"
+            },
+            {
+              "id": "22-4-6-2",
+              "order": 2,
+              "indigenousText": "Aizan a sai’ia mas maitau tu aikas’angan.",
+              "chineseText": "她有三個願望。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/28816ebdc81e1731ff586f9f597d2996.wav"
+            },
+            {
+              "id": "22-4-6-3",
+              "order": 3,
+              "indigenousText": "Mahtuang amin katan malsisial taldaing.",
+              "chineseText": "希望大家長得好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/c0aca50b23319d267025e33e8c236720.wav"
+            },
+            {
+              "id": "22-4-6-4",
+              "order": 4,
+              "indigenousText": "Mahtuang kata tastulumah malisvala.",
+              "chineseText": "希望我們全家都平安。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/b192ed6776c11969d943997d3efc5464.wav"
+            },
+            {
+              "id": "22-4-6-5",
+              "order": 5,
+              "indigenousText": "Mahtuang aipcin tu sinkuzakuza madauzung at uaizan.",
+              "chineseText": "希望今年工作順利大豐收。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/5f8826ea493f10fecd57cbcb97f3255a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Islunghuan tu hanian",
+          "titleCh": "禮拜天",
+          "sentences": [
+            {
+              "id": "22-4-7-1",
+              "order": 1,
+              "indigenousText": "Pia tu hanian mais tastuislunghuan?",
+              "chineseText": "一個星期有幾天？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/f45ed4bbef157a2340fbe6733aa6f56c.wav"
+            },
+            {
+              "id": "22-4-7-2",
+              "order": 2,
+              "indigenousText": "Aiza tu pitu tu hanian.",
+              "chineseText": "有七天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/4d81531f8133531fc02f1174d9f3227c.wav"
+            },
+            {
+              "id": "22-4-7-3",
+              "order": 3,
+              "indigenousText": "Asipia aip tu hanian?",
+              "chineseText": "今天是星期幾？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/c43020ce5b272ebe134b16aec94d0758.wav"
+            },
+            {
+              "id": "22-4-7-4",
+              "order": 4,
+              "indigenousText": "Islunghuan aip tu hanian.",
+              "chineseText": "今天是星期天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/a961c31e11065662a077ec0d325cc2d1.wav"
+            },
+            {
+              "id": "22-4-7-5",
+              "order": 5,
+              "indigenousText": "Nakusia kaimin kiukai lihai.",
+              "chineseText": "我們要去教會做禮拜。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/28d49bc3ea4d690adf0ff182d8a1aade.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Talabal",
+          "titleCh": "夏天",
+          "sentences": [
+            {
+              "id": "22-4-8-1",
+              "order": 1,
+              "indigenousText": "Minsus a vahlas danum sia mais talabal.",
+              "chineseText": "夏天時河水增多。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/82fd7c006bf42a014dce6aac74cbb1c6.wav"
+            },
+            {
+              "id": "22-4-8-2",
+              "order": 2,
+              "indigenousText": "Haitu iskauman sia vahlas a danum mais minhamisan.",
+              "chineseText": "但是冬天時河水變少。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/55d03b25b35bc3480461c20cca82f36b.wav"
+            },
+            {
+              "id": "22-4-8-3",
+              "order": 3,
+              "indigenousText": "Talabalin laupaku, islunghu kaimin isnavan.",
+              "chineseText": "現在是夏天，我們放暑假。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/a4227ec79d0906837e1da861bd223361.wav"
+            },
+            {
+              "id": "22-4-8-4",
+              "order": 4,
+              "indigenousText": "Haitu supah balivus.",
+              "chineseText": "可是有很多颱風。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/4158879ea5b2a859507207573aaab01d.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Balivusan",
+          "titleCh": "颱風",
+          "sentences": [
+            {
+              "id": "22-4-9-1",
+              "order": 1,
+              "indigenousText": "Nabalivusan aip tu hanian, adu nakusia kamu pasnanavan?",
+              "chineseText": "今天會有颱風，你們要上學嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/3957b6321eba0c6019e837deca9f25f0.wav"
+            },
+            {
+              "id": "22-4-9-2",
+              "order": 2,
+              "indigenousText": "Nani kaimin aip tu hanian isnavan.",
+              "chineseText": "我們今天不上課。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/52cceb96ba4a87edac0ea563fbc2e8b9.wav"
+            },
+            {
+              "id": "22-4-9-3",
+              "order": 3,
+              "indigenousText": "Asa kamu tu sisivung sia lumah.",
+              "chineseText": "你們應該要留在家裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/080379e1ecedd6bb7ba496ebbc7a66e6.wav"
+            },
+            {
+              "id": "22-4-9-4",
+              "order": 4,
+              "indigenousText": "Ung, hai’iapin kaimin.",
+              "chineseText": "是的，我們知道了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/18/fc9ccc16cf2d8fc466ddefbb15b6ba6b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Naminhamisan",
+          "titleCh": "秋天",
+          "sentences": [
+            {
+              "id": "22-4-10-1",
+              "order": 1,
+              "indigenousText": "Namin hamisanin, madiavin izuk.",
+              "chineseText": "要變秋天了，橘子成熟了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/03/6b6001ab48772e2e35a09dde40916ce4.wav"
+            },
+            {
+              "id": "22-4-10-2",
+              "order": 2,
+              "indigenousText": "Isia ludun hai, aiza masanglav at aiza madanghas at aiza madiav.",
+              "chineseText": "在山上，有綠的、有紅的、也有黃的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/aa5903d5b7eba59ae981bcbab9256e50.wav"
+            },
+            {
+              "id": "22-4-10-3",
+              "order": 3,
+              "indigenousText": "Itu Puni tastulumah hai kubav sia huma matapul izuk.",
+              "chineseText": "Puni的一家人到園地採橘子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/04/79fb3ca549206a21bacd92de13f48ec1.wav"
+            },
+            {
+              "id": "22-4-10-4",
+              "order": 4,
+              "indigenousText": "Inaicia palangan hai ma’aipi pitmuzun.",
+              "chineseText": "他們的簍子一下子就裝滿了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/ece4087846bed4bc9863be1b04cb8061.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "label": "第五階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Iahlulua",
+          "titleCh": "螞蟻",
+          "sentences": [
+            {
+              "id": "22-5-1-1",
+              "order": 1,
+              "indigenousText": "Tastumu’mu kaimin tu iahlulua.",
+              "chineseText": "我們是一群螞蟻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/f3f4e3ca01b0032270a7fbc23398551d.wav"
+            },
+            {
+              "id": "22-5-1-2",
+              "order": 2,
+              "indigenousText": "Makaskas kaimin kuzakuza.",
+              "chineseText": "我們工作很勤勞。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/05/eb7f38ff57639042070f85fed86b9450.wav"
+            },
+            {
+              "id": "22-5-1-3",
+              "order": 3,
+              "indigenousText": "Inastu tu cilas sinmas idadaza lukis tu ivutaz,",
+              "chineseText": "地上的米粒和樹上的蟲，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/05/1e2fa4edfa253d188f2bf850f55c9aa6.wav"
+            },
+            {
+              "id": "22-5-1-4",
+              "order": 4,
+              "indigenousText": "An’aminun mas zami ansahan mapunlumah.",
+              "chineseText": "我們都搬回家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/f07c3517e2617f0c35178104c45f18ff.wav"
+            },
+            {
+              "id": "22-5-1-5",
+              "order": 5,
+              "indigenousText": "Makaskas kaimin tu iahlulua.",
+              "chineseText": "我們是一群勤勞的螞蟻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/05/2a3e9ab3872deba9250565c6dfbedbdf.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Mapasinap",
+          "titleCh": "賽跑",
+          "sentences": [
+            {
+              "id": "22-5-2-1",
+              "order": 1,
+              "indigenousText": "Isa Tahai mas Ciang?",
+              "chineseText": "Tahai和Ciang在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/3b53db2fe02f71ccdda4fcd146471d79.wav"
+            },
+            {
+              "id": "22-5-2-2",
+              "order": 2,
+              "indigenousText": "Isian a nai’ia sia pasinapan cia.",
+              "chineseText": "他們在運動場上。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/ee4676a9a188ee35102aca7607d1683e.wav"
+            },
+            {
+              "id": "22-5-2-3",
+              "order": 3,
+              "indigenousText": "Mapasinap nai’ia pasavai.",
+              "chineseText": "他們在比賽跑步。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/b3c2338e3c347cbc812992ffb0f6c2db.wav"
+            },
+            {
+              "id": "22-5-2-4",
+              "order": 4,
+              "indigenousText": "Sima mataliskang?",
+              "chineseText": "誰跑得快？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/490621d7d93821c3c921a223ed29857e.wav"
+            },
+            {
+              "id": "22-5-2-5",
+              "order": 5,
+              "indigenousText": "Nautuna siamas Ciang cia.",
+              "chineseText": "當然是Ciang。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/02afac614b050dcd890da486537a856e.wav"
+            },
+            {
+              "id": "22-5-2-6",
+              "order": 6,
+              "indigenousText": "Aupa kaupahanian sai’ia cisdadan.",
+              "chineseText": "因為他每天努力練跑。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/42e4076028ed096581267d5397739d7e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Sina ima",
+          "titleCh": "收穫",
+          "sentences": [
+            {
+              "id": "22-5-3-1",
+              "order": 1,
+              "indigenousText": "Inak tama hai munghuhuma tu bunun.",
+              "chineseText": "我的爸爸是一位農夫。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/75126498851714f9dc1553fc400550dc.wav"
+            },
+            {
+              "id": "22-5-3-2",
+              "order": 2,
+              "indigenousText": "Kaupa hanian mihdi isian huma munghuhuma.",
+              "chineseText": "每天在田裡工作很辛苦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/20/9ed9ffa07ef49b916e0c7eba2d959e9b.wav"
+            },
+            {
+              "id": "22-5-3-3",
+              "order": 3,
+              "indigenousText": "Isvaliun isaicia bungu.",
+              "chineseText": "太陽曬了他的頭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/c584c1a47524bfadd88ccc86b4fc998c.wav"
+            },
+            {
+              "id": "22-5-3-4",
+              "order": 4,
+              "indigenousText": "Isluvusan isaicia ulus mais sasduan saia.",
+              "chineseText": "汗水弄濕了他的衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/221e26900cc4db136934edb213b05452.wav"
+            },
+            {
+              "id": "22-5-3-5",
+              "order": 5,
+              "indigenousText": "Katsi’alan painsanancin mas maduh.",
+              "chineseText": "今年小米豐收。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/f198ab49e536dcd9e17a612db4ebdd66.wav"
+            },
+            {
+              "id": "22-5-3-6",
+              "order": 6,
+              "indigenousText": "Manaskal daingaz tama mahahainan.",
+              "chineseText": "爸爸笑得非常高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/369fd99e2350816a255e4b0ec3694171.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Tampu",
+          "titleCh": "腳踏車",
+          "sentences": [
+            {
+              "id": "22-5-4-1",
+              "order": 1,
+              "indigenousText": "Aizaan saikin tu tasa tampu.",
+              "chineseText": "我有一台腳踏車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/dc312646a2c1af2ce65fc5733737e077.wav"
+            },
+            {
+              "id": "22-5-4-2",
+              "order": 2,
+              "indigenousText": "Kaupa hanian saikin tuntampu kusia pasnanavan.",
+              "chineseText": "我每天騎腳踏車上學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/d130d1416a064b12c7428b542cff1222.wav"
+            },
+            {
+              "id": "22-5-4-3",
+              "order": 3,
+              "indigenousText": "Aiza tu hanian isia kusia pasnanavan tu dan,",
+              "chineseText": "有一天在上學的路上，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/c2dc3ba033d9da5bee5ab334078a4d31.wav"
+            },
+            {
+              "id": "22-5-4-4",
+              "order": 4,
+              "indigenousText": "minkuangin inak tampu.",
+              "chineseText": "我的腳踏車壞了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/048f22c23e465e3a89959993d84eb47b.wav"
+            },
+            {
+              "id": "22-5-4-5",
+              "order": 5,
+              "indigenousText": "Aiza tacini bunun lahaib,",
+              "chineseText": "有一個人經過，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/509dc8d65e095137ec02cbc8231b74a6.wav"
+            },
+            {
+              "id": "22-5-4-6",
+              "order": 6,
+              "indigenousText": "mindangazku mapinsial.",
+              "chineseText": "幫我修好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/9538bee6c18268eb057c2a16c5a4e51a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Tunkisia",
+          "titleCh": "搭火車",
+          "sentences": [
+            {
+              "id": "22-5-5-1",
+              "order": 1,
+              "indigenousText": "Namasikua kusia Takau?",
+              "chineseText": "要怎樣去高雄？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/96c9f5d826f8c19851db2ba1360b150c.wav"
+            },
+            {
+              "id": "22-5-5-2",
+              "order": 2,
+              "indigenousText": "Tunkisia.",
+              "chineseText": "搭火車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/2a11667bb150ca6c393662e260d5b128.wav"
+            },
+            {
+              "id": "22-5-5-3",
+              "order": 3,
+              "indigenousText": "Napia tu tuki cinundazan mas kisia?",
+              "chineseText": "搭火車要多久？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/bf781ff601cc33c475eabac488bfc0af.wav"
+            },
+            {
+              "id": "22-5-5-4",
+              "order": 4,
+              "indigenousText": "Na us’upa sia tau tu tuki.",
+              "chineseText": "大約三個小時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/026a3547f17a7ad728d4a8e58ef099bd.wav"
+            },
+            {
+              "id": "22-5-5-5",
+              "order": 5,
+              "indigenousText": "Na maaz pantangus taunadii mais tunkisia mas tuntamunus?",
+              "chineseText": "搭火車與搭公車哪個會先到達？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/1d54ba3359a4ed04a312d0dcac3cf0c1.wav"
+            },
+            {
+              "id": "22-5-5-6",
+              "order": 6,
+              "indigenousText": "Tunkisia mastan mabiskav.",
+              "chineseText": "搭火車比較快。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/5782b73276e958374791ce346c2a4157.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Isia daan",
+          "titleCh": "在路上",
+          "sentences": [
+            {
+              "id": "22-5-6-1",
+              "order": 1,
+              "indigenousText": "Supah lai’lai a isian dantan.",
+              "chineseText": "路上有很多車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/49844a1eba3819fb5c5c7bbf13c51a11.wav"
+            },
+            {
+              "id": "22-5-6-2",
+              "order": 2,
+              "indigenousText": "Mananulua mais mudadaan ha!",
+              "chineseText": "走路要小心！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/54b3b2f0bae751c2351017e7ebaaa7f2.wav"
+            },
+            {
+              "id": "22-5-6-3",
+              "order": 3,
+              "indigenousText": "Cinsauluka mais na tuntamunus.",
+              "chineseText": "搭車要排隊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/5f381ed62733ca93ca25a5f8602cad84.wav"
+            },
+            {
+              "id": "22-5-6-4",
+              "order": 4,
+              "indigenousText": "Asatu tamu’ngan mas ancinmau mais tun’utubai.",
+              "chineseText": "騎機車一定要戴安全帽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/3f07337680a09094004122bd4c664d84.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Tai’uan tu ludun",
+          "titleCh": "台灣的山",
+          "sentences": [
+            {
+              "id": "22-5-7-1",
+              "order": 1,
+              "indigenousText": "Supah ludun isia Tai’uan.",
+              "chineseText": "台灣有很多山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/30/01609351f6c1e519783a27d949214d9c.wav"
+            },
+            {
+              "id": "22-5-7-2",
+              "order": 2,
+              "indigenousText": "Maaz a Ludun’Usaviah hai mastan tu ihuhu sia Tai’uangtan.",
+              "chineseText": "台灣最高的山是玉山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/fb62b99758f5d570039638ff930e055b.wav"
+            },
+            {
+              "id": "22-5-7-3",
+              "order": 3,
+              "indigenousText": "Adu aizaan imu a asang mas ludun ha?",
+              "chineseText": "你們的部落有山嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/00a6519c01c42fdd74a0471f01723cd5.wav"
+            },
+            {
+              "id": "22-5-7-4",
+              "order": 4,
+              "indigenousText": "Aitunau, aizaan inam a asang mas supah tu ludun.",
+              "chineseText": "有的，我們的部落有很多山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/6bf8eac121ecb73820b07949184b19d8.wav"
+            },
+            {
+              "id": "22-5-7-5",
+              "order": 5,
+              "indigenousText": "Aiza ludun ihuhu, aiza ludun inisnis.",
+              "chineseText": "有高的山，有低的山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/f8977b946b299b7db5e9bbe8b55729e3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Mapatahu dan",
+          "titleCh": "問路",
+          "sentences": [
+            {
+              "id": "22-5-8-1",
+              "order": 1,
+              "indigenousText": "Tusingav tu isa pasnanavan?",
+              "chineseText": "請問學校在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/9ccd045972934f94bfbf49bf45b258ba.wav"
+            },
+            {
+              "id": "22-5-8-2",
+              "order": 2,
+              "indigenousText": "Maiaupa sia insuman valicia.",
+              "chineseText": "往東邊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/4f0f05c9bab868f6507cfd56a370e762.wav"
+            },
+            {
+              "id": "22-5-8-3",
+              "order": 3,
+              "indigenousText": "Tusingav tu makaisa kusia asang?",
+              "chineseText": "請問到部落怎麼走？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/3f99fc7b9c3d9b54e737f0d68ed2d2c6.wav"
+            },
+            {
+              "id": "22-5-8-4",
+              "order": 4,
+              "indigenousText": "Mututusbuta at nasaudip.",
+              "chineseText": "往前走就可以到達。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/3f720d7483ef44a4f0893172e6580a7a.wav"
+            },
+            {
+              "id": "22-5-8-5",
+              "order": 5,
+              "indigenousText": "Adu dahvian?",
+              "chineseText": "很遠嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/255936471bfe22f5a1d9351552f7394a.wav"
+            },
+            {
+              "id": "22-5-8-6",
+              "order": 6,
+              "indigenousText": "Naus’upa mapus’an tu taiktaiktuki.",
+              "chineseText": "大約二十分鐘。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/ce84df2fad9507946feb8c7cae13ddfc.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Ning’av",
+          "titleCh": "海",
+          "sentences": [
+            {
+              "id": "22-5-9-1",
+              "order": 1,
+              "indigenousText": "Mazmaza takingadah sia ning’av tu minihumis?",
+              "chineseText": "海裡有哪些動物？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/40f544725ca669a25c37dfd92c94aa00.wav"
+            },
+            {
+              "id": "22-5-9-2",
+              "order": 2,
+              "indigenousText": "Aiza iskan, kakusung mas kakalang.",
+              "chineseText": "海裡有魚、蝦和螃蟹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/2c362441a3ed54c0b19f96c10c5518b0.wav"
+            },
+            {
+              "id": "22-5-9-3",
+              "order": 3,
+              "indigenousText": "Pia itu kakalang bantas i?",
+              "chineseText": "螃蟹有幾隻腳？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/30/8c97952461a305d8ab62d07cf199906f.wav"
+            },
+            {
+              "id": "22-5-9-4",
+              "order": 4,
+              "indigenousText": "Aizan kakalang tu vauu bantas.",
+              "chineseText": "螃蟹有八隻腳。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/ae59843daf9f6bf392333dfc2c3868d0.wav"
+            },
+            {
+              "id": "22-5-9-5",
+              "order": 5,
+              "indigenousText": "Makua dau ning’av hudan?",
+              "chineseText": "海水是什麼味道？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/a960643ce11e31b3f6b7cdca3a1f4867.wav"
+            },
+            {
+              "id": "22-5-9-6",
+              "order": 6,
+              "indigenousText": "Mahasbit ning’av.",
+              "chineseText": "海水是鹹的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/2a58baf359d129fad6cea65bde5c5493.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Mat’iskan",
+          "titleCh": "捕魚",
+          "sentences": [
+            {
+              "id": "22-5-10-1",
+              "order": 1,
+              "indigenousText": "Makaskas a mat’iskan tu bunun a mat’iskan.",
+              "chineseText": "漁夫很認真捕魚。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/fd0a3b68b3e677821e530273bb9ca406.wav"
+            },
+            {
+              "id": "22-5-10-2",
+              "order": 2,
+              "indigenousText": "Anatupa tu madaing a luvluv.",
+              "chineseText": "不管風有多麼大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/5461fc74415d3f243633012ea41e8835.wav"
+            },
+            {
+              "id": "22-5-10-3",
+              "order": 3,
+              "indigenousText": "Anatupa tu madaing a cinpah.",
+              "chineseText": "不管浪有多麼大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/94ae44152b33b5b3af8fad5ba28959cd.wav"
+            },
+            {
+              "id": "22-5-10-4",
+              "order": 4,
+              "indigenousText": "Nii a sai’ia mapising.",
+              "chineseText": "他都不害怕。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/d4bb6712a72f13ce720756d3af558f72.wav"
+            },
+            {
+              "id": "22-5-10-5",
+              "order": 5,
+              "indigenousText": "Matmuz sian hatu a iskan sinmas kakusung.",
+              "chineseText": "船上總是裝滿了魚和蝦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/46f473ccbbbeb5e31179dfc3a7691483.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "label": "第六階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Maibasin saikin!",
+          "titleCh": "我回來了！",
+          "sentences": [
+            {
+              "id": "22-6-1-1",
+              "order": 1,
+              "indigenousText": "Hudaspingaz, minsumin saikin.",
+              "chineseText": "阿嬷，我回來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/37916ae91bea445bb35dd8e301af9538.wav"
+            },
+            {
+              "id": "22-6-1-2",
+              "order": 2,
+              "indigenousText": "Ou! Islunghuin kasu.",
+              "chineseText": "喔！你放學了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/992e23736437a7752654b8a2497ed11f.wav"
+            },
+            {
+              "id": "22-6-1-3",
+              "order": 3,
+              "indigenousText": "Masauhzangin saikin.",
+              "chineseText": "我肚子餓了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/014b87892176ec8d930eabed2f142060.wav"
+            },
+            {
+              "id": "22-6-1-4",
+              "order": 4,
+              "indigenousText": "Maz asaun su maun?",
+              "chineseText": "你想要吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/724e206de90c6f1a27ca93fe0cc2ad9c.wav"
+            },
+            {
+              "id": "22-6-1-5",
+              "order": 5,
+              "indigenousText": "Asa saikin maun mas tai.",
+              "chineseText": "我想吃芋頭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/c9aa4319b712a34047c19de8343279b3.wav"
+            },
+            {
+              "id": "22-6-1-6",
+              "order": 6,
+              "indigenousText": "Aiza tai sia pangkakacia, sizav maun.",
+              "chineseText": "桌上有芋頭，你拿去吃吧。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/6230e2ad83f4bb61a1c87fd933ecbb36.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Maz kazimaun su maun?",
+          "titleCh": "你喜歡吃什麼？",
+          "sentences": [
+            {
+              "id": "22-6-2-1",
+              "order": 1,
+              "indigenousText": "Na maaz a kazimaun su maun?",
+              "chineseText": "你喜歡吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/e5192b00685c2bc5b54bfcd06ed47a0a.wav"
+            },
+            {
+              "id": "22-6-2-2",
+              "order": 2,
+              "indigenousText": "Asa saikin maun mas haising.",
+              "chineseText": "我喜歡吃米飯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/a04fa448af6ac33a0dc87ea48f1972b5.wav"
+            },
+            {
+              "id": "22-6-2-3",
+              "order": 3,
+              "indigenousText": "Mazima saikin maun mas sinpit’unu tu takan dulazhaising.",
+              "chineseText": "我喜歡吃糯米蒸筒飯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/files/2024/11/21/09d87c52aeaa29a94cc9fa6558b0865e.wav"
+            },
+            {
+              "id": "22-6-2-4",
+              "order": 4,
+              "indigenousText": "Adu hai’iap kasu tu maimaz sain?",
+              "chineseText": "你知道這是用什麼做的嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/2a762b1bd1776472a2d1ff57b86fb7e3.wav"
+            },
+            {
+              "id": "22-6-2-5",
+              "order": 5,
+              "indigenousText": "Ni saikin hai’iap.",
+              "chineseText": "我不知道。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/50395793a9b62dd23d18678e813f47e9.wav"
+            },
+            {
+              "id": "22-6-2-6",
+              "order": 6,
+              "indigenousText": "Tahuan ku kasu, tangusul hai kinunian mas dulaz mapit’ia.",
+              "chineseText": "我告訴你，蒸筒飯是用糯米做的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/cabb4cff6ff72fd2c20bc67073ec4fd6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Ingadah sia kakaunan haising",
+          "titleCh": "在餐廳裡",
+          "sentences": [
+            {
+              "id": "22-6-3-1",
+              "order": 1,
+              "indigenousText": "Mal’anuhua, maz asaun su maun?",
+              "chineseText": "請坐，你要吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/9f26f01abf7b7e3961399ddd94e6899d.wav"
+            },
+            {
+              "id": "22-6-3-2",
+              "order": 2,
+              "indigenousText": "Adu aiza haising?",
+              "chineseText": "有飯嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/2afd4467a85d8a804171c9f33b9c5d48.wav"
+            },
+            {
+              "id": "22-6-3-3",
+              "order": 3,
+              "indigenousText": "Kaupa mas suming at uka a haising.",
+              "chineseText": "這裡只有麵，沒有飯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/0a81eb6ad3519128955eef99527ffabf.wav"
+            },
+            {
+              "id": "22-6-3-4",
+              "order": 4,
+              "indigenousText": "Nasia nak suming a kaunun.",
+              "chineseText": "是的，我要吃麵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/e65452c95cd8facdb82a984f3ca57329.wav"
+            },
+            {
+              "id": "22-6-3-5",
+              "order": 5,
+              "indigenousText": "Adu mazima kasu mas makamun?",
+              "chineseText": "你是否喜歡辣的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/f257c075773014c8fc3b7b188c3d449e.wav"
+            },
+            {
+              "id": "22-6-3-6",
+              "order": 6,
+              "indigenousText": "Ni, ni saikin mahtu maun makamun.",
+              "chineseText": "不，我不能吃辣的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/95540a3cec21a09e4c254e4647d37be3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Laaskakaunun",
+          "titleCh": "水果",
+          "sentences": [
+            {
+              "id": "22-6-4-1",
+              "order": 1,
+              "indigenousText": "Tanama tahu tu, mazmaz isian Tai’uancin laaskakaunun?",
+              "chineseText": "說說看，台灣有哪些水果？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/f7099f5f1b0f93010a31bb9458290191.wav"
+            },
+            {
+              "id": "22-6-4-2",
+              "order": 2,
+              "indigenousText": "Aiza lapat, salitung sinmas bunbun, aizang maisupah.",
+              "chineseText": "有芭樂、木瓜和香蕉，還有很多。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/ff1f219b9039c48268d58dc76cc0791d.wav"
+            },
+            {
+              "id": "22-6-4-3",
+              "order": 3,
+              "indigenousText": "Adu mamaun kasu mas laaskakaununtan?",
+              "chineseText": "你常常吃水果嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/b9ec52c21589972364875a8ef4cd4d8e.wav"
+            },
+            {
+              "id": "22-6-4-4",
+              "order": 4,
+              "indigenousText": "Nii saikin kaupahanian mamaun.",
+              "chineseText": "我沒有每天吃。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/032cc7375aed0fba73c3a4c869e4f54d.wav"
+            },
+            {
+              "id": "22-6-4-5",
+              "order": 5,
+              "indigenousText": "Iksupaha maun kukutahun las, at mapin hatba lutbu.",
+              "chineseText": "多吃水果，身體才會好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/08/136d00e12e88ac9e6c0efacd99ef1052.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Kakaununaslaas tu lukis",
+          "titleCh": "果樹",
+          "sentences": [
+            {
+              "id": "22-6-5-1",
+              "order": 1,
+              "indigenousText": "Adu maisuaz a kamu mas kakanunaslaas tu lukis ha?",
+              "chineseText": "你們家有果樹嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/e75fa531e89b4feb10f9e40df6f2fd32.wav"
+            },
+            {
+              "id": "22-6-5-2",
+              "order": 2,
+              "indigenousText": "Aiza, inam lumah tu tanangaus sinsuaz hai siamas lapat at itankinuz hai siamas lingking.",
+              "chineseText": "有，我們家前有種芭樂，家的後面是種龍眼。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/f9ce8ba4240b0e9a6594b144cd19bc26.wav"
+            },
+            {
+              "id": "22-6-5-3",
+              "order": 3,
+              "indigenousText": "Adu mavis’ik a laas?",
+              "chineseText": "會結很多果實嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/5b8bf410a0f6cf4363972dd09678e0ac.wav"
+            },
+            {
+              "id": "22-6-5-4",
+              "order": 4,
+              "indigenousText": "Mavis’ik, aupa sanvaliun pahasia mavisik kalas.",
+              "chineseText": "結很多，因為陽光充足所以結很多果實。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/a01ee490b459b53c8f987d1872028d38.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Piskazavan",
+          "titleCh": "冰箱",
+          "sentences": [
+            {
+              "id": "22-6-6-1",
+              "order": 1,
+              "indigenousText": "Adu aiza sian piskazavan cia a sikua ha?",
+              "chineseText": "冰箱裡有西瓜嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/1530b6b991a88ac0f6c5d8af48f6383c.wav"
+            },
+            {
+              "id": "22-6-6-2",
+              "order": 2,
+              "indigenousText": "Aiza, maibaliv a tama takna.",
+              "chineseText": "有，爸爸昨天買了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/1b04b30bdb899fbc80dbc2c6923aa2ff.wav"
+            },
+            {
+              "id": "22-6-6-3",
+              "order": 3,
+              "indigenousText": "Maklang a dihanin at kavavan ta suika’an maun.",
+              "chineseText": "天氣很熱，我們趕快吃西瓜。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/06/25/1c37012b307c61ff7d45d281f52bda0e.wav"
+            },
+            {
+              "id": "22-6-6-4",
+              "order": 4,
+              "indigenousText": "Ung, macinsua mapuszak! Padangiav tu kauman hasila, namasial kaunun.",
+              "chineseText": "好，馬上切！請加放一點鹽，會更好吃。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/44f4550416a07635a03997b9e3ecc6f0.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Dahpa nipun",
+          "titleCh": "蛀牙",
+          "sentences": [
+            {
+              "id": "22-6-7-1",
+              "order": 1,
+              "indigenousText": "Madahpa inak nipun, masnanava.",
+              "chineseText": "老師，我牙痛。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/048de57bf52e6a24944d9adfee528f45.wav"
+            },
+            {
+              "id": "22-6-7-2",
+              "order": 2,
+              "indigenousText": "Adu iksupah kasu maun mas kamasia, mais maupacia hai nautu na kunkuaan.",
+              "chineseText": "你是否吃太多糖果了？如果吃太多，就會蛀牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/3e814fef4fcd0281c43593866acc0627.wav"
+            },
+            {
+              "id": "22-6-7-3",
+              "order": 3,
+              "indigenousText": "Ung at, namasikua a saikin i!",
+              "chineseText": "我將怎麼辦啊！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/645e7d6d7cf2a82555b9ebdd049b989d.wav"
+            },
+            {
+              "id": "22-6-7-4",
+              "order": 4,
+              "indigenousText": "Kavava ispasadu mas kuisang.",
+              "chineseText": "趕快給醫生看。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/6b156e929a2e010abc66d573c33f32ca.wav"
+            },
+            {
+              "id": "22-6-7-5",
+              "order": 5,
+              "indigenousText": "Kaumanav a kamasia maun at malusbuta masinav mas ngulus.",
+              "chineseText": "要少吃糖，常常刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/effeea812d294826014c2b8ed3ee0cc2.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Matumashing",
+          "titleCh": "稱讚",
+          "sentences": [
+            {
+              "id": "22-6-8-1",
+              "order": 1,
+              "indigenousText": "Atumashingun saikin mas masnanava ciatu masial dau saikin tu uvaz.",
+              "chineseText": "老師稱讚我是一位很乖的小孩。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/68876d365e0052ced703f0e78d21aef8.wav"
+            },
+            {
+              "id": "22-6-8-2",
+              "order": 2,
+              "indigenousText": "Namaun hai, hai’iap saikin tal’ima.",
+              "chineseText": "用餐時，我會洗手。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/dc776fe0d0983c14670ada25016ce16c.wav"
+            },
+            {
+              "id": "22-6-8-3",
+              "order": 3,
+              "indigenousText": "Ik’aminunku haising mas pandian maun.",
+              "chineseText": "我會把飯菜全部吃完。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/af54075acdc1e4e146ab129745d8e323.wav"
+            },
+            {
+              "id": "22-6-8-4",
+              "order": 4,
+              "indigenousText": "Masitsita nipun mais minaunin mas haising.",
+              "chineseText": "飯後會刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/af6255c6945a85f82e4e13e6d74248f2.wav"
+            },
+            {
+              "id": "22-6-8-5",
+              "order": 5,
+              "indigenousText": "Mindangaza masinav balukan tapsal sinmas taku.",
+              "chineseText": "幫忙洗碗盤、湯匙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/e45cd929cc4cb177128a34b24c61ce29.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Pinitunghuvali",
+          "titleCh": "午餐",
+          "sentences": [
+            {
+              "id": "22-6-9-1",
+              "order": 1,
+              "indigenousText": "Aip tu pinitunghuvali a nakaunun hai siamas maitulkuk at lulubunun, bainu mas kanciahciah tu zuszus.",
+              "chineseText": "今天的午餐有雞肉、蛋、四季豆還有山蘇。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/a358d9368b8281628cc6396406a93c3b.wav"
+            },
+            {
+              "id": "22-6-9-2",
+              "order": 2,
+              "indigenousText": "Sain hai adu itu pasnanavan tu pinitunghuvali?",
+              "chineseText": "這是學校的營養午餐嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/23/dcdd19b31e821982158195aa080428f5.wav"
+            },
+            {
+              "id": "22-6-9-3",
+              "order": 3,
+              "indigenousText": "Ung, sain hai itu pasnanavan sinpalsanus tu nakaunun tanghuvali.",
+              "chineseText": "這是學校為我們準備的午餐。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/e21d7a3d64991e56ab5cb6c6ec6528e0.wav"
+            },
+            {
+              "id": "22-6-9-4",
+              "order": 4,
+              "indigenousText": "Adu abuhanin amin?",
+              "chineseText": "都吃得飽嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/20/25b6700b210bc93e95399d34c0cf14a8.wav"
+            },
+            {
+              "id": "22-6-9-5",
+              "order": 5,
+              "indigenousText": "Nitu kaaz abuhan ais! Kapa a kakanun hai aizan amin mas iubung.",
+              "chineseText": "不但吃得飽！並且都很營養。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/ee3fdaef367ad8d491f2c7c57efb86c7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Mucingkul",
+          "titleCh": "跌倒",
+          "sentences": [
+            {
+              "id": "22-6-10-1",
+              "order": 1,
+              "indigenousText": "Aip tu cingmut masa pishasibang saikin hai mucinkul.",
+              "chineseText": "今天早上我在玩耍時跌倒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/04a37108e9841b6fb7574837fc0e738e.wav"
+            },
+            {
+              "id": "22-6-10-2",
+              "order": 2,
+              "indigenousText": "Inak malung hai, milulu pishaidang.",
+              "chineseText": "我的膝蓋受傷流血。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/a211fa46a11f40a9978a5a32c8cbb292.wav"
+            },
+            {
+              "id": "22-6-10-3",
+              "order": 3,
+              "indigenousText": "Kadangazan saikin masnanava mahushus iu at masubu.",
+              "chineseText": "老師幫我擦藥、包紮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/10/930b68d028079d68f8ee4ae4c30283dc.wav"
+            },
+            {
+              "id": "22-6-10-4",
+              "order": 4,
+              "indigenousText": "Anatupa saikin laupaka dau tu pispipiaha,",
+              "chineseText": "雖然我現在一跛一跛的，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/657ada78ba7e42b055f9e6117e6cdefd.wav"
+            },
+            {
+              "id": "22-6-10-5",
+              "order": 5,
+              "indigenousText": "haitu naniin talpia tu hanian at namindadu a saikin.",
+              "chineseText": "但是幾天後就會康復得很好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/04/18/c8e0625be4f25b276713974f1596e4e6.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "label": "第七階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Na maz balivun su?",
+          "titleCh": "你要買什麼？",
+          "sentences": [
+            {
+              "id": "22-7-1-1",
+              "order": 1,
+              "indigenousText": "Uvaz, na maza balivun su?",
+              "chineseText": "孩子，你要買什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/53e78806b1569b84a31700b6c2ef1a29.wav"
+            },
+            {
+              "id": "22-7-1-2",
+              "order": 2,
+              "indigenousText": "Tauki, namabaliv saikin ispapatas mas papata’san.",
+              "chineseText": "老闆，我要買鉛筆和筆記本。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/9e89b2fe330313c5e8dda3119c0878d4.wav"
+            },
+            {
+              "id": "22-7-1-3",
+              "order": 3,
+              "indigenousText": "Napia balivun su?",
+              "chineseText": "你要買多少？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/f1f3f90103c19b194fc3e3c5649208ef.wav"
+            },
+            {
+              "id": "22-7-1-4",
+              "order": 4,
+              "indigenousText": "Tasa ispapatas mas tasa tu papata’san.",
+              "chineseText": "鉛筆一支和筆記本一本。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/6b9532000d84cb6323647717b0c93517.wav"
+            },
+            {
+              "id": "22-7-1-5",
+              "order": 5,
+              "indigenousText": "Tasa ispapatas hai ima tu sui, tasa papata’san hai siva tu sui.",
+              "chineseText": "鉛筆一支要五元，筆記本一本要九元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/94dfd28d9fd95487e170e6fb5531eeb2.wav"
+            },
+            {
+              "id": "22-7-1-6",
+              "order": 6,
+              "indigenousText": "Ima tu sui mas siva tu sui mais, pudinunun hai aiza tu mas’anhanpat tu sui, nitu balivun(nitu mahlis).",
+              "chineseText": "五和九加起來總共十四元，不會貴。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/5658e51a25ca816d4335bb8481e8a1c3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Mapa’uvaiv mas sui",
+          "titleCh": "換錢",
+          "sentences": [
+            {
+              "id": "22-7-2-1",
+              "order": 1,
+              "indigenousText": "Tauki, na mapa’uvaiv saikin tastusaba tu sui.",
+              "chineseText": "老闆，我有一百元，要換錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/f83e828935e9444832e4da0954495bc8.wav"
+            },
+            {
+              "id": "22-7-2-2",
+              "order": 2,
+              "indigenousText": "Na pikun su mapa’uvaiv i?",
+              "chineseText": "你要怎麼換？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/14/82b16e601b20c5ea542eceb8a3b37b41.wav"
+            },
+            {
+              "id": "22-7-2-3",
+              "order": 3,
+              "indigenousText": "Na mapa’uvaiv saikin tu mas’an mas mas’an tu sui.",
+              "chineseText": "我要換十個十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/38dd83f5cfcbcf56e5e9252c123691b7.wav"
+            },
+            {
+              "id": "22-7-2-4",
+              "order": 4,
+              "indigenousText": "Ung, mas’an, mapusan, maciun, masipatun, mai'maun, manumun, mapitun, mavaun, masi’vaun. Aiskai! Mavai tu kazangkaz masivau tu sui.",
+              "chineseText": "好，十、二十、三十、四十、五十、六十、七十、八十、九十。唉呀！不夠，只有九十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/files/2024/11/13/e8105ae258585148dc8c9cf8fd48d18b.wav"
+            },
+            {
+              "id": "22-7-2-5",
+              "order": 5,
+              "indigenousText": "Nii tu makua, mahtu kasu masaiv ku tu dusa mas ima tu sui.",
+              "chineseText": "沒關係，你可以給我兩個五元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/a09d99dfb65ffe0b66673cd30f63c4cd.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Mapadaimpus mas sui",
+          "titleCh": "存錢",
+          "sentences": [
+            {
+              "id": "22-7-3-1",
+              "order": 1,
+              "indigenousText": "Tastu islunghuan hai, saivan saikin Cina tu maimaun tu sui.",
+              "chineseText": "媽媽每星期給我五十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/2974fb9cb8cecee0d91f920a7579ba5c.wav"
+            },
+            {
+              "id": "22-7-3-2",
+              "order": 2,
+              "indigenousText": "Mapadaimpus saikin tu mapusan tu sui.",
+              "chineseText": "我存二十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/aef3da57ef4fb27e84d88c26d22d90c3.wav"
+            },
+            {
+              "id": "22-7-3-3",
+              "order": 3,
+              "indigenousText": "Na minsupahin inak sui mais madaingin saikin.",
+              "chineseText": "我長大之後就會有很多錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/d3ad610afab4542bbe304d131f757c64.wav"
+            },
+            {
+              "id": "22-7-3-4",
+              "order": 4,
+              "indigenousText": "Tatahu masnanava tu, “Panaslunav at na minsupahin.”",
+              "chineseText": "老師常說：「積少成多」。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/ca17b258cb284f2cfb4796aa75eeab75.wav"
+            },
+            {
+              "id": "22-7-3-5",
+              "order": 5,
+              "indigenousText": "Sain tu halinga hai mamantuk.",
+              "chineseText": "這句話是真的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2021/03/01/a34ca0e0fd9f91f3d0781c8e2c0017c9.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Tuki",
+          "titleCh": "時鐘",
+          "sentences": [
+            {
+              "id": "22-7-4-1",
+              "order": 1,
+              "indigenousText": "Tuki hai aiza tu tau is’as,",
+              "chineseText": "時鐘有三支針，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/cca72805c0d7e6f1ee1a3120574250a7.wav"
+            },
+            {
+              "id": "22-7-4-2",
+              "order": 2,
+              "indigenousText": "tasa hai madulu tu makuis, tasa hai madulu at mangabzan tasa hai maputul.",
+              "chineseText": "一支細長，一支粗長，另一支是短針。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/305f5f28c1e7c63dd5f692a73aa6cdaa.wav"
+            },
+            {
+              "id": "22-7-4-3",
+              "order": 3,
+              "indigenousText": "Madulu tu makuis hai mabiskavdaingaz, madulu at mangabzan hai makamudaduk, maza maputulan hai mudadaukdaingaz.",
+              "chineseText": "長又細的針，走得最快，長又粗的針，走得稍慢，短針走得最慢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/55a4d7b493816b4adcfae0d81f4abe3d.wav"
+            },
+            {
+              "id": "22-7-4-4",
+              "order": 4,
+              "indigenousText": "Maisicingmut sausanavan, nitu islulunghu mudadan.",
+              "chineseText": "從早到晚，整天沒有休息地走路。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/aeb98cd567cfe2e77be33a1ddba1048c.wav"
+            },
+            {
+              "id": "22-7-4-5",
+              "order": 5,
+              "indigenousText": "Maszang tatahu mamita tu, asatu makadim mas tastu hani’antan.",
+              "chineseText": "好像在告訴我們，要愛惜時間。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/49c7d95395655bc6ebb123e517825e84.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Liska tuki",
+          "titleCh": "準時",
+          "sentences": [
+            {
+              "id": "22-7-5-1",
+              "order": 1,
+              "indigenousText": "Saivan saikin tama mas bahlu tu tuki.",
+              "chineseText": "爸爸給我新手錶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/8dac3be02c550658cacf0a54be7cf228.wav"
+            },
+            {
+              "id": "22-7-5-2",
+              "order": 2,
+              "indigenousText": "Kaupa hanian tausdipaun ku sia inak tu ima.",
+              "chineseText": "我每天都戴手錶在手上。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/b8e211835cddbad3b978055dfb26e87a.wav"
+            },
+            {
+              "id": "22-7-5-3",
+              "order": 3,
+              "indigenousText": "Isaicia singav hai, ti ta ti ta.",
+              "chineseText": "它發出的聲音，滴答滴答。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/9921b2cadb0ce1e3c160e25ad069f60b.wav"
+            },
+            {
+              "id": "22-7-5-4",
+              "order": 4,
+              "indigenousText": "Anatupa tu kusia pasnanavan, anis kulumah.",
+              "chineseText": "不論上學還是回家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/25dcce76ca02ffeaf5c546f124b06b9b.wav"
+            },
+            {
+              "id": "22-7-5-5",
+              "order": 5,
+              "indigenousText": "Mapishai’iap mazaku tu asa pakimaupa mas zikang.",
+              "chineseText": "提醒我必須要守時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/030f4c3730574896212f2f6b34c42b77.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Isia Cina tu tastuhanian",
+          "titleCh": "媽媽的一天",
+          "sentences": [
+            {
+              "id": "22-7-6-1",
+              "order": 1,
+              "indigenousText": "Cinmut tu cinnum tuki hai, pinkailasun saikin mas cina.",
+              "chineseText": "早上六點鐘，媽媽叫我起床。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/055b365348d931200144fcc4fdd21da3.wav"
+            },
+            {
+              "id": "22-7-6-2",
+              "order": 2,
+              "indigenousText": "Tunghuvalin hai, talpataz a cina mapit’ia mas paituhanian.",
+              "chineseText": "中午十二點，媽媽忙著做午餐。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/520aa4db83e5640396de7539d3f84b82.wav"
+            },
+            {
+              "id": "22-7-6-3",
+              "order": 3,
+              "indigenousText": "Mais minaunin tu cintau tuki hai, kusian sai’ia pancinaun mapasnava macindun mas pus’ut.",
+              "chineseText": "下午三點，她到阿姨家學習織布。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/f5202b3d7e15a8c6d501aaa3f973f40e.wav"
+            },
+            {
+              "id": "22-7-6-4",
+              "order": 4,
+              "indigenousText": "Labianmishangin hai, kuzakuza’ang sai’ia.",
+              "chineseText": "夜深了！她還在做家事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/5daebe4a53add49af4d071daa3cf9478.wav"
+            },
+            {
+              "id": "22-7-6-5",
+              "order": 5,
+              "indigenousText": "Maisi cingmut sau sanavan, cina hai nitu islulunghu.",
+              "chineseText": "從早上到晚上，媽媽沒有休息。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/678eee9db8cd3ababa8926b1dbc7b049.wav"
+            },
+            {
+              "id": "22-7-6-6",
+              "order": 6,
+              "indigenousText": "Mihdidaingaz cina a.",
+              "chineseText": "媽媽很辛苦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/1c7732a06b98cc375323ac6535a05c6a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Mavai tasa sidi",
+          "titleCh": "少了一隻羊",
+          "sentences": [
+            {
+              "id": "22-7-7-1",
+              "order": 1,
+              "indigenousText": "Aizan tamahudas a mas sidi tu mas’an.",
+              "chineseText": "祖父有十隻羊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/af6f3edb50d0b74c01f37a0479885e57.wav"
+            },
+            {
+              "id": "22-7-7-2",
+              "order": 2,
+              "indigenousText": "Kaupa hanian patangkakaunun saicia.",
+              "chineseText": "他每天讓羊在草地上吃草。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/8846430a7c9d1f5a3317849b07acf862.wav"
+            },
+            {
+              "id": "22-7-7-3",
+              "order": 3,
+              "indigenousText": "Sipulun saicia tu adu aiza is’uka?",
+              "chineseText": "他數一數有沒有少？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/2a6a99dc8fd8a38a151aa22ec1efe8cc.wav"
+            },
+            {
+              "id": "22-7-7-4",
+              "order": 4,
+              "indigenousText": "Tasa, dusa, tau, pat, ima, num, pitu, vau, siva, mavai tasa tu.",
+              "chineseText": "一、二、三、四、五、六、七、八、九，少了一隻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/15c74987f602e81e23ea4211d9248929.wav"
+            },
+            {
+              "id": "22-7-7-5",
+              "order": 5,
+              "indigenousText": "Kavava kilim tu isa?",
+              "chineseText": "趕快去找，在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/83469999d89caa3ab26dcaf28a3b7aef.wav"
+            },
+            {
+              "id": "22-7-7-6",
+              "order": 6,
+              "indigenousText": "Ingkaduanin, amuhangasia’i kaz tunghabin sia tundaingaz tu tankinuz.",
+              "chineseText": "找到了，原來在大石頭後面。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/c044baf4f8460dcc359592d4f2c877c6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Ivut",
+          "titleCh": "蛇",
+          "sentences": [
+            {
+              "id": "22-7-8-1",
+              "order": 1,
+              "indigenousText": "Mazima ivut maku sanavan mun’apav.",
+              "chineseText": "蛇喜歡利用晚上出現。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/14/3a46e01b28486e663ede0b46fc99449f.wav"
+            },
+            {
+              "id": "22-7-8-2",
+              "order": 2,
+              "indigenousText": "Takisian naia hinutunan mas maduksivan tu dadangian.",
+              "chineseText": "牠們經常在潮濕的地方和石頭堆裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/49fd52b25755943c015de790f83fb9e3.wav"
+            },
+            {
+              "id": "22-7-8-3",
+              "order": 3,
+              "indigenousText": "Mais cinngalbah a ngulus hai,",
+              "chineseText": "只要張開嘴，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/e0b15fd107eb0472591e496a141ccee8.wav"
+            },
+            {
+              "id": "22-7-8-4",
+              "order": 4,
+              "indigenousText": "maza aluaz mas sisiuh hai niin mahtu macisbai.",
+              "chineseText": "老鼠和青蛙都很難逃開。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/a11c73f42e8ac7123354fed75d90aee5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Balikuan",
+          "titleCh": "蝴蝶",
+          "sentences": [
+            {
+              "id": "22-7-9-1",
+              "order": 1,
+              "indigenousText": "Balikuan hai tutuza tu manau’uaz daingaz.",
+              "chineseText": "蝴蝶真美麗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/a8b8ffcaf94679d9d5c8ade0eaa6b7c2.wav"
+            },
+            {
+              "id": "22-7-9-2",
+              "order": 2,
+              "indigenousText": "Mai’uni nai’ia ha’hap’hap,",
+              "chineseText": "它原來是一隻毛毛蟲，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/7b2e9a7acb695fed27b8cf4e15d55a13.wav"
+            },
+            {
+              "id": "22-7-9-3",
+              "order": 3,
+              "indigenousText": "painukanin naia laupaku mas manau’uaz tu ulus,",
+              "chineseText": "現在牠穿著美麗的衣服，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/2bc0d226efd6a32921335383525501d2.wav"
+            },
+            {
+              "id": "22-7-9-4",
+              "order": 4,
+              "indigenousText": "kusbabai sia masulipuahan tu dangian.",
+              "chineseText": "在花叢裡飛來飛去。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/ae2abbb05d4185268eb27b23c6ba59c8.wav"
+            },
+            {
+              "id": "22-7-9-5",
+              "order": 5,
+              "indigenousText": "Mananulua, katu panangadah sia katukatu cia.",
+              "chineseText": "小心，別掉進那蜘蛛網裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/01cbe0a37741129392d6e8a2838e3f0e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Mavia itu utung tuhu tu madanghas(madiul) i?",
+          "titleCh": "猴子的屁股為什麼是紅色的？",
+          "sentences": [
+            {
+              "id": "22-7-10-1",
+              "order": 1,
+              "indigenousText": "Aiza tu tastuhanian, matushung a utung mas halum,",
+              "chineseText": "有一天，猴子玩弄穿山甲，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/360569d3dc760f48a654a7fe106d9de4.wav"
+            },
+            {
+              "id": "22-7-10-2",
+              "order": 2,
+              "indigenousText": "mapistaba sai’ia itu halum tu tunghahabinan, na asaun saicia halum a mapun’apav.",
+              "chineseText": "牠放火燒穿山甲的躲藏處，想使穿山甲出來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/0dea4c9a37b85a6794962780b6b93cef.wav"
+            },
+            {
+              "id": "22-7-10-3",
+              "order": 3,
+              "indigenousText": "Hatu nitu haiaphaiap tu minsunab,",
+              "chineseText": "但沒想到著火，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/14/90a4e6e383c502b04eb6f9e026cef9a6.wav"
+            },
+            {
+              "id": "22-7-10-4",
+              "order": 4,
+              "indigenousText": "mis’ana’anak isaicia tuhu mistaba.",
+              "chineseText": "燒到牠自己的屁股。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/984a76b50f26cc1d4d869a58a1991d56.wav"
+            },
+            {
+              "id": "22-7-10-5",
+              "order": 5,
+              "indigenousText": "Maisna tudipin, itu utung a tuhu hai, minmadanghasin(minmadiulin).",
+              "chineseText": "從那時候猴子的屁股就變成紅色了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/9da402eb7562e2d2dd97a1480f343fb5.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "label": "第八階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Hai’iap saikin malas Bunun",
+          "titleCh": "我會講布農話",
+          "sentences": [
+            {
+              "id": "22-8-1-1",
+              "order": 1,
+              "indigenousText": "Adu hai’iap kasu malasBunun ha?",
+              "chineseText": "你會講布農話嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/93e6f9fd910b616159163002a545b114.wav"
+            },
+            {
+              "id": "22-8-1-2",
+              "order": 2,
+              "indigenousText": "Ung, hai’iap tu kauman, laupang saikin mapasnava.",
+              "chineseText": "會，我會一點點，我剛學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/d444f6b84eb440707fdb36af5ff9aa74.wav"
+            },
+            {
+              "id": "22-8-1-3",
+              "order": 3,
+              "indigenousText": "Isa kasu mapasnava malasBununi?",
+              "chineseText": "你在哪裡學布農話？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/44859807db51036eb696422af2689d3a.wav"
+            },
+            {
+              "id": "22-8-1-4",
+              "order": 4,
+              "indigenousText": "Isian saikin pasnanavan mapasnava.",
+              "chineseText": "我在學校學的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/e954436edc54c3f1c0dc4727026f83b2.wav"
+            },
+            {
+              "id": "22-8-1-5",
+              "order": 5,
+              "indigenousText": "Ma’aipi aupa uhai’iapan?",
+              "chineseText": "容易學會嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/5ae491626a96b2dc4628b39554b86319.wav"
+            },
+            {
+              "id": "22-8-1-6",
+              "order": 6,
+              "indigenousText": "Ma’aipi, mazima saikin mapasnava.",
+              "chineseText": "很容易，我很喜歡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/4cc2db55c807de9ba0242b43652b9c4b.wav"
+            },
+            {
+              "id": "22-8-1-7",
+              "order": 7,
+              "indigenousText": "Mahansiapdaingaz kasu malasBunun tu.",
+              "chineseText": "你很會講布農話。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/f5951431d065dabda54fe4608cb05408.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Bunun siduh kaimin",
+          "titleCh": "我們是布農人",
+          "sentences": [
+            {
+              "id": "22-8-2-1",
+              "order": 1,
+              "indigenousText": "Adu incumin kamu ha?",
+              "chineseText": "你們是原住民嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/38c244939a87c4ed85785574a2a3b458.wav"
+            },
+            {
+              "id": "22-8-2-2",
+              "order": 2,
+              "indigenousText": "Ung, incumin kaimin.",
+              "chineseText": "是的，我們是原住民。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/2aafa43224d195c6829204d7c88ac49f.wav"
+            },
+            {
+              "id": "22-8-2-3",
+              "order": 3,
+              "indigenousText": "Adu Amis kamu ha?",
+              "chineseText": "你們是阿美族嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/5d1869536bb13dbffa659533ea0c33db.wav"
+            },
+            {
+              "id": "22-8-2-4",
+              "order": 4,
+              "indigenousText": "Nii, Bunun kaimin.",
+              "chineseText": "不是，我們是布農族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/97e11a32fc3cf6b6002e20812aca1de7.wav"
+            },
+            {
+              "id": "22-8-2-5",
+              "order": 5,
+              "indigenousText": "Kaimin tastu’asang hai mastan mas Bunun siduh.",
+              "chineseText": "我們部落裡的人大多是布農族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/85ee864503880d49ea9236637dfbf82e.wav"
+            },
+            {
+              "id": "22-8-2-6",
+              "order": 6,
+              "indigenousText": "Paha, kaimin Bununsiduh hai, imishang sia Tai’uan tu ludun.",
+              "chineseText": "並且，我們布農族群的位置在台灣的中央山脈。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/14/d9be809db712e0493f0e6d999900711b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Palihabasan",
+          "titleCh": "講故事",
+          "sentences": [
+            {
+              "id": "22-8-3-1",
+              "order": 1,
+              "indigenousText": "Mahansi’iap tamahudas palihabasan.",
+              "chineseText": "阿公很會講故事，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/cb8ae611e6a6c9148c6428bf6a096d7c.wav"
+            },
+            {
+              "id": "22-8-3-2",
+              "order": 2,
+              "indigenousText": "Kaupahanian saikin mal’anuhu sia lukis tu navungcia ta’aza mas tamahudas tu palihabasan.",
+              "chineseText": "我每天坐在樹影下聽阿公講故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/ca2f2c66f46eddf3c1a21f13475c0ee0.wav"
+            },
+            {
+              "id": "22-8-3-3",
+              "order": 3,
+              "indigenousText": "Supah isaicia hai’iapun a masial ta’azaun tu palihabasan, maszang, mas pali’uni maimakua i’apavcin tu tus’a kinitngaban.",
+              "chineseText": "他知道許多精采的故事很好聽，例如：談人類是如何產生的和有關宇宙是如何開始。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/76672aa333c56560067be705f246fa10.wav"
+            },
+            {
+              "id": "22-8-3-4",
+              "order": 4,
+              "indigenousText": "Anatupa tu kanaskalun sinmas kaihanimulmulan tu sinpalihabasan hai, kazimaun ku amin ta’aza.",
+              "chineseText": "不論是快樂的故事或是悲傷的故事，我都很喜歡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/a362f3ac42bf517bd645f083c7af83d6.wav"
+            },
+            {
+              "id": "22-8-3-5",
+              "order": 5,
+              "indigenousText": "Kunian ku lu’inci siza halinga.",
+              "chineseText": "我用錄音機錄下。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/11/a519158e43899a97e766e7fed085f4b9.wav"
+            },
+            {
+              "id": "22-8-3-6",
+              "order": 6,
+              "indigenousText": "Na ispata’aza ku mas inak tu aluskunan.",
+              "chineseText": "給我的同學聽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/15/30aaca18369ba629d9685165f32d158e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Sadu patasan ahil",
+          "titleCh": "看書",
+          "sentences": [
+            {
+              "id": "22-8-4-1",
+              "order": 1,
+              "indigenousText": "Sima kai’uni dingua tan?",
+              "chineseText": "誰發明了電話？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/19eba8a4ce94597f7c2aa4bf29027081.wav"
+            },
+            {
+              "id": "22-8-4-2",
+              "order": 2,
+              "indigenousText": "Isa mastan ihuhu kailumahan sia dalah cin?",
+              "chineseText": "世界最高的大樓在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/6674b6a8dc9843b04e1d196f47efa283.wav"
+            },
+            {
+              "id": "22-8-4-3",
+              "order": 3,
+              "indigenousText": "Makumaza iskan a sumbang?",
+              "chineseText": "魚用什麼呼吸？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5c0462a83272a0ff48b43cb28680b4d0.wav"
+            },
+            {
+              "id": "22-8-4-4",
+              "order": 4,
+              "indigenousText": "Mavia dihanin tu sanbilva tu?",
+              "chineseText": "天空為什麼會打雷？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/50f230d8a8f85319026ed6f03920097b.wav"
+            },
+            {
+              "id": "22-8-4-5",
+              "order": 5,
+              "indigenousText": "Isa mahtu uhaiapan mas maupacin tu hansi’iap i?",
+              "chineseText": "這樣的知識在哪裡可以學到？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/9343eb654b66856522369b54cc3d29d1.wav"
+            },
+            {
+              "id": "22-8-4-6",
+              "order": 6,
+              "indigenousText": "Isia ahil tu paitasan, mais makaskas masipul paitasan tu ahil hai na mahtu mintaiklas.",
+              "chineseText": "在書裡，勤讀書可以讓我們增加知識。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/561e8bf1155e4f038739a43acfd05be4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Simul patasan ahil",
+          "titleCh": "借書",
+          "sentences": [
+            {
+              "id": "22-8-5-1",
+              "order": 1,
+              "indigenousText": "Adu maisipulin kasu pali’uni laining’avan tu paitasan ha?",
+              "chineseText": "你讀過《洪水的故事》這本書嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/61e182a22fe292a3c84dcb9367b17da5.wav"
+            },
+            {
+              "id": "22-8-5-2",
+              "order": 2,
+              "indigenousText": "Maisipulin saikin, masial sain saduan tu paitasanan.",
+              "chineseText": "我讀過，這本書很好看。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/3300d52fb87d22b4c31e9b6ca4e23bb1.wav"
+            },
+            {
+              "id": "22-8-5-3",
+              "order": 3,
+              "indigenousText": "Adu mahtu kasu mapasimul ku mas paitasantan?",
+              "chineseText": "這本書你可以借我嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/6b930326bee4ee6e34b9983a4f888e71.wav"
+            },
+            {
+              "id": "22-8-5-4",
+              "order": 4,
+              "indigenousText": "Ukan saikin, haitu hai’iap saikin tu aiza isia Puni cia, na mahtu saikin mindangaz su simul.",
+              "chineseText": "我沒有，但是我知道Puni有，我可以幫你向她借。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/66c3d3ebc4b01c6b8c71a05e28530a31.wav"
+            },
+            {
+              "id": "22-8-5-5",
+              "order": 5,
+              "indigenousText": "Uninang, mais usimulanin hai tahuav saikin.",
+              "chineseText": "謝謝，如果借到的話，告訴我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/9863da6f91c3aba39f82936ab5eb1a41.wav"
+            },
+            {
+              "id": "22-8-5-6",
+              "order": 6,
+              "indigenousText": "Ung, mais kanahtunganin su sadu hai, kan’anakavin su masuhis punsia Puni cia.",
+              "chineseText": "好的，如果你看完了，你親自還給Puni。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/286e00cb90fe44f269cf68baf66d3898.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Mabaliv patasan ahil",
+          "titleCh": "買書",
+          "sentences": [
+            {
+              "id": "22-8-6-1",
+              "order": 1,
+              "indigenousText": "Taskun saikin takna inak tu aluskunan, kusia babalivan patasan ahil cia.",
+              "chineseText": "昨天我和同學一起到書店。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/dd485d93e869fd8097bc74967f114aae.wav"
+            },
+            {
+              "id": "22-8-6-2",
+              "order": 2,
+              "indigenousText": "Asa amin kaimin mabaliv ziting sin palihabasan tu paitasan.",
+              "chineseText": "我們都想買字典和故事書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a43516b67c2d49ce9babbcf5bfe80875.wav"
+            },
+            {
+              "id": "22-8-6-3",
+              "order": 3,
+              "indigenousText": "Mabaliv kaimin mamaszang tu ziting.",
+              "chineseText": "我們買了相同的字典。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0c126911f614606aeddc9f451eeac840.wav"
+            },
+            {
+              "id": "22-8-6-4",
+              "order": 4,
+              "indigenousText": "Haitu inam a binaliv palihabasan tu paitasan hai nitu mamaszang.",
+              "chineseText": "但是我們買的故事書卻不同。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/023640faa25a8afd9b5592c8f64a2a28.wav"
+            },
+            {
+              "id": "22-8-6-5",
+              "order": 5,
+              "indigenousText": "Isaicia balivun hai sia mas Antusang tu paitasan.",
+              "chineseText": "他買的是《安徒生童話集》。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/33bd875b964d740b714202ea4879af15.wav"
+            },
+            {
+              "id": "22-8-6-6",
+              "order": 6,
+              "indigenousText": "Inak balivun hai sia mas Isu’i tu paitasan.",
+              "chineseText": "我買的是《伊索寓言》。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/98d204f23775db58ee1863681f6c7dcc.wav"
+            },
+            {
+              "id": "22-8-6-7",
+              "order": 7,
+              "indigenousText": "Nitu mamaszang a binaliv tu paitasan, haitu maszang amin tu iskaupa tu sui.",
+              "chineseText": "雖然買的書不同，但是價錢相同。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b85311efe8abe53eef409f991d1dfbb7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Mapatas",
+          "titleCh": "寫字",
+          "sentences": [
+            {
+              "id": "22-8-7-1",
+              "order": 1,
+              "indigenousText": "Linsiu saikin mapatas.",
+              "chineseText": "我在練習寫字。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/e940180501155ff161b2b8580039778f.wav"
+            },
+            {
+              "id": "22-8-7-2",
+              "order": 2,
+              "indigenousText": "Asa saikin ma’aipi uhansaipan mapatas.",
+              "chineseText": "我希望能趕快學會寫字。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b59ef7396831e75e44b949f45e57b5c5.wav"
+            },
+            {
+              "id": "22-8-7-3",
+              "order": 3,
+              "indigenousText": "Mais uhai’iapan in saikin mapatas hai,",
+              "chineseText": "如果我學會寫字了，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0b7218651803dfc82c2ae7cc7ff55aeb.wav"
+            },
+            {
+              "id": "22-8-7-4",
+              "order": 4,
+              "indigenousText": "asa daingaz saikin mapatas tingami punsianun dahvian tu pantuhasun.",
+              "chineseText": "最想寫信給遠方的表哥。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d5711ec3f27cbe33ff70e366fbe009bb.wav"
+            },
+            {
+              "id": "22-8-7-5",
+              "order": 5,
+              "indigenousText": "Kusian sai’ia vaivi tu asang kuzakuza, masalpu saikin saicia.",
+              "chineseText": "他到外地去工作，我想念他。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d321a4e9fb3799704ce438cb05569b9e.wav"
+            },
+            {
+              "id": "22-8-7-6",
+              "order": 6,
+              "indigenousText": "Punpin tu hamisan, nitu hai’iapun tu makua’in sai’ia laupakadau?",
+              "chineseText": "已經好幾年了，不知他現在過得怎樣？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a20d5be43dea53950280f3a3dfc6642c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Paitu pantuhaisun tu cingami",
+          "titleCh": "給表哥的一封信",
+          "sentences": [
+            {
+              "id": "22-8-8-1",
+              "order": 1,
+              "indigenousText": "Masial aupa kasu pantuhasun?",
+              "chineseText": "表哥你好嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/05b5e8ffe3f8ee9a3f06b262cf82f1af.wav"
+            },
+            {
+              "id": "22-8-8-2",
+              "order": 2,
+              "indigenousText": "Aip tu hanian hai antala saikin isu tu tingami, manaskal daingaz saikin.",
+              "chineseText": "今天接到你的信，我非常快樂。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/5b7907855955bd046c314d77592e8131.wav"
+            },
+            {
+              "id": "22-8-8-3",
+              "order": 3,
+              "indigenousText": "Tangusang tu buan, sinsaiv su mazaku a tau tu paitasan hai kazimaun ku amin.",
+              "chineseText": "上個月，你送給我的三本書我都很喜歡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c0654d7db1b7675a2074cab8e5fba9c1.wav"
+            },
+            {
+              "id": "22-8-8-4",
+              "order": 4,
+              "indigenousText": "Ta’aza saikin tu pankanahtungin kasu mapasnava, na min’unin masnanava.",
+              "chineseText": "聽說你完成學業了，就要成為老師。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/81353e60333adb432e8809fad3708e26.wav"
+            },
+            {
+              "id": "22-8-8-5",
+              "order": 5,
+              "indigenousText": "Na malmananu saikin mapasnava.",
+              "chineseText": "我要努力讀書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/89024b01b2b3ac9313957bf6dab34147.wav"
+            },
+            {
+              "id": "22-8-8-6",
+              "order": 6,
+              "indigenousText": "Mahtu habasin maszang su tu min’uni masial tu masnanava.",
+              "chineseText": "希望將來跟你一樣做個優秀的老師。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/3e652e229d5f8b1d0aa122f341cfd06c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Tastuhanian tu sinpapatas",
+          "titleCh": "日記",
+          "sentences": [
+            {
+              "id": "22-8-9-1",
+              "order": 1,
+              "indigenousText": "Kaupahanian saikin mapatas lainihaiban tu paitasan.",
+              "chineseText": "我每天寫日記。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c44ace9f0c064c7e2d35d0afa4408de7.wav"
+            },
+            {
+              "id": "22-8-9-2",
+              "order": 2,
+              "indigenousText": "Kaupahanian tu lainihaiban sinkuzakuza hai patasan ku amin.",
+              "chineseText": "我把每天經歷的事全部記下來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b3611a2e376ef46bad927d0359712d30.wav"
+            },
+            {
+              "id": "22-8-9-3",
+              "order": 3,
+              "indigenousText": "Mais maupacia hai nitu kaupa mahtu mas linsiu mapatas,",
+              "chineseText": "這樣不但可以練習寫字，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a27e67db1ba20c49ca2712003c147d61.wav"
+            },
+            {
+              "id": "22-8-9-4",
+              "order": 4,
+              "indigenousText": "mahtu amin mapin’aiza mazaku mas ailsasan tu is’ang.",
+              "chineseText": "也可以培養我的耐心。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2e0a5e2a5dcf2c4f462fd4411ee57d20.wav"
+            },
+            {
+              "id": "22-8-9-5",
+              "order": 5,
+              "indigenousText": "Isian paitasacia hai supah lainihaiban mas iniliskinan.",
+              "chineseText": "日記裡有許多回憶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/df87ed5116fc5ae79c606917b27b06bf.wav"
+            },
+            {
+              "id": "22-8-9-6",
+              "order": 6,
+              "indigenousText": "Na pisi’alun ku madaimpus.",
+              "chineseText": "我要好好保存。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0bbd63f9cd77e640e217c5d8071d6631.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Kakautung",
+          "titleCh": "郵差",
+          "sentences": [
+            {
+              "id": "22-8-10-1",
+              "order": 1,
+              "indigenousText": "Painukan a kakautung mas masanglav tu ulus.",
+              "chineseText": "郵差穿著綠色的衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/9616047dd132a4800486d4b9c05f1e47.wav"
+            },
+            {
+              "id": "22-8-10-2",
+              "order": 2,
+              "indigenousText": "Kaupahanin mindangaz bunun masatu mas tingami.",
+              "chineseText": "每天幫人們送信。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a03cdbd8076e2646faca687c980b0c95.wav"
+            },
+            {
+              "id": "22-8-10-3",
+              "order": 3,
+              "indigenousText": "Anatupa tu valian anis hudanan,",
+              "chineseText": "不管晴天或雨天，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/1ccf219a337431c70c124c645ec813d5.wav"
+            },
+            {
+              "id": "22-8-10-4",
+              "order": 4,
+              "indigenousText": "makalumahlumah sai’ia masatu mas tingami.",
+              "chineseText": "他們挨家挨戶地送信到每個家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/01c4be92f8cf0044d69e0e7a041b7e75.wav"
+            },
+            {
+              "id": "22-8-10-5",
+              "order": 5,
+              "indigenousText": "Manaskal amin na bunun mais antalain mas tingami.",
+              "chineseText": "人們收到了信都很快樂。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/e75c9e850bc4eee7169f8b02ddcb7850.wav"
+            },
+            {
+              "id": "22-8-10-6",
+              "order": 6,
+              "indigenousText": "Maszang amina kakautung tu manaskal.",
+              "chineseText": "郵差也一樣感到很快樂。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/3603166285eab0aae562451ead0ac718.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "label": "第九階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Mapasasaiv",
+          "titleCh": "分享",
+          "sentences": [
+            {
+              "id": "22-9-1-1",
+              "order": 1,
+              "indigenousText": "Kaimin Bunun mais hanup hai, ispahusil a hainupana tu cici.",
+              "chineseText": "我們布農族去打獵，會把獵物分享給別人。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/e5b109010e7fa3e09297243ae4f5a66b.wav"
+            },
+            {
+              "id": "22-9-1-2",
+              "order": 2,
+              "indigenousText": "Mais aiza maisnadahvian tantungu tu kaviaz hai, ispataz taintunguan cia mas tulkuk mapakaun.",
+              "chineseText": "遠方的朋友來拜訪，主人會殺雞給他們吃。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/543bcf051011a0afcf52bac204f53340.wav"
+            },
+            {
+              "id": "22-9-1-3",
+              "order": 3,
+              "indigenousText": "Tastu’asang mais lus’an hai, aiza ka’inaliv, aiza kadavus, aiza mapataz babu.",
+              "chineseText": "部落裡舉行祭典，有人舂打麻糬，有人釀小米酒，有人殺豬。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/8db47a5aca9ab53146d58fe23c5b08d8.wav"
+            },
+            {
+              "id": "22-9-1-4",
+              "order": 4,
+              "indigenousText": "Maisnahabas imita sin’ihumis hai maupacia.",
+              "chineseText": "我們的生活從古時候就是這樣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/f91fdddd1fdb19ff0f21576f7a305429.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Itu madadaingaz tu halinga",
+          "titleCh": "老人的話",
+          "sentences": [
+            {
+              "id": "22-9-2-1",
+              "order": 1,
+              "indigenousText": "Tatahu a madadaingaz tu, “Na hudanan i, tu’i’ia a sisiuh; na cintaishang a dihanin i, tu’i’ia a sihuis.”",
+              "chineseText": "老人常說：「蛙鳴降雨，鷹啼天晴。」（諺語）",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/1f77e57fa2a6ef524c58e4f198531511.wav"
+            },
+            {
+              "id": "22-9-2-2",
+              "order": 2,
+              "indigenousText": "Sintupa a halingan tu,",
+              "chineseText": "這句話的意思是：",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/e5b7b193fb292cdfb176412fd810c813.wav"
+            },
+            {
+              "id": "22-9-2-3",
+              "order": 3,
+              "indigenousText": "mais makusanavan a sisiuh tu’i’ia hai, na hudanan mais kutunin;",
+              "chineseText": "如果傍晚時聽見蛙鳴，那麼明天會下雨；",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/29e712c0cf57e588642df1159c751e7a.wav"
+            },
+            {
+              "id": "22-9-2-4",
+              "order": 4,
+              "indigenousText": "sihuis mais macingmut pishaulili(tunkainunu) kusbabai sia dihanin hai, na mataishang a dihanin.",
+              "chineseText": "如果早晨看見老鷹在空中繞著飛翔，天氣一定晴朗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/84624d4704c2100f2a4800c40ff23510.wav"
+            },
+            {
+              "id": "22-9-2-5",
+              "order": 5,
+              "indigenousText": "Sain tu taiklas hai maisna mailantangus lainihaiban tu hansiap.",
+              "chineseText": "這是祖先生活經驗的知識。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0b32adc4fa22c42c64d7ab0127c9e1aa.wav"
+            },
+            {
+              "id": "22-9-2-6",
+              "order": 6,
+              "indigenousText": "Nitu kanasahalun haitu, mastan mas mamantuk.",
+              "chineseText": "不一定可靠，但是大部份很準（正確）。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/6c0c39e4e49bb2d429ec04ca5242feaf.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Haunghaung",
+          "titleCh": "口簧琴",
+          "sentences": [
+            {
+              "id": "22-9-3-1",
+              "order": 1,
+              "indigenousText": "Isnavan a kaimin aip mas masnanava ka’uni haunghaung.",
+              "chineseText": "今天老師教我們製作口簧琴。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/18fd852f93f1ce94c7fb0141675e23e8.wav"
+            },
+            {
+              "id": "22-9-3-2",
+              "order": 2,
+              "indigenousText": "Maz bis haunghaung i?",
+              "chineseText": "什麼是口簧琴？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/3db3ab7e9a0ee99db8e60e94627de7a5.wav"
+            },
+            {
+              "id": "22-9-3-3",
+              "order": 3,
+              "indigenousText": "Maku’uni kaimin mas talum ka’uni mas, maimadadaingaz tu patu’i’iun.",
+              "chineseText": "我們用竹片製作，祖先發明的樂器。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/d9b2c18440c174614bb58e4cf1d362bb.wav"
+            },
+            {
+              "id": "22-9-3-4",
+              "order": 4,
+              "indigenousText": "Lakua mais mahtu pishaunghaung i?",
+              "chineseText": "什麼時候可以吹奏口簧琴？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/a7f6dfa48d8f40c2545159e0d5132e1e.wav"
+            },
+            {
+              "id": "22-9-3-5",
+              "order": 5,
+              "indigenousText": "Makulakua tu hanian hai mahtu amin pishaunghaung, haitu mastan masial mais ukang’nga talpatazun tu palkadan.",
+              "chineseText": "任何時候都可以吹口簧琴，但是最好是在農閒的時候。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/f9a0587cdf1026eb6dbaeba65dfb1a95.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Inam tu asang",
+          "titleCh": "我們的部落",
+          "sentences": [
+            {
+              "id": "22-9-4-1",
+              "order": 1,
+              "indigenousText": "Imita Bunun a lumah hai aiza saubatuan, saulapatan, mas sauli’iahan.",
+              "chineseText": "我們布農族有石頭屋、樹皮屋和茅草屋。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/972f80ed0a901d0624b2c922a7d9726d.wav"
+            },
+            {
+              "id": "22-9-4-2",
+              "order": 2,
+              "indigenousText": "Maz a saubatuan hai, sia mas supahan mas hinatul tu maduh.",
+              "chineseText": "蓋石頭屋的是那屯積最多小米的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/4281bf5ed6430d5d41dbbe0df8fb4e52.wav"
+            },
+            {
+              "id": "22-9-4-3",
+              "order": 3,
+              "indigenousText": "Maz a saulapatan hai, sia mas a’abuhan at uaizan tu bunun.",
+              "chineseText": "蓋樹皮屋的是那比較富有的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b893be57bdd89da5ef93cc0161de3900.wav"
+            },
+            {
+              "id": "22-9-4-4",
+              "order": 4,
+              "indigenousText": "Maz a sauli’iahan hai, sia mas makanhanglas at pavavai’ian tu bunun.",
+              "chineseText": "蓋茅草屋的是那比較窮困的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/9ce87537b5b5143ba858f55292d95dde.wav"
+            },
+            {
+              "id": "22-9-4-5",
+              "order": 5,
+              "indigenousText": "Maupacia imita Bunun masahabasang a iskalulumah.",
+              "chineseText": "這是我們布農族的傳統建築。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c05fe9488cba33936bc707d727ca7ac4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Laupaku bahlu tu kai’unian",
+          "titleCh": "現代的設施",
+          "sentences": [
+            {
+              "id": "22-9-5-1",
+              "order": 1,
+              "indigenousText": "Malaisku tu dangian hai, Pus’hu.",
+              "chineseText": "距離不遠的地方是玉里。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/bd973eacf4c988854c9de9091ed6def0.wav"
+            },
+            {
+              "id": "22-9-5-2",
+              "order": 2,
+              "indigenousText": "Aiza isaincia babalivan, iubing mas pa’i’iuan.",
+              "chineseText": "那裡有商店、郵局和醫院。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c2defcda6606e9a44dfe3d6443da6162.wav"
+            },
+            {
+              "id": "22-9-5-3",
+              "order": 3,
+              "indigenousText": "Mahtu kaimin kusian babalivan cia mabaliv mas haimhaimangsut.",
+              "chineseText": "我們可以到商店裡買東西。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/b85ed9b2977419c2b6d8f8e0d893d3d2.wav"
+            },
+            {
+              "id": "22-9-5-4",
+              "order": 4,
+              "indigenousText": "Mahtu amin kusian iubing mapadaimpus mas sui, anis mapunastu mas sui, at mapudan mas tingami.",
+              "chineseText": "也可以到郵局存錢，領錢和寄信。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/0bdcf9bb93881350b1152328de351291.wav"
+            },
+            {
+              "id": "22-9-5-5",
+              "order": 5,
+              "indigenousText": "Mais mindahpa in hai, mahtu kusian pa’i’iuantan mapa’iu.",
+              "chineseText": "如果生病了，可以到醫院看病。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d02515e9ecffcbd901873a7f85f2e85d.wav"
+            },
+            {
+              "id": "22-9-5-6",
+              "order": 6,
+              "indigenousText": "Tuzatu malisialin a imita sin’ihumis laupakui, aupa makusia’in taikilaupaku tu kai’unian.",
+              "chineseText": "確實現代的設施使用起來，讓我們的生活更方便。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/42bae4ae4e25433c1e18db8a88cde0a6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Tausia bukzavan asang tu Incumin",
+          "titleCh": "都市原住民",
+          "sentences": [
+            {
+              "id": "22-9-6-1",
+              "order": 1,
+              "indigenousText": "Maza Incumin a bunun mais puskunun tastu Tai’uan tu bunun masipul hai, kazka dusa tu pasing.",
+              "chineseText": "原住民的人口佔台灣總人口的百分之二。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/255050f6427645caa6e16b9fcc4d50a2.wav"
+            },
+            {
+              "id": "22-9-6-2",
+              "order": 2,
+              "indigenousText": "Incumin tu bunun hai aiza tu kaz mapavaz(mapadusa) sukdu sia asang.",
+              "chineseText": "大約有一半的原住民住在部落。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/4d5ec6df92274592f8d795ea9af25db8.wav"
+            },
+            {
+              "id": "22-9-6-3",
+              "order": 3,
+              "indigenousText": "Mapavaz(Mapadusa) tu Incumin hai katsianin amin bukzavandaingaz tu asang.",
+              "chineseText": "另一半的原住民已經住在都市。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/63035267f3ba2866e4726653a4e5caf4.wav"
+            },
+            {
+              "id": "22-9-6-4",
+              "order": 4,
+              "indigenousText": "Isian bukzavdaingaz asang hai, supaha kuzakuzaun minduduaz tu mabananaz sin mas maluspingaz hai mahanuas sadu at maduaza inaicia is’ang silansanun kudip.",
+              "chineseText": "都市的工作機會很多，很多帥哥美女很容易被吸引去都會賺錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/a55c6d2f9d47de5e7b191b0df7d83551.wav"
+            },
+            {
+              "id": "22-9-6-5",
+              "order": 5,
+              "indigenousText": "Malhasivungin naia sian bukzav asang cia kuzakuza, mapasiza, kamaikingna.",
+              "chineseText": "他們在都市定居、工作、結婚、生子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/6b38f4de111a8df52ad31162efaf8266.wav"
+            },
+            {
+              "id": "22-9-6-6",
+              "order": 6,
+              "indigenousText": "Pahakai supah laupaku Incumin tu uvavaz isaincia mihumis.",
+              "chineseText": "所以，現在有許多原住民小孩在那裡生活。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/c9ad3b0b284940e81443bde61a06b3c3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Malahtangia",
+          "titleCh": "射耳祭",
+          "sentences": [
+            {
+              "id": "22-9-7-1",
+              "order": 1,
+              "indigenousText": "Malahtangia kaimin a maitastulumah mais isian pat tu buan mas ima tu buan.",
+              "chineseText": "每年的四月到五月之間，我們的家族會舉行射耳祭典活動。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/cf439a72b9eebfe2edc673a3557e10a8.wav"
+            },
+            {
+              "id": "22-9-7-2",
+              "order": 2,
+              "indigenousText": "Mastan sain sahusbuan tu islulus’an tu hanian, mahtu a maitastulumah mapunahtung mais tudipin.",
+              "chineseText": "這是部落家族最重要的日子，也是每個家族團聚的時刻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d4fa9478dc7e13d22356fa922754cfb9.wav"
+            },
+            {
+              "id": "22-9-7-3",
+              "order": 3,
+              "indigenousText": "Mu’ampuk amin a bunun sia daisah, muskun kahuzas, Pasibutbut, Malastapang. masumsum dihanin tu mahtuang a sinkuzakuza masaulvaz asidu(madauzung at masvala).",
+              "chineseText": "大家在庭院上一起唱八部合音、唱小米祈禱豐收歌和做誇功儀式，祈求上天希望工作順利平安。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/6fe09d1a991001975ebd669c360b6656.wav"
+            },
+            {
+              "id": "22-9-7-4",
+              "order": 4,
+              "indigenousText": "Isian aip tu hamisan, macispuk inam a pantamaun mas tastulumah na maisnasia Taihuku tunkusbabai kulumahcin.",
+              "chineseText": "今年，叔叔（舅舅）全家人從台北搭飛機回來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/d020a741a43be157f9a4b97dcf5f9fa2.wav"
+            },
+            {
+              "id": "22-9-7-5",
+              "order": 5,
+              "indigenousText": "Tupa panmasituhasun tu, kaimin a isian Taihukucin mastan sahusbuan miliskin hai, siamas Malahtangia tu islulus’antan.",
+              "chineseText": "堂（表）哥說：「我們在台北最懷念的，就是家鄉的打耳祭節慶活動。」",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/002a0235237e8d8f2993fe17be8f31f9.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Mapatvis",
+          "titleCh": "祭儀",
+          "sentences": [
+            {
+              "id": "22-9-8-1",
+              "order": 1,
+              "indigenousText": "Aizan kaimin maitastulumah tu lulus’anan.",
+              "chineseText": "我們家族有一處祭場。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/2099dc0a3937013c0f406dfe07e39590.wav"
+            },
+            {
+              "id": "22-9-8-2",
+              "order": 2,
+              "indigenousText": "Mais lus’an hai, paldailazun a na’ispakaun, aiza haising, maicici, aiza davus, mas pan’dian.",
+              "chineseText": "舉行祭儀時，要擺上米飯、肉、酒、湯等獻祭品。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/550165b74e64f0b2405c4b550215b143.wav"
+            },
+            {
+              "id": "22-9-8-3",
+              "order": 3,
+              "indigenousText": "Musasu maza na iskusisia tu haimangsut hai pasandailazun amin nastu sia tanangaus lulus’an cia, maza is’am’aminan hai, lapaspas at masumsum mapismangan.",
+              "chineseText": "並且也將器物擺放於地上，由祭司在那裡朗誦祭詞，加持靈力。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/ec87254c9195c018b22b65b311ca3456.wav"
+            },
+            {
+              "id": "22-9-8-4",
+              "order": 4,
+              "indigenousText": "Mais kanahtungin hai, muskunin mis’av, mapulaung at, kahuzas, Pasibutbut Malastapang sausanavan at kanahtungin.",
+              "chineseText": "祭完後，一起喝酒、分肉、唱歌，唱祈禱豐收歌、誇功歌，直到天黑後結束。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/12/66360b3b9a2d88ce5b4ca154cd503ae6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Mapasiza",
+          "titleCh": "結婚",
+          "sentences": [
+            {
+              "id": "22-9-9-1",
+              "order": 1,
+              "indigenousText": "Bunun mais na minpakatuszang hai tupaun tu mapasiza.",
+              "chineseText": "我們布農人要結為夫妻的時候叫作「mapasiza」，是互娶的意思。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/48323161694efe6a28f6b053feb73340.wav"
+            },
+            {
+              "id": "22-9-9-2",
+              "order": 2,
+              "indigenousText": "Mais na mapa’is’av hai, anatupatu idahvian hai, taudadivan amin maitastulumah tu minsuma a.",
+              "chineseText": "如果要舉行婚宴，不管有多遠，都要邀請整個氏族來參加。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/9c5e2776f9e4757651b44a1965573611.wav"
+            },
+            {
+              "id": "22-9-9-3",
+              "order": 3,
+              "indigenousText": "Maza na siza tu mabananaz hai, madas babu sin mas davus, kusia na min mavala tu maluspingaz tu tastulumah cia mapa’is’av.",
+              "chineseText": "男方家裡，要攜帶豬和小米酒到女方家裡宴請女方家族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/c52708315f1def09860c97534e8ea132.wav"
+            },
+            {
+              "id": "22-9-9-4",
+              "order": 4,
+              "indigenousText": "Tangusun a na minmavala tu maimadaingaz, Tama, Cina sin mas maitastulumah mapakaun haising, mais minaunin amin hai, sin katutuszang a maun, at mais minaunin amin hai kitngabin mapahusil cici mis’av at kahuzas.",
+              "chineseText": "先請女方家族長老、爸爸、媽媽及全家人用餐，再與同氏族親人吃飯，吃完後開始分肉、喝酒、唱誇功頌。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/37146344a4c13e461960aa211e518ff5.wav"
+            },
+            {
+              "id": "22-9-9-5",
+              "order": 5,
+              "indigenousText": "Kanahtungin mapa’is’av hai, adasunin a maluspingaz a kusian namin mabananaz tu lumah, musasu maza Tama, Cina sin mas madadaingaz hai, matnanulu tahutahu tu, asa tu madaidaz mas madaingaz Tama(Iaki), Cina(Bai) at makaskas kuzakuza.",
+              "chineseText": "酒宴結束後，把新娘帶到新郎家裡，女方父母以及長輩們都叮嚀她要謹言慎行並且要孝順公公、婆婆和認真的工作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/9c711a57b5e39a1a6af202d983a17cde.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Pankanahtung",
+          "titleCh": "畢業典禮",
+          "sentences": [
+            {
+              "id": "22-9-10-1",
+              "order": 1,
+              "indigenousText": "Lus’an kaimin aip mas pankanahtung isnavan tu hanian.",
+              "chineseText": "今天是我們畢業的日子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/f142aa993b221c288dcf758dc178c802.wav"
+            },
+            {
+              "id": "22-9-10-2",
+              "order": 2,
+              "indigenousText": "Taudaniv a pasnanavan mas madaingaz tauhumis ma zami.",
+              "chineseText": "學校請長老為我們做祝福。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/ce2d492373abc5581ca7449a3a0179db.wav"
+            },
+            {
+              "id": "22-9-10-3",
+              "order": 3,
+              "indigenousText": "PalasTapangun kaimin tu, “malmananua mapaidaza mas imitaBunun tu ngan”.",
+              "chineseText": "給我們做「malastapang」，要我們「為族人爭光」。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/5e4d220100918bde13d3c3828b17b204.wav"
+            },
+            {
+              "id": "22-9-10-4",
+              "order": 4,
+              "indigenousText": "Musasu, pintamasazun kaimin tu, asa tu malmananu mapasnava, makaskas kuzakuza.",
+              "chineseText": "並且，勉勵我們要努力學習，勤勞做事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/13/60f06505d674b455f487d831c9b8e16c.wav"
+            },
+            {
+              "id": "22-9-10-5",
+              "order": 5,
+              "indigenousText": "Kahuzasin kamin mas sinpacinpalavaz tu huzas at, tanciniciniin kaimin mudaan, na kitbahluin mas na is’ihumis.",
+              "chineseText": "驪歌響起，我們一個接一個走出學校，邁向新的人生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/18/8639e9d55668788ffda2fb392e08cb4b.wav"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

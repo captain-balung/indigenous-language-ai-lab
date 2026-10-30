@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "title": "十二年國教課程原住民族語文教材：第 1–9 階語料",
+  "description": "族語 E 樂園十二年國教課程原住民族語文教材的第 1–9 階，42 個方言別、每方言 90 課，供跟唸、發音與翻譯練習使用。",
+  "source": {
+    "publisher": "教育部國民及學前教育署、原住民族委員會",
+    "editor": "國立政治大學原住民族研究中心",
+    "website": "原住民族語E樂園",
+    "unitUrl": "https://web.klokah.tw/twelve/learn2.php",
+    "ebookUrl": "https://ebook.alcd.center/",
+    "license": "非 CC BY-NC-SA 4.0；需教育部同意",
+    "licenseUrl": "https://web.klokah.tw/creativeCommons/",
+    "attribution": "教材來源－十二年國教課程原住民族語文教材，發行單位為教育部、原住民族委員會，編輯單位為國立政治大學原住民族研究中心，教材內容出處為 ebook.alcd.center。",
+    "retrievedAt": "2026-10-28T08:01:42.690Z"
+  },
+  "recordLayout": "sharded",
+  "shardPath": "dialects/{dialectId}.json",
+  "levels": [
+    {
+      "level": 1,
+      "label": "第一階",
+      "group": "初級"
+    },
+    {
+      "level": 2,
+      "label": "第二階",
+      "group": "初級"
+    },
+    {
+      "level": 3,
+      "label": "第三階",
+      "group": "初級"
+    },
+    {
+      "level": 4,
+      "label": "第四階",
+      "group": "中級"
+    },
+    {
+      "level": 5,
+      "label": "第五階",
+      "group": "中級"
+    },
+    {
+      "level": 6,
+      "label": "第六階",
+      "group": "中級"
+    },
+    {
+      "level": 7,
+      "label": "第七階",
+      "group": "中高級"
+    },
+    {
+      "level": 8,
+      "label": "第八階",
+      "group": "中高級"
+    },
+    {
+      "level": 9,
+      "label": "第九階",
+      "group": "中高級"
+    }
+  ],
+  "lessonsPerLevel": 10,
+  "dialectCount": 42,
+  "lessonCountPerDialect": 90,
+  "sentenceCount": 18933,
+  "missingAudioCount": 7,
+  "audioPolicy": "hotlinked-at-runtime",
+  "audioNote": "音檔不入庫，執行時直接由 CloudFront 播放；播放時該站會看到使用者的 IP 位址。",
+  "duplicateChineseNotes": [
+    {
+      "dialectId": 17,
+      "dialectName": "德鹿谷賽德克語",
+      "level": 4,
+      "count": 1,
+      "examples": [
+        {
+          "chinese": "夏天！夏天！",
+          "indigenous": [
+            "Rbagan da! Rbagan da!",
+            "Rbagan! Rbagan!"
+          ]
+        }
+      ]
+    },
+    {
+      "dialectId": 19,
+      "dialectName": "卡群布農語",
+      "level": 6,
+      "count": 1,
+      "examples": [
+        {
+          "chinese": "你喜歡吃什麼？",
+          "indigenous": [
+            "Maz ca asaun su ma’un?",
+            "Mazca asaun su ma’un?"
+          ]
+        }
+      ]
+    },
+    {
+      "dialectId": 27,
+      "dialectName": "東魯凱語",
+      "level": 5,
+      "count": 1,
+      "examples": [
+        {
+          "chinese": "大約要一天。",
+          "indigenous": [
+            "ai yango eea ka vaiyana.",
+            "aikai ka eea ka vaiyana."
+          ]
+        }
+      ]
+    }
+  ],
+  "dialects": [
+    {
+      "id": 1,
+      "ethnicity": "阿美",
+      "name": "南勢阿美語",
+      "code": "ami_Sout"
+    },
+    {
+      "id": 2,
+      "ethnicity": "阿美",
+      "name": "秀姑巒阿美語",
+      "code": "ami_Xiug"
+    },
+    {
+      "id": 3,
+      "ethnicity": "阿美",
+      "name": "海岸阿美語",
+      "code": "ami_Coas"
+    },
+    {
+      "id": 4,
+      "ethnicity": "阿美",
+      "name": "馬蘭阿美語",
+      "code": "ami_Mala"
+    },
+    {
+      "id": 5,
+      "ethnicity": "阿美",
+      "name": "恆春阿美語",
+      "code": "ami_Heng"
+    },
+    {
+      "id": 6,
+      "ethnicity": "泰雅",
+      "name": "賽考利克泰雅語",
+      "code": "tay_Seko"
+    },
+    {
+      "id": 7,
+      "ethnicity": "泰雅",
+      "name": "澤敖利泰雅語",
+      "code": "tay_Zeao"
+    },
+    {
+      "id": 8,
+      "ethnicity": "泰雅",
+      "name": "汶水泰雅語",
+      "code": "tay_Wens"
+    },
+    {
+      "id": 9,
+      "ethnicity": "泰雅",
+      "name": "萬大泰雅語",
+      "code": "tay_Wand"
+    },
+    {
+      "id": 10,
+      "ethnicity": "泰雅",
+      "name": "四季泰雅語",
+      "code": "tay_Four"
+    },
+    {
+      "id": 11,
+      "ethnicity": "泰雅",
+      "name": "宜蘭澤敖利泰雅語",
+      "code": "tay_Yzea"
+    },
+    {
+      "id": 13,
+      "ethnicity": "賽夏",
+      "name": "賽夏語",
+      "code": "xsy_Sais"
+    },
+    {
+      "id": 14,
+      "ethnicity": "邵",
+      "name": "邵語",
+      "code": "ssf_Thao"
+    },
+    {
+      "id": 15,
+      "ethnicity": "賽德克",
+      "name": "都達賽德克語",
+      "code": "trv_Duda"
+    },
+    {
+      "id": 16,
+      "ethnicity": "賽德克",
+      "name": "德固達雅賽德克語",
+      "code": "trv_Tegu"
+    },
+    {
+      "id": 17,
+      "ethnicity": "賽德克",
+      "name": "德鹿谷賽德克語",
+      "code": "trv_Delu"
+    },
+    {
+      "id": 18,
+      "ethnicity": "布農",
+      "name": "卓群布農語",
+      "code": "bnn_Zhuo"
+    },
+    {
+      "id": 19,
+      "ethnicity": "布農",
+      "name": "卡群布農語",
+      "code": "bnn_Kaqu"
+    },
+    {
+      "id": 20,
+      "ethnicity": "布農",
+      "name": "丹群布農語",
+      "code": "bnn_Tanq"
+    },
+    {
+      "id": 21,
+      "ethnicity": "布農",
+      "name": "巒群布農語",
+      "code": "bnn_Luan"
+    },
+    {
+      "id": 22,
+      "ethnicity": "布農",
+      "name": "郡群布農語",
+      "code": "bnn_Junq"
+    },
+    {
+      "id": 23,
+      "ethnicity": "排灣",
+      "name": "東排灣語",
+      "code": "pwn_East"
+    },
+    {
+      "id": 24,
+      "ethnicity": "排灣",
+      "name": "北排灣語",
+      "code": "pwn_Nrth"
+    },
+    {
+      "id": 25,
+      "ethnicity": "排灣",
+      "name": "中排灣語",
+      "code": "pwn_Cent"
+    },
+    {
+      "id": 26,
+      "ethnicity": "排灣",
+      "name": "南排灣語",
+      "code": "pwn_Sout"
+    },
+    {
+      "id": 27,
+      "ethnicity": "魯凱",
+      "name": "東魯凱語",
+      "code": "dru_East"
+    },
+    {
+      "id": 28,
+      "ethnicity": "魯凱",
+      "name": "霧台魯凱語",
+      "code": "dru_Wuta"
+    },
+    {
+      "id": 29,
+      "ethnicity": "魯凱",
+      "name": "大武魯凱語",
+      "code": "dru_Dawu"
+    },
+    {
+      "id": 30,
+      "ethnicity": "魯凱",
+      "name": "多納魯凱語",
+      "code": "dru_Dona"
+    },
+    {
+      "id": 31,
+      "ethnicity": "魯凱",
+      "name": "茂林魯凱語",
+      "code": "dru_Maol"
+    },
+    {
+      "id": 32,
+      "ethnicity": "魯凱",
+      "name": "萬山魯凱語",
+      "code": "dru_Wans"
+    },
+    {
+      "id": 33,
+      "ethnicity": "太魯閣",
+      "name": "太魯閣語",
+      "code": "trv_Truk"
+    },
+    {
+      "id": 34,
+      "ethnicity": "噶瑪蘭",
+      "name": "噶瑪蘭語",
+      "code": "ckv_Kava"
+    },
+    {
+      "id": 35,
+      "ethnicity": "鄒",
+      "name": "鄒語",
+      "code": "tsu_Tsou"
+    },
+    {
+      "id": 36,
+      "ethnicity": "卡那卡那富",
+      "name": "卡那卡那富語",
+      "code": "xnb_Kana"
+    },
+    {
+      "id": 37,
+      "ethnicity": "拉阿魯哇",
+      "name": "拉阿魯哇語",
+      "code": "sxr_Saar"
+    },
+    {
+      "id": 38,
+      "ethnicity": "卑南",
+      "name": "南王卑南語",
+      "code": "pyu_Nanw"
+    },
+    {
+      "id": 39,
+      "ethnicity": "卑南",
+      "name": "知本卑南語",
+      "code": "pyu_Zhib"
+    },
+    {
+      "id": 40,
+      "ethnicity": "卑南",
+      "name": "西群卑南語",
+      "code": "pyu_Xiqu"
+    },
+    {
+      "id": 41,
+      "ethnicity": "卑南",
+      "name": "建和卑南語",
+      "code": "pyu_Jian"
+    },
+    {
+      "id": 42,
+      "ethnicity": "雅美",
+      "name": "雅美語",
+      "code": "tao_Yami"
+    },
+    {
+      "id": 43,
+      "ethnicity": "撒奇萊雅",
+      "name": "撒奇萊雅語",
+      "code": "szy_Saki"
+    }
+  ]
+}

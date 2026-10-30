@@ -25,6 +25,8 @@ fieldset.themes{margin:1.7rem 0 1.4rem;background:#fff8e6}
 .quiz-top>span{white-space:nowrap}
 .scene-nav{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:.8rem 0 0}
 .scene-nav button{min-height:44px;flex:0 0 auto}
+/* 進度列只在部分關卡出現；把「看提示」釘在右邊，進度出現或消失時才不會左右跳。 */
+.scene-nav #quest-hint{margin-left:auto}
 .scene-nav p{flex:1 1 260px;margin:0;font-weight:800;opacity:.85}
 
 /* 遊戲化舞台：官方互動模組是全幅場景圖，對話卡半透明地壓在場景上。
@@ -47,10 +49,7 @@ fieldset.themes{margin:1.7rem 0 1.4rem;background:#fff8e6}
 .dialogue__controls .arrow{margin-left:auto;min-width:0;padding:.55rem .9rem;white-space:nowrap;border-radius:26px;background:var(--coral);color:#fff;box-shadow:0 4px 0 var(--ink)}
 .dialogue__controls .primary{width:auto}
 
-.my-turn{padding:1.1rem 1.2rem 1.2rem;border:3px solid var(--ink);border-radius:22px;background:#fff}
-/* 標題是使用者給的一句話（「這句是你的名字或來處」），長度不定，
-   所以字級跟著視窗縮放、並允許在任何地方斷行，縮窄時不會超出輸入區。 */
-.my-turn h2{margin:0 0 .8rem;font-size:clamp(1.3rem,1.05rem + 1.1vw,2rem);line-height:1.3;overflow-wrap:anywhere;word-break:break-word}
+.my-turn{padding:1.1rem 1.2rem 1.2rem;border:3px solid var(--ink);border-radius:22px;background:#fff;scroll-margin-top:1rem}
 textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);background:#fff;border:3px solid var(--ink);border-radius:13px;font:inherit;resize:vertical}
 .my-turn .submit-row .primary{width:auto}
 .record-note{margin:.5rem 0 0;padding:.55rem .75rem;border:2px solid var(--ink);border-radius:12px;background:#fff0c6;font-weight:800}
@@ -87,7 +86,7 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .quest-option:hover::after,.quest-click:hover::after{border-color:rgba(255,255,255,.75)}
 .quest-target.is-selected::after,.quest-option.is-selected::after{border-color:var(--coral)}
 .quest-target:focus-visible,.quest-option:focus-visible,.quest-click:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
-.quest-target.is-asked{cursor:default}
+.quest-target.is-asked:not(:disabled){cursor:pointer}
 /* 場景圖桌上印好的藍色名牌：只疊字（官方 .table-card qll／qln；座標是牌子左上）。
    字級要跟著場景寬度走：官方在 1000px 舞台上是 1.2em（≈14.4px，＝寬度的 1.45%），
    手機（≤1000px）是 1.6vw。這裡取 official 的多半值 1.45cqw（1cqw＝場景寬的 1%），
@@ -118,6 +117,8 @@ textarea{width:100%;min-height:6rem;padding:.65rem .8rem;color:var(--ink);backgr
 .quest-goal h3{margin:0 0 .5rem;font-size:1.2rem}
 .quest-goal p{margin:.3rem 0 0;font-weight:800}
 .quest-options{display:flex;flex-wrap:wrap;gap:.5rem}
+/* 候選物品／購物籃和下面的「確定」之間要留白，不然按鈕會貼在物品下緣。 */
+.quest-goal #option-confirm,.quest-goal #basket-confirm{margin-top:.8rem}
 .quest-option-btn{display:grid;justify-items:center;gap:.2rem;padding:.35rem;border:2px solid var(--ink);border-radius:14px;background:#fff;font:inherit;font-weight:800;cursor:pointer}
 .quest-option-btn img{width:74px;height:74px;object-fit:contain}
 .quest-option-btn.is-picked{background:var(--mint);box-shadow:0 3px 0 var(--ink)}
@@ -143,14 +144,28 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .quest-target::after{content:"";position:absolute;inset:0;border:4px solid transparent;border-radius:18px;transition:border-color .15s}
 .quest-target.is-selected::after{border-color:var(--coral)}
 .quest-target:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
-.quest-target.is-asked{cursor:default}
-/* 任務說明不再壓在場景上：寬螢幕時是場景左側欄，窄螢幕時排在場景上方。 */
-.quest-board{position:static;left:auto;right:auto;top:auto;bottom:auto;margin:0 0 1rem;max-width:none;align-self:start}
+.quest-target.is-asked:not(:disabled){cursor:pointer}
+/* 走到選物／放籃子／點門時，人物不再是可問的目標。 */
+.quest-target:disabled{cursor:default}
+/* 任務卡在右欄最上方（輸入區上面）；窄螢幕接在場景後面。 */
+.quest-board{position:static;left:auto;right:auto;top:auto;bottom:auto;display:grid;grid-template-columns:1fr;margin:0;max-width:none;align-self:start}
+.quest-side{display:grid;gap:1rem;align-content:start;min-width:0}
+.quest-side .quest-board,.quest-side .quest-goal,.quest-side .quest-tags{margin:0}
 /* 獎勵物件排在人物圖層前面，讓掃把被左邊同學遮住；pointer-events 關掉才不會擋點擊。 */
 .quest-reward{position:absolute;object-fit:contain;pointer-events:none}
 /* hover／選中光暈（官方 .hoverGlow / .hoverGlow2 的替作：官方用的是圖檔光暈） */
 /* 官方 quest-find.css：hoverGlow／selectGlow 是 0 0 10px rgba(255,0,0,.8)，
    hoverGlow2（門）是 0 0 10px rgba(255,255,0,.8)。 */
+/* 還沒問過、現在可以點的人：很淡的脈動光暈，讓下一步不必靠文字提示。 */
+.quest-layer.is-hint:not(.is-glow){animation:quest-target-hint 1.8s ease-in-out infinite}
+@keyframes quest-target-hint{
+  0%,100%{filter:drop-shadow(0 0 2px rgba(255,121,87,.2))}
+  50%{filter:drop-shadow(0 0 10px rgba(255,121,87,.6))}
+}
+@media(prefers-reduced-motion:reduce){
+  .quest-layer.is-hint:not(.is-glow){animation:none;filter:drop-shadow(0 0 6px rgba(255,121,87,.45))}
+  .quest-tag-section.is-new{animation:none;background:#fff0c6}
+}
 .quest-layer.is-glow{filter:drop-shadow(0 0 10px rgba(255,0,0,.8));-webkit-filter:drop-shadow(0 0 10px rgba(255,0,0,.8))}
 .quest-layer.is-glow2{filter:drop-shadow(0 0 10px rgba(255,255,0,.8));-webkit-filter:drop-shadow(0 0 10px rgba(255,255,0,.8))}
 /* 過關的「下一關」鈕：出現在右欄下方（跟其他面板對齊），樣式沿用 .
@@ -161,9 +176,10 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .quest-complete:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
 .quest-complete[hidden]{display:none}
 .quest-complete:focus-visible{outline:4px solid var(--ink);outline-offset:2px}
-/* 「自動說這句」跟在送出鈕旁邊：珊瑚字配白底粗框，跟右邊實心的「送出這句」
-   做出主／輔的分別（原本寫了 color:coral 卻疊在 primary 的珊瑚底上，字被吃掉） */
-#quest-autoask{border:3px solid var(--coral);border-radius:13px;background:#fff;color:var(--coral);font-weight:900}
+/* 「自動說這句」放在輸入面板外面：選人失敗、面板收起時仍看得到。
+   珊瑚字配白底粗框，跟實心的「送出這句」做出主／輔的分別。 */
+#quest-autoask{display:block;width:fit-content;margin:.4rem 0 0 auto;border:3px solid var(--coral);border-radius:13px;background:#fff;color:var(--coral);font-weight:900}
+#quest-autoask[hidden]{display:none}
 /* 購物清單折疊（官方 #buying-list-btn 的 toggle） */
 .quest-buylist-toggle{margin-left:.5rem;padding:.05rem .6rem;border:2px solid var(--ink);border-radius:10px;background:#fff;font:inherit;font-size:.85rem;font-weight:800;cursor:pointer}
 .quest-shopping.is-collapsed{display:none}
@@ -180,9 +196,14 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .quest-heard__done{font-size:.85rem;font-weight:800;opacity:.7}
 .quest-heard__replay{padding:.2rem .55rem;border:2px solid var(--ink);border-radius:999px;background:#fff;font:inherit;font-size:.85rem;font-weight:900;cursor:pointer}
 .quest-heard__replay:hover{background:var(--mint)}
-.quest-tag-section{margin-top:.8rem;padding-top:.75rem;border-top:2px dashed var(--ink)}
+.quest-tag-section{margin-top:.8rem;padding-top:.75rem;border-top:2px dashed var(--ink);scroll-margin-top:1rem}
+/* 第一次出現的名牌區閃一下，接手「下一個動作」的位置。 */
+.quest-tag-section.is-new{animation:quest-tag-new 1.4s ease-out}
+@keyframes quest-tag-new{
+  0%{background:#fff0c6;box-shadow:0 0 0 4px rgba(255,121,87,.35)}
+  100%{background:transparent;box-shadow:0 0 0 0 rgba(255,121,87,0)}
+}
 .quest-tag-section h3{margin:0 0 .45rem;font-size:1.05rem}
-.quest-tag-help{margin:0 0 .55rem;font-size:.9rem;font-weight:800;line-height:1.45}
 .quest-tag-dock{display:flex;flex-wrap:wrap;gap:.5rem}
 .quest-tag{padding:.35rem .7rem;border:3px solid var(--ink);border-radius:12px;background:#fff;font:inherit;font-weight:900;cursor:pointer}
 .quest-tag[draggable="true"]{cursor:grab;user-select:none;-webkit-user-drag:element}
@@ -206,6 +227,10 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .hint-box p{margin:0 0 .5rem;font-weight:800}
 .hint-box ul{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
 .hint-box li{padding:.2rem .55rem;border:2px solid var(--ink);border-radius:10px;background:#fff;font-weight:800}
+/* 提示區的「聽正確說法」：按鈕與播放狀態排成一列，預設不占位。 */
+.hint-box__audio{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;margin-top:.8rem;padding-top:.7rem;border-top:2px dashed rgba(37,49,84,.35)}
+.hint-box__audio button{min-height:40px;padding:.35rem .9rem;font-size:.95rem}
+.hint-box__audio .audio-state[data-state="idle"]{display:none}
 .quest-offer{margin:0 0 .6rem;font-weight:800}
 /* 關卡選擇：想重玩第幾關就直接點，不必從第 1 關玩回去 */
 .level-picker{display:flex;flex-wrap:wrap;gap:.35rem;margin:0}
@@ -214,15 +239,14 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 .level-picker button.is-done::after{content:" ✓"}
 .level-picker button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
 
-/* 1201px 以上：左邊場景、右邊輸入區。兩欄都在正常流程裡（不用絕對定位）——
-   用絕對定位時輸入區不會撐高容器，會直接從 STEP 2 面板底部溢出。
-   欄寬固定，所以從對方說話到換你說，場景的大小與位置都不會變。 */
+/* 1201px 以上：左邊整欄給場景，右邊是任務卡＋互動面板＋輸入區。
+   兩欄都在正常流程裡（不用絕對定位），輸入區才不會從面板底部溢出。 */
 @media(min-width:1201px){
-  /* 任務說明在左、場景在中、輸入區在右。 */
-  .scene-body{display:grid;grid-template-columns:minmax(250px,320px) minmax(0,1fr) minmax(300px,380px);gap:1.2rem;align-items:start}
-  .quest-board{grid-column:1;grid-row:1;width:100%}
-  .stage{grid-column:2;width:100%;max-width:1000px}
-  .scene-side{grid-column:3;justify-self:end;width:100%;max-width:380px}
+  .scene-body--quest{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,380px);gap:1.2rem;align-items:start}
+  .scene-body--quest .quest-stage{grid-column:1;grid-row:1;width:100%;max-width:none}
+  .scene-body--quest .quest-side{grid-column:2;grid-row:1;width:100%;max-width:380px;justify-self:end}
+  .stage{width:100%;max-width:1000px}
+  .scene-side{width:100%;max-width:380px}
   .stage__bg{width:100%;height:auto;aspect-ratio:1000/700;object-fit:contain}
   /* 尋找物品／戶外活動的任務卡不再壓在場景上；外框改掛在場景盒上，
      維持原本「場景是一張卡」的樣子。 */
@@ -231,16 +255,6 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .dialogue__zh{font-size:2rem}
   .my-turn{padding:.9rem 1rem 1rem}
   .my-turn textarea{min-height:4.5rem}
-}
-/* 夠寬（1700px 以上）才讓場景置中：左右各留 (輸入區 + 間距) 一樣寬的空白，
-   場景才會是整個面板的正中央。1700px 這個門檻是算出來的——在這個寬度，
-   置中的場景跟「填滿剩餘空間」的場景一樣大（都是 1000px 上限），
-   所以從較窄切過來時場景不會突然縮小。 */
-@media(min-width:1700px){
-  .scene-body{grid-template-columns:minmax(280px,1fr) minmax(0,1000px) minmax(280px,1fr)}
-  .quest-board{grid-column:1;grid-row:1;max-width:420px;justify-self:end}
-  .stage{grid-column:2;justify-self:center}
-  .scene-side{grid-column:3}
 }
 /* 1200px 以下（含平板與手機）：全部上下疊，場景用滿版寬 */
 @media(max-width:1200px){
@@ -264,7 +278,7 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .quest-tips{font-size:.95rem}
   /* 桌上名牌／放上去的名牌字級隨場景寬度縮（.quest-desk-tag 的 cqw），這裡不再寫死。 */
   .hint-box{font-size:.9rem}
-  .dialogue__controls .audio-state{font-size:.85rem}
+  .hint-box__audio .audio-state{font-size:.85rem}
   .submit-row{flex-direction:column;align-items:stretch}
   .submit-row button{width:100%}
 }

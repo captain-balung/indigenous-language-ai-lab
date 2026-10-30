@@ -1,0 +1,3845 @@
+{
+  "schemaVersion": 1,
+  "dialectId": 2,
+  "ethnicity": "阿美",
+  "dialectName": "秀姑巒阿美語",
+  "code": "ami_Xiug",
+  "levels": [
+    {
+      "level": 1,
+      "label": "第一階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Nga’ay ho^?",
+          "titleCh": "你好嗎？",
+          "sentences": [
+            {
+              "id": "2-1-1-1",
+              "order": 1,
+              "indigenousText": "Nga’ay ho^ kiso, singsi^?",
+              "chineseText": "你好嗎，老師？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/92141ba740dd1fa63b967baec274231c.wav"
+            },
+            {
+              "id": "2-1-1-2",
+              "order": 2,
+              "indigenousText": "Hay, nga’ay ho^. Kiso i?",
+              "chineseText": "是的，我很好。你呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/0df5e2c1a36367105c1c04dc636bd439.wav"
+            },
+            {
+              "id": "2-1-1-3",
+              "order": 3,
+              "indigenousText": "Hay, nga’a:y to.",
+              "chineseText": "是的，我也很好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/ac4d6177d0cebaf71d8088ce64f74fc1.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "O sito^ kako",
+          "titleCh": "我是學生",
+          "sentences": [
+            {
+              "id": "2-1-2-1",
+              "order": 1,
+              "indigenousText": "O sito^ kiso, hay?",
+              "chineseText": "你是學生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/09f6c4b6444d583663a1aac0f7f6e830.wav"
+            },
+            {
+              "id": "2-1-2-2",
+              "order": 2,
+              "indigenousText": "Hay, o sito^ kako.",
+              "chineseText": "是的，我是學生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/746ca28b211da8a850494c45175c9c9a.wav"
+            },
+            {
+              "id": "2-1-2-3",
+              "order": 3,
+              "indigenousText": "O sito^ ciira hay?",
+              "chineseText": "他是學生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/632b67952afca7a86bd870ca4fb42be4.wav"
+            },
+            {
+              "id": "2-1-2-4",
+              "order": 4,
+              "indigenousText": "Caay, o singsi^ ciira.",
+              "chineseText": "不是，他是老師。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/7faa40761c4a79553376b271e67cb3a4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Kamireng!",
+          "titleCh": "請起立！",
+          "sentences": [
+            {
+              "id": "2-1-3-1",
+              "order": 1,
+              "indigenousText": "Kamireng!",
+              "chineseText": "起立！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/12/5c1e6910800e62424ad466cb99e6622c.wav"
+            },
+            {
+              "id": "2-1-3-2",
+              "order": 2,
+              "indigenousText": "Mita’ong!",
+              "chineseText": "敬禮！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/12/838759073af428d1dec9419988833470.wav"
+            },
+            {
+              "id": "2-1-3-3",
+              "order": 3,
+              "indigenousText": "Kamaro’!",
+              "chineseText": "坐下！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/12/759e73493ead4de4594d33951f94d3d7.wav"
+            },
+            {
+              "id": "2-1-3-4",
+              "order": 4,
+              "indigenousText": "Sowalen ho ari!",
+              "chineseText": "請說說看！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/12/ead15a0fcb5e490c6db9c58f5563a0fc.wav"
+            },
+            {
+              "id": "2-1-3-5",
+              "order": 5,
+              "indigenousText": "Tengilen ho!",
+              "chineseText": "請聽聽看！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/12/1c6c916837d1df88416b07155d9d5bd0.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Cima^ kiso?",
+          "titleCh": "你是誰？",
+          "sentences": [
+            {
+              "id": "2-1-4-1",
+              "order": 1,
+              "indigenousText": "Cima^ kiso?",
+              "chineseText": "你是誰？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/f93b0d85d4b2db8359994b6de4431ef7.wav"
+            },
+            {
+              "id": "2-1-4-2",
+              "order": 2,
+              "indigenousText": "Ci Tomay kako.",
+              "chineseText": "我是Tomay。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/63ecd7d219193ccfdd99bbb7d3b31dda.wav"
+            },
+            {
+              "id": "2-1-4-3",
+              "order": 3,
+              "indigenousText": "Ci Mayaw ko ngangan niira hay?",
+              "chineseText": "他的名字是Mayaw嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/26135d459565a4425d04a5ca363b3a49.wav"
+            },
+            {
+              "id": "2-1-4-4",
+              "order": 4,
+              "indigenousText": "Caay, ci Kacaw ciira.",
+              "chineseText": "不，他是Kacaw。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/12/bc8e77bb5e00e7a1930b30290f26e4b6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "O fafahiyan kami",
+          "titleCh": "我們是女生",
+          "sentences": [
+            {
+              "id": "2-1-5-1",
+              "order": 1,
+              "indigenousText": "O fa’inayan kiso.",
+              "chineseText": "你是男生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/12b2217ef74d9643e2774093c7c1a3af.wav"
+            },
+            {
+              "id": "2-1-5-2",
+              "order": 2,
+              "indigenousText": "O fafahiyan kami.",
+              "chineseText": "我們是女生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/ca097428abc09fee0a3628a61f2bef5c.wav"
+            },
+            {
+              "id": "2-1-5-3",
+              "order": 3,
+              "indigenousText": "O fa’inayan ci Panay hay?",
+              "chineseText": "Panay是男生嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/6306f2b616f489c7688f2c4dfe56792d.wav"
+            },
+            {
+              "id": "2-1-5-4",
+              "order": 4,
+              "indigenousText": "Caay, o fafahiyan ciira.",
+              "chineseText": "不，她是女生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/918679c97a9db0bf932adc7e9d9cd186.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "O waco^ no mako",
+          "titleCh": "我的狗",
+          "sentences": [
+            {
+              "id": "2-1-6-1",
+              "order": 1,
+              "indigenousText": "Ira ko waco^ no mako cecay.",
+              "chineseText": "我有一隻狗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/734939047ae5b49eea7ec22f4eb754fd.wav"
+            },
+            {
+              "id": "2-1-6-2",
+              "order": 2,
+              "indigenousText": "O kohtingay ko waco^ no mako.",
+              "chineseText": "我的狗是黑色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/3a54e7a9a4e422c5c8afadf1a43eb9b6.wav"
+            },
+            {
+              "id": "2-1-6-3",
+              "order": 3,
+              "indigenousText": "Maolah kako i ciiraan.",
+              "chineseText": "我喜歡牠。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/f129234ee78e1acc5d8b4fb8fb437024.wav"
+            },
+            {
+              "id": "2-1-6-4",
+              "order": 4,
+              "indigenousText": "Maolah ciira i takowanan.",
+              "chineseText": "牠也喜歡我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/5dbc113b4e8de4fe968eee5a12d9343e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "O singsi^ no mako",
+          "titleCh": "我的老師",
+          "sentences": [
+            {
+              "id": "2-1-7-1",
+              "order": 1,
+              "indigenousText": "Icowa^ ko singsi^ no miso?",
+              "chineseText": "妳的老師在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/09530ad25298fe486652573e7ce29a8d.wav"
+            },
+            {
+              "id": "2-1-7-2",
+              "order": 2,
+              "indigenousText": "Ini ko singsi^ no mako.",
+              "chineseText": "他在這裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/c9ab9a1079131b1b51ecf6505e149c33.wav"
+            },
+            {
+              "id": "2-1-7-3",
+              "order": 3,
+              "indigenousText": "Icowa^ ko impic no miso?",
+              "chineseText": "你的鉛筆在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/28d1fca4b2a383ff0e6e08bae750f8a6.wav"
+            },
+            {
+              "id": "2-1-7-4",
+              "order": 4,
+              "indigenousText": "Ira iti:raw ko impic no mako.",
+              "chineseText": "我的鉛筆在那裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/7dbb1310434dbd3ce4df7697867e8ff2.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "O maan kinian?",
+          "titleCh": "這是什麼？",
+          "sentences": [
+            {
+              "id": "2-1-8-1",
+              "order": 1,
+              "indigenousText": "O maan kinian?",
+              "chineseText": "這是什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/a9002f18f527bc8f7d6a116b28ce24b4.wav"
+            },
+            {
+              "id": "2-1-8-2",
+              "order": 2,
+              "indigenousText": "O sapad kinian.",
+              "chineseText": "這是桌子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/4e1719384cbf093626de28c1529ff2e1.wav"
+            },
+            {
+              "id": "2-1-8-3",
+              "order": 3,
+              "indigenousText": "Fae:ket kiraan a ’anengang hay?",
+              "chineseText": "那張椅子重嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/60832cc34377d17301d88bd52a1cb1a5.wav"
+            },
+            {
+              "id": "2-1-8-4",
+              "order": 4,
+              "indigenousText": "Hay, fae:ket.",
+              "chineseText": "是的，（它）很重。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/54c55147821ab12b6ae91d4b6214cae7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "O ina^ no mako",
+          "titleCh": "我的媽媽",
+          "sentences": [
+            {
+              "id": "2-1-9-1",
+              "order": 1,
+              "indigenousText": "Cima^ kiraan a tamdaw?",
+              "chineseText": "那個人是誰呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/3f4e339224dee198945785e86731a953.wav"
+            },
+            {
+              "id": "2-1-9-2",
+              "order": 2,
+              "indigenousText": "O ina^ no mako ciira!",
+              "chineseText": "她是我的媽媽！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/492b437860e5cdb2be308c8c2ec8b8d3.wav"
+            },
+            {
+              "id": "2-1-9-3",
+              "order": 3,
+              "indigenousText": "Mimaanay ko tayal niira?",
+              "chineseText": "她的工作是做什麼的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/3fc4af8f5da0511cab707a1dcadf17b4.wav"
+            },
+            {
+              "id": "2-1-9-4",
+              "order": 4,
+              "indigenousText": "O malakangkofoay ciira.",
+              "chineseText": "她是護士。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/806264d1a04a37558b9eb5d7bb747bf6.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "O kahngangay a codad",
+          "titleCh": "紅色的書",
+          "sentences": [
+            {
+              "id": "2-1-10-1",
+              "order": 1,
+              "indigenousText": "Ira ko codad i safaled no sapad hay?",
+              "chineseText": "桌子的上面有書嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/4d7ce22d109cb3f7392d7662d8456790.wav"
+            },
+            {
+              "id": "2-1-10-2",
+              "order": 2,
+              "indigenousText": "Tolo^ ko codad i faled no sapad.",
+              "chineseText": "桌子的上面有三本書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/76dcfa73af0f350a8b361efb4950c82c.wav"
+            },
+            {
+              "id": "2-1-10-3",
+              "order": 3,
+              "indigenousText": "Cecay ko kahngangay, tosa ko kohtingay.",
+              "chineseText": "一本是紅色的，兩本是黑色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/da97428447027267e7b5ac80ba868bae.wav"
+            },
+            {
+              "id": "2-1-10-4",
+              "order": 4,
+              "indigenousText": "Nima^ kiraan a kahngangay a codad?",
+              "chineseText": "紅色的書是誰的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/5a4d697f3f22630e661c325635c5f9eb.wav"
+            },
+            {
+              "id": "2-1-10-5",
+              "order": 5,
+              "indigenousText": "No singsi^ kiraan a kahngangay a codad.",
+              "chineseText": "紅色的書是老師的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/65b82ece72a5eb0223f6e2ad33cc17f2.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "label": "第二階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "O paro^ no loma’ no mako",
+          "titleCh": "我的家人",
+          "sentences": [
+            {
+              "id": "2-2-1-1",
+              "order": 1,
+              "indigenousText": "Lalima^ ko paro^ no loma’ no mako.",
+              "chineseText": "我的家有五個人。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/4afb78fce233908190f85815dfe4e80e.wav"
+            },
+            {
+              "id": "2-2-1-2",
+              "order": 2,
+              "indigenousText": "Ci ama:, ci mama^, ci ina^, o fafahiyan a safa^ ato kako.",
+              "chineseText": "祖母、爸爸、媽媽、妹妹和我。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/eb138b7e245774a1c125fdf5a0344e87.wav"
+            },
+            {
+              "id": "2-2-1-3",
+              "order": 3,
+              "indigenousText": "Micodad kako i kwo-syaw.",
+              "chineseText": "我在國民小學讀書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/47ad134de330e2393aecafdad290feb5.wav"
+            },
+            {
+              "id": "2-2-1-4",
+              "order": 4,
+              "indigenousText": "Micodad ko fafahiyan a safa^ no mako i yo-ci-ing.",
+              "chineseText": "我的妹妹在幼稚園讀書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/957fe1596ffcb85dabe611412662ca31.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Maranam",
+          "titleCh": "早餐",
+          "sentences": [
+            {
+              "id": "2-2-2-1",
+              "order": 1,
+              "indigenousText": "Maranam, ina^.",
+              "chineseText": "媽媽，早安。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/e1d9c734bbdc666c683dfa7b20e38523.wav"
+            },
+            {
+              "id": "2-2-2-2",
+              "order": 2,
+              "indigenousText": "Maratar kiso Payo^, ati ati, maranam.",
+              "chineseText": "Payo你這麼早，來來來，吃早餐。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/2f815687d8199d0f2406a5068f3b8f04.wav"
+            },
+            {
+              "id": "2-2-2-3",
+              "order": 3,
+              "indigenousText": "Honi^ to, misolaca ho kako to wadis.",
+              "chineseText": "等一下，我先刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/b4841cf0f2fa1f8fbee9632c6a620f79.wav"
+            },
+            {
+              "id": "2-2-2-4",
+              "order": 4,
+              "indigenousText": "Kalalo’op kiso.",
+              "chineseText": "你要洗臉喔。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/236c0fd85b66a8ccabe81ce95248b844.wav"
+            },
+            {
+              "id": "2-2-2-5",
+              "order": 5,
+              "indigenousText": "Hay, ina^.",
+              "chineseText": "好的，媽媽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/bd473689917c9061755f961a8b1041cd.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Mo^tep to ko mihcaan no mako",
+          "titleCh": "我今年十歲",
+          "sentences": [
+            {
+              "id": "2-2-3-1",
+              "order": 1,
+              "indigenousText": "Pina^ to ko mihcaan no miso?",
+              "chineseText": "請問，你今年幾歲？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/bb35360c1fbeccbd288f9906846447b4.wav"
+            },
+            {
+              "id": "2-2-3-2",
+              "order": 2,
+              "indigenousText": "Mo^tep to ko mihcaan no mako.",
+              "chineseText": "我今年十歲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/6b0f4de2d9f453bff1f9b4f1cccf6c2e.wav"
+            },
+            {
+              "id": "2-2-3-3",
+              "order": 3,
+              "indigenousText": "Papina^ kamo a malakaka^?",
+              "chineseText": "你有幾個兄弟姊妹？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/61643c50c125110b02051793ab3f8da9.wav"
+            },
+            {
+              "id": "2-2-3-4",
+              "order": 4,
+              "indigenousText": "Tatosa^ ko kaka^ no mako to fa’inayan, cecay ko safa^ no mako to fafahiyan.",
+              "chineseText": "我有兩個哥哥和一個妹妹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/57a0cdfa5c14f5cf1f33d7187b190fa6.wav"
+            },
+            {
+              "id": "2-2-3-5",
+              "order": 5,
+              "indigenousText": "Pina^ ko mihcaan no safa^ no miso?",
+              "chineseText": "你的妹妹幾歲？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/ee4b33aa4e60962f86c1df04466e6308.wav"
+            },
+            {
+              "id": "2-2-3-6",
+              "order": 6,
+              "indigenousText": "Enemay to ko mihcaan niira.",
+              "chineseText": "他已經六歲了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/5ff4baf47662186138aedcbd5bee2a5e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Icowa^ ko loma’ no miso?",
+          "titleCh": "你的家在哪裡？",
+          "sentences": [
+            {
+              "id": "2-2-4-1",
+              "order": 1,
+              "indigenousText": "Icowa^ ko loma’ no miso?",
+              "chineseText": "你的家在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/dd1df1a946542f0b7552872539ea6d0c.wav"
+            },
+            {
+              "id": "2-2-4-2",
+              "order": 2,
+              "indigenousText": "I satimolan no fanaw ko loma’ no mako.",
+              "chineseText": "我的家在魚池的南邊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/6e9cfef335dec79b7534f7306033893d.wav"
+            },
+            {
+              "id": "2-2-4-3",
+              "order": 3,
+              "indigenousText": "I ngata^ no picodadan ko loma’ no namo haw?",
+              "chineseText": "你的家在學校附近嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/136b93ec03250fdc0ff89fcd905c0891.wav"
+            },
+            {
+              "id": "2-2-4-4",
+              "order": 4,
+              "indigenousText": "Hay, i ngata^ no picodadan ko loma’ no niyam.",
+              "chineseText": "是的，我的家在學校附近。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/c1b2594a822c1f6a3588ba47bfe999b7.wav"
+            },
+            {
+              "id": "2-2-4-5",
+              "order": 5,
+              "indigenousText": "Romakat kako a talapicodadan to romi’ami’ad.",
+              "chineseText": "我每天走路去學校。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/8827e94913133ddf3e994a262da22f99.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Nani Tafalong kako",
+          "titleCh": "我從太巴塱來",
+          "sentences": [
+            {
+              "id": "2-2-5-1",
+              "order": 1,
+              "indigenousText": "Marang, nani cowa^ kiso?",
+              "chineseText": "Marang，你從哪裡來呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/5a181d2a83d4d872ebd7dc8dbc9dc822.wav"
+            },
+            {
+              "id": "2-2-5-2",
+              "order": 2,
+              "indigenousText": "Nani Tafalong kako.",
+              "chineseText": "我從太巴塱來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/378beed444dfd1d0dcb7285ec6bc3934.wav"
+            },
+            {
+              "id": "2-2-5-3",
+              "order": 3,
+              "indigenousText": "O tatalacowa^ kiso anocila^?",
+              "chineseText": "明天你要（往）去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/f350427ea1594caf2c15480de204cb7a.wav"
+            },
+            {
+              "id": "2-2-5-4",
+              "order": 4,
+              "indigenousText": "O tatalaKalinko^ kako anocila^.",
+              "chineseText": "明天我要去花蓮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/9f944170893b2d2f34d6702ceb8fe574.wav"
+            },
+            {
+              "id": "2-2-5-5",
+              "order": 5,
+              "indigenousText": "Arayom, na’on hanto ko rakat.",
+              "chineseText": "再見了，一路順風。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/f1b96558dd9279475f018e396edf900f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "O lotok ato sa’owac",
+          "titleCh": "山和溪",
+          "sentences": [
+            {
+              "id": "2-2-6-1",
+              "order": 1,
+              "indigenousText": "Fangcal ko romi’ad anini^.",
+              "chineseText": "今天是好天氣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/ee99af94d590feb019722fe6f13a8828.wav"
+            },
+            {
+              "id": "2-2-6-2",
+              "order": 2,
+              "indigenousText": "Talalotok ci mama^ a mi’adop.",
+              "chineseText": "爸爸在山上打獵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/dcc004711ea397a977ed94edcaaf0b02.wav"
+            },
+            {
+              "id": "2-2-6-3",
+              "order": 3,
+              "indigenousText": "Mifaca’ ci ina^ to fodoy i sa’owac.",
+              "chineseText": "媽媽在溪邊洗衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/85dc63b67e677847257f95d962fd8eaa.wav"
+            },
+            {
+              "id": "2-2-6-4",
+              "order": 4,
+              "indigenousText": "Misalama^ kako aci kaka^ no mako i ’alo^.",
+              "chineseText": "哥哥和我在河水玩耍。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/13f48e8bc0e18b47475883902afaf32b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Masadak ko cidal",
+          "titleCh": "太陽出來了",
+          "sentences": [
+            {
+              "id": "2-2-7-1",
+              "order": 1,
+              "indigenousText": "Masadak ko cidal.",
+              "chineseText": "太陽出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/33f216b6a845d586a66267c9a8c69d2a.wav"
+            },
+            {
+              "id": "2-2-7-2",
+              "order": 2,
+              "indigenousText": "Matayal ci mama^ aci ina^.",
+              "chineseText": "爸爸和媽媽去工作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/8b0a81e922721abd15277f0b2b1dffc6.wav"
+            },
+            {
+              "id": "2-2-7-3",
+              "order": 3,
+              "indigenousText": "Masadak ko folad.",
+              "chineseText": "月亮出來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/650cbbe94fd62b2121dfb845e9e70707.wav"
+            },
+            {
+              "id": "2-2-7-4",
+              "order": 4,
+              "indigenousText": "Taloma’ ci mama^ aci ina^.",
+              "chineseText": "爸爸和媽媽回家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/0913c8f218e7f4bdb09da88a88c6c557.wav"
+            },
+            {
+              "id": "2-2-7-5",
+              "order": 5,
+              "indigenousText": "Minengneng kita to fo’is.",
+              "chineseText": "我們去看星星。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/6b048cd2bc0b8ca96b7d8f8e6a390a29.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Ma’orad to",
+          "titleCh": "下雨了",
+          "sentences": [
+            {
+              "id": "2-2-8-1",
+              "order": 1,
+              "indigenousText": "Ma’orad to.",
+              "chineseText": "下雨了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/dcdaa9004b3cb7e103acf28936153247.wav"
+            },
+            {
+              "id": "2-2-8-2",
+              "order": 2,
+              "indigenousText": "Cicacelakan kiso hay?",
+              "chineseText": "你有沒有帶雨傘？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/369fa8041ef535a360ab14af11871050.wav"
+            },
+            {
+              "id": "2-2-8-3",
+              "order": 3,
+              "indigenousText": "Hay.",
+              "chineseText": "有。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/13c97fce126ae07d850fde249ebbbc6e.wav"
+            },
+            {
+              "id": "2-2-8-4",
+              "order": 4,
+              "indigenousText": "Icowaay ko cacelakan no miso?",
+              "chineseText": "你的雨傘是哪一把呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/1fdd7431f3d72836aa192e859e1ac091.wav"
+            },
+            {
+              "id": "2-2-8-5",
+              "order": 5,
+              "indigenousText": "Inian ko cacelakan no mako.",
+              "chineseText": "我的雨傘是這一把。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/07e1b0991ff89371e0680890093a967f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Fohcalay a cahid",
+          "titleCh": "白色的雲",
+          "sentences": [
+            {
+              "id": "2-2-9-1",
+              "order": 1,
+              "indigenousText": "O maan ko cengel no cahid i kakarayan?",
+              "chineseText": "天上的雲是什麼顏色？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/6f53d2613ea37adf354df78a7e8f7ef9.wav"
+            },
+            {
+              "id": "2-2-9-2",
+              "order": 2,
+              "indigenousText": "O fohcalay ko cengel no cahid i kakarayan.",
+              "chineseText": "天上的雲是白色的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/e28ac5143a569093eb5100d6bfd41fcc.wav"
+            },
+            {
+              "id": "2-2-9-3",
+              "order": 3,
+              "indigenousText": "Faecal a ’arawen ko teker ni Idek hay?",
+              "chineseText": "天上的彩虹美麗嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/39806ca0a6251da424a850e3165e1202.wav"
+            },
+            {
+              "id": "2-2-9-4",
+              "order": 4,
+              "indigenousText": "Hay, tada salongan a ’arawen ko teker ni Idek.",
+              "chineseText": "是的，彩虹看起來真美麗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/4023c46df4dc8188254275a12fe19852.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "I pala^",
+          "titleCh": "在野地裡",
+          "sentences": [
+            {
+              "id": "2-2-10-1",
+              "order": 1,
+              "indigenousText": "Ira ko falo^ i pala^.",
+              "chineseText": "野地裡有花。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/d6a32faaf217b071ea0bcd5845d2aa2e.wav"
+            },
+            {
+              "id": "2-2-10-2",
+              "order": 2,
+              "indigenousText": "Ira ko talod i pala^.",
+              "chineseText": "野地裡有草。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/67cd873b3149ba4326153730617e4948.wav"
+            },
+            {
+              "id": "2-2-10-3",
+              "order": 3,
+              "indigenousText": "Salipahak saan caira i kafalian.",
+              "chineseText": "風吹來時它們很高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/3b6c869621d46b6de3d7de264234753f.wav"
+            },
+            {
+              "id": "2-2-10-4",
+              "order": 4,
+              "indigenousText": "Matiya o mita’ongay ko falo^.",
+              "chineseText": "花好像在點頭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/296d07eb34d129607b269f8c7aee9f15.wav"
+            },
+            {
+              "id": "2-2-10-5",
+              "order": 5,
+              "indigenousText": "Matiya o mitepatepa’ay to kamay ko talod.",
+              "chineseText": "草好像在拍手。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/18/dad24bbbb82684eb5b460f577ca456fc.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "label": "第三階",
+      "group": "初級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "O idang no mako",
+          "titleCh": "我的朋友",
+          "sentences": [
+            {
+              "id": "2-3-1-1",
+              "order": 1,
+              "indigenousText": "’Aloman ko idang no mako.",
+              "chineseText": "我有很多的朋友。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/d7bc9b169fb1e647a4b647a0d5e09dcb.wav"
+            },
+            {
+              "id": "2-3-1-2",
+              "order": 2,
+              "indigenousText": "Takaraw ci Namoh, poener ci Mayaw.",
+              "chineseText": "Namoh很高，Mayaw很矮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/7708e8f7053247c457646d93ec4749dc.wav"
+            },
+            {
+              "id": "2-3-1-3",
+              "order": 3,
+              "indigenousText": "Malalok ci Panay, matoka^ ci Dongi^.",
+              "chineseText": "Panay很勤勞，Dongi很懶惰。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/c11043d46aaa7886c4148cfd5c89acfb.wav"
+            },
+            {
+              "id": "2-3-1-4",
+              "order": 4,
+              "indigenousText": "Malakapot kami to romi’ami’ad a micodad ato misalama^.",
+              "chineseText": "我們每天一起唸書和玩耍。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/dc5a26e0600110eec1e2cd894a469121.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Pasowal ko singsi^ i tamiyanan",
+          "titleCh": "老師告訴我們",
+          "sentences": [
+            {
+              "id": "2-3-2-1",
+              "order": 1,
+              "indigenousText": "Pasowal ko singsi^ i tamiyanan.",
+              "chineseText": "老師告訴我們。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/6897103df83139c880abcea9ab4ce6d0.wav"
+            },
+            {
+              "id": "2-3-2-2",
+              "order": 2,
+              "indigenousText": "Kangodoen ko mato’asay.",
+              "chineseText": "要尊敬長輩。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/7a11e371e3991880732a7a710b878081.wav"
+            },
+            {
+              "id": "2-3-2-3",
+              "order": 3,
+              "indigenousText": "Kasasiolah, kadadama^ ato idang.",
+              "chineseText": "和朋友要相親相愛、互相幫助。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/8f771ae69b4047560e86bec69c2df9cf.wav"
+            },
+            {
+              "id": "2-3-2-4",
+              "order": 4,
+              "indigenousText": "Aka ka apac a talapicodadan.",
+              "chineseText": "上學不可以遲到。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/f28341d705b5ef3920bb813c70a6f9b2.wav"
+            },
+            {
+              "id": "2-3-2-5",
+              "order": 5,
+              "indigenousText": "Aka pila’om to pida^.",
+              "chineseText": "用錢不可以浪費。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/de79361d059e316d17c8a65b2745bba5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Pahanhan to a micodad",
+          "titleCh": "下課了",
+          "sentences": [
+            {
+              "id": "2-3-3-1",
+              "order": 1,
+              "indigenousText": "Pahanhan to a micodad, masadak kako a talapapotal no picodadan.",
+              "chineseText": "下課了，我走出教室。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/92dd2ee2cdb75139fb325104613a2543.wav"
+            },
+            {
+              "id": "2-3-3-2",
+              "order": 2,
+              "indigenousText": "Ira ko facidol i papotal no picodadan.",
+              "chineseText": "教室的外面有一棵麵包樹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/1b9959bcb1838158fc58811dec0dec92.wav"
+            },
+            {
+              "id": "2-3-3-3",
+              "order": 3,
+              "indigenousText": "Ira ko cecay a cirot i faled no facidol,",
+              "chineseText": "在麵包樹上有一隻伯勞鳥，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/ef028a2f72909e80d5eb183ddb0db5fb.wav"
+            },
+            {
+              "id": "2-3-3-4",
+              "order": 4,
+              "indigenousText": "tanosoni^ sa kira cirot.",
+              "chineseText": "伯勞鳥正在唱歌。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/c48966ecea6f40cedda13a945a5bc2b7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Malalisan kako",
+          "titleCh": "我發燒了",
+          "sentences": [
+            {
+              "id": "2-3-4-1",
+              "order": 1,
+              "indigenousText": "Maratar faki^!",
+              "chineseText": "叔叔，早安！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/07/02/47d1b5e7ea2b46dcf5fd0e36e8c40fef.wav"
+            },
+            {
+              "id": "2-3-4-2",
+              "order": 2,
+              "indigenousText": "Talacowa^ kiso Panay?",
+              "chineseText": "Panay你要去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/4f1b3663dfa7f80d49a51363f4a69566.wav"
+            },
+            {
+              "id": "2-3-4-3",
+              "order": 3,
+              "indigenousText": "Patalaisingen ni ina^ kako.",
+              "chineseText": "媽媽要帶我去醫院。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/07/02/64bc39cd6c7d93dd3a3ee05f98f901e8.wav"
+            },
+            {
+              "id": "2-3-4-4",
+              "order": 4,
+              "indigenousText": "Mamaan kiso?",
+              "chineseText": "你怎麼了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/4eb7a67a64b35d2fdbe6a2cf1e5d1cc3.wav"
+            },
+            {
+              "id": "2-3-4-5",
+              "order": 5,
+              "indigenousText": "Malalisan kako.",
+              "chineseText": "我發燒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/07/02/84bc407c91922e72090464077a222f2a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Mi-on-do^",
+          "titleCh": "運動",
+          "sentences": [
+            {
+              "id": "2-3-5-1",
+              "order": 1,
+              "indigenousText": "O maan a on-doan ko kaolahan no miso?",
+              "chineseText": "你喜歡什麼運動？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/3454f2df5a743d1f671ace163837a0e1.wav"
+            },
+            {
+              "id": "2-3-5-2",
+              "order": 2,
+              "indigenousText": "O ya-kiw ko kaolahan no mako.",
+              "chineseText": "我喜歡棒球。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/204a3449316123f44451270ed395e24e.wav"
+            },
+            {
+              "id": "2-3-5-3",
+              "order": 3,
+              "indigenousText": "Enaw?",
+              "chineseText": "為什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/1b7059c5c0430aaeb19b9be5a8b0ab84.wav"
+            },
+            {
+              "id": "2-3-5-4",
+              "order": 4,
+              "indigenousText": "O sakanga’ay no tireng.",
+              "chineseText": "可使身體健康。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/7b0d380335481e4c322afafe9a370131.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "O radiw ato kero^",
+          "titleCh": "唱歌和跳舞",
+          "sentences": [
+            {
+              "id": "2-3-6-1",
+              "order": 1,
+              "indigenousText": "Mafana’ kiso a romadiw haw?",
+              "chineseText": "你會唱歌嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/a9fbc720caab7b0d6f918391916061c1.wav"
+            },
+            {
+              "id": "2-3-6-2",
+              "order": 2,
+              "indigenousText": "Hay, mafana’ kako a romadiw.",
+              "chineseText": "是的，我會唱歌。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/ec417e0273baf65f3a02b09ca285b349.wav"
+            },
+            {
+              "id": "2-3-6-3",
+              "order": 3,
+              "indigenousText": "Mafana’ kiso a masakero^ haw?",
+              "chineseText": "你會跳舞嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/44991522c0943611b3debb4c1af99dcc.wav"
+            },
+            {
+              "id": "2-3-6-4",
+              "order": 4,
+              "indigenousText": "Hay, fangcal ko kero^ no mako.",
+              "chineseText": "是的，我跳得很好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/a3904e34f778e45ca9886793479f9834.wav"
+            },
+            {
+              "id": "2-3-6-5",
+              "order": 5,
+              "indigenousText": "Ano matira, tatata masakero^ kita!",
+              "chineseText": "那麼，我們一起來跳舞！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/587511b8527802f1e4b017b0dc7ade82.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Pinaay to ko widi^ imatini",
+          "titleCh": "現在是幾點",
+          "sentences": [
+            {
+              "id": "2-3-7-1",
+              "order": 1,
+              "indigenousText": "Pinaay to ko widi^ imatini?",
+              "chineseText": "現在幾點？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/8e13932ef0424c834cc8c28bc2c19386.wav"
+            },
+            {
+              "id": "2-3-7-2",
+              "order": 2,
+              "indigenousText": "Faloay to ko widi^ to dafak.",
+              "chineseText": "現在是早上八點。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/cd8cec2cde1d294f3303c403b00b7682.wav"
+            },
+            {
+              "id": "2-3-7-3",
+              "order": 3,
+              "indigenousText": "Pinaay ko widi^ a lomowad kiso to dafak?",
+              "chineseText": "你早上幾點起床？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/a9178761609ff2403b80795ad64a96ff.wav"
+            },
+            {
+              "id": "2-3-7-4",
+              "order": 4,
+              "indigenousText": "Enemay ko widi^ a lomowad kako.",
+              "chineseText": "我早上六點起床。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/16981cd95f81c481857aef5883ffd8b4.wav"
+            },
+            {
+              "id": "2-3-7-5",
+              "order": 5,
+              "indigenousText": "Pinaay ko widi^ a mafoti’ kiso?",
+              "chineseText": "你晚上幾點睡覺？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/283ee04443e2de79c2630a723cfbcfcf.wav"
+            },
+            {
+              "id": "2-3-7-6",
+              "order": 6,
+              "indigenousText": "Siwa^ ira ko pangkiw no widi^ a mafoti’ kako.",
+              "chineseText": "我晚上九點半睡覺。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/7e51f5ec916902f21a6f911a04548ea2.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Padingwa^",
+          "titleCh": "打電話",
+          "sentences": [
+            {
+              "id": "2-3-8-1",
+              "order": 1,
+              "indigenousText": "Nga’ay ho^, ci Ongo^ kako, i loma’ ci Fadah hay?",
+              "chineseText": "你好，我是Ongo^，Fadah在家嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/99ab3ddaa8a9d29f9c71bf06dc12d630.wav"
+            },
+            {
+              "id": "2-3-8-2",
+              "order": 2,
+              "indigenousText": "Awaay, masadak ciira.",
+              "chineseText": "不在，她出去了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/e7c86d124e2f834a8130ac81d721377e.wav"
+            },
+            {
+              "id": "2-3-8-3",
+              "order": 3,
+              "indigenousText": "Ha! Ano hacowa^ a taloma’ ciira?",
+              "chineseText": "喔！她什麼時候回來呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/3a830ef2d7ef5dc247f08ee352eaf3b7.wav"
+            },
+            {
+              "id": "2-3-8-4",
+              "order": 4,
+              "indigenousText": "Caay ka halafin, ini anohoni^.",
+              "chineseText": "等一下就回來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/86b18f5f3a117d843c191ba09b9616a4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Miliso’ to akong",
+          "titleCh": "拜訪外公",
+          "sentences": [
+            {
+              "id": "2-3-9-1",
+              "order": 1,
+              "indigenousText": "Talacowa^ kiso inacila^?",
+              "chineseText": "你昨天去哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/5a20c003d8ba2c0a6aae6a648d78cda3.wav"
+            },
+            {
+              "id": "2-3-9-2",
+              "order": 2,
+              "indigenousText": "Talalotok kami a miliso’ ci akongan.",
+              "chineseText": "我們去山上拜訪外公。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/5391d4d30b16d53a6d7f83fa8a208dba.wav"
+            },
+            {
+              "id": "2-3-9-3",
+              "order": 3,
+              "indigenousText": "O maan ko sapatala^ ni akong i tamowanan?",
+              "chineseText": "外公請你們吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/8eeaa13ae1816af79056ebea5610abd3.wav"
+            },
+            {
+              "id": "2-3-9-4",
+              "order": 4,
+              "indigenousText": "O lawal, o toron ato dongec.",
+              "chineseText": "外公請我們吃飛鼠肉、麻糬和藤心湯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/53e2ec00c0ce91cf1cd3807651878804.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Mafana’ kako a mirenaf",
+          "titleCh": "我會畫圖",
+          "sentences": [
+            {
+              "id": "2-3-10-1",
+              "order": 1,
+              "indigenousText": "Mafana’ kako a mirenaf.",
+              "chineseText": "我會畫圖。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/6763d2ea0ffe0505c64f0edba9d65c69.wav"
+            },
+            {
+              "id": "2-3-10-2",
+              "order": 2,
+              "indigenousText": "O mamirenaf kako ci inaan.",
+              "chineseText": "我要畫我的媽媽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/a2cb5bd2c33a0c7f8eb59d510a09ebd9.wav"
+            },
+            {
+              "id": "2-3-10-3",
+              "order": 3,
+              "indigenousText": "Makapah ko mata^ ni ina^.",
+              "chineseText": "媽媽的眼睛很漂亮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/2fae221cb5555dd88cfa6505916d9b76.wav"
+            },
+            {
+              "id": "2-3-10-4",
+              "order": 4,
+              "indigenousText": "’Omeling ko fokes niira.",
+              "chineseText": "她的頭髮光澤亮麗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/3ac5c92e9a9e036f2fa8d1c7bd77460f.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 4,
+      "label": "第四階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "To’eman to",
+          "titleCh": "天黑了",
+          "sentences": [
+            {
+              "id": "2-4-1-1",
+              "order": 1,
+              "indigenousText": "Micerem to ko cidal, to’eman to ko romi’ad.",
+              "chineseText": "太陽下山了，天黑了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/f8887049ab763fbab5845d90b5019d01.wav"
+            },
+            {
+              "id": "2-4-1-2",
+              "order": 2,
+              "indigenousText": "Masoni^ to ko takola^,",
+              "chineseText": "青蛙叫了，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/251aa800ae525b03a5378d8637e8d855.wav"
+            },
+            {
+              "id": "2-4-1-3",
+              "order": 3,
+              "indigenousText": "masadak to ko folad,",
+              "chineseText": "月亮出現了，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/58cfa3ad4734c14a28711062b8914665.wav"
+            },
+            {
+              "id": "2-4-1-4",
+              "order": 4,
+              "indigenousText": "mapalal to ko ekong.",
+              "chineseText": "貓頭鷹睡醒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/66603f1c3962ecf33af5db23dd264fd7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Macidal",
+          "titleCh": "出太陽",
+          "sentences": [
+            {
+              "id": "2-4-2-1",
+              "order": 1,
+              "indigenousText": "Macidal anini^ haw?",
+              "chineseText": "今天出太陽嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/92549333794c1943e0371aa3145e5cac.wav"
+            },
+            {
+              "id": "2-4-2-2",
+              "order": 2,
+              "indigenousText": "Hay, faedet ko romi’ad anini^.",
+              "chineseText": "是的，今天很熱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/16f22e541e1783af96ec165620c897b6.wav"
+            },
+            {
+              "id": "2-4-2-3",
+              "order": 3,
+              "indigenousText": "Citamohong ci ina^ a masadak haw?",
+              "chineseText": "媽媽外出的時候，有戴帽子嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/3a6b15d2e5d3470c7a3059abb46054e6.wav"
+            },
+            {
+              "id": "2-4-2-4",
+              "order": 4,
+              "indigenousText": "Caay, mapawan ciira a citamohong.",
+              "chineseText": "不，她忘了戴帽子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/5161e33e307f3ce2f652d0ad2d47c0af.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Herek no lahok",
+          "titleCh": "午後",
+          "sentences": [
+            {
+              "id": "2-4-3-1",
+              "order": 1,
+              "indigenousText": "Manga’ay kako a misalama^ i herek no lahok haw?",
+              "chineseText": "下午我可以去玩嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/43441323c4d9924020cb68fd3e0ce16e.wav"
+            },
+            {
+              "id": "2-4-3-2",
+              "order": 2,
+              "indigenousText": "Akaa, tata’ang ko ’orad i papotal.",
+              "chineseText": "不行，外面下著大雨。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/15a800d27ac75ff54627963bc2d966aa.wav"
+            },
+            {
+              "id": "2-4-3-3",
+              "order": 3,
+              "indigenousText": "Ano masalaw i, manga’ay kako a masadak haw?",
+              "chineseText": "如果雨停了，我可以出去嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/6f13d10c9086bebe6de06bfffb719269.wav"
+            },
+            {
+              "id": "2-4-3-4",
+              "order": 4,
+              "indigenousText": "Nga’ay to, kataloma’ a malafi^!",
+              "chineseText": "可以，記得回來吃晚餐喔！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/6629918cf4c765c082bc73eddbaff095.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "O kasofocan ni ama:",
+          "titleCh": "阿嬤的生日",
+          "sentences": [
+            {
+              "id": "2-4-4-1",
+              "order": 1,
+              "indigenousText": "O kasofocan ni ama: anocila^.",
+              "chineseText": "明天是阿嬤的生日。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/98b0db92858a4478f551d18e3cfdf246.wav"
+            },
+            {
+              "id": "2-4-4-2",
+              "order": 2,
+              "indigenousText": "Misatoron kako aci kaka^ anini^.",
+              "chineseText": "今天我和姊姊一起搗粢粑。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/dcb7457aefc6a9a0cdea961a903bc779.wav"
+            },
+            {
+              "id": "2-4-4-3",
+              "order": 3,
+              "indigenousText": "O sapaini no niyam ci ama:an.",
+              "chineseText": "要送給阿嬤的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/7a8e8dcabe5e433657714edc57b1cead.wav"
+            },
+            {
+              "id": "2-4-4-4",
+              "order": 4,
+              "indigenousText": "Nanay lipahak ciira.",
+              "chineseText": "希望讓她高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/0e50c1d44f0bbc8cb1b32b4f29a5bc19.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "O kasofocan a romi’ad",
+          "titleCh": "生日",
+          "sentences": [
+            {
+              "id": "2-4-5-1",
+              "order": 1,
+              "indigenousText": "Cima^ sa?",
+              "chineseText": "誰呀？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/23/9d38fa92cb5fb06cc317b957af68c38f.wav"
+            },
+            {
+              "id": "2-4-5-2",
+              "order": 2,
+              "indigenousText": "Kami, ci Kolas aci Dongi^, fohaten ho ko paenan, ama:.",
+              "chineseText": "阿嬤，我們是Kolas和Dongi，請開門。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/6007b5ee9eebc522f143669f3471469d.wav"
+            },
+            {
+              "id": "2-4-5-3",
+              "order": 3,
+              "indigenousText": "Kamo aca^ sa, maoron to kako i tamowanan.",
+              "chineseText": "原來是你們，我好想念你們。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/23/9b36222a1484528dee85702022c191ae.wav"
+            },
+            {
+              "id": "2-4-5-4",
+              "order": 4,
+              "indigenousText": "Ama:, o kasofocan iso anini^, nanay lipahak kiso.",
+              "chineseText": "阿嬤，今天是妳的生日，祝妳生日快樂！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/5f1000e3161858c007521c03df8f9947.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "O pafaloco’an",
+          "titleCh": "願望",
+          "sentences": [
+            {
+              "id": "2-4-6-1",
+              "order": 1,
+              "indigenousText": "Mafotek ci ama: a mitolon.",
+              "chineseText": "阿嬤閉上眼睛祈禱。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/a95197586a20c74d7d8ac466ca43d3ae.wav"
+            },
+            {
+              "id": "2-4-6-2",
+              "order": 2,
+              "indigenousText": "Tolo^ ko pafaloco’an niira.",
+              "chineseText": "她有三個願望。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/399a259d77949168e1f13c27164f8a98.wav"
+            },
+            {
+              "id": "2-4-6-3",
+              "order": 3,
+              "indigenousText": "Nanay takaraw to ko wawa^ ako!",
+              "chineseText": "願我的孩子們長大了！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/9fc1417d93286f183f7f8eb19eb626a5.wav"
+            },
+            {
+              "id": "2-4-6-4",
+              "order": 4,
+              "indigenousText": "Nanay rihaday kami!",
+              "chineseText": "願我們全家人都平安！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/cee46664636e72ade16b2c58fd104ee4.wav"
+            },
+            {
+              "id": "2-4-6-5",
+              "order": 5,
+              "indigenousText": "Nanay kadofah anini^ a miheca^!",
+              "chineseText": "願今年大豐收。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/d62026675dcb3cb846bb6381bc22b422.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "O pilipayan",
+          "titleCh": "禮拜天",
+          "sentences": [
+            {
+              "id": "2-4-7-1",
+              "order": 1,
+              "indigenousText": "Pina^ a romi’ad ko cecay a lipay?",
+              "chineseText": "一個禮拜有幾天？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/d0e8e48dda99357ce5596579d598afd3.wav"
+            },
+            {
+              "id": "2-4-7-2",
+              "order": 2,
+              "indigenousText": "Pito^ a romi’ad.",
+              "chineseText": "一個禮拜有七天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/2d0143e51b72039a123ca6b5f261f899.wav"
+            },
+            {
+              "id": "2-4-7-3",
+              "order": 3,
+              "indigenousText": "Sakapina^ anini^ nanilipay?",
+              "chineseText": "今天是禮拜幾？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/e3a503d411ea8a729a099a092499cc0e.wav"
+            },
+            {
+              "id": "2-4-7-4",
+              "order": 4,
+              "indigenousText": "O pilipayan anini^.",
+              "chineseText": "今天是禮拜天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/23/ae1dc42a859edb40aa6563a61d4dc2eb.wav"
+            },
+            {
+              "id": "2-4-7-5",
+              "order": 5,
+              "indigenousText": "Talakiwkay kami a milihay.",
+              "chineseText": "我們要去教會做禮拜。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/23/1d6474144c32c64a6e6ef5091ceaffc9.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "O lalood",
+          "titleCh": "夏天",
+          "sentences": [
+            {
+              "id": "2-4-8-1",
+              "order": 1,
+              "indigenousText": "Talolong ko nanom no tarawadaw to lalood.",
+              "chineseText": "夏天溪流很深。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/dbd6112a2ef4be9c2ae8c73b60e270df.wav"
+            },
+            {
+              "id": "2-4-8-2",
+              "order": 2,
+              "indigenousText": "Nika, pangta^ to kasienawan.",
+              "chineseText": "但是，冬天溪流很淺。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/e2ddc53ddb8a2b2e7605a241e0f3470a.wav"
+            },
+            {
+              "id": "2-4-8-3",
+              "order": 3,
+              "indigenousText": "O lalood to imatini, pasa^sa’ to ko picodadan.",
+              "chineseText": "現在是夏天，我們放暑假。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/f28803df0fe17160422892887b3e186b.wav"
+            },
+            {
+              "id": "2-4-8-4",
+              "order": 4,
+              "indigenousText": "Kirami, adihay ko faliyos.",
+              "chineseText": "可是，有很多颱風。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/c4d6408ea6d1a1612d267dc386f811ad.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "O faliyos",
+          "titleCh": "颱風",
+          "sentences": [
+            {
+              "id": "2-4-9-1",
+              "order": 1,
+              "indigenousText": "Mafaliyos anini^, micodad kamo hay?",
+              "chineseText": "今天颳颱風，你們要上學嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/211404f9af1d9d309e84cde186afa7cd.wav"
+            },
+            {
+              "id": "2-4-9-2",
+              "order": 2,
+              "indigenousText": "Caay picodad kami anini^.",
+              "chineseText": "我們今天不上學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/b06b39483b3bbeda26ee6351c55fc386.wav"
+            },
+            {
+              "id": "2-4-9-3",
+              "order": 3,
+              "indigenousText": "Aka ka sadak kamo!",
+              "chineseText": "你們不要出去！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/6cd783e774358d98399dce9e155d3716.wav"
+            },
+            {
+              "id": "2-4-9-4",
+              "order": 4,
+              "indigenousText": "Hay, mafana’ to.",
+              "chineseText": "是，知道了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/d55791e393950b00e1fd0dc3a732dba2.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "O piporangan",
+          "titleCh": "秋天",
+          "sentences": [
+            {
+              "id": "2-4-10-1",
+              "order": 1,
+              "indigenousText": "O piporangan to, o karoheman to no mami^.",
+              "chineseText": "秋天來了，是橘子成熟的季節。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/2f152d03abda5b3a5a15823e8580d478.wav"
+            },
+            {
+              "id": "2-4-10-2",
+              "order": 2,
+              "indigenousText": "Ira ko kandaway, o kahengangay, o kaliyalaway i ’apilis.",
+              "chineseText": "山坡上，有綠的、有紅的、也有黃的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/6d18b9b4b051691ecfbe177050df7e15.wav"
+            },
+            {
+              "id": "2-4-10-3",
+              "order": 3,
+              "indigenousText": "Talalotok ca Panay a mipeco’ to mami^.",
+              "chineseText": "Panay一家人到山上摘橘子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/0cb6117b730dcfae3342c9ac503fee89.wav"
+            },
+            {
+              "id": "2-4-10-4",
+              "order": 4,
+              "indigenousText": "Tangsol sa matomes ko fakar naira.",
+              "chineseText": "他們的簍子，一下子就裝滿了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/20/ac15014b94f5a551281ae2c4bd37b9cd.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 5,
+      "label": "第五階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "O alonah",
+          "titleCh": "螞蟻",
+          "sentences": [
+            {
+              "id": "2-5-1-1",
+              "order": 1,
+              "indigenousText": "O malafoloday a alonah kami.",
+              "chineseText": "我們是一群螞蟻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/3acf7339bf83e77072d721204f159a22.wav"
+            },
+            {
+              "id": "2-5-1-2",
+              "order": 2,
+              "indigenousText": "Malalok kami a matayal.",
+              "chineseText": "我們工作很勤勞。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/ddc542d0f80135c8fbfaabbcc0c713e4.wav"
+            },
+            {
+              "id": "2-5-1-3",
+              "order": 3,
+              "indigenousText": "O matefaday i sera^ a posak ato fawo^ i,",
+              "chineseText": "掉在地上的飯粒和蟲，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/d7503a556745ffaef009e5bcbbc1b162.wav"
+            },
+            {
+              "id": "2-5-1-4",
+              "order": 4,
+              "indigenousText": "liliden no niyam a pataloma’.",
+              "chineseText": "我們都搬回家。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/4d46825a916e8dfb8db8c92f16012a6a.wav"
+            },
+            {
+              "id": "2-5-1-5",
+              "order": 5,
+              "indigenousText": "O malalokay a alonah kami.",
+              "chineseText": "我們是一群勤快的螞蟻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/31864d464b9dca1998c6114970124006.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "O kalalifet",
+          "titleCh": "比賽",
+          "sentences": [
+            {
+              "id": "2-5-2-1",
+              "order": 1,
+              "indigenousText": "Icowa^ ci Rongac aci Maro’?",
+              "chineseText": "Rongac和Maro’在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/d71586e175bda641513638183a2cf58e.wav"
+            },
+            {
+              "id": "2-5-2-2",
+              "order": 2,
+              "indigenousText": "I kafekacan caira.",
+              "chineseText": "他們在運動場上。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/91282789ee924166203446f78a423feb.wav"
+            },
+            {
+              "id": "2-5-2-3",
+              "order": 3,
+              "indigenousText": "Malalifet caira a mafekac.",
+              "chineseText": "他們在比賽跑步。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/a29df4e171c021651bd9169d902d9e5f.wav"
+            },
+            {
+              "id": "2-5-2-4",
+              "order": 4,
+              "indigenousText": "Cima^ ko i ’a’ayaway?",
+              "chineseText": "誰在前面？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/5b2d6f174b8c8b9ede35b3822a61d701.wav"
+            },
+            {
+              "id": "2-5-2-5",
+              "order": 5,
+              "indigenousText": "Ci Ronga:c to.",
+              "chineseText": "當然是Rongac.",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/88a38a76a852e8fe7c7dedecec7c96cf.wav"
+            },
+            {
+              "id": "2-5-2-6",
+              "order": 6,
+              "indigenousText": "Nawhani misaromi’ad a misa’icel a minanam ciira.",
+              "chineseText": "因為他每天努力練習。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/ad8b26b9e81cfbdb3a72873e3a1afab8.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Kadofah",
+          "titleCh": "豐收",
+          "sentences": [
+            {
+              "id": "2-5-3-1",
+              "order": 1,
+              "indigenousText": "Maomahay ko mama^ ako.",
+              "chineseText": "我的爸爸是一位農夫。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/3c8c8b2dd8f770885cf443fa18f8330a.wav"
+            },
+            {
+              "id": "2-5-3-2",
+              "order": 2,
+              "indigenousText": "Ngarngar sa ciira a matayal i pala^.",
+              "chineseText": "他每天辛勤地在田裡耕作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/f8debc4983189c02fae392735e25e066.wav"
+            },
+            {
+              "id": "2-5-3-3",
+              "order": 3,
+              "indigenousText": "Pa’ing’ing sa to cidal.",
+              "chineseText": "曝曬在太陽下，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/487e1345887a9c79aa043dad7aa6e304.wav"
+            },
+            {
+              "id": "2-5-3-4",
+              "order": 4,
+              "indigenousText": "Maropena’ no ifangat ko fodoy niira.",
+              "chineseText": "汗水弄濕了他的衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/75c73e5dda6cad993d6d58e580dfb15f.wav"
+            },
+            {
+              "id": "2-5-3-5",
+              "order": 5,
+              "indigenousText": "Anini^ a mihcaan, kadofah ko pinaloma^.",
+              "chineseText": "今年稻米豐收，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/17958f08344f7d9bde310d4f2e678229.wav"
+            },
+            {
+              "id": "2-5-3-6",
+              "order": 6,
+              "indigenousText": "Lipahak sa ci mama^ a matawa^.",
+              "chineseText": "爸爸高興得笑呵呵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/7fb1d3168797b6d3b5fbbfb55ae6847c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "O ci-ting-sya^",
+          "titleCh": "腳踏車",
+          "sentences": [
+            {
+              "id": "2-5-4-1",
+              "order": 1,
+              "indigenousText": "Ira ko ci-ting-sya^ ako.",
+              "chineseText": "我有一台腳踏車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/1854534358df42726ade8f91dff2cc17.wav"
+            },
+            {
+              "id": "2-5-4-2",
+              "order": 2,
+              "indigenousText": "Paka-ci-ting-sya^ kako a talapicodadan to romi’ami’ad.",
+              "chineseText": "我每天騎腳踏車上學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/52875b05829ae2ca61fba70b3e3f9128.wav"
+            },
+            {
+              "id": "2-5-4-3",
+              "order": 3,
+              "indigenousText": "Cecay a romi’ad, i fatad no lalan.",
+              "chineseText": "有一天，在上學的路上，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/92d12de047ed2859c4482fde09eb5491.wav"
+            },
+            {
+              "id": "2-5-4-4",
+              "order": 4,
+              "indigenousText": "Matastas ko ci-ting-sya^ no mako.",
+              "chineseText": "我的腳踏車壞掉了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/b9a9628a88da4e9f0a999964eb2bae4a.wav"
+            },
+            {
+              "id": "2-5-4-5",
+              "order": 5,
+              "indigenousText": "Ira a mita’elif ci faki^.",
+              "chineseText": "有一位叔叔經過。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/5d7812a21fa3a54f2d4d8cfb9e418a7a.wav"
+            },
+            {
+              "id": "2-5-4-6",
+              "order": 6,
+              "indigenousText": "Sanga’en niira koya ci-ting-sya^ ako.",
+              "chineseText": "他幫我的腳踏車修好。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/e37b921da104adda8b0c6a9448e2c77e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Madakaw to cilamalay",
+          "titleCh": "搭火車",
+          "sentences": [
+            {
+              "id": "2-5-5-1",
+              "order": 1,
+              "indigenousText": "Pakamaan a talaTaypak?",
+              "chineseText": "去台北要搭什麼車？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/461de9d016900792f016f8fb38511531.wav"
+            },
+            {
+              "id": "2-5-5-2",
+              "order": 2,
+              "indigenousText": "Pakacilamalay.",
+              "chineseText": "搭火車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/20c4c83e28452ad559504f0608b5785e.wav"
+            },
+            {
+              "id": "2-5-5-3",
+              "order": 3,
+              "indigenousText": "Pina^ a wawidian ta tangasa^?",
+              "chineseText": "要多少時間才會到達？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/a89ce8cc49a9d8687611721e66e3053b.wav"
+            },
+            {
+              "id": "2-5-5-4",
+              "order": 4,
+              "indigenousText": "Pakatolo^ a wawidian.",
+              "chineseText": "大約要三個小時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/66eee42c86f019b807223deeba544981.wav"
+            },
+            {
+              "id": "2-5-5-5",
+              "order": 5,
+              "indigenousText": "Icowaay ko tahnayay no cilamalay ato faso^?",
+              "chineseText": "火車和公車哪一個比較快呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/d169fc79406f5a8d00ea5157c457d6b7.wav"
+            },
+            {
+              "id": "2-5-5-6",
+              "order": 6,
+              "indigenousText": "O cilamala:y to.",
+              "chineseText": "還是火車比較快。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/04/c6113b7b8bc6be901130aac0cbf72f09.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "I lalan",
+          "titleCh": "在路上",
+          "sentences": [
+            {
+              "id": "2-5-6-1",
+              "order": 1,
+              "indigenousText": "Adihay ko paliding i lalan.",
+              "chineseText": "路上汽車很多。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/bcb2e78c00709c894cc0e2201aa22a48.wav"
+            },
+            {
+              "id": "2-5-6-2",
+              "order": 2,
+              "indigenousText": "Na’onen ko rakat.",
+              "chineseText": "走路要小心。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/0b3c42474ff37e85e566e56eaf8c59cb.wav"
+            },
+            {
+              "id": "2-5-6-3",
+              "order": 3,
+              "indigenousText": "Kasatisil a madakaw to faso^.",
+              "chineseText": "搭公車要排隊上車。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/174274f341778b592067b5b4b50d0b90.wav"
+            },
+            {
+              "id": "2-5-6-4",
+              "order": 4,
+              "indigenousText": "Kaci-hi-lo-mit a paka-o-to-fay.",
+              "chineseText": "騎摩托車一定要戴安全帽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/9ad43e92c8e3b8c8aaac2f950a680ecd.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "O lotok no Taywan",
+          "titleCh": "台灣的山",
+          "sentences": [
+            {
+              "id": "2-5-7-1",
+              "order": 1,
+              "indigenousText": "Adihay ko lotok no Taywan.",
+              "chineseText": "台灣有很多山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/8cd69ae259b1482939175bb353b1e552.wav"
+            },
+            {
+              "id": "2-5-7-2",
+              "order": 2,
+              "indigenousText": "O satakaraway a lotok i, o Yu-san.",
+              "chineseText": "最高的山是玉山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/c46b82660178e3836f282d9dbc193261.wav"
+            },
+            {
+              "id": "2-5-7-3",
+              "order": 3,
+              "indigenousText": "I ngata^ no lotok ko niyaro’ namo haw?",
+              "chineseText": "你們的部落附近有山嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/1e27448b066c950fe4e30588863a3864.wav"
+            },
+            {
+              "id": "2-5-7-4",
+              "order": 4,
+              "indigenousText": "Hay, maliyok no lotok ko niyaro’ no niyam.",
+              "chineseText": "是的，我們的部落四面環山。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/6a003fe8c361fec0415a610b0352ff08.wav"
+            },
+            {
+              "id": "2-5-7-5",
+              "order": 5,
+              "indigenousText": "Ira ko takaraway, ira ko poeneray.",
+              "chineseText": "有的比較高，有的比較矮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/075517ba62806f09d46acf55876e2044.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Milicay to lalan",
+          "titleCh": "問路",
+          "sentences": [
+            {
+              "id": "2-5-8-1",
+              "order": 1,
+              "indigenousText": "Licayaw ho^ kiso, icowa^ ko Cilangasan?",
+              "chineseText": "請問你，奇拉卡山在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/4b4ff8126bf26c789a47e92577c746ef.wav"
+            },
+            {
+              "id": "2-5-8-2",
+              "order": 2,
+              "indigenousText": "I sawalian.",
+              "chineseText": "在東邊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/59a4e206ec04730069baa70bfedcc3bc.wav"
+            },
+            {
+              "id": "2-5-8-3",
+              "order": 3,
+              "indigenousText": "Licayaw ho^ kiso, maanen a tayra i Tafalong?",
+              "chineseText": "請問你，怎樣到太巴塱部落？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/8f5e15cd45a852de96848fb9af83e84f.wav"
+            },
+            {
+              "id": "2-5-8-4",
+              "order": 4,
+              "indigenousText": "Pasatimo:l han ko rakat.",
+              "chineseText": "一直往南走。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/632928a97a8f8b77c3210be27ecd60cc.wav"
+            },
+            {
+              "id": "2-5-8-5",
+              "order": 5,
+              "indigenousText": "Hacowa^ ko raay a rakaten?",
+              "chineseText": "要走多久呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/6e8f3658403b1e9a278144bc06829ebb.wav"
+            },
+            {
+              "id": "2-5-8-6",
+              "order": 6,
+              "indigenousText": "Maedeng pangkiw ko widi^.",
+              "chineseText": "大約要半小時。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/5bdc13c07cc44de35772678463c3f85f.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "O riyar",
+          "titleCh": "海",
+          "sentences": [
+            {
+              "id": "2-5-9-1",
+              "order": 1,
+              "indigenousText": "O maan ko iraay i riyar?",
+              "chineseText": "海裡有什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/0b5d96e4088b65ec4a4a7c3a6f3f9d63.wav"
+            },
+            {
+              "id": "2-5-9-2",
+              "order": 2,
+              "indigenousText": "O foting, o kafos, o kalang.",
+              "chineseText": "有魚、有蝦、有螃蟹。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/c9f452d0c1e9fd9fc7e54d4bd4bd3c72.wav"
+            },
+            {
+              "id": "2-5-9-3",
+              "order": 3,
+              "indigenousText": "Pina^ ko wa’ay no kalang?",
+              "chineseText": "螃蟹有幾隻腳？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/6afce28571a55d5d3c7f172fcbe2491f.wav"
+            },
+            {
+              "id": "2-5-9-4",
+              "order": 4,
+              "indigenousText": "Falo^.",
+              "chineseText": "八隻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/86dfdf6aff455c0e0c3beca869398748.wav"
+            },
+            {
+              "id": "2-5-9-5",
+              "order": 5,
+              "indigenousText": "Macowa^ a nanomen ko riyar?",
+              "chineseText": "海水喝起來味道如何？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/e078e62b5df6ce4f37c9f85c690b9439.wav"
+            },
+            {
+              "id": "2-5-9-6",
+              "order": 6,
+              "indigenousText": "Kacedah ko nanom no riyar.",
+              "chineseText": "海水是鹹的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/a8b2ded16c2979e54a660a6894d8a184.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Mifoting",
+          "titleCh": "捕魚",
+          "sentences": [
+            {
+              "id": "2-5-10-1",
+              "order": 1,
+              "indigenousText": "Mararid a talariyar a mifoting ko mifotingay.",
+              "chineseText": "漁夫常常出海捕魚。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/d59045c6f5a998af326da93e038b67d4.wav"
+            },
+            {
+              "id": "2-5-10-2",
+              "order": 2,
+              "indigenousText": "Ano tata’ata:’ang ko fali^,",
+              "chineseText": "無論風有多麼大，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/89b38894091f5d9224eb4cec4cdac46b.wav"
+            },
+            {
+              "id": "2-5-10-3",
+              "order": 3,
+              "indigenousText": "ano takaraka:raw ko tapelik,",
+              "chineseText": "無論浪有多麼高，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/eb0da61ee201e6c5228451d63522d21e.wav"
+            },
+            {
+              "id": "2-5-10-4",
+              "order": 4,
+              "indigenousText": "caay ka talaw ciira.",
+              "chineseText": "他都不害怕。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/9d9353842ba085198e0a776c27e3f105.wav"
+            },
+            {
+              "id": "2-5-10-5",
+              "order": 5,
+              "indigenousText": "Caay ka eca^ matomes ko tamina^ to foting ato ’afar.",
+              "chineseText": "船上總是裝滿了魚和蝦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/05/ad0d607b4773651fcfec80cfeca732e4.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 6,
+      "label": "第六階",
+      "group": "中級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Taloma’ to kako",
+          "titleCh": "我回來了",
+          "sentences": [
+            {
+              "id": "2-6-1-1",
+              "order": 1,
+              "indigenousText": "Ama:, taloma’ to kako.",
+              "chineseText": "阿嬤，我回來了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/66d4409d784df749205561d319f4b912.wav"
+            },
+            {
+              "id": "2-6-1-2",
+              "order": 2,
+              "indigenousText": "Ha, taloma’ to kiso?",
+              "chineseText": "喔，你放學了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/08ada61914e99a7f869ee40896208f4f.wav"
+            },
+            {
+              "id": "2-6-1-3",
+              "order": 3,
+              "indigenousText": "Masolep kako.",
+              "chineseText": "我肚子很餓。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/76d869e123487ea27a6764daa1b66b12.wav"
+            },
+            {
+              "id": "2-6-1-4",
+              "order": 4,
+              "indigenousText": "O maan ko kangalayan no miso?",
+              "chineseText": "你想要吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/5d7018d9978cda8419d11cc86ddf3056.wav"
+            },
+            {
+              "id": "2-6-1-5",
+              "order": 5,
+              "indigenousText": "Mangalay kako to tali^.",
+              "chineseText": "我想要吃芋頭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/235054d67a615132ce5f612cd43ef249.wav"
+            },
+            {
+              "id": "2-6-1-6",
+              "order": 6,
+              "indigenousText": "Ira i sapad ko tali^, alaen oli.",
+              "chineseText": "桌上有芋頭，拿去吃吧。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/63890ec3cce829d78156039112812957.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "O maan ko kaolahan iso a kakaenen",
+          "titleCh": "你喜歡吃什麼",
+          "sentences": [
+            {
+              "id": "2-6-2-1",
+              "order": 1,
+              "indigenousText": "O maan ko kaolahan iso a kakaenen?",
+              "chineseText": "你喜歡吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/c3231e863446257a71c781e980a525ee.wav"
+            },
+            {
+              "id": "2-6-2-2",
+              "order": 2,
+              "indigenousText": "O hemay, o maan ko no miso?",
+              "chineseText": "我喜歡吃飯，你呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/9ce5f854d7484c4d76a7be35c9d346ee.wav"
+            },
+            {
+              "id": "2-6-2-3",
+              "order": 3,
+              "indigenousText": "O toron ko no mako, mana’ay kako to hemay.",
+              "chineseText": "我喜歡的是糍粑，我不要吃飯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/19/242cb3f13e90c2da7bae4305d02cf178.wav"
+            },
+            {
+              "id": "2-6-2-4",
+              "order": 4,
+              "indigenousText": "O maan ko sasatoronen, mafana’ kiso haw?",
+              "chineseText": "糍粑是用什麼食材做的，你知道嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/3a09bca9462b609dc8f9773927db4d5e.wav"
+            },
+            {
+              "id": "2-6-2-5",
+              "order": 5,
+              "indigenousText": "Caay ka fana’ kako.",
+              "chineseText": "我不知道。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/30/fb805484bc9777055fe9237e52e08af7.wav"
+            },
+            {
+              "id": "2-6-2-6",
+              "order": 6,
+              "indigenousText": "Pasowalaw ako kiso, o falinono^ ko sasatoronen.",
+              "chineseText": "我來告訴你，糍粑是用香糯米做的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/30/52260c20c1ae042dcd5beb959c68376b.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Itira i kamaenan",
+          "titleCh": "在餐廳裡",
+          "sentences": [
+            {
+              "id": "2-6-3-1",
+              "order": 1,
+              "indigenousText": "Kamaro’, o maan ko kangalayan no miso a maen?",
+              "chineseText": "請坐，請問你要吃什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/8d6e2ae53648e61678e9fb7d569e5666.wav"
+            },
+            {
+              "id": "2-6-3-2",
+              "order": 2,
+              "indigenousText": "Ira ko hemay haw?",
+              "chineseText": "有飯嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/acfa394d745f608878f5ebb0585a25fd.wav"
+            },
+            {
+              "id": "2-6-3-3",
+              "order": 3,
+              "indigenousText": "Maanen aca^, awaay ko hemay itini, edeng o walay a cecay.",
+              "chineseText": "抱歉，這裡沒有飯，只有麵。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/8f44217b01ce7adb1c40700c5f0f1f55.wav"
+            },
+            {
+              "id": "2-6-3-4",
+              "order": 4,
+              "indigenousText": "Nga’ay to, ka o walay aca^.",
+              "chineseText": "好吧，就改吃麵吧。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/4266cd6eb1532baeb63347f240cf7d89.wav"
+            },
+            {
+              "id": "2-6-3-5",
+              "order": 5,
+              "indigenousText": "Mangalay kiso to kaedahay haw?",
+              "chineseText": "請問，你要不要辣的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/a07e57a777fb54d601d8bc78ce94b537.wav"
+            },
+            {
+              "id": "2-6-3-6",
+              "order": 6,
+              "indigenousText": "Na’ay, matalaw kako maen to kaedahay.",
+              "chineseText": "不要，我不敢吃辣的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/04/09/afa099bea598f774525d6e71872c67cc.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "O heci^ no losay",
+          "titleCh": "水果",
+          "sentences": [
+            {
+              "id": "2-6-4-1",
+              "order": 1,
+              "indigenousText": "Sowalen ari, o maamaan a swey-kwo-an ko iraay itini i Taywan?",
+              "chineseText": "說說看，台灣有哪些水果？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/b4726372cb82d1a08e8e6991e4c925dd.wav"
+            },
+            {
+              "id": "2-6-4-2",
+              "order": 2,
+              "indigenousText": "Ira ko kiyafes, o moka^, o pawli^, ato masamaamaanay.",
+              "chineseText": "有芭樂、木瓜和香蕉，還有很多很多。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/df4b93c2d656826f17726cae4ea2b80c.wav"
+            },
+            {
+              "id": "2-6-4-3",
+              "order": 3,
+              "indigenousText": "Maen to swey-kwo kiso to romi’ami’ad hay?",
+              "chineseText": "你每天吃水果？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/f19fe9cb6b101ea8436b3c293824e7bb.wav"
+            },
+            {
+              "id": "2-6-4-4",
+              "order": 4,
+              "indigenousText": "Caay, cakahacowa^ ka maen ako to swey-kwo.",
+              "chineseText": "不，我很少吃水果。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/7f4bded4c34ac30a71c34c68f76ce698.wav"
+            },
+            {
+              "id": "2-6-4-5",
+              "order": 5,
+              "indigenousText": "Adihayen ka maen ta ci’icel.",
+              "chineseText": "多吃水果，（身體）才有力量。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/bc408bc52012f23e9a5ed876a034684c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "O losay",
+          "titleCh": "果樹",
+          "sentences": [
+            {
+              "id": "2-6-5-1",
+              "order": 1,
+              "indigenousText": "Ira ko losay no loma’ no namo haw?",
+              "chineseText": "你們家有果樹嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/f3d3aecaa5193ede206b28ed3019b346.wav"
+            },
+            {
+              "id": "2-6-5-2",
+              "order": 2,
+              "indigenousText": "Ira to, ira ko kyafes i ’a’ayaw no loma’ niyam, ira ko ’alopal i saikoran no loma’ niyam.",
+              "chineseText": "有啊，我們家前面有芭樂，後面有柿子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/4a216d5f7a17ad06ae62b48720fc5d08.wav"
+            },
+            {
+              "id": "2-6-5-3",
+              "order": 3,
+              "indigenousText": "Ciheci^ to mihecahecaan kora a losay haw?",
+              "chineseText": "那些果樹每年結果實嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/4903e7370a0af5f1f5dc71432420a0b0.wav"
+            },
+            {
+              "id": "2-6-5-4",
+              "order": 4,
+              "indigenousText": "Hay, mararid a macidal, saka malofic ko heci^.",
+              "chineseText": "是的，因為陽光充足，所以結很多果實。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/c92b27a43e83fea05177161c82bd8074.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Pin-syang",
+          "titleCh": "冰箱",
+          "sentences": [
+            {
+              "id": "2-6-6-1",
+              "order": 1,
+              "indigenousText": "Ira i pin-syang ko sinar hay?",
+              "chineseText": "冰箱裡有西瓜嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/cabb0e16d0f1ef67cc88f42e20507d9d.wav"
+            },
+            {
+              "id": "2-6-6-2",
+              "order": 2,
+              "indigenousText": "Hay, o nicakayan ni mama^ inacila^.",
+              "chineseText": "有，爸爸昨天買的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/566128a748b104c6336e5314d8247bce.wav"
+            },
+            {
+              "id": "2-6-6-3",
+              "order": 3,
+              "indigenousText": "Tadafaedet ko romi’ad, kaenaw ita!",
+              "chineseText": "天氣很熱，我們吃吧！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/c2de7568275ba6100924eedea2ecff18.wav"
+            },
+            {
+              "id": "2-6-6-4",
+              "order": 4,
+              "indigenousText": "Dada, kaenen!",
+              "chineseText": "來吧，吃呀！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/f626fc8de677641cd1dfece2b315511e.wav"
+            },
+            {
+              "id": "2-6-6-5",
+              "order": 5,
+              "indigenousText": "Pacilahen to mamang ta kaeso’ a kaenen.",
+              "chineseText": "加一點鹽才好吃。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/1a92f48e8efef190de021c0e8b2d87d0.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Ngohed",
+          "titleCh": "蛀牙",
+          "sentences": [
+            {
+              "id": "2-6-7-1",
+              "order": 1,
+              "indigenousText": "Singsi^, adada^ ko wadis ako.",
+              "chineseText": "老師，我牙齒痛。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/8f8f83df5b61ca54617d3e5d39cca071.wav"
+            },
+            {
+              "id": "2-6-7-2",
+              "order": 2,
+              "indigenousText": "Tadaadihay ko nikaenan iso to piyang haw?",
+              "chineseText": "你是不是吃太多糖果了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/f23ea9c7ef7cd02441ae6c4fa3c61272.wav"
+            },
+            {
+              "id": "2-6-7-3",
+              "order": 3,
+              "indigenousText": "Ano tadaadihay ko nikaenan to piyang i, mangohed ko wadis.",
+              "chineseText": "如果糖果吃太多，就會蛀牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/20/0af0ea3220be6115490c5775aca91482.wav"
+            },
+            {
+              "id": "2-6-7-4",
+              "order": 4,
+              "indigenousText": "Maanen ako matiya?",
+              "chineseText": "我該怎麼辦？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/05/12/b31241fd43e677c4d0ec7253353a506f.wav"
+            },
+            {
+              "id": "2-6-7-5",
+              "order": 5,
+              "indigenousText": "Kalamkamen a paising.",
+              "chineseText": "趕快去給醫生看。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/b5faae95a25a1eab15c94079472b4fc4.wav"
+            },
+            {
+              "id": "2-6-7-6",
+              "order": 6,
+              "indigenousText": "Aka to kahalikaen to piyang, kalalok a miforac to wadis.",
+              "chineseText": "不要再貪吃糖果，多刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/1c69848842b44b3867ae2943acd72b71.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "O nikahemek",
+          "titleCh": "稱讚",
+          "sentences": [
+            {
+              "id": "2-6-8-1",
+              "order": 1,
+              "indigenousText": "Faecalay a wawa^ saan ko singsi^ a mahemek i takowanan.",
+              "chineseText": "老師稱讚我是一個很乖的小孩。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/c4c0c97452e36e9f674b1530fdf3e652.wav"
+            },
+            {
+              "id": "2-6-8-2",
+              "order": 2,
+              "indigenousText": "Nawhani, monanaw kako to kamay i ’ayaw no tahka^.",
+              "chineseText": "因為，我在吃飯前會洗手。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/6974f92daa54f9605cc598e5ced2c2f8.wav"
+            },
+            {
+              "id": "2-6-8-3",
+              "order": 3,
+              "indigenousText": "’Eminen ako a maen ko kakaenen i kaysing.",
+              "chineseText": "我把碗裡的飯菜吃完。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/bb36430f3887cb5474a679a90422f93e.wav"
+            },
+            {
+              "id": "2-6-8-4",
+              "order": 4,
+              "indigenousText": "Ikor no tahka^ i, miforac kako to wadis.",
+              "chineseText": "吃飯之後，我會刷牙。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/83e0a2add498a6f6d0964142fc3f3039.wav"
+            },
+            {
+              "id": "2-6-8-5",
+              "order": 5,
+              "indigenousText": "Mafana’ haca^ kako a mipadang misawsaw to kaysing, to tapila’ ato ’alapit.",
+              "chineseText": "我還會幫忙洗碗盤和筷子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/2179ebb5f9eaa7c8c901ca6868441dd5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "O Lahok",
+          "titleCh": "午餐",
+          "sentences": [
+            {
+              "id": "2-6-9-1",
+              "order": 1,
+              "indigenousText": "Ira ko titi^ no ’ayam, o fita’ol, o kalitang ato lokot i sakalahok no niyam anini^.",
+              "chineseText": "今天的午餐有雞肉、蛋、四季豆，還有山蘇。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/3f278e168fa8aac966f21f25454dc21e.wav"
+            },
+            {
+              "id": "2-6-9-2",
+              "order": 2,
+              "indigenousText": "O sakalahok namo i picodadan koni hay?",
+              "chineseText": "這些是學校的營養午餐嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/06/23/7c6c9d8d3e514498eeeb5502dc72f330.wav"
+            },
+            {
+              "id": "2-6-9-3",
+              "order": 3,
+              "indigenousText": "Hay, o nipatalaan no picodadan.",
+              "chineseText": "是的，這些是學校（為我們）準備的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/6d4c3ce0f6454b7bcd940675b4127d75.wav"
+            },
+            {
+              "id": "2-6-9-4",
+              "order": 4,
+              "indigenousText": "Mafecol kamo?",
+              "chineseText": "你們吃得飽嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2018/03/20/5a66529d7487dbb32426fb6d193c4536.wav"
+            },
+            {
+              "id": "2-6-9-5",
+              "order": 5,
+              "indigenousText": "Hay, ka^so’ ko lahok niyam.",
+              "chineseText": "是的，我們吃得很豐盛。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/f7b8c3861592301d450593358ee5a70e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Matolo’",
+          "titleCh": "跌倒",
+          "sentences": [
+            {
+              "id": "2-6-10-1",
+              "order": 1,
+              "indigenousText": "Yo misalama^ kako i dafak, matolo’ kako.",
+              "chineseText": "今天早上，我在玩耍的時候跌倒了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/d02b490e4bd2efa273eedc8c29270753.wav"
+            },
+            {
+              "id": "2-6-10-2",
+              "order": 2,
+              "indigenousText": "Madoka^ maremes ko tosor ako.",
+              "chineseText": "我的膝蓋受傷、流血。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/4f0051b4277338ef8a0dc0753e2e925b.wav"
+            },
+            {
+              "id": "2-6-10-3",
+              "order": 3,
+              "indigenousText": "Sipasip han no singsi^ to sapaiyo^ ta tafoen nira koya doka^ ako.",
+              "chineseText": "老師替我擦藥然後把傷口包紮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/f8957557d9168c2a8208772e6e9c2512.wav"
+            },
+            {
+              "id": "2-6-10-4",
+              "order": 4,
+              "indigenousText": "Talacowa^, mapilih ko rakat no mako imatini,",
+              "chineseText": "雖然，我現在走路一跛一跛的，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/b3ed87718d4b10b3b3f55c12394c60d2.wav"
+            },
+            {
+              "id": "2-6-10-5",
+              "order": 5,
+              "indigenousText": "kirami, o mamaadah kako anoci:la^.",
+              "chineseText": "不過，幾天後我就會康復。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/f45ca58c03193f8c3a6365586c555795.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 7,
+      "label": "第七階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Micakay",
+          "titleCh": "購物",
+          "sentences": [
+            {
+              "id": "2-7-1-1",
+              "order": 1,
+              "indigenousText": "O maan ko cakayen iso, wawa^?",
+              "chineseText": "小朋友，你要買什麼？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/232e027af07d813864d0b5737bfb5625.wav"
+            },
+            {
+              "id": "2-7-1-2",
+              "order": 2,
+              "indigenousText": "Tawki^, micakay kako to impic ato ciwming.",
+              "chineseText": "老闆，我要買鉛筆和筆記本。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/6102cfdee488cb1bfd9493d4d1db0fbb.wav"
+            },
+            {
+              "id": "2-7-1-3",
+              "order": 3,
+              "indigenousText": "Pinaen iso ko picakay?",
+              "chineseText": "你要買多少？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/c6503b9272c0851e9ea0488c14b830e3.wav"
+            },
+            {
+              "id": "2-7-1-4",
+              "order": 4,
+              "indigenousText": "Cecay ko impic, cecay ko ciwming.",
+              "chineseText": "鉛筆一枝，筆記本一本。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/d5950d82738d553d2d7f918c6521b93b.wav"
+            },
+            {
+              "id": "2-7-1-5",
+              "order": 5,
+              "indigenousText": "Lima^ pida^ ko impic, siwa^ pida^ ko ciwming.",
+              "chineseText": "鉛筆一枝五元，筆記本一本九元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/4267a5e1bffcecd932d7c12462d70985.wav"
+            },
+            {
+              "id": "2-7-1-6",
+              "order": 6,
+              "indigenousText": "Lima^ patongal han to siwa^ i, safaw sepat to ko pida^ a mapolong.",
+              "chineseText": "五加九共十四元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/54f3b4d770dc3fcdbb4e000eef89344e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "Mifalic to pida^",
+          "titleCh": "換錢",
+          "sentences": [
+            {
+              "id": "2-7-2-1",
+              "order": 1,
+              "indigenousText": "Tawki^, cecay li’an ko pida^ ako. Mangalay kako a mifalic.",
+              "chineseText": "老闆，我有一百元。我想要換錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/46ecc25a126b7731d697b654d5db664a.wav"
+            },
+            {
+              "id": "2-7-2-2",
+              "order": 2,
+              "indigenousText": "Maanen iso ko pifalic?",
+              "chineseText": "你要怎麼換？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/e3d29fcb541bf6a736b880864709ce34.wav"
+            },
+            {
+              "id": "2-7-2-3",
+              "order": 3,
+              "indigenousText": "Mangalay kako to mo^tep no mo^tepay a pida^.",
+              "chineseText": "我想要換十個十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/dea4c0fa64371097b775750a40b4a060.wav"
+            },
+            {
+              "id": "2-7-2-4",
+              "order": 4,
+              "indigenousText": "Nga’ay to. Mo^tep, tosa^ polo’, tolo^ polo’, sepat polo’, lima^ polo’, enem polo’, pito^ polo’, falo^ polo’, siwa^ polo’. Aya! Caay kaedeng. Si:wa^ polo’ kina pida^ kini.",
+              "chineseText": "好。十、二十、三十、四十、五十、六十、七十、八十、九十。哎呀！不夠，只有九十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/512874acda484258618727837f21fa0c.wav"
+            },
+            {
+              "id": "2-7-2-5",
+              "order": 5,
+              "indigenousText": "Pafelien haca kako to tosa^ no limaay a pida^ i, manga’a:y to.",
+              "chineseText": "你再給我兩個五元的也可以。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/c607a8c6a56fef6b483e1cafd18fb7c4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Mi’anang to payso^",
+          "titleCh": "存錢",
+          "sentences": [
+            {
+              "id": "2-7-3-1",
+              "order": 1,
+              "indigenousText": "Pafelien ni ina^ kako to lima^ polo’ a payso^ to pi:lipalipayan.",
+              "chineseText": "媽媽每星期給我五十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/28c6265a498f9172f0390ab8c6a7aab0.wav"
+            },
+            {
+              "id": "2-7-3-2",
+              "order": 2,
+              "indigenousText": "’Anangen ako ko tosa^ polo’ a payso^.",
+              "chineseText": "我就存二十元。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/55699f7186c8e2a933c2f46b2adf7e4e.wav"
+            },
+            {
+              "id": "2-7-3-3",
+              "order": 3,
+              "indigenousText": "O aadihay ko payso^ ako ano mato’as kako.",
+              "chineseText": "我長大之後，就會有很多錢。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/8f2138006babca55d2f2bc5273b819a9.wav"
+            },
+            {
+              "id": "2-7-3-4",
+              "order": 4,
+              "indigenousText": "Nawhani, o sowal no singsi, “Sopeden ko mamama:mang, ta malaadihayay.” saan.",
+              "chineseText": "老師常說：「積少成多」。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/2d2df73d91db432d5b79d89cdc9493b9.wav"
+            },
+            {
+              "id": "2-7-3-5",
+              "order": 5,
+              "indigenousText": "So’elinay kina sowal.",
+              "chineseText": "這句話是真的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/da970053a0c6f6b187befd89fb1178bb.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "O toki^",
+          "titleCh": "時鐘",
+          "sentences": [
+            {
+              "id": "2-7-4-1",
+              "order": 1,
+              "indigenousText": "Tosa^ ko rinom no toki^.",
+              "chineseText": "時鐘有兩支針。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/013479aee8eacd6c97c04d0ba817a526.wav"
+            },
+            {
+              "id": "2-7-4-2",
+              "order": 2,
+              "indigenousText": "O karaya’ay ato papoyo’ay.",
+              "chineseText": "一支長，一支短。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/cebba37b0f18b3328e247bfc9782ba63.wav"
+            },
+            {
+              "id": "2-7-4-3",
+              "order": 3,
+              "indigenousText": "Tahenay ko rakat no karaya’ay, cecay a romi’ad kina tosa^ polo’ ira ko sepat a misaliyok.",
+              "chineseText": "長針走得快，一天走二十四圈。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/50a0ed34379eed2fdb6e69245eba9289.wav"
+            },
+            {
+              "id": "2-7-4-4",
+              "order": 4,
+              "indigenousText": "Mana’on ko rakat no papoyo’ay, cecay a romi’ad kina tosa^ a misaliyok.",
+              "chineseText": "短針走得慢，一天走兩圈。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/3b6cdffabed9d55f6259f664de2c3e0b.wav"
+            },
+            {
+              "id": "2-7-4-5",
+              "order": 5,
+              "indigenousText": "Nano dafak tangasa^ to dadaya^, caay kamoko^.",
+              "chineseText": "從早上到晚上，不停地走。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/50a79ce0f032f102e5a4868cc7074165.wav"
+            },
+            {
+              "id": "2-7-4-6",
+              "order": 6,
+              "indigenousText": "Kalimela^ to romi’ad matiya o saanay i titaanan.",
+              "chineseText": "好像在告訴我們要愛惜時間。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/96771e281ea1a35a8cb68cbcf8b8ebab.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Mido^do to toki^",
+          "titleCh": "準時",
+          "sentences": [
+            {
+              "id": "2-7-5-1",
+              "order": 1,
+              "indigenousText": "Pafeli^ ci mama^ ako to faelohay a toki^ i takowanan.",
+              "chineseText": "爸爸給我新手錶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/da77c7bc5e5bdeeb99991fcc3f39034a.wav"
+            },
+            {
+              "id": "2-7-5-2",
+              "order": 2,
+              "indigenousText": "Satokien ako to romi’ami’ad.",
+              "chineseText": "我每天戴著手錶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/c198247f9826dc0767779369847de549.wav"
+            },
+            {
+              "id": "2-7-5-3",
+              "order": 3,
+              "indigenousText": "Tik-tak tik-tak saan ko soni^ nira.",
+              "chineseText": "它發出滴答滴答的聲音。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/7fbd4b5729e4d2753a43c62a6093c886.wav"
+            },
+            {
+              "id": "2-7-5-4",
+              "order": 4,
+              "indigenousText": "Ano talapicodadan to, ano taloma’ to,",
+              "chineseText": "不論上學還是回家，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/2135415f1d5fa89a0f788c4beb9fc7b7.wav"
+            },
+            {
+              "id": "2-7-5-5",
+              "order": 5,
+              "indigenousText": "mato mipalalay i takowanan a papido^do^ to rakat no romi’ad.",
+              "chineseText": "好像在提醒我要依時作息。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/d76e604ccc3bd616cdd0430a16a95ff3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "O tayal no ina^ to cecay a romi’ad",
+          "titleCh": "媽媽一天的工作",
+          "sentences": [
+            {
+              "id": "2-7-6-1",
+              "order": 1,
+              "indigenousText": "Enemay ko toki^ to dafak, palalen ni ina^ kako.",
+              "chineseText": "早上六點鐘，媽媽叫我起床。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/d3abbb95dde5f031481671b994453d9a.wav"
+            },
+            {
+              "id": "2-7-6-2",
+              "order": 2,
+              "indigenousText": "Marawod to ko kalahokan i, misakalahok ciira.",
+              "chineseText": "到了中午，她做午餐。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/babf201644edf4016ad73ab98a19e37c.wav"
+            },
+            {
+              "id": "2-7-6-3",
+              "order": 3,
+              "indigenousText": "Herek no lahok toloay ko toki^, tayra ciira ci fayian a mitenoon.",
+              "chineseText": "下午三點，媽媽到姨媽家去編織。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/ec13a610463f63d9e8d41b214a14a78c.wav"
+            },
+            {
+              "id": "2-7-6-4",
+              "order": 4,
+              "indigenousText": "Terong to no lafii^ i, matayal ho ciira.",
+              "chineseText": "夜深了，她還在做工作。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/f60843561c2affda0adddcc6bec2ecc7.wav"
+            },
+            {
+              "id": "2-7-6-5",
+              "order": 5,
+              "indigenousText": "Nano dafak tangasa^ to lafii^, caay ho pasa^sa’ ciira.",
+              "chineseText": "從早上到晚上，她還沒休息。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/02d5504b9429a7aef91cd410681557d5.wav"
+            },
+            {
+              "id": "2-7-6-6",
+              "order": 6,
+              "indigenousText": "Tadamaroray ci ina^.",
+              "chineseText": "媽媽真辛苦。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/1b965d086f61842493e6f3db168b78c7.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Masiday ko cecay a siri^",
+          "titleCh": "遺失了一隻羊",
+          "sentences": [
+            {
+              "id": "2-7-7-1",
+              "order": 1,
+              "indigenousText": "Mamo^tep ko siri^ ni Kolas.",
+              "chineseText": "Kolas有十隻羊。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/5df47a40759c1517807d8a683d85e5d3.wav"
+            },
+            {
+              "id": "2-7-7-2",
+              "order": 2,
+              "indigenousText": "Saromi’ad saan ciira a pahoting.",
+              "chineseText": "他每天放羊吃草。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/ad7f386c685dbba2b7ec23b967789154.wav"
+            },
+            {
+              "id": "2-7-7-3",
+              "order": 3,
+              "indigenousText": "Sa’osien, ano ira: ko masidayay?",
+              "chineseText": "數一數，有沒有遺失的？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/ff605e0da973c5dfc9fc39016749a96e.wav"
+            },
+            {
+              "id": "2-7-7-4",
+              "order": 4,
+              "indigenousText": "Cecay, tosa^, tolo^, sepat, lima^, enem, pito^, falo^, siwa^, masiday ko cecay.",
+              "chineseText": "一、二、三、四、五、六、七、八、九，少了一隻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/69d69f6a8a38b33bb042f1945e507d50.wav"
+            },
+            {
+              "id": "2-7-7-5",
+              "order": 5,
+              "indigenousText": "Kanarikay a mikilim, ano icowa:ay to?",
+              "chineseText": "趕快去找，不知到哪去了？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/9a305835376a99eec0cc8c8a26833612.wav"
+            },
+            {
+              "id": "2-7-7-6",
+              "order": 6,
+              "indigenousText": "Matepa^ to. Hilam itira: i rarikor no ’ongcoy a milimek.",
+              "chineseText": "找到了！原來躲在大石頭的後面。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/3f726ba018a67ec88a64e8bde9447b70.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "O ’oner",
+          "titleCh": "蛇",
+          "sentences": [
+            {
+              "id": "2-7-8-1",
+              "order": 1,
+              "indigenousText": "Maolah ko ’oner a masadak to dadaya^.",
+              "chineseText": "蛇喜歡在晚上出現。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/cbd281fabc4b9491cbe852b55e2c2cf1.wav"
+            },
+            {
+              "id": "2-7-8-2",
+              "order": 2,
+              "indigenousText": "Maolah milimek ciira i so^metay ato i fokelokelohan.",
+              "chineseText": "牠喜歡躲在潮濕的地方和石頭堆裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/aa9c4dfdc9f88f8f29569e0d8ea12a99.wav"
+            },
+            {
+              "id": "2-7-8-3",
+              "order": 3,
+              "indigenousText": "Ano tomowa’ ho ko ngapa^ nira i, caay to kacaloway a milaliw ko ’edo ato takola^.",
+              "chineseText": "只要張開嘴，老鼠和青蛙都很難逃開。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/cc6cb24751bdacf3ce88d620b092a74a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "’Adipapang",
+          "titleCh": "蝴蝶",
+          "sentences": [
+            {
+              "id": "2-7-9-1",
+              "order": 1,
+              "indigenousText": "Salo:ngan a nenengen ko ’adipapang.",
+              "chineseText": "蝴蝶看起來真美麗。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/2e53df5d9b6ca5c1ebac9a65b639462c.wav"
+            },
+            {
+              "id": "2-7-9-2",
+              "order": 2,
+              "indigenousText": "Sa’ayaw i, o lalipana’ ho^ ciira.",
+              "chineseText": "原初，牠還是一隻毛毛蟲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/54544a0aebae2ee3fd3b2415e3dd411b.wav"
+            },
+            {
+              "id": "2-7-9-3",
+              "order": 3,
+              "indigenousText": "Anini^ i, cifodoy to ciira to cisapikpikay.",
+              "chineseText": "現在，牠穿著美麗的翼衣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/b2efcbbfe9f656c3159e7566ae57f66f.wav"
+            },
+            {
+              "id": "2-7-9-4",
+              "order": 4,
+              "indigenousText": "I hanahanaan to ciira a misaefeefer.",
+              "chineseText": "牠在花叢裡飛來飛去。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/e09f659eec93dd0fc293cc099eeca52e.wav"
+            },
+            {
+              "id": "2-7-9-5",
+              "order": 5,
+              "indigenousText": "Na’onen! Tahaco^coa i ’arifateng.",
+              "chineseText": "小心！別掉進蜘蛛網裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/55dfb730ca777993744095f36aca6199.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Nawiro kahengang ko para’ no lotong?",
+          "titleCh": "猴子的屁股為什麼是紅色的？",
+          "sentences": [
+            {
+              "id": "2-7-10-1",
+              "order": 1,
+              "indigenousText": "Iti:ya ho, samsamen no lotong ko ’alem.",
+              "chineseText": "從前，猴子欺負穿山甲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/9a42577abfbda3ca8a26478a6fca6b4b.wav"
+            },
+            {
+              "id": "2-7-10-2",
+              "order": 2,
+              "indigenousText": "Sapipasadakan ciira toya ’alem, saka palamalen niira koya feso’.",
+              "chineseText": "牠想要逼穿山甲出來，就放火燒那洞穴。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/bb834f7bc164e6a755df59d7a7b620c1.wav"
+            },
+            {
+              "id": "2-7-10-3",
+              "order": 3,
+              "indigenousText": "Caay ka hiratera:teng, tata’ang tata:’ang to aca koya lamal.",
+              "chineseText": "沒想到，火卻越燒越大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/d4ce3e61875266319ff6535bd5235a23.wav"
+            },
+            {
+              "id": "2-7-10-4",
+              "order": 4,
+              "indigenousText": "Matodoh ko para’ no tireng.",
+              "chineseText": "牠自己的屁股被燒。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/cf662b8352d8746d26a7dd3120fae455.wav"
+            },
+            {
+              "id": "2-7-10-5",
+              "order": 5,
+              "indigenousText": "Nanitiya, malakahengangay to ko para’ no lotong.",
+              "chineseText": "從那時候，猴子的屁股就變成紅色了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/04/28/b731fa1ca56a6dd3bf404ebf4e82178f.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 8,
+      "label": "第八階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Mafana’ kako a somowal to sowal no Pangcah",
+          "titleCh": "我會講阿美族話",
+          "sentences": [
+            {
+              "id": "2-8-1-1",
+              "order": 1,
+              "indigenousText": "Mafana’ kiso a somowal to sowal no Pangcah haw?",
+              "chineseText": "你會講阿美族話嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/9ecdbd5e9f2e313909a95c4681331c9b.wav"
+            },
+            {
+              "id": "2-8-1-2",
+              "order": 2,
+              "indigenousText": "Pangta^ ko nikafana’an ako, minanamay ho^ kako.",
+              "chineseText": "會一點點，我正在學習。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/5db9a262c87937aafce70d9432f137f0.wav"
+            },
+            {
+              "id": "2-8-1-3",
+              "order": 3,
+              "indigenousText": "Icowa^ kiso a minanam to sowal no Pangcah?",
+              "chineseText": "你在哪裡學阿美族話？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/eac8aa3521092c52f4dff4128b63f78e.wav"
+            },
+            {
+              "id": "2-8-1-4",
+              "order": 4,
+              "indigenousText": "I picodadan kako a minanam.",
+              "chineseText": "我在學校學。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/ca6011d670e2f81372c802c0c015483f.wav"
+            },
+            {
+              "id": "2-8-1-5",
+              "order": 5,
+              "indigenousText": "Rahoday a nanamen ko sowal no Pangcah haw?",
+              "chineseText": "阿美族話好學嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/59df57ac27b2f5beee8c64eb1987a9de.wav"
+            },
+            {
+              "id": "2-8-1-6",
+              "order": 6,
+              "indigenousText": "Hay! Kakalipahakan ko pinanam.",
+              "chineseText": "是！很有趣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/e3aa93b517d2430ad42e5b7b10aadad4.wav"
+            },
+            {
+              "id": "2-8-1-7",
+              "order": 7,
+              "indigenousText": "Fa:ngcal ko pisanoPangcah no miso.",
+              "chineseText": "你說的阿美族語很流利。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/ec8fb101242a492944b3f8415868f5a3.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "O Pangcah kami",
+          "titleCh": "我們是阿美族",
+          "sentences": [
+            {
+              "id": "2-8-2-1",
+              "order": 1,
+              "indigenousText": "O Yin-cu-min kamo haw?",
+              "chineseText": "你們是原住民嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/d2c73027050f2c6ca10ca8e335b8fdb2.wav"
+            },
+            {
+              "id": "2-8-2-2",
+              "order": 2,
+              "indigenousText": "Hay, o Yin-cu-min kami.",
+              "chineseText": "是的，我們是原住民。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/81573594badad290aa80e86b55dbe074.wav"
+            },
+            {
+              "id": "2-8-2-3",
+              "order": 3,
+              "indigenousText": "O Pariwan kamo haw?",
+              "chineseText": "你們是排灣族嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/8324f4c513e419eaa16ede8b5143e5dc.wav"
+            },
+            {
+              "id": "2-8-2-4",
+              "order": 4,
+              "indigenousText": "Caay, o Pangcah kami.",
+              "chineseText": "不是，我們是阿美族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/4c635b6b5f31bc1fbdbebf1c1ef169ff.wav"
+            },
+            {
+              "id": "2-8-2-5",
+              "order": 5,
+              "indigenousText": "O Pangcah ko sa’alomanay i niyaro’ niyam.",
+              "chineseText": "我們村子裡的人大多是阿美族。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/f84cfd1c7765e34237c7f6fafe583829.wav"
+            },
+            {
+              "id": "2-8-2-6",
+              "order": 6,
+              "indigenousText": "Malopisak i sawalian ato i teloc no Taywan ko Pangcah.",
+              "chineseText": "我們阿美族分佈在台灣的東部和尾部（南部）。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/8ffce9d2e733d6e3ec361268535431d4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "Pakongko^",
+          "titleCh": "講故事",
+          "sentences": [
+            {
+              "id": "2-8-3-1",
+              "order": 1,
+              "indigenousText": "Mafana’ ci akong a pakongko^.",
+              "chineseText": "阿公很會講故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/937593de3371a749a4c3201575c6d215.wav"
+            },
+            {
+              "id": "2-8-3-2",
+              "order": 2,
+              "indigenousText": "Mararid kako a maro’ i lidong no kilang a mitengil to pipakongko^ ni akong.",
+              "chineseText": "我常常坐在樹下，聽阿公講故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/453bf2e2a2bd3753f3f492076b9e1b2e.wav"
+            },
+            {
+              "id": "2-8-3-3",
+              "order": 3,
+              "indigenousText": "Mafa:na’ cingra a pakongko^ to kakaolahan a mitengil.",
+              "chineseText": "他很會說好聽的故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/5323fde479657c0c82801be4f792cf7c.wav"
+            },
+            {
+              "id": "2-8-3-4",
+              "order": 4,
+              "indigenousText": "Ano o masamaamaanay to a kongko^ i, maolah kako a mitengil.",
+              "chineseText": "各類的故事，我都喜歡聽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/0d5250636d071b9188a795ffff04a3d1.wav"
+            },
+            {
+              "id": "2-8-3-5",
+              "order": 5,
+              "indigenousText": "Soloten ako to lu-ku-ong-ki ko nipakongkoan ni akong.",
+              "chineseText": "我用錄音機錄下阿公講的故事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/5010ae8c0c13a8c2193578c0aca1cafd.wav"
+            },
+            {
+              "id": "2-8-3-6",
+              "order": 6,
+              "indigenousText": "Mapolong a mitengil kami o malakapotay a micodad.",
+              "chineseText": "我們同學就一起聽。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/fbab51bb97f83910634e650ccc6c416c.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "Micodad",
+          "titleCh": "讀書",
+          "sentences": [
+            {
+              "id": "2-8-4-1",
+              "order": 1,
+              "indigenousText": "Cima^ ko mikingkiway to dingwa^?",
+              "chineseText": "誰發明了電話？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/280db7bd7a9ec43ab5415f108fb80f42.wav"
+            },
+            {
+              "id": "2-8-4-2",
+              "order": 2,
+              "indigenousText": "Icowa^ ko satakara:way a loma’?",
+              "chineseText": "最高的大樓在哪裡？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/7b7d5e9af2efaecb1fd39ca39077d83c.wav"
+            },
+            {
+              "id": "2-8-4-3",
+              "order": 3,
+              "indigenousText": "O maan ko sakahanhan no foting?",
+              "chineseText": "魚用什麼呼吸？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/331b98bd20f2b0d6dad884181e2c4e1c.wav"
+            },
+            {
+              "id": "2-8-4-4",
+              "order": 4,
+              "indigenousText": "Enaw mafotili’ ko kakarayan?",
+              "chineseText": "天空為什麼會打雷？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/05b8f419c44352a89b10f4727d580b4a.wav"
+            },
+            {
+              "id": "2-8-4-5",
+              "order": 5,
+              "indigenousText": "Icowa^ mikilim to ca’of?",
+              "chineseText": "答案在哪裡可以找到？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/0a74fd1fe1fa5238266bd9a2a86cf2ee.wav"
+            },
+            {
+              "id": "2-8-4-6",
+              "order": 6,
+              "indigenousText": "I codad. Malalok a micodad i, matongal ko fana’ no mita.",
+              "chineseText": "在書裡。勤讀書可以讓我們增加知識。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/b0e84117617d8aa0e202b42a114700e2.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "Micaliw to codad",
+          "titleCh": "借書",
+          "sentences": [
+            {
+              "id": "2-8-5-1",
+              "order": 1,
+              "indigenousText": "Namiasip to kiso tina “Ilisin no ’Amis” sanay a codad haw?",
+              "chineseText": "你讀過《阿美族豐年祭》這本書嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/b0c0d6b32e977a7a2688f553795dd498.wav"
+            },
+            {
+              "id": "2-8-5-2",
+              "order": 2,
+              "indigenousText": "Namiasip to kako. Kakahemekan kina codad.",
+              "chineseText": "我讀過，這本書很棒。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/95c9fce55a3fbe0d137ed8eb8fb2c62f.wav"
+            },
+            {
+              "id": "2-8-5-3",
+              "order": 3,
+              "indigenousText": "Manga’ay caliwen ako kora codad haw?",
+              "chineseText": "那本書我可以向你借嗎？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/06f57cfe020a25a33ba212ca33efac5c.wav"
+            },
+            {
+              "id": "2-8-5-4",
+              "order": 4,
+              "indigenousText": "Awaay ko no mako, nika ira ko ni Panay. Tanamay ako a somowal cingra.",
+              "chineseText": "我沒有，但是Panay有。我試試幫你向她傳話。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/749912e4358afa52de044f406dd6ec4c.wav"
+            },
+            {
+              "id": "2-8-5-5",
+              "order": 5,
+              "indigenousText": "Ano ira i, patorod hato kako haw. Aray!",
+              "chineseText": "如果有的話，就請你交給我。謝謝！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/394e995de13df6d81511a7d33223e279.wav"
+            },
+            {
+              "id": "2-8-5-6",
+              "order": 6,
+              "indigenousText": "Hay! Ano maherek kiso a miasip, kanca^ panokas hato i ci Panayan.",
+              "chineseText": "好的，如果你讀完了，務必親自還給Panay。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/c53e4ff07f3537dbac4f06c395499ccc.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "Micakay to codad",
+          "titleCh": "買書",
+          "sentences": [
+            {
+              "id": "2-8-6-1",
+              "order": 1,
+              "indigenousText": "Malahakelong kako ato kapot a tayra i picakayan to codad inacila^.",
+              "chineseText": "昨天我和同學一起到書店去。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/fb996cc0750be3b82d7415ab3e8b2671.wav"
+            },
+            {
+              "id": "2-8-6-2",
+              "order": 2,
+              "indigenousText": "Mangalay kami a micakay to ci-ting ato no kongko^ a codad.",
+              "chineseText": "我們都想買字典和故事書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/0035b4a62f49d5fd7c7a493c9e65c37a.wav"
+            },
+            {
+              "id": "2-8-6-3",
+              "order": 3,
+              "indigenousText": "Hilam han o malecaday aca^ ko nicakayan niyam a ci-ting.",
+              "chineseText": "結果我們兩人各買了一本相同的字典。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/601a70faba9c0f12329f915855e98c4a.wav"
+            },
+            {
+              "id": "2-8-6-4",
+              "order": 4,
+              "indigenousText": "Nikaorira, caay ka lecad ko nicakayan niyam to no kongko^ a codad.",
+              "chineseText": "但是，我們買的故事書卻不同。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/574e5065d769f7dc1ac67b4ce229bdf1.wav"
+            },
+            {
+              "id": "2-8-6-5",
+              "order": 5,
+              "indigenousText": "O ni An-tu-sen ko nicakayan niira, o ni I-sop ko nicakayan ako.",
+              "chineseText": "他買的是《安徒生童話》，我買的是《伊索寓言》。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/f2530e2d6bc9bfda4c2147df08f4357c.wav"
+            },
+            {
+              "id": "2-8-6-6",
+              "order": 6,
+              "indigenousText": "Talacowaan, caaca:ay ka lecad ko nicakayan niyam to codad, kirami lalecad saan ko ’aca^.",
+              "chineseText": "雖然買的書不同，但是價錢卻剛好相同。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/16/880457a97318de0c45ad66928cce8b15.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "Misorit to codad",
+          "titleCh": "寫字",
+          "sentences": [
+            {
+              "id": "2-8-7-1",
+              "order": 1,
+              "indigenousText": "Minanam kako a misorit to codad.",
+              "chineseText": "我在練習寫字。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/ac7934303c4c3e90e971c0780674ad88.wav"
+            },
+            {
+              "id": "2-8-7-2",
+              "order": 2,
+              "indigenousText": "Mangalay kako tahenay a mafana’.",
+              "chineseText": "我希望很快的學會。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/e2cd9297505e154311534abfb196de33.wav"
+            },
+            {
+              "id": "2-8-7-3",
+              "order": 3,
+              "indigenousText": "Ano mafana’ to kako a misorit i,",
+              "chineseText": "如果我學會書寫時，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/24c6657752a50f8023d8424a0d58d3e8.wav"
+            },
+            {
+              "id": "2-8-7-4",
+              "order": 4,
+              "indigenousText": "patikamien ako ko kaka^ ako.",
+              "chineseText": "我就寫信給我的哥哥。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/04/6587857c2c91121fe710d7c8b0078ac7.wav"
+            },
+            {
+              "id": "2-8-7-5",
+              "order": 5,
+              "indigenousText": "I Tay-pak ciira a matayal, tadamaoron kako i ciiraan.",
+              "chineseText": "他在台北工作，我很想念他。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/ba016982f39b8fa8c530bdef123c3bb5.wav"
+            },
+            {
+              "id": "2-8-7-6",
+              "order": 6,
+              "indigenousText": "Masamaanay to ko ’orip naira hakiya?",
+              "chineseText": "不知道他們的生活過得怎麼樣呢？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/3c4b9565adb745643e15653abb144b83.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Patikami^ ci kakaan",
+          "titleCh": "給表哥的一封信",
+          "sentences": [
+            {
+              "id": "2-8-8-1",
+              "order": 1,
+              "indigenousText": "Nga’ay ho^ ko miso kaka!",
+              "chineseText": "表哥，你好！",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/d8d8cd7cc65b4e06bf5ef0fc18b451c5.wav"
+            },
+            {
+              "id": "2-8-8-2",
+              "order": 2,
+              "indigenousText": "Lipahak ko faloco’ ako a pakalayap to tikami^ iso anini^.",
+              "chineseText": "今天接到你的信，我非常高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/868904430e9ef18de24917b8dfbf7b1c.wav"
+            },
+            {
+              "id": "2-8-8-3",
+              "order": 3,
+              "indigenousText": "Maolah kako toya toloay a codad, o nipafelian iso i takowanan i ’ayaw nonini a folad.",
+              "chineseText": "我都很喜歡你上個月送給我的三本書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/688f13e748ab06b82916f8c9536cb373.wav"
+            },
+            {
+              "id": "2-8-8-4",
+              "order": 4,
+              "indigenousText": "Mipi-yi to, mamalasingsi^ to kiso saan ko sowal a matengil.",
+              "chineseText": "聽說你畢業了，就要當老師了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/e412ceb00cd9b59cc3144f95a70429c9.wav"
+            },
+            {
+              "id": "2-8-8-5",
+              "order": 5,
+              "indigenousText": "O mamisa’icel kako a micodad.",
+              "chineseText": "我要努力讀書。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/d9264b68fa7817fde7fc53710cee4df3.wav"
+            },
+            {
+              "id": "2-8-8-6",
+              "order": 6,
+              "indigenousText": "Nanay matiya kiso, mamalafangcalay a singsi^ kako.",
+              "chineseText": "希望我像你一樣，將來做個優秀的老師。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/07/01/dd1fe7ba4e8dabcf0ef898e81efc9bf4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Re-ci^",
+          "titleCh": "日記",
+          "sentences": [
+            {
+              "id": "2-8-9-1",
+              "order": 1,
+              "indigenousText": "Micodad kako to re-ci^ to romi’ami’ad.",
+              "chineseText": "我每天寫日記。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/19f54c3193b7b00acce2f92b2f6c06b0.wav"
+            },
+            {
+              "id": "2-8-9-2",
+              "order": 2,
+              "indigenousText": "Codaden ako ko malitemohay a demak to romi’ami’ad.",
+              "chineseText": "我把每天發生的事記下來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/fcc43106561a83ef00183b168d79a9f1.wav"
+            },
+            {
+              "id": "2-8-9-3",
+              "order": 3,
+              "indigenousText": "Ano matira, manga’ay kako a minanam a misorit,",
+              "chineseText": "這樣不但可以練習寫字，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/5335af70c943164b215d86d6452c12e8.wav"
+            },
+            {
+              "id": "2-8-9-4",
+              "order": 4,
+              "indigenousText": "adihay ko mata’elifay to ako a demak i laloma’ no re-ci^.",
+              "chineseText": "日記裡有許多我過去的事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/d71bf001f672cb0ddb8d536946ddfba5.wav"
+            },
+            {
+              "id": "2-8-9-5",
+              "order": 5,
+              "indigenousText": "O hahadimelen ako a mi’anang.",
+              "chineseText": "我要好好地保存。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/f4fe05c4bfdfaa54ba68fb8123949ba5.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Yo-fing",
+          "titleCh": "郵差",
+          "sentences": [
+            {
+              "id": "2-8-10-1",
+              "order": 1,
+              "indigenousText": "Cifodoy to kandaway ko yo-fing.",
+              "chineseText": "郵差穿著綠色的衣服。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/5981a38ae1839c3e861ddedf66c683fe.wav"
+            },
+            {
+              "id": "2-8-10-2",
+              "order": 2,
+              "indigenousText": "Saromi’ami’ad saan a patangasa^ to tikami^ to pilomaloma’.",
+              "chineseText": "每天挨家挨戶替人們送信。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/bfd76b3d8985c6b9c23170e4ee4c677f.wav"
+            },
+            {
+              "id": "2-8-10-3",
+              "order": 3,
+              "indigenousText": "Ano ma’orad to, ano macidal to ko romi’ad i,",
+              "chineseText": "無論是晴天還是下雨，",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/b2ea9a26ff7272e31fc92bf6f0d4483d.wav"
+            },
+            {
+              "id": "2-8-10-4",
+              "order": 4,
+              "indigenousText": "hacecacecay han niira ko tikami^ a patangasa^ i pilomaloma’.",
+              "chineseText": "他把信一封一封送到各家各戶。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/0dbb7a99cb171eb1c922ae66597f54ec.wav"
+            },
+            {
+              "id": "2-8-10-5",
+              "order": 5,
+              "indigenousText": "Lipahak ko tamdaw a pakalayap to tikami^.",
+              "chineseText": "人們收到了信，都很高興。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/791bf68c291420b9b9cbd32086afef07.wav"
+            },
+            {
+              "id": "2-8-10-6",
+              "order": 6,
+              "indigenousText": "Raheker ko faloco’ noya yo-fing.",
+              "chineseText": "那郵差的心裡也感到很欣慰。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/19/04de93cbd04aa882279b89b6263931af.wav"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": 9,
+      "label": "第九階",
+      "group": "中高級",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "Mipafatis",
+          "titleCh": "分享",
+          "sentences": [
+            {
+              "id": "2-9-1-1",
+              "order": 1,
+              "indigenousText": "Ano citama’ ko Pangcah i, mipafatis to fiyaw.",
+              "chineseText": "如果阿美族族人去打獵有所捕獲，會把獵物分享給鄰居（親友）。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/5404e175cae182a4e6e2513b0551d487.wav"
+            },
+            {
+              "id": "2-9-1-2",
+              "order": 2,
+              "indigenousText": "Ano cilafang ko Pangcah to naniraayay i, pasadak ko i loma’ay to kaeso’ay a kakaenen.",
+              "chineseText": "如果阿美族有朋友自遠方來，家的主人會端出美食出來宴客。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/03818dcfcd8c4261365c213057918a21.wav"
+            },
+            {
+              "id": "2-9-1-3",
+              "order": 3,
+              "indigenousText": "I kailisinan sato i, nisatoron, mipacok to fafoy, ato pasadak to eraw.",
+              "chineseText": "在部落舉行祭典時，他們舂打粢粑，殺豬，以及擺出釀造的小米酒。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/ade8226d623e0a05b971859283922ab2.wav"
+            },
+            {
+              "id": "2-9-1-4",
+              "order": 4,
+              "indigenousText": "O rayray no tato’asan no Pangcah konini.",
+              "chineseText": "這是阿美族的傳統。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/0870941cc7c82deaddb188f99b6a4cc0.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "O sowal no mato’asay",
+          "titleCh": "老人的話",
+          "sentences": [
+            {
+              "id": "2-9-2-1",
+              "order": 1,
+              "indigenousText": "Sowal sa ko mato’asay, “Ano masoni^ ko rakorako^ i, o mama’orad; ano masoni^ ko fanol i, o mamacidal.” saan ko sowal.",
+              "chineseText": "老人常說：「樹蛙鳴必降雨，鴿子啼必天晴。」",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/06c4cb2410039c0716de96f3b439b4ff.wav"
+            },
+            {
+              "id": "2-9-2-2",
+              "order": 2,
+              "indigenousText": "O imi^ nonini a sowal i,",
+              "chineseText": "這句話的意思是：",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/730d7f3fe3723073a2e02ce25b1ff4bc.wav"
+            },
+            {
+              "id": "2-9-2-3",
+              "order": 3,
+              "indigenousText": "ano matengil ko nikasoni^ no rakorako^ to dadaya^ i, caay ka eca^ mama’orad to cila^.",
+              "chineseText": "如果夜裡聽見樹蛙叫的聲音，那麼隔天一定會下雨。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/63add6062498abdaac07d10df8472ce4.wav"
+            },
+            {
+              "id": "2-9-2-4",
+              "order": 4,
+              "indigenousText": "Ano tipokoy sa ko fanol to dafak i, caay ka eca^ fangcalay koya romi’ad.",
+              "chineseText": "如果早晨聽見鴿子的鳴啼聲，當天必定是好天氣。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/6eb55baf2231fd63200f8234aac52883.wav"
+            },
+            {
+              "id": "2-9-2-5",
+              "order": 5,
+              "indigenousText": "O manina’ay no to’as i ’orip nangra kora.",
+              "chineseText": "那是袓先他們經驗過的生活。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/e8787cdb5e64b8fd71ae1658ca6623ec.wav"
+            },
+            {
+              "id": "2-9-2-6",
+              "order": 6,
+              "indigenousText": "Latek ira: ko caayay kalaheci^, nikaorira, o so’elinay kora.",
+              "chineseText": "雖然不一定準確，不過那是事實。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/5471d7233ad44c5b9d211a3104ea3025.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "O tiftif",
+          "titleCh": "口簧琴",
+          "sentences": [
+            {
+              "id": "2-9-3-1",
+              "order": 1,
+              "indigenousText": "Pasifana’ ko singsi niyam a misanga’ to tiftif anini^ a romi’ad.",
+              "chineseText": "今天老師教我們製作口簧琴。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/5342ff6ea1a7d066eb7814442b5beb29.wav"
+            },
+            {
+              "id": "2-9-3-2",
+              "order": 2,
+              "indigenousText": "O maan ko tiftif?",
+              "chineseText": "什麼是口簧琴？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/90dd98defc1b04c07e706ab20f211a39.wav"
+            },
+            {
+              "id": "2-9-3-3",
+              "order": 3,
+              "indigenousText": "O nisanga’an no mato’asay ita to sasonian, o tekes ko sapisanga’.",
+              "chineseText": "它是我們祖先發明的樂器，是用桂竹做成的。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/c3f258899009afdb4b72c3b96c70cb72.wav"
+            },
+            {
+              "id": "2-9-3-4",
+              "order": 4,
+              "indigenousText": "O hacowa^ ko sapisoni^ to tiftif?",
+              "chineseText": "什麼時侯可以吹口簧琴？",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/11/36416de626cbe871604c663f1118b744.wav"
+            },
+            {
+              "id": "2-9-3-5",
+              "order": 5,
+              "indigenousText": "Itini i kasa^sa’an no mawmahay.",
+              "chineseText": "在農閒的時侯。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/be827c5c7f70b29af6f2e1af0fcbf970.wav"
+            },
+            {
+              "id": "2-9-3-6",
+              "order": 6,
+              "indigenousText": "Kirami, ano citelep ko loma’ i, tatiih a misoni^; nawhani, paysin.",
+              "chineseText": "但是，如果家裡有人去世，就不能吹奏，因為會觸犯禁忌。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/08/4e632a7799c7116072b241ca4a88f16e.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "O niyaro’ ita",
+          "titleCh": "我們的部落",
+          "sentences": [
+            {
+              "id": "2-9-4-1",
+              "order": 1,
+              "indigenousText": "Ira ko loma’, o ’ariri^ ato pikacawan no niyaro’ ita.",
+              "chineseText": "我們的部落有房舍、穀倉和瞭望台。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/643aaf7ba2c4173e26c30da1def0d1ca.wav"
+            },
+            {
+              "id": "2-9-4-2",
+              "order": 2,
+              "indigenousText": "O pikisaemelan ato pikidihekoan ko loma’ ita.",
+              "chineseText": "家屋是讓我們乘涼和取暖的地方。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/842f03993a08e3801088d102d70fd63d.wav"
+            },
+            {
+              "id": "2-9-4-3",
+              "order": 3,
+              "indigenousText": "O pi’anangan to kinaira ko ’ariri^, o sakacaaw ka kaen no ’edo^.",
+              "chineseText": "穀倉用來存放農作物，防止老鼠偷吃到。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/7924831653dec4aa47cc1a51cb49094e.wav"
+            },
+            {
+              "id": "2-9-4-4",
+              "order": 4,
+              "indigenousText": "Ira i sacomod no niyaro’ ko pikacawan, o pikecoran a minengneng to rakat no ’ada^.",
+              "chineseText": "瞭望台在部落的入口，用來觀察敵人的行動。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/046cf6da544ffa164162ee04fb68b5bd.wav"
+            },
+            {
+              "id": "2-9-4-5",
+              "order": 5,
+              "indigenousText": "O nanoto’as ita o Pangcah a pinasanga’ kiraan.",
+              "chineseText": "那是我們阿美族的傳統建築。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/60f0971bc61ec01723dea79f445fcaf1.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "O kalopitokohan no aniniay",
+          "titleCh": "現代的設施",
+          "sentences": [
+            {
+              "id": "2-9-5-1",
+              "order": 1,
+              "indigenousText": "Oya ma’araway a niyaro’ i, o Pos-ko^.",
+              "chineseText": "那看得見的部落是玉里。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/34955b56cd928f65f208d4c40b8c905f.wav"
+            },
+            {
+              "id": "2-9-5-2",
+              "order": 2,
+              "indigenousText": "Ira ko patiyamay, o yo-fing ato pipaisingan itira.",
+              "chineseText": "那裡有商店、郵局和醫院。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/aac94ba80b89123580f8e1d23fdb786b.wav"
+            },
+            {
+              "id": "2-9-5-3",
+              "order": 3,
+              "indigenousText": "Nga’ay kita a talapatiyamay a micakay to maamaan.",
+              "chineseText": "我們可以到商店買東西。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/85eefff5e505167953ddbbfdca54b07f.wav"
+            },
+            {
+              "id": "2-9-5-4",
+              "order": 4,
+              "indigenousText": "Nga’ay kita a tala-yo-fing a micu-king, miepod to pida^ ato paefer to tikami^.",
+              "chineseText": "也可以到郵局存錢、領錢和寄信。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/20/eb5161fccf5ccc0093fd306f3ff183ce.wav"
+            },
+            {
+              "id": "2-9-5-5",
+              "order": 5,
+              "indigenousText": "Ano adada^ i, manga’ay a talapipaisingan a paising.",
+              "chineseText": "如果生病了，可以到醫院看病。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/e2cf7aef3c1c26ea35e31fa6c46c8bdc.wav"
+            },
+            {
+              "id": "2-9-5-6",
+              "order": 6,
+              "indigenousText": "Inian a kalopitokohan i, o sakacaloway no mita a ma’orip.",
+              "chineseText": "這些現代的設施讓我們的生活方便。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/c76eec9ee12844d33809ccf118ad79f4.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "I to-ka-yay a Yin-cu-min",
+          "titleCh": "都市的原住民",
+          "sentences": [
+            {
+              "id": "2-9-6-1",
+              "order": 1,
+              "indigenousText": "Tosa^ a pa-sin-to^ no po:long no tamdaw i Tay-wan ko Yin-cu-min.",
+              "chineseText": "原住民的人口佔台灣總人口的2%。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/a97d53f5ed580b5dd04c32929e7e5c40.wav"
+            },
+            {
+              "id": "2-9-6-2",
+              "order": 2,
+              "indigenousText": "Maedeng o kalitosa^ noya tamdaw ko i niyaro’ay.",
+              "chineseText": "大約有一半的人在部落裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/3bd6b414d6e65b0b0f1f55d59436cd88.wav"
+            },
+            {
+              "id": "2-9-6-3",
+              "order": 3,
+              "indigenousText": "O roma^ a kalitosa^ i, i to-kay to a maro’.",
+              "chineseText": "另一半的人住在都市裡了。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/3816fcee7bf37a4458886e91b53f9a7e.wav"
+            },
+            {
+              "id": "2-9-6-4",
+              "order": 4,
+              "indigenousText": "Adihay ko katayalan i to-kay saka, masolot ko kapah ato kay^ing.",
+              "chineseText": "都市的工作機會多，所以吸引男女青年。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/907b67c12e932779106bb867b7fec8d5.wav"
+            },
+            {
+              "id": "2-9-6-5",
+              "order": 5,
+              "indigenousText": "I to-kay to caira a matayal ato misaparod.",
+              "chineseText": "他們已在都市成家，工作也在那裡。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/ee1e2af5345efc55f2aea20f8b143307.wav"
+            },
+            {
+              "id": "2-9-6-6",
+              "order": 6,
+              "indigenousText": "Orasaka, o teloc no Yin-cu-min, ’aloman to ko i to-kayay a mato’as anini^.",
+              "chineseText": "所以，現在有許多的原住民的後代在都市長大。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/0a2129646d331c52cb8f04d8b5efb128.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "O ilisin",
+          "titleCh": "豐年祭",
+          "sentences": [
+            {
+              "id": "2-9-7-1",
+              "order": 1,
+              "indigenousText": "Miilisin ko niyaro’ niyam i salaloma’ no faloay ato siwaay a folad to mihecahecaan.",
+              "chineseText": "每年的八月到九月之間，我們的部落舉行「豐年祭」。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/b9130bdb537610e9014dc6e2145860c0.wav"
+            },
+            {
+              "id": "2-9-7-2",
+              "order": 2,
+              "indigenousText": "O satadamaanay no niyaro’ ato o kasa’opoan haca^ no kasangasaw koya romi’ad.",
+              "chineseText": "那是部落非常重要的日子，也是每個家族團聚的時刻。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/b620dcb98e19a08ad97a4423d37809b0.wav"
+            },
+            {
+              "id": "2-9-7-3",
+              "order": 3,
+              "indigenousText": "Mapolong ko ’alomanay a romadiw ato masakero^ i papotal, malipahak to nikasefek no kinaira no pinaloma^.",
+              "chineseText": "大家在廣場上快樂地唱歌和跳舞來慶祝豐收。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/3b3b3bd85f5843d8fdf85dd92c4b57eb.wav"
+            },
+            {
+              "id": "2-9-7-4",
+              "order": 4,
+              "indigenousText": "Anini^ a mihecaan, paka-hi-ko-ki^ a taloma’ naniTay-pak ko po:long no paro^ no loma’ no faki^ ako.",
+              "chineseText": "今年，叔叔一家人從台北搭飛機回來。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/2481f6580cddcc29d67f43d620ef7d48.wav"
+            },
+            {
+              "id": "2-9-7-5",
+              "order": 5,
+              "indigenousText": "Pasowal ko kaka^ ako, ‘‘O ilisin no niyaro’ ko kakaoronan niyam i Tay-pak.’’ saan.",
+              "chineseText": "我哥哥說：「我們在台北最懷念的，就是家鄉的豐年祭。」",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/20/b46e3e67ff3a0200c6e33865772e149d.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "Pakomod ato Pakeras",
+          "titleCh": "祈福與祝福儀式",
+          "sentences": [
+            {
+              "id": "2-9-8-1",
+              "order": 1,
+              "indigenousText": "Sarikoray to a kasakeroan a romi’ad no ilisin anini^.",
+              "chineseText": "今天是豐年祭歌舞節目的最後一天。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/de98c65b3a84fb981dba5a2b82d74eb8.wav"
+            },
+            {
+              "id": "2-9-8-2",
+              "order": 2,
+              "indigenousText": "O pakomod hananay a demak haw i, macakat i tongroh no loma’ no kakitaan ko pacihakay a mifosfos to eraw. Nanay masaray ko kaloadada^ no tamdaw o saanay.",
+              "chineseText": "所謂的pakomod儀式是，女祭司爬上宗祠的屋頂，向大眾撒甜酒。以示驅邪並治好大眾的各種疾病。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/9a48d4a476c0ae49140d126b40215652.wav"
+            },
+            {
+              "id": "2-9-8-3",
+              "order": 3,
+              "indigenousText": "O pakeras haw i, miliyaw a macakat ko pacihakay a mifolesak to nisangicingiciwan a ’icep. Nanay citama’ ko kapah a mi’adop ato mifoting o saanay.",
+              "chineseText": "至於pakeras儀式是，女祭司再次爬到宗祠的屋頂上，向大眾撒檳榔切片。以示祝福部落青年上山打獵、下海漁撈順遂，常有獵獲。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2020/05/20/8a84f36438406e1bf2ff611d115c8fab.wav"
+            },
+            {
+              "id": "2-9-8-4",
+              "order": 4,
+              "indigenousText": "Anini^ palimo^ han to a palacecay ko pakomod ato pakeras.",
+              "chineseText": "今天把pakomod和pakeras 合併成為palimo^。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/1baa5faf846c239b10850f26685dbc43.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "Pararamod",
+          "titleCh": "結婚",
+          "sentences": [
+            {
+              "id": "2-9-9-1",
+              "order": 1,
+              "indigenousText": "O paramod han no Pangcah ko patatawos to tatosaay.",
+              "chineseText": "阿美族人把兩人結為伴侶視為結婚的意思。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/0ed68d8f64a3d65477c74165eb4539aa.wav"
+            },
+            {
+              "id": "2-9-9-2",
+              "order": 2,
+              "indigenousText": "Ano cimaramoday i niyaro’ i, o tata’angay a demak no ngangasawan.",
+              "chineseText": "部落裡有人結婚，是整個氏族的大事。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/957deb7631c91f133906b8cc1671dd43.wav"
+            },
+            {
+              "id": "2-9-9-3",
+              "order": 3,
+              "indigenousText": "Mipatala^ to siraw ato eraw ko loma’ no caciramod no malaynaay.",
+              "chineseText": "結婚者家裡會準備鹹豬肉和糯米酒宴請親友。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/7f558524b1029dff6bf108c5c1b31ae0.wav"
+            },
+            {
+              "id": "2-9-9-4",
+              "order": 4,
+              "indigenousText": "Masasipafeli^ to sapatapang ko mararamoday.",
+              "chineseText": "結婚夫妻要交換定情物。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/0ae6de97a6bbbcbbb7e72fea5670aa63.wav"
+            },
+            {
+              "id": "2-9-9-5",
+              "order": 5,
+              "indigenousText": "Mikitemel ko faki^ a somowal, mipalemed ko finawlan i cairaan.",
+              "chineseText": "伯父輩會給他們訓話，族人會給他們祝福。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/672967435480d88e5699b1ac72ff937a.wav"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "Co^yap",
+          "titleCh": "畢業",
+          "sentences": [
+            {
+              "id": "2-9-10-1",
+              "order": 1,
+              "indigenousText": "O pico^yapan no niyam a romi’ad anini^.",
+              "chineseText": "今天是我們畢業的日子。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/dc3a8850799030c6719bdf0108024d04.wav"
+            },
+            {
+              "id": "2-9-10-2",
+              "order": 2,
+              "indigenousText": "Atien no picodadan ko kalas no niyaro’ a mikerid to pisaselal.",
+              "chineseText": "學校請耆老為我們舉辦成年禮。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/e60b8828fd73cb56d911a24ec9b230cf.wav"
+            },
+            {
+              "id": "2-9-10-3",
+              "order": 3,
+              "indigenousText": "Papilifeten nangra kami a mipana’.",
+              "chineseText": "他們讓我們比賽射箭。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/48245b861924ac6c0d0363bc0c410f01.wav"
+            },
+            {
+              "id": "2-9-10-4",
+              "order": 4,
+              "indigenousText": "Maparenget ko pakalifetay a micodaday.",
+              "chineseText": "通過的學生才能戴上頭飾。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/0a904d401983e539e8745e9431a65a8d.wav"
+            },
+            {
+              "id": "2-9-10-5",
+              "order": 5,
+              "indigenousText": "Mitolon ko mato’asay, mikitemel a pa’icel i tamiyanan to sakalalok a matayal.",
+              "chineseText": "長老祈福，並且勉勵我們做事要認真。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/bbb3e95544a1ca0b134296f4cc06684e.wav"
+            },
+            {
+              "id": "2-9-10-6",
+              "order": 6,
+              "indigenousText": "Yo matengil to ko piparadiw i, madado^do kami a masadak naipicodadan, misi’ayaw to faelohay a ’orip.",
+              "chineseText": "當聽到歌聲響起，我們一個接一個走出學校，邁向新的人生。",
+              "audioUrl": "https://d2y1wf6g5bpaph.cloudfront.net/sound/2019/05/05/676d7d799697d69ad66674e2ef2eb086.wav"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
