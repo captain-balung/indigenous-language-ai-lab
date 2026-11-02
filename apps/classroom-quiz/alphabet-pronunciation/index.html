@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="看字母篇的族語例詞，直接錄音念出來；作答後可播放教材範例。">
+  <meta name="description" content="看字母篇的圖片和族語文字，錄音念出來；作答後可播放教材範例。">
   <title>字母篇｜族語e樂園 AI 實驗室</title>
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
   <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
@@ -13,7 +13,7 @@
   <a class="skip" href="#practice">跳至測驗</a>
   <header>
     <a class="back" href="/">← 返回 AI 實驗室</a>
-    <div class="hero-copy"><p id="mission">課堂測驗</p><h1 id="page-title">字母篇</h1><span id="page-lead">看族語例詞，錄音念出來。</span></div>
+    <div class="hero-copy"><p id="mission">課堂測驗</p><h1 id="page-title">字母篇</h1><span id="page-lead">看圖片和族語文字，錄音念出來。</span></div>
     <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
   </header>
 
@@ -21,10 +21,10 @@
     <section class="setup panel" aria-labelledby="setup-title">
       <div class="step">STEP 1</div><h2 id="setup-title">選擇語別</h2>
       <aside class="task-brief" aria-label="怎麼玩">
-        <p class="task-brief__lead">看族語例詞，直接用族語錄音念出來。</p>
+        <p class="task-brief__lead">看圖片和族語文字，直接錄音念出來。</p>
         <ol>
           <li>選擇語言別與方言別。</li>
-          <li>看族語例詞，直接錄音念出來。</li>
+          <li>看圖片和族語文字，錄音念出來。</li>
           <li>作答後可播放教材範例。</li>
         </ol>
       </aside>
@@ -33,16 +33,17 @@
         <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
       </div>
       <div id="api-status" class="api-status" aria-live="polite">正在確認服務…</div>
-      <p class="setup-note">每輪 8 題，例詞從這個方言隨機抽出。題目會標出所屬字母。作答後可播放教材範例。</p>
+      <p class="setup-note">每輪 8 題，每題都有圖片和族語文字，並標出所屬字母。作答後可播放教材範例。</p>
       <button id="start" class="primary" type="button" disabled>開始本堂</button>
     </section>
 
     <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
       <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">第 1 / 8 題</span></div>
       <p id="prompt" class="prompt">發音</p>
-      <h2 id="question-title">看族語文字，錄音念出來</h2>
-      <p id="question-text"></p>
+      <h2 id="question-title">看圖片和族語文字，錄音念出來</h2>
+      <figure id="question-image" class="word-image" hidden><img alt="例詞圖片"></figure>
       <p id="question-subtext" hidden></p>
+      <p id="question-text"></p>
       <div id="panel-compose" hidden>
         <label for="answer">用族語寫出這個意思</label>
         <input id="answer" autocomplete="off" spellcheck="false">
@@ -84,7 +85,7 @@
   <footer>
     <strong>教材來源與授權</strong>
     <p>題目來自「族語 E 樂園」<a href="https://web.klokah.tw/extension/ab_practice/" target="_blank" rel="noopener">補充教材－字母篇</a>，由財團法人原住民族語言研究發展基金會製作，以<a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">創用CC 姓名標示－非商業性－相同方式分享 4.0 國際</a>授權條款釋出。本頁僅供族語練習，不作商業用途。</p>
-    <p>音檔由 klokah.tw 直接播放，播放時該站會看到使用者的 IP 位址。</p>
+    <p>音檔與例詞圖由 klokah.tw 直接載入，播放或顯示時該站會看到使用者的 IP 位址。</p>
     <p><a href="/data/alphabet/LICENSE.md">教材授權與使用限制</a></p>
   </footer>
   <script type="module" src="/apps/classroom-quiz/alphabet-pronunciation/app.mjs"></script>

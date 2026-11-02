@@ -8,7 +8,7 @@ const categories = [
 
 const applicationSeeds = {
   basics: [
-    ["字母篇", "聽字母篇的例詞，再用族語跟唸一次。", "assets/icons/listening-ear.webp", "available", "apps/basic-learning/alphabet-listen-retell/"],
+    ["字母篇", "看圖片，聽字母篇的例詞，再用族語跟唸一次。", "assets/icons/listening-ear.webp", "available", "apps/basic-learning/alphabet-listen-retell/"],
     ["十二年國教", "聽十二年國教教材的短句，再用族語跟唸一次。", "assets/icons/listening-ear.webp", "available", "apps/basic-learning/twelve-listen-retell/"],
     ["跟唸", "聽一段短句，再用族語講一次。", "assets/icons/listening-ear.webp", "available", "apps/classroom-quiz/listen-retell/"],
     ["看圖口說練習", "看圖用族語念出完整句子；想聽教材再跟讀也可以。", "assets/icons/studio-microphone.webp", "available", "apps/basic-learning/body-parts-speaking/"],
@@ -16,7 +16,7 @@ const applicationSeeds = {
     ["看圖描述", "一次看一張圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/basic-learning/describe-practice/"]
   ],
   classroom: [
-    ["字母篇", "看字母篇的族語例詞，錄音念出來。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/alphabet-pronunciation/"],
+    ["字母篇", "看字母篇的圖片和族語文字，錄音念出來。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/alphabet-pronunciation/"],
     ["十二年國教", "看族語句子練發音，或看中文練翻譯；兩種練習都在這裡。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/twelve/"],
     ["發音練習", "看到圖片就念出對應的族語，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
     ["意思造句", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],

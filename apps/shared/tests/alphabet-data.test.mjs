@@ -13,7 +13,8 @@ assert.equal(names.length, 42);
 const shard = JSON.parse(fs.readFileSync(path.join(shardDir, "1.json"), "utf8"));
 const round = buildRound({ shard, activity: "retell", random: () => 0 });
 assert.equal(round.length, 8);
-assert.ok(round.every((item) => item.indigenousText && item.chineseText && item.audioUrl && item.lessonTitleCh.startsWith("字母 ")));
+assert.ok(round.every((item) => item.indigenousText && item.chineseText && item.audioUrl && item.imageUrl && item.lessonTitleCh.startsWith("字母 ")));
+assert.ok(round.every((item) => item.imageUrl === `https://klokah.tw/extension/ab_data/image/1/1A${item.lesson}_${item.order + 1}.png`));
 assert.equal(new Set(round.map((item) => item.indigenousText)).size, 8);
 
 const letter = shard.levels[0].lessons[0];

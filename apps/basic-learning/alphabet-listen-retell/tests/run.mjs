@@ -16,13 +16,15 @@ assert.ok(!page.includes("跟唸（字母篇）"));
 assert.ok(!page.includes('id="level"'), "字母篇沒有階級");
 assert.ok(page.includes('id="letter-cards"'), "要用字母圖卡選字母");
 assert.ok(!page.includes('<select id="letter"'), "字母不得用下拉選單");
+assert.ok(page.includes('id="question-image"'), "跟唸要顯示例詞圖");
+assert.ok(page.indexOf('id="panel-audio"') < page.indexOf('id="question-image"') && page.indexOf('id="question-image"') < page.indexOf('id="replay"'), "例詞圖要跟播放短句放在同一個區塊");
 assert.ok(page.includes('id="hint-toggle"') && page.includes('id="hint-panel"'));
 assert.ok(page.includes("看提示"));
 assert.ok(page.includes("CC BY-NC-SA 4.0") || page.includes("創用CC 姓名標示－非商業性－相同方式分享 4.0"));
 assert.ok(page.includes("IP 位址"));
 assert.ok(!page.includes("不適用 CC BY-NC-SA 4.0"));
 assert.ok(app.includes('boot("retell", engineOptions("retell"))'));
-assert.ok(home.includes('["字母篇", "聽字母篇的例詞，再用族語跟唸一次。"'));
+assert.ok(home.includes('["字母篇", "看圖片，聽字母篇的例詞，再用族語跟唸一次。"'));
 assert.ok(home.includes("apps/basic-learning/alphabet-listen-retell/"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(page + app));
 

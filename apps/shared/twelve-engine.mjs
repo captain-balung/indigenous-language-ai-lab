@@ -33,7 +33,8 @@ const session = {
   emptyRound: "這個階級目前沒有可出的題。",
   fixedLevel: 0,
   pickLetter: false,
-  letterImage: null
+  letterImage: null,
+  titles: null
 };
 
 let activity;
@@ -64,6 +65,7 @@ const ui = {
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   prompt: $("#prompt"), questionTitle: $("#question-title"),
   questionText: $("#question-text"), questionSubtext: $("#question-subtext"),
+  wordImage: $("#question-image"),
   audioPanel: $("#panel-audio"), replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   hintToggle: $("#hint-toggle"), hintPanel: $("#hint-panel"), hintLesson: $("#hint-lesson"),
   hintChinese: $("#hint-chinese"), hintIndigenous: $("#hint-indigenous"),
@@ -192,7 +194,7 @@ function updateStart() {
 
 function updateQuestionCopy(speech) {
   const key = activity === "translate" ? (speech ? "translateSpeech" : "translateTyping") : activity;
-  const [prompt, title] = TITLES[key];
+  const [prompt, title] = session.titles?.[key] || TITLES[key];
   ui.prompt.textContent = prompt;
   ui.questionTitle.textContent = title;
 }
@@ -418,6 +420,7 @@ function showQuestion() {
   }
   updateQuestionCopy(speech);
   renderHint(question);
+  showWordImage(question);
 
   ui.questionText.hidden = activity === "retell";
   ui.questionSubtext.hidden = activity === "retell" || activity === "pronounce";
@@ -736,6 +739,23 @@ ui.next.addEventListener("click", () => {
   else showQuestion();
 });
 
+function showWordImage(question) {
+  if (!ui.wordImage) return;
+  const image = ui.wordImage.querySelector("img");
+  if (!question?.imageUrl) {
+    ui.wordImage.hidden = true;
+    image?.removeAttribute("src");
+    return;
+  }
+  ui.wordImage.hidden = false;
+  image.alt = "例詞圖片";
+  image.src = question.imageUrl;
+}
+
+ui.wordImage?.querySelector("img")?.addEventListener("error", () => {
+  ui.wordImage.hidden = true;
+});
+
 function showReport() {
   ui.player.pause();
   ui.quiz.hidden = true;
@@ -818,6 +838,10 @@ function resetQuiz({ keepShard = false } = {}) {
   pendingAudioUrl = null;
   ui.quiz.hidden = true;
   ui.report.hidden = true;
+  if (ui.wordImage) {
+    ui.wordImage.hidden = true;
+    ui.wordImage.querySelector("img")?.removeAttribute("src");
+  }
   ui.result.hidden = true;
   setHintOpen(false);
   ui.next.hidden = true;
