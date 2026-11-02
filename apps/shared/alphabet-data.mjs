@@ -14,21 +14,38 @@ export function letterImage(dialectId, alphabetId) {
   return `https://klokah.tw/extension/ab_data/image/${dialectId}/${dialectId}A${alphabetId}_1.png`;
 }
 
+export function wordImage(dialectId, alphabetId, order) {
+  return `https://klokah.tw/extension/ab_data/image/${dialectId}/${dialectId}A${alphabetId}_${Number(order) + 1}.png`;
+}
+
+function withWordImages(shard, questions) {
+  return questions.map((question) => ({
+    ...question,
+    imageUrl: wordImage(shard.dialectId, question.lesson, question.order)
+  }));
+}
+
 export function buildRound(input) {
   const letter = Number(input.letter);
-  if (!letter) return buildTwelveRound({ ...input, level: LEVEL });
   const level = input.shard?.levels?.[0];
-  const lesson = level?.lessons?.find((item) => Number(item.lesson) === letter);
-  return buildTwelveRound({
-    ...input,
-    shard: { ...input.shard, levels: [{ ...level, lessons: lesson ? [lesson] : [] }] },
-    level: LEVEL
-  });
+  const lesson = letter ? level?.lessons?.find((item) => Number(item.lesson) === letter) : null;
+  const shard = letter
+    ? { ...input.shard, levels: [{ ...level, lessons: lesson ? [lesson] : [] }] }
+    : input.shard;
+  return withWordImages(shard, buildTwelveRound({ ...input, shard, level: LEVEL }));
 }
 
 const COPY = {
-  retell: { mission: "基礎學習", lead: "聽一段例詞，再用族語跟唸一次。" },
-  pronounce: { mission: "課堂測驗", lead: "看族語例詞，錄音念出來。" }
+  retell: {
+    mission: "基礎學習",
+    lead: "看圖片，聽一段例詞，再用族語跟唸一次。",
+    titles: { retell: ["跟唸", "看圖片，聽完後用族語再講一次"] }
+  },
+  pronounce: {
+    mission: "課堂測驗",
+    lead: "看圖片和族語文字，錄音念出來。",
+    titles: { pronounce: ["發音", "看圖片和族語文字，錄音念出來"] }
+  }
 };
 
 export function engineOptions(activity) {
@@ -38,6 +55,7 @@ export function engineOptions(activity) {
     heading: "字母篇",
     mission: copy.mission,
     lead: copy.lead,
+    titles: copy.titles,
     loadShard,
     buildRound,
     unitLabel: (question) => question.lessonTitleCh || `字母 ${question.lessonTitle}`,

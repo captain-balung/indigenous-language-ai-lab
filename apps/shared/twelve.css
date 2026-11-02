@@ -12,7 +12,10 @@ main{padding:2.4rem 1rem 3rem}
 #start{width:100%;min-height:56px;font-size:1.1rem;margin-top:.4rem}
 .setup-note{margin:.9rem 0 0;font-weight:700;color:#4a5474}
 .setup-note a{color:#1a5fbd}
+.word-image{display:block;min-height:0;margin:0 0 1rem;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+.word-image img{display:block;width:100%;height:auto;background:transparent;border:0;box-shadow:none}
 .audio-card{padding:1rem 1.15rem;border:3px solid var(--ink);border-radius:18px;background:#fff;box-shadow:var(--shadow)}
+.audio-card .word-image{margin:0 0 .9rem}
 .audio-card .player-row{margin:0}
 
 .quiz{margin-top:1.5rem}
