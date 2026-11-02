@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="聽字母篇的族語例詞，再用族語跟唸一次。">
+  <title>字母篇｜族語e樂園 AI 實驗室</title>
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-practice/styles.css">
+  <link rel="stylesheet" href="/apps/basic-learning/body-parts-speaking/styles.css">
+  <link rel="stylesheet" href="/apps/shared/twelve.css">
+  <link rel="stylesheet" href="/apps/shared/hint.css">
+  <link rel="stylesheet" href="/apps/basic-learning/alphabet-listen-retell/styles.css">
+</head>
+<body>
+  <a class="skip" href="#practice">跳至測驗</a>
+  <header>
+    <a class="back" href="/">← 返回 AI 實驗室</a>
+    <div class="hero-copy"><p id="mission">基礎學習</p><h1 id="page-title">字母篇</h1><span id="page-lead">聽一段例詞，再用族語跟唸一次。</span></div>
+    <img src="/assets/hero/school-adventure-club.png" alt="四位學生和 AI 小夥伴一起練習族語">
+  </header>
+
+  <main id="practice">
+    <section class="setup panel" aria-labelledby="setup-title">
+      <div class="step">STEP 1</div><h2 id="setup-title">選擇語別</h2>
+      <aside class="task-brief" aria-label="怎麼玩">
+        <p class="task-brief__lead">先選一張字母圖卡，再聽例詞跟唸。</p>
+        <ol>
+          <li>選擇語言別與方言別。</li>
+          <li>點一張字母圖卡。</li>
+          <li>按播放聽完例詞。</li>
+          <li>用族語錄音跟唸一次。</li>
+          <li>需要時按「看提示」，對照字母、中文與族語。</li>
+        </ol>
+      </aside>
+      <div class="select-grid">
+        <label>語言別<select id="ethnicity"><option value="">請選擇語言別</option></select></label>
+        <label>方言別<select id="dialect" disabled><option value="">請先選擇語言別</option></select></label>
+      </div>
+      <div id="letter-cards" class="letter-cards" role="group" aria-label="字母" hidden></div>
+      <div id="api-status" class="api-status" aria-live="polite">正在確認服務…</div>
+      <p class="setup-note">先點一張字母圖卡。這一輪只出該字母的例詞；不到 8 個就全部出完。</p>
+      <button id="start" class="primary" type="button" disabled>開始本堂</button>
+    </section>
+
+    <section id="quiz" class="quiz panel" hidden aria-labelledby="question-title">
+      <div class="quiz-top"><div><div class="step">STEP 2</div><p id="dialect-label"></p></div><span id="progress">第 1 / 8 題</span></div>
+      <p id="prompt" class="prompt">跟唸</p>
+      <h2 id="question-title">聽完後用族語再講一次</h2>
+      <p id="question-text" hidden></p>
+      <p id="question-subtext" hidden></p>
+      <div id="panel-audio" class="audio-card">
+        <div class="player-row">
+          <button id="replay" class="primary" type="button">播放短句</button>
+          <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">按播放聽短句</span>
+        </div>
+        <audio id="player"></audio>
+      </div>
+      <div class="hint-bar">
+        <button id="hint-toggle" type="button" aria-expanded="false" aria-controls="hint-panel">看提示</button>
+      </div>
+      <div id="hint-panel" class="sentence-hint" hidden>
+        <p id="hint-lesson" class="sentence-hint__lesson"></p>
+        <dl>
+          <dt>中文</dt><dd id="hint-chinese"></dd>
+          <dt>族語</dt><dd id="hint-indigenous"></dd>
+        </dl>
+      </div>
+      <div id="panel-compose" hidden>
+        <label for="answer">用族語寫出這個意思</label>
+        <input id="answer" autocomplete="off" spellcheck="false">
+      </div>
+      <div id="panel-speech">
+        <div class="recorder">
+          <button id="record" class="primary record-button" type="button">
+            <span class="record-dot" aria-hidden="true"></span><span id="record-label">開始錄音</span>
+          </button>
+          <div id="record-state" class="record-state" data-state="idle" aria-live="polite">
+            <span class="record-state__icon" aria-hidden="true">●</span>
+            <span id="record-time" class="record-state__time">00:00</span>
+            <span id="record-state-text">尚未錄音</span>
+          </div>
+        </div>
+      </div>
+      <div id="submit-row" class="submit-row" hidden><button id="submit" class="primary" type="button" disabled>送出答案</button></div>
+      <div class="submit-row"><button id="skip-audio" type="button" hidden>音檔無法播放，略過且不計分</button></div>
+      <div id="result" class="result" aria-live="polite" hidden></div>
+      <div class="quiz-actions"><button id="next" type="button" hidden>下一題 →</button></div>
+    </section>
+
+    <section id="report" class="panel" hidden aria-labelledby="report-title">
+      <div class="step">STEP 3</div>
+      <h2 id="report-title">本堂結果</h2>
+      <p id="score-line" class="score-line"></p>
+      <ol id="score-list" class="score-list"></ol>
+      <button id="again" class="primary" type="button">再練一輪</button>
+    </section>
+  </main>
+
+  <footer>
+    <strong>教材來源與授權</strong>
+    <p>題目來自「族語 E 樂園」<a href="https://web.klokah.tw/extension/ab_practice/" target="_blank" rel="noopener">補充教材－字母篇</a>，由財團法人原住民族語言研究發展基金會製作，以<a href="https://web.klokah.tw/creativeCommons/" target="_blank" rel="noopener">創用CC 姓名標示－非商業性－相同方式分享 4.0 國際</a>授權條款釋出。本頁僅供族語練習，不作商業用途。</p>
+    <p>音檔與字母圖由 klokah.tw 直接載入，播放或顯示時該站會看到使用者的 IP 位址。</p>
+    <p><a href="/data/alphabet/LICENSE.md">教材授權與使用限制</a></p>
+  </footer>
+  <script type="module" src="/apps/basic-learning/alphabet-listen-retell/app.mjs"></script>
+</body>
+</html>

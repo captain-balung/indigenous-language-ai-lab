@@ -1,0 +1,42 @@
+/* 字母篇：版面共用 apps/shared/twelve.css。字母圖卡只出現在跟唸頁。 */
+
+.letter-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+  gap: .75rem;
+  margin-top: 1rem;
+}
+
+.letter-card {
+  display: grid;
+  place-items: center;
+  min-height: 108px;
+  padding: .4rem;
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.letter-card img {
+  width: 100%;
+  height: 88px;
+  object-fit: contain;
+}
+
+.letter-card__symbol {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.letter-card.is-selected {
+  background: #fff2bb;
+  outline: 3px solid var(--ink);
+}
+
+.letter-card:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}

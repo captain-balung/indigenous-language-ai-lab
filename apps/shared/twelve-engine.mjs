@@ -21,10 +21,26 @@ import {
 
 const $ = (selector) => document.querySelector(selector);
 
+const session = {
+  loadShard,
+  buildRound,
+  levelOptions,
+  pageTitle: "十二年國教｜族語e樂園 AI 實驗室",
+  heading: "十二年國教",
+  mission: "",
+  lead: "",
+  unitLabel: null,
+  emptyRound: "這個階級目前沒有可出的題。",
+  fixedLevel: 0,
+  pickLetter: false,
+  letterImage: null
+};
+
 let activity;
 let info;
 let selectedDialect;
 let selectedLevel = 0;
+let selectedLetter = 0;
 let answerMode = "speech";
 let shard;
 let round = [];
@@ -43,7 +59,7 @@ let inputModeControl = null;
 
 const ui = {
   mission: $("#mission"), title: $("#page-title"), lead: $("#page-lead"),
-  ethnicity: $("#ethnicity"), dialect: $("#dialect"), level: $("#level"),
+  ethnicity: $("#ethnicity"), dialect: $("#dialect"), level: $("#level"), letters: $("#letter-cards"),
   start: $("#start"), api: $("#api-status"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"),
   prompt: $("#prompt"), questionTitle: $("#question-title"),
@@ -109,11 +125,16 @@ function setHintOpen(open) {
   ui.hintToggle.textContent = open ? "收起提示" : "看提示";
 }
 
+function lessonLocator(question) {
+  if (session.unitLabel) return session.unitLabel(question);
+  return `第 ${question.level} 階第 ${question.lesson} 課`;
+}
+
 function renderHint(question) {
   if (!ui.hintPanel || !question) return;
   if (ui.hintLesson) {
-    const lesson = `第 ${question.level} 階第 ${question.lesson} 課`;
-    ui.hintLesson.textContent = question.lessonTitleCh
+    const lesson = lessonLocator(question);
+    ui.hintLesson.textContent = !session.unitLabel && question.lessonTitleCh
       ? `${lesson}・${question.lessonTitleCh}`
       : lesson;
   }
@@ -164,7 +185,9 @@ function showStatus() {
 function updateStart() {
   const asrOk = !needsSpeech()
     || (supportsRecording() && Boolean(ui.ethnicity.value) && asrUsable(ui.ethnicity.value));
-  ui.start.disabled = !selectedDialect || !selectedLevel || !asrOk;
+  const levelOk = session.pickLetter || selectedLevel || session.fixedLevel;
+  const letterOk = !session.pickLetter || selectedLetter;
+  ui.start.disabled = !selectedDialect || !levelOk || !letterOk || !asrOk;
 }
 
 function updateQuestionCopy(speech) {
@@ -192,13 +215,15 @@ function applyTranslationMode({ focus = false } = {}) {
 
 async function init() {
   info = ACTIVITIES[activity];
-  document.title = "十二年國教｜族語e樂園 AI 實驗室";
-  ui.mission.textContent = `${info.track} · MISSION ${info.mission}`;
-  ui.title.textContent = "十二年國教";
-  ui.lead.textContent = info.lead;
+  document.title = session.pageTitle;
+  ui.mission.textContent = session.mission || `${info.track} · MISSION ${info.mission}`;
+  ui.title.textContent = session.heading;
+  ui.lead.textContent = session.lead || info.lead;
 
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));
-  ui.level.insertAdjacentHTML("beforeend", levelOptions().map((item) => `<option value="${item.level}">${item.text}</option>`).join(""));
+  if (ui.level) {
+    ui.level.insertAdjacentHTML("beforeend", session.levelOptions().map((item) => `<option value="${item.level}">${item.text}</option>`).join(""));
+  }
 
   if (supportsRecording()) {
     recorder = createRecorder({
@@ -276,6 +301,7 @@ async function verifyServices() {
 
 ui.ethnicity.addEventListener("change", () => {
   resetQuiz();
+  clearLetterCards();
   const choices = DIALECTS.filter((item) => item.ethnicity === ui.ethnicity.value);
   ui.dialect.innerHTML = `<option value="">請選擇方言別</option>${choices.map((item) => `<option value="${item.id}">${item.name}</option>`).join("")}`;
   ui.dialect.disabled = !choices.length;
@@ -287,11 +313,26 @@ ui.ethnicity.addEventListener("change", () => {
 ui.dialect.addEventListener("change", () => {
   resetQuiz();
   selectedDialect = dialectById(ui.dialect.value);
+  clearLetterCards();
   showStatus();
+  updateStart();
+  if (selectedDialect && session.pickLetter) loadLetters();
+});
+
+ui.letters?.addEventListener("click", (event) => {
+  const card = event.target.closest(".letter-card");
+  if (!card || !ui.letters.contains(card)) return;
+  resetQuiz({ keepShard: true });
+  selectedLetter = Number(card.dataset.letter) || 0;
+  for (const button of ui.letters.querySelectorAll(".letter-card")) {
+    const on = button === card;
+    button.setAttribute("aria-pressed", String(on));
+    button.classList.toggle("is-selected", on);
+  }
   updateStart();
 });
 
-ui.level.addEventListener("change", () => {
+ui.level?.addEventListener("change", () => {
   resetQuiz();
   selectedLevel = Number(ui.level.value) || 0;
   showStatus();
@@ -299,12 +340,18 @@ ui.level.addEventListener("change", () => {
 });
 
 ui.start.addEventListener("click", async () => {
+  if (shard && Number(shard.dialectId) === Number(selectedDialect.id)) {
+    ui.api.textContent = statusNote;
+    ui.api.dataset.state = "ok";
+    beginRound();
+    return;
+  }
   const token = ++loadToken;
   ui.start.disabled = true;
   ui.api.textContent = "教材載入中…";
   ui.api.dataset.state = "ok";
   try {
-    const loaded = await loadShard(selectedDialect.id);
+    const loaded = await session.loadShard(selectedDialect.id);
     if (token !== loadToken) return;
     shard = loaded;
     ui.api.textContent = statusNote;
@@ -321,16 +368,17 @@ ui.start.addEventListener("click", async () => {
 ui.again.addEventListener("click", () => beginRound());
 
 function beginRound() {
-  round = buildRound({
+  round = session.buildRound({
     shard,
-    level: selectedLevel,
+    level: selectedLevel || session.fixedLevel,
+    letter: selectedLetter,
     activity,
     size: ROUND_SIZE
   });
   index = 0;
   results = [];
   if (!round.length) {
-    ui.api.textContent = "這個階級目前沒有可出的題。";
+    ui.api.textContent = session.emptyRound;
     ui.api.dataset.state = "fallback";
     updateStart();
     return;
@@ -348,7 +396,7 @@ function showQuestion() {
   graded = false;
   acceptRecording = false;
 
-  ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name} · ${info.label} · 第 ${question.level} 階第 ${question.lesson} 課`;
+  ui.label.textContent = `${selectedDialect.ethnicity} · ${selectedDialect.name} · ${info.label} · ${lessonLocator(question)}`;
   ui.progress.textContent = `第 ${index + 1} / ${round.length} 題`;
 
   let speech = activity !== "translate";
@@ -375,6 +423,10 @@ function showQuestion() {
   ui.questionSubtext.hidden = activity === "retell" || activity === "pronounce";
   if (activity === "pronounce") {
     ui.questionText.textContent = question.indigenousText;
+    if (session.unitLabel) {
+      ui.questionSubtext.hidden = false;
+      ui.questionSubtext.textContent = session.unitLabel(question);
+    }
   } else if (activity === "translate") {
     ui.questionText.textContent = question.chineseText;
     ui.questionSubtext.textContent = `第 ${question.level} 階第 ${question.lesson} 課・${question.lessonTitleCh}`;
@@ -702,9 +754,62 @@ function showReport() {
   updateStart();
 }
 
-function resetQuiz() {
+function clearLetterCards() {
+  selectedLetter = 0;
+  if (!ui.letters) return;
+  ui.letters.hidden = true;
+  ui.letters.replaceChildren();
+}
+
+function renderLetterCards(loaded) {
+  const lessons = loaded?.levels?.[0]?.lessons ?? [];
+  ui.letters.replaceChildren();
+  for (const lesson of lessons) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "letter-card";
+    button.dataset.letter = String(lesson.lesson);
+    button.setAttribute("aria-pressed", "false");
+    button.setAttribute("aria-label", lesson.titleCh || `字母 ${lesson.title}`);
+    const image = document.createElement("img");
+    image.alt = "";
+    image.src = session.letterImage(loaded.dialectId, lesson.lesson);
+    const symbol = document.createElement("span");
+    symbol.className = "letter-card__symbol";
+    symbol.hidden = true;
+    symbol.textContent = lesson.title;
+    image.addEventListener("error", () => {
+      image.hidden = true;
+      symbol.hidden = false;
+    });
+    button.append(image, symbol);
+    ui.letters.append(button);
+  }
+  ui.letters.hidden = lessons.length === 0;
+}
+
+async function loadLetters() {
+  const token = ++loadToken;
+  ui.api.textContent = "字母載入中…";
+  ui.api.dataset.state = "ok";
+  try {
+    const loaded = await session.loadShard(selectedDialect.id);
+    if (token !== loadToken) return;
+    shard = loaded;
+    renderLetterCards(loaded);
+    ui.api.textContent = statusNote;
+    ui.api.dataset.state = "ok";
+  } catch (error) {
+    if (token !== loadToken) return;
+    ui.api.textContent = `教材無法載入：${error.message}`;
+    ui.api.dataset.state = "error";
+  }
+  updateStart();
+}
+
+function resetQuiz({ keepShard = false } = {}) {
   attempt += 1;
-  loadToken += 1;
+  if (!keepShard) loadToken += 1;
   acceptRecording = false;
   pending = false;
   graded = false;
@@ -720,7 +825,7 @@ function resetQuiz() {
   round = [];
   results = [];
   index = 0;
-  shard = undefined;
+  if (!keepShard) shard = undefined;
   recorder?.clear();
 }
 
@@ -729,8 +834,10 @@ window.addEventListener("pagehide", () => {
   recorder?.clear();
 });
 
-export function boot(nextActivity) {
+export function boot(nextActivity, options = {}) {
   activity = Object.hasOwn(ACTIVITIES, nextActivity) ? nextActivity : "retell";
+  Object.assign(session, options);
+  if (session.fixedLevel) selectedLevel = Number(session.fixedLevel);
   answerMode = "speech";
   init().catch((error) => {
     ui.api.textContent = `初始化失敗：${error.message}`;

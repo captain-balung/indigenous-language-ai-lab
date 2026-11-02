@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "title": "字母篇例詞",
+  "description": "族語 E 樂園補充教材字母篇的例詞，42 個方言別，供跟唸與發音練習使用。",
+  "source": {
+    "publisher": "財團法人原住民族語言研究發展基金會",
+    "website": "原住民族語E樂園",
+    "unitUrl": "https://web.klokah.tw/extension/ab_practice/",
+    "license": "CC BY-NC-SA 4.0",
+    "licenseUrl": "https://web.klokah.tw/creativeCommons/",
+    "attribution": "資料來源－原住民族語E樂園／補充教材－字母篇，由財團法人原住民族語言研究發展基金會製作，以創用CC 姓名標示－非商業性－相同方式分享 4.0 國際授權條款釋出。",
+    "retrievedAt": "2026-11-02T02:25:10.184Z"
+  },
+  "recordLayout": "sharded",
+  "shardPath": "dialects/{dialectId}.json",
+  "dialectCount": 42,
+  "wordCount": 4865,
+  "audioPolicy": "hotlinked-at-runtime",
+  "audioNote": "音檔不入庫，執行時直接由 klokah.tw 播放；播放時該站會看到使用者的 IP 位址。字母音與圖片不入庫。",
+  "dialects": [
+    {
+      "id": 1,
+      "ethnicity": "阿美",
+      "name": "南勢阿美語",
+      "code": "ami_Sout"
+    },
+    {
+      "id": 2,
+      "ethnicity": "阿美",
+      "name": "秀姑巒阿美語",
+      "code": "ami_Xiug"
+    },
+    {
+      "id": 3,
+      "ethnicity": "阿美",
+      "name": "海岸阿美語",
+      "code": "ami_Coas"
+    },
+    {
+      "id": 4,
+      "ethnicity": "阿美",
+      "name": "馬蘭阿美語",
+      "code": "ami_Mala"
+    },
+    {
+      "id": 5,
+      "ethnicity": "阿美",
+      "name": "恆春阿美語",
+      "code": "ami_Heng"
+    },
+    {
+      "id": 6,
+      "ethnicity": "泰雅",
+      "name": "賽考利克泰雅語",
+      "code": "tay_Seko"
+    },
+    {
+      "id": 7,
+      "ethnicity": "泰雅",
+      "name": "澤敖利泰雅語",
+      "code": "tay_Zeao"
+    },
+    {
+      "id": 8,
+      "ethnicity": "泰雅",
+      "name": "汶水泰雅語",
+      "code": "tay_Wens"
+    },
+    {
+      "id": 9,
+      "ethnicity": "泰雅",
+      "name": "萬大泰雅語",
+      "code": "tay_Wand"
+    },
+    {
+      "id": 10,
+      "ethnicity": "泰雅",
+      "name": "四季泰雅語",
+      "code": "tay_Four"
+    },
+    {
+      "id": 11,
+      "ethnicity": "泰雅",
+      "name": "宜蘭澤敖利泰雅語",
+      "code": "tay_Yzea"
+    },
+    {
+      "id": 13,
+      "ethnicity": "賽夏",
+      "name": "賽夏語",
+      "code": "xsy_Sais"
+    },
+    {
+      "id": 14,
+      "ethnicity": "邵",
+      "name": "邵語",
+      "code": "ssf_Thao"
+    },
+    {
+      "id": 15,
+      "ethnicity": "賽德克",
+      "name": "都達賽德克語",
+      "code": "trv_Duda"
+    },
+    {
+      "id": 16,
+      "ethnicity": "賽德克",
+      "name": "德固達雅賽德克語",
+      "code": "trv_Tegu"
+    },
+    {
+      "id": 17,
+      "ethnicity": "賽德克",
+      "name": "德鹿谷賽德克語",
+      "code": "trv_Delu"
+    },
+    {
+      "id": 18,
+      "ethnicity": "布農",
+      "name": "卓群布農語",
+      "code": "bnn_Zhuo"
+    },
+    {
+      "id": 19,
+      "ethnicity": "布農",
+      "name": "卡群布農語",
+      "code": "bnn_Kaqu"
+    },
+    {
+      "id": 20,
+      "ethnicity": "布農",
+      "name": "丹群布農語",
+      "code": "bnn_Tanq"
+    },
+    {
+      "id": 21,
+      "ethnicity": "布農",
+      "name": "巒群布農語",
+      "code": "bnn_Luan"
+    },
+    {
+      "id": 22,
+      "ethnicity": "布農",
+      "name": "郡群布農語",
+      "code": "bnn_Junq"
+    },
+    {
+      "id": 23,
+      "ethnicity": "排灣",
+      "name": "東排灣語",
+      "code": "pwn_East"
+    },
+    {
+      "id": 24,
+      "ethnicity": "排灣",
+      "name": "北排灣語",
+      "code": "pwn_Nrth"
+    },
+    {
+      "id": 25,
+      "ethnicity": "排灣",
+      "name": "中排灣語",
+      "code": "pwn_Cent"
+    },
+    {
+      "id": 26,
+      "ethnicity": "排灣",
+      "name": "南排灣語",
+      "code": "pwn_Sout"
+    },
+    {
+      "id": 27,
+      "ethnicity": "魯凱",
+      "name": "東魯凱語",
+      "code": "dru_East"
+    },
+    {
+      "id": 28,
+      "ethnicity": "魯凱",
+      "name": "霧台魯凱語",
+      "code": "dru_Wuta"
+    },
+    {
+      "id": 29,
+      "ethnicity": "魯凱",
+      "name": "大武魯凱語",
+      "code": "dru_Dawu"
+    },
+    {
+      "id": 30,
+      "ethnicity": "魯凱",
+      "name": "多納魯凱語",
+      "code": "dru_Dona"
+    },
+    {
+      "id": 31,
+      "ethnicity": "魯凱",
+      "name": "茂林魯凱語",
+      "code": "dru_Maol"
+    },
+    {
+      "id": 32,
+      "ethnicity": "魯凱",
+      "name": "萬山魯凱語",
+      "code": "dru_Wans"
+    },
+    {
+      "id": 33,
+      "ethnicity": "太魯閣",
+      "name": "太魯閣語",
+      "code": "trv_Truk"
+    },
+    {
+      "id": 34,
+      "ethnicity": "噶瑪蘭",
+      "name": "噶瑪蘭語",
+      "code": "ckv_Kava"
+    },
+    {
+      "id": 35,
+      "ethnicity": "鄒",
+      "name": "鄒語",
+      "code": "tsu_Tsou"
+    },
+    {
+      "id": 36,
+      "ethnicity": "卡那卡那富",
+      "name": "卡那卡那富語",
+      "code": "xnb_Kana"
+    },
+    {
+      "id": 37,
+      "ethnicity": "拉阿魯哇",
+      "name": "拉阿魯哇語",
+      "code": "sxr_Saar"
+    },
+    {
+      "id": 38,
+      "ethnicity": "卑南",
+      "name": "南王卑南語",
+      "code": "pyu_Nanw"
+    },
+    {
+      "id": 39,
+      "ethnicity": "卑南",
+      "name": "知本卑南語",
+      "code": "pyu_Zhib"
+    },
+    {
+      "id": 40,
+      "ethnicity": "卑南",
+      "name": "西群卑南語",
+      "code": "pyu_Xiqu"
+    },
+    {
+      "id": 41,
+      "ethnicity": "卑南",
+      "name": "建和卑南語",
+      "code": "pyu_Jian"
+    },
+    {
+      "id": 42,
+      "ethnicity": "雅美",
+      "name": "雅美語",
+      "code": "tao_Yami"
+    },
+    {
+      "id": 43,
+      "ethnicity": "撒奇萊雅",
+      "name": "撒奇萊雅語",
+      "code": "szy_Saki"
+    }
+  ]
+}
