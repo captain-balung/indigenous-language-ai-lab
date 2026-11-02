@@ -1,6 +1,6 @@
 # 族語e樂園 AI 實驗室
 
-族語學習 AI 應用的公開入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類：基礎學習 5 張、課堂測驗 5 張、其餘三類各 4 張，共 22 項任務。聽音練習與打字版看圖練習頁面仍在，首頁不列出。
+族語學習 AI 應用的公開入口網站。首頁分為「基礎學習、課堂測驗、認證模擬、情境應用、學習互動」五大類：基礎學習 6 張、課堂測驗 6 張、其餘三類各 4 張，共 24 項任務。聽音練習與打字版看圖練習頁面仍在，首頁不列出。
 
 ## 線上網站
 
@@ -25,7 +25,7 @@ node scripts/serve.mjs 4173
 卡片唯一資料來源位於 `app.js`：
 
 - `categories`：五大分類的名稱、說明、圖示與色彩。
-- `applicationSeeds`：22 張卡片的名稱、說明與圖示。
+- `applicationSeeds`：24 張卡片的名稱、說明與圖示。
 - `applications`：完整資料模型，包含 `id`、`categoryId`、`status`、`href`、`openInNewTab`、`tags` 與 `order`。
 
 要將卡片上線，將該筆 `status` 改為 `available` 並填入有效 `href`；要暫停服務則改為 `maintenance`。未上線卡片保持 `coming-soon`，頁面不會產生空連結。
@@ -45,7 +45,7 @@ node scripts/serve.mjs 4173
 
 根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
 
-問答練習、看圖描述、意思造句／發音練習／跟唸（課堂測驗共用引擎）、十二年國教的跟唸／發音練習／翻譯、看圖口說練習、看圖測驗、部落大小事任務關卡、認證模擬的簡答／看圖與問答測驗的語意評分，會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan），失敗時退回各題既有的規則比對。請在 Vercel 專案環境變數設定後端：
+問答練習、看圖描述、意思造句／發音練習／跟唸（課堂測驗共用引擎）、字母篇與十二年國教的跟唸／發音練習、十二年國教翻譯、看圖口說練習、看圖測驗、部落大小事任務關卡、認證模擬的簡答／看圖與問答測驗的語意評分，會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan），失敗時退回各題既有的規則比對。請在 Vercel 專案環境變數設定後端：
 
 - `LLM_BASE_URL`（必填）：閘道端點，例 `http://114.34.77.157:9002/llm/gemma4`（POST 直接打到該網址本身）。內網位址 Vercel 連不到，正式站一律使用公網位址。
 - `LLM_API_KEY`（選填）：閘道有啟用驗證時設定，以 Bearer 送出。
@@ -53,12 +53,14 @@ node scripts/serve.mjs 4173
 
 ## 已上線應用
 
+- [字母篇](apps/basic-learning/alphabet-listen-retell/README.md)：聽字母篇例詞，再用族語跟唸一次；判定與十二年國教跟唸同一套。一輪 8 題。
 - [十二年國教](apps/basic-learning/twelve-listen-retell/README.md)：十二年國教第 1–9 階短句，聽完再用族語跟唸一次；判定與上一個跟唸同一套。一輪 8 題。
 - [看圖練習](apps/basic-learning/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思，意思接近但說法不同時由自架 vLLM 做 AI 判別（失敗維持規則結果）。首頁不列出，網址仍可開啟。
 - [看圖口說練習](apps/basic-learning/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；需要對照時按「看提示」查看中文、族語與教材範例音檔，也可以直接說。語音辨識會顯示系統聽到的內容，判定與看圖練習同一套（含 vLLM AI 判別）。
 - [聽音練習](apps/basic-learning/listen-practice/README.md)：與看圖練習同一批主題，聽族語音檔後選出對應圖片或中文意思；音檔由 klokah.tw／web.klokah.tw 直接播放。首頁不列出，網址仍可開啟。
 - [問答練習](apps/basic-learning/qa-practice/README.md)：看國中版對話的中文問句，用打字或錄音自由回答；想聽族語問句再按播放，需要時可按「看提示」看教材族語問句。系統顯示它聽到、懂成的意思，不做考試配分。
 - [看圖描述](apps/basic-learning/describe-practice/README.md)：用認證初級看圖說話、中級看圖表達的圖片自由描述，一次一張圖；需要時按「看提示」對照中文提示、教材中文、教材族語與範例音檔。系統顯示它懂成的中文意思。
+- [字母篇（課堂測驗）](apps/classroom-quiz/alphabet-pronunciation/README.md)：看字母篇的族語例詞，直接錄音念出來；教材範例在作答後播放。一輪 8 題。
 - [十二年國教（課堂測驗）](apps/classroom-quiz/twelve/README.md)：課堂測驗的合併卡；從這裡選發音練習（看族語文字直接錄音，教材範例在作答後播放）或翻譯（看中文，作答時可切換錄音或打字）。一輪 8 題。
 - [跟唸](apps/classroom-quiz/listen-retell/README.md)：聽短句，用族語再講一次；需要時可按「看提示」對照中文與族語。系統顯示它聽到的話，以及懂成的中文；有沒有轉述到原句意思，除了字面／翻譯比對再加自架 vLLM AI 判別。一輪 8 題。
 - [發音練習](apps/classroom-quiz/picture-speaking-quiz/README.md)：看到圖片就念出對應的族語，不播教材音，每題只錄一次，由語音辨識與翻譯計分（樣板沒過時加自架 vLLM AI 判別）。一輪 8 題。
@@ -109,6 +111,19 @@ node scripts/download-klokah-junior.mjs
 
 ```powershell
 node scripts/download-vocabulary-plants.mjs
+```
+
+### 字母篇例詞
+
+「字母篇」的跟唸與發音練習資料位於 `data/alphabet/`，內容是「族語 E 樂園」補充教材字母篇的例詞：42 個方言別。字母本身的發音與圖片不收入。同樣依 [CC BY-NC-SA 4.0](data/alphabet/LICENSE.md) 使用。
+
+**音檔不入庫**：每筆只帶 `audioUrl`，執行時由 `klokah.tw` 直接播放。
+
+重新取得及驗證資料：
+
+```bash
+node scripts/download-alphabet.mjs
+node apps/shared/tests/alphabet-data.test.mjs
 ```
 
 ### 十二年國教課程原住民族語文教材（第 1–9 階）

@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "dialectId": 40,
+  "ethnicity": "卑南",
+  "dialectName": "西群卑南語",
+  "code": "pyu_Xiqu",
+  "levels": [
+    {
+      "level": 1,
+      "label": "全部例詞",
+      "group": "字母篇",
+      "lessons": [
+        {
+          "lesson": 1,
+          "title": "a",
+          "titleCh": "字母 a",
+          "sentences": [
+            {
+              "id": "40-1-1",
+              "order": 1,
+              "indigenousText": "ama",
+              "chineseText": "爸爸",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A1_2.mp3"
+            },
+            {
+              "id": "40-1-2",
+              "order": 2,
+              "indigenousText": "paretr",
+              "chineseText": "傳統皮帶",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A1_3.mp3"
+            },
+            {
+              "id": "40-1-3",
+              "order": 3,
+              "indigenousText": "siyak",
+              "chineseText": "南瓜",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A1_4.mp3"
+            },
+            {
+              "id": "40-1-4",
+              "order": 4,
+              "indigenousText": "anay",
+              "chineseText": "朋友(女)",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A1_5.mp3"
+            },
+            {
+              "id": "40-1-5",
+              "order": 5,
+              "indigenousText": "zana’",
+              "chineseText": "項鍊",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A1_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 2,
+          "title": "e",
+          "titleCh": "字母 e",
+          "sentences": [
+            {
+              "id": "40-2-1",
+              "order": 1,
+              "indigenousText": "eva",
+              "chineseText": "馬",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A2_2.mp3"
+            },
+            {
+              "id": "40-2-2",
+              "order": 2,
+              "indigenousText": "etu",
+              "chineseText": "桌子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A2_3.mp3"
+            },
+            {
+              "id": "40-2-3",
+              "order": 3,
+              "indigenousText": "pudek",
+              "chineseText": "肚臍",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A2_4.mp3"
+            },
+            {
+              "id": "40-2-4",
+              "order": 4,
+              "indigenousText": "trekel",
+              "chineseText": "喝",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A2_5.mp3"
+            },
+            {
+              "id": "40-2-5",
+              "order": 5,
+              "indigenousText": "veras",
+              "chineseText": "米",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A2_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 3,
+          "title": "i",
+          "titleCh": "字母 i",
+          "sentences": [
+            {
+              "id": "40-3-1",
+              "order": 1,
+              "indigenousText": "imu",
+              "chineseText": "祖父母",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A3_2.mp3"
+            },
+            {
+              "id": "40-3-2",
+              "order": 2,
+              "indigenousText": "ilid",
+              "chineseText": "胡瓜",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A3_3.mp3"
+            },
+            {
+              "id": "40-3-3",
+              "order": 3,
+              "indigenousText": "iva",
+              "chineseText": "兄姊",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A3_4.mp3"
+            },
+            {
+              "id": "40-3-4",
+              "order": 4,
+              "indigenousText": "kawi",
+              "chineseText": "樹",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A3_5.mp3"
+            },
+            {
+              "id": "40-3-5",
+              "order": 5,
+              "indigenousText": "uma’i",
+              "chineseText": "樹豆",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A3_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 4,
+          "title": "u",
+          "titleCh": "字母 u",
+          "sentences": [
+            {
+              "id": "40-4-1",
+              "order": 1,
+              "indigenousText": "ungetran",
+              "chineseText": "鼻子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A4_2.mp3"
+            },
+            {
+              "id": "40-4-2",
+              "order": 2,
+              "indigenousText": "trinun",
+              "chineseText": "蛋",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A4_3.mp3"
+            },
+            {
+              "id": "40-4-3",
+              "order": 3,
+              "indigenousText": "’izus",
+              "chineseText": "湯匙",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A4_4.mp3"
+            },
+            {
+              "id": "40-4-4",
+              "order": 4,
+              "indigenousText": "tuwaktuk",
+              "chineseText": "鐵鎚",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A4_5.mp3"
+            },
+            {
+              "id": "40-4-5",
+              "order": 5,
+              "indigenousText": "telu",
+              "chineseText": "三",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A4_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 5,
+          "title": "d",
+          "titleCh": "字母 d",
+          "sentences": [
+            {
+              "id": "40-5-1",
+              "order": 1,
+              "indigenousText": "dalan",
+              "chineseText": "路",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A5_2.mp3"
+            },
+            {
+              "id": "40-5-2",
+              "order": 2,
+              "indigenousText": "dalukap",
+              "chineseText": "手掌",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A5_3.mp3"
+            },
+            {
+              "id": "40-5-3",
+              "order": 3,
+              "indigenousText": "dawdawan",
+              "chineseText": "老人",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A5_4.mp3"
+            },
+            {
+              "id": "40-5-4",
+              "order": 4,
+              "indigenousText": "dawa",
+              "chineseText": "小米",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A5_5.mp3"
+            },
+            {
+              "id": "40-5-5",
+              "order": 5,
+              "indigenousText": "lipad",
+              "chineseText": "椅子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A5_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 6,
+          "title": "h",
+          "titleCh": "字母 h",
+          "sentences": [
+            {
+              "id": "40-6-1",
+              "order": 1,
+              "indigenousText": "hung",
+              "chineseText": "牛",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A6_2.mp3"
+            },
+            {
+              "id": "40-6-2",
+              "order": 2,
+              "indigenousText": "hamay",
+              "chineseText": "指甲",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A6_3.mp3"
+            },
+            {
+              "id": "40-6-3",
+              "order": 3,
+              "indigenousText": "rahan",
+              "chineseText": "祭司",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A6_4.mp3"
+            },
+            {
+              "id": "40-6-4",
+              "order": 4,
+              "indigenousText": "tawhu",
+              "chineseText": "豆腐",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A6_5.mp3"
+            },
+            {
+              "id": "40-6-5",
+              "order": 5,
+              "indigenousText": "humul",
+              "chineseText": "毛",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A6_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 7,
+          "title": "k",
+          "titleCh": "字母 k",
+          "sentences": [
+            {
+              "id": "40-7-1",
+              "order": 1,
+              "indigenousText": "kavang(kiping)",
+              "chineseText": "衣服",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A7_2.mp3"
+            },
+            {
+              "id": "40-7-2",
+              "order": 2,
+              "indigenousText": "pukuy",
+              "chineseText": "釦子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A7_3.mp3"
+            },
+            {
+              "id": "40-7-3",
+              "order": 3,
+              "indigenousText": "latak",
+              "chineseText": "楊桃",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A7_4.mp3"
+            },
+            {
+              "id": "40-7-4",
+              "order": 4,
+              "indigenousText": "suku",
+              "chineseText": "傘",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A7_5.mp3"
+            },
+            {
+              "id": "40-7-5",
+              "order": 5,
+              "indigenousText": "kamutr",
+              "chineseText": "小刀",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A7_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 8,
+          "title": "l",
+          "titleCh": "字母 l",
+          "sentences": [
+            {
+              "id": "40-8-1",
+              "order": 1,
+              "indigenousText": "lumay",
+              "chineseText": "稻米",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A8_2.mp3"
+            },
+            {
+              "id": "40-8-2",
+              "order": 2,
+              "indigenousText": "lima",
+              "chineseText": "手",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A8_3.mp3"
+            },
+            {
+              "id": "40-8-3",
+              "order": 3,
+              "indigenousText": "mali",
+              "chineseText": "球",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A8_4.mp3"
+            },
+            {
+              "id": "40-8-4",
+              "order": 4,
+              "indigenousText": "kulang",
+              "chineseText": "青菜",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A8_5.mp3"
+            },
+            {
+              "id": "40-8-5",
+              "order": 5,
+              "indigenousText": "mavul",
+              "chineseText": "紅了、熟了",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A8_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 9,
+          "title": "lr",
+          "titleCh": "字母 lr",
+          "sentences": [
+            {
+              "id": "40-9-1",
+              "order": 1,
+              "indigenousText": "lralrak",
+              "chineseText": "孩子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A9_2.mp3"
+            },
+            {
+              "id": "40-9-2",
+              "order": 2,
+              "indigenousText": "lrevek",
+              "chineseText": "海",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A9_3.mp3"
+            },
+            {
+              "id": "40-9-3",
+              "order": 3,
+              "indigenousText": "walru",
+              "chineseText": "糖果",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A9_4.mp3"
+            },
+            {
+              "id": "40-9-4",
+              "order": 4,
+              "indigenousText": "walri",
+              "chineseText": "牙齒",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A9_5.mp3"
+            },
+            {
+              "id": "40-9-5",
+              "order": 5,
+              "indigenousText": "trakilr",
+              "chineseText": "杯子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A9_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 10,
+          "title": "m",
+          "titleCh": "字母 m",
+          "sentences": [
+            {
+              "id": "40-10-1",
+              "order": 1,
+              "indigenousText": "matra",
+              "chineseText": "眼睛",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A10_2.mp3"
+            },
+            {
+              "id": "40-10-2",
+              "order": 2,
+              "indigenousText": "maymay",
+              "chineseText": "鴨子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A10_3.mp3"
+            },
+            {
+              "id": "40-10-3",
+              "order": 3,
+              "indigenousText": "rami",
+              "chineseText": "樹根",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A10_4.mp3"
+            },
+            {
+              "id": "40-10-4",
+              "order": 4,
+              "indigenousText": "kutrem",
+              "chineseText": "雲",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A10_5.mp3"
+            },
+            {
+              "id": "40-10-5",
+              "order": 5,
+              "indigenousText": "lidam",
+              "chineseText": "舌頭",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A10_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 11,
+          "title": "n",
+          "titleCh": "字母 n",
+          "sentences": [
+            {
+              "id": "40-11-1",
+              "order": 1,
+              "indigenousText": "ina",
+              "chineseText": "媽媽",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A11_2.mp3"
+            },
+            {
+              "id": "40-11-2",
+              "order": 2,
+              "indigenousText": "zanum",
+              "chineseText": "水",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A11_3.mp3"
+            },
+            {
+              "id": "40-11-3",
+              "order": 3,
+              "indigenousText": "zenan",
+              "chineseText": "山",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A11_4.mp3"
+            },
+            {
+              "id": "40-11-4",
+              "order": 4,
+              "indigenousText": "kunin",
+              "chineseText": "兔子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A11_5.mp3"
+            },
+            {
+              "id": "40-11-5",
+              "order": 5,
+              "indigenousText": "puran",
+              "chineseText": "檳榔",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A11_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 12,
+          "title": "ng",
+          "titleCh": "字母 ng",
+          "sentences": [
+            {
+              "id": "40-12-1",
+              "order": 1,
+              "indigenousText": "ngiyaw",
+              "chineseText": "貓",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A12_2.mp3"
+            },
+            {
+              "id": "40-12-2",
+              "order": 2,
+              "indigenousText": "ngisngis",
+              "chineseText": "鬍鬚",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A12_3.mp3"
+            },
+            {
+              "id": "40-12-3",
+              "order": 3,
+              "indigenousText": "tranguru’",
+              "chineseText": "頭",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A12_4.mp3"
+            },
+            {
+              "id": "40-12-4",
+              "order": 4,
+              "indigenousText": "tralinga",
+              "chineseText": "耳朵",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A12_5.mp3"
+            },
+            {
+              "id": "40-12-5",
+              "order": 5,
+              "indigenousText": "kaysing",
+              "chineseText": "碗",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A12_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 13,
+          "title": "p",
+          "titleCh": "字母 p",
+          "sentences": [
+            {
+              "id": "40-13-1",
+              "order": 1,
+              "indigenousText": "paysu",
+              "chineseText": "錢",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A13_2.mp3"
+            },
+            {
+              "id": "40-13-2",
+              "order": 2,
+              "indigenousText": "peri’",
+              "chineseText": "小腿",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A13_3.mp3"
+            },
+            {
+              "id": "40-13-3",
+              "order": 3,
+              "indigenousText": "kipkip",
+              "chineseText": "睫毛",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A13_4.mp3"
+            },
+            {
+              "id": "40-13-4",
+              "order": 4,
+              "indigenousText": "kippu",
+              "chineseText": "車票",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A13_5.mp3"
+            },
+            {
+              "id": "40-13-5",
+              "order": 5,
+              "indigenousText": "trukap",
+              "chineseText": "拖鞋",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A13_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 14,
+          "title": "r",
+          "titleCh": "字母 r",
+          "sentences": [
+            {
+              "id": "40-14-1",
+              "order": 1,
+              "indigenousText": "ruma’",
+              "chineseText": "家",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A14_2.mp3"
+            },
+            {
+              "id": "40-14-2",
+              "order": 2,
+              "indigenousText": "rengas",
+              "chineseText": "月桃葉",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A14_3.mp3"
+            },
+            {
+              "id": "40-14-3",
+              "order": 3,
+              "indigenousText": "virvir",
+              "chineseText": "嘴唇",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A14_4.mp3"
+            },
+            {
+              "id": "40-14-4",
+              "order": 4,
+              "indigenousText": "ikur",
+              "chineseText": "尾巴",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A14_5.mp3"
+            },
+            {
+              "id": "40-14-5",
+              "order": 5,
+              "indigenousText": "viraw",
+              "chineseText": "芒草",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A14_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 15,
+          "title": "s",
+          "titleCh": "字母 s",
+          "sentences": [
+            {
+              "id": "40-15-1",
+              "order": 1,
+              "indigenousText": "siyaw",
+              "chineseText": "湯",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A15_2.mp3"
+            },
+            {
+              "id": "40-15-2",
+              "order": 2,
+              "indigenousText": "suwan",
+              "chineseText": "狗",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A15_3.mp3"
+            },
+            {
+              "id": "40-15-3",
+              "order": 3,
+              "indigenousText": "kuse",
+              "chineseText": "鞋子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A15_4.mp3"
+            },
+            {
+              "id": "40-15-4",
+              "order": 4,
+              "indigenousText": "varasa’",
+              "chineseText": "石頭",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A15_5.mp3"
+            },
+            {
+              "id": "40-15-5",
+              "order": 5,
+              "indigenousText": "vakis",
+              "chineseText": "水桶",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A15_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 16,
+          "title": "t",
+          "titleCh": "字母 t",
+          "sentences": [
+            {
+              "id": "40-16-1",
+              "order": 1,
+              "indigenousText": "tatusuk",
+              "chineseText": "鑰匙",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A16_2.mp3"
+            },
+            {
+              "id": "40-16-2",
+              "order": 2,
+              "indigenousText": "tiyalr",
+              "chineseText": "肚子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A16_3.mp3"
+            },
+            {
+              "id": "40-16-3",
+              "order": 3,
+              "indigenousText": "katawa",
+              "chineseText": "木瓜",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A16_4.mp3"
+            },
+            {
+              "id": "40-16-4",
+              "order": 4,
+              "indigenousText": "saytaw",
+              "chineseText": "蘿蔔",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A16_5.mp3"
+            },
+            {
+              "id": "40-16-5",
+              "order": 5,
+              "indigenousText": "lraput",
+              "chineseText": "地瓜葉",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A16_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 17,
+          "title": "tr",
+          "titleCh": "字母 tr",
+          "sentences": [
+            {
+              "id": "40-17-1",
+              "order": 1,
+              "indigenousText": "trau",
+              "chineseText": "人",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A17_2.mp3"
+            },
+            {
+              "id": "40-17-2",
+              "order": 2,
+              "indigenousText": "trumay",
+              "chineseText": "熊",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A17_3.mp3"
+            },
+            {
+              "id": "40-17-3",
+              "order": 3,
+              "indigenousText": "kutra",
+              "chineseText": "酒",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A17_4.mp3"
+            },
+            {
+              "id": "40-17-4",
+              "order": 4,
+              "indigenousText": "tralun",
+              "chineseText": "草",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A17_5.mp3"
+            },
+            {
+              "id": "40-17-5",
+              "order": 5,
+              "indigenousText": "’aputr",
+              "chineseText": "花",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A17_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 18,
+          "title": "v",
+          "titleCh": "字母 v",
+          "sentences": [
+            {
+              "id": "40-18-1",
+              "order": 1,
+              "indigenousText": "vira’",
+              "chineseText": "葉子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A18_2.mp3"
+            },
+            {
+              "id": "40-18-2",
+              "order": 2,
+              "indigenousText": "vasikaw",
+              "chineseText": "竹子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A18_3.mp3"
+            },
+            {
+              "id": "40-18-3",
+              "order": 3,
+              "indigenousText": "vu’ir",
+              "chineseText": "芋頭",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A18_4.mp3"
+            },
+            {
+              "id": "40-18-4",
+              "order": 4,
+              "indigenousText": "lravatr",
+              "chineseText": "袋子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A18_5.mp3"
+            },
+            {
+              "id": "40-18-5",
+              "order": 5,
+              "indigenousText": "’iyav",
+              "chineseText": "肩膀",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A18_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 19,
+          "title": "w",
+          "titleCh": "字母 w",
+          "sentences": [
+            {
+              "id": "40-19-1",
+              "order": 1,
+              "indigenousText": "wanay",
+              "chineseText": "榕樹",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A19_2.mp3"
+            },
+            {
+              "id": "40-19-2",
+              "order": 2,
+              "indigenousText": "vulraw",
+              "chineseText": "魚",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A19_3.mp3"
+            },
+            {
+              "id": "40-19-3",
+              "order": 3,
+              "indigenousText": "kenaw",
+              "chineseText": "蔥",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A19_4.mp3"
+            },
+            {
+              "id": "40-19-4",
+              "order": 4,
+              "indigenousText": "walay",
+              "chineseText": "線",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A19_5.mp3"
+            },
+            {
+              "id": "40-19-5",
+              "order": 5,
+              "indigenousText": "iwa",
+              "chineseText": "九",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A19_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 20,
+          "title": "y",
+          "titleCh": "字母 y",
+          "sentences": [
+            {
+              "id": "40-20-1",
+              "order": 1,
+              "indigenousText": "yakang",
+              "chineseText": "茶壺",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A20_2.mp3"
+            },
+            {
+              "id": "40-20-2",
+              "order": 2,
+              "indigenousText": "’ayam",
+              "chineseText": "鳥",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A20_3.mp3"
+            },
+            {
+              "id": "40-20-3",
+              "order": 3,
+              "indigenousText": "vavayan",
+              "chineseText": "婦女",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A20_4.mp3"
+            },
+            {
+              "id": "40-20-4",
+              "order": 4,
+              "indigenousText": "lriyung",
+              "chineseText": "豬",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A20_5.mp3"
+            },
+            {
+              "id": "40-20-5",
+              "order": 5,
+              "indigenousText": "apuy",
+              "chineseText": "火",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A20_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 21,
+          "title": "z",
+          "titleCh": "字母 z",
+          "sentences": [
+            {
+              "id": "40-21-1",
+              "order": 1,
+              "indigenousText": "zazek",
+              "chineseText": "身體",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A21_2.mp3"
+            },
+            {
+              "id": "40-21-2",
+              "order": 2,
+              "indigenousText": "pazekan",
+              "chineseText": "背簍",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A21_3.mp3"
+            },
+            {
+              "id": "40-21-3",
+              "order": 3,
+              "indigenousText": "palizing",
+              "chineseText": "車",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A21_4.mp3"
+            },
+            {
+              "id": "40-21-4",
+              "order": 4,
+              "indigenousText": "’uze’uzem",
+              "chineseText": "黑色",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A21_5.mp3"
+            },
+            {
+              "id": "40-21-5",
+              "order": 5,
+              "indigenousText": "tuzu",
+              "chineseText": "膝蓋",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A21_6.mp3"
+            }
+          ]
+        },
+        {
+          "lesson": 22,
+          "title": "’",
+          "titleCh": "字母 ’",
+          "sentences": [
+            {
+              "id": "40-22-1",
+              "order": 1,
+              "indigenousText": "’ulas",
+              "chineseText": "露水",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A22_2.mp3"
+            },
+            {
+              "id": "40-22-2",
+              "order": 2,
+              "indigenousText": "’unin",
+              "chineseText": "太陽",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A22_3.mp3"
+            },
+            {
+              "id": "40-22-3",
+              "order": 3,
+              "indigenousText": "’uma",
+              "chineseText": "旱地",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A22_4.mp3"
+            },
+            {
+              "id": "40-22-4",
+              "order": 4,
+              "indigenousText": "ni’en",
+              "chineseText": "脖子",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A22_5.mp3"
+            },
+            {
+              "id": "40-22-5",
+              "order": 5,
+              "indigenousText": "pa’a",
+              "chineseText": "大腿",
+              "audioUrl": "https://klokah.tw/extension/ab_data/sound/40/40A22_6.mp3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

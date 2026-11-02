@@ -55,7 +55,7 @@ assert.ok(hintStyles.includes(".hint-toggle") && hintStyles.includes(".sentence-
 assert.ok(home.includes("十二年國教"));
 assert.ok(home.includes("apps/basic-learning/twelve-listen-retell/"));
 assert.ok(home.includes("apps/classroom-quiz/twelve/"));
-assert.ok(index.includes("22 項任務"));
+assert.ok(index.includes("24 項任務"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(page + app + engine));
 
 console.log("PASS: twelve listen-retell page, play-before-repeat flow, license notice");
