@@ -1,5 +1,6 @@
 // 市場小幫手：隨機貨品、價目、問價解鎖、購物籃與結帳判定（純邏輯，不碰 DOM）。
 import { exactMatch, glossKey, semanticMatch } from "../../basic-learning/body-parts-practice/core.mjs";
+import { complete as defaultComplete } from "../../shared/llm-complete.mjs";
 
 export const BUDGET = 100;
 export const ROUND_SIZE = 3;
@@ -41,7 +42,7 @@ export const BARGAIN_REJECT = "現在景氣不好，不能再算便宜了。價�
 export const BRIEF_PLACEHOLDER = {
   scenario: "媽媽會給你 100 元，並交代要買哪幾樣菜或水果。",
   mission: "開始任務後，會依這次抽到的品項顯示購物清單。",
-  hint: "先問價，再把清單上的貨都買齊，最後結帳。"
+  hint: ""
 };
 
 /** 把名稱列成「A、B跟C」。 */
@@ -61,7 +62,7 @@ export function buildBrief(catalog, budget = BUDGET) {
   return {
     scenario: `媽媽給你 ${budget} 元，請你到市場攤位把這些買回來：${listText}。`,
     mission: `購物清單：${listText}。每樣至少買一個，別超過預算。`,
-    hint: `第一步：問出清單上每種貨的價錢。第二步：把 ${listText} 都買齊再結帳。`
+    hint: ""
   };
 }
 
@@ -91,7 +92,10 @@ export function catalogItem(catalog, id) {
  * @param {Array} dialectItems market-helper shard items
  */
 export function pickRoundCatalog(dialectItems, { count = ROUND_SIZE, random = Math.random } = {}) {
-  const pool = (dialectItems ?? []).filter((row) => row?.chineseText && row?.indigenousText);
+  const pool = (dialectItems ?? []).filter((row) => {
+    const indigenous = String(row?.indigenousText ?? "").trim();
+    return row?.chineseText && indigenous && indigenous !== "無此詞彙";
+  });
   if (pool.length < count) return [];
   const picked = shuffle(pool, random).slice(0, count);
   const roles = shuffle(PRICE_ROLES, random).slice(0, count);
@@ -138,6 +142,14 @@ export function priceQuote(item, unlocks) {
   return item.reveal.base;
 }
 
+/** 貨卡上的價錢。八折立刻可見；還沒問價時不把金額說出來。 */
+export function priceLabel(item, unlocks) {
+  const quoted = priceQuote(item, unlocks);
+  if (item?.bargain !== "off") return quoted;
+  if (!quoted) return "價錢未問，已八折";
+  return `${String(quoted).replace(/。$/, "")}，八折。`;
+}
+
 export function unitPrice(item) {
   const p = item?.pricing;
   if (!p) return null;
@@ -151,10 +163,12 @@ export function lineCost(item, qty) {
   const n = Math.max(0, Math.floor(Number(qty) || 0));
   if (!item || n <= 0) return 0;
   const p = item.pricing;
-  if (p.kind === "each") return n * p.price;
-  if (p.kind === "pack") return Math.round((n * p.packPrice) / p.packSize);
-  if (p.kind === "jin") return Math.round((n * p.jinPrice) / p.approxPerJin);
-  return 0;
+  let cost = 0;
+  if (p.kind === "each") cost = n * p.price;
+  else if (p.kind === "pack") cost = Math.round((n * p.packPrice) / p.packSize);
+  else if (p.kind === "jin") cost = Math.round((n * p.jinPrice) / p.approxPerJin);
+  if (item.bargain === "off") return Math.round(cost * 0.8);
+  return cost;
 }
 
 export function emptyCart() {
@@ -167,14 +181,26 @@ export function addToCart(catalog, cart, itemId, qty) {
   const next = cart.map((line) => ({ ...line }));
   const existing = next.find((line) => line.itemId === itemId);
   if (existing) existing.qty += n;
-  else next.push({ itemId, qty: n });
+  else next.push({ itemId, qty: n, free: 0 });
+  return next;
+}
+
+/** 當下多放一個，不加錢。 */
+export function giveFreeItem(catalog, cart, itemId) {
+  if (!catalogItem(catalog, itemId)) return (cart ?? []).map((line) => ({ ...line }));
+  const next = (cart ?? []).map((line) => ({ ...line }));
+  const existing = next.find((line) => line.itemId === itemId);
+  if (existing) existing.free = Math.max(0, Math.floor(existing.free || 0)) + 1;
+  else next.push({ itemId, qty: 0, free: 1 });
   return next;
 }
 
 export function setCartQty(catalog, cart, itemId, qty) {
   const n = Math.max(0, Math.floor(Number(qty) || 0));
-  const next = cart.filter((line) => line.itemId !== itemId).map((line) => ({ ...line }));
-  if (n > 0 && catalogItem(catalog, itemId)) next.push({ itemId, qty: n });
+  const prev = (cart ?? []).find((line) => line.itemId === itemId);
+  const free = Math.max(0, Math.floor(prev?.free || 0));
+  const next = (cart ?? []).filter((line) => line.itemId !== itemId).map((line) => ({ ...line }));
+  if ((n > 0 || free > 0) && catalogItem(catalog, itemId)) next.push({ itemId, qty: n, free });
   return next;
 }
 
@@ -189,12 +215,16 @@ export function cartTotal(catalog, cart) {
   }, 0);
 }
 
+export function linePieces(line) {
+  return Math.max(0, Math.floor(line?.qty || 0)) + Math.max(0, Math.floor(line?.free || 0));
+}
+
 export function cartPieceCount(cart) {
-  return (cart ?? []).reduce((sum, line) => sum + Math.max(0, Math.floor(line.qty || 0)), 0);
+  return (cart ?? []).reduce((sum, line) => sum + linePieces(line), 0);
 }
 
 export function cartQtyOf(cart, itemId) {
-  return (cart ?? []).find((line) => line.itemId === itemId)?.qty ?? 0;
+  return linePieces((cart ?? []).find((line) => line.itemId === itemId));
 }
 
 export function cheapestPerPiece(catalog) {
@@ -267,4 +297,63 @@ export function matchItemName({ answer, translation, item, ethnicity }) {
     return { ok: true, kind: "semantic" };
   }
   return { ok: false, kind: "retry" };
+}
+
+const STALL_SYSTEM = `你是市場攤位的評分助手。學習者已經點選了一項貨，用族語問價或講價。
+依「中文譯文」判斷意圖。只回傳 JSON，不要 markdown：
+{"intent":"price"|"bargain"|"other"|"undetermined","rationale":"一句話"}
+price：正在問這項貨多少錢、怎麼賣、怎麼算。沒講出貨名但就是在問價錢也算。
+bargain：想少付、打折、便宜一點、算便宜。
+other：只講貨名、問別的貨、閒聊。
+無法判斷時 intent 用 undetermined。`;
+
+function parseJudgeBody(text) {
+  const raw = String(text ?? "").trim().replace(/^```(?:json)?\s*|\s*```$/g, "");
+  const start = raw.indexOf("{");
+  const end = raw.lastIndexOf("}");
+  if (start < 0 || end <= start) throw new Error("LLM 回傳不是 JSON 物件");
+  return JSON.parse(raw.slice(start, end + 1));
+}
+
+/**
+ * 譯文是在問價、殺價，還是都不是。連不上或沒有譯文時不當成聽不懂。
+ * @returns {Promise<{ intent: "price"|"bargain"|"other"|"undetermined", reason: string, error?: string }>}
+ */
+export async function judgeStallUtterance({ translation, itemChinese, complete: run = defaultComplete } = {}) {
+  const heard = typeof translation === "string" ? translation.trim() : "";
+  const item = typeof itemChinese === "string" ? itemChinese.trim() : "";
+  if (!heard || !item) return { intent: "undetermined", reason: "empty" };
+  try {
+    const body = parseJudgeBody(await run({
+      system: STALL_SYSTEM,
+      user: `貨品：${item}\n中文譯文：${heard}`
+    }));
+    const intent = body?.intent;
+    if (intent === "price" || intent === "bargain" || intent === "other") {
+      return { intent, reason: "ok" };
+    }
+    return { intent: "undetermined", reason: "undetermined" };
+  } catch (error) {
+    return {
+      intent: "undetermined",
+      reason: "failed",
+      error: error instanceof Error ? error.message : String(error)
+    };
+  }
+}
+
+/** 約一半拒絕，四分之一八折，四分之一多給一個。 */
+export function rollBargain(random = Math.random) {
+  const n = random();
+  if (n < 0.5) return "refuse";
+  if (n < 0.75) return "off";
+  return "extra";
+}
+
+/** 同一項只抽一次；再講維持原結果。fresh 為 true 時才是這次新抽到的。 */
+export function settleBargain(item, random = Math.random) {
+  if (!item) return { outcome: "refuse", fresh: false };
+  if (item.bargain) return { outcome: item.bargain, fresh: false };
+  item.bargain = rollBargain(random);
+  return { outcome: item.bargain, fresh: true };
 }

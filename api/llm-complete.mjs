@@ -175,9 +175,13 @@ export default async function handler(req, res) {
       }),
       signal: controller.signal,
     });
-    const payload = await response.json().catch(() => ({}));
+    const raw = await response.text();
+    let payload = {};
+    try { payload = raw ? JSON.parse(raw) : {}; } catch { /* 閘道有時回 HTML */ }
     if (!response.ok) {
-      const detail = payload?.error?.message || `HTTP ${response.status}`;
+      const fromJson = typeof payload?.error === "string" ? payload.error : payload?.error?.message;
+      const snippet = raw.replace(/\s+/g, " ").trim().slice(0, 160);
+      const detail = fromJson || snippet || `HTTP ${response.status}`;
       send(res, 502, { error: `LLM 請求失敗：${detail}` });
       return;
     }
