@@ -23,7 +23,7 @@
         <p class="task-brief__lead">到攤位問價、比較與結帳，練習購物用語。</p>
         <ol>
           <li>選擇語言別與方言別。</li>
-          <li>點貨品，用族語問價或購買。</li>
+          <li>用族語跟攤主買菜。</li>
           <li>買齊清單後結帳，看結果。</li>
         </ol>
       </aside>
@@ -70,12 +70,11 @@
 
             <div class="vendor-board" aria-live="polite">
               <span class="vendor-board__who">攤主</span>
-              <p id="vendor-say" class="vendor-board__say">點一種貨，用族語說出它的名字來問價。</p>
+              <p id="vendor-say" class="vendor-board__say">您好，請問想看哪一種？</p>
             </div>
 
             <div class="stall-actions">
               <button id="ask-detail" type="button" hidden>一斤大約幾個？</button>
-              <button id="bargain" type="button" hidden>能便宜一點嗎？</button>
               <button id="to-buy" type="button" class="primary" hidden>去購買 →</button>
               <button id="to-ask" type="button" hidden>← 再問價</button>
             </div>
@@ -85,8 +84,8 @@
         <div class="scene-side">
           <div id="speak-panel" class="my-turn">
             <p class="prompt" id="speak-prompt">換你說</p>
-            <h2 id="turn-title">用族語說貨品名</h2>
-            <p id="turn-hint" class="turn-hint">先在左邊點選一種貨。</p>
+            <h2 id="turn-title">問價錢</h2>
+            <p id="turn-hint" class="turn-hint">先點一種貨。</p>
             <div class="player-row">
               <button id="replay" class="primary" type="button" disabled>聽教材發音</button>
               <span id="audio-state" class="audio-state" data-state="idle" aria-live="polite">選貨後可聽</span>

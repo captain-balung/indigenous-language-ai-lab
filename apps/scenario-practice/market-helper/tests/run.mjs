@@ -5,9 +5,9 @@ import { fileURLToPath } from "node:url";
 import {
   BARGAIN_REJECT, BRIEF_PLACEHOLDER, BUDGET, FAIL, PRICE_ROLES, ROUND_SIZE,
   addToCart, buildBrief, cartPieceCount, cartQtyOf, cartTotal, catalogItem,
-  emptyCart, emptyUnlocks, formatItemList, judgeCheckout, lineCost, matchItemName,
-  pickRoundCatalog, priceQuote, removeFromCart, setCartQty, shoppingList,
-  unlockDetail, unlockPrice
+  emptyCart, emptyUnlocks, formatItemList, giveFreeItem, judgeCheckout, judgeStallUtterance,
+  lineCost, matchItemName, pickRoundCatalog, priceLabel, priceQuote, removeFromCart,
+  rollBargain, setCartQty, settleBargain, shoppingList, unlockDetail, unlockPrice
 } from "../core.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
@@ -37,6 +37,14 @@ const catalog = pickRoundCatalog(pool, {
   })()
 });
 assert.equal(catalog.length, 3);
+assert.ok(catalog.every((item) => item.indigenousText !== "無此詞彙"));
+
+const onlyPlaceholder = [
+  { code: "08-27", chineseText: "蕃茄", indigenousText: "無此詞彙" },
+  { code: "08-31", chineseText: "胡瓜", indigenousText: " 無此詞彙 " },
+  { code: "08-38", chineseText: "蔥", indigenousText: "無此詞彙" }
+];
+assert.deepEqual(pickRoundCatalog(onlyPlaceholder, { count: 3 }), []);
 
 const brief = buildBrief(catalog);
 assert.ok(brief.scenario.includes("媽媽給你 100 元"));
@@ -92,6 +100,69 @@ const pricedSum = PRICE_ROLES.reduce((sum, role) => {
 assert.ok(pricedSum <= BUDGET, `照定價買齊應在預算內，目前 ${pricedSum} > ${BUDGET}`);
 assert.equal(pricedSum, 90);
 
+assert.equal(rollBargain(() => 0), "refuse");
+assert.equal(rollBargain(() => 0.49), "refuse");
+assert.equal(rollBargain(() => 0.5), "off");
+assert.equal(rollBargain(() => 0.74), "off");
+assert.equal(rollBargain(() => 0.75), "extra");
+
+const eachTen = { pricing: { kind: "each", price: 10 } };
+assert.equal(lineCost(eachTen, 1), 10);
+assert.equal(lineCost({ ...eachTen, bargain: "off" }, 1), 8);
+const stock = catalog.map((row) => ({ ...row }));
+stock[0] = { ...stock[0], bargain: "off" };
+assert.equal(cartTotal(stock, addToCart(stock, emptyCart(), stock[0].id, 1)), 8);
+
+const gifted = giveFreeItem(catalog, emptyCart(), catalog[0].id);
+assert.equal(cartQtyOf(gifted, catalog[0].id), 1);
+assert.equal(cartTotal(catalog, gifted), 0);
+const paidAndGift = giveFreeItem(catalog, addToCart(catalog, emptyCart(), catalog[0].id, 1), catalog[0].id);
+assert.equal(cartQtyOf(paidAndGift, catalog[0].id), 2);
+assert.equal(cartTotal(catalog, paidAndGift), cartTotal(catalog, addToCart(catalog, emptyCart(), catalog[0].id, 1)));
+
+let onlyGifts = emptyCart();
+for (const item of catalog) onlyGifts = giveFreeItem(catalog, onlyGifts, item.id);
+assert.equal(cartTotal(catalog, onlyGifts), 0);
+assert.equal(judgeCheckout(catalog, onlyGifts).code, "win");
+
+const deal = { id: "deal" };
+assert.deepEqual(settleBargain(deal, () => 0.9), { outcome: "extra", fresh: true });
+assert.deepEqual(settleBargain(deal, () => 0), { outcome: "extra", fresh: false });
+
+assert.equal(priceLabel({ ...catalog[0], bargain: "off" }, emptyUnlocks()), "價錢未問，已八折");
+const asked = unlockPrice(emptyUnlocks(), catalog[0].id);
+assert.match(priceLabel({ ...catalog[0], bargain: "off" }, asked), /八折/);
+
+const judge = (intent) => judgeStallUtterance({
+  translation: "這句話",
+  itemChinese: "香蕉",
+  complete: async () => `{"intent":"${intent}","rationale":"測試"}`
+});
+assert.equal((await judge("price")).intent, "price");
+assert.equal((await judge("bargain")).intent, "bargain");
+assert.equal((await judge("other")).intent, "other");
+const down = await judgeStallUtterance({
+  translation: "多少錢",
+  itemChinese: "香蕉",
+  complete: async () => { throw new Error("無法連線"); }
+});
+assert.equal(down.intent, "undetermined");
+assert.equal(down.reason, "failed");
+let called = false;
+const blank = await judgeStallUtterance({
+  translation: "  ",
+  itemChinese: "香蕉",
+  complete: async () => { called = true; return "{}"; }
+});
+assert.equal(blank.reason, "empty");
+assert.equal(called, false);
+const junk = await judgeStallUtterance({
+  translation: "嗯",
+  itemChinese: "香蕉",
+  complete: async () => "不是 json"
+});
+assert.equal(junk.reason, "failed");
+
 const page = read("apps/scenario-practice/market-helper/index.html");
 const appSource = read("apps/scenario-practice/market-helper/app.mjs");
 const appCode = stripComments(appSource);
@@ -103,13 +174,20 @@ assert.ok(page.includes('id="input-mode-toggle"') && page.includes('id="input-ty
 assert.ok(!page.includes("再買最多顆"));
 assert.ok(appCode.includes("wireInputMode"));
 assert.ok(/state === "recorded"[\s\S]*?runFlow\(\)/.test(appCode), "語音停錄後必須自動送出");
+assert.ok(appCode.includes("function dropped(epoch)"), "換局之後不能把舊的判定寫進來");
+assert.ok(/epoch === runEpoch\) setState\("slow"\)/.test(appCode), "慢提示不能寫到下一局");
 assert.ok(/mode\(\) === "voice"[\s\S]*?ui\.submit\.hidden = true/.test(appCode), "語音模式必須隱藏送出鈕");
 assert.ok(appCode.includes("buildBrief"));
 assert.ok(appCode.includes("judgeCheckout"));
+assert.ok(appCode.includes("攤主：聽不懂，再說一次。"), "沒聽懂要由攤主回應");
+assert.ok(!appCode.includes("系統聽到"), "不要把辨識內容顯示出來");
+assert.ok(appCode.includes("judgeStallUtterance"));
+assert.ok(appCode.includes("語意使用 vLLM AI 判別"));
+assert.ok(!page.includes("能便宜一點嗎"));
+assert.ok(page.includes("一斤大約幾個？"));
 assert.ok(appCode.includes("ui.setup.hidden = true"));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(appCode));
 assert.ok(!/[\u{1F300}-\u{1FAFF}]/u.test(page + appSource));
-assert.ok(!/llm-complete|OPENAI|GPT/i.test(appCode));
 
 const dataset = JSON.parse(read("data/market-helper/dataset.json"));
 assert.ok(dataset.schemaVersion >= 2);

@@ -1,4 +1,3 @@
-import { createSingleFlight } from "../../basic-learning/body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
 import {
@@ -6,8 +5,9 @@ import {
 } from "../../certification-mock/beginner-mock-exam/recorder.mjs";
 import {
   BARGAIN_REJECT, BRIEF_PLACEHOLDER, BUDGET, ROUND_SIZE,
-  addToCart, buildBrief, cartTotal, emptyCart, emptyUnlocks, judgeCheckout,
-  matchItemName, pickRoundCatalog, priceQuote, unlockDetail, unlockPrice
+  addToCart, buildBrief, cartPieceCount, cartTotal, emptyCart, emptyUnlocks, giveFreeItem, judgeCheckout,
+  judgeStallUtterance, linePieces, matchItemName, pickRoundCatalog, priceLabel, priceQuote, settleBargain,
+  unlockDetail, unlockPrice
 } from "./core.mjs";
 import { wireInputMode } from "../../shared/input-mode.mjs";
 
@@ -19,7 +19,7 @@ const ui = {
   backSetup: $("#back-setup"), budgetFill: $("#budget-fill"), budgetText: $("#budget-text"),
   scenarioText: $("#scenario-text"), missionText: $("#mission-text"), hintText: $("#hint-text"),
   productGrid: $("#product-grid"), vendorSay: $("#vendor-say"),
-  askDetail: $("#ask-detail"), bargain: $("#bargain"), toBuy: $("#to-buy"), toAsk: $("#to-ask"),
+  askDetail: $("#ask-detail"), toBuy: $("#to-buy"), toAsk: $("#to-ask"),
   speakPanel: $("#speak-panel"), turnTitle: $("#turn-title"), turnHint: $("#turn-hint"),
   replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"),
   qtyRow: $("#qty-row"), qty: $("#qty"), qtyDec: $("#qty-dec"), qtyInc: $("#qty-inc"),
@@ -54,7 +54,6 @@ let cart = emptyCart();
 let pending = false;
 let asrAudit = null;
 let recorder = null;
-let lastHeard = null;
 let translationCodes = new Set(DIALECTS.map((item) => item.code));
 let runEpoch = 0;
 let inputMode = null;
@@ -172,6 +171,7 @@ async function verifyServices() {
   } catch {
     notes.push("翻譯即時清單暫時無法取得，送出時再試");
   }
+  notes.push("語意使用 vLLM AI 判別");
   ui.api.textContent = `● ${notes.join("；")}`;
   ui.api.dataset.state = asrAudit?.consistent ? "ok" : "fallback";
   updateStart();
@@ -202,6 +202,7 @@ function applyBrief(brief) {
   ui.scenarioText.textContent = brief.scenario;
   ui.missionText.textContent = brief.mission;
   ui.hintText.textContent = brief.hint;
+  ui.hintText.hidden = !brief.hint;
 }
 
 function dealRound() {
@@ -211,13 +212,12 @@ function dealRound() {
   cart = emptyCart();
   phase = "ask";
   pending = false;
-  lastHeard = null;
   clearRecording();
   ui.answer.value = "";
   ui.result.hidden = true;
   ui.retry.hidden = true;
   applyBrief(buildBrief(catalog));
-  ui.vendorSay.textContent = "點一種貨，用族語說出它的名字來問價。先把媽媽交代的清單問清楚。";
+  ui.vendorSay.textContent = "您好，請問想看哪一種？";
   renderPhase();
   renderProducts();
   renderCart();
@@ -232,7 +232,6 @@ function resetProgress() {
 }
 
 function clearRecording() {
-  lastHeard = null;
   recorder?.clear();
   ui.time.textContent = "00:00";
   updateSubmit();
@@ -281,7 +280,7 @@ async function loadPool() {
     if (selectedDialect !== dialect) return;
     dialectPool = Array.isArray(shard.items) ? shard.items : [];
     if (dialectPool.length < ROUND_SIZE) throw new Error("可賣貨品不足");
-    ui.api.textContent = `● 已載入 ${dialectPool.length} 種可賣植物詞（每局隨機 ${ROUND_SIZE} 種）`;
+    ui.api.textContent = `● 已載入 ${dialectPool.length} 種可賣植物詞（每局隨機 ${ROUND_SIZE} 種）；語意使用 vLLM AI 判別`;
     ui.api.dataset.state = "ok";
   } catch (error) {
     if (selectedDialect !== dialect) return;
@@ -303,6 +302,7 @@ ui.start.addEventListener("click", () => {
 
 function backToSetup() {
   runEpoch += 1;
+  pending = false;
   ui.scene.hidden = true;
   ui.report.hidden = true;
   ui.setup.hidden = false;
@@ -324,11 +324,10 @@ function renderPhase() {
   const asking = phase === "ask";
   ui.phaseLabel.textContent = asking ? "問價" : "購買";
   ui.qtyRow.hidden = asking;
-  ui.cartPanel.hidden = asking;
+  ui.cartPanel.hidden = asking && cartPieceCount(cart) === 0;
   ui.toBuy.hidden = asking ? unlocks.asked.size < catalog.length : true;
   ui.toAsk.hidden = asking;
-  ui.bargain.hidden = asking;
-  ui.checkout.disabled = asking || !cart.length || pending;
+  ui.checkout.disabled = asking || cartPieceCount(cart) === 0 || pending;
   updateDetailButton();
 }
 
@@ -346,16 +345,16 @@ function updateDetailButton() {
 
 function renderProducts() {
   ui.productGrid.innerHTML = catalog.map((item) => {
-    const quoted = priceQuote(item, unlocks);
+    const label = priceLabel(item, unlocks);
     const selected = item.id === selectedItemId ? " is-selected" : "";
-    const known = quoted ? " is-known" : "";
+    const known = priceQuote(item, unlocks) ? " is-known" : "";
     const img = item.imageUrl
       ? `<img class="product-card__img" src="${escapeHtml(item.imageUrl)}" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer">`
       : `<span class="product-card__art" aria-hidden="true"></span>`;
     return `<button type="button" class="product-card${selected}${known}" data-id="${escapeHtml(item.id)}" role="listitem">
       ${img}
       <strong>${escapeHtml(item.chineseText)}</strong>
-      <span class="product-card__price">${quoted ? escapeHtml(quoted) : "價錢未問"}</span>
+      <span class="product-card__price">${escapeHtml(label || "價錢未問")}</span>
     </button>`;
   }).join("");
 }
@@ -378,21 +377,22 @@ function updateSpeakPanel() {
   const canRecord = supportsRecording() && selectedDialect && asrStateFor(selectedDialect.ethnicity).usable;
   ui.record.disabled = !canRecord || !item;
   if (!item) {
-    ui.turnTitle.textContent = "用族語說貨品名";
-    ui.turnHint.textContent = phase === "ask" ? "先在左邊點選一種貨。" : "先選要買的貨，再選數量。";
+    ui.turnTitle.textContent = phase === "ask" ? "問價錢" : "放入籃子";
+    ui.turnHint.hidden = false;
+    ui.turnHint.textContent = "先點一種貨。";
     ui.replay.disabled = true;
     setAudioState("idle", "選貨後可聽");
     updateSubmit();
     return;
   }
   if (phase === "ask") {
-    ui.turnTitle.textContent = `問價：說出「${item.chineseText}」的族語`;
-    ui.turnHint.textContent = unlocks.asked.has(item.id)
-      ? "這種貨的價錢已經問過了，可以改問別的，或去購買。"
-      : "語音錄完會自動送出；打字則按送出。說對貨品名後，攤主會報價。";
+    ui.turnTitle.textContent = `問「${item.chineseText}」多少錢`;
+    ui.turnHint.hidden = true;
+    ui.turnHint.textContent = "";
   } else {
-    ui.turnTitle.textContent = `放入籃子：再說一次「${item.chineseText}」`;
-    ui.turnHint.textContent = "選定數量後，用族語說出貨品名確認放入購物籃。";
+    ui.turnTitle.textContent = `說出「${item.chineseText}」`;
+    ui.turnHint.hidden = false;
+    ui.turnHint.textContent = "放進籃子。";
   }
   ui.replay.disabled = !item.audioUrl;
   setAudioState(item.audioUrl ? "idle" : "failed", item.audioUrl ? "想聽再按播放" : "沒有音檔");
@@ -418,16 +418,17 @@ function renderCart() {
       const item = catalog.find((row) => row.id === line.itemId);
       const name = item?.chineseText || line.itemId;
       const unit = item?.unit || "個";
-      return `<li><span>${escapeHtml(name)} × ${line.qty} ${unit}</span></li>`;
+      const count = linePieces(line);
+      return `<li><span>${escapeHtml(name)} × ${count} ${unit}</span></li>`;
     }).join("");
   }
   ui.cartTotal.textContent = `合計 ${cartTotal(catalog, cart)} 元`;
-  ui.checkout.disabled = phase !== "buy" || !cart.length || pending;
+  ui.checkout.disabled = phase !== "buy" || cartPieceCount(cart) === 0 || pending;
 }
 
 ui.toBuy.addEventListener("click", () => {
   phase = "buy";
-  ui.vendorSay.textContent = "選貨、選數量，再說一次族語名放入籃子。可以殺價試試，最後按結帳。";
+  ui.vendorSay.textContent = "好的，請問要買哪一種？";
   renderPhase();
   updateSpeakPanel();
   renderCart();
@@ -435,7 +436,7 @@ ui.toBuy.addEventListener("click", () => {
 
 ui.toAsk.addEventListener("click", () => {
   phase = "ask";
-  ui.vendorSay.textContent = "點一種貨，用族語說出它的名字來問價。";
+  ui.vendorSay.textContent = "您好，請問想看哪一種？";
   renderPhase();
   updateSpeakPanel();
 });
@@ -447,10 +448,6 @@ ui.askDetail.addEventListener("click", () => {
   ui.vendorSay.textContent = `攤主：${priceQuote(item, unlocks)}`;
   updateDetailButton();
   renderProducts();
-});
-
-ui.bargain.addEventListener("click", () => {
-  ui.vendorSay.textContent = `攤主：${BARGAIN_REJECT}`;
 });
 
 ui.qty.addEventListener("input", updateSubmit);
@@ -514,12 +511,28 @@ async function translateAnswer(text) {
   return translateToZh(text, selectedDialect.code);
 }
 
-const runFlow = createSingleFlight(async () => {
+function dropped(epoch) {
+  return epoch !== runEpoch;
+}
+
+let flight = null;
+let flightEpoch = -1;
+
+function runFlow() {
+  if (flight && flightEpoch === runEpoch) return flight;
+  const epoch = runEpoch;
+  flightEpoch = epoch;
+  flight = Promise.resolve().then(() => submitTurn(epoch)).finally(() => {
+    if (flightEpoch === epoch) flight = null;
+  });
+  return flight;
+}
+
+async function submitTurn(epoch) {
   const item = selectedItem();
   const typed = inputMode?.mode() === "type" ? ui.answer.value.trim() : "";
   const useVoice = inputMode?.mode() === "voice" && recorder?.blob;
-  if (pending || !item || (!typed && !useVoice)) return;
-  const epoch = runEpoch;
+  if (pending || !item || (!typed && !useVoice) || dropped(epoch)) return;
   pending = true;
   ui.submit.disabled = true;
   ui.retry.disabled = true;
@@ -532,74 +545,120 @@ const runFlow = createSingleFlight(async () => {
     try {
       wav = await convertToAsrWav(recorder.blob);
     } catch (error) {
+      if (dropped(epoch)) return;
       setState("failed", "轉檔失敗，沒有送出");
       showSpeakResult("undetermined", `無法把這段錄音轉成辨識需要的格式（${error.message}），因此沒有送出任何資料。`);
-      finishFlow();
+      finishFlow(epoch, { keepState: true });
       return;
     }
+    if (dropped(epoch)) return;
     setState("transcribing");
-    const slowHint = setTimeout(() => setState("slow"), SLOW_HINT_AFTER_MS);
+    const slowHint = setTimeout(() => { if (epoch === runEpoch) setState("slow"); }, SLOW_HINT_AFTER_MS);
     try {
       indigenous = await transcribe(wav, selectedDialect.ethnicity);
-      if (epoch !== runEpoch) return;
-      lastHeard = indigenous;
+      if (dropped(epoch)) return;
     } catch (error) {
-      clearTimeout(slowHint);
-      if (epoch !== runEpoch) return;
+      if (dropped(epoch)) return;
       setState("failed", "這次沒有辨識成功");
       showSpeakResult("undetermined", `目前無法辨識（${error.message}），你的答案尚未被判錯。`);
       ui.retry.hidden = false;
-      finishFlow();
+      finishFlow(epoch, { keepState: true });
       return;
+    } finally {
+      clearTimeout(slowHint);
     }
-    clearTimeout(slowHint);
-  } else {
-    lastHeard = null;
   }
 
+  if (dropped(epoch)) return;
+  if (phase !== "ask") {
+    let named = matchItemName({ answer: indigenous, translation: "", item, ethnicity: selectedDialect.ethnicity });
+    if (named.ok) {
+      placeInCart(epoch, item);
+      return;
+    }
+  }
+
+  setState("transcribing", "語意判別中，請稍候");
   let translation = "";
   try {
     translation = await translateAnswer(indigenous);
-    if (epoch !== runEpoch) return;
+    if (dropped(epoch)) return;
   } catch (error) {
-    if (epoch !== runEpoch) return;
+    if (dropped(epoch)) return;
+    setState("failed", "這次沒有翻譯成功");
     showSpeakResult("undetermined", `目前無法完成判定（${error.message}），你的答案尚未被判錯。`);
     ui.retry.hidden = false;
-    finishFlow();
+    finishFlow(epoch, { keepState: true });
     return;
   }
 
-  const matched = matchItemName({ answer: indigenous, translation, item, ethnicity: selectedDialect.ethnicity });
-  if (epoch !== runEpoch) return;
+  if (phase !== "ask") {
+    const named = matchItemName({ answer: indigenous, translation, item, ethnicity: selectedDialect.ethnicity });
+    if (dropped(epoch)) return;
+    if (named.ok) {
+      placeInCart(epoch, item);
+      return;
+    }
+  }
 
-  if (!matched.ok) {
-    showSpeakResult("retry", `系統聽到：${indigenous || "（空白）"}；懂成：${translation || "（無）"}。這次不像「${item.chineseText}」，再試一次。`);
+  const judged = await judgeStallUtterance({ translation, itemChinese: item.chineseText });
+  if (dropped(epoch)) return;
+  if (judged.reason !== "ok") {
+    const why = judged.error ? `（${judged.error}）` : "";
+    showSpeakResult("undetermined", `目前無法完成判定${why}，你的答案尚未被判錯。`);
     ui.retry.hidden = false;
-    finishFlow();
+    finishFlow(epoch, { keepState: true });
     return;
   }
 
-  const heardNote = lastHeard ? ` 辨識：${indigenous}。` : "";
-  if (phase === "ask") {
+  if (judged.intent === "price" && phase === "ask") {
     unlocks = unlockPrice(unlocks, item.id);
-    const quote = priceQuote(item, unlocks);
-    ui.vendorSay.textContent = `攤主：${item.chineseText}？${quote}`;
-    showSpeakResult("semantic", `對，這是「${item.chineseText}」（${item.indigenousText}）。價錢已解鎖。${heardNote}`);
-    renderProducts();
-    renderPhase();
-    updateSpeakPanel();
-  } else {
-    const qty = Math.max(1, Math.min(20, Number.parseInt(ui.qty.value, 10) || 1));
-    cart = addToCart(catalog, cart, item.id, qty);
-    ui.vendorSay.textContent = `攤主：好，${item.chineseText} ${qty} ${item.unit}放進籃子了。還要別的嗎？`;
-    showSpeakResult("semantic", `已放入 ${item.chineseText} × ${qty}。${heardNote}`);
-    renderCart();
-    updateBudget();
+    const next = catalog.find((row) => !unlocks.asked.has(row.id));
+    if (next) selectedItemId = next.id;
+    ui.vendorSay.textContent = `攤主：${item.chineseText}？${priceQuote(item, unlocks)}`;
+    finishSpoken(epoch);
+    return;
   }
-  clearRecording();
+  if (judged.intent === "price") {
+    ui.vendorSay.textContent = `攤主：${item.chineseText}？${priceQuote(item, unlocks)}`;
+    finishSpoken(epoch);
+    return;
+  }
+  if (judged.intent === "bargain") {
+    const { outcome, fresh } = settleBargain(item);
+    if (outcome === "extra" && fresh) cart = giveFreeItem(catalog, cart, item.id);
+    ui.vendorSay.textContent = outcome === "off"
+      ? "攤主：好吧，這項現在算八折。"
+      : outcome === "extra"
+        ? "攤主：好吧，多給你一個。"
+        : `攤主：${BARGAIN_REJECT}`;
+    finishSpoken(epoch);
+    return;
+  }
+
+  ui.vendorSay.textContent = "攤主：聽不懂，再說一次。";
+  finishSpoken(epoch);
+}
+
+function placeInCart(epoch, item) {
+  const qty = Math.max(1, Math.min(20, Number.parseInt(ui.qty.value, 10) || 1));
+  cart = addToCart(catalog, cart, item.id, qty);
+  ui.vendorSay.textContent = `攤主：好，${item.chineseText} ${qty} ${item.unit}放進籃子了。還要別的嗎？`;
+  finishSpoken(epoch);
+}
+
+function finishSpoken(epoch) {
+  ui.result.hidden = true;
+  ui.retry.hidden = true;
   ui.answer.value = "";
-  finishFlow();
-});
+  clearRecording();
+  renderProducts();
+  renderPhase();
+  renderCart();
+  updateBudget();
+  updateSpeakPanel();
+  finishFlow(epoch);
+}
 
 function showSpeakResult(state, message) {
   ui.result.hidden = false;
@@ -607,17 +666,19 @@ function showSpeakResult(state, message) {
   ui.result.textContent = message;
 }
 
-function finishFlow() {
+function finishFlow(epoch, { keepState = false } = {}) {
+  if (dropped(epoch)) return;
   pending = false;
   ui.retry.disabled = false;
   const canRecord = supportsRecording() && selectedDialect && asrStateFor(selectedDialect.ethnicity).usable;
   ui.record.disabled = !canRecord || !selectedItem();
   updateSubmit();
-  setState(recorder?.blob ? "recorded" : "idle");
+  renderPhase();
+  if (!keepState) setState("idle");
 }
 
 ui.checkout.addEventListener("click", () => {
-  if (!cart.length || pending) return;
+  if (!cartPieceCount(cart) || pending) return;
   const outcome = judgeCheckout(catalog, cart);
   ui.scene.hidden = true;
   ui.report.hidden = false;
@@ -625,7 +686,7 @@ ui.checkout.addEventListener("click", () => {
   ui.reportDetail.textContent = outcome.detail;
   const lines = cart.map((line) => {
     const item = catalog.find((row) => row.id === line.itemId);
-    return `${item?.chineseText || line.itemId} × ${line.qty}`;
+    return `${item?.chineseText || line.itemId} × ${linePieces(line)}`;
   }).join("、");
   ui.reportMath.textContent = `籃子：${lines || "（空）"}。合計 ${outcome.total} 元（預算 ${BUDGET} 元）。`;
   ui.report.dataset.state = outcome.code;
