@@ -8,7 +8,7 @@
 .sentence-hint{margin:0 0 1rem;padding:1rem 1.1rem;border:3px dashed var(--ink);border-radius:18px;background:#fffdf5}
 .sentence-hint__lesson{margin:0 0 .55rem;font-weight:900;color:#4a5474}
 .sentence-hint .player-row{margin:.85rem 0 0}
-.sentence-hint dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;margin:0}
+.sentence-hint dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;margin:0;align-items:baseline}
 .sentence-hint dt{font-weight:900;color:#5a6478}
 .sentence-hint dd{margin:0;font-weight:800;line-height:1.55;word-break:break-word}
 .sentence-hint [data-hint="chinese"],#hint-chinese{font-size:1.05rem}
