@@ -10,6 +10,7 @@ import {
   MODES, buildRound, needsAsr, needsAudio, replyVerdict, reportDetail, scoreLabel, tally, verdictFromTranslation
 } from "./core.mjs";
 import { createHintPanel } from "../../shared/hint.mjs";
+import { mountSymbolKeyboard } from "../../shared/symbol-keyboard.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 let mode;
@@ -31,6 +32,9 @@ const ui = {
 };
 
 const hint = createHintPanel({ toggle: ui.hintToggle, panel: ui.hintPanel });
+
+// 造句／翻譯的打字輸入：上方掛族語特殊符號鍵盤（元素不存在時模組內會安全略過）
+mountSymbolKeyboard({ container: ui.compose, input: ui.answer });
 
 const TITLES = {
   compose: ["造句", "看中文，寫出族語"],

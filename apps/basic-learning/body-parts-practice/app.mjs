@@ -2,6 +2,7 @@ import { createQuestionDeck, createSingleFlight, judgeAnswer } from "./core.mjs"
 import { DIALECTS, ETHNICITIES, dialectById } from "./dialects.mjs";
 import { THEMES, loadThemeShards, recordsForTheme, themeById } from "./themes.mjs";
 import { judgeAiMeaning } from "../../shared/semantic-meaning.mjs";
+import { mountSymbolKeyboard } from "../../shared/symbol-keyboard.mjs";
 
 const API = "https://ai3.iformosa.com.tw/formosan_ai/api.php";
 const $ = (selector) => document.querySelector(selector);
@@ -12,6 +13,9 @@ const ui = {
   result: $("#result"), retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
 let selectedDialect, selectedTheme, shards, records = [], question, deck, roundSize = 0, answeredCount = 0, pending = false, apiCodes = new Set(DIALECTS.map((d) => d.code));
+
+// 打字輸入上方掛族語特殊符號鍵盤（看圖練習是純打字 app，不走 input-mode 共用切換）
+mountSymbolKeyboard({ input: ui.answer });
 
 async function init() {
   ui.ethnicity.insertAdjacentHTML("beforeend", ETHNICITIES.map((name) => `<option value="${name}">${name}</option>`).join(""));

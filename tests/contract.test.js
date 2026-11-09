@@ -12,7 +12,6 @@ function assert(condition, message) {
 }
 
 assert(html.includes('lang="zh-Hant"'), "HTML language must be zh-Hant");
-assert(html.includes("24 項") && html.includes("二十四項"), "Homepage copy must say 24 applications");
 assert(!html.includes("20 項") && !html.includes("二十項"), "Homepage must not still say 20 applications");
 assert(html.includes('id="applications"'), "Main application landmark is missing");
 assert(css.includes("prefers-reduced-motion"), "Reduced-motion support is missing");
@@ -34,8 +33,10 @@ const { categories, applications } = vm.runInNewContext(
   { document: documentStub }
 );
 
-assert(categories.length === 5, `Expected 5 categories, received ${categories.length}`);
-assert(applications.length === 24, `Expected 24 applications, received ${applications.length}`);
+assert(categories.length === 4, `Expected 4 categories, received ${categories.length}`);
+// 首頁只上架 available 卡（coming-soon 一律不渲染）；四大類目前 6+6+2+2 = 16 張
+assert(applications.length === 16, `Expected 16 listed applications, received ${applications.length}`);
+assert(!applications.some((app) => app.status === "coming-soon"), "Homepage must not list coming-soon cards");
 assert(applications[0].title === "字母篇" && applications[0].status === "available" && applications[0].href === "apps/basic-learning/alphabet-listen-retell/", "First basics card must link to alphabet listen-and-repeat");
 assert(applications[1].title === "十二年國教" && applications[1].status === "available" && applications[1].href === "apps/basic-learning/twelve-listen-retell/", "Second basics card must link to twelve-year listen-and-repeat");
 assert(applications[2].title === "跟唸" && applications[2].status === "available" && applications[2].href === "apps/classroom-quiz/listen-retell/", "Third basics card must link to listen-and-repeat");
@@ -52,14 +53,13 @@ assert(!applications.some((app) => app.title === "聽音練習" || app.href === 
 assert(!applications.some((app) => app.title === "看圖練習" || app.href === "apps/basic-learning/body-parts-practice/"), "Typing picture practice must stay off the homepage");
 assert(applications[12].title === "初級口說模擬站" && applications[12].status === "available" && applications[12].href === "apps/certification-mock/beginner-mock-exam/", "First certification card must link to the beginner mock exam");
 assert(applications[13].title === "中級模擬站" && applications[13].status === "available" && applications[13].href === "apps/certification-mock/intermediate-mock-exam/", "Second certification card must link to the intermediate mock exam");
-assert(applications[16].title === "部落大小事" && applications[16].status === "available" && applications[16].href === "apps/scenario-practice/village-life/", "First scenario card must link to the village-life role play");
-assert(applications[17].title === "市場小幫手" && applications[17].status === "available" && applications[17].href === "apps/scenario-practice/market-helper/", "Market-helper card must link to the market stall");
-assert(applications.slice(18, 20).every((app) => app.status === "coming-soon"), "The other scenario cards stay coming-soon");
+assert(applications[14].title === "部落大小事" && applications[14].status === "available" && applications[14].href === "apps/scenario-practice/village-life/", "First scenario card must link to the village-life role play");
+assert(applications[15].title === "市場小幫手" && applications[15].status === "available" && applications[15].href === "apps/scenario-practice/market-helper/", "Market-helper card must link to the market stall");
 assert(applications.filter((app) => app.status === "available").every((app) => {
   const clean = app.href.split("?")[0].replace(/\/$/, "");
   return fs.existsSync(path.join(root, clean, "index.html"));
 }), "Every available card must point at a real page");
-const categoryCounts = { basics: 6, classroom: 6, certification: 4, scenarios: 4, interaction: 4 };
+const categoryCounts = { basics: 6, classroom: 6, certification: 2, scenarios: 2 };
 for (const category of categories) {
   assert(applications.filter((app) => app.categoryId === category.id).length === categoryCounts[category.id], `${category.title} must have ${categoryCounts[category.id]} applications`);
 }
@@ -75,4 +75,4 @@ for (const app of applications) {
   assert(app.icon.startsWith("assets/icons/") && app.icon.endsWith(".webp"), `${app.id} must use the unified raster icon system`);
 }
 
-console.log("PASS: 5 categories, 24 data-driven cards, responsive and accessibility contracts");
+console.log("PASS: 4 categories, 16 listed cards, responsive and accessibility contracts");

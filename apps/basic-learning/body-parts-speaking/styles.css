@@ -19,6 +19,17 @@
 .alt-route{margin:.9rem 0 0;font-weight:700;color:#4a5474}
 .alt-route a{color:#1a5fbd}
 
+/* ── 特殊符號鍵盤：所有打字輸入共用的按鈕列（字元集同族語E樂園全站檢索） ── */
+.symbol-keyboard{display:flex;flex-wrap:wrap;gap:.35rem;margin:.1rem 0 .45rem}
+.symbol-btn{min-width:2.75rem;min-height:2.75rem;padding:.2rem .5rem;border:2px solid var(--ink);border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-weight:900;font-size:1.3rem;line-height:1;cursor:pointer;transition:background-color .18s ease,transform .12s ease}
+.symbol-btn:hover{background:#eef2f8}
+.symbol-btn:active{transform:scale(.92)}
+.symbol-btn:focus-visible{outline:4px solid #186bd8;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){
+  .symbol-btn{transition:none}
+  .symbol-btn:active{transform:none}
+}
+
 #speak-hint{margin:.3rem 0 .9rem;font-weight:700;color:#4a5474}
 .player-row{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin:1rem 0 0}
 .player-row .primary{margin:0;width:auto}

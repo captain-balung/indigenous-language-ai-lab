@@ -78,6 +78,7 @@ assert.ok(pages.oral.includes('id="question-image"'));
 assert.ok(pages.oral.includes('id="question-text"'), "發音練習題目必須顯示族語文字拼寫，不能只有圖片");
 assert.ok(app.includes("ui.questionText.textContent"), "engine 要能把教材族語寫進拼寫區");
 assert.ok(app.includes("tokenCounts"), "oral 判定要送入題庫詞頻，支援關鍵單字比對");
+assert.ok(app.includes("mountSymbolKeyboard"), "造句打字輸入上方要有族語特殊符號鍵盤");
 assert.ok(!pages.retell.includes("播放短句"));
 assert.ok(pages.retell.includes(">播放<") && pages.reply.includes(">播放問句<"));
 assert.ok(page.includes('lang="zh-Hant"') && page.includes("CC BY-NC-SA 4.0"));

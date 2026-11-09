@@ -8,6 +8,7 @@ import { THEMES, recordsForTheme, themeById } from "../themes.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../..");
 const page = fs.readFileSync(path.join(root,"apps/basic-learning/body-parts-practice/index.html"),"utf8");
+const app = fs.readFileSync(path.join(root,"apps/basic-learning/body-parts-practice/app.mjs"),"utf8");
 assert.ok(page.includes('href="/apps/basic-learning/body-parts-practice/styles.css"'));
 assert.ok(page.includes('src="/apps/basic-learning/body-parts-practice/app.mjs"'));
 assert.ok(!page.includes('href="styles.css"'));
@@ -30,6 +31,7 @@ assert.ok(recordsForTheme(themeById("jobs"), junior1, jobs1)[0].imageSrc.startsW
 assert.ok(recordsForTheme(themeById("body"), junior1, jobs1)[0].audioUrl.startsWith("https://klokah.tw/"));
 const dataset = JSON.parse(fs.readFileSync(path.join(root,"data/body-parts/dataset.json"),"utf8"));
 assert.equal(dataset.dialectCount,42); assert.equal(dataset.recordCount,420); assert.equal(DIALECTS.length,42); assert.equal(ETHNICITIES.length,16);
+assert.ok(app.includes("mountSymbolKeyboard"), "打字輸入上方要有族語特殊符號鍵盤");
 for(const dialect of DIALECTS){const records=dataset.records.filter(r=>r.dialectId===dialect.id);assert.equal(records.length,10);assert.ok(dialect.code);for(const r of records){assert.ok(r.indigenousText&&r.chineseText&&r.imagePath);assert.ok(fs.existsSync(path.join(root,"data/body-parts",r.imagePath)));}}
 assert.equal(normalizeAnswer("  O  ngoso’  kinian . "),"O ngoso' kinian.");
 assert.ok(exactMatch("U mata kiniyan.","U mata kiniyan.")); assert.ok(!exactMatch("mata","U mata kiniyan."));
