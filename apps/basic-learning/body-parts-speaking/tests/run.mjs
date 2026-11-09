@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { normalizeAnswer, exactMatch, semanticMatch, createQuestionDeck, createSingleFlight, judgeAnswer } from "../../body-parts-practice/core.mjs";
+import { buildTokenCounts, normalizeAnswer, exactMatch, semanticMatch, createQuestionDeck, createSingleFlight, judgeAnswer } from "../../body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES } from "../../body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, encodeWav, readAsrText, ASR_TARGET_SAMPLE_RATE, ASR_TIMEOUT_MS, REQUEST_TIMEOUT_MS } from "../asr.mjs";
 
@@ -184,6 +184,27 @@ assert.equal((await judgeAnswer({ answer: "x", question: q, translate: async () 
 assert.ok(semanticMatch("這是頭髮。", "這是頭髮。") && !semanticMatch("這是頭。", "這是頭髮。"), "較長詞優先");
 assert.ok(semanticMatch("這是雞。", "這是雞。") && !semanticMatch("這是鳥。", "這是雞。"), "非身體主題用詞義比對");
 assert.ok(semanticMatch("她是醫生。", "醫生"));
+
+/* ---------- §11.1-7 關鍵單字判定：只念內容字／教材是單字而念整句 ---------- */
+{
+  const poolTexts = [
+    "U mata kiniyan.", "U tangila kiniyan.", "U ngangusuan kiniyan.", "U nguyus kiniyan.",
+    "U wadis kiniyan.", "U tangal kiniyan.", "U vukes kiniyan.", "U pising kiniyan.",
+    "U kamay kiniyan.", "U kuku’ kiniyan."
+  ];
+  const tokenCounts = buildTokenCounts(poolTexts);
+  const eye = { indigenousText: "U mata kiniyan.", chineseText: "這是眼睛。" };
+  assert.equal((await judgeAnswer({ answer: "mata", question: eye, translate: async () => { throw new Error("關鍵單字命中不該翻譯"); }, tokenCounts })).type, "word");
+  assert.equal((await judgeAnswer({ answer: "kuku’", question: { indigenousText: "U kuku’ kiniyan.", chineseText: "這是腳。" }, translate: async () => { throw new Error("不該翻譯"); }, tokenCounts })).type, "word");
+  assert.equal((await judgeAnswer({ answer: "ngangusuan", question: eye, translate: async () => "鼻子", tokenCounts })).type, "retry", "念了別題的關鍵字不能放行");
+}
+
+/* ---------- §11.1-8 未過也可以直接跳下一題（本 app 不計分）---------- */
+assert.ok(app.includes("ui.next.hidden = false"), "判定結束一律顯示下一題；未過由「跳下一題 →」前進");
+assert.ok(!app.includes("ui.next.hidden = !passed"), "不得再把未過的下一題藏起來");
+assert.ok(app.includes("跳下一題"), "未過時按鈕必須標示為跳下一題");
+assert.ok(app.includes("buildTokenCounts") && app.includes("tokenCounts"), "判定要送入題庫詞頻，支援關鍵單字比對");
+assert.ok(app.includes("單字正確"), "關鍵單字正確要有自己的結果訊息");
 
 /* ---------- ASR 回應解讀：任何異常都不得當成念錯 ---------- */
 assert.equal(readAsrText({ ok: true, data: { text: " Talacowa kiso. " } }, 200), "Talacowa kiso.");

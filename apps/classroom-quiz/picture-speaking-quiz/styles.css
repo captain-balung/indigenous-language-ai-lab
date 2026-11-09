@@ -9,7 +9,9 @@ main{padding:2.4rem 1rem 3rem}
 #quiz h2{margin:.1rem 0 .75rem}
 .meaning{margin:0 0 1.05rem;font-size:clamp(1.9rem,4.4vw,2.7rem);font-weight:900;line-height:1.35}
 #panel-compose label{margin:0 0 .5rem}
-#panel-oral figure{min-height:200px;margin:0 0 1.15rem}
+#panel-oral figure{min-height:200px;margin:0 0 .8rem}
+/* 題目的族語文字拼寫：顯示在圖片下方，跟造句的中文提示同一套大字級設定 */
+.question-text{margin:0 0 1.05rem;font-size:clamp(1.9rem,4.4vw,2.7rem);font-weight:900;line-height:1.4;overflow-wrap:anywhere}
 #panel-audio{margin:0 0 .35rem}
 #panel-speech{margin:.15rem 0 .15rem}
 #quiz .submit-row{margin-top:1rem}

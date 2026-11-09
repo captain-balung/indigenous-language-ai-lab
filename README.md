@@ -56,14 +56,14 @@ node scripts/serve.mjs 4173
 - [字母篇](apps/basic-learning/alphabet-listen-retell/README.md)：看圖片，聽字母篇例詞，再用族語跟唸一次；判定與十二年國教跟唸同一套。一輪最多 8 題。
 - [十二年國教](apps/basic-learning/twelve-listen-retell/README.md)：十二年國教第 1–9 階短句，聽完再用族語跟唸一次；判定與上一個跟唸同一套。一輪 8 題。
 - [看圖練習](apps/basic-learning/body-parts-practice/README.md)：42 個方言別，依身體部位、動物、植物／水果、物品、地點／景觀、人物、職業看圖寫完整句子；先做教材整句比對，再以 Formosan AI `translate_to_zh` 判定意思，意思接近但說法不同時由自架 vLLM 做 AI 判別（失敗維持規則結果）。首頁不列出，網址仍可開啟。
-- [看圖口說練習](apps/basic-learning/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；需要對照時按「看提示」查看中文、族語與教材範例音檔，也可以直接說。語音辨識會顯示系統聽到的內容，判定與看圖練習同一套（含 vLLM AI 判別）。
+- [看圖口說練習](apps/basic-learning/body-parts-speaking/README.md)：同一批主題，看圖念出完整句子；需要對照時按「看提示」查看中文、族語與教材範例音檔，也可以直接說。只念關鍵單字也能判對錯，未通過可以直接跳下一題。語音辨識會顯示系統聽到的內容，判定與看圖練習同一套（含 vLLM AI 判別）。
 - [聽音練習](apps/basic-learning/listen-practice/README.md)：與看圖練習同一批主題，聽族語音檔後選出對應圖片或中文意思；音檔由 klokah.tw／web.klokah.tw 直接播放。首頁不列出，網址仍可開啟。
 - [問答練習](apps/basic-learning/qa-practice/README.md)：看國中版對話的中文問句，用打字或錄音自由回答；想聽族語問句再按播放，需要時可按「看提示」看教材族語問句。系統顯示它聽到、懂成的意思，不做考試配分。
 - [看圖描述](apps/basic-learning/describe-practice/README.md)：用認證初級看圖說話、中級看圖表達的圖片自由描述，一次一張圖；需要時按「看提示」對照中文提示、教材中文、教材族語與範例音檔。系統顯示它懂成的中文意思。
 - [字母篇（課堂測驗）](apps/classroom-quiz/alphabet-pronunciation/README.md)：看字母篇的圖片和族語文字，直接錄音念出來；教材範例在作答後播放。一輪 8 題。
 - [十二年國教（課堂測驗）](apps/classroom-quiz/twelve/README.md)：課堂測驗的合併卡；從這裡選發音練習（看族語文字直接錄音，教材範例在作答後播放）或翻譯（看中文，作答時可切換錄音或打字）。一輪 8 題。
 - [跟唸](apps/classroom-quiz/listen-retell/README.md)：聽短句，用族語再講一次；需要時可按「看提示」對照中文與族語。系統顯示它聽到的話，以及懂成的中文；有沒有轉述到原句意思，除了字面／翻譯比對再加自架 vLLM AI 判別。一輪 8 題。
-- [發音練習](apps/classroom-quiz/picture-speaking-quiz/README.md)：看到圖片就念出對應的族語，不播教材音，每題只錄一次，由語音辨識與翻譯計分（樣板沒過時加自架 vLLM AI 判別）。一輪 8 題。
+- [發音練習](apps/classroom-quiz/picture-speaking-quiz/README.md)：看圖與文字拼寫（族語文字顯示在圖片下方），用族語念出完整句，不播教材音，每題只錄一次，由語音辨識與翻譯計分（只念關鍵單字也算通過；樣板沒過時加自架 vLLM AI 判別）。一輪 8 題。
 - [意思造句](apps/classroom-quiz/meaning-sentence/README.md)：只看中文意思，自己寫族語。每題都翻譯，並顯示系統懂成；樣板比對沒過時由自架 vLLM 做 AI 意思判別。一輪 8 題。
 - [問答測驗](apps/classroom-quiz/question-reply/README.md)：聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。一輪 8 題，不顯示配分。
 - [看圖測驗](apps/classroom-quiz/picture-quiz/README.md)：初級看圖說話四張圖一起描述。評分與看圖描述相同。每方言目前一題，做完看本堂分數。

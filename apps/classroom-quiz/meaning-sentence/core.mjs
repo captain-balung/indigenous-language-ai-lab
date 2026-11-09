@@ -14,7 +14,7 @@ export const MODES = {
     title: "發音練習",
     mission: "01",
     track: "課堂測驗",
-    lead: "看到圖片就念出對應的族語，每題只錄一次。"
+    lead: "看圖與文字拼寫，用族語念出完整句，每題只錄一次。"
   },
   retell: {
     title: "跟唸",
@@ -119,7 +119,9 @@ export function replyVerdict(judged) {
 export function tally(results) {
   const list = Array.isArray(results) ? results : [];
   const skipped = list.filter((item) => item?.type === "unavailable").length;
-  const passed = list.filter((item) => item?.type === "exact" || item?.type === "semantic").length;
+  const passed = list.filter((item) => {
+    return item?.type === "exact" || item?.type === "semantic" || item?.type === "word";
+  }).length;
   return { passed, scored: list.length - skipped, skipped, total: list.length };
 }
 
@@ -135,6 +137,7 @@ export function reportDetail(result) {
   if (result?.rationale) parts.push(result.rationale);
   if (result?.fallback === "heuristic") parts.push("改用規則粗判");
   if (result?.type === "exact") parts.push("與教材字面一致");
+  if (result?.type === "word") parts.push("關鍵單字正確");
   if (result?.mode === "reply" && result?.type === "semantic") parts.push("有答到問句");
   if (result?.mode === "reply" && result?.type === "retry") parts.push("沒有答到問句");
   if (!parts.length && result?.type === "retry") parts.push("與教材不同");

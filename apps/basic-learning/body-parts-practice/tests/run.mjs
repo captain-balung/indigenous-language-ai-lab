@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { normalizeAnswer, exactMatch, semanticMatch, createQuestionDeck, createSingleFlight, judgeAnswer } from "../core.mjs";
+import { buildTokenCounts, keyWordMatch, normalizeAnswer, exactMatch, semanticMatch, createQuestionDeck, createSingleFlight, judgeAnswer } from "../core.mjs";
 import { DIALECTS, ETHNICITIES } from "../dialects.mjs";
 import { THEMES, recordsForTheme, themeById } from "../themes.mjs";
 
@@ -50,6 +50,42 @@ assert.equal((await judgeAnswer({answer:q.indigenousText,question:q,translate:as
 assert.equal((await judgeAnswer({answer:"tangila",question:q,translate:async()=>{calls++;return"耳朵";}})).type,"semantic");
 assert.equal((await judgeAnswer({answer:"ngangus",question:q,translate:async()=>"鼻子"})).type,"retry");
 assert.equal((await judgeAnswer({answer:"x",question:q,translate:async()=>{throw new Error("502");}})).type,"unavailable");
+
+/* ───── 關鍵單字判定：只念內容字／教材是單字而念整句 ───── */
+{
+  const eye = { indigenousText: "U mata kiniyan.", chineseText: "這是眼睛。" };
+  const bodyPool = recordsForTheme(themeById("body"), junior1, jobs1).map((item) => item.indigenousText);
+  const counts = buildTokenCounts(bodyPool);
+  assert.equal(counts.get("u") >= 10, true, "框架字詞頻要高");
+  assert.equal(counts.get("mata"), 1, "內容字詞頻要低");
+  let translateCalls = 0;
+  // 只念關鍵字 → word，不花翻譯 API
+  assert.equal((await judgeAnswer({ answer: "mata", question: eye, translate: async () => { translateCalls += 1; return "眼睛"; }, tokenCounts: counts })).type, "word");
+  assert.equal(translateCalls, 0);
+  assert.equal((await judgeAnswer({ answer: "U mata", question: eye, translate: async () => { translateCalls += 1; return "眼睛"; }, tokenCounts: counts })).type, "word");
+  assert.equal(translateCalls, 0);
+  // ASR 句首大寫慣例不影響關鍵字比對
+  assert.ok(keyWordMatch({ answer: "Mata", expected: eye.indigenousText, tokenCounts: counts }), "第一個字母的案例差異要容得下");
+  // 框架字不是內容字：只念 kiniyan 不放行，照樣送翻譯判 retry
+  assert.equal((await judgeAnswer({ answer: "kiniyan", question: eye, translate: async () => "這是", tokenCounts: counts })).type, "retry");
+  // 念了錯誤的關鍵字：不能靠 word 放行，走翻譯判 retry
+  assert.equal((await judgeAnswer({ answer: "tangila", question: eye, translate: async () => "耳朵", tokenCounts: counts })).type, "retry");
+  // 整句照舊 exact 優先
+  assert.equal((await judgeAnswer({ answer: eye.indigenousText, question: eye, translate: async () => { translateCalls += 1; return "眼睛"; }, tokenCounts: counts })).type, "exact");
+  assert.equal(translateCalls, 0);
+  // 不帶 tokenCounts 維持原本行為（走翻譯樣板）
+  assert.equal((await judgeAnswer({ answer: "mata", question: eye, translate: async () => "眼睛" })).type, "semantic");
+  // 教材本身是單字（職業題）而念成整句 → 也是 word
+  const jobPool = ["koisange.", "tapato’oto’o.", "sangbaasang.", "hiitaisang.", "vanidho.", "bokosi."];
+  const jobCounts = buildTokenCounts(jobPool);
+  assert.equal((await judgeAnswer({ answer: "U koisange cira.", question: { indigenousText: "koisange.", chineseText: "醫生" }, translate: async () => { throw new Error("關鍵單字命中不該翻譯"); }, tokenCounts: jobCounts })).type, "word");
+  // 2-token 短句（指示詞＋單字）只念內容字 → word
+  const shortPool = ["hini mata’.", "hini sale’e:.", "hini ngabas."];
+  const shortCounts = buildTokenCounts(shortPool);
+  assert.equal((await judgeAnswer({ answer: "mata’", question: { indigenousText: "hini mata’.", chineseText: "這是眼睛。" }, translate: async () => { throw new Error("不該翻譯"); }, tokenCounts: shortCounts })).type, "word");
+  // 詞數相同只差內容 → 不是 word 的範疇
+  assert.ok(!keyWordMatch({ answer: "hini ngabas", expected: "hini mata’.", tokenCounts: shortCounts }), "等長走整句比對，不套關鍵字放行");
+}
 let caseCalls=0;
 assert.equal((await judgeAnswer({answer:"u tangila kiniyan.",question:q,ethnicity:"賽夏",translate:async()=>{caseCalls++;return"耳朵";}})).type,"exact"); assert.equal(caseCalls,0, "句首容忍直接判 exact，不花翻譯 API");
 const deck=createQuestionDeck(dataset.records.filter(r=>r.dialectId===1),()=>.5);assert.equal(new Set(Array.from({length:10},()=>deck.next().id)).size,10);

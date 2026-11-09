@@ -28,6 +28,8 @@ assert.match(reportDetail({ mode: "retell", type: "semantic", heard: "mata", tra
 assert.match(reportDetail({ mode: "compose", type: "semantic", translation: "眼睛" }), /系統懂成：眼睛/);
 assert.match(reportDetail({ mode: "reply", type: "semantic", heard: "很好", translation: "很好" }), /有答到問句/);
 assert.equal(reportDetail({ type: "unavailable" }), "這題沒有完成判定");
+assert.match(reportDetail({ type: "word" }), /關鍵單字正確/);
+assert.deepEqual(tally([{ type: "word" }, { type: "retry" }, { type: "unavailable" }]), { passed: 1, scored: 2, skipped: 1, total: 3 }, "word 是通過的一種");
 
 assert.equal(needsAsr("compose"), false);
 assert.equal(needsAsr("reply"), true);
@@ -73,6 +75,9 @@ for (const [mode, folder] of units) {
 }
 assert.ok(pages.compose.includes("用族語寫出這個意思"));
 assert.ok(pages.oral.includes('id="question-image"'));
+assert.ok(pages.oral.includes('id="question-text"'), "發音練習題目必須顯示族語文字拼寫，不能只有圖片");
+assert.ok(app.includes("ui.questionText.textContent"), "engine 要能把教材族語寫進拼寫區");
+assert.ok(app.includes("tokenCounts"), "oral 判定要送入題庫詞頻，支援關鍵單字比對");
 assert.ok(!pages.retell.includes("播放短句"));
 assert.ok(pages.retell.includes(">播放<") && pages.reply.includes(">播放問句<"));
 assert.ok(page.includes('lang="zh-Hant"') && page.includes("CC BY-NC-SA 4.0"));

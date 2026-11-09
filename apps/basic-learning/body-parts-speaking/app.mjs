@@ -1,4 +1,4 @@
-import { createQuestionDeck, createSingleFlight, judgeAnswer } from "../body-parts-practice/core.mjs";
+import { buildTokenCounts, createQuestionDeck, createSingleFlight, judgeAnswer } from "../body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../body-parts-practice/dialects.mjs";
 import { THEMES, loadThemeShards, recordsForTheme, themeById } from "../body-parts-practice/themes.mjs";
 import {
@@ -22,7 +22,7 @@ const ui = {
   retry: $("#retry"), reveal: $("#reveal"), next: $("#next"), model: $("#model-answer")
 };
 
-let selectedDialect, selectedTheme, shards, records = [], question, deck, roundSize = 0, answeredCount = 0, pending = false;
+let selectedDialect, selectedTheme, shards, records = [], tokenCounts = null, question, deck, roundSize = 0, answeredCount = 0, pending = false;
 let translationCodes = new Set(DIALECTS.map((d) => d.code));
 let asrAudit = null;
 let recorder = null, mediaStream = null, chunks = [], startedAt = 0, timer = null;
@@ -127,6 +127,8 @@ ui.themeGrid.addEventListener("click", (event) => {
   if (!button || button.disabled) return;
   selectedTheme = themeById(button.dataset.theme);
   records = recordsForTheme(selectedTheme, shards?.junior, shards?.jobs);
+  // 這份主題題庫的詞頻：讓判定能辨認「只念關鍵單字」的情況（見 core.mjs keyWordMatch）
+  tokenCounts = buildTokenCounts(records.map((item) => item.indigenousText));
   for (const item of ui.themeGrid.querySelectorAll("button[data-theme]")) {
     item.setAttribute("aria-pressed", String(item === button));
   }
@@ -375,7 +377,8 @@ const runFlow = createSingleFlight(async () => {
     question,
     translate: (text) => translateToZh(text, selectedDialect.code),
     ethnicity: selectedDialect.ethnicity,
-    aiJudge: judgeAiMeaning
+    aiJudge: judgeAiMeaning,
+    tokenCounts
   });
   renderResult(result, heard);
   finishFlow();
@@ -441,24 +444,30 @@ function renderResult(result, heard) {
   const messages = {
     exact: ["完全正確！", "與教材答案完全相符，不需要再呼叫翻譯服務。"],
     semantic: ["意思正確，通過！", "系統聽到的內容意思接近；可以參考教材的標準句型。"],
+    // 關鍵單字正確：未念整句也判得出對錯，同時公布教材完整句供參照
+    word: ["單字正確！", "關鍵字有念對。教材完整句在下方，想練整句可以重新錄音，也可以先跳下一題。"],
     // 不斷言使用者念錯：只陳述系統聽到什麼、與教材不同
-    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差，不代表你念錯；重新錄音再試一次即可。"],
+    retry: ["再試一次", "系統聽到的內容與本題不相符。可能是念法不同，也可能是辨識偏差，不代表你念錯；重新錄音再試一次，或直接跳下一題。"],
     unavailable: ["目前無法完成判定", "你的答案尚未被判錯，錄音仍保留。"]
   };
   const [title, detail] = messages[result.type];
   const rows = [
     heard ? `<dt>系統聽到的族語</dt><dd>${escapeHtml(heard)}</dd>` : "",
     result.translation ? `<dt>翻譯服務的中文</dt><dd>${escapeHtml(result.translation)}</dd>` : "",
-    result.type === "semantic"
+    result.type === "semantic" || result.type === "word"
       ? `<dt>教材族語</dt><dd>${escapeHtml(question.indigenousText)}</dd><dt>教材中文</dt><dd>${escapeHtml(question.chineseText)}</dd>`
       : ""
   ].filter(Boolean).join("");
   ui.result.innerHTML = `<strong>${title}</strong><p>${detail}</p>${rows ? `<dl>${rows}</dl>` : ""}`;
-  const passed = result.type === "exact" || result.type === "semantic";
-  ui.next.hidden = !passed;
+  // 判定結束一律提供前進（含未過）：這是練習，不算分，卡在同一題沒有意義
+  const passed = result.type === "exact" || result.type === "semantic" || result.type === "word";
+  ui.next.hidden = false;
+  ui.next.textContent = passed ? "下一題 →" : "跳下一題 →";
   ui.reveal.hidden = passed;
   ui.retry.hidden = result.type !== "unavailable";
-  setState(passed ? "recorded" : "recorded", passed ? "判定完成" : "可以重新錄音再試一次");
+  setState(passed ? "recorded" : "recorded", passed
+    ? "判定完成"
+    : result.type === "unavailable" ? "可以重試判定，或跳下一題" : "可以重新錄音再試一次，也可以跳下一題");
 }
 
 ui.reveal.addEventListener("click", () => {
@@ -471,7 +480,7 @@ ui.next.addEventListener("click", () => { if (answeredCount >= roundSize) answer
 function resetQuiz() {
   stopAudio();
   hint.close();
-  selectedDialect = undefined; deck = undefined; question = undefined;
+  selectedDialect = undefined; deck = undefined; question = undefined; tokenCounts = null;
   ui.quiz.hidden = true;
   clearRecording();
   selectedTheme = undefined; shards = undefined; records = [];
