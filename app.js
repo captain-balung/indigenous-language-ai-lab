@@ -2,8 +2,7 @@ const categories = [
   { id: "basics", title: "基礎學習", short: "打好基礎", description: "從聲音、字母與詞彙開始，一步步建立族語能力。", icon: "assets/icons/vocabulary-book.webp", accent: "green" },
   { id: "classroom", title: "課堂測驗", short: "測測實力", description: "用有趣的小挑戰，即時檢視每一堂課的學習成果。", icon: "assets/icons/matching-puzzle.webp", accent: "blue" },
   { id: "certification", title: "認證模擬", short: "考前演練", description: "熟悉認證題型與節奏，為正式挑戰做好萬全準備。", icon: "assets/icons/bronze-medal.webp", accent: "gold" },
-  { id: "scenarios", title: "情境應用", short: "生活開口說", description: "走進真實生活場景，練習把族語自然地說出來。", icon: "assets/icons/village-house.webp", accent: "coral" },
-  { id: "interaction", title: "學習互動", short: "邊玩邊學", description: "透過遊戲、故事與互動，把學習變成一場冒險。", icon: "assets/icons/hand-drum.webp", accent: "purple" }
+  { id: "scenarios", title: "情境應用", short: "生活開口說", description: "走進真實生活場景，練習把族語自然地說出來。", icon: "assets/icons/village-house.webp", accent: "coral" }
 ];
 
 const applicationSeeds = {
@@ -18,7 +17,7 @@ const applicationSeeds = {
   classroom: [
     ["字母篇", "看字母篇的圖片和族語文字，錄音念出來。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/alphabet-pronunciation/"],
     ["十二年國教", "看族語句子練發音，或看中文練翻譯；兩種練習都在這裡。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/twelve/"],
-    ["發音練習", "看到圖片就念出對應的族語，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
+    ["發音練習", "看圖與文字拼寫，用族語念出完整句，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
     ["意思造句", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
     ["問答測驗", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"],
     ["看圖測驗", "一次看完整組圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/classroom-quiz/picture-quiz/"]
@@ -34,28 +33,25 @@ const applicationSeeds = {
     ["市場小幫手", "到攤位問價、比較與結帳，練習購物用語。", "assets/icons/market-basket.webp", "available", "apps/scenario-practice/market-helper/"],
     ["旅行會話包", "從問路到搭車，練習旅途中的實用句。", "assets/icons/travel-bus.webp"],
     ["文化故事屋", "跟著情境故事，認識語言背後的文化。", "assets/icons/campfire-story.webp"]
-  ],
-  interaction: [
-    ["族語闖關島", "闖關收集徽章，把練習變成一場冒險。", "assets/icons/treasure-map.webp"],
-    ["故事共創機", "選角色與情節，一起完成族語故事。", "assets/icons/open-storybook.webp"],
-    ["對話小夥伴", "在引導情境裡練習日常對話。", "assets/icons/friendly-robot.webp"],
-    ["節奏記憶王", "跟著節拍記住詞語與常用句。", "assets/icons/hand-drum.webp"]
   ]
 };
 
 const applications = categories.flatMap((category) =>
-  applicationSeeds[category.id].map(([title, description, icon, status = "coming-soon", href = ""], index) => ({
-    id: `${category.id}-${index + 1}`,
-    categoryId: category.id,
-    title,
-    description,
-    icon,
-    status,
-    href,
-    openInNewTab: false,
-    tags: [category.title],
-    order: index + 1
-  }))
+  applicationSeeds[category.id]
+    .map(([title, description, icon, status = "coming-soon", href = ""], index) => ({
+      id: `${category.id}-${index + 1}`,
+      categoryId: category.id,
+      title,
+      description,
+      icon,
+      status,
+      href,
+      openInNewTab: false,
+      tags: [category.title],
+      order: index + 1
+    }))
+    // 隱藏「敬請期待」任務：只上架標記為 available / maintenance 的項目
+    .filter((application) => application.status !== "coming-soon")
 );
 
 const statusLabels = {

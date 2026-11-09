@@ -1,4 +1,4 @@
-import { exactMatch, judgeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
+import { buildTokenCounts, exactMatch, judgeAnswer } from "../../basic-learning/body-parts-practice/core.mjs";
 import { DIALECTS, ETHNICITIES, dialectById } from "../../basic-learning/body-parts-practice/dialects.mjs";
 import { ASR_MODELS, asrModelFor, auditAsrModels, SLOW_HINT_AFTER_MS } from "../../basic-learning/body-parts-speaking/asr.mjs";
 import { activeSemanticJudge } from "../../certification-mock/beginner-mock-exam/semantic-judge.mjs";
@@ -10,6 +10,7 @@ import {
   MODES, buildRound, needsAsr, needsAudio, replyVerdict, reportDetail, scoreLabel, tally, verdictFromTranslation
 } from "./core.mjs";
 import { createHintPanel } from "../../shared/hint.mjs";
+import { mountSymbolKeyboard } from "../../shared/symbol-keyboard.mjs";
 
 const $ = (selector) => document.querySelector(selector);
 let mode;
@@ -19,6 +20,7 @@ const ui = {
   ethnicity: $("#ethnicity"), dialect: $("#dialect"), start: $("#start"), api: $("#api-status"),
   quiz: $("#quiz"), label: $("#dialect-label"), progress: $("#progress"), prompt: $("#prompt"), questionTitle: $("#question-title"),
   compose: $("#panel-compose"), meaning: $("#compose-meaning"), oral: $("#panel-oral"),
+  questionText: $("#question-text"),
   audio: $("#panel-audio"), speech: $("#panel-speech"),
   replay: $("#replay"), audioState: $("#audio-state"), player: $("#player"), answer: $("#answer"),
   hintToggle: $(".hint-toggle"), hintPanel: $("#hint-panel"),
@@ -31,9 +33,12 @@ const ui = {
 
 const hint = createHintPanel({ toggle: ui.hintToggle, panel: ui.hintPanel });
 
+// 造句／翻譯的打字輸入：上方掛族語特殊符號鍵盤（元素不存在時模組內會安全略過）
+mountSymbolKeyboard({ container: ui.compose, input: ui.answer });
+
 const TITLES = {
   compose: ["造句", "看中文，寫出族語"],
-  oral: ["發音", "看到圖片就念出對應的族語"],
+  oral: ["發音", "看圖與文字拼寫，用族語念出完整句"],
   retell: ["跟唸", "聽完後用族語再講一次"],
   reply: ["問答", "聽問句，用族語回答"]
 };
@@ -48,7 +53,7 @@ const STATES = {
   failed: ["△", "這次沒有完成判定"]
 };
 
-let selectedDialect, shard, round = [], index = 0, results = [], pending = false, graded = false, attempt = 0, acceptRecording = false;
+let selectedDialect, shard, round = [], tokenCounts = null, index = 0, results = [], pending = false, graded = false, attempt = 0, acceptRecording = false;
 let blocked = new Set();
 let statusNote = "正在確認服務…";
 let recorder = null;
@@ -192,6 +197,7 @@ ui.again.addEventListener("click", () => beginRound());
 
 function beginRound() {
   round = buildRound(shard, mode);
+  tokenCounts = buildTokenCounts(round.map((item) => item.indigenousText));
   index = 0;
   results = [];
   if (!round.length) {
@@ -246,7 +252,8 @@ function showQuestion() {
   }
   if (question.mode === "oral") {
     ui.image.src = question.imageSrc;
-    ui.image.alt = `請用族語說出圖片內容（${selectedDialect.name}）`;
+    ui.image.alt = `請用族語念出文字拼寫（${selectedDialect.name}）`;
+    if (ui.questionText) ui.questionText.textContent = question.indigenousText;
     ui.record.focus();
   }
 }
@@ -429,7 +436,8 @@ async function gradeSpeech() {
     question,
     translate: (text) => translateToZh(text, selectedDialect.code),
     ethnicity: selectedDialect.ethnicity,
-    aiJudge: judgeAiMeaning
+    aiJudge: judgeAiMeaning,
+    tokenCounts
   });
   finish({ ...result, heard, mode: "oral" }, true, current);
 }
@@ -448,6 +456,7 @@ function finish(result, reveal, current) {
   const headlines = {
     exact: ["通過", result.translation ? "字面與教材一致。下方是系統懂成的中文。" : "與教材字面一致，沒有呼叫翻譯。"],
     semantic: ["通過", "意思與教材相近。"],
+    word: ["通過", "關鍵單字正確，教材完整句如下。"],
     retry: ["未過", "這次和教材不相同。"],
     unavailable: ["不計分", "這題沒有完成判定，不算答錯。"]
   };
@@ -481,7 +490,7 @@ function showReport() {
   const summary = tally(results);
   ui.score.textContent = scoreLabel(summary);
   ui.list.innerHTML = results.map((result, itemIndex) => {
-    const label = result.type === "exact" || result.type === "semantic" ? "通過" : result.type === "retry" ? "未過" : "不計分";
+    const label = result.type === "exact" || result.type === "semantic" || result.type === "word" ? "通過" : result.type === "retry" ? "未過" : "不計分";
     return `<li><strong>第 ${itemIndex + 1} 題 · ${escapeHtml(MODES[result.mode].title)} · ${label}</strong><p>${escapeHtml(reportDetail(result))}</p></li>`;
   }).join("");
   ui.report.scrollIntoView({ behavior: reduced() ? "auto" : "smooth" });
@@ -496,6 +505,7 @@ function resetQuiz() {
   selectedDialect = undefined;
   shard = undefined;
   round = [];
+  tokenCounts = null;
   results = [];
   ui.quiz.hidden = true;
   ui.report.hidden = true;

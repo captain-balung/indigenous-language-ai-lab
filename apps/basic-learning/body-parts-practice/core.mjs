@@ -107,12 +107,92 @@ export function createSingleFlight(task) {
   };
 }
 
-// 判定順序：族語與教材整句相同 → exact；樣板比對（含意義鍵）過 → semantic；
-// 樣板沒過時若給了 aiJudge，用 AI 判「譯文與教材中文是不是同一個意思」，
-// 判過也是 semantic（verdictBy: "ai"）；AI 拒判或失敗，維持 retry 規則結果。
-export async function judgeAnswer({ answer, question, translate, ethnicity, aiJudge }) {
+/* ---------- 關鍵單字比對（word）----------
+ *
+ * 使用者不一定念整句：題目是句子時可能只念關鍵單字（U mata kiniyan. → mata），
+ * 題目本身是單字時也可能念成整句（koisange. → U koisange cira.）。兩種都判得出對錯。
+ *
+ * 「內容字」不靠硬編碼方言助詞表，靠同方言題庫的相對詞頻辨認：
+ * 框架字（U、kiniyan、cira、hini、ga、‘ina…）幾乎每題都出現，詞頻≈題庫大小；
+ * 內容字（mata、koisange）通常只屬於同一題，詞頻極低；
+ * 門檻一律相對於最高詞頻計算，過短的單字元助詞也不入選。
+ * 沒提供 tokenCounts（buildTokenCounts 統計的題庫詞頻）時不比對，行為維持原樣。
+ */
+
+const KEYWORD_COUNT_RATIO = 6;
+const KEYWORD_MIN_TOKEN_LENGTH = 2;
+
+/** 比對用的 token 鍵：只折第一個字母（與 exactMatch 容忍句首大小寫同理），其餘嚴格保留。 */
+function tokenKey(value) {
+  const text = normalizeAnswer(value);
+  return text ? text.charAt(0).toLowerCase() + text.slice(1) : "";
+}
+
+/** 正規化後切 token；句內與句尾標點不算在內（撇號、冒號等正寫法符號保留）。 */
+export function tokenizeText(value) {
+  return normalizeAnswer(value)
+    .replace(/[.!?,，、。！？]+/g, " ")
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+/** 統計一份題庫裡每個 token 出現的句數，供 keyWordMatch／judgeAnswer 辨認內容字。 */
+export function buildTokenCounts(sentences) {
+  const counts = new Map();
+  for (const sentence of Array.isArray(sentences) ? sentences : []) {
+    for (const token of new Set(tokenizeText(sentence).map(tokenKey))) {
+      counts.set(token, (counts.get(token) ?? 0) + 1);
+    }
+  }
+  return counts;
+}
+
+// short 的每個 token 都能在 long 裡找到對應（含重複次數），即 short ⊆ long。
+function tokenListSubset(short, long) {
+  const remaining = long.map(tokenKey);
+  return short.every((token) => {
+    const index = remaining.indexOf(tokenKey(token));
+    if (index < 0) return false;
+    remaining.splice(index, 1);
+    return true;
+  });
+}
+
+export function keyWordMatch({ answer, expected, tokenCounts }) {
+  if (!(tokenCounts instanceof Map) || !tokenCounts.size) return false;
+  const answerTokens = tokenizeText(answer);
+  const expectedTokens = tokenizeText(expected);
+  if (!answerTokens.length || !expectedTokens.length) return false;
+  // 等長是整句，交給 exactMatch；詞數不同才談「只念關鍵字」
+  if (answerTokens.length === expectedTokens.length) return false;
+  const [short, long] = answerTokens.length < expectedTokens.length
+    ? [answerTokens, expectedTokens]
+    : [expectedTokens, answerTokens];
+  if (!tokenListSubset(short, long)) return false;
+  // 內容字門檻隨題庫調整：框架字幾乎每題都出現（詞頻≈題庫大小），門檻取其 1/6；
+  // 一個字元的助詞（a、ia…）不算內容字。
+  let maxFreq = 0;
+  for (const used of tokenCounts.values()) if (used > maxFreq) maxFreq = used;
+  const threshold = Math.max(1, Math.floor(maxFreq / KEYWORD_COUNT_RATIO));
+  // 必須真的點到低頻「內容字」；全由框架字組成（如只念 kiniyan）不放行
+  return short.some((token) => {
+    const key = tokenKey(token);
+    const used = tokenCounts.get(key) ?? 0;
+    const charLength = (key.match(/\p{L}|\p{N}/gu) ?? []).length;
+    return used > 0 && used <= threshold && charLength >= KEYWORD_MIN_TOKEN_LENGTH;
+  });
+}
+
+// 判定順序：族語與教材整句相同 → exact；只命中關鍵單字（word）→ 通過；
+// 樣板比對（含意義鍵）過 → semantic；樣板沒過時若給了 aiJudge，
+// 用 AI 判「譯文與教材中文是不是同一個意思」，判過也是 semantic（verdictBy: "ai"）；
+// AI 拒判或失敗，維持 retry 規則結果。
+export async function judgeAnswer({ answer, question, translate, ethnicity, aiJudge, tokenCounts }) {
   if (exactMatch(answer, question.indigenousText, ethnicity)) {
     return { type: "exact", apiCalls: 0 };
+  }
+  if (keyWordMatch({ answer, expected: question.indigenousText, tokenCounts })) {
+    return { type: "word", apiCalls: 0 };
   }
   try {
     const translation = await translate(answer);
