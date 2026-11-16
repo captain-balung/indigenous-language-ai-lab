@@ -41,9 +41,10 @@ fieldset.themes{margin:1.7rem 0 1.4rem;background:#fff8e6}
 /* 立像當說話者指示，放在台詞左邊 */
 .dialogue__avatar{grid-row:1 / span 2;width:66px;height:66px;object-fit:contain}
 .dialogue__say .prompt{display:inline-block}
-.dialogue__zh{margin:.3rem 0 .2rem;font-size:1.7rem;font-weight:900;line-height:1.25}
+/* 對話卡：族語大字在上、中文小字在下 */
+.dialogue__ab{margin:.1rem 0 0;font-size:1.7rem;font-weight:900;line-height:1.25}
 .quest-tips{margin:.15rem 0 .1rem;font-size:1rem;font-weight:800;line-height:1.45;opacity:.9}
-.dialogue__ab{margin:0;font-weight:800;opacity:.85}
+.dialogue__zh{margin:.2rem 0 0;font-size:1rem;font-weight:700;line-height:1.4;opacity:.8}
 /* 播放狀態與「下一句」同一列 */
 .dialogue__controls{grid-column:1 / -1;display:flex;align-items:center;gap:.7rem;flex-wrap:wrap;margin-top:.7rem}
 .dialogue__controls .arrow{margin-left:auto;min-width:0;padding:.55rem .9rem;white-space:nowrap;border-radius:26px;background:var(--coral);color:#fff;box-shadow:0 4px 0 var(--ink)}
@@ -183,10 +184,13 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
 /* 購物清單折疊（官方 #buying-list-btn 的 toggle） */
 .quest-buylist-toggle{margin-left:.5rem;padding:.05rem .6rem;border:2px solid var(--ink);border-radius:10px;background:#fff;font:inherit;font-size:.85rem;font-weight:800;cursor:pointer}
 .quest-shopping.is-collapsed{display:none}
-.quest-reply__line{display:block;font-weight:800}
+.quest-reply__line{display:block}
 .quest-reply__line b{color:var(--coral)}
-/* 任務說明比對話長一點，字級略收 */
-.quest-board .dialogue__zh{font-size:1.5rem}
+/* 回覆行一樣「族語大字在上、中文小字在下」（字級繼承 .dialogue__ab） */
+.quest-reply__ab{display:block;font-weight:900;line-height:1.3}
+.quest-reply__zh{display:block;margin-top:.1rem;font-size:1rem;font-weight:700;line-height:1.4;opacity:.8}
+/* 任務說明是中文小字，比對話的中文略大一點保住可讀性 */
+.quest-board .dialogue__zh{font-size:1.05rem}
 /* 名牌區在右欄（官方詞卡在場景旁／下），不要塞進會被 .stage overflow 裁掉的對話卡 */
 .quest-tags{margin-bottom:1rem}
 .quest-tags > p{margin:.7rem 0 .5rem;font-weight:800;font-size:.95rem}
@@ -252,7 +256,7 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
      維持原本「場景是一張卡」的樣子。 */
   .quest-stage.is-static-board{border:0;background:none;overflow:visible}
   .quest-stage.is-static-board .quest-scene{border:3px solid var(--ink);border-radius:24px;overflow:hidden}
-  .dialogue__zh{font-size:2rem}
+  .dialogue__ab{font-size:2rem}
   .my-turn{padding:.9rem 1rem 1rem}
   .my-turn textarea{min-height:4.5rem}
 }
@@ -273,8 +277,7 @@ ul.quest-shopping{margin:.2rem 0 1rem;padding-left:1.2rem;font-weight:800;line-h
   .theme-picker{grid-template-columns:1fr}
   .dialogue{grid-template-columns:auto 1fr;gap:.2rem .7rem;padding:.7rem .8rem;left:.6rem;right:.6rem;bottom:.6rem}
   .dialogue__avatar{width:52px;height:52px}
-  .dialogue__zh{font-size:1.3rem}
-  .quest-board .dialogue__zh{font-size:1.15rem}
+  .dialogue__ab{font-size:1.3rem}
   .quest-tips{font-size:.95rem}
   /* 桌上名牌／放上去的名牌字級隨場景寬度縮（.quest-desk-tag 的 cqw），這裡不再寫死。 */
   .hint-box{font-size:.9rem}

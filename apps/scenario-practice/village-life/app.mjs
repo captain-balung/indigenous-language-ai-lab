@@ -1863,7 +1863,7 @@ function showBorrowRefusal(targetId) {
   if (who) ui.questSpeaker.textContent = `${who}說`;
   if (line?.reply) {
     const chinese = line.reply.chineseText ? `　（${line.reply.chineseText}）` : "";
-    ui.questReply.innerHTML = `<span class="quest-reply__line"><b>${escapeHtml(who)}</b> ${escapeHtml(line.reply.indigenousText)}${escapeHtml(chinese)}</span>`;
+    ui.questReply.innerHTML = `<span class="quest-reply__line"><b>${escapeHtml(who)}</b><span class="quest-reply__ab">${escapeHtml(line.reply.indigenousText)}</span><span class="quest-reply__zh">${escapeHtml(chinese)}</span></span>`;
     if (line.reply.audioUrl) scheduleQuestVoice(() => playQuestClip(line.reply.audioUrl));
   } else {
     ui.questReply.textContent = "我沒有";
@@ -2002,7 +2002,7 @@ const runQuestLine = createSingleFlight(async () => {
         console.log("[AI 判別] 認為意思不同：", aiOutcome.rationale);
       }
       const reboundChinese = rebound.chineseText ? `　（${rebound.chineseText}）` : "";
-      ui.questReply.textContent = `${rebound.indigenousText}${reboundChinese}${aiHint}`;
+      ui.questReply.innerHTML = `<span class="quest-reply__line"><span class="quest-reply__ab">${escapeHtml(rebound.indigenousText)}</span><span class="quest-reply__zh">${escapeHtml(reboundChinese)}${escapeHtml(aiHint)}</span></span>`;
     }
     clearQuestResult();
     // 答錯就把輸入面板收起，人物重新成為唯一下一步；要重說就再點一次同一位。
@@ -2029,7 +2029,7 @@ function renderLearnedReplies() {
   const person = quest?.themeKey === "lesson" ? "同學" : "的人";
   ui.questReply.innerHTML = heard.map((line) => {
     const chinese = line.reply.chineseText ? `　（${line.reply.chineseText}）` : "";
-    return `<span class="quest-reply__line"><b>${targetLabel(line.targetId, quest)}${person}</b> ${escapeHtml(line.reply.indigenousText)}${escapeHtml(chinese)}</span>`;
+    return `<span class="quest-reply__line"><b>${targetLabel(line.targetId, quest)}${person}</b><span class="quest-reply__ab">${escapeHtml(line.reply.indigenousText)}</span><span class="quest-reply__zh">${escapeHtml(chinese)}</span></span>`;
   }).join("");
 }
 

@@ -100,7 +100,7 @@ main { max-width: 1320px; margin: 0 auto; padding: 4rem clamp(1rem, 5vw, 2rem) 2
 .card-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .card-carousel { position: relative; min-width: 0; padding-inline: 3.5rem; }
 .card-carousel:focus-visible, .card-carousel > button:focus-visible { outline: 4px solid #246bdd; outline-offset: 4px; }
-.card-carousel > button { position: absolute; top: 8px; bottom: 14px; z-index: 2; width: 48px; min-height: 48px; padding: 0; color: var(--ink); background: #fff; border: 3px solid var(--ink); border-radius: 14px; box-shadow: 3px 3px 0 var(--ink); font: 900 1.2rem inherit; cursor: pointer; }
+.card-carousel > button { position: absolute; top: 8px; bottom: 14px; z-index: 2; width: 48px; min-height: 48px; padding: 0; color: var(--ink); background: #fff; border: 3px solid var(--ink); border-radius: 14px; box-shadow: 3px 3px 0 var(--ink); font-family: inherit; font-size: 1.2rem; font-weight: 900; cursor: pointer; }
 .card-carousel > [data-carousel-prev] { left: 0; }
 .card-carousel > [data-carousel-next] { right: 0; }
 .card-carousel > button:disabled { opacity: .45; cursor: not-allowed; box-shadow: none; }
