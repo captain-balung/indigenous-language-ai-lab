@@ -45,8 +45,8 @@ assert(applications[4].title === "問答練習" && applications[4].status === "a
 assert(applications[5].title === "看圖描述" && applications[5].status === "available" && applications[5].href === "apps/basic-learning/describe-practice/", "Sixth basics card must link to picture-describe practice");
 assert(applications[6].title === "字母篇" && applications[6].status === "available" && applications[6].href === "apps/classroom-quiz/alphabet-pronunciation/", "First classroom card must link to alphabet pronunciation");
 assert(applications[7].title === "十二年國教" && applications[7].status === "available" && applications[7].href === "apps/classroom-quiz/twelve/", "Second classroom card must link to the twelve-year hub");
-assert(applications[8].title === "發音練習" && applications[8].href === "apps/classroom-quiz/picture-speaking-quiz/", "Classroom pronunciation card");
-assert(applications[9].title === "意思造句" && applications[9].href === "apps/classroom-quiz/meaning-sentence/", "Classroom compose card");
+assert(applications[8].title === "發音測驗" && applications[8].href === "apps/classroom-quiz/picture-speaking-quiz/", "Classroom pronunciation card");
+assert(applications[9].title === "翻譯測驗" && applications[9].href === "apps/classroom-quiz/meaning-sentence/", "Classroom compose card");
 assert(applications[10].title === "問答測驗" && applications[10].href === "apps/classroom-quiz/question-reply/", "Classroom reply card");
 assert(applications[11].title === "看圖測驗" && applications[11].href === "apps/classroom-quiz/picture-quiz/", "Classroom picture-set card");
 assert(!applications.some((app) => app.title === "聽音練習" || app.href === "apps/basic-learning/listen-practice/"), "Listen practice must stay off the homepage");

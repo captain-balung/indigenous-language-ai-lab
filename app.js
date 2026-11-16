@@ -17,8 +17,8 @@ const applicationSeeds = {
   classroom: [
     ["字母篇", "看字母篇的圖片和族語文字，錄音念出來。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/alphabet-pronunciation/"],
     ["十二年國教", "看族語句子練發音，或看中文練翻譯；兩種練習都在這裡。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/twelve/"],
-    ["發音練習", "看圖與文字拼寫，用族語念出完整句，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
-    ["意思造句", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
+    ["發音測驗", "看圖與文字拼寫，用族語念出完整句，每題只錄一次。", "assets/icons/studio-microphone.webp", "available", "apps/classroom-quiz/picture-speaking-quiz/"],
+    ["翻譯測驗", "只看中文意思，自己寫出對應的族語。", "assets/icons/sentence-blocks.webp", "available", "apps/classroom-quiz/meaning-sentence/"],
     ["問答測驗", "聽問句，立刻用族語回一句。", "assets/icons/speaking-microphone.webp", "available", "apps/classroom-quiz/question-reply/"],
     ["看圖測驗", "一次看完整組圖，用自己的話描述。", "assets/icons/open-storybook.webp", "available", "apps/classroom-quiz/picture-quiz/"]
   ],

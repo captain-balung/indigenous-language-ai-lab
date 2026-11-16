@@ -5,13 +5,13 @@ export const ROUND_SIZE = 8;
 
 export const MODES = {
   compose: {
-    title: "意思造句",
+    title: "翻譯測驗",
     mission: "02",
     track: "課堂測驗",
     lead: "只看中文意思，自己寫出對應的族語。"
   },
   oral: {
-    title: "發音練習",
+    title: "發音測驗",
     mission: "01",
     track: "課堂測驗",
     lead: "看圖與文字拼寫，用族語念出完整句，每題只錄一次。"

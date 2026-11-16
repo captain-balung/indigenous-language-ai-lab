@@ -10,7 +10,7 @@ const page = read("apps/classroom-quiz/twelve/index.html");
 assert.ok(page.includes('lang="zh-Hant"'));
 assert.ok(page.includes("<h1>十二年國教</h1>"));
 assert.ok(page.includes("<title>十二年國教｜族語e樂園 AI 實驗室</title>"));
-assert.ok(page.includes("發音練習"));
+assert.ok(page.includes("發音測驗"));
 assert.ok(page.includes("翻譯"));
 assert.ok(page.includes('href="/apps/classroom-quiz/twelve-pronunciation/"'));
 assert.ok(page.includes('href="/apps/classroom-quiz/twelve-translation/"'));

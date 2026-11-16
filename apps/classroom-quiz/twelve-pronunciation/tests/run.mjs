@@ -40,7 +40,7 @@ assert.ok(engine.includes('pronounce: "作答後可播放範例"'));
 assert.ok(engine.includes('activity === "pronounce" ? "可播放教材範例"'));
 assert.ok(!engine.includes('pronounce: "想聽範例再按"'));
 assert.ok(!engine.includes("音檔無法播放，可直接看句子錄音"));
-assert.ok(data.includes('label: "發音練習"'));
+assert.ok(data.includes('label: "發音測驗"'));
 assert.ok(!/localStorage|sessionStorage|indexedDB|document\.cookie/.test(page + app + engine));
 
 console.log("PASS: twelve pronunciation has no hint; example audio appears only after grading");

@@ -27,7 +27,7 @@ export const ACTIVITIES = {
     lead: "聽一段短句，再用族語跟唸一次。"
   },
   pronounce: {
-    label: "發音練習",
+    label: "發音測驗",
     track: "課堂測驗",
     mission: "05",
     lead: "看族語文字，錄音念出來。"

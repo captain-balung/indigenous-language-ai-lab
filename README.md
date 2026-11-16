@@ -48,7 +48,7 @@ node scripts/serve.mjs 4173
 
 根目錄即為可部署的靜態網站，可直接匯入 Vercel；Framework Preset 選擇 `Other`，不需 Build Command。
 
-問答練習、看圖描述、意思造句／發音練習／跟唸（課堂測驗共用引擎）、字母篇與十二年國教的跟唸／發音練習、十二年國教翻譯、看圖口說練習、看圖測驗、部落大小事任務關卡、認證模擬的簡答／看圖與問答測驗的語意評分，會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan），失敗時退回各題既有的規則比對。請在 Vercel 專案環境變數設定後端：
+問答練習、看圖描述、翻譯測驗／發音測驗／跟唸（課堂測驗共用引擎）、字母篇與十二年國教的跟唸／發音練習、十二年國教翻譯、看圖口說練習、看圖測驗、部落大小事任務關卡、認證模擬的簡答／看圖與問答測驗的語意評分，會經 `/api/llm-complete` 呼叫自架 vLLM（經 Flask 閘道，錄音仍只送 Formosan），失敗時退回各題既有的規則比對。請在 Vercel 專案環境變數設定後端：
 
 - `LLM_BASE_URL`（必填）：閘道端點，例 `http://114.34.77.157:9002/llm/gemma4`（POST 直接打到該網址本身）。內網位址 Vercel 連不到，正式站一律使用公網位址。
 - `LLM_API_KEY`（選填）：閘道有啟用驗證時設定，以 Bearer 送出。
@@ -64,10 +64,10 @@ node scripts/serve.mjs 4173
 - [問答練習](apps/basic-learning/qa-practice/README.md)：看國中版對話的中文問句，用打字或錄音自由回答；想聽族語問句再按播放，需要時可按「看提示」看教材族語問句。系統顯示它聽到、懂成的意思，不做考試配分。
 - [看圖描述](apps/basic-learning/describe-practice/README.md)：用認證初級看圖說話、中級看圖表達的圖片自由描述，一次一張圖；需要時按「看提示」對照中文提示、教材中文、教材族語與範例音檔。系統顯示它懂成的中文意思。
 - [字母篇（課堂測驗）](apps/classroom-quiz/alphabet-pronunciation/README.md)：看字母篇的圖片和族語文字，直接錄音念出來；教材範例在作答後播放。一輪 8 題。
-- [十二年國教（課堂測驗）](apps/classroom-quiz/twelve/README.md)：課堂測驗的合併卡；從這裡選發音練習（看族語文字直接錄音，教材範例在作答後播放）或翻譯（看中文，作答時可切換錄音或打字）。一輪 8 題。
+- [十二年國教（課堂測驗）](apps/classroom-quiz/twelve/README.md)：課堂測驗的合併卡；從這裡選發音測驗（看族語文字直接錄音，教材範例在作答後播放）或翻譯（看中文，作答時可切換錄音或打字）。一輪 8 題。
 - [跟唸](apps/classroom-quiz/listen-retell/README.md)：聽短句，用族語再講一次；需要時可按「看提示」對照中文與族語。系統顯示它聽到的話，以及懂成的中文；有沒有轉述到原句意思，除了字面／翻譯比對再加自架 vLLM AI 判別。一輪 8 題。
-- [發音練習](apps/classroom-quiz/picture-speaking-quiz/README.md)：看圖與文字拼寫（族語文字顯示在圖片下方），用族語念出完整句，不播教材音，每題只錄一次，由語音辨識與翻譯計分（只念關鍵單字也算通過；樣板沒過時加自架 vLLM AI 判別）。一輪 8 題。
-- [意思造句](apps/classroom-quiz/meaning-sentence/README.md)：只看中文意思，自己寫族語。每題都翻譯，並顯示系統懂成；樣板比對沒過時由自架 vLLM 做 AI 意思判別。一輪 8 題。
+- [發音測驗](apps/classroom-quiz/picture-speaking-quiz/README.md)：看圖與文字拼寫（族語文字顯示在圖片下方），用族語念出完整句，不播教材音，每題只錄一次，由語音辨識與翻譯計分（只念關鍵單字也算通過；樣板沒過時加自架 vLLM AI 判別）。一輪 8 題。
+- [翻譯測驗](apps/classroom-quiz/meaning-sentence/README.md)：只看中文意思，自己寫族語。每題都翻譯，並顯示系統懂成；樣板比對沒過時由自架 vLLM 做 AI 意思判別。一輪 8 題。
 - [問答測驗](apps/classroom-quiz/question-reply/README.md)：聽問句，用族語回答一次。系統先辨識，再判斷有沒有答到。一輪 8 題，不顯示配分。
 - [看圖測驗](apps/classroom-quiz/picture-quiz/README.md)：初級看圖說話四張圖一起描述。評分與看圖描述相同。每方言目前一題，做完看本堂分數。
 - [初級口說模擬站](apps/certification-mock/beginner-mock-exam/README.md)：模擬族語認證初級的口說三題型，共 11 題一卷；全部做完後一次看結果；音檔由 klokah.tw 直接播放；練習得分依公開口說配分加總，不宣告正式通過。
@@ -131,11 +131,11 @@ node apps/shared/tests/alphabet-data.test.mjs
 
 ### 十二年國教課程原住民族語文教材（第 1–9 階）
 
-「十二年國教」的跟唸、發音練習與翻譯資料位於 `data/twelve/`，
+「十二年國教」的跟唸、發音測驗與翻譯資料位於 `data/twelve/`，
 內容是「族語 E 樂園」十二年國教課程原住民族語文教材第 1–9 階：
 42 個方言別、每方言 9 階 × 10 課 = 90 課，共約 1.9 萬句。
 第 10–12 階是長段落，本版不收；舊站測驗也只到第 9 階。
-其中 7 句沒有官方音檔，跟唸與發音練習會跳過，翻譯仍可使用文字。
+其中 7 句沒有官方音檔，跟唸與發音測驗會跳過，翻譯仍可使用文字。
 
 **⚠️ 授權與其他教材不同**：依族語 E 樂園〈創用CC授權說明〉第 9 條第 3 款，
 「十二年國教課程原住民族語文教材」**不適用** CC BY-NC-SA 4.0，利用前應取得教育部同意。
@@ -143,7 +143,7 @@ node apps/shared/tests/alphabet-data.test.mjs
 若要再散布或改作，請自行向權利人取得同意。
 
 **音檔不入庫**：有音檔的資料只帶 `audioUrl`，執行時由官方 CloudFront 直接播放；
-播放時該站會看到使用者的 IP 位址，應用頁面已揭露。7 句沒有官方音檔，跟唸與發音練習會跳過。
+播放時該站會看到使用者的 IP 位址，應用頁面已揭露。7 句沒有官方音檔，跟唸與發音測驗會跳過。
 
 重新取得及驗證資料：
 
